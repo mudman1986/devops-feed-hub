@@ -127,7 +127,7 @@ To enable Email notifications:
 
 **Note**: For Gmail, you'll need to use an [App Password](https://support.google.com/accounts/answer/185833) instead of your regular password.
 
-**Security Note**: The email workflow uses the `dawidd6/action-send-mail` GitHub Action (a widely-used action with 7k+ stars). This action will have access to your email credentials. Review the action's source code at https://github.com/dawidd6/action-send-mail if you have security concerns. Alternative: You can modify the workflow to use standard SMTP tools directly.
+**Implementation**: The email workflow uses Python's built-in `smtplib` module for sending emails - no third-party actions or dependencies required.
 
 ## Default RSS Feeds
 

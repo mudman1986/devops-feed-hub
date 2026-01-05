@@ -176,17 +176,57 @@ jobs:
       
       - name: Send Email
         if: ${{ secrets.EMAIL_TO != '' }}
-        uses: dawidd6/action-send-mail@v3
-        with:
-          server_address: ${{ secrets.EMAIL_SERVER || 'smtp.gmail.com' }}
-          server_port: ${{ secrets.EMAIL_PORT || '587' }}
-          username: ${{ secrets.EMAIL_USERNAME }}
-          password: ${{ secrets.EMAIL_PASSWORD }}
-          subject: 📰 RSS Feed Updates - ${{ github.repository }}
-          to: ${{ secrets.EMAIL_TO }}
-          from: ${{ secrets.EMAIL_FROM || secrets.EMAIL_USERNAME }}
-          html_body: file://rss-output.html
-          convert_markdown: false
+        run: |
+          # Send email using Python's built-in smtplib
+          python3 << 'PYTHON_SCRIPT'
+          import smtplib
+          import os
+          from email.mime.multipart import MIMEMultipart
+          from email.mime.text import MIMEText
+          
+          # Email configuration from secrets
+          smtp_server = os.environ.get('EMAIL_SERVER', 'smtp.gmail.com')
+          smtp_port = int(os.environ.get('EMAIL_PORT', '587'))
+          username = os.environ.get('EMAIL_USERNAME')
+          password = os.environ.get('EMAIL_PASSWORD')
+          from_addr = os.environ.get('EMAIL_FROM', username)
+          to_addrs = os.environ.get('EMAIL_TO', '').split(',')
+          repository = os.environ.get('GITHUB_REPOSITORY', 'Repository')
+          
+          # Read HTML content
+          with open('rss-output.html', 'r') as f:
+              html_content = f.read()
+          
+          # Create message
+          msg = MIMEMultipart('alternative')
+          msg['Subject'] = f'📰 RSS Feed Updates - {repository}'
+          msg['From'] = from_addr
+          msg['To'] = ', '.join(to_addrs)
+          
+          # Attach HTML content
+          html_part = MIMEText(html_content, 'html')
+          msg.attach(html_part)
+          
+          # Send email
+          try:
+              with smtplib.SMTP(smtp_server, smtp_port) as server:
+                  server.starttls()
+                  server.login(username, password)
+                  server.send_message(msg)
+                  print(f"Email sent successfully to {', '.join(to_addrs)}")
+          except Exception as e:
+              print(f"Failed to send email: {e}")
+              exit(1)
+          
+          PYTHON_SCRIPT
+        env:
+          EMAIL_SERVER: ${{ secrets.EMAIL_SERVER }}
+          EMAIL_PORT: ${{ secrets.EMAIL_PORT }}
+          EMAIL_USERNAME: ${{ secrets.EMAIL_USERNAME }}
+          EMAIL_PASSWORD: ${{ secrets.EMAIL_PASSWORD }}
+          EMAIL_FROM: ${{ secrets.EMAIL_FROM }}
+          EMAIL_TO: ${{ secrets.EMAIL_TO }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
       
       - name: Display results summary
         if: always()
