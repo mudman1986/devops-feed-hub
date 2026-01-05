@@ -94,7 +94,9 @@ jobs:
           a { color: #0366d6; text-decoration: none; }
           a:hover { text-decoration: underline; }
           ''')
-          html.append('</style>', '</head>', '<body>')
+          html.append('</style>')
+          html.append('</head>')
+          html.append('<body>')
           html.append('<h1>📰 RSS Feed Updates</h1>')
           
           # Split into sections
@@ -153,7 +155,8 @@ jobs:
               if in_table:
                   html.append('</table>')
           
-          html.append('</body>', '</html>')
+          html.append('</body>')
+          html.append('</html>')
           
           # Write HTML content
           with open('rss-output.html', 'w') as f:
