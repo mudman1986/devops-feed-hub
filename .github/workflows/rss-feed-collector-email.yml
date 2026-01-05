@@ -169,7 +169,7 @@ jobs:
           PYTHON_SCRIPT
       
       - name: Send Email
-        if: ${{ secrets.EMAIL_TO != '' }}
+        if: secrets.EMAIL_TO != ''
         run: |
           # Send email using Python's built-in smtplib
           python3 << 'PYTHON_SCRIPT'

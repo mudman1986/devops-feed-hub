@@ -89,7 +89,7 @@ jobs:
             --markdown-output rss-output.md
       
       - name: Send to MS Teams
-        if: ${{ secrets.MS_TEAMS_WEBHOOK_URL != '' }}
+        if: secrets.MS_TEAMS_WEBHOOK_URL != ''
         run: |
           # Read the markdown content
           MARKDOWN_CONTENT=$(cat rss-output.md)
