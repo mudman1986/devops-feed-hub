@@ -251,14 +251,3 @@ jobs:
           else
             echo "No results generated" >> $GITHUB_STEP_SUMMARY
           fi
-      
-      - name: Upload results as artifact
-        if: always()
-        uses: actions/upload-artifact@v4
-        with:
-          name: rss-feed-results-email
-          path: |
-            rss-output.json
-            rss-output.md
-            rss-output.html
-          retention-days: 7
