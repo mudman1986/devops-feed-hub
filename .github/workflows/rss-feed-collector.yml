@@ -1,16 +1,27 @@
-name: RSS Feed Collector
+name: RSS Feed Collector (MS Teams - Channel Only)
+
+# Note: MS Teams webhooks only work for channels, NOT for personal accounts/chats
+# If you need to receive updates to your personal account, use the Email workflow instead
+
+# This workflow is disabled by default. To enable it for a Teams CHANNEL:
+# 1. Uncomment the 'on:' section below
+# 2. Configure the MS_TEAMS_WEBHOOK_URL secret with your channel webhook
+
+# on:
+#   # Run on push to main branch only
+#   push:
+#     branches:
+#       - main
+#   
+#   # Schedule to run on weekdays at 9 AM UTC
+#   schedule:
+#     - cron: '0 9 * * 1-5'  # Monday-Friday at 9 AM UTC
+#   
+#   # Allow manual trigger
+#   workflow_dispatch:
 
 on:
-  # Run on push to main branch only
-  push:
-    branches:
-      - main
-  
-  # Schedule to run on weekdays at 9 AM UTC
-  schedule:
-    - cron: '0 9 * * 1-5'  # Monday-Friday at 9 AM UTC
-  
-  # Allow manual trigger
+  # Only allow manual trigger by default
   workflow_dispatch:
 
 permissions:

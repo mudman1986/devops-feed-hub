@@ -2,14 +2,18 @@
 
 This repository contains multiple workflows that automatically collect news articles from RSS feeds and send them to different notification platforms.
 
+## ⚠️ Important: MS Teams Limitation
+
+**MS Teams webhooks only work for channels, NOT for personal accounts/chats.** If you need to receive RSS updates to your personal Teams account, use the **Email workflow** instead (enabled by default).
+
 ## Available Workflows
 
-1. **rss-feed-collector.yml** - Microsoft Teams notifications (enabled by default)
-2. **rss-feed-collector-slack.yml** - Slack notifications (manual trigger only)
-3. **rss-feed-collector-discord.yml** - Discord notifications (manual trigger only)
-4. **rss-feed-collector-email.yml** - Email notifications (manual trigger only)
+1. **rss-feed-collector-email.yml** - Email notifications (enabled by default) ✅ **Recommended for personal accounts**
+2. **rss-feed-collector.yml** - Microsoft Teams channel notifications (manual trigger only)
+3. **rss-feed-collector-slack.yml** - Slack notifications (manual trigger only)
+4. **rss-feed-collector-discord.yml** - Discord notifications (manual trigger only)
 
-The MS Teams workflow runs automatically. Alternative workflows can be triggered manually or enabled by uncommenting their trigger configuration.
+The Email workflow runs automatically. Alternative workflows can be triggered manually or enabled by uncommenting their trigger configuration.
 
 All workflows share the same core functionality but deliver results to different platforms.
 
@@ -28,23 +32,33 @@ All workflows share the same core functionality but deliver results to different
 
 ### Choosing Workflows
 
-By default, only the MS Teams workflow is enabled and runs automatically on schedule and push events.
+By default, the **Email workflow is enabled** and runs automatically on schedule and push events. This is the recommended option for receiving updates to your personal account.
+
+**Why Email by default?**
+MS Teams webhooks only work for channels, not for personal accounts/chats. Since you can't configure webhooks for your personal Teams account, email is the most reliable way to receive RSS updates directly.
 
 To use alternative notification platforms:
 
-**Option 1: Manual Trigger**
-- Keep workflows disabled (default)
+**Option 1: Use Email (Default - Recommended)**
+- Already enabled and configured for automatic runs
+- Works with any email account (Gmail, Outlook, etc.)
+- Configure EMAIL_USERNAME, EMAIL_PASSWORD, and EMAIL_TO secrets
+- See Email Integration section below for setup
+
+**Option 2: Manual Trigger Other Workflows**
+- Keep alternative workflows disabled (default)
 - Trigger them manually when needed from the Actions tab
 
-**Option 2: Enable Automatic Runs**
+**Option 3: Enable Teams for a Channel**
+- If you have access to a Teams channel (not personal account)
+- Edit `rss-feed-collector.yml`
+- Uncomment the `on:` section to enable schedule and push triggers
+- Configure the MS_TEAMS_WEBHOOK_URL secret
+
+**Option 4: Enable Slack or Discord**
 - Edit the workflow file (e.g., `rss-feed-collector-slack.yml`)
 - Uncomment the full `on:` section to enable schedule and push triggers
-- Comment out or remove the manual-only `on: workflow_dispatch:` section
 - Configure the required secrets
-
-**Option 3: Switch from MS Teams to Another Platform**
-- Disable the MS Teams workflow by commenting out its triggers
-- Enable your preferred workflow by uncommenting its triggers
 
 You can also run multiple workflows simultaneously if you want notifications on multiple platforms.
 
@@ -67,11 +81,47 @@ To add or modify feeds, edit `.github/rss-feeds.json`:
 }
 ```
 
-### MS Teams Integration
+### Email Integration (Recommended for Personal Accounts)
 
-To enable MS Teams notifications:
+**This is the default enabled workflow** and the recommended solution for receiving RSS updates to your personal account.
 
-1. Create an Incoming Webhook in your MS Teams channel:
+To configure email notifications:
+
+1. Add email configuration as repository secrets:
+   - Go to your repository Settings → Secrets and variables → Actions
+   - Add the following secrets:
+     - `EMAIL_USERNAME`: Your email username (e.g., your Gmail address)
+     - `EMAIL_PASSWORD`: Your email password or app-specific password
+     - `EMAIL_TO`: Your email address (can be same as EMAIL_USERNAME, or comma-separated for multiple recipients)
+     - `EMAIL_FROM`: (Optional) Sender email, defaults to EMAIL_USERNAME
+     - `EMAIL_SERVER`: (Optional) SMTP server, defaults to smtp.gmail.com
+     - `EMAIL_PORT`: (Optional) SMTP port, defaults to 587
+
+2. **For Gmail users:**
+   - You'll need to use an [App Password](https://support.google.com/accounts/answer/185833) instead of your regular password
+   - Go to Google Account → Security → 2-Step Verification → App passwords
+   - Generate a new app password for "Mail"
+   - Use this password for the EMAIL_PASSWORD secret
+
+3. **For Outlook/Microsoft 365 users:**
+   - Set `EMAIL_SERVER` to `smtp.office365.com`
+   - Set `EMAIL_PORT` to `587`
+   - Use your full email address as USERNAME
+   - For 2FA accounts, create an app password
+
+**Implementation**: The email workflow uses Python's built-in `smtplib` module for sending emails - no third-party actions or dependencies required.
+
+### MS Teams Integration (Channels Only)
+
+### MS Teams Integration (Channels Only)
+
+**⚠️ Important: MS Teams webhooks only work for channels, NOT for personal accounts/chats.**
+
+If you need to send updates to your personal Teams account, use the Email workflow instead (see above).
+
+If you have access to a Teams channel and want to post there:
+
+1. Create an Incoming Webhook in your MS Teams **channel** (not personal chat):
    - Go to your Teams channel
    - Click "..." → "Connectors" → "Incoming Webhook"
    - Configure and copy the webhook URL
@@ -81,6 +131,10 @@ To enable MS Teams notifications:
    - Click "New repository secret"
    - Name: `MS_TEAMS_WEBHOOK_URL`
    - Value: Your webhook URL
+
+3. Enable the Teams workflow:
+   - Edit `.github/workflows/rss-feed-collector.yml`
+   - Uncomment the `on:` section to enable automatic triggers
 
 ### Slack Integration
 
@@ -98,6 +152,10 @@ To enable Slack notifications:
    - Name: `SLACK_WEBHOOK_URL`
    - Value: Your webhook URL
 
+3. Enable the Slack workflow:
+   - Edit `.github/workflows/rss-feed-collector-slack.yml`
+   - Uncomment the `on:` section to enable automatic triggers
+
 ### Discord Integration
 
 To enable Discord notifications:
@@ -113,21 +171,9 @@ To enable Discord notifications:
    - Name: `DISCORD_WEBHOOK_URL`
    - Value: Your webhook URL
 
-### Email Integration
-
-To enable Email notifications:
-
-1. Add email configuration as repository secrets:
-   - `EMAIL_USERNAME`: Your email username (e.g., your Gmail address)
-   - `EMAIL_PASSWORD`: Your email password or app-specific password
-   - `EMAIL_TO`: Recipient email address(es), comma-separated
-   - `EMAIL_FROM`: (Optional) Sender email, defaults to EMAIL_USERNAME
-   - `EMAIL_SERVER`: (Optional) SMTP server, defaults to smtp.gmail.com
-   - `EMAIL_PORT`: (Optional) SMTP port, defaults to 587
-
-**Note**: For Gmail, you'll need to use an [App Password](https://support.google.com/accounts/answer/185833) instead of your regular password.
-
-**Implementation**: The email workflow uses Python's built-in `smtplib` module for sending emails - no third-party actions or dependencies required.
+3. Enable the Discord workflow:
+   - Edit `.github/workflows/rss-feed-collector-discord.yml`
+   - Uncomment the `on:` section to enable automatic triggers
 
 ## Default RSS Feeds
 
