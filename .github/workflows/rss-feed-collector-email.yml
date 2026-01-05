@@ -174,13 +174,33 @@ jobs:
           from email.mime.text import MIMEText
           
           # Email configuration from secrets
-          smtp_server = os.environ.get('EMAIL_SERVER', 'smtp.gmail.com')
-          smtp_port = int(os.environ.get('EMAIL_PORT', '587'))
+          smtp_server = os.environ.get('EMAIL_SERVER') or 'smtp.gmail.com'
+          smtp_port_str = os.environ.get('EMAIL_PORT') or '587'
+          smtp_port = int(smtp_port_str)
           username = os.environ.get('EMAIL_USERNAME')
           password = os.environ.get('EMAIL_PASSWORD')
-          from_addr = os.environ.get('EMAIL_FROM', username)
-          to_addrs = os.environ.get('EMAIL_TO', '').split(',')
+          from_addr = os.environ.get('EMAIL_FROM') or username
+          to_addrs_str = os.environ.get('EMAIL_TO', '')
           repository = os.environ.get('GITHUB_REPOSITORY', 'Repository')
+          
+          # Validate required fields
+          if not username:
+              print("Error: EMAIL_USERNAME secret is not configured")
+              exit(1)
+          
+          if not password:
+              print("Error: EMAIL_PASSWORD secret is not configured")
+              exit(1)
+          
+          if not to_addrs_str:
+              print("Error: EMAIL_TO secret is not configured")
+              exit(1)
+          
+          to_addrs = [addr.strip() for addr in to_addrs_str.split(',') if addr.strip()]
+          
+          if not to_addrs:
+              print("Error: EMAIL_TO is empty or invalid")
+              exit(1)
           
           # Read HTML content
           with open('rss-output.html', 'r') as f:
@@ -198,13 +218,16 @@ jobs:
           
           # Send email
           try:
+              print(f"Connecting to {smtp_server}:{smtp_port}...")
               with smtplib.SMTP(smtp_server, smtp_port) as server:
                   server.starttls()
+                  print(f"Logging in as {username}...")
                   server.login(username, password)
+                  print(f"Sending email to {', '.join(to_addrs)}...")
                   server.send_message(msg)
-                  print(f"Email sent successfully to {', '.join(to_addrs)}")
+                  print(f"✅ Email sent successfully to {', '.join(to_addrs)}")
           except Exception as e:
-              print(f"Failed to send email: {e}")
+              print(f"❌ Failed to send email: {e}")
               exit(1)
           
           PYTHON_SCRIPT
