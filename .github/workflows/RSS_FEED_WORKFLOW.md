@@ -113,8 +113,6 @@ To configure email notifications:
 
 ### MS Teams Integration (Channels Only)
 
-### MS Teams Integration (Channels Only)
-
 **⚠️ Important: MS Teams webhooks only work for channels, NOT for personal accounts/chats.**
 
 If you need to send updates to your personal Teams account, use the Email workflow instead (see above).
