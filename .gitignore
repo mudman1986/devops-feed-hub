@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+
+# RSS feed outputs (temporary files from testing)
+rss-output.json
+rss-output.md
+rss-output.html
+teams-message.json
+teams-message-final.json
+slack-message.json
+discord-message.json
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
