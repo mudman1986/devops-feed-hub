@@ -19,19 +19,20 @@
     {
       "name": "GitHub Changelog",
       "url": "https://github.blog/changelog/feed/"
+    },
+    {
+      "name": "HashiCorp Blog",
+      "url": "https://www.hashicorp.com/blog/feed.xml"
+    },
+    {
+      "name": "Microsoft Security",
+      "url": "https://www.microsoft.com/security/blog/feed/"
     }
   ],
   "comments": [
     "Additional useful RSS feeds to consider:",
-    "AWS What's New: https://aws.amazon.com/new/feed/",
     "Docker Blog: https://www.docker.com/blog/feed/",
     "Kubernetes Blog: https://kubernetes.io/feed.xml",
-    "HashiCorp Blog: https://www.hashicorp.com/blog/feed.xml",
-    "Azure DevOps Blog: https://devblogs.microsoft.com/devops/feed/",
-    "Stack Overflow Blog: https://stackoverflow.blog/feed/",
-    "Dev.to: https://dev.to/feed",
-    "Medium Engineering: https://medium.com/feed/engineering",
-    "Google Cloud Blog: https://cloudblog.withgoogle.com/rss/",
     "Microsoft Security: https://www.microsoft.com/security/blog/feed/"
   ]
 }
