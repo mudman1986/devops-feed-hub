@@ -1,0 +1,179 @@
+name: RSS Feed Collector (Discord)
+
+# This workflow is disabled by default. To enable it:
+# 1. Uncomment the 'on:' section below
+# 2. Configure the DISCORD_WEBHOOK_URL secret
+# 3. Optionally disable the default MS Teams workflow
+
+# on:
+#   # Run on push to any branch
+#   push:
+#     branches:
+#       - '**'
+#   
+#   # Schedule to run on weekdays at 9 AM UTC
+#   schedule:
+#     - cron: '0 9 * * 1-5'  # Monday-Friday at 9 AM UTC
+#   
+#   # Allow manual trigger
+#   workflow_dispatch:
+
+on:
+  # Only allow manual trigger by default
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  collect-rss-feeds-discord:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Get last successful run time
+        id: last-run
+        run: |
+          # Get the current date
+          TODAY=$(date -u +%Y-%m-%d)
+          
+          # Try to get the last successful run time from this workflow
+          LAST_RUN=$(gh run list \
+            --workflow="rss-feed-collector-discord.yml" \
+            --status=success \
+            --limit=1 \
+            --json updatedAt \
+            --jq '.[0].updatedAt' 2>/dev/null || echo "")
+          
+          if [ -n "$LAST_RUN" ]; then
+            LAST_RUN_DATE=$(date -u -d "$LAST_RUN" +%Y-%m-%d)
+            LAST_RUN_EPOCH=$(date -u -d "$LAST_RUN" +%s)
+            NOW_EPOCH=$(date -u +%s)
+            HOURS_SINCE=$((($NOW_EPOCH - $LAST_RUN_EPOCH) / 3600))
+            
+            # If last run was today, use 24 hours, otherwise use hours since last run
+            if [ "$LAST_RUN_DATE" = "$TODAY" ]; then
+              echo "hours=24" >> $GITHUB_OUTPUT
+              echo "Last successful run was today, fetching articles from last 24 hours"
+            else
+              # Cap at 168 hours (1 week) to avoid too much data
+              if [ $HOURS_SINCE -gt 168 ]; then
+                HOURS_SINCE=168
+              fi
+              echo "hours=$HOURS_SINCE" >> $GITHUB_OUTPUT
+              echo "Last successful run was $HOURS_SINCE hours ago, fetching articles since then"
+            fi
+          else
+            # No previous successful run, default to 24 hours
+            echo "hours=24" >> $GITHUB_OUTPUT
+            echo "No previous successful run found, fetching articles from last 24 hours"
+          fi
+        env:
+          GH_TOKEN: ${{ github.token }}
+      
+      - name: Fetch RSS feeds
+        run: |
+          python .github/scripts/fetch_rss_feeds.py \
+            --config .github/rss-feeds.json \
+            --hours ${{ steps.last-run.outputs.hours }} \
+            --output rss-output.json \
+            --markdown-output rss-output.md
+      
+      - name: Send to Discord
+        if: ${{ secrets.DISCORD_WEBHOOK_URL != '' }}
+        run: |
+          # Read the markdown content
+          MARKDOWN_CONTENT=$(cat rss-output.md)
+          
+          # Discord has a 2000 character limit per message
+          # Split content if needed or send as embed
+          
+          # Create Discord webhook payload with embeds
+          python3 << 'PYTHON_SCRIPT'
+          import json
+          import sys
+          import os
+          
+          # Read markdown content
+          with open('rss-output.md', 'r') as f:
+              content = f.read()
+          
+          # Discord message limit is 2000 characters
+          # Embed description limit is 4096 characters
+          # We'll use embeds for better formatting
+          
+          # Split content into sections
+          sections = content.split('\n## ')
+          
+          embeds = []
+          
+          # First section is the title or empty
+          for section in sections[1:] if len(sections) > 1 else sections:
+              if not section.strip():
+                  continue
+              
+              lines = section.split('\n', 1)
+              title = lines[0].strip()
+              description = lines[1].strip() if len(lines) > 1 else ""
+              
+              # Truncate if too long
+              if len(description) > 4000:
+                  description = description[:3997] + "..."
+              
+              # Convert markdown table to Discord-friendly format
+              # Discord doesn't support tables well, so we'll use code blocks
+              if '|' in description and '---' in description:
+                  # It's a table, wrap in code block
+                  description = f"```\n{description}\n```"
+              
+              embeds.append({
+                  "title": title[:256],  # Title limit is 256
+                  "description": description,
+                  "color": 3447003  # Blue color
+              })
+          
+          # Create webhook payload
+          payload = {
+              "content": "📰 **RSS Feed Updates**",
+              "embeds": embeds[:10]  # Discord limits to 10 embeds per message
+          }
+          
+          # Write to file
+          with open('discord-message.json', 'w') as f:
+              json.dump(payload, f, indent=2)
+          
+          PYTHON_SCRIPT
+          
+          # Send to Discord
+          curl -H "Content-Type: application/json" \
+            -d @discord-message.json \
+            "${{ secrets.DISCORD_WEBHOOK_URL }}"
+      
+      - name: Display results summary
+        if: always()
+        run: |
+          echo "## RSS Feed Collection Summary (Discord)" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+          
+          if [ -f rss-output.md ]; then
+            cat rss-output.md >> $GITHUB_STEP_SUMMARY
+          else
+            echo "No results generated" >> $GITHUB_STEP_SUMMARY
+          fi
+      
+      - name: Upload results as artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rss-feed-results-discord
+          path: |
+            rss-output.json
+            rss-output.md
+          retention-days: 7

@@ -1,6 +1,17 @@
-# RSS Feed Collector Workflow
+# RSS Feed Collector Workflows
 
-This workflow automatically collects news articles from multiple RSS feeds and sends them to Microsoft Teams.
+This repository contains multiple workflows that automatically collect news articles from RSS feeds and send them to different notification platforms.
+
+## Available Workflows
+
+1. **rss-feed-collector.yml** - Microsoft Teams notifications (enabled by default)
+2. **rss-feed-collector-slack.yml** - Slack notifications (manual trigger only)
+3. **rss-feed-collector-discord.yml** - Discord notifications (manual trigger only)
+4. **rss-feed-collector-email.yml** - Email notifications (manual trigger only)
+
+The MS Teams workflow runs automatically. Alternative workflows can be triggered manually or enabled by uncommenting their trigger configuration.
+
+All workflows share the same core functionality but deliver results to different platforms.
 
 ## Features
 
@@ -10,10 +21,32 @@ This workflow automatically collects news articles from multiple RSS feeds and s
 - ✅ Configurable RSS feeds via JSON file
 - ✅ Gracefully handles unavailable RSS feeds
 - ✅ Formats results as markdown tables
-- ✅ Sends formatted results to MS Teams (if configured)
+- ✅ Multiple notification platforms (MS Teams, Slack, Discord, Email)
 - ✅ Saves results as workflow artifacts
 
 ## Configuration
+
+### Choosing Workflows
+
+By default, only the MS Teams workflow is enabled and runs automatically on schedule and push events.
+
+To use alternative notification platforms:
+
+**Option 1: Manual Trigger**
+- Keep workflows disabled (default)
+- Trigger them manually when needed from the Actions tab
+
+**Option 2: Enable Automatic Runs**
+- Edit the workflow file (e.g., `rss-feed-collector-slack.yml`)
+- Uncomment the full `on:` section to enable schedule and push triggers
+- Comment out or remove the manual-only `on: workflow_dispatch:` section
+- Configure the required secrets
+
+**Option 3: Switch from MS Teams to Another Platform**
+- Disable the MS Teams workflow by commenting out its triggers
+- Enable your preferred workflow by uncommenting its triggers
+
+You can also run multiple workflows simultaneously if you want notifications on multiple platforms.
 
 ### RSS Feeds
 
@@ -49,7 +82,50 @@ To enable MS Teams notifications:
    - Name: `MS_TEAMS_WEBHOOK_URL`
    - Value: Your webhook URL
 
-If the secret is not configured, the workflow will still run and save results as artifacts, but won't send Teams notifications.
+### Slack Integration
+
+To enable Slack notifications:
+
+1. Create an Incoming Webhook in your Slack workspace:
+   - Go to https://api.slack.com/messaging/webhooks
+   - Create a new app or use an existing one
+   - Enable Incoming Webhooks and create a webhook for your channel
+   - Copy the webhook URL
+
+2. Add the webhook URL as a repository secret:
+   - Go to your repository Settings → Secrets and variables → Actions
+   - Click "New repository secret"
+   - Name: `SLACK_WEBHOOK_URL`
+   - Value: Your webhook URL
+
+### Discord Integration
+
+To enable Discord notifications:
+
+1. Create a webhook in your Discord server:
+   - Go to Server Settings → Integrations → Webhooks
+   - Click "New Webhook"
+   - Choose the channel and copy the webhook URL
+
+2. Add the webhook URL as a repository secret:
+   - Go to your repository Settings → Secrets and variables → Actions
+   - Click "New repository secret"
+   - Name: `DISCORD_WEBHOOK_URL`
+   - Value: Your webhook URL
+
+### Email Integration
+
+To enable Email notifications:
+
+1. Add email configuration as repository secrets:
+   - `EMAIL_USERNAME`: Your email username (e.g., your Gmail address)
+   - `EMAIL_PASSWORD`: Your email password or app-specific password
+   - `EMAIL_TO`: Recipient email address(es), comma-separated
+   - `EMAIL_FROM`: (Optional) Sender email, defaults to EMAIL_USERNAME
+   - `EMAIL_SERVER`: (Optional) SMTP server, defaults to smtp.gmail.com
+   - `EMAIL_PORT`: (Optional) SMTP port, defaults to 587
+
+**Note**: For Gmail, you'll need to use an [App Password](https://support.google.com/accounts/answer/185833) instead of your regular password.
 
 ## Default RSS Feeds
 
@@ -97,10 +173,10 @@ If any feeds couldn't be retrieved:
 
 ## Manual Execution
 
-You can manually trigger the workflow:
+You can manually trigger any of the workflows:
 
 1. Go to the "Actions" tab in your repository
-2. Select "RSS Feed Collector" workflow
+2. Select the desired workflow (e.g., "RSS Feed Collector", "RSS Feed Collector (Slack)", etc.)
 3. Click "Run workflow"
 4. Choose the branch and click "Run workflow"
 
@@ -108,11 +184,16 @@ You can manually trigger the workflow:
 
 Results are available in multiple ways:
 
-1. **MS Teams** - If configured, formatted results are sent to your Teams channel
+1. **Notification Platform** - If configured, formatted results are sent to:
+   - MS Teams channel
+   - Slack channel
+   - Discord channel
+   - Email inbox
 2. **Workflow Summary** - Check the workflow run summary for formatted output
-3. **Artifacts** - Download `rss-feed-results` artifact containing:
+3. **Artifacts** - Download the results artifact containing:
    - `rss-output.json` - Raw JSON data
    - `rss-output.md` - Formatted markdown
+   - `rss-output.html` - HTML formatted (email workflow only)
 
 ## Troubleshooting
 
@@ -125,10 +206,16 @@ Results are available in multiple ways:
 - Some feeds may require specific user agents or authentication
 - The workflow will continue with other feeds and report which ones failed
 
-### Teams notifications not working
-- Verify the `MS_TEAMS_WEBHOOK_URL` secret is set correctly
-- Check that the webhook is still active in Teams
+### Teams/Slack/Discord notifications not working
+- Verify the respective webhook secret is set correctly
+- Check that the webhook is still active
 - Review the workflow logs for error messages
+
+### Email not being sent
+- Verify all required email secrets are set
+- For Gmail, ensure you're using an App Password
+- Check your email provider's SMTP settings
+- Some email providers may block automated emails - check spam folder
 
 ## Scripts
 
