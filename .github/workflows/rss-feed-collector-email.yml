@@ -4,16 +4,9 @@ name: RSS Feed Collector (Email)
 # Configure EMAIL_USERNAME, EMAIL_PASSWORD, and EMAIL_TO secrets to enable
 
 on:
-  # Run on push to main branch only
   push:
-    branches:
-      - main
-  
-  # Schedule to run on weekdays at 9 AM UTC
   schedule:
     - cron: '0 9 * * 1-5'  # Monday-Friday at 9 AM UTC
-  
-  # Allow manual trigger
   workflow_dispatch:
 
 permissions:
@@ -169,7 +162,6 @@ jobs:
           PYTHON_SCRIPT
       
       - name: Send Email
-        if: secrets.EMAIL_TO != ''
         run: |
           # Send email using Python's built-in smtplib
           python3 << 'PYTHON_SCRIPT'
