@@ -54,9 +54,23 @@ def parse_rss_feed(url, since_time):
                                else updated_elem.text if updated_elem is not None else None)
                     
                     if date_str:
-                        # Parse ISO 8601 date
+                        # Parse ISO 8601 date - handle various formats
                         try:
-                            pub_date = datetime.fromisoformat(date_str.replace('Z', '+00:00'))
+                            # Replace 'Z' with '+00:00' for Python's fromisoformat
+                            # This handles UTC timestamps in ISO format
+                            normalized_date = date_str.replace('Z', '+00:00')
+                            # Remove milliseconds if present (e.g., .000+00:00)
+                            if '.' in normalized_date and '+' in normalized_date:
+                                parts = normalized_date.split('.')
+                                tz_part = '+' + parts[1].split('+')[1]
+                                normalized_date = parts[0] + tz_part
+                            elif '.' in normalized_date and '-' in normalized_date.split('T')[1]:
+                                # Handle negative timezone offsets
+                                parts = normalized_date.split('.')
+                                tz_part = '-' + parts[1].split('-')[1]
+                                normalized_date = parts[0] + tz_part
+                            
+                            pub_date = datetime.fromisoformat(normalized_date)
                             # Convert to naive datetime for comparison
                             pub_date = pub_date.replace(tzinfo=None)
                             
@@ -66,8 +80,10 @@ def parse_rss_feed(url, since_time):
                                     'link': link,
                                     'pubDate': pub_date.isoformat()
                                 })
-                        except (ValueError, AttributeError):
+                        except (ValueError, AttributeError, IndexError) as e:
                             # If date parsing fails, include the article anyway
+                            # This ensures we don't miss content due to date format issues
+                            print(f"Warning: Could not parse date '{date_str}' for article '{title[:50]}...', including anyway", file=sys.stderr)
                             articles.append({
                                 'title': title,
                                 'link': link,
@@ -111,9 +127,17 @@ def parse_rss_feed(url, since_time):
                             'pubDate': 'Unknown'
                         })
     
-    except (URLError, HTTPError, ET.ParseError, Exception) as e:
-        # Return None to indicate this feed failed
+    except (URLError, HTTPError) as e:
+        # Network or HTTP errors - return None to indicate this feed failed
         print(f"Error fetching feed {url}: {str(e)}", file=sys.stderr)
+        return None
+    except ET.ParseError as e:
+        # XML parsing errors
+        print(f"Error parsing feed {url}: {str(e)}", file=sys.stderr)
+        return None
+    except Exception as e:
+        # Unexpected errors - log with type information for debugging
+        print(f"Unexpected error fetching feed {url} ({type(e).__name__}): {str(e)}", file=sys.stderr)
         return None
     
     return articles

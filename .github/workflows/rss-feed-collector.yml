@@ -1,10 +1,10 @@
 name: RSS Feed Collector
 
 on:
-  # Run on push to any branch
+  # Run on push to main branch only
   push:
     branches:
-      - '**'
+      - main
   
   # Schedule to run on weekdays at 9 AM UTC
   schedule:
