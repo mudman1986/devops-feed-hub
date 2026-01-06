@@ -2,12 +2,13 @@
 
 ## Code Quality Standards
 
-### Continuous Refactoring
+### Continuous Refactoring and Optimization
 - **Always refactor and improve**: With each change to the codebase, actively look for opportunities to refactor and improve existing code
 - **Avoid patch-over-patch mentality**: Don't just add patches on top of existing code; take time to refactor and improve the underlying structure
 - **Code review mindset**: Before adding new code, evaluate if existing code can be simplified or improved
 - **Clean code principles**: Favor clean, maintainable solutions over quick fixes
 - **Technical debt**: Address technical debt proactively rather than accumulating it
+- **Performance considerations**: Consider the performance implications of your changes
 
 ### Use Open Source Packages
 - **Check for existing solutions**: Before writing custom code, always check if there are open source packages that solve the problem
@@ -20,11 +21,6 @@
   - **Compatibility**: Works with our technology stack and versions
 - **Avoid reinventing the wheel**: Use battle-tested solutions instead of custom implementations when possible
 - **Balance**: Custom code is acceptable when no suitable package exists or when packages add unnecessary complexity
-
-### Optimization and Refactoring
-- **Always review and optimize**: With each change you make to the codebase, look for opportunities to optimize and refactor existing code
-- **Code review mindset**: Before adding new code, check if existing code can be improved or simplified
-- **Performance considerations**: Consider the performance implications of your changes
 
 ### DRY (Don't Repeat Yourself) and Modularity
 - **Keep code DRY**: Avoid code duplication by extracting common functionality into reusable functions or modules
@@ -86,3 +82,22 @@
 - Automate content generation through GitHub Actions
 - Commit generated content back to the repository when appropriate
 - Use proper permissions for GitHub Actions to write to the repository
+
+## Local Development and Validation
+
+### Running Super-Linter Locally
+- **Always run super-linter locally** before pushing changes to verify code quality
+- Run super-linter using Docker to match CI environment:
+  ```bash
+  docker run --rm \
+    -e RUN_LOCAL=true \
+    -e DEFAULT_BRANCH=main \
+    -e VALIDATE_PYTHON_BLACK=true \
+    -e VALIDATE_PYTHON_FLAKE8=true \
+    -e VALIDATE_PYTHON_PYLINT=true \
+    -e VALIDATE_MARKDOWN=true \
+    -v $(pwd):/tmp/lint \
+    ghcr.io/super-linter/super-linter:latest
+  ```
+- Fix all linter errors before committing changes
+- This prevents CI failures and ensures consistent code quality

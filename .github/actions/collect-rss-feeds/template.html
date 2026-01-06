@@ -283,8 +283,8 @@
 <body>
     <div class="header">
         <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-            <span id="theme-icon">🌙</span>
-            <span id="theme-text">Dark Mode</span>
+            <span id="theme-icon">☀️</span>
+            <span id="theme-text">Light Mode</span>
         </button>
     </div>
     <div class="container">
@@ -305,7 +305,14 @@
         const htmlElement = document.documentElement;
         
         // Get saved theme preference or default to dark
-        const savedTheme = localStorage.getItem('theme') || 'dark';
+        let savedTheme = 'dark';
+        try {
+            savedTheme = localStorage.getItem('theme') || 'dark';
+        } catch (e) {
+            // localStorage might be unavailable (privacy mode, quota exceeded, etc.)
+            console.warn('localStorage unavailable, using default theme:', e);
+        }
+        
         htmlElement.setAttribute('data-theme', savedTheme);
         updateThemeButton(savedTheme);
         
@@ -314,7 +321,14 @@
             const newTheme = currentTheme === 'light' ? 'dark' : 'light';
             
             htmlElement.setAttribute('data-theme', newTheme);
-            localStorage.setItem('theme', newTheme);
+            
+            try {
+                localStorage.setItem('theme', newTheme);
+            } catch (e) {
+                // localStorage might be unavailable, theme will reset on reload
+                console.warn('Unable to save theme preference:', e);
+            }
+            
             updateThemeButton(newTheme);
         });
         
