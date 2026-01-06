@@ -22,8 +22,5 @@ jobs:
       - name: Run Super-Linter
         uses: super-linter/super-linter@v7
         env:
-          DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          VALIDATE_ALL_CODEBASE: false
-          # By not specifying individual VALIDATE_* flags, super-linter will
-          # automatically validate all supported file types in the codebase
+          VALIDATE_ALL_CODEBASE: true
