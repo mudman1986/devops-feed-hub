@@ -35,12 +35,11 @@ else
   # Save current branch
   CURRENT_BRANCH=$(git branch --show-current)
   
-  # Stash any uncommitted changes (like generated docs) before switching branches
-  STASHED=0
-  if ! git diff --quiet || ! git diff --staged --quiet; then
-    echo "Stashing uncommitted changes before branch switch" >&2
-    git stash push -m "Temporary stash for branch switch"
-    STASHED=1
+  # Save generated content to temp location before switching branches
+  TEMP_DIR=$(mktemp -d)
+  if [ -d "$CONTENT_DIR" ]; then
+    echo "Saving generated content to temporary location" >&2
+    cp -r "$CONTENT_DIR" "$TEMP_DIR/"
   fi
   
   # Fetch latest changes from origin
@@ -69,10 +68,12 @@ else
     echo "⚠ Merge from main had conflicts or was already up to date" >&2
   fi
   
-  # Apply stashed changes if we stashed them
-  if [ $STASHED -eq 1 ]; then
-    echo "Applying stashed changes" >&2
-    git stash pop
+  # Copy generated content back from temp location
+  if [ -d "$TEMP_DIR/$CONTENT_DIR" ]; then
+    echo "Restoring generated content from temporary location" >&2
+    cp -r "$TEMP_DIR/$CONTENT_DIR"/* "$CONTENT_DIR/" 2>/dev/null || mkdir -p "$CONTENT_DIR"
+    cp -r "$TEMP_DIR/$CONTENT_DIR"/* "$CONTENT_DIR/"
+    rm -rf "$TEMP_DIR"
   fi
   
   # Add the content directory
