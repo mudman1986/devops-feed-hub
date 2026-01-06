@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -63,7 +63,7 @@
             max-width: 1200px;
             margin: 0 auto 20px;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-end;
             align-items: center;
         }
         
@@ -282,7 +282,6 @@
 </head>
 <body>
     <div class="header">
-        <div></div>
         <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
             <span id="theme-icon">🌙</span>
             <span id="theme-text">Dark Mode</span>
@@ -365,8 +364,8 @@
         const themeText = document.getElementById('theme-text');
         const htmlElement = document.documentElement;
         
-        // Get saved theme preference or default to light
-        const savedTheme = localStorage.getItem('theme') || 'light';
+        // Get saved theme preference or default to dark
+        const savedTheme = localStorage.getItem('theme') || 'dark';
         htmlElement.setAttribute('data-theme', savedTheme);
         updateThemeButton(savedTheme);
         
