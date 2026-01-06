@@ -239,15 +239,32 @@ class TestGenerateSummary(unittest.TestCase):
         self.assertIn('|-------|-----------|', result)
     
     def test_html_escaping(self):
-        """Test that special characters are handled in HTML"""
-        # Create data with special characters
+        """Test that special characters are properly escaped in HTML"""
+        # Create data with special characters that need escaping
         special_data = self.sample_data.copy()
-        special_data['feeds']['Test Blog 1']['articles'][0]['title'] = 'Article with <script>alert("test")</script>'
+        special_data['feeds'] = {
+            'Test Blog <script>': {
+                'url': 'https://example.com/feed',
+                'count': 1,
+                'articles': [
+                    {
+                        'title': 'Article with <script>alert("XSS")</script>',
+                        'link': 'https://example.com/article?test=1&other=2',
+                        'published': '2024-01-15T09:00:00Z'
+                    }
+                ]
+            }
+        }
         
         result = generate_html_page(special_data)
         
-        # The title should be included (HTML escaping is handled by browser)
-        self.assertIn('Article with', result)
+        # The dangerous content should be escaped
+        self.assertNotIn('<script>alert("XSS")</script>', result)
+        self.assertIn('&lt;script&gt;', result)
+        # Link special characters should be escaped
+        self.assertIn('&amp;', result)
+        # Feed name should be escaped
+        self.assertIn('Test Blog &lt;script&gt;', result)
     
     def test_long_article_title_truncation(self):
         """Test that long article titles are truncated in markdown"""

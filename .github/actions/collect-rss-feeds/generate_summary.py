@@ -6,6 +6,7 @@ Generates both markdown (for GitHub workflow summary) and HTML (for GitHub Pages
 
 import json
 import argparse
+from html import escape as html_escape
 from datetime import datetime
 from typing import Dict, Any, List
 
@@ -318,22 +319,23 @@ def generate_html_page(data: Dict[str, Any]) -> str:
 """
         for feed_name, feed_data in data['feeds'].items():
             article_count = feed_data['count']
+            escaped_feed_name = html_escape(feed_name)
             html += f"""
         <div class="feed-section">
-            <h3>{feed_name}<span class="feed-count">{article_count} article{'s' if article_count != 1 else ''}</span></h3>
+            <h3>{escaped_feed_name}<span class="feed-count">{article_count} article{'s' if article_count != 1 else ''}</span></h3>
 """
             if feed_data['articles']:
                 html += """
             <ul class="article-list">
 """
                 for article in feed_data['articles']:
-                    title = article['title']
-                    link = article['link']
-                    published = article['published']
+                    escaped_title = html_escape(article['title'])
+                    escaped_link = html_escape(article['link'])
+                    escaped_published = html_escape(article['published'])
                     html += f"""
                 <li class="article-item">
-                    <a href="{link}" class="article-title" target="_blank" rel="noopener noreferrer">{title}</a>
-                    <div class="article-meta">Published: {published}</div>
+                    <a href="{escaped_link}" class="article-title" target="_blank" rel="noopener noreferrer">{escaped_title}</a>
+                    <div class="article-meta">Published: {escaped_published}</div>
                 </li>
 """
                 html += """
@@ -354,10 +356,12 @@ def generate_html_page(data: Dict[str, Any]) -> str:
         <div class="failed-feeds">
 """
         for failed in data['failed_feeds']:
+            escaped_name = html_escape(failed['name'])
+            escaped_url = html_escape(failed['url'])
             html += f"""
             <div class="failed-feed-item">
-                <div class="failed-feed-name">{failed['name']}</div>
-                <div class="failed-feed-url">{failed['url']}</div>
+                <div class="failed-feed-name">{escaped_name}</div>
+                <div class="failed-feed-url">{escaped_url}</div>
             </div>
 """
         html += """
