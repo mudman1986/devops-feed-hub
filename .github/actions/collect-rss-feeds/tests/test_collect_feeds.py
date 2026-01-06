@@ -11,24 +11,24 @@ import os
 
 class TestCollectFeedsIntegration(unittest.TestCase):
     """Integration tests for collect_feeds script"""
-    
+
     def test_config_file_structure(self):
         """Test that config file has correct structure"""
         config_path = os.path.join(
-            os.path.dirname(__file__), 
-            '..', '..', '..', 
+            os.path.dirname(__file__),
+            '..', '..', '..',
             'rss-feeds.json'
         )
-        
+
         # Check if config file exists
         if os.path.exists(config_path):
             with open(config_path, 'r') as f:
                 config = json.load(f)
-            
+
             # Verify structure
             self.assertIn('feeds', config)
             self.assertIsInstance(config['feeds'], list)
-            
+
             # Verify each feed has required fields
             for feed in config['feeds']:
                 self.assertIn('name', feed)
@@ -40,12 +40,12 @@ class TestCollectFeedsIntegration(unittest.TestCase):
                     feed['url'].startswith('http://') or feed['url'].startswith('https://'),
                     f"Feed URL should start with http:// or https://: {feed['url']}"
                 )
-    
+
     def test_script_exists(self):
         """Test that collect_feeds.py script exists"""
         script_path = os.path.join(os.path.dirname(__file__), '..', 'collect_feeds.py')
         self.assertTrue(os.path.exists(script_path), "collect_feeds.py should exist")
-    
+
     def test_generate_summary_script_exists(self):
         """Test that generate_summary.py script exists"""
         script_path = os.path.join(os.path.dirname(__file__), '..', 'generate_summary.py')

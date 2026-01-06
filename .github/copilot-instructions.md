@@ -2,6 +2,12 @@
 
 ## Code Quality Standards
 
+### Fix All Issues, Not Just Your Changes
+- **Comprehensive responsibility**: You are responsible for fixing all issues in the codebase, not just those related to your changes
+- **Proactive issue resolution**: When you encounter linting errors, security vulnerabilities, or code quality issues anywhere in the codebase, fix them
+- **Leave it better**: Always leave the codebase in a better state than you found it
+- **No selective fixing**: Don't limit yourself to only fixing issues you introduced; address all findable issues
+
 ### Continuous Refactoring and Optimization
 - **Always refactor and improve**: With each change to the codebase, actively look for opportunities to refactor and improve existing code
 - **Avoid patch-over-patch mentality**: Don't just add patches on top of existing code; take time to refactor and improve the underlying structure
@@ -91,13 +97,11 @@
   ```bash
   docker run --rm \
     -e RUN_LOCAL=true \
-    -e DEFAULT_BRANCH=main \
-    -e VALIDATE_PYTHON_BLACK=true \
-    -e VALIDATE_PYTHON_FLAKE8=true \
-    -e VALIDATE_PYTHON_PYLINT=true \
-    -e VALIDATE_MARKDOWN=true \
+    -e USE_FIND_ALGORITHM=true \
     -v $(pwd):/tmp/lint \
     ghcr.io/super-linter/super-linter:latest
   ```
+- By default, super-linter validates **all supported file types** automatically
+- No need to specify individual `VALIDATE_*` flags unless you want to disable specific linters
 - Fix all linter errors before committing changes
 - This prevents CI failures and ensures consistent code quality
