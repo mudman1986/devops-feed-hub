@@ -2,6 +2,18 @@
 
 ## Code Quality Standards
 
+### Use Open Source Packages
+- **Check for existing solutions**: Before writing custom code, always check if there are open source packages that solve the problem
+- **Package quality standards**: When selecting open source packages, ensure they meet these criteria:
+  - **Open source license**: Package must have a proper open source license (MIT, Apache, GPL, etc.)
+  - **Active maintenance**: Regularly updated with recent commits and releases
+  - **Community adoption**: Widely used with good download statistics and GitHub stars
+  - **Good documentation**: Clear documentation and examples
+  - **Security**: No known critical vulnerabilities, actively maintained security patches
+  - **Compatibility**: Works with our technology stack and versions
+- **Avoid reinventing the wheel**: Use battle-tested solutions instead of custom implementations when possible
+- **Balance**: Custom code is acceptable when no suitable package exists or when packages add unnecessary complexity
+
 ### Optimization and Refactoring
 - **Always review and optimize**: With each change you make to the codebase, look for opportunities to optimize and refactor existing code
 - **Code review mindset**: Before adding new code, check if existing code can be improved or simplified
