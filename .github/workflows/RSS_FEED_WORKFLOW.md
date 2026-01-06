@@ -1,283 +1,168 @@
-# RSS Feed Collector Workflows
+# RSS Feed Collector - Workflow Documentation
 
-This repository contains multiple workflows that automatically collect news articles from RSS feeds and send them to different notification platforms.
+A modular GitHub Actions workflow for collecting RSS/Atom feeds.
 
-## ⚠️ Important: MS Teams Limitation
+## Overview
 
-**MS Teams webhooks only work for channels, NOT for personal accounts/chats.** If you need to receive RSS updates to your personal Teams account, use the **Email workflow** instead (enabled by default).
+This implementation uses a **composite action** approach to provide a clean, reusable, and DRY (Don't Repeat Yourself) solution for RSS feed collection.
 
-## Available Workflows
+### Architecture
 
-1. **rss-feed-collector-email.yml** - Email notifications (enabled by default) ✅ **Recommended for personal accounts**
-2. **rss-feed-collector.yml** - Microsoft Teams channel notifications (manual trigger only)
-3. **rss-feed-collector-slack.yml** - Slack notifications (manual trigger only)
-4. **rss-feed-collector-discord.yml** - Discord notifications (manual trigger only)
-
-The Email workflow runs automatically. Alternative workflows can be triggered manually or enabled by uncommenting their trigger configuration.
-
-All workflows share the same core functionality but deliver results to different platforms.
+```
+.github/
+├── actions/
+│   └── collect-rss-feeds/          # Reusable composite action
+│       ├── action.yml               # Action definition
+│       ├── collect_feeds.py         # Python script using feedparser
+│       └── README.md                # Action documentation
+├── workflows/
+│   └── rss-feed-collector.yml       # Main workflow
+└── rss-feeds.json                   # Feed configuration
+```
 
 ## Features
 
-- ✅ Scheduled to run on weekdays (Monday-Friday) at 9 AM UTC
-- ✅ Triggers on every push to the repository
-- ✅ Finds articles posted since the last successful run (or last 24 hours if already run today)
-- ✅ Configurable RSS feeds via JSON file
-- ✅ Gracefully handles unavailable RSS feeds
-- ✅ Formats results as markdown tables
-- ✅ Multiple notification platforms (MS Teams, Slack, Discord, Email)
-- ✅ Saves results as workflow artifacts
+- ✅ **Modular Design**: Composite action can be reused in multiple workflows
+- ✅ **DRY Principle**: Single source of truth for RSS collection logic
+- ✅ **Modern Library**: Uses `feedparser` for robust RSS/Atom parsing
+- ✅ **JSON Output**: Structured data for easy integration
+- ✅ **GitHub Summary**: Formatted results displayed in workflow summary
+- ✅ **Artifact Storage**: Results saved for 30 days
+- ✅ **Smart Scheduling**: Fetches articles since last successful run
 
-## Configuration
+## Quick Start
 
-### Choosing Workflows
+### 1. Configure RSS Feeds
 
-By default, the **Email workflow is enabled** and runs automatically on schedule and push events. This is the recommended option for receiving updates to your personal account.
-
-**Why Email by default?**
-MS Teams webhooks only work for channels, not for personal accounts/chats. Since you can't configure webhooks for your personal Teams account, email is the most reliable way to receive RSS updates directly.
-
-To use alternative notification platforms:
-
-**Option 1: Use Email (Default - Recommended)**
-- Already enabled and configured for automatic runs
-- Works with any email account (Gmail, Outlook, etc.)
-- Configure EMAIL_USERNAME, EMAIL_PASSWORD, and EMAIL_TO secrets
-- See Email Integration section below for setup
-
-**Option 2: Manual Trigger Other Workflows**
-- Keep alternative workflows disabled (default)
-- Trigger them manually when needed from the Actions tab
-
-**Option 3: Enable Teams for a Channel**
-- If you have access to a Teams channel (not personal account)
-- Edit `rss-feed-collector.yml`
-- Uncomment the `on:` section to enable schedule and push triggers
-- Configure the MS_TEAMS_WEBHOOK_URL secret
-
-**Option 4: Enable Slack or Discord**
-- Edit the workflow file (e.g., `rss-feed-collector-slack.yml`)
-- Uncomment the full `on:` section to enable schedule and push triggers
-- Configure the required secrets
-
-You can also run multiple workflows simultaneously if you want notifications on multiple platforms.
-
-### RSS Feeds
-
-RSS feeds are configured in `.github/rss-feeds.json`. The file contains:
-- A list of feeds with name and URL
-- Comments with additional suggested feeds to evaluate
-
-To add or modify feeds, edit `.github/rss-feeds.json`:
+Edit `.github/rss-feeds.json`:
 
 ```json
 {
   "feeds": [
     {
-      "name": "Feed Name",
-      "url": "https://example.com/feed.xml"
+      "name": "Microsoft DevOps Blog",
+      "url": "https://devblogs.microsoft.com/devops/feed/"
+    },
+    {
+      "name": "GitHub Blog",
+      "url": "https://github.com/blog/all.atom"
     }
   ]
 }
 ```
 
-### Email Integration (Recommended for Personal Accounts)
+### 2. Run the Workflow
 
-**This is the default enabled workflow** and the recommended solution for receiving RSS updates to your personal account.
+The workflow runs automatically:
+- **Schedule**: Monday-Friday at 9 AM UTC
+- **Trigger**: On every push to main branch
+- **Manual**: Via workflow_dispatch with custom hours parameter
 
-To configure email notifications:
+### 3. View Results
 
-1. Add email configuration as repository secrets:
-   - Go to your repository Settings → Secrets and variables → Actions
-   - Add the following secrets:
-     - `EMAIL_USERNAME`: Your email username (e.g., your Gmail address)
-     - `EMAIL_PASSWORD`: Your email password or app-specific password
-     - `EMAIL_TO`: Your email address (can be same as EMAIL_USERNAME, or comma-separated for multiple recipients)
-     - `EMAIL_FROM`: (Optional) Sender email, defaults to EMAIL_USERNAME
-     - `EMAIL_SERVER`: (Optional) SMTP server, defaults to smtp.gmail.com
-     - `EMAIL_PORT`: (Optional) SMTP port, defaults to 587
+Results are available in:
+1. **Workflow Summary**: Formatted tables with articles
+2. **Artifacts**: Download `rss-feeds-output.json` for 30 days
+3. **Logs**: Detailed collection progress
 
-2. **For Gmail users:**
-   - You'll need to use an [App Password](https://support.google.com/accounts/answer/185833) instead of your regular password
-   - Go to Google Account → Security → 2-Step Verification → App passwords
-   - Generate a new app password for "Mail"
-   - Use this password for the EMAIL_PASSWORD secret
+## Using the Composite Action
 
-3. **For Outlook/Microsoft 365 users:**
-   - Set `EMAIL_SERVER` to `smtp.office365.com`
-   - Set `EMAIL_PORT` to `587`
-   - Use your full email address as USERNAME
-   - For 2FA accounts, create an app password
+The composite action can be reused in any workflow:
 
-**Implementation**: The email workflow uses Python's built-in `smtplib` module for sending emails - no third-party actions or dependencies required.
+```yaml
+- name: Collect RSS Feeds
+  id: collect
+  uses: ./.github/actions/collect-rss-feeds
+  with:
+    config-path: '.github/rss-feeds.json'
+    hours: 24
+    output-path: 'feeds.json'
 
-### MS Teams Integration (Channels Only)
+- name: Process results
+  run: |
+    echo "Found ${{ steps.collect.outputs.total-articles }} articles"
+    # Use feeds.json for further processing
+```
 
-**⚠️ Important: MS Teams webhooks only work for channels, NOT for personal accounts/chats.**
+## Future Extensions
 
-If you need to send updates to your personal Teams account, use the Email workflow instead (see above).
+The modular design makes it easy to add notification integrations:
 
-If you have access to a Teams channel and want to post there:
+### Email Notifications
 
-1. Create an Incoming Webhook in your MS Teams **channel** (not personal chat):
-   - Go to your Teams channel
-   - Click "..." → "Connectors" → "Incoming Webhook"
-   - Configure and copy the webhook URL
+```yaml
+- name: Collect Feeds
+  id: collect
+  uses: ./.github/actions/collect-rss-feeds
 
-2. Add the webhook URL as a repository secret:
-   - Go to your repository Settings → Secrets and variables → Actions
-   - Click "New repository secret"
-   - Name: `MS_TEAMS_WEBHOOK_URL`
-   - Value: Your webhook URL
+- name: Send Email
+  run: |
+    # Read ${{ steps.collect.outputs.output-file }}
+    # Format and send email
+```
 
-3. Enable the Teams workflow:
-   - Edit `.github/workflows/rss-feed-collector.yml`
-   - Uncomment the `on:` section to enable automatic triggers
+### Slack Notifications
 
-### Slack Integration
+```yaml
+- name: Collect Feeds
+  id: collect
+  uses: ./.github/actions/collect-rss-feeds
 
-To enable Slack notifications:
+- name: Send to Slack
+  env:
+    SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+  run: |
+    # Read JSON output
+    # Post to Slack
+```
 
-1. Create an Incoming Webhook in your Slack workspace:
-   - Go to https://api.slack.com/messaging/webhooks
-   - Create a new app or use an existing one
-   - Enable Incoming Webhooks and create a webhook for your channel
-   - Copy the webhook URL
+### Microsoft Teams
 
-2. Add the webhook URL as a repository secret:
-   - Go to your repository Settings → Secrets and variables → Actions
-   - Click "New repository secret"
-   - Name: `SLACK_WEBHOOK_URL`
-   - Value: Your webhook URL
+```yaml
+- name: Collect Feeds
+  id: collect
+  uses: ./.github/actions/collect-rss-feeds
 
-3. Enable the Slack workflow:
-   - Edit `.github/workflows/rss-feed-collector-slack.yml`
-   - Uncomment the `on:` section to enable automatic triggers
+- name: Send to Teams
+  env:
+    TEAMS_WEBHOOK: ${{ secrets.TEAMS_WEBHOOK }}
+  run: |
+    # Read JSON output
+    # Post to Teams channel
+```
 
-### Discord Integration
+## Configuration
 
-To enable Discord notifications:
+### RSS Feeds
 
-1. Create a webhook in your Discord server:
-   - Go to Server Settings → Integrations → Webhooks
-   - Click "New Webhook"
-   - Choose the channel and copy the webhook URL
+Edit `.github/rss-feeds.json` to add or remove feeds.
 
-2. Add the webhook URL as a repository secret:
-   - Go to your repository Settings → Secrets and variables → Actions
-   - Click "New repository secret"
-   - Name: `DISCORD_WEBHOOK_URL`
-   - Value: Your webhook URL
+### Time Window
 
-3. Enable the Discord workflow:
-   - Edit `.github/workflows/rss-feed-collector-discord.yml`
-   - Uncomment the `on:` section to enable automatic triggers
-
-## Default RSS Feeds
-
-The workflow monitors these feeds by default:
-
-1. **Microsoft DevOps Blog** - Updates on Azure DevOps and DevOps practices
-2. **GitHub Blog** - Official GitHub announcements and features
-3. **Microsoft Entra Blog** - Microsoft identity and access management updates
-4. **Azure Updates** - Azure service updates and new features
-5. **GitHub Changelog** - GitHub feature changes and updates
-
-## Additional Suggested Feeds
-
-Consider adding these feeds (listed in `.github/rss-feeds.json` comments):
-
-- **AWS What's New** - AWS service announcements
-- **Docker Blog** - Container technology updates
-- **Kubernetes Blog** - Kubernetes project news
-- **HashiCorp Blog** - Infrastructure as Code updates
-- **Stack Overflow Blog** - Developer community insights
-- **Dev.to** - Developer articles and tutorials
-- **Medium Engineering** - Engineering best practices
-- **Google Cloud Blog** - GCP updates and announcements
-- **Microsoft Security** - Security updates and best practices
+The workflow automatically calculates the time window:
+- If last run was today: fetch last 24 hours
+- Otherwise: fetch since last successful run (max 7 days)
+- Manual runs: specify custom hours via workflow_dispatch
 
 ## Output Format
 
-Results are formatted as markdown tables:
+The action generates a structured JSON file with feed data, articles, and summary statistics.
 
-### Successful Feeds
+## Library Choice
 
-For each RSS feed with new articles:
+**feedparser** was chosen because:
+- Most popular Python RSS/Atom parser (18K+ stars on GitHub)
+- Handles both RSS 2.0 and Atom feeds
+- Robust error handling
+- Normalizes different feed formats
+- Active maintenance and wide adoption
+- Pure Python, no external dependencies
 
-| Title | Published |
-|-------|-----------|
-| [Article Title](link) | 2024-01-05 09:00 |
+## Advantages
 
-### Failed Feeds
-
-If any feeds couldn't be retrieved:
-
-| Feed Name |
-|-----------|
-| Failed Feed Name |
-
-## Manual Execution
-
-You can manually trigger any of the workflows:
-
-1. Go to the "Actions" tab in your repository
-2. Select the desired workflow (e.g., "RSS Feed Collector", "RSS Feed Collector (Slack)", etc.)
-3. Click "Run workflow"
-4. Choose the branch and click "Run workflow"
-
-## Viewing Results
-
-Results are available in multiple ways:
-
-1. **Notification Platform** - If configured, formatted results are sent to:
-   - MS Teams channel
-   - Slack channel
-   - Discord channel
-   - Email inbox
-2. **Workflow Summary** - Check the workflow run summary for formatted output
-3. **Artifacts** - Download the results artifact containing:
-   - `rss-output.json` - Raw JSON data
-   - `rss-output.md` - Formatted markdown
-   - `rss-output.html` - HTML formatted (email workflow only)
-
-## Troubleshooting
-
-### No articles found
-- Check if the RSS feeds have published new articles in the time window
-- Verify the feeds are accessible and valid
-
-### Failed to retrieve feed
-- The feed URL might be incorrect or the service might be down
-- Some feeds may require specific user agents or authentication
-- The workflow will continue with other feeds and report which ones failed
-
-### Teams/Slack/Discord notifications not working
-- Verify the respective webhook secret is set correctly
-- Check that the webhook is still active
-- Review the workflow logs for error messages
-
-### Email not being sent
-- Verify all required email secrets are set
-- For Gmail, ensure you're using an App Password
-- Check your email provider's SMTP settings
-- Some email providers may block automated emails - check spam folder
-
-## Scripts
-
-- `.github/scripts/fetch_rss_feeds.py` - Python script that fetches and parses RSS feeds
-
-The script can be run locally for testing:
-
-```bash
-python .github/scripts/fetch_rss_feeds.py \
-  --config .github/rss-feeds.json \
-  --hours 24 \
-  --output rss-output.json \
-  --markdown-output rss-output.md
-```
-
-## Requirements
-
-- Python 3.11+ (managed by the workflow)
-- No external Python dependencies (uses only standard library)
+1. **Reusability**: The composite action can be used in multiple workflows
+2. **Maintainability**: Single location for RSS collection logic
+3. **Extensibility**: Easy to add new notification methods
+4. **Modern**: Uses industry-standard `feedparser` library
+5. **Clean**: Separation of concerns (collection vs. notification)
+6. **Testable**: Action can be tested independently
