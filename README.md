@@ -1,7 +1,7 @@
-## Hi there 👋
+# Hi there 👋
 
-I did the github course and therefore I now have a profile repo
-s
+I did the github course and therefore I now have a profile repo.
+
 <!--
 **Mudman1986/Mudman1986** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 

@@ -37,6 +37,13 @@
 - **Test maintenance**: Update existing tests when modifying functionality
 - **Test-driven approach**: Consider writing tests before implementing features when appropriate
 
+### Documentation Guidelines
+- **Prefer compact documentation**: Use inline comments and concise documentation over extensive README files
+- **Inline comments**: Document complex logic directly in code with clear, concise comments
+- **Minimal README files**: Keep README files brief and focused on essential information
+- **Self-documenting code**: Write clear, readable code that minimizes the need for extensive documentation
+- **Code over docs**: Prioritize writing clear code over writing extensive documentation
+
 ## Workflow and Action Development
 
 ### Best Practices
@@ -45,6 +52,7 @@
 - Document all inputs, outputs, and environment variables
 - Handle errors gracefully with appropriate error messages
 - Use secrets and variables appropriately (never hardcode sensitive data)
+- **Always verify workflows**: After making any changes, verify that all affected workflows still execute successfully
 
 ### Python Development
 - Follow PEP 8 style guidelines

@@ -14,42 +14,16 @@ The `index.html` file in this directory is automatically generated and updated b
 ## Viewing the Page
 
 Once GitHub Pages is enabled, the page will be available at:
-```
+
+```text
 https://<username>.github.io/<repository-name>/
 ```
 
 For this repository:
-```
+
+```text
 https://mudman1986.github.io/Mudman1986/
 ```
-
-## How to Enable GitHub Pages
-
-Follow these steps to activate GitHub Pages for this repository:
-
-### Step 1: Go to Repository Settings
-1. Navigate to your repository on GitHub
-2. Click on **Settings** (tab at the top)
-
-### Step 2: Navigate to Pages Settings
-1. In the left sidebar, scroll down to **Code and automation** section
-2. Click on **Pages**
-
-### Step 3: Configure Source
-1. Under **Source**, select **Deploy from a branch**
-2. Under **Branch**:
-   - Select the branch: `main` (or your default branch)
-   - Select the folder: `/docs`
-3. Click **Save**
-
-### Step 4: Wait for Deployment
-1. GitHub will start building and deploying your site
-2. This usually takes 1-2 minutes
-3. You'll see a message: "Your site is ready to be published at https://..."
-
-### Step 5: Verify
-1. Click on the provided URL to view your GitHub Pages site
-2. You should see the RSS Feed Collection page
 
 ## How It Updates
 
@@ -68,12 +42,14 @@ When the workflow runs:
 ## Customization
 
 To customize the feeds being collected, edit:
-```
+
+```text
 .github/rss-feeds.json
 ```
 
 The HTML styling can be customized by modifying the generation logic in:
-```
+
+```text
 .github/actions/collect-rss-feeds/generate_summary.py
 ```
 

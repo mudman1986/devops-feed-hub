@@ -1,0 +1,30 @@
+name: Tests
+
+on:
+  pull_request:
+  push:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Run Python Tests
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+      
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      
+      - name: Install dependencies
+        run: |
+          pip install feedparser
+      
+      - name: Run tests
+        run: |
+          python3 -m unittest discover -s .github/actions/collect-rss-feeds/tests/ -v
