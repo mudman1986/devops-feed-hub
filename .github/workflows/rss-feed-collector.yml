@@ -15,7 +15,7 @@ on:
       target-branch:
         description: 'Target branch for GitHub Pages content (use "current" for current branch)'
         required: false
-        default: 'current'
+        default: 'github-page'
 
 permissions:
   contents: write
