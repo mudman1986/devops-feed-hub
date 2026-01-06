@@ -165,7 +165,7 @@ class TestGenerateSummary(unittest.TestCase):
         
         # Check for HTML structure
         self.assertIn('<!DOCTYPE html>', result)
-        self.assertIn('<html lang="en">', result)
+        self.assertIn('<html lang="en"', result)  # Updated to allow for data-theme attribute
         self.assertIn('</html>', result)
         
         # Check for key sections
