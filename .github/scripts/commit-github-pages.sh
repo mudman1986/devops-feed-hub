@@ -35,6 +35,18 @@ else
   # Save current branch
   CURRENT_BRANCH=$(git branch --show-current)
   
+  # Save generated content to temp location before switching branches
+  TEMP_DIR=$(mktemp -d)
+  if [ -d "$CONTENT_DIR" ]; then
+    echo "Saving generated content to temporary location" >&2
+    cp -r "$CONTENT_DIR" "$TEMP_DIR/"
+    # Clean up uncommitted changes in working directory to allow branch switch
+    git reset --hard HEAD
+  fi
+  
+  # Fetch latest changes from origin
+  git fetch origin
+  
   # Check if target branch exists remotely
   if git ls-remote --heads origin "$TARGET_BRANCH" | grep -q "$TARGET_BRANCH"; then
     echo "Branch $TARGET_BRANCH exists remotely, fetching it" >&2
@@ -46,8 +58,24 @@ else
     echo "Switching to existing branch $TARGET_BRANCH" >&2
     git checkout "$TARGET_BRANCH"
   else
-    echo "Creating new branch $TARGET_BRANCH" >&2
-    git checkout -b "$TARGET_BRANCH"
+    echo "Creating new branch $TARGET_BRANCH from main" >&2
+    git checkout -b "$TARGET_BRANCH" origin/main
+  fi
+  
+  # Merge latest changes from main to keep github-pages branch up to date
+  echo "Merging latest changes from main into $TARGET_BRANCH" >&2
+  if git merge origin/main --no-edit -m "Merge main into $TARGET_BRANCH"; then
+    echo "✓ Successfully merged main into $TARGET_BRANCH" >&2
+  else
+    echo "⚠ Merge from main had conflicts or was already up to date" >&2
+  fi
+  
+  # Copy generated content back from temp location
+  if [ -d "$TEMP_DIR/$CONTENT_DIR" ]; then
+    echo "Restoring generated content from temporary location" >&2
+    cp -r "$TEMP_DIR/$CONTENT_DIR"/* "$CONTENT_DIR/" 2>/dev/null || mkdir -p "$CONTENT_DIR"
+    cp -r "$TEMP_DIR/$CONTENT_DIR"/* "$CONTENT_DIR/"
+    rm -rf "$TEMP_DIR"
   fi
   
   # Add the content directory
