@@ -1,36 +1,67 @@
 #!/bin/bash
 # Script to commit and push GitHub Pages content
-# Usage: commit-github-pages.sh <target-branch> <content-directory>
+# Usage: commit-github-pages.sh <content-directory> [target-branch]
+# If target-branch is not specified or is "current", commits to current branch
+# If target-branch is specified, commits to that branch
 
 set -e
 
-TARGET_BRANCH="${1:-github-pages}"
-CONTENT_DIR="${2:-docs}"
+CONTENT_DIR="${1:-docs}"
+TARGET_BRANCH="${2:-current}"
 
 # Configure git
 git config --local user.email "github-actions[bot]@users.noreply.github.com"
 git config --local user.name "github-actions[bot]"
 
-# Check if target branch exists
-if git show-ref --verify --quiet "refs/heads/$TARGET_BRANCH"; then
-  echo "Branch $TARGET_BRANCH exists, switching to it" >&2
-  git checkout "$TARGET_BRANCH"
+# If target branch is "current" or empty, just commit to current branch
+if [ "$TARGET_BRANCH" = "current" ] || [ -z "$TARGET_BRANCH" ]; then
+  echo "Committing to current branch" >&2
+  
+  # Add the content directory
+  git add "$CONTENT_DIR/"
+  
+  # Check if there are changes to commit
+  if git diff --staged --quiet; then
+    echo "No changes to commit" >&2
+  else
+    git commit -m "Update RSS feed GitHub Pages content [skip ci]"
+    git push
+    echo "✓ GitHub Pages content committed and pushed" >&2
+  fi
 else
-  echo "Branch $TARGET_BRANCH does not exist, creating it" >&2
-  git checkout -b "$TARGET_BRANCH"
+  # Commit to a different branch
+  echo "Committing to branch: $TARGET_BRANCH" >&2
+  
+  # Save current branch
+  CURRENT_BRANCH=$(git branch --show-current)
+  
+  # Check if target branch exists remotely
+  if git ls-remote --heads origin "$TARGET_BRANCH" | grep -q "$TARGET_BRANCH"; then
+    echo "Branch $TARGET_BRANCH exists remotely, fetching it" >&2
+    git fetch origin "$TARGET_BRANCH:$TARGET_BRANCH" || true
+  fi
+  
+  # Check if target branch exists locally
+  if git show-ref --verify --quiet "refs/heads/$TARGET_BRANCH"; then
+    echo "Switching to existing branch $TARGET_BRANCH" >&2
+    git checkout "$TARGET_BRANCH"
+  else
+    echo "Creating new branch $TARGET_BRANCH" >&2
+    git checkout -b "$TARGET_BRANCH"
+  fi
+  
+  # Add the content directory
+  git add "$CONTENT_DIR/"
+  
+  # Check if there are changes to commit
+  if git diff --staged --quiet; then
+    echo "No changes to commit" >&2
+  else
+    git commit -m "Update RSS feed GitHub Pages content [skip ci]"
+    git push origin "$TARGET_BRANCH"
+    echo "✓ GitHub Pages content committed and pushed to $TARGET_BRANCH" >&2
+  fi
+  
+  # Switch back to original branch
+  git checkout "$CURRENT_BRANCH"
 fi
-
-# Add the content directory
-git add "$CONTENT_DIR/"
-
-# Check if there are changes to commit
-if git diff --staged --quiet; then
-  echo "No changes to commit" >&2
-else
-  git commit -m "Update RSS feed GitHub Pages content [skip ci]"
-  git push origin "$TARGET_BRANCH"
-  echo "✓ GitHub Pages content committed and pushed to $TARGET_BRANCH" >&2
-fi
-
-# Switch back to original branch if needed
-git checkout -

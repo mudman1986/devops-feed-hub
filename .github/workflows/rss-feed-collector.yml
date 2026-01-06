@@ -13,9 +13,9 @@ on:
         required: false
         default: '24'
       target-branch:
-        description: 'Target branch for GitHub Pages content'
+        description: 'Target branch for GitHub Pages content (use "current" for current branch)'
         required: false
-        default: 'github-pages'
+        default: 'current'
 
 permissions:
   contents: write
@@ -77,7 +77,6 @@ jobs:
         if: success()
         run: |
           TARGET_BRANCH="${{ github.event.inputs.target-branch }}"
-          if [ -z "$TARGET_BRANCH" ]; then
-            TARGET_BRANCH="github-pages"
-          fi
-          bash .github/scripts/commit-github-pages.sh "$TARGET_BRANCH" "docs"
+          # Use "current" to commit to current branch (default behavior)
+          # or specify a branch name to commit to that branch
+          bash .github/scripts/commit-github-pages.sh "docs" "$TARGET_BRANCH"
