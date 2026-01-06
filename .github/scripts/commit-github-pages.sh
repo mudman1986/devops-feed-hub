@@ -35,6 +35,14 @@ else
   # Save current branch
   CURRENT_BRANCH=$(git branch --show-current)
   
+  # Stash any uncommitted changes (like generated docs) before switching branches
+  STASHED=0
+  if ! git diff --quiet || ! git diff --staged --quiet; then
+    echo "Stashing uncommitted changes before branch switch" >&2
+    git stash push -m "Temporary stash for branch switch"
+    STASHED=1
+  fi
+  
   # Fetch latest changes from origin
   git fetch origin
   
@@ -59,6 +67,12 @@ else
     echo "✓ Successfully merged main into $TARGET_BRANCH" >&2
   else
     echo "⚠ Merge from main had conflicts or was already up to date" >&2
+  fi
+  
+  # Apply stashed changes if we stashed them
+  if [ $STASHED -eq 1 ]; then
+    echo "Applying stashed changes" >&2
+    git stash pop
   fi
   
   # Add the content directory
