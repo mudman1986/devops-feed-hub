@@ -1,16 +1,11 @@
 name: RSS Feed Collector
 
 on:
-  # Run on push to main branch
   push:
-    branches:
-      - main
   
-  # Schedule to run on weekdays at 9 AM UTC
   schedule:
-    - cron: '0 9 * * 1-5'  # Monday-Friday at 9 AM UTC
-  
-  # Allow manual trigger
+    - cron: '0 9 * * 1-5'
+
   workflow_dispatch:
     inputs:
       hours:
