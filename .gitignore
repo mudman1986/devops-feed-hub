@@ -12,10 +12,14 @@ build/
 rss-output.json
 rss-output.md
 rss-output.html
+rss-feeds-output.json
 teams-message.json
 teams-message-final.json
 slack-message.json
 discord-message.json
+
+# GitHub Pages - keep docs/index.html, ignore other temporary HTML files
+!docs/
 
 # IDE
 .vscode/
