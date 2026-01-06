@@ -35,6 +35,9 @@ else
   # Save current branch
   CURRENT_BRANCH=$(git branch --show-current)
   
+  # Fetch latest changes from origin
+  git fetch origin
+  
   # Check if target branch exists remotely
   if git ls-remote --heads origin "$TARGET_BRANCH" | grep -q "$TARGET_BRANCH"; then
     echo "Branch $TARGET_BRANCH exists remotely, fetching it" >&2
@@ -46,8 +49,16 @@ else
     echo "Switching to existing branch $TARGET_BRANCH" >&2
     git checkout "$TARGET_BRANCH"
   else
-    echo "Creating new branch $TARGET_BRANCH" >&2
-    git checkout -b "$TARGET_BRANCH"
+    echo "Creating new branch $TARGET_BRANCH from main" >&2
+    git checkout -b "$TARGET_BRANCH" origin/main
+  fi
+  
+  # Merge latest changes from main to keep github-pages branch up to date
+  echo "Merging latest changes from main into $TARGET_BRANCH" >&2
+  if git merge origin/main --no-edit -m "Merge main into $TARGET_BRANCH"; then
+    echo "✓ Successfully merged main into $TARGET_BRANCH" >&2
+  else
+    echo "⚠ Merge from main had conflicts or was already up to date" >&2
   fi
   
   # Add the content directory

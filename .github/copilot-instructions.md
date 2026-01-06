@@ -52,6 +52,7 @@
 - Document all inputs, outputs, and environment variables
 - Handle errors gracefully with appropriate error messages
 - Use secrets and variables appropriately (never hardcode sensitive data)
+- **Always verify workflows**: After making any changes, verify that all affected workflows still execute successfully
 
 ### Python Development
 - Follow PEP 8 style guidelines
