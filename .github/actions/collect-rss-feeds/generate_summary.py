@@ -6,6 +6,7 @@ Generates both markdown (for GitHub workflow summary) and HTML (for GitHub Pages
 
 import json
 import argparse
+import os
 from html import escape as html_escape
 from datetime import datetime
 from typing import Dict, Any, List
@@ -69,223 +70,20 @@ def generate_markdown_summary(data: Dict[str, Any]) -> str:
     return '\n'.join(summary)
 
 
-def generate_html_page(data: Dict[str, Any]) -> str:
+def generate_html_content(data: Dict[str, Any]) -> str:
     """
-    Generate HTML page from RSS feed collection data
+    Generate HTML content (without template wrapper) from RSS feed collection data
     
     Args:
         data: RSS feed collection data dictionary
         
     Returns:
-        HTML formatted string
+        HTML content string to be injected into template
     """
     collected_time = datetime.fromisoformat(data['metadata']['collected_at'].replace('Z', '+00:00'))
     formatted_time = collected_time.strftime('%B %d, %Y at %I:%M %p UTC')
     
-    html = f"""<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="RSS Feed Collection - Latest articles from tech blogs and news sources">
-    <title>RSS Feed Collection</title>
-    <style>
-        * {{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }}
-        
-        body {{
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #24292e;
-            background-color: #f6f8fa;
-            padding: 20px;
-        }}
-        
-        .container {{
-            max-width: 1200px;
-            margin: 0 auto;
-            background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
-        }}
-        
-        h1 {{
-            color: #0366d6;
-            margin-bottom: 10px;
-            font-size: 2em;
-        }}
-        
-        h2 {{
-            color: #24292e;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #e1e4e8;
-            font-size: 1.5em;
-        }}
-        
-        h3 {{
-            color: #0366d6;
-            margin-top: 20px;
-            margin-bottom: 10px;
-            font-size: 1.2em;
-        }}
-        
-        .metadata {{
-            color: #586069;
-            margin-bottom: 20px;
-            padding: 15px;
-            background-color: #f6f8fa;
-            border-radius: 6px;
-        }}
-        
-        .stats {{
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin: 20px 0;
-        }}
-        
-        .stat-card {{
-            padding: 20px;
-            background-color: #f6f8fa;
-            border-radius: 6px;
-            border-left: 4px solid #0366d6;
-        }}
-        
-        .stat-card.success {{
-            border-left-color: #28a745;
-        }}
-        
-        .stat-card.error {{
-            border-left-color: #d73a49;
-        }}
-        
-        .stat-label {{
-            font-size: 0.9em;
-            color: #586069;
-            margin-bottom: 5px;
-        }}
-        
-        .stat-value {{
-            font-size: 2em;
-            font-weight: bold;
-            color: #24292e;
-        }}
-        
-        .feed-section {{
-            margin-bottom: 30px;
-        }}
-        
-        .article-list {{
-            list-style: none;
-            margin-top: 10px;
-        }}
-        
-        .article-item {{
-            padding: 12px;
-            margin-bottom: 8px;
-            background-color: #f6f8fa;
-            border-radius: 6px;
-            transition: background-color 0.2s;
-        }}
-        
-        .article-item:hover {{
-            background-color: #e1e4e8;
-        }}
-        
-        .article-title {{
-            color: #0366d6;
-            text-decoration: none;
-            font-weight: 500;
-            display: block;
-            margin-bottom: 5px;
-        }}
-        
-        .article-title:hover {{
-            text-decoration: underline;
-        }}
-        
-        .article-meta {{
-            font-size: 0.9em;
-            color: #586069;
-        }}
-        
-        .feed-count {{
-            display: inline-block;
-            background-color: #0366d6;
-            color: white;
-            padding: 2px 8px;
-            border-radius: 12px;
-            font-size: 0.85em;
-            margin-left: 10px;
-        }}
-        
-        .failed-feeds {{
-            background-color: #fff5f5;
-            padding: 15px;
-            border-radius: 6px;
-            border-left: 4px solid #d73a49;
-        }}
-        
-        .failed-feed-item {{
-            padding: 8px;
-            margin-bottom: 5px;
-        }}
-        
-        .failed-feed-name {{
-            font-weight: 500;
-            color: #d73a49;
-        }}
-        
-        .failed-feed-url {{
-            font-size: 0.9em;
-            color: #586069;
-            word-break: break-all;
-        }}
-        
-        .no-articles {{
-            color: #586069;
-            font-style: italic;
-            padding: 10px;
-        }}
-        
-        .footer {{
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #e1e4e8;
-            text-align: center;
-            color: #586069;
-            font-size: 0.9em;
-        }}
-        
-        @media (max-width: 768px) {{
-            .container {{
-                padding: 20px;
-            }}
-            
-            h1 {{
-                font-size: 1.5em;
-            }}
-            
-            h2 {{
-                font-size: 1.3em;
-            }}
-            
-            .stats {{
-                grid-template-columns: 1fr;
-            }}
-        }}
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>📰 RSS Feed Collection</h1>
-        
+    content = f"""
         <div class="metadata">
             <strong>Last Updated:</strong> {formatted_time}<br>
             <strong>Time Range:</strong> Last {data['metadata']['hours']} hours
@@ -314,68 +112,93 @@ def generate_html_page(data: Dict[str, Any]) -> str:
     
     # Successful feeds
     if data['feeds']:
-        html += """
+        content += """
         <h2>✅ Feed Articles</h2>
 """
         for feed_name, feed_data in data['feeds'].items():
             article_count = feed_data['count']
             escaped_feed_name = html_escape(feed_name)
-            html += f"""
+            content += f"""
         <div class="feed-section">
             <h3>{escaped_feed_name}<span class="feed-count">{article_count} article{'s' if article_count != 1 else ''}</span></h3>
 """
             if feed_data['articles']:
-                html += """
+                content += """
             <ul class="article-list">
 """
                 for article in feed_data['articles']:
                     escaped_title = html_escape(article['title'])
                     escaped_link = html_escape(article['link'])
                     escaped_published = html_escape(article['published'])
-                    html += f"""
+                    content += f"""
                 <li class="article-item">
                     <a href="{escaped_link}" class="article-title" target="_blank" rel="noopener noreferrer">{escaped_title}</a>
                     <div class="article-meta">Published: {escaped_published}</div>
                 </li>
 """
-                html += """
+                content += """
             </ul>
 """
             else:
-                html += """
+                content += """
             <div class="no-articles">No new articles in this time period</div>
 """
-            html += """
+            content += """
         </div>
 """
     
     # Failed feeds
     if data['failed_feeds']:
-        html += """
+        content += """
         <h2>❌ Failed Feeds</h2>
         <div class="failed-feeds">
 """
         for failed in data['failed_feeds']:
             escaped_name = html_escape(failed['name'])
             escaped_url = html_escape(failed['url'])
-            html += f"""
+            content += f"""
             <div class="failed-feed-item">
                 <div class="failed-feed-name">{escaped_name}</div>
                 <div class="failed-feed-url">{escaped_url}</div>
             </div>
 """
-        html += """
+        content += """
         </div>
 """
     
-    html += f"""
-        <div class="footer">
-            Generated by RSS Feed Collector | Last updated: {formatted_time}
-        </div>
-    </div>
-</body>
-</html>
-"""
+    return content
+
+
+def generate_html_page(data: Dict[str, Any], template_path: str = None) -> str:
+    """
+    Generate complete HTML page from RSS feed collection data using template
+    
+    Args:
+        data: RSS feed collection data dictionary
+        template_path: Path to HTML template file (optional)
+        
+    Returns:
+        Complete HTML page string
+    """
+    # Get template path
+    if template_path is None:
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        template_path = os.path.join(script_dir, 'template.html')
+    
+    # Read template
+    with open(template_path, 'r') as f:
+        template = f.read()
+    
+    # Generate content
+    content = generate_html_content(data)
+    
+    # Get formatted timestamp
+    collected_time = datetime.fromisoformat(data['metadata']['collected_at'].replace('Z', '+00:00'))
+    formatted_time = collected_time.strftime('%B %d, %Y at %I:%M %p UTC')
+    
+    # Replace placeholders
+    html = template.replace('<!-- CONTENT_PLACEHOLDER -->', content)
+    html = html.replace('<!-- TIMESTAMP_PLACEHOLDER -->', formatted_time)
     
     return html
 

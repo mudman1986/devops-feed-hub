@@ -2,6 +2,13 @@
 
 ## Code Quality Standards
 
+### Continuous Refactoring
+- **Always refactor and improve**: With each change to the codebase, actively look for opportunities to refactor and improve existing code
+- **Avoid patch-over-patch mentality**: Don't just add patches on top of existing code; take time to refactor and improve the underlying structure
+- **Code review mindset**: Before adding new code, evaluate if existing code can be simplified or improved
+- **Clean code principles**: Favor clean, maintainable solutions over quick fixes
+- **Technical debt**: Address technical debt proactively rather than accumulating it
+
 ### Use Open Source Packages
 - **Check for existing solutions**: Before writing custom code, always check if there are open source packages that solve the problem
 - **Package quality standards**: When selecting open source packages, ensure they meet these criteria:
