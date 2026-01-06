@@ -1,0 +1,38 @@
+{
+  "feeds": [
+    {
+      "name": "Microsoft DevOps Blog",
+      "url": "https://devblogs.microsoft.com/devops/feed/"
+    },
+    {
+      "name": "GitHub Blog",
+      "url": "https://github.com/blog/all.atom"
+    },
+    {
+      "name": "Microsoft Entra Blog",
+      "url": "https://techcommunity.microsoft.com/t5/s/gxcuf89792/rss/board?board.id=microsoft-entra-blog"
+    },
+    {
+      "name": "Azure Updates",
+      "url": "https://aztty.azurewebsites.net/rss/updates?service=40"
+    },
+    {
+      "name": "GitHub Changelog",
+      "url": "https://github.blog/changelog/feed/"
+    },
+    {
+      "name": "HashiCorp Blog",
+      "url": "https://www.hashicorp.com/blog/feed.xml"
+    },
+    {
+      "name": "Microsoft Security",
+      "url": "https://www.microsoft.com/security/blog/feed/"
+    }
+  ],
+  "comments": [
+    "Additional useful RSS feeds to consider:",
+    "Docker Blog: https://www.docker.com/blog/feed/",
+    "Kubernetes Blog: https://kubernetes.io/feed.xml",
+    "Microsoft Security: https://www.microsoft.com/security/blog/feed/"
+  ]
+}

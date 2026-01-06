@@ -1,0 +1,98 @@
+name: RSS Feed Collector
+
+on:
+  push:
+  
+  schedule:
+    - cron: '0 9 * * 1-5'
+
+  workflow_dispatch:
+    inputs:
+      hours:
+        description: 'Fetch articles from the last N hours'
+        required: false
+        default: '24'
+
+permissions:
+  contents: read
+
+jobs:
+  collect-feeds:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Get last successful run time
+        id: last-run
+        run: |
+          # Get the current date
+          TODAY=$(date -u +%Y-%m-%d)
+          
+          # Try to get the last successful run time from this workflow
+          LAST_RUN=$(gh run list \
+            --workflow="rss-feed-collector.yml" \
+            --status=success \
+            --limit=1 \
+            --json updatedAt \
+            --jq '.[0].updatedAt' 2>/dev/null || echo "")
+          
+          if [ -n "$LAST_RUN" ]; then
+            LAST_RUN_DATE=$(date -u -d "$LAST_RUN" +%Y-%m-%d)
+            LAST_RUN_EPOCH=$(date -u -d "$LAST_RUN" +%s)
+            NOW_EPOCH=$(date -u +%s)
+            HOURS_SINCE=$((($NOW_EPOCH - $LAST_RUN_EPOCH) / 3600))
+            
+            # If last run was today, use 24 hours, otherwise use hours since last run
+            if [ "$LAST_RUN_DATE" = "$TODAY" ]; then
+              HOURS=24
+              echo "Last successful run was today, fetching articles from last 24 hours"
+            else
+              # Cap at 168 hours (1 week) to avoid too much data
+              if [ $HOURS_SINCE -gt 168 ]; then
+                HOURS=168
+              else
+                HOURS=$HOURS_SINCE
+              fi
+              echo "Last successful run was $HOURS hours ago, fetching articles since then"
+            fi
+          else
+            # No previous successful run, default to 24 hours
+            HOURS=24
+            echo "No previous successful run found, fetching articles from last 24 hours"
+          fi
+          
+          # Use manual input if provided, otherwise use calculated hours
+          if [ -n "${{ github.event.inputs.hours }}" ]; then
+            HOURS="${{ github.event.inputs.hours }}"
+            echo "Using manual input: $HOURS hours"
+          fi
+          
+          echo "hours=$HOURS" >> $GITHUB_OUTPUT
+        env:
+          GH_TOKEN: ${{ github.token }}
+      
+      - name: Collect RSS Feeds
+        id: collect
+        uses: ./.github/actions/collect-rss-feeds
+        with:
+          config-path: '.github/rss-feeds.json'
+          hours: ${{ steps.last-run.outputs.hours }}
+          output-path: 'rss-feeds-output.json'
+      
+      - name: Upload results as artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: rss-feeds-${{ github.run_id }}
+          path: rss-feeds-output.json
+          retention-days: 30
+      
+      - name: Display collection stats
+        if: always()
+        run: |
+          echo "## Collection Statistics"
+          echo "- Total articles: ${{ steps.collect.outputs.total-articles }}"
+          echo "- Successful feeds: ${{ steps.collect.outputs.successful-feeds }}"
+          echo "- Failed feeds: ${{ steps.collect.outputs.failed-feeds }}"
