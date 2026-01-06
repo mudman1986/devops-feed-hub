@@ -14,7 +14,7 @@ on:
         default: '24'
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   collect-feeds:
@@ -96,3 +96,34 @@ jobs:
           echo "- Total articles: ${{ steps.collect.outputs.total-articles }}"
           echo "- Successful feeds: ${{ steps.collect.outputs.successful-feeds }}"
           echo "- Failed feeds: ${{ steps.collect.outputs.failed-feeds }}"
+      
+      - name: Generate GitHub Pages content
+        if: success()
+        run: |
+          # Create docs directory if it doesn't exist
+          mkdir -p docs
+          
+          # Generate HTML page
+          python3 .github/actions/collect-rss-feeds/generate_summary.py \
+            --input rss-feeds-output.json \
+            --html docs/index.html
+          
+          echo "✓ GitHub Pages content generated"
+      
+      - name: Commit and push GitHub Pages content
+        if: success()
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          
+          # Add the docs directory
+          git add docs/
+          
+          # Check if there are changes to commit
+          if git diff --staged --quiet; then
+            echo "No changes to commit"
+          else
+            git commit -m "Update RSS feed GitHub Pages content [skip ci]"
+            git push
+            echo "✓ GitHub Pages content committed and pushed"
+          fi
