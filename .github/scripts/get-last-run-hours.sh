@@ -22,7 +22,7 @@ if [ -n "$LAST_RUN" ]; then
   LAST_RUN_DATE=$(date -u -d "$LAST_RUN" +%Y-%m-%d)
   LAST_RUN_EPOCH=$(date -u -d "$LAST_RUN" +%s)
   NOW_EPOCH=$(date -u +%s)
-  HOURS_SINCE=$((($NOW_EPOCH - $LAST_RUN_EPOCH) / 3600))
+  HOURS_SINCE=$(((NOW_EPOCH - LAST_RUN_EPOCH) / 3600))
   
   # If last run was today, use 24 hours, otherwise use hours since last run
   if [ "$LAST_RUN_DATE" = "$TODAY" ]; then

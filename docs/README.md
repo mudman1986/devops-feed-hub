@@ -14,12 +14,14 @@ The `index.html` file in this directory is automatically generated and updated b
 ## Viewing the Page
 
 Once GitHub Pages is enabled, the page will be available at:
-```
+
+```text
 https://<username>.github.io/<repository-name>/
 ```
 
 For this repository:
-```
+
+```text
 https://mudman1986.github.io/Mudman1986/
 ```
 
@@ -40,12 +42,14 @@ When the workflow runs:
 ## Customization
 
 To customize the feeds being collected, edit:
-```
+
+```text
 .github/rss-feeds.json
 ```
 
 The HTML styling can be customized by modifying the generation logic in:
-```
+
+```text
 .github/actions/collect-rss-feeds/generate_summary.py
 ```
 
