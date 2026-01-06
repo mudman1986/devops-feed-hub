@@ -40,6 +40,8 @@ else
   if [ -d "$CONTENT_DIR" ]; then
     echo "Saving generated content to temporary location" >&2
     cp -r "$CONTENT_DIR" "$TEMP_DIR/"
+    # Clean up uncommitted changes in working directory to allow branch switch
+    git reset --hard HEAD
   fi
   
   # Fetch latest changes from origin
