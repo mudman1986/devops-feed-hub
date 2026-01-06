@@ -447,19 +447,24 @@ class TestSummaryIntegration(unittest.TestCase):
             'failed_feeds': []
         }
 
-        with tempfile.NamedTemporaryFile(mode='w', delete=False, suffix='.md') as f:
+        with tempfile.NamedTemporaryFile(
+            mode='w',
+            delete=False,
+            suffix='.md',
+            encoding='utf-8'
+        ) as f:
             markdown_file = f.name
 
         try:
             markdown_content = generate_markdown_summary(sample_data)
-            with open(markdown_file, 'w') as f:
+            with open(markdown_file, 'w', encoding='utf-8') as f:
                 f.write(markdown_content)
 
             # Verify file was written
             self.assertTrue(os.path.exists(markdown_file))
 
             # Verify content
-            with open(markdown_file, 'r') as f:
+            with open(markdown_file, 'r', encoding='utf-8') as f:
                 content = f.read()
 
             self.assertIn('Test Feed', content)
@@ -498,19 +503,24 @@ class TestSummaryIntegration(unittest.TestCase):
             'failed_feeds': []
         }
 
-        with tempfile.NamedTemporaryFile(mode='w', delete=False, suffix='.html') as f:
+        with tempfile.NamedTemporaryFile(
+            mode='w',
+            delete=False,
+            suffix='.html',
+            encoding='utf-8'
+        ) as f:
             html_file = f.name
 
         try:
             html_content = generate_html_page(sample_data)
-            with open(html_file, 'w') as f:
+            with open(html_file, 'w', encoding='utf-8') as f:
                 f.write(html_content)
 
             # Verify file was written
             self.assertTrue(os.path.exists(html_file))
 
             # Verify content
-            with open(html_file, 'r') as f:
+            with open(html_file, 'r', encoding='utf-8') as f:
                 content = f.read()
 
             self.assertIn('<!DOCTYPE html>', content)

@@ -230,8 +230,23 @@ def generate_html_page(data: Dict[str, Any], template_path: str = None) -> str:
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Generate summary from RSS feed collection data')
-    parser.add_argument('--input', required=True, help='Input JSON file from RSS feed collection')
+    """
+    Main entry point for the summary generator script.
+
+    Parses command line arguments and generates markdown and/or HTML summaries
+    from RSS feed collection data.
+
+    Returns:
+        int: 0 on success, 1 on error.
+    """
+    parser = argparse.ArgumentParser(
+        description='Generate summary from RSS feed collection data'
+    )
+    parser.add_argument(
+        '--input',
+        required=True,
+        help='Input JSON file from RSS feed collection'
+    )
     parser.add_argument('--markdown', help='Output markdown file path')
     parser.add_argument('--html', help='Output HTML file path')
 
@@ -239,7 +254,7 @@ def main():
 
     # Read input JSON
     try:
-        with open(args.input, 'r') as f:
+        with open(args.input, 'r', encoding='utf-8') as f:
             data = json.load(f)
     except FileNotFoundError:
         print(f"Error: Input file {args.input} not found")
@@ -251,14 +266,14 @@ def main():
     # Generate markdown if requested
     if args.markdown:
         markdown_content = generate_markdown_summary(data)
-        with open(args.markdown, 'w') as f:
+        with open(args.markdown, 'w', encoding='utf-8') as f:
             f.write(markdown_content)
         print(f"✓ Markdown summary written to {args.markdown}")
 
     # Generate HTML if requested
     if args.html:
         html_content = generate_html_page(data)
-        with open(args.html, 'w') as f:
+        with open(args.html, 'w', encoding='utf-8') as f:
             f.write(html_content)
         print(f"✓ HTML page written to {args.html}")
 
@@ -266,4 +281,5 @@ def main():
 
 
 if __name__ == '__main__':
-    exit(main())
+    import sys
+    sys.exit(main())
