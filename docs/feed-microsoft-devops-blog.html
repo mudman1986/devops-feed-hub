@@ -63,8 +63,9 @@
             max-width: 1200px;
             margin: 0 auto 20px;
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between;
             align-items: center;
+            gap: 20px;
         }
         
         .theme-toggle {
@@ -282,6 +283,41 @@
             border-color: var(--border-accent);
         }
         
+        .timeframe-selector {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .timeframe-button {
+            padding: 8px 16px;
+            background-color: var(--bg-tertiary);
+            color: var(--text-primary);
+            border: 1px solid var(--border-primary);
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: all 0.2s ease;
+        }
+        
+        .timeframe-button:hover {
+            background-color: var(--bg-hover);
+            border-color: var(--border-accent);
+        }
+        
+        .timeframe-button.active {
+            background-color: var(--border-accent);
+            color: var(--bg-secondary);
+            border-color: var(--border-accent);
+            font-weight: 600;
+        }
+        
+        .timeframe-button:focus {
+            outline: 2px solid var(--border-accent);
+            outline-offset: 2px;
+        }
+        
         .footer {
             margin-top: 40px;
             padding-top: 20px;
@@ -313,11 +349,31 @@
                 gap: 15px;
                 align-items: flex-start;
             }
+            
+            .timeframe-selector {
+                width: 100%;
+            }
+            
+            .timeframe-button {
+                flex: 1;
+                min-width: 80px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="header">
+        <div class="timeframe-selector">
+            <button class="timeframe-button active" data-timeframe="1day" aria-label="Show last 24 hours">
+                1 Day
+            </button>
+            <button class="timeframe-button" data-timeframe="7days" aria-label="Show last 7 days">
+                7 Days
+            </button>
+            <button class="timeframe-button" data-timeframe="30days" aria-label="Show last 30 days">
+                30 Days
+            </button>
+        </div>
         <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
             <span id="theme-icon">☀️</span>
             <span id="theme-text">Light Mode</span>
@@ -338,7 +394,7 @@
 </nav>
 
         <div class="metadata">
-            <strong>Last Updated:</strong> January 07, 2026 at 06:33 PM UTC<br>
+            <strong>Last Updated:</strong> January 07, 2026 at 07:22 PM UTC<br>
             <strong>Time Range:</strong> Last 24 hours
         </div>
 
@@ -346,7 +402,7 @@
         <div class="stats">
             <div class="stat-card">
                 <div class="stat-label">Total Articles</div>
-                <div class="stat-value">0</div>
+                <div class="stat-value">5</div>
             </div>
         </div>
 
@@ -355,17 +411,59 @@
         <div class="feed-section">
             <h3>Microsoft DevOps Blog
                 <span class="feed-count">
-                    0 articles
+                    5 articles
                 </span>
             </h3>
 
-            <div class="no-articles">No new articles in this time period</div>
+            <ul class="article-list">
+
+                <li class="article-item">
+                    <a href="https://devblogs.microsoft.com/devops/the-new-test-run-hub-is-going-generally-available/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        The New Test Run Hub is Going Generally Available!
+                    </a>
+                    <div class="article-meta">Published: 2025-12-22T13:06:01+00:00</div>
+                </li>
+
+                <li class="article-item">
+                    <a href="https://devblogs.microsoft.com/devops/work-item-linking-for-advanced-security-alerts-now-available/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Work item linking for Advanced Security alerts now available
+                    </a>
+                    <div class="article-meta">Published: 2025-12-19T18:24:14+00:00</div>
+                </li>
+
+                <li class="article-item">
+                    <a href="https://devblogs.microsoft.com/devops/github-copilot-for-azure-boards/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Azure Boards integration with GitHub Copilot
+                    </a>
+                    <div class="article-meta">Published: 2025-12-16T13:17:08+00:00</div>
+                </li>
+
+                <li class="article-item">
+                    <a href="https://devblogs.microsoft.com/devops/retirement-of-global-personal-access-tokens-in-azure-devops/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Retirement of Global Personal Access Tokens in Azure DevOps
+                    </a>
+                    <div class="article-meta">Published: 2025-12-12T14:15:06+00:00</div>
+                </li>
+
+                <li class="article-item">
+                    <a href="https://devblogs.microsoft.com/devops/announcing-azure-devops-server-general-availability/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Announcing Azure DevOps Server General Availability
+                    </a>
+                    <div class="article-meta">Published: 2025-12-09T20:39:17+00:00</div>
+                </li>
+
+            </ul>
 
         </div>
 
         
         <div class="footer">
-            Generated by RSS Feed Collector | Last updated: January 07, 2026 at 06:33 PM UTC
+            Generated by RSS Feed Collector | Last updated: January 07, 2026 at 07:22 PM UTC
         </div>
     </div>
     
@@ -413,6 +511,176 @@
                 themeText.textContent = 'Dark Mode';
             }
         }
+        
+        // Timeframe filtering functionality
+        const timeframeButtons = document.querySelectorAll('.timeframe-button');
+        const timeframeHoursMap = {
+            '1day': 24,
+            '7days': 168,
+            '30days': 720
+        };
+        
+        // Get saved timeframe preference or default to 1 day
+        let savedTimeframe = '1day';
+        try {
+            savedTimeframe = localStorage.getItem('timeframe') || '1day';
+        } catch (e) {
+            console.warn('localStorage unavailable, using default timeframe:', e);
+        }
+        
+        // Apply saved timeframe on page load
+        applyTimeframeFilter(savedTimeframe);
+        
+        // Add click listeners to timeframe buttons
+        timeframeButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const timeframe = button.getAttribute('data-timeframe');
+                
+                // Update active state
+                timeframeButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                
+                // Save preference
+                try {
+                    localStorage.setItem('timeframe', timeframe);
+                } catch (e) {
+                    console.warn('Unable to save timeframe preference:', e);
+                }
+                
+                // Apply filter
+                applyTimeframeFilter(timeframe);
+            });
+        });
+        
+        function applyTimeframeFilter(timeframe) {
+            // Update active button state
+            timeframeButtons.forEach(btn => {
+                if (btn.getAttribute('data-timeframe') === timeframe) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+            
+            const hours = timeframeHoursMap[timeframe] || 24;
+            const cutoffTime = new Date(Date.now() - hours * 60 * 60 * 1000);
+            
+            // Filter articles by timeframe
+            const allArticles = document.querySelectorAll('.article-item');
+            let visibleCount = 0;
+            
+            allArticles.forEach(article => {
+                const publishedText = article.querySelector('.article-meta')?.textContent;
+                if (publishedText && publishedText.includes('Published:')) {
+                    const dateStr = publishedText.replace('Published:', '').trim();
+                    try {
+                        const publishDate = new Date(dateStr);
+                        if (!isNaN(publishDate.getTime())) {
+                            if (publishDate >= cutoffTime) {
+                                article.style.display = '';
+                                visibleCount++;
+                            } else {
+                                article.style.display = 'none';
+                            }
+                        } else {
+                            // If date parsing fails, show the article
+                            article.style.display = '';
+                            visibleCount++;
+                        }
+                    } catch (e) {
+                        // If there's an error, show the article
+                        article.style.display = '';
+                        visibleCount++;
+                    }
+                } else {
+                    // Show articles without dates or with unknown dates
+                    article.style.display = '';
+                    visibleCount++;
+                }
+            });
+            
+            // Update feed counts and show/hide feed sections
+            const feedSections = document.querySelectorAll('.feed-section');
+            feedSections.forEach(section => {
+                const articles = section.querySelectorAll('.article-item');
+                const visibleArticles = Array.from(articles).filter(a => a.style.display !== 'none');
+                const count = visibleArticles.length;
+                
+                // Update count badge
+                const countBadge = section.querySelector('.feed-count');
+                if (countBadge) {
+                    const plural = count !== 1 ? 's' : '';
+                    countBadge.textContent = `${count} article${plural}`;
+                }
+                
+                // Show "no articles" message if no visible articles
+                const noArticlesMsg = section.querySelector('.no-articles');
+                const articleList = section.querySelector('.article-list');
+                
+                if (count === 0) {
+                    if (articleList) articleList.style.display = 'none';
+                    if (!noArticlesMsg) {
+                        const msg = document.createElement('div');
+                        msg.className = 'no-articles';
+                        msg.textContent = 'No new articles in this time period';
+                        section.appendChild(msg);
+                    } else {
+                        noArticlesMsg.style.display = '';
+                    }
+                } else {
+                    if (articleList) articleList.style.display = '';
+                    if (noArticlesMsg) noArticlesMsg.style.display = 'none';
+                }
+            });
+            
+            // Update metadata display
+            updateMetadataDisplay(timeframe);
+            
+            // Update stats if on main page
+            updateStats();
+        }
+        
+        function updateMetadataDisplay(timeframe) {
+            const metadata = document.querySelector('.metadata');
+            if (metadata) {
+                const timeRangeText = timeframe === '1day' ? 'Last 24 hours' : 
+                                    timeframe === '7days' ? 'Last 7 days' : 
+                                    'Last 30 days';
+                
+                // Update time range display safely using DOM methods
+                const strongElements = metadata.querySelectorAll('strong');
+                strongElements.forEach(strong => {
+                    if (strong.textContent === 'Time Range:') {
+                        // Get the text node after the strong element
+                        const textNode = strong.nextSibling;
+                        if (textNode && textNode.nodeType === Node.TEXT_NODE) {
+                            textNode.textContent = ' ' + timeRangeText;
+                        }
+                    }
+                });
+            }
+        }
+        
+        function updateStats() {
+            const statCards = document.querySelectorAll('.stat-card');
+            if (statCards.length === 0) return;
+            
+            // Count visible articles across all feeds
+            const allArticles = document.querySelectorAll('.article-item');
+            const visibleArticles = Array.from(allArticles).filter(a => a.style.display !== 'none');
+            
+            // Update total articles stat if it exists
+            statCards.forEach(card => {
+                const label = card.querySelector('.stat-label');
+                if (label && label.textContent === 'Total Articles') {
+                    const value = card.querySelector('.stat-value');
+                    if (value) {
+                        value.textContent = visibleArticles.length;
+                    }
+                }
+            });
+        }
+    
     </script>
 </body>
 </html>
