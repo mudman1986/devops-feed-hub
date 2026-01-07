@@ -589,7 +589,7 @@ class TestMultiPageGeneration(unittest.TestCase):
 
     def test_generate_feed_nav(self):
         """Test navigation generation"""
-        nav_html = generate_feed_nav(self.sample_data["feeds"], None, False)
+        nav_html = generate_feed_nav(self.sample_data["feeds"], None)
 
         # Check navigation structure
         self.assertIn('<nav class="feed-nav">', nav_html)
@@ -597,7 +597,11 @@ class TestMultiPageGeneration(unittest.TestCase):
 
         # Check all feeds link
         self.assertIn('href="index.html"', nav_html)
-        self.assertIn("📊 All Feeds", nav_html)
+        self.assertIn("All Feeds", nav_html)
+
+        # Check summary link
+        self.assertIn('href="summary.html"', nav_html)
+        self.assertIn("Summary", nav_html)
 
         # Check feed links
         self.assertIn('href="feed-test-feed-1.html"', nav_html)
@@ -607,7 +611,7 @@ class TestMultiPageGeneration(unittest.TestCase):
 
     def test_generate_feed_nav_with_current(self):
         """Test navigation with active feed"""
-        nav_html = generate_feed_nav(self.sample_data["feeds"], "Test Feed 1", False)
+        nav_html = generate_feed_nav(self.sample_data["feeds"], "Test Feed 1")
 
         # Check that current feed has active class
         self.assertIn('class="nav-link active"', nav_html)
@@ -750,25 +754,25 @@ class TestMultiPageGeneration(unittest.TestCase):
         self.assertNotIn("<script>alert('XSS')</script>", result)
 
     def test_generate_feed_nav_with_failed_feeds(self):
-        """Test navigation includes failed feeds link when there are failed feeds"""
+        """Test navigation includes summary link (failed feeds now shown on summary page)"""
         data_with_failures = self.sample_data.copy()
         data_with_failures["failed_feeds"] = [
             {"name": "Failed Feed", "url": "https://example.com/failed"}
         ]
 
-        nav_html = generate_feed_nav(data_with_failures["feeds"], None, True)
+        nav_html = generate_feed_nav(data_with_failures["feeds"], None)
 
-        # Check failed feeds link appears
-        self.assertIn('href="failed-feeds.html"', nav_html)
-        self.assertIn("❌ Failed Feeds", nav_html)
+        # Check summary link appears (failed feeds are now on summary page)
+        self.assertIn('href="summary.html"', nav_html)
+        self.assertIn("Summary", nav_html)
 
     def test_generate_feed_nav_without_failed_feeds(self):
-        """Test navigation does not include failed feeds link when there are none"""
-        nav_html = generate_feed_nav(self.sample_data["feeds"], None, False)
+        """Test navigation includes summary link"""
+        nav_html = generate_feed_nav(self.sample_data["feeds"], None)
 
-        # Check failed feeds link does not appear
-        self.assertNotIn('href="failed-feeds.html"', nav_html)
-        self.assertNotIn("❌ Failed Feeds", nav_html)
+        # Check summary link appears
+        self.assertIn('href="summary.html"', nav_html)
+        self.assertIn("Summary", nav_html)
 
     def test_generate_failed_feeds_page(self):
         """Test generation of failed feeds page"""

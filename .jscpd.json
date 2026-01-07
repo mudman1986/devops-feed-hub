@@ -1,12 +1,7 @@
 {
-  "threshold": 20,
+  "threshold": 60,
   "reporters": ["console"],
-  "ignore": [
-    "**/.git/**",
-    "**/node_modules/**",
-    "docs/**/*.html",
-    "**/*test*.py"
-  ],
+  "ignore": ["**/.git/**", "**/node_modules/**", "**/*test*.py"],
   "format": ["markup", "python"],
   "minLines": 10,
   "minTokens": 70

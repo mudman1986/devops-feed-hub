@@ -96,7 +96,6 @@ def generate_markdown_summary(data: Dict[str, Any]) -> str:
 def generate_feed_nav(
     feeds: Dict[str, Any],
     current_feed: Optional[str] = None,
-    has_failed_feeds: bool = False,
 ) -> str:
     """
     Generate navigation links for feed pages (for sidebar)
@@ -105,7 +104,6 @@ def generate_feed_nav(
         feeds: Dictionary of feed data
         current_feed: Name of current feed (if on a feed page), "failed" for failed feeds page,
                      or "summary" for summary page
-        has_failed_feeds: Whether there are failed feeds to show
 
     Returns:
         HTML navigation string
@@ -172,10 +170,10 @@ def generate_failed_feeds_content(failed_feeds: list) -> str:
 def format_publish_date(iso_date_str: str) -> str:
     """
     Format ISO 8601 date string to human-readable format.
-    
+
     Args:
         iso_date_str: ISO 8601 formatted date string
-        
+
     Returns:
         Human-readable date string (e.g., "Jan 6, 2026 at 7:24 PM")
     """
@@ -357,10 +355,9 @@ def generate_html_page(
 
     # Generate content
     content = generate_html_content(data, current_feed)
-    
+
     # Generate sidebar navigation
-    has_failed_feeds = len(data.get("failed_feeds", [])) > 0
-    sidebar_content = generate_feed_nav(data["feeds"], current_feed, has_failed_feeds)
+    sidebar_content = generate_feed_nav(data["feeds"], current_feed)
 
     # Get formatted timestamp
     collected_time = parse_iso_timestamp(data["metadata"]["collected_at"])
@@ -428,7 +425,7 @@ def generate_all_pages(data: Dict[str, Any], output_dir: str) -> None:
     with open(index_path, "w", encoding="utf-8") as f:
         f.write(index_html)
     print(f"✓ Main index page written to {index_path}")
-    
+
     # Generate summary page
     summary_path = os.path.join(output_dir, "summary.html")
     summary_html = generate_html_page(data, current_feed="summary")
