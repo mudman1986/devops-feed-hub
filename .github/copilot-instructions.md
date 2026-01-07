@@ -126,7 +126,7 @@
   - **HTML_PRETTIER**: HTML formatting
   - **Markdown**: Validates Markdown files
   - **MARKDOWN_PRETTIER**: Markdown formatting
-  - **NATURAL_LANGUAGE**: Terminology consistency (e.g., "GitHub" not "github", "readme" not "README")
+  - **NATURAL_LANGUAGE**: Terminology consistency (e.g., "GitHub" not "github", "readme" not "readme")
   - **SHELL_SHFMT**: Shell script formatting (uses tabs for indentation)
   - **JSCPD**: Copy-paste detection
   - **CHECKOV**: Security scanning for workflows

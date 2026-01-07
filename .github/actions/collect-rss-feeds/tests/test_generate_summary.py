@@ -813,7 +813,7 @@ class TestMultiPageGeneration(unittest.TestCase):
             )
 
     def test_generate_all_pages_without_failed_feeds(self):
-        """Test that generate_all_pages does not create failed feeds page when there are no failures"""
+        """Test generate_all_pages without failed feeds page"""
         with tempfile.TemporaryDirectory() as tmpdir:
             generate_all_pages(self.sample_data, tmpdir)
 

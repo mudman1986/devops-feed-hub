@@ -8,10 +8,6 @@ on:
 
   workflow_dispatch:
     inputs:
-      hours:
-        description: "Fetch articles from the last N hours (default: 720 to support 1 day/7 days/30 days filtering)"
-        required: false
-        default: "720"
       target-branch:
         description: "Target branch for GitHub Pages content (default: github-pages)"
         required: false
@@ -28,20 +24,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Get last successful run time
-        id: last-run
-        run: |
-          HOURS=$(bash .github/scripts/get-last-run-hours.sh "${{ github.event.inputs.hours }}")
-          echo "hours=\"$HOURS\"" >> "$GITHUB_OUTPUT"
-        env:
-          GH_TOKEN: ${{ github.token }}
-
       - name: Collect RSS Feeds
         id: collect
         uses: ./.github/actions/collect-rss-feeds
         with:
+          hours: "720"
           config-path: ".github/rss-feeds.json"
-          hours: ${{ steps.last-run.outputs.hours }}
           output-path: "rss-feeds-output.json"
 
       - name: Upload results as artifact
