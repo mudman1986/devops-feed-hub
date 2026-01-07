@@ -21,7 +21,9 @@ python3 -m unittest test_collect_feeds
 ## Test Coverage
 
 ### test_generate_summary.py
+
 Tests for the `generate_summary.py` module:
+
 - Markdown summary generation
 - HTML page generation
 - Content formatting
@@ -29,7 +31,9 @@ Tests for the `generate_summary.py` module:
 - File I/O operations
 
 ### test_collect_feeds.py
+
 Tests for the `collect_feeds.py` module:
+
 - RSS feed parsing
 - Date filtering
 - Error handling
@@ -39,10 +43,12 @@ Tests for the `collect_feeds.py` module:
 ## Dependencies
 
 Tests require the same dependencies as the main scripts:
+
 - feedparser
 - Python 3.11+
 
 Install test dependencies:
+
 ```bash
 pip install feedparser
 ```

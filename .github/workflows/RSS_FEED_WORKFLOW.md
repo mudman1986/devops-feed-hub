@@ -54,6 +54,7 @@ Edit `.github/rss-feeds.json`:
 ### 2. Run the Workflow
 
 The workflow runs automatically:
+
 - **Schedule**: Monday-Friday at 9 AM UTC
 - **Trigger**: On every push to main branch
 - **Manual**: Via workflow_dispatch with custom hours parameter
@@ -61,6 +62,7 @@ The workflow runs automatically:
 ### 3. View Results
 
 Results are available in:
+
 1. **Workflow Summary**: Formatted tables with articles
 2. **Artifacts**: Download `rss-feeds-output.json` for 30 days
 3. **Logs**: Detailed collection progress
@@ -74,9 +76,9 @@ The composite action can be reused in any workflow:
   id: collect
   uses: ./.github/actions/collect-rss-feeds
   with:
-    config-path: '.github/rss-feeds.json'
+    config-path: ".github/rss-feeds.json"
     hours: 24
-    output-path: 'feeds.json'
+    output-path: "feeds.json"
 
 - name: Process results
   run: |
@@ -140,6 +142,7 @@ Edit `.github/rss-feeds.json` to add or remove feeds.
 ### Time Window
 
 The workflow automatically calculates the time window:
+
 - If last run was today: fetch last 24 hours
 - Otherwise: fetch since last successful run (max 7 days)
 - Manual runs: specify custom hours via workflow_dispatch
@@ -151,6 +154,7 @@ The action generates a structured JSON file with feed data, articles, and summar
 ## Library Choice
 
 **feedparser** was chosen because:
+
 - Most popular Python RSS/Atom parser (18K+ stars on GitHub)
 - Handles both RSS 2.0 and Atom feeds
 - Robust error handling

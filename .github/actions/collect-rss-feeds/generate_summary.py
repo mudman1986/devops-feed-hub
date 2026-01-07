@@ -4,20 +4,34 @@ Summary Generator for RSS Feed Collection
 Generates both markdown (for GitHub workflow summary) and HTML (for GitHub Pages)
 """
 
-import json
 import argparse
-from html import escape as html_escape
+import json
+import os
 from datetime import datetime
-from typing import Dict, Any, List
+from html import escape as html_escape
+from typing import Any, Dict
+
+
+def parse_iso_timestamp(iso_string: str) -> datetime:
+    """
+    Parse ISO 8601 timestamp string to datetime object.
+
+    Args:
+        iso_string: ISO 8601 formatted timestamp string (may end with 'Z')
+
+    Returns:
+        datetime object
+    """
+    return datetime.fromisoformat(iso_string.replace("Z", "+00:00"))
 
 
 def generate_markdown_summary(data: Dict[str, Any]) -> str:
     """
     Generate markdown summary from RSS feed collection data
-    
+
     Args:
         data: RSS feed collection data dictionary
-        
+
     Returns:
         Markdown formatted string
     """
@@ -26,7 +40,7 @@ def generate_markdown_summary(data: Dict[str, Any]) -> str:
     summary.append(f"**Collected at:** {data['metadata']['collected_at']}\n")
     summary.append(f"**Time range:** Last {data['metadata']['hours']} hours\n")
     summary.append("")
-    
+
     # Overall summary
     summary.append("## 📊 Summary\n")
     summary.append(f"- **Total feeds:** {data['summary']['total_feeds']}")
@@ -34,263 +48,66 @@ def generate_markdown_summary(data: Dict[str, Any]) -> str:
     summary.append(f"- **Failed:** {data['summary']['failed_feeds']}")
     summary.append(f"- **Total articles:** {data['summary']['total_articles']}")
     summary.append("")
-    
+
     # Successful feeds
-    if data['feeds']:
+    if data["feeds"]:
         summary.append("## ✅ Successful Feeds\n")
-        for feed_name, feed_data in data['feeds'].items():
+        for feed_name, feed_data in data["feeds"].items():
             summary.append(f"### {feed_name}")
             summary.append(f"- **Articles:** {feed_data['count']}")
-            
-            if feed_data['articles']:
+
+            if feed_data["articles"]:
                 summary.append("\n| Title | Published |")
                 summary.append("|-------|-----------|")
-                for article in feed_data['articles'][:10]:  # Limit to first 10
-                    title = article['title'][:80] + "..." if len(article['title']) > 80 else article['title']
-                    published = article['published']
+                for article in feed_data["articles"][:10]:  # Limit to first 10
+                    title = (
+                        article["title"][:80] + "..."
+                        if len(article["title"]) > 80
+                        else article["title"]
+                    )
+                    published = article["published"]
                     summary.append(f"| [{title}]({article['link']}) | {published} |")
-                
-                if feed_data['count'] > 10:
-                    summary.append(f"\n*...and {feed_data['count'] - 10} more articles*")
+
+                if feed_data["count"] > 10:
+                    summary.append(
+                        f"\n*...and {feed_data['count'] - 10} more articles*"
+                    )
             else:
                 summary.append("*No new articles*")
-            
+
             summary.append("")
-    
+
     # Failed feeds
-    if data['failed_feeds']:
+    if data["failed_feeds"]:
         summary.append("## ❌ Failed Feeds\n")
         summary.append("| Feed Name | URL |")
         summary.append("|-----------|-----|")
-        for failed in data['failed_feeds']:
+        for failed in data["failed_feeds"]:
             summary.append(f"| {failed['name']} | {failed['url']} |")
         summary.append("")
-    
-    return '\n'.join(summary)
+
+    return "\n".join(summary)
 
 
-def generate_html_page(data: Dict[str, Any]) -> str:
+def generate_html_content(data: Dict[str, Any]) -> str:
     """
-    Generate HTML page from RSS feed collection data
-    
+    Generate HTML content (without template wrapper) from RSS feed collection data
+
     Args:
         data: RSS feed collection data dictionary
-        
+
     Returns:
-        HTML formatted string
+        HTML content string to be injected into template
     """
-    collected_time = datetime.fromisoformat(data['metadata']['collected_at'].replace('Z', '+00:00'))
-    formatted_time = collected_time.strftime('%B %d, %Y at %I:%M %p UTC')
-    
-    html = f"""<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="RSS Feed Collection - Latest articles from tech blogs and news sources">
-    <title>RSS Feed Collection</title>
-    <style>
-        * {{
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }}
-        
-        body {{
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
-            line-height: 1.6;
-            color: #24292e;
-            background-color: #f6f8fa;
-            padding: 20px;
-        }}
-        
-        .container {{
-            max-width: 1200px;
-            margin: 0 auto;
-            background-color: white;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
-        }}
-        
-        h1 {{
-            color: #0366d6;
-            margin-bottom: 10px;
-            font-size: 2em;
-        }}
-        
-        h2 {{
-            color: #24292e;
-            margin-top: 30px;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
-            border-bottom: 2px solid #e1e4e8;
-            font-size: 1.5em;
-        }}
-        
-        h3 {{
-            color: #0366d6;
-            margin-top: 20px;
-            margin-bottom: 10px;
-            font-size: 1.2em;
-        }}
-        
-        .metadata {{
-            color: #586069;
-            margin-bottom: 20px;
-            padding: 15px;
-            background-color: #f6f8fa;
-            border-radius: 6px;
-        }}
-        
-        .stats {{
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin: 20px 0;
-        }}
-        
-        .stat-card {{
-            padding: 20px;
-            background-color: #f6f8fa;
-            border-radius: 6px;
-            border-left: 4px solid #0366d6;
-        }}
-        
-        .stat-card.success {{
-            border-left-color: #28a745;
-        }}
-        
-        .stat-card.error {{
-            border-left-color: #d73a49;
-        }}
-        
-        .stat-label {{
-            font-size: 0.9em;
-            color: #586069;
-            margin-bottom: 5px;
-        }}
-        
-        .stat-value {{
-            font-size: 2em;
-            font-weight: bold;
-            color: #24292e;
-        }}
-        
-        .feed-section {{
-            margin-bottom: 30px;
-        }}
-        
-        .article-list {{
-            list-style: none;
-            margin-top: 10px;
-        }}
-        
-        .article-item {{
-            padding: 12px;
-            margin-bottom: 8px;
-            background-color: #f6f8fa;
-            border-radius: 6px;
-            transition: background-color 0.2s;
-        }}
-        
-        .article-item:hover {{
-            background-color: #e1e4e8;
-        }}
-        
-        .article-title {{
-            color: #0366d6;
-            text-decoration: none;
-            font-weight: 500;
-            display: block;
-            margin-bottom: 5px;
-        }}
-        
-        .article-title:hover {{
-            text-decoration: underline;
-        }}
-        
-        .article-meta {{
-            font-size: 0.9em;
-            color: #586069;
-        }}
-        
-        .feed-count {{
-            display: inline-block;
-            background-color: #0366d6;
-            color: white;
-            padding: 2px 8px;
-            border-radius: 12px;
-            font-size: 0.85em;
-            margin-left: 10px;
-        }}
-        
-        .failed-feeds {{
-            background-color: #fff5f5;
-            padding: 15px;
-            border-radius: 6px;
-            border-left: 4px solid #d73a49;
-        }}
-        
-        .failed-feed-item {{
-            padding: 8px;
-            margin-bottom: 5px;
-        }}
-        
-        .failed-feed-name {{
-            font-weight: 500;
-            color: #d73a49;
-        }}
-        
-        .failed-feed-url {{
-            font-size: 0.9em;
-            color: #586069;
-            word-break: break-all;
-        }}
-        
-        .no-articles {{
-            color: #586069;
-            font-style: italic;
-            padding: 10px;
-        }}
-        
-        .footer {{
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #e1e4e8;
-            text-align: center;
-            color: #586069;
-            font-size: 0.9em;
-        }}
-        
-        @media (max-width: 768px) {{
-            .container {{
-                padding: 20px;
-            }}
-            
-            h1 {{
-                font-size: 1.5em;
-            }}
-            
-            h2 {{
-                font-size: 1.3em;
-            }}
-            
-            .stats {{
-                grid-template-columns: 1fr;
-            }}
-        }}
-    </style>
-</head>
-<body>
-    <div class="container">
-        <h1>📰 RSS Feed Collection</h1>
-        
+    collected_time = parse_iso_timestamp(data["metadata"]["collected_at"])
+    formatted_time = collected_time.strftime("%B %d, %Y at %I:%M %p UTC")
+
+    content = f"""
         <div class="metadata">
             <strong>Last Updated:</strong> {formatted_time}<br>
             <strong>Time Range:</strong> Last {data['metadata']['hours']} hours
         </div>
-        
+
         <h2>📊 Summary</h2>
         <div class="stats">
             <div class="stat-card">
@@ -311,86 +128,148 @@ def generate_html_page(data: Dict[str, Any]) -> str:
             </div>
         </div>
 """
-    
+
     # Successful feeds
-    if data['feeds']:
-        html += """
+    if data["feeds"]:
+        content += """
         <h2>✅ Feed Articles</h2>
 """
-        for feed_name, feed_data in data['feeds'].items():
-            article_count = feed_data['count']
+        for feed_name, feed_data in data["feeds"].items():
+            article_count = feed_data["count"]
             escaped_feed_name = html_escape(feed_name)
-            html += f"""
+            article_plural = "s" if article_count != 1 else ""
+            content += f"""
         <div class="feed-section">
-            <h3>{escaped_feed_name}<span class="feed-count">{article_count} article{'s' if article_count != 1 else ''}</span></h3>
+            <h3>{escaped_feed_name}
+                <span class="feed-count">
+                    {article_count} article{article_plural}
+                </span>
+            </h3>
 """
-            if feed_data['articles']:
-                html += """
+            if feed_data["articles"]:
+                content += """
             <ul class="article-list">
 """
-                for article in feed_data['articles']:
-                    escaped_title = html_escape(article['title'])
-                    escaped_link = html_escape(article['link'])
-                    escaped_published = html_escape(article['published'])
-                    html += f"""
+                for article in feed_data["articles"]:
+                    escaped_title = html_escape(article["title"])
+                    escaped_link = html_escape(article["link"])
+                    escaped_published = html_escape(article["published"])
+                    content += f"""
                 <li class="article-item">
-                    <a href="{escaped_link}" class="article-title" target="_blank" rel="noopener noreferrer">{escaped_title}</a>
+                    <a href="{escaped_link}" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        {escaped_title}
+                    </a>
                     <div class="article-meta">Published: {escaped_published}</div>
                 </li>
 """
-                html += """
+                content += """
             </ul>
 """
             else:
-                html += """
+                content += """
             <div class="no-articles">No new articles in this time period</div>
 """
-            html += """
+            content += """
         </div>
 """
-    
+
     # Failed feeds
-    if data['failed_feeds']:
-        html += """
+    if data["failed_feeds"]:
+        content += """
         <h2>❌ Failed Feeds</h2>
         <div class="failed-feeds">
 """
-        for failed in data['failed_feeds']:
-            escaped_name = html_escape(failed['name'])
-            escaped_url = html_escape(failed['url'])
-            html += f"""
+        for failed in data["failed_feeds"]:
+            escaped_name = html_escape(failed["name"])
+            escaped_url = html_escape(failed["url"])
+            content += f"""
             <div class="failed-feed-item">
                 <div class="failed-feed-name">{escaped_name}</div>
                 <div class="failed-feed-url">{escaped_url}</div>
             </div>
 """
-        html += """
+        content += """
         </div>
 """
-    
-    html += f"""
-        <div class="footer">
-            Generated by RSS Feed Collector | Last updated: {formatted_time}
-        </div>
-    </div>
-</body>
-</html>
-"""
-    
+
+    return content
+
+
+def generate_html_page(data: Dict[str, Any], template_path: str = None) -> str:
+    """
+    Generate complete HTML page from RSS feed collection data using template.
+
+    Args:
+        data: RSS feed collection data dictionary.
+        template_path: Path to HTML template file (optional).
+
+    Returns:
+        Complete HTML page string.
+
+    Raises:
+        FileNotFoundError: If the specified template file does not exist.
+        IOError: If an I/O error occurs while reading the template file.
+        OSError: If a path-related or other OS-level error occurs when
+            accessing the template file.
+    """
+    # Get template path
+    if template_path is None:
+        script_dir = os.path.dirname(os.path.abspath(__file__))
+        template_path = os.path.join(script_dir, "template.html")
+
+    # Read template with error handling and explicit UTF-8 encoding
+    try:
+        with open(template_path, "r", encoding="utf-8") as f:
+            template = f.read()
+    except FileNotFoundError as exc:
+        raise FileNotFoundError(
+            f"HTML template file not found at '{template_path}'. "
+            "Ensure the template file exists and the path is correct."
+        ) from exc
+    except OSError as exc:
+        raise OSError(
+            f"Error reading HTML template file at '{template_path}': {exc}"
+        ) from exc
+
+    # Generate content
+    content = generate_html_content(data)
+
+    # Get formatted timestamp
+    collected_time = parse_iso_timestamp(data["metadata"]["collected_at"])
+    formatted_time = collected_time.strftime("%B %d, %Y at %I:%M %p UTC")
+
+    # Replace placeholders
+    html = template.replace("<!-- CONTENT_PLACEHOLDER -->", content)
+    html = html.replace("<!-- TIMESTAMP_PLACEHOLDER -->", formatted_time)
+
     return html
 
 
 def main():
-    parser = argparse.ArgumentParser(description='Generate summary from RSS feed collection data')
-    parser.add_argument('--input', required=True, help='Input JSON file from RSS feed collection')
-    parser.add_argument('--markdown', help='Output markdown file path')
-    parser.add_argument('--html', help='Output HTML file path')
-    
+    """
+    Main entry point for the summary generator script.
+
+    Parses command line arguments and generates markdown and/or HTML summaries
+    from RSS feed collection data.
+
+    Returns:
+        int: 0 on success, 1 on error.
+    """
+    parser = argparse.ArgumentParser(
+        description="Generate summary from RSS feed collection data"
+    )
+    parser.add_argument(
+        "--input", required=True, help="Input JSON file from RSS feed collection"
+    )
+    parser.add_argument("--markdown", help="Output markdown file path")
+    parser.add_argument("--html", help="Output HTML file path")
+
     args = parser.parse_args()
-    
+
     # Read input JSON
     try:
-        with open(args.input, 'r') as f:
+        with open(args.input, "r", encoding="utf-8") as f:
             data = json.load(f)
     except FileNotFoundError:
         print(f"Error: Input file {args.input} not found")
@@ -398,23 +277,25 @@ def main():
     except json.JSONDecodeError as e:
         print(f"Error: Invalid JSON in {args.input}: {e}")
         return 1
-    
+
     # Generate markdown if requested
     if args.markdown:
         markdown_content = generate_markdown_summary(data)
-        with open(args.markdown, 'w') as f:
+        with open(args.markdown, "w", encoding="utf-8") as f:
             f.write(markdown_content)
         print(f"✓ Markdown summary written to {args.markdown}")
-    
+
     # Generate HTML if requested
     if args.html:
         html_content = generate_html_page(data)
-        with open(args.html, 'w') as f:
+        with open(args.html, "w", encoding="utf-8") as f:
             f.write(html_content)
         print(f"✓ HTML page written to {args.html}")
-    
+
     return 0
 
 
-if __name__ == '__main__':
-    exit(main())
+if __name__ == "__main__":
+    import sys
+
+    sys.exit(main())

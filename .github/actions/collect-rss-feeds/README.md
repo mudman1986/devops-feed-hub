@@ -19,9 +19,9 @@ A reusable GitHub Actions composite action for collecting and processing RSS/Ato
 - name: Collect RSS Feeds
   uses: ./.github/actions/collect-rss-feeds
   with:
-    config-path: '.github/rss-feeds.json'
+    config-path: ".github/rss-feeds.json"
     hours: 24
-    output-path: 'rss-output.json'
+    output-path: "rss-output.json"
 ```
 
 ### With Outputs
@@ -31,7 +31,7 @@ A reusable GitHub Actions composite action for collecting and processing RSS/Ato
   id: collect
   uses: ./.github/actions/collect-rss-feeds
   with:
-    config-path: '.github/rss-feeds.json'
+    config-path: ".github/rss-feeds.json"
     hours: 24
 
 - name: Use outputs
@@ -42,20 +42,20 @@ A reusable GitHub Actions composite action for collecting and processing RSS/Ato
 
 ## Inputs
 
-| Input | Description | Required | Default |
-|-------|-------------|----------|---------|
-| `config-path` | Path to RSS feeds configuration JSON file | No | `.github/rss-feeds.json` |
-| `hours` | Fetch articles from the last N hours | No | `24` |
-| `output-path` | Path where output JSON will be saved | No | `rss-feeds-output.json` |
+| Input         | Description                               | Required | Default                  |
+| ------------- | ----------------------------------------- | -------- | ------------------------ |
+| `config-path` | Path to RSS feeds configuration JSON file | No       | `.github/rss-feeds.json` |
+| `hours`       | Fetch articles from the last N hours      | No       | `24`                     |
+| `output-path` | Path where output JSON will be saved      | No       | `rss-feeds-output.json`  |
 
 ## Outputs
 
-| Output | Description |
-|--------|-------------|
-| `output-file` | Path to the generated JSON output file |
-| `total-articles` | Total number of articles collected |
-| `successful-feeds` | Number of successfully fetched feeds |
-| `failed-feeds` | Number of failed feeds |
+| Output             | Description                            |
+| ------------------ | -------------------------------------- |
+| `output-file`      | Path to the generated JSON output file |
+| `total-articles`   | Total number of articles collected     |
+| `successful-feeds` | Number of successfully fetched feeds   |
+| `failed-feeds`     | Number of failed feeds                 |
 
 ## Configuration File Format
 
@@ -118,6 +118,7 @@ The action generates a JSON file with the following structure:
 ## Future Extensions
 
 This modular action can be used as a base for sending notifications to:
+
 - Email
 - Slack
 - Microsoft Teams
