@@ -94,18 +94,20 @@ def main():
         "--config", required=True, help="Path to RSS feeds configuration file"
     )
     parser.add_argument(
-        "--hours", type=int, default=24, help="Fetch articles from the last N hours"
+        "--hours", type=int, default=720, help="Fetch articles from the last N hours (default: 720 = 30 days)"
     )
     parser.add_argument("--output", required=True, help="Output JSON file path")
 
     args = parser.parse_args()
 
-    # Calculate since_time
+    # Always collect for the maximum timeframe to support all filter options
+    # Default to 30 days (720 hours) to support all timeframe options
+    max_hours = max(args.hours, 720)
     since_time = datetime.now(timezone.utc).replace(tzinfo=None) - timedelta(
-        hours=args.hours
+        hours=max_hours
     )
     print(
-        f"Fetching articles published after {since_time.isoformat()}", file=sys.stderr
+        f"Fetching articles published after {since_time.isoformat()} (last {max_hours} hours)", file=sys.stderr
     )
 
     # Load RSS feeds configuration
@@ -123,7 +125,12 @@ def main():
         "metadata": {
             "collected_at": datetime.now(timezone.utc).isoformat(),
             "since": since_time.isoformat(),
-            "hours": args.hours,
+            "hours": max_hours,
+            "timeframes": {
+                "1day": 24,
+                "7days": 168,
+                "30days": 720
+            }
         },
         "feeds": {},
         "failed_feeds": [],

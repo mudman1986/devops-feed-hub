@@ -11,7 +11,7 @@ on:
       hours:
         description: "Fetch articles from the last N hours"
         required: false
-        default: "24"
+        default: "720"
       target-branch:
         description: "Target branch for GitHub Pages content (default: github-pages)"
         required: false

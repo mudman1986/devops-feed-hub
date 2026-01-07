@@ -38,7 +38,8 @@ def generate_markdown_summary(data: Dict[str, Any]) -> str:
     summary = []
     summary.append("# 📰 RSS Feed Collection Summary\n")
     summary.append(f"**Collected at:** {data['metadata']['collected_at']}\n")
-    summary.append(f"**Time range:** Last {data['metadata']['hours']} hours\n")
+    hours = data['metadata'].get('hours', 24)
+    summary.append(f"**Time range:** Last {hours} hours (up to 30 days of data collected)\n")
     summary.append("")
 
     # Overall summary
@@ -244,7 +245,7 @@ def generate_html_content(data: Dict[str, Any], current_feed: str = None) -> str
     content += f"""
         <div class="metadata">
             <strong>Last Updated:</strong> {formatted_time}<br>
-            <strong>Time Range:</strong> Last {data['metadata']['hours']} hours
+            <strong>Time Range:</strong> Last 24 hours
         </div>
 """
 
