@@ -89,12 +89,42 @@ def generate_markdown_summary(data: Dict[str, Any]) -> str:
     return "\n".join(summary)
 
 
-def generate_html_content(data: Dict[str, Any]) -> str:
+def generate_feed_nav(feeds: Dict[str, Any], current_feed: str = None) -> str:
+    """
+    Generate navigation links for feed pages
+
+    Args:
+        feeds: Dictionary of feed data
+        current_feed: Name of current feed (if on a feed page)
+
+    Returns:
+        HTML navigation string
+    """
+    nav_html = '<nav class="feed-nav">\n'
+    nav_html += '  <a href="index.html" class="nav-link'
+    if current_feed is None:
+        nav_html += ' active'
+    nav_html += '">📊 All Feeds</a>\n'
+    
+    for feed_name in sorted(feeds.keys()):
+        feed_slug = generate_feed_slug(feed_name)
+        
+        nav_html += f'  <a href="feed-{feed_slug}.html" class="nav-link'
+        if current_feed == feed_name:
+            nav_html += ' active'
+        nav_html += f'">{html_escape(feed_name)}</a>\n'
+    
+    nav_html += '</nav>\n'
+    return nav_html
+
+
+def generate_html_content(data: Dict[str, Any], current_feed: str = None) -> str:
     """
     Generate HTML content (without template wrapper) from RSS feed collection data
 
     Args:
         data: RSS feed collection data dictionary
+        current_feed: If specified, generate content for only this feed
 
     Returns:
         HTML content string to be injected into template
@@ -102,12 +132,32 @@ def generate_html_content(data: Dict[str, Any]) -> str:
     collected_time = parse_iso_timestamp(data["metadata"]["collected_at"])
     formatted_time = collected_time.strftime("%B %d, %Y at %I:%M %p UTC")
 
-    content = f"""
+    # Add navigation
+    content = generate_feed_nav(data["feeds"], current_feed)
+
+    content += f"""
         <div class="metadata">
             <strong>Last Updated:</strong> {formatted_time}<br>
             <strong>Time Range:</strong> Last {data['metadata']['hours']} hours
         </div>
+"""
 
+    # If showing a single feed, adjust the summary
+    if current_feed:
+        feed_data = data["feeds"].get(current_feed, {})
+        article_count = feed_data.get("count", 0)
+        content += f"""
+        <h2>📊 {html_escape(current_feed)}</h2>
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-label">Total Articles</div>
+                <div class="stat-value">{article_count}</div>
+            </div>
+        </div>
+"""
+    else:
+        # Show overall summary for all feeds
+        content += f"""
         <h2>📊 Summary</h2>
         <div class="stats">
             <div class="stat-card">
@@ -129,12 +179,22 @@ def generate_html_content(data: Dict[str, Any]) -> str:
         </div>
 """
 
-    # Successful feeds
-    if data["feeds"]:
+    # Determine which feeds to display
+    feeds_to_display = {}
+    if current_feed:
+        # Single feed view
+        if current_feed in data["feeds"]:
+            feeds_to_display = {current_feed: data["feeds"][current_feed]}
+    else:
+        # All feeds view
+        feeds_to_display = data["feeds"]
+
+    # Display feeds
+    if feeds_to_display:
         content += """
         <h2>✅ Feed Articles</h2>
 """
-        for feed_name, feed_data in data["feeds"].items():
+        for feed_name, feed_data in feeds_to_display.items():
             article_count = feed_data["count"]
             escaped_feed_name = html_escape(feed_name)
             article_plural = "s" if article_count != 1 else ""
@@ -196,13 +256,16 @@ def generate_html_content(data: Dict[str, Any]) -> str:
     return content
 
 
-def generate_html_page(data: Dict[str, Any], template_path: str = None) -> str:
+def generate_html_page(
+    data: Dict[str, Any], template_path: str = None, current_feed: str = None
+) -> str:
     """
     Generate complete HTML page from RSS feed collection data using template.
 
     Args:
         data: RSS feed collection data dictionary.
         template_path: Path to HTML template file (optional).
+        current_feed: If specified, generate page for only this feed.
 
     Returns:
         Complete HTML page string.
@@ -233,17 +296,75 @@ def generate_html_page(data: Dict[str, Any], template_path: str = None) -> str:
         ) from exc
 
     # Generate content
-    content = generate_html_content(data)
+    content = generate_html_content(data, current_feed)
 
     # Get formatted timestamp
     collected_time = parse_iso_timestamp(data["metadata"]["collected_at"])
     formatted_time = collected_time.strftime("%B %d, %Y at %I:%M %p UTC")
 
+    # Update title if this is a feed-specific page
+    page_title = "RSS Feed Collection"
+    if current_feed:
+        page_title = f"{current_feed} - RSS Feed Collection"
+
     # Replace placeholders
     html = template.replace("<!-- CONTENT_PLACEHOLDER -->", content)
     html = html.replace("<!-- TIMESTAMP_PLACEHOLDER -->", formatted_time)
+    html = html.replace("<title>RSS Feed Collection</title>", f"<title>{html_escape(page_title)}</title>")
 
     return html
+
+
+def generate_feed_slug(feed_name: str) -> str:
+    """
+    Generate a URL-safe slug from a feed name
+
+    Args:
+        feed_name: The feed name
+
+    Returns:
+        URL-safe slug string
+    """
+    feed_slug = feed_name.lower().replace(' ', '-').replace('/', '-')
+    # Remove any other non-alphanumeric characters except hyphens
+    feed_slug = ''.join(c if c.isalnum() or c == '-' else '' for c in feed_slug)
+    # Remove consecutive hyphens
+    while '--' in feed_slug:
+        feed_slug = feed_slug.replace('--', '-')
+    # Remove leading/trailing hyphens
+    feed_slug = feed_slug.strip('-')
+    return feed_slug
+
+
+def generate_all_pages(data: Dict[str, Any], output_dir: str) -> None:
+    """
+    Generate all HTML pages (main index + individual feed pages)
+
+    Args:
+        data: RSS feed collection data dictionary
+        output_dir: Directory to write HTML files
+
+    Returns:
+        None
+    """
+    # Ensure output directory exists
+    os.makedirs(output_dir, exist_ok=True)
+
+    # Generate main index page (all feeds)
+    index_path = os.path.join(output_dir, "index.html")
+    index_html = generate_html_page(data)
+    with open(index_path, "w", encoding="utf-8") as f:
+        f.write(index_html)
+    print(f"✓ Main index page written to {index_path}")
+
+    # Generate individual feed pages
+    for feed_name in data["feeds"].keys():
+        feed_slug = generate_feed_slug(feed_name)
+        feed_path = os.path.join(output_dir, f"feed-{feed_slug}.html")
+        feed_html = generate_html_page(data, current_feed=feed_name)
+        with open(feed_path, "w", encoding="utf-8") as f:
+            f.write(feed_html)
+        print(f"✓ Feed page for '{feed_name}' written to {feed_path}")
 
 
 def main():
@@ -263,7 +384,11 @@ def main():
         "--input", required=True, help="Input JSON file from RSS feed collection"
     )
     parser.add_argument("--markdown", help="Output markdown file path")
-    parser.add_argument("--html", help="Output HTML file path")
+    parser.add_argument("--html", help="Output HTML file path (for single page mode)")
+    parser.add_argument(
+        "--output-dir",
+        help="Output directory for multi-page HTML (generates index + feed pages)",
+    )
 
     args = parser.parse_args()
 
@@ -285,8 +410,12 @@ def main():
             f.write(markdown_content)
         print(f"✓ Markdown summary written to {args.markdown}")
 
-    # Generate HTML if requested
-    if args.html:
+    # Generate multi-page HTML if output directory is specified
+    if args.output_dir:
+        generate_all_pages(data, args.output_dir)
+
+    # Generate single HTML page if requested (backward compatibility)
+    elif args.html:
         html_content = generate_html_page(data)
         with open(args.html, "w", encoding="utf-8") as f:
             f.write(html_content)

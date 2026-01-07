@@ -13,7 +13,13 @@ import unittest
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 # Import the functions we want to test
-from generate_summary import generate_html_page, generate_markdown_summary  # noqa: E402
+from generate_summary import (  # noqa: E402
+    generate_all_pages,
+    generate_feed_nav,
+    generate_feed_slug,
+    generate_html_page,
+    generate_markdown_summary,
+)
 
 
 class TestGenerateSummary(unittest.TestCase):
@@ -514,6 +520,229 @@ class TestSummaryIntegration(unittest.TestCase):
         finally:
             if os.path.exists(html_file):
                 os.remove(html_file)
+
+
+class TestMultiPageGeneration(unittest.TestCase):
+    """Test cases for multi-page generation functionality"""
+
+    def setUp(self):
+        """Set up test data"""
+        self.sample_data = {
+            "metadata": {
+                "collected_at": "2024-01-15T10:30:00Z",
+                "since": "2024-01-14T10:30:00Z",
+                "hours": 24,
+            },
+            "summary": {
+                "total_feeds": 2,
+                "successful_feeds": 2,
+                "failed_feeds": 0,
+                "total_articles": 3,
+            },
+            "feeds": {
+                "Test Feed 1": {
+                    "url": "https://example.com/feed1",
+                    "count": 2,
+                    "articles": [
+                        {
+                            "title": "Article 1",
+                            "link": "https://example.com/article1",
+                            "published": "2024-01-15T09:00:00Z",
+                        },
+                        {
+                            "title": "Article 2",
+                            "link": "https://example.com/article2",
+                            "published": "2024-01-15T08:00:00Z",
+                        },
+                    ],
+                },
+                "Test Feed 2": {
+                    "url": "https://example.com/feed2",
+                    "count": 1,
+                    "articles": [
+                        {
+                            "title": "Article 3",
+                            "link": "https://example.com/article3",
+                            "published": "2024-01-15T07:00:00Z",
+                        }
+                    ],
+                },
+            },
+            "failed_feeds": [],
+        }
+
+    def test_generate_feed_slug(self):
+        """Test feed slug generation"""
+        self.assertEqual(generate_feed_slug("Test Feed 1"), "test-feed-1")
+        self.assertEqual(generate_feed_slug("GitHub Blog"), "github-blog")
+        self.assertEqual(
+            generate_feed_slug("Microsoft/DevOps Blog"), "microsoft-devops-blog"
+        )
+        self.assertEqual(generate_feed_slug("Test@#$%Feed"), "testfeed")
+        self.assertEqual(generate_feed_slug("Test--Feed"), "test-feed")
+        self.assertEqual(generate_feed_slug("-Test Feed-"), "test-feed")
+
+    def test_generate_feed_nav(self):
+        """Test navigation generation"""
+        nav_html = generate_feed_nav(self.sample_data["feeds"])
+
+        # Check navigation structure
+        self.assertIn('<nav class="feed-nav">', nav_html)
+        self.assertIn("</nav>", nav_html)
+
+        # Check all feeds link
+        self.assertIn('href="index.html"', nav_html)
+        self.assertIn("📊 All Feeds", nav_html)
+
+        # Check feed links
+        self.assertIn('href="feed-test-feed-1.html"', nav_html)
+        self.assertIn('href="feed-test-feed-2.html"', nav_html)
+        self.assertIn("Test Feed 1", nav_html)
+        self.assertIn("Test Feed 2", nav_html)
+
+    def test_generate_feed_nav_with_current(self):
+        """Test navigation with active feed"""
+        nav_html = generate_feed_nav(self.sample_data["feeds"], "Test Feed 1")
+
+        # Check that current feed has active class
+        self.assertIn('class="nav-link active"', nav_html)
+
+        # Verify the active link is for the current feed
+        lines = nav_html.split("\n")
+        for line in lines:
+            if "Test Feed 1" in line:
+                # The active class should be in the same line
+                self.assertIn("active", line)
+                break
+        else:
+            self.fail("Test Feed 1 not found in navigation")
+
+    def test_generate_html_page_with_feed(self):
+        """Test HTML page generation for a specific feed"""
+        result = generate_html_page(self.sample_data, current_feed="Test Feed 1")
+
+        # Check that only the specified feed appears in articles
+        self.assertIn("Test Feed 1", result)
+        self.assertIn("Article 1", result)
+        self.assertIn("Article 2", result)
+        # Test Feed 2's article should not appear
+        self.assertIn("Test Feed 2", result)  # Will appear in navigation
+        # But Article 3 should not appear in the main content area
+
+        # Check for navigation
+        self.assertIn('<nav class="feed-nav">', result)
+        self.assertIn('href="index.html"', result)
+        self.assertIn('href="feed-test-feed-1.html"', result)
+
+        # Check page title is updated
+        self.assertIn("<title>Test Feed 1 - RSS Feed Collection</title>", result)
+
+    def test_generate_html_page_main_index(self):
+        """Test HTML page generation for main index (all feeds)"""
+        result = generate_html_page(self.sample_data)
+
+        # Check that all feeds appear
+        self.assertIn("Test Feed 1", result)
+        self.assertIn("Test Feed 2", result)
+        self.assertIn("Article 1", result)
+        self.assertIn("Article 2", result)
+        self.assertIn("Article 3", result)
+
+        # Check for navigation
+        self.assertIn('<nav class="feed-nav">', result)
+
+        # Check that main index link is active
+        self.assertIn('class="nav-link active"', result)
+
+    def test_generate_all_pages(self):
+        """Test generation of all pages (index + feed pages)"""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            generate_all_pages(self.sample_data, tmpdir)
+
+            # Check that index.html was created
+            index_path = os.path.join(tmpdir, "index.html")
+            self.assertTrue(os.path.exists(index_path))
+
+            # Check that feed pages were created
+            feed1_path = os.path.join(tmpdir, "feed-test-feed-1.html")
+            feed2_path = os.path.join(tmpdir, "feed-test-feed-2.html")
+            self.assertTrue(os.path.exists(feed1_path))
+            self.assertTrue(os.path.exists(feed2_path))
+
+            # Verify index content
+            with open(index_path, "r", encoding="utf-8") as f:
+                index_content = f.read()
+            self.assertIn("Test Feed 1", index_content)
+            self.assertIn("Test Feed 2", index_content)
+            self.assertIn("Article 1", index_content)
+            self.assertIn("Article 3", index_content)
+
+            # Verify feed 1 content
+            with open(feed1_path, "r", encoding="utf-8") as f:
+                feed1_content = f.read()
+            self.assertIn("Test Feed 1", feed1_content)
+            self.assertIn("Article 1", feed1_content)
+            self.assertIn("Article 2", feed1_content)
+
+            # Verify feed 2 content
+            with open(feed2_path, "r", encoding="utf-8") as f:
+                feed2_content = f.read()
+            self.assertIn("Test Feed 2", feed2_content)
+            self.assertIn("Article 3", feed2_content)
+
+    def test_generate_all_pages_creates_directory(self):
+        """Test that generate_all_pages creates output directory if it doesn't exist"""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            output_dir = os.path.join(tmpdir, "nested", "output")
+            # Directory doesn't exist yet
+            self.assertFalse(os.path.exists(output_dir))
+
+            generate_all_pages(self.sample_data, output_dir)
+
+            # Directory should now exist
+            self.assertTrue(os.path.exists(output_dir))
+            # And contain files
+            self.assertTrue(os.path.exists(os.path.join(output_dir, "index.html")))
+
+    def test_feed_page_navigation_links(self):
+        """Test that feed pages have correct navigation links"""
+        result = generate_html_page(self.sample_data, current_feed="Test Feed 1")
+
+        # Should have links to index and other feeds
+        self.assertIn('href="index.html"', result)
+        self.assertIn('href="feed-test-feed-1.html"', result)
+        self.assertIn('href="feed-test-feed-2.html"', result)
+
+    def test_single_feed_shows_only_its_articles(self):
+        """Test that single feed page shows only articles from that feed"""
+        result = generate_html_page(self.sample_data, current_feed="Test Feed 1")
+
+        # Count article items - should only have 2 for Test Feed 1
+        article_count = result.count('<li class="article-item">')
+        self.assertEqual(article_count, 2)
+
+        # Verify correct articles are shown
+        self.assertIn("Article 1", result)
+        self.assertIn("Article 2", result)
+
+    def test_feed_page_title_escaping(self):
+        """Test that feed names with special characters are escaped in page title"""
+        special_data = self.sample_data.copy()
+        special_data["feeds"] = {
+            "Test <script>alert('XSS')</script>": {
+                "url": "https://example.com/feed",
+                "count": 0,
+                "articles": [],
+            }
+        }
+
+        result = generate_html_page(
+            special_data, current_feed="Test <script>alert('XSS')</script>"
+        )
+
+        # Title should be escaped
+        self.assertIn("&lt;script&gt;", result)
+        self.assertNotIn("<script>alert('XSS')</script>", result)
 
 
 if __name__ == "__main__":

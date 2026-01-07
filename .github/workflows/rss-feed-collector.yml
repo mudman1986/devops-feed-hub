@@ -66,12 +66,12 @@ jobs:
           # Create docs directory if it doesn't exist
           mkdir -p docs
 
-          # Generate HTML page
+          # Generate multi-page HTML (main index + individual feed pages)
           python3 .github/actions/collect-rss-feeds/generate_summary.py \
             --input rss-feeds-output.json \
-            --html docs/index.html
+            --output-dir docs
 
-          echo "✓ GitHub Pages content generated"
+          echo "✓ GitHub Pages content generated (multi-page)"
 
       - name: Commit and push GitHub Pages content
         if: success()
