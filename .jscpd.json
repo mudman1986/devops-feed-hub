@@ -4,7 +4,7 @@
   "ignore": [
     "**/.git/**",
     "**/node_modules/**",
-    "docs/index.html",
+    "docs/**/*.html",
     "**/*test*.py"
   ],
   "format": ["markup", "python"],

@@ -99,11 +99,12 @@ def generate_feed_nav(
     has_failed_feeds: bool = False,
 ) -> str:
     """
-    Generate navigation links for feed pages
+    Generate navigation links for feed pages (for sidebar)
 
     Args:
         feeds: Dictionary of feed data
-        current_feed: Name of current feed (if on a feed page), or "failed" for failed feeds page
+        current_feed: Name of current feed (if on a feed page), "failed" for failed feeds page,
+                     or "summary" for summary page
         has_failed_feeds: Whether there are failed feeds to show
 
     Returns:
@@ -115,6 +116,11 @@ def generate_feed_nav(
         nav_html += " active"
     nav_html += '">All Feeds</a>\n'
 
+    nav_html += '  <a href="summary.html" class="nav-link'
+    if current_feed == "summary":
+        nav_html += " active"
+    nav_html += '">Summary</a>\n'
+
     for feed_name in sorted(feeds.keys()):
         feed_slug = generate_feed_slug(feed_name)
 
@@ -122,13 +128,6 @@ def generate_feed_nav(
         if current_feed == feed_name:
             nav_html += " active"
         nav_html += f'">{html_escape(feed_name)}</a>\n'
-
-    # Add Failed Feeds link as last item if there are failed feeds
-    if has_failed_feeds:
-        nav_html += '  <a href="failed-feeds.html" class="nav-link'
-        if current_feed == "failed":
-            nav_html += " active"
-        nav_html += '">Failed Feeds</a>\n'
 
     nav_html += "</nav>\n"
     return nav_html
@@ -170,6 +169,24 @@ def generate_failed_feeds_content(failed_feeds: list) -> str:
     return content
 
 
+def format_publish_date(iso_date_str: str) -> str:
+    """
+    Format ISO 8601 date string to human-readable format.
+    
+    Args:
+        iso_date_str: ISO 8601 formatted date string
+        
+    Returns:
+        Human-readable date string (e.g., "Jan 6, 2026 at 7:24 PM")
+    """
+    try:
+        dt = parse_iso_timestamp(iso_date_str)
+        return dt.strftime("%b %d, %Y at %I:%M %p")
+    except (ValueError, AttributeError):
+        # If parsing fails, return the original string
+        return iso_date_str
+
+
 def generate_feed_articles_content(feeds_to_display: Dict[str, Any]) -> str:
     """
     Generate HTML content for feed articles section
@@ -183,9 +200,7 @@ def generate_feed_articles_content(feeds_to_display: Dict[str, Any]) -> str:
     if not feeds_to_display:
         return ""
 
-    content = """
-        <h2>Feed Articles</h2>
-"""
+    content = ""
     for feed_name, feed_data in feeds_to_display.items():
         article_count = feed_data["count"]
         escaped_feed_name = html_escape(feed_name)
@@ -205,14 +220,14 @@ def generate_feed_articles_content(feeds_to_display: Dict[str, Any]) -> str:
             for article in feed_data["articles"]:
                 escaped_title = html_escape(article["title"])
                 escaped_link = html_escape(article["link"])
-                escaped_published = html_escape(article["published"])
+                formatted_date = format_publish_date(article["published"])
                 content += f"""
                 <li class="article-item">
                     <a href="{escaped_link}" class="article-title"
                        target="_blank" rel="noopener noreferrer">
                         {escaped_title}
                     </a>
-                    <div class="article-meta">Published: {escaped_published}</div>
+                    <div class="article-meta">{html_escape(formatted_date)}</div>
                 </li>
 """
             content += """
@@ -237,47 +252,15 @@ def generate_html_content(
     Args:
         data: RSS feed collection data dictionary
         current_feed: If specified, generate content for only this feed,
-                      or "failed" for failed feeds page
+                      or "failed" for failed feeds page, or "summary" for summary page
 
     Returns:
         HTML content string to be injected into template
     """
-    collected_time = parse_iso_timestamp(data["metadata"]["collected_at"])
-    formatted_time = collected_time.strftime("%B %d, %Y at %I:%M %p UTC")
+    content = ""
 
-    # Add navigation (check if there are failed feeds)
-    has_failed_feeds = len(data.get("failed_feeds", [])) > 0
-    content = generate_feed_nav(data["feeds"], current_feed, has_failed_feeds)
-
-    content += f"""
-        <div class="metadata">
-            <strong>Last Updated:</strong> {formatted_time}<br>
-            <strong>Time Range:</strong> Last 24 hours
-        </div>
-"""
-    # Note: The "Last 24 hours" text above will be updated by JavaScript
-    # based on the user's selected timeframe (1 day, 7 days, or 30 days)
-
-    # If showing failed feeds page
-    if current_feed == "failed":
-        content += generate_failed_feeds_content(data.get("failed_feeds", []))
-        return content
-
-    # If showing a single feed, adjust the summary
-    if current_feed:
-        feed_data = data["feeds"].get(current_feed, {})
-        article_count = feed_data.get("count", 0)
-        content += f"""
-        <h2>{html_escape(current_feed)}</h2>
-        <div class="stats">
-            <div class="stat-card">
-                <div class="stat-label">Total Articles</div>
-                <div class="stat-value">{article_count}</div>
-            </div>
-        </div>
-"""
-    else:
-        # Show overall summary for all feeds
+    # If showing summary page
+    if current_feed == "summary":
         content += f"""
         <h2>Summary</h2>
         <div class="stats">
@@ -298,6 +281,21 @@ def generate_html_content(
                 <div class="stat-value">{data['summary']['total_articles']}</div>
             </div>
         </div>
+"""
+        # Add failed feeds section to summary page
+        if data.get("failed_feeds"):
+            content += generate_failed_feeds_content(data.get("failed_feeds", []))
+        return content
+
+    # If showing failed feeds page (deprecated - now part of summary)
+    if current_feed == "failed":
+        content += generate_failed_feeds_content(data.get("failed_feeds", []))
+        return content
+
+    # If showing a single feed, show feed name as h2
+    if current_feed:
+        content += f"""
+        <h2>{html_escape(current_feed)}</h2>
 """
 
     # Determine which feeds to display
@@ -359,6 +357,10 @@ def generate_html_page(
 
     # Generate content
     content = generate_html_content(data, current_feed)
+    
+    # Generate sidebar navigation
+    has_failed_feeds = len(data.get("failed_feeds", [])) > 0
+    sidebar_content = generate_feed_nav(data["feeds"], current_feed, has_failed_feeds)
 
     # Get formatted timestamp
     collected_time = parse_iso_timestamp(data["metadata"]["collected_at"])
@@ -366,13 +368,16 @@ def generate_html_page(
 
     # Update title if this is a feed-specific page
     page_title = "RSS Feed Collection"
-    if current_feed == "failed":
+    if current_feed == "summary":
+        page_title = "Summary - RSS Feed Collection"
+    elif current_feed == "failed":
         page_title = "Failed Feeds - RSS Feed Collection"
     elif current_feed:
         page_title = f"{current_feed} - RSS Feed Collection"
 
     # Replace placeholders
     html = template.replace("<!-- CONTENT_PLACEHOLDER -->", content)
+    html = html.replace("<!-- SIDEBAR_PLACEHOLDER -->", sidebar_content)
     html = html.replace("<!-- TIMESTAMP_PLACEHOLDER -->", formatted_time)
     html = html.replace(
         "<title>RSS Feed Collection</title>",
@@ -423,6 +428,13 @@ def generate_all_pages(data: Dict[str, Any], output_dir: str) -> None:
     with open(index_path, "w", encoding="utf-8") as f:
         f.write(index_html)
     print(f"✓ Main index page written to {index_path}")
+    
+    # Generate summary page
+    summary_path = os.path.join(output_dir, "summary.html")
+    summary_html = generate_html_page(data, current_feed="summary")
+    with open(summary_path, "w", encoding="utf-8") as f:
+        f.write(summary_html)
+    print(f"✓ Summary page written to {summary_path}")
 
     # Generate individual feed pages (sorted alphabetically)
     for feed_name in sorted(data["feeds"].keys()):
@@ -432,14 +444,6 @@ def generate_all_pages(data: Dict[str, Any], output_dir: str) -> None:
         with open(feed_path, "w", encoding="utf-8") as f:
             f.write(feed_html)
         print(f"✓ Feed page for '{feed_name}' written to {feed_path}")
-
-    # Generate failed feeds page if there are failed feeds
-    if data.get("failed_feeds"):
-        failed_path = os.path.join(output_dir, "failed-feeds.html")
-        failed_html = generate_html_page(data, current_feed="failed")
-        with open(failed_path, "w", encoding="utf-8") as f:
-            f.write(failed_html)
-        print(f"✓ Failed feeds page written to {failed_path}")
 
 
 def main():

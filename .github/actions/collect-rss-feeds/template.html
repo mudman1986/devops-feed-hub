@@ -7,26 +7,26 @@
     <title>RSS Feed Collection</title>
     <style>
         :root {
-            --bg-primary: #fafbfc;
+            --bg-primary: #f5f7fa;
             --bg-secondary: #ffffff;
-            --bg-tertiary: #f6f8fa;
-            --bg-hover: #f3f4f6;
+            --bg-tertiary: #e8ecf1;
+            --bg-hover: #dfe3e8;
             --bg-error: #fef2f2;
-            --text-primary: #1f2937;
-            --text-secondary: #6b7280;
-            --text-link: #3b82f6;
+            --text-primary: #0f172a;
+            --text-secondary: #475569;
+            --text-link: #2563eb;
             --text-error: #dc2626;
-            --border-primary: #e5e7eb;
-            --border-accent: #3b82f6;
-            --border-success: #10b981;
+            --border-primary: #cbd5e1;
+            --border-accent: #2563eb;
+            --border-success: #059669;
             --border-error: #dc2626;
-            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            --badge-bg: #eff6ff;
-            --badge-text: #1e40af;
-            --gradient-start: #3b82f6;
-            --gradient-end: #8b5cf6;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.08);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.15);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+            --badge-bg: #dbeafe;
+            --badge-text: #1e3a8a;
+            --gradient-start: #2563eb;
+            --gradient-end: #7c3aed;
         }
         
         [data-theme="dark"] {
@@ -130,9 +130,62 @@
         }
         
         .container {
-            max-width: 1280px;
+            display: flex;
+            min-height: calc(100vh - 80px);
+            max-width: 1600px;
             margin: 0 auto;
+            padding: 0;
+        }
+        
+        .main-content {
+            flex: 1;
             padding: 2rem;
+            overflow-y: auto;
+        }
+        
+        .sidebar {
+            width: 280px;
+            background-color: var(--bg-secondary);
+            border-left: 1px solid var(--border-primary);
+            padding: 1.5rem;
+            overflow-y: auto;
+            transition: all 0.3s ease;
+        }
+        
+        .sidebar-toggle {
+            display: none;
+            position: fixed;
+            right: 1rem;
+            bottom: 1rem;
+            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+            color: white;
+            border: none;
+            width: 3.5rem;
+            height: 3.5rem;
+            border-radius: 50%;
+            cursor: pointer;
+            box-shadow: var(--shadow-lg);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+        
+        .sidebar-toggle:hover {
+            transform: scale(1.1);
+        }
+        
+        .sidebar.collapsed {
+            transform: translateX(100%);
+        }
+        
+        .sidebar-header {
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-secondary);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
         
         h1 {
@@ -173,15 +226,7 @@
         }
         
         .metadata {
-            color: var(--text-secondary);
-            margin-bottom: 2rem;
-            padding: 1.25rem 1.5rem;
-            background-color: var(--bg-secondary);
-            border-radius: 0.75rem;
-            border: 1px solid var(--border-primary);
-            box-shadow: var(--shadow-sm);
-            transition: all 0.3s ease;
-            font-size: 0.9375rem;
+            display: none;
         }
         
         .stats {
@@ -343,36 +388,29 @@
         }
         
         .feed-nav {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 0.75rem;
-            margin-bottom: 2rem;
-            padding: 1.5rem;
-            background-color: var(--bg-secondary);
-            border-radius: 1rem;
-            border: 1px solid var(--border-primary);
-            box-shadow: var(--shadow-sm);
-            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
         }
         
         .nav-link {
-            padding: 0.875rem 1.25rem;
+            padding: 0.875rem 1rem;
             background-color: var(--bg-tertiary);
             color: var(--text-primary);
             text-decoration: none;
             border-radius: 0.5rem;
-            border: 1px solid var(--border-primary);
+            border: 1px solid transparent;
             transition: all 0.2s ease;
             font-size: 0.9375rem;
             font-weight: 500;
-            text-align: center;
+            text-align: left;
             display: block;
         }
         
         .nav-link:hover {
             background-color: var(--bg-hover);
             border-color: var(--border-accent);
-            transform: translateY(-2px);
+            transform: translateX(-4px);
             box-shadow: var(--shadow-sm);
         }
         
@@ -384,14 +422,13 @@
         }
         
         .timeframe-selector {
-            display: flex;
-            gap: 0.75rem;
+            position: relative;
             margin-bottom: 0;
-            flex-wrap: wrap;
         }
         
-        .timeframe-button {
-            padding: 0.625rem 1.25rem;
+        .timeframe-select {
+            width: 100%;
+            padding: 0.625rem 2.5rem 0.625rem 1rem;
             background-color: var(--bg-tertiary);
             color: var(--text-primary);
             border: 1px solid var(--border-primary);
@@ -400,29 +437,25 @@
             font-size: 0.875rem;
             font-weight: 500;
             transition: all 0.2s ease;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 0.75rem center;
+            background-size: 1rem;
         }
         
-        .timeframe-button:hover {
+        [data-theme="dark"] .timeframe-select {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+        }
+        
+        .timeframe-select:hover {
             background-color: var(--bg-hover);
             border-color: var(--border-accent);
-            transform: translateY(-1px);
-            box-shadow: var(--shadow-sm);
         }
         
-        .timeframe-button.active {
-            background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
-            color: white;
-            border-color: transparent;
-            box-shadow: var(--shadow-md);
-        }
-        
-        .timeframe-button:focus {
+        .timeframe-select:focus {
             outline: 2px solid var(--border-accent);
             outline-offset: 2px;
-        }
-        
-        .timeframe-button:active {
-            transform: translateY(0);
         }
         
         .footer {
@@ -450,32 +483,34 @@
             }
             
             .container {
+                flex-direction: column;
+            }
+            
+            .main-content {
                 padding: 1.5rem;
             }
             
-            h1 {
-                font-size: 1.875rem;
+            .sidebar {
+                position: fixed;
+                right: 0;
+                top: 0;
+                bottom: 0;
+                width: 80%;
+                max-width: 320px;
+                box-shadow: var(--shadow-lg);
+                z-index: 999;
             }
             
-            h2 {
-                font-size: 1.5rem;
+            .sidebar.collapsed {
+                transform: translateX(100%);
+            }
+            
+            .sidebar-toggle {
+                display: flex;
             }
             
             .stats {
                 grid-template-columns: 1fr;
-            }
-            
-            .feed-nav {
-                grid-template-columns: 1fr;
-            }
-            
-            .timeframe-selector {
-                width: 100%;
-            }
-            
-            .timeframe-button {
-                flex: 1;
-                min-width: 80px;
             }
             
             .stat-card {
@@ -500,15 +535,11 @@
         </div>
         <div class="header-controls">
             <div class="timeframe-selector">
-                <button class="timeframe-button active" data-timeframe="1day" aria-label="Show last 24 hours">
-                    1 Day
-                </button>
-                <button class="timeframe-button" data-timeframe="7days" aria-label="Show last 7 days">
-                    7 Days
-                </button>
-                <button class="timeframe-button" data-timeframe="30days" aria-label="Show last 30 days">
-                    30 Days
-                </button>
+                <select class="timeframe-select" id="timeframe-select" aria-label="Select time range">
+                    <option value="1day" selected>Last 24 hours</option>
+                    <option value="7days">Last 7 days</option>
+                    <option value="30days">Last 30 days</option>
+                </select>
             </div>
             <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
                 <svg id="theme-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -527,12 +558,20 @@
         </div>
     </div>
     <div class="container">
-        
-        <!-- CONTENT_PLACEHOLDER -->
-        
-        <div class="footer">
-            Generated by RSS Feed Collector | Last updated: <!-- TIMESTAMP_PLACEHOLDER -->
+        <div class="main-content">
+            <!-- CONTENT_PLACEHOLDER -->
+            
+            <div class="footer">
+                Generated by RSS Feed Collector | Last updated: <!-- TIMESTAMP_PLACEHOLDER -->
+            </div>
         </div>
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-header">Navigation</div>
+            <!-- SIDEBAR_PLACEHOLDER -->
+        </aside>
+        <button class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle navigation">
+            ☰
+        </button>
     </div>
     
     <script>
@@ -585,6 +624,25 @@
             }
         }
         
+        // Sidebar toggle functionality (mobile)
+        const sidebarToggle = document.getElementById('sidebar-toggle');
+        const sidebar = document.getElementById('sidebar');
+        
+        if (sidebarToggle && sidebar) {
+            sidebarToggle.addEventListener('click', () => {
+                sidebar.classList.toggle('collapsed');
+            });
+            
+            // Close sidebar when clicking outside on mobile
+            document.addEventListener('click', (e) => {
+                if (window.innerWidth <= 768) {
+                    if (!sidebar.contains(e.target) && !sidebarToggle.contains(e.target)) {
+                        sidebar.classList.add('collapsed');
+                    }
+                }
+            });
+        }
+        
         // Timeframe filtering configuration
         // Maps timeframe keys to hours for date filtering
         const TIMEFRAME_HOURS = {
@@ -593,8 +651,8 @@
             '30days': 720
         };
         
-        // Timeframe filtering functionality
-        const timeframeButtons = document.querySelectorAll('.timeframe-button');
+        // Timeframe filtering functionality with dropdown
+        const timeframeSelect = document.getElementById('timeframe-select');
         
         // Get saved timeframe preference or default to 1 day
         let savedTimeframe = '1day';
@@ -604,17 +662,14 @@
             console.warn('localStorage unavailable, using default timeframe:', e);
         }
         
-        // Apply saved timeframe on page load
-        applyTimeframeFilter(savedTimeframe);
-        
-        // Add click listeners to timeframe buttons
-        timeframeButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const timeframe = button.getAttribute('data-timeframe');
-                
-                // Update active state
-                timeframeButtons.forEach(btn => btn.classList.remove('active'));
-                button.classList.add('active');
+        // Set dropdown value and apply filter
+        if (timeframeSelect) {
+            timeframeSelect.value = savedTimeframe;
+            applyTimeframeFilter(savedTimeframe);
+            
+            // Add change listener to dropdown
+            timeframeSelect.addEventListener('change', () => {
+                const timeframe = timeframeSelect.value;
                 
                 // Save preference
                 try {
@@ -626,18 +681,9 @@
                 // Apply filter
                 applyTimeframeFilter(timeframe);
             });
-        });
+        }
         
         function applyTimeframeFilter(timeframe) {
-            // Update active button state
-            timeframeButtons.forEach(btn => {
-                if (btn.getAttribute('data-timeframe') === timeframe) {
-                    btn.classList.add('active');
-                } else {
-                    btn.classList.remove('active');
-                }
-            });
-            
             const hours = TIMEFRAME_HOURS[timeframe] || 24;
             const cutoffTime = new Date(Date.now() - hours * 60 * 60 * 1000);
             
@@ -647,10 +693,10 @@
             
             allArticles.forEach(article => {
                 const publishedText = article.querySelector('.article-meta')?.textContent;
-                if (publishedText && publishedText.includes('Published:')) {
-                    const dateStr = publishedText.replace('Published:', '').trim();
+                if (publishedText) {
                     try {
-                        const publishDate = new Date(dateStr);
+                        // Parse the formatted date (e.g., "Jan 6, 2026 at 7:24 PM")
+                        const publishDate = new Date(publishedText);
                         if (!isNaN(publishDate.getTime())) {
                             if (publishDate >= cutoffTime) {
                                 article.style.display = '';
@@ -669,7 +715,7 @@
                         visibleCount++;
                     }
                 } else {
-                    // Show articles without dates or with unknown dates
+                    // Show articles without dates
                     article.style.display = '';
                     visibleCount++;
                 }
@@ -717,24 +763,8 @@
         }
         
         function updateMetadataDisplay(timeframe) {
-            const metadata = document.querySelector('.metadata');
-            if (metadata) {
-                const timeRangeText = timeframe === '1day' ? 'Last 24 hours' : 
-                                    timeframe === '7days' ? 'Last 7 days' : 
-                                    'Last 30 days';
-                
-                // Update time range display safely using DOM methods
-                const strongElements = metadata.querySelectorAll('strong');
-                strongElements.forEach(strong => {
-                    if (strong.textContent === 'Time Range:') {
-                        // Get the text node after the strong element
-                        const textNode = strong.nextSibling;
-                        if (textNode && textNode.nodeType === Node.TEXT_NODE) {
-                            textNode.textContent = ' ' + timeRangeText;
-                        }
-                    }
-                });
-            }
+            // Metadata is now hidden, but keep this function for compatibility
+            return;
         }
         
         function updateStats() {

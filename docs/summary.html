@@ -7,7 +7,7 @@
       name="description"
       content="RSS Feed Collection - Latest articles from tech blogs and news sources"
     />
-    <title>Test Feed 2 - RSS Feed Collection</title>
+    <title>Summary - RSS Feed Collection</title>
     <style>
       :root {
         --bg-primary: #f5f7fa;
@@ -617,27 +617,35 @@
     </div>
     <div class="container">
       <div class="main-content">
-        <h2>Test Feed 2</h2>
+        <h2>Summary</h2>
+        <div class="stats">
+          <div class="stat-card">
+            <div class="stat-label">Total Feeds</div>
+            <div class="stat-value">2</div>
+          </div>
+          <div class="stat-card success">
+            <div class="stat-label">Successful</div>
+            <div class="stat-value">2</div>
+          </div>
+          <div class="stat-card error">
+            <div class="stat-label">Failed</div>
+            <div class="stat-value">1</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-label">Total Articles</div>
+            <div class="stat-value">3</div>
+          </div>
+        </div>
 
-        <div class="feed-section">
-          <h3>
-            Test Feed 2
-            <span class="feed-count"> 1 article </span>
-          </h3>
+        <h2>Failed Feeds</h2>
 
-          <ul class="article-list">
-            <li class="article-item">
-              <a
-                href="https://example.com/article3"
-                class="article-title"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Test Article 3
-              </a>
-              <div class="article-meta">Jan 06, 2026 at 09:45 PM</div>
-            </li>
-          </ul>
+        <div class="failed-feeds">
+          <div class="failed-feed-item">
+            <div class="failed-feed-name">Failed Feed Example</div>
+            <div class="failed-feed-url">
+              https://example.com/failed-feed.xml
+            </div>
+          </div>
         </div>
 
         <div class="footer">
@@ -649,11 +657,9 @@
         <div class="sidebar-header">Navigation</div>
         <nav class="feed-nav">
           <a href="index.html" class="nav-link">All Feeds</a>
-          <a href="summary.html" class="nav-link">Summary</a>
+          <a href="summary.html" class="nav-link active">Summary</a>
           <a href="feed-test-feed-1.html" class="nav-link">Test Feed 1</a>
-          <a href="feed-test-feed-2.html" class="nav-link active"
-            >Test Feed 2</a
-          >
+          <a href="feed-test-feed-2.html" class="nav-link">Test Feed 2</a>
         </nav>
       </aside>
       <button
