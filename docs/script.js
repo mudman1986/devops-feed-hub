@@ -1,4 +1,3 @@
-// @generated - This file is auto-generated from template.html. Do not edit manually.
 // Theme toggle functionality
 const themeToggle = document.getElementById("theme-toggle");
 const themeIcon = document.getElementById("theme-icon");
