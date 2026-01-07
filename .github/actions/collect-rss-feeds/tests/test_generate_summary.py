@@ -4,6 +4,7 @@ Unit tests for generate_summary.py
 Tests the summary generation functionality for RSS feed collection
 """
 
+# pylint: disable=wrong-import-position
 import os
 import sys
 import tempfile
@@ -12,8 +13,10 @@ import unittest
 # Add parent directory to path for imports
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
+# pylint: disable=wrong-import-position
+# flake8: noqa: E402
 # Import the functions we want to test
-from generate_summary import (  # noqa: E402
+from generate_summary import (
     generate_all_pages,
     generate_feed_nav,
     generate_feed_slug,

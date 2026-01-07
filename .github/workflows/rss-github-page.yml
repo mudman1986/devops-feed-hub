@@ -1,4 +1,4 @@
-name: RSS Feed Collector
+name: RSS News Dashboard
 
 on:
   push:

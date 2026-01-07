@@ -9,7 +9,7 @@ import json
 import os
 from datetime import datetime
 from html import escape as html_escape
-from typing import Any, Dict
+from typing import Any, Dict, Optional
 
 
 def parse_iso_timestamp(iso_string: str) -> datetime:
@@ -94,7 +94,9 @@ def generate_markdown_summary(data: Dict[str, Any]) -> str:
 
 
 def generate_feed_nav(
-    feeds: Dict[str, Any], current_feed: str = None, has_failed_feeds: bool = False
+    feeds: Dict[str, Any],
+    current_feed: Optional[str] = None,
+    has_failed_feeds: bool = False,
 ) -> str:
     """
     Generate navigation links for feed pages
@@ -226,7 +228,9 @@ def generate_feed_articles_content(feeds_to_display: Dict[str, Any]) -> str:
     return content
 
 
-def generate_html_content(data: Dict[str, Any], current_feed: str = None) -> str:
+def generate_html_content(
+    data: Dict[str, Any], current_feed: Optional[str] = None
+) -> str:
     """
     Generate HTML content (without template wrapper) from RSS feed collection data
 
@@ -313,7 +317,9 @@ def generate_html_content(data: Dict[str, Any], current_feed: str = None) -> str
 
 
 def generate_html_page(
-    data: Dict[str, Any], template_path: str = None, current_feed: str = None
+    data: Dict[str, Any],
+    template_path: Optional[str] = None,
+    current_feed: Optional[str] = None,
 ) -> str:
     """
     Generate complete HTML page from RSS feed collection data using template.

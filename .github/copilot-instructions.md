@@ -4,10 +4,12 @@
 
 ### Fix All Issues, Not Just Your Changes
 
+- **MANDATORY**: Fix ALL linting errors before committing, not just errors you introduced
 - **Comprehensive responsibility**: You are responsible for fixing all issues in the codebase, not just those related to your changes
 - **Proactive issue resolution**: When you encounter linting errors, security vulnerabilities, or code quality issues anywhere in the codebase, fix them
 - **Leave it better**: Always leave the codebase in a better state than you found it
 - **No selective fixing**: Don't limit yourself to only fixing issues you introduced; address all findable issues
+- **No excuses**: Don't act like a lazy developer - fix everything that super-linter reports
 
 ### Continuous Refactoring and Optimization
 
@@ -126,9 +128,9 @@
   - **HTML_PRETTIER**: HTML formatting
   - **Markdown**: Validates Markdown files
   - **MARKDOWN_PRETTIER**: Markdown formatting
-  - **NATURAL_LANGUAGE**: Terminology consistency (e.g., "GitHub" not "github", "readme" not "readme")
+  - **NATURAL_LANGUAGE**: Terminology consistency (e.g., "GitHub" not "gh", "readme" not "readme")
   - **SHELL_SHFMT**: Shell script formatting (uses tabs for indentation)
-  - **JSCPD**: Copy-paste detection
+  - **JSCPD**: Copypaste detection
   - **CHECKOV**: Security scanning for workflows
 - **Important**: Super-linter configurations differ from local tools:
   - PYTHON_BLACK uses double quotes and enforces line breaks

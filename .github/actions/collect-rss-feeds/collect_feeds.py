@@ -8,10 +8,14 @@ import argparse
 import json
 import sys
 from datetime import datetime, timedelta, timezone
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional
+from urllib.request import Request, urlopen
+
+import feedparser
 
 
-def parse_rss_feed(url: str, since_time: datetime) -> List[Dict[str, Any]]:
+# pylint: disable=too-many-locals,broad-exception-caught,broad-exception-raised
+def parse_rss_feed(url: str, since_time: datetime) -> Optional[List[Dict[str, Any]]]:
     """
     Parse an RSS/Atom feed and return articles published after since_time
 
@@ -22,10 +26,6 @@ def parse_rss_feed(url: str, since_time: datetime) -> List[Dict[str, Any]]:
     Returns:
         List of article dictionaries with 'title', 'link', 'published'
     """
-    from urllib.request import Request, urlopen
-
-    import feedparser
-
     articles = []
 
     try:
@@ -39,7 +39,7 @@ def parse_rss_feed(url: str, since_time: datetime) -> List[Dict[str, Any]]:
 
         # Check for parsing errors
         if feed.bozo and not feed.entries:
-            raise Exception(
+            raise ValueError(
                 f"Feed parsing error: {feed.get('bozo_exception', 'Unknown error')}"
             )
 
@@ -51,9 +51,13 @@ def parse_rss_feed(url: str, since_time: datetime) -> List[Dict[str, Any]]:
             # Get publication date - feedparser normalizes this
             pub_date = None
             if hasattr(entry, "published_parsed") and entry.published_parsed:
-                pub_date = datetime(*entry.published_parsed[:6], tzinfo=timezone.utc)
+                # Extract date components and create datetime
+                time_tuple = entry.published_parsed[:6]
+                pub_date = datetime(*time_tuple).replace(tzinfo=timezone.utc)
             elif hasattr(entry, "updated_parsed") and entry.updated_parsed:
-                pub_date = datetime(*entry.updated_parsed[:6], tzinfo=timezone.utc)
+                # Extract date components and create datetime
+                time_tuple = entry.updated_parsed[:6]
+                pub_date = datetime(*time_tuple).replace(tzinfo=timezone.utc)
 
             # Filter by date if available
             if pub_date:
