@@ -4,10 +4,12 @@
 
 ### Fix All Issues, Not Just Your Changes
 
+- **MANDATORY**: Fix ALL linting errors before committing, not just errors you introduced
 - **Comprehensive responsibility**: You are responsible for fixing all issues in the codebase, not just those related to your changes
 - **Proactive issue resolution**: When you encounter linting errors, security vulnerabilities, or code quality issues anywhere in the codebase, fix them
 - **Leave it better**: Always leave the codebase in a better state than you found it
 - **No selective fixing**: Don't limit yourself to only fixing issues you introduced; address all findable issues
+- **No excuses**: Don't act like a lazy developer - fix everything that super-linter reports
 
 ### Continuous Refactoring and Optimization
 
@@ -43,7 +45,7 @@
 - **Prefer scripts**: Use separate script files instead of inline code in workflows and actions
 - **Maintainability**: Scripts are easier to test, debug, and maintain than inline code
 - **Testing**: Separate scripts enable better unit testing and validation
-- **Version control**: Scripts provide better visibility of changes through git diffs
+- **Version control**: Scripts provide better visibility of changes through Git diffs
 
 ### Testing Requirements
 
@@ -54,9 +56,9 @@
 
 ### Documentation Guidelines
 
-- **Prefer compact documentation**: Use inline comments and concise documentation over extensive README files
+- **Prefer compact documentation**: Use inline comments and concise documentation over extensive readme files
 - **Inline comments**: Document complex logic directly in code with clear, concise comments
-- **Minimal README files**: Keep README files brief and focused on essential information
+- **Minimal readme files**: Keep readme files brief and focused on essential information
 - **Self-documenting code**: Write clear, readable code that minimizes the need for extensive documentation
 - **Code over docs**: Prioritize writing clear code over writing extensive documentation
 
@@ -83,7 +85,6 @@
 
 - The RSS feed collector workflow runs on schedule and manual dispatch
 - Output should be stored in formats suitable for both automation and GitHub Pages
-- Maintain backward compatibility with existing outputs and summaries
 - Keep the JSON output structure stable for consumers
 
 ## GitHub Pages
@@ -105,16 +106,55 @@
 
 ### Running Super-Linter Locally
 
-- **Always run super-linter locally** before pushing changes to verify code quality
-- Run super-linter using Docker to match CI environment:
+- **MANDATORY: Always run super-linter locally** before pushing changes to verify code quality
+- **DO NOT use pylint or other individual linters** - use super-linter exclusively to match CI
+- Super-linter must pass with the same configuration as the CI workflow
+- Run super-linter using Docker to match CI environment exactly:
   ```bash
   docker run --rm \
     -e RUN_LOCAL=true \
     -e USE_FIND_ALGORITHM=true \
     -v $(pwd):/tmp/lint \
-    ghcr.io/super-linter/super-linter:latest
+    ghcr.io/super-linter/super-linter:v7.4.0
   ```
 - By default, super-linter validates **all supported file types** automatically
-- No need to specify individual `VALIDATE_*` flags unless you want to disable specific linters
-- Fix all linter errors before committing changes
-- This prevents CI failures and ensures consistent code quality
+- Common linters that run:
+  - **GITHUB_ACTIONS**: Validates workflow YAML files with shellcheck for embedded scripts
+  - **BASH**: Validates shell scripts with shellcheck
+  - **PYTHON_BLACK**: Python code formatting (double quotes, line breaks)
+  - **PYTHON_PYLINT**: Python linting (different config than local .pylintrc)
+  - **PYTHON_MYPY**: Python type checking
+  - **HTML**: Validates HTML files
+  - **HTML_PRETTIER**: HTML formatting
+  - **Markdown**: Validates Markdown files
+  - **MARKDOWN_PRETTIER**: Markdown formatting
+  - **NATURAL_LANGUAGE**: Terminology consistency (e.g., "GitHub" not "gh", "readme" not "readme")
+  - **SHELL_SHFMT**: Shell script formatting (uses tabs for indentation)
+  - **JSCPD**: Copypaste detection
+  - **CHECKOV**: Security scanning for workflows
+- **Important**: Super-linter configurations differ from local tools:
+  - PYTHON_BLACK uses double quotes and enforces line breaks
+  - SHELL_SHFMT uses tabs for indentation (not spaces)
+  - NATURAL_LANGUAGE enforces specific terminology
+  - Local `.pylintrc` settings DO NOT apply to super-linter
+  - Super-linter uses shellcheck on embedded scripts in workflow YAML files
+  - Quote all variables in shell scripts to pass shellcheck (e.g., `"$VAR"` not `$VAR`)
+- **Fix ALL linting errors** before committing changes (not just errors you introduced)
+- This prevents CI failures and ensures consistent code quality across the entire codebase
+- If you encounter errors, run super-linter with specific validators to debug:
+  ```bash
+  docker run --rm \
+    -e RUN_LOCAL=true \
+    -e USE_FIND_ALGORITHM=true \
+    -e VALIDATE_PYTHON_BLACK=true \
+    -e VALIDATE_BASH=true \
+    -v $(pwd):/tmp/lint \
+    ghcr.io/super-linter/super-linter:v7.4.0
+  ```
+
+### Running Tests
+
+- Always run tests before committing changes
+- Install test dependencies: `pip install pytest feedparser`
+- Run all tests: `python3 -m pytest .github/actions/collect-rss-feeds/tests/ -v`
+- All tests must pass before pushing changes

@@ -34,7 +34,7 @@ This agent is specialized in refactoring codebases to improve code quality, main
 
 ### Documentation
 
-- **Compact documentation**: Use inline comments for complex logic, keep README files concise
+- **Compact documentation**: Use inline comments for complex logic, keep readme files concise
 - **Self-documenting code**: Write clear code that minimizes need for extensive documentation
 - **Update documentation**: Keep documentation in sync with code changes
 

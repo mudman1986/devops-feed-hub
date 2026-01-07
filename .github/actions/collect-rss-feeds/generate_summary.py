@@ -9,7 +9,7 @@ import json
 import os
 from datetime import datetime
 from html import escape as html_escape
-from typing import Any, Dict
+from typing import Any, Dict, Optional
 
 
 def parse_iso_timestamp(iso_string: str) -> datetime:
@@ -38,7 +38,11 @@ def generate_markdown_summary(data: Dict[str, Any]) -> str:
     summary = []
     summary.append("# 📰 RSS Feed Collection Summary\n")
     summary.append(f"**Collected at:** {data['metadata']['collected_at']}\n")
-    summary.append(f"**Time range:** Last {data['metadata']['hours']} hours\n")
+    hours = data["metadata"].get("hours", 24)
+    summary.append(f"**Time range:** Last {hours} hours\n")
+    summary.append(
+        "**Note:** Web interface provides filtering for 1 day, 7 days, or 30 days\n"
+    )
     summary.append("")
 
     # Overall summary
@@ -90,7 +94,9 @@ def generate_markdown_summary(data: Dict[str, Any]) -> str:
 
 
 def generate_feed_nav(
-    feeds: Dict[str, Any], current_feed: str = None, has_failed_feeds: bool = False
+    feeds: Dict[str, Any],
+    current_feed: Optional[str] = None,
+    has_failed_feeds: bool = False,
 ) -> str:
     """
     Generate navigation links for feed pages
@@ -222,7 +228,9 @@ def generate_feed_articles_content(feeds_to_display: Dict[str, Any]) -> str:
     return content
 
 
-def generate_html_content(data: Dict[str, Any], current_feed: str = None) -> str:
+def generate_html_content(
+    data: Dict[str, Any], current_feed: Optional[str] = None
+) -> str:
     """
     Generate HTML content (without template wrapper) from RSS feed collection data
 
@@ -244,9 +252,11 @@ def generate_html_content(data: Dict[str, Any], current_feed: str = None) -> str
     content += f"""
         <div class="metadata">
             <strong>Last Updated:</strong> {formatted_time}<br>
-            <strong>Time Range:</strong> Last {data['metadata']['hours']} hours
+            <strong>Time Range:</strong> Last 24 hours
         </div>
 """
+    # Note: The "Last 24 hours" text above will be updated by JavaScript
+    # based on the user's selected timeframe (1 day, 7 days, or 30 days)
 
     # If showing failed feeds page
     if current_feed == "failed":
@@ -307,7 +317,9 @@ def generate_html_content(data: Dict[str, Any], current_feed: str = None) -> str
 
 
 def generate_html_page(
-    data: Dict[str, Any], template_path: str = None, current_feed: str = None
+    data: Dict[str, Any],
+    template_path: Optional[str] = None,
+    current_feed: Optional[str] = None,
 ) -> str:
     """
     Generate complete HTML page from RSS feed collection data using template.
@@ -447,7 +459,6 @@ def main():
         "--input", required=True, help="Input JSON file from RSS feed collection"
     )
     parser.add_argument("--markdown", help="Output markdown file path")
-    parser.add_argument("--html", help="Output HTML file path (for single page mode)")
     parser.add_argument(
         "--output-dir",
         help="Output directory for multi-page HTML (generates index + feed pages)",
@@ -476,13 +487,6 @@ def main():
     # Generate multi-page HTML if output directory is specified
     if args.output_dir:
         generate_all_pages(data, args.output_dir)
-
-    # Generate single HTML page if requested (backward compatibility)
-    elif args.html:
-        html_content = generate_html_page(data)
-        with open(args.html, "w", encoding="utf-8") as f:
-            f.write(html_content)
-        print(f"✓ HTML page written to {args.html}")
 
     return 0
 
