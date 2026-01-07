@@ -39,7 +39,8 @@ def generate_markdown_summary(data: Dict[str, Any]) -> str:
     summary.append("# 📰 RSS Feed Collection Summary\n")
     summary.append(f"**Collected at:** {data['metadata']['collected_at']}\n")
     hours = data['metadata'].get('hours', 24)
-    summary.append(f"**Time range:** Last {hours} hours (up to 30 days of data collected)\n")
+    summary.append(f"**Time range:** Last {hours} hours\n")
+    summary.append("**Note:** Web interface provides filtering for 1 day, 7 days, or 30 days\n")
     summary.append("")
 
     # Overall summary
@@ -248,6 +249,8 @@ def generate_html_content(data: Dict[str, Any], current_feed: str = None) -> str
             <strong>Time Range:</strong> Last 24 hours
         </div>
 """
+    # Note: The "Last 24 hours" text above will be updated by JavaScript
+    # based on the user's selected timeframe (1 day, 7 days, or 30 days)
 
     # If showing failed feeds page
     if current_feed == "failed":
@@ -448,7 +451,6 @@ def main():
         "--input", required=True, help="Input JSON file from RSS feed collection"
     )
     parser.add_argument("--markdown", help="Output markdown file path")
-    parser.add_argument("--html", help="Output HTML file path (for single page mode)")
     parser.add_argument(
         "--output-dir",
         help="Output directory for multi-page HTML (generates index + feed pages)",
@@ -477,13 +479,6 @@ def main():
     # Generate multi-page HTML if output directory is specified
     if args.output_dir:
         generate_all_pages(data, args.output_dir)
-
-    # Generate single HTML page if requested (backward compatibility)
-    elif args.html:
-        html_content = generate_html_page(data)
-        with open(args.html, "w", encoding="utf-8") as f:
-            f.write(html_content)
-        print(f"✓ HTML page written to {args.html}")
 
     return 0
 

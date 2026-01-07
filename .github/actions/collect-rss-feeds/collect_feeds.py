@@ -131,11 +131,6 @@ def main():
             "collected_at": datetime.now(timezone.utc).isoformat(),
             "since": since_time.isoformat(),
             "hours": max_hours,
-            "timeframes": {
-                "1day": 24,
-                "7days": 168,
-                "30days": 720
-            }
         },
         "feeds": {},
         "failed_feeds": [],

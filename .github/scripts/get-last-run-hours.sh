@@ -4,8 +4,7 @@
 
 set -e
 
-WORKFLOW_FILE="${1:-rss-feed-collector.yml}"
-MANUAL_HOURS="${2:-}"
+MANUAL_HOURS="${1:-}"
 
 # Default to 720 hours (30 days) to support all timeframe filters (1 day, 7 days, 30 days)
 HOURS=720

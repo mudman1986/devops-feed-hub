@@ -83,7 +83,6 @@
 
 - The RSS feed collector workflow runs on schedule and manual dispatch
 - Output should be stored in formats suitable for both automation and GitHub Pages
-- Maintain backward compatibility with existing outputs and summaries
 - Keep the JSON output structure stable for consumers
 
 ## GitHub Pages
@@ -106,15 +105,42 @@
 ### Running Super-Linter Locally
 
 - **Always run super-linter locally** before pushing changes to verify code quality
-- Run super-linter using Docker to match CI environment:
+- Super-linter must pass with the same configuration as the CI workflow
+- Run super-linter using Docker to match CI environment exactly:
   ```bash
   docker run --rm \
     -e RUN_LOCAL=true \
     -e USE_FIND_ALGORITHM=true \
     -v $(pwd):/tmp/lint \
-    ghcr.io/super-linter/super-linter:latest
+    ghcr.io/super-linter/super-linter:v7.4.0
   ```
 - By default, super-linter validates **all supported file types** automatically
-- No need to specify individual `VALIDATE_*` flags unless you want to disable specific linters
+- Common linters that run:
+  - **GITHUB_ACTIONS**: Validates workflow YAML files with shellcheck for embedded scripts
+  - **BASH**: Validates shell scripts with shellcheck
+  - **PYTHON_PYLINT**: Validates Python files (note: uses different config than local pylint)
+  - **HTML**: Validates HTML files
+  - **MARKDOWN**: Validates markdown files
+- **Important**: Super-linter may use different configurations than local tools
+  - Local `.pylintrc` settings may not apply to super-linter's pylint
+  - Super-linter uses shellcheck on embedded scripts in workflow YAML files
+  - Quote all variables in shell scripts to pass shellcheck (e.g., `"$VAR"` not `$VAR`)
 - Fix all linter errors before committing changes
 - This prevents CI failures and ensures consistent code quality
+- If you encounter errors, run super-linter with specific validators to debug:
+  ```bash
+  docker run --rm \
+    -e RUN_LOCAL=true \
+    -e USE_FIND_ALGORITHM=true \
+    -e VALIDATE_GITHUB_ACTIONS=true \
+    -e VALIDATE_BASH=true \
+    -v $(pwd):/tmp/lint \
+    ghcr.io/super-linter/super-linter:v7.4.0
+  ```
+
+### Running Tests
+
+- Always run tests before committing changes
+- Install test dependencies: `pip install pytest feedparser`
+- Run all tests: `python3 -m pytest .github/actions/collect-rss-feeds/tests/ -v`
+- All tests must pass before pushing changes

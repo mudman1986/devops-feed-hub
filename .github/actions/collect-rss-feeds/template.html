@@ -434,13 +434,16 @@
             }
         }
         
-        // Timeframe filtering functionality
-        const timeframeButtons = document.querySelectorAll('.timeframe-button');
-        const timeframeHoursMap = {
+        // Timeframe filtering configuration
+        // Maps timeframe keys to hours for date filtering
+        const TIMEFRAME_HOURS = {
             '1day': 24,
             '7days': 168,
             '30days': 720
         };
+        
+        // Timeframe filtering functionality
+        const timeframeButtons = document.querySelectorAll('.timeframe-button');
         
         // Get saved timeframe preference or default to 1 day
         let savedTimeframe = '1day';
@@ -484,7 +487,7 @@
                 }
             });
             
-            const hours = timeframeHoursMap[timeframe] || 24;
+            const hours = TIMEFRAME_HOURS[timeframe] || 24;
             const cutoffTime = new Date(Date.now() - hours * 60 * 60 * 1000);
             
             // Filter articles by timeframe
