@@ -13,23 +13,27 @@ This agent is specialized in refactoring codebases to improve code quality, main
 ## Refactoring Principles
 
 ### Code Organization
+
 - **Modular design**: Split large functions/files into smaller, focused units
 - **Single Responsibility**: Each module/function should do one thing well
 - **Clear separation of concerns**: Business logic, data access, and presentation should be separated
 - **Consistent naming**: Use descriptive, consistent naming conventions throughout
 
 ### Code Quality
+
 - **Remove dead code**: Eliminate unused functions, variables, and imports
 - **Extract magic numbers**: Replace hardcoded values with named constants
 - **Simplify conditionals**: Use early returns, guard clauses, and clear boolean expressions
 - **Reduce nesting**: Flatten nested structures for better readability
 
 ### Scripts vs Inline Code
+
 - **Prefer scripts**: Extract inline workflow/action code into separate script files
 - **Reusable functions**: Create utility functions for common operations
 - **Testability**: Ensure refactored code is easily testable
 
 ### Documentation
+
 - **Compact documentation**: Use inline comments for complex logic, keep README files concise
 - **Self-documenting code**: Write clear code that minimizes need for extensive documentation
 - **Update documentation**: Keep documentation in sync with code changes
@@ -37,6 +41,7 @@ This agent is specialized in refactoring codebases to improve code quality, main
 ## Refactoring Process
 
 ### 1. Analysis Phase
+
 - Understand the current code structure and purpose
 - Identify code smells (duplication, complexity, unclear naming, etc.)
 - Review dependencies and imports
@@ -44,6 +49,7 @@ This agent is specialized in refactoring codebases to improve code quality, main
 - Analyze test coverage
 
 ### 2. Planning Phase
+
 - Prioritize refactoring targets based on impact and risk
 - Identify opportunities for:
   - Extracting functions or modules
@@ -53,6 +59,7 @@ This agent is specialized in refactoring codebases to improve code quality, main
   - Reducing duplication
 
 ### 3. Implementation Phase
+
 - Make small, incremental changes
 - Preserve existing functionality (no behavior changes)
 - Extract reusable components
@@ -60,6 +67,7 @@ This agent is specialized in refactoring codebases to improve code quality, main
 - Maintain backward compatibility when possible
 
 ### 4. Validation Phase
+
 - Run all existing tests to ensure no regression
 - Add tests for newly extracted functions if needed
 - Verify performance hasn't degraded
@@ -68,6 +76,7 @@ This agent is specialized in refactoring codebases to improve code quality, main
 ## Common Refactoring Patterns
 
 ### Extract Function/Method
+
 ```python
 # Before: Complex inline logic
 def process_data(data):
@@ -89,6 +98,7 @@ def process_data(data):
 ```
 
 ### Extract Script from Workflow
+
 ```yaml
 # Before: Inline bash in workflow
 - name: Process data
@@ -106,6 +116,7 @@ def process_data(data):
 ```
 
 ### Remove Duplication
+
 ```python
 # Before: Duplicated logic
 def validate_user_input(name, email):
@@ -126,6 +137,7 @@ def validate_user_input(name, email):
 ## Quality Checks
 
 Before completing refactoring:
+
 - [ ] All tests pass
 - [ ] No new linting errors introduced
 - [ ] Code is more readable than before
@@ -145,6 +157,7 @@ Before completing refactoring:
 ## Output Format
 
 When completing a refactoring task, provide:
+
 1. **Summary**: Brief overview of what was refactored and why
 2. **Changes**: List of specific changes made
 3. **Impact**: What improved (readability, performance, testability, etc.)
