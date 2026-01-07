@@ -103,18 +103,18 @@ def generate_feed_nav(feeds: Dict[str, Any], current_feed: str = None) -> str:
     nav_html = '<nav class="feed-nav">\n'
     nav_html += '  <a href="index.html" class="nav-link'
     if current_feed is None:
-        nav_html += ' active'
+        nav_html += " active"
     nav_html += '">📊 All Feeds</a>\n'
-    
+
     for feed_name in sorted(feeds.keys()):
         feed_slug = generate_feed_slug(feed_name)
-        
+
         nav_html += f'  <a href="feed-{feed_slug}.html" class="nav-link'
         if current_feed == feed_name:
-            nav_html += ' active'
+            nav_html += " active"
         nav_html += f'">{html_escape(feed_name)}</a>\n'
-    
-    nav_html += '</nav>\n'
+
+    nav_html += "</nav>\n"
     return nav_html
 
 
@@ -310,7 +310,10 @@ def generate_html_page(
     # Replace placeholders
     html = template.replace("<!-- CONTENT_PLACEHOLDER -->", content)
     html = html.replace("<!-- TIMESTAMP_PLACEHOLDER -->", formatted_time)
-    html = html.replace("<title>RSS Feed Collection</title>", f"<title>{html_escape(page_title)}</title>")
+    html = html.replace(
+        "<title>RSS Feed Collection</title>",
+        f"<title>{html_escape(page_title)}</title>",
+    )
 
     return html
 
@@ -325,14 +328,14 @@ def generate_feed_slug(feed_name: str) -> str:
     Returns:
         URL-safe slug string
     """
-    feed_slug = feed_name.lower().replace(' ', '-').replace('/', '-')
+    feed_slug = feed_name.lower().replace(" ", "-").replace("/", "-")
     # Remove any other non-alphanumeric characters except hyphens
-    feed_slug = ''.join(c if c.isalnum() or c == '-' else '' for c in feed_slug)
+    feed_slug = "".join(c if c.isalnum() or c == "-" else "" for c in feed_slug)
     # Remove consecutive hyphens
-    while '--' in feed_slug:
-        feed_slug = feed_slug.replace('--', '-')
+    while "--" in feed_slug:
+        feed_slug = feed_slug.replace("--", "-")
     # Remove leading/trailing hyphens
-    feed_slug = feed_slug.strip('-')
+    feed_slug = feed_slug.strip("-")
     return feed_slug
 
 
