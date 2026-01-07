@@ -391,7 +391,7 @@ class TestGenerateSummary(unittest.TestCase):
         self.assertIn('aria-label="Toggle theme"', result)
 
         # Check for SVG icons (new design uses SVG, not emoji)
-        self.assertIn('<svg', result)
+        self.assertIn("<svg", result)
         self.assertIn('id="theme-icon"', result)
 
         # Check for theme script (external JS file)

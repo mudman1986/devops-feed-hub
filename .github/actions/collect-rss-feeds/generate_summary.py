@@ -307,13 +307,13 @@ def generate_html_content(
         # Within each group, sort alphabetically
         feeds_with_articles = {}
         empty_feeds = {}
-        
+
         for feed_name, feed_data in data["feeds"].items():
             if feed_data["count"] > 0:
                 feeds_with_articles[feed_name] = feed_data
             else:
                 empty_feeds[feed_name] = feed_data
-        
+
         # Combine: feeds with articles (sorted), then empty feeds (sorted)
         feeds_to_display = dict(sorted(feeds_with_articles.items()))
         feeds_to_display.update(dict(sorted(empty_feeds.items())))
