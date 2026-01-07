@@ -485,8 +485,7 @@
             });
             
             const hours = timeframeHoursMap[timeframe] || 24;
-            const cutoffTime = new Date();
-            cutoffTime.setHours(cutoffTime.getHours() - hours);
+            const cutoffTime = new Date(Date.now() - hours * 60 * 60 * 1000);
             
             // Filter articles by timeframe
             const allArticles = document.querySelectorAll('.article-item');
@@ -515,12 +514,8 @@
                         article.style.display = '';
                         visibleCount++;
                     }
-                } else if (dateStr === 'Unknown') {
-                    // Show articles with unknown dates
-                    article.style.display = '';
-                    visibleCount++;
                 } else {
-                    // Show articles without dates
+                    // Show articles without dates or with unknown dates
                     article.style.display = '';
                     visibleCount++;
                 }
@@ -574,14 +569,17 @@
                                     timeframe === '7days' ? 'Last 7 days' : 
                                     'Last 30 days';
                 
-                // Update or add time range display
-                const timeRangeLine = metadata.innerHTML.match(/<strong>Time Range:<\/strong>[^<]*/);
-                if (timeRangeLine) {
-                    metadata.innerHTML = metadata.innerHTML.replace(
-                        /<strong>Time Range:<\/strong>[^<]*/,
-                        `<strong>Time Range:</strong> ${timeRangeText}`
-                    );
-                }
+                // Update time range display safely using DOM methods
+                const strongElements = metadata.querySelectorAll('strong');
+                strongElements.forEach(strong => {
+                    if (strong.textContent === 'Time Range:') {
+                        // Get the text node after the strong element
+                        const textNode = strong.nextSibling;
+                        if (textNode && textNode.nodeType === Node.TEXT_NODE) {
+                            textNode.textContent = ' ' + timeRangeText;
+                        }
+                    }
+                });
             }
         }
         
