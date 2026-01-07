@@ -113,7 +113,7 @@ def generate_feed_nav(
     nav_html += '  <a href="index.html" class="nav-link'
     if current_feed is None:
         nav_html += " active"
-    nav_html += '">📊 All Feeds</a>\n'
+    nav_html += '">All Feeds</a>\n'
 
     for feed_name in sorted(feeds.keys()):
         feed_slug = generate_feed_slug(feed_name)
@@ -128,7 +128,7 @@ def generate_feed_nav(
         nav_html += '  <a href="failed-feeds.html" class="nav-link'
         if current_feed == "failed":
             nav_html += " active"
-        nav_html += '">❌ Failed Feeds</a>\n'
+        nav_html += '">Failed Feeds</a>\n'
 
     nav_html += "</nav>\n"
     return nav_html
@@ -145,7 +145,7 @@ def generate_failed_feeds_content(failed_feeds: list) -> str:
         HTML content string for failed feeds
     """
     content = """
-        <h2>❌ Failed Feeds</h2>
+        <h2>Failed Feeds</h2>
 """
     if failed_feeds:
         content += """
@@ -184,7 +184,7 @@ def generate_feed_articles_content(feeds_to_display: Dict[str, Any]) -> str:
         return ""
 
     content = """
-        <h2>✅ Feed Articles</h2>
+        <h2>Feed Articles</h2>
 """
     for feed_name, feed_data in feeds_to_display.items():
         article_count = feed_data["count"]
@@ -268,7 +268,7 @@ def generate_html_content(
         feed_data = data["feeds"].get(current_feed, {})
         article_count = feed_data.get("count", 0)
         content += f"""
-        <h2>📊 {html_escape(current_feed)}</h2>
+        <h2>{html_escape(current_feed)}</h2>
         <div class="stats">
             <div class="stat-card">
                 <div class="stat-label">Total Articles</div>
@@ -279,7 +279,7 @@ def generate_html_content(
     else:
         # Show overall summary for all feeds
         content += f"""
-        <h2>📊 Summary</h2>
+        <h2>Summary</h2>
         <div class="stats">
             <div class="stat-card">
                 <div class="stat-label">Total Feeds</div>
