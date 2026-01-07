@@ -12,6 +12,19 @@ from html import escape as html_escape
 from typing import Any, Dict
 
 
+def parse_iso_timestamp(iso_string: str) -> datetime:
+    """
+    Parse ISO 8601 timestamp string to datetime object.
+
+    Args:
+        iso_string: ISO 8601 formatted timestamp string (may end with 'Z')
+
+    Returns:
+        datetime object
+    """
+    return datetime.fromisoformat(iso_string.replace("Z", "+00:00"))
+
+
 def generate_markdown_summary(data: Dict[str, Any]) -> str:
     """
     Generate markdown summary from RSS feed collection data
@@ -86,9 +99,7 @@ def generate_html_content(data: Dict[str, Any]) -> str:
     Returns:
         HTML content string to be injected into template
     """
-    collected_time = datetime.fromisoformat(
-        data["metadata"]["collected_at"].replace("Z", "+00:00")
-    )
+    collected_time = parse_iso_timestamp(data["metadata"]["collected_at"])
     formatted_time = collected_time.strftime("%B %d, %Y at %I:%M %p UTC")
 
     content = f"""
@@ -225,9 +236,7 @@ def generate_html_page(data: Dict[str, Any], template_path: str = None) -> str:
     content = generate_html_content(data)
 
     # Get formatted timestamp
-    collected_time = datetime.fromisoformat(
-        data["metadata"]["collected_at"].replace("Z", "+00:00")
-    )
+    collected_time = parse_iso_timestamp(data["metadata"]["collected_at"])
     formatted_time = collected_time.strftime("%B %d, %Y at %I:%M %p UTC")
 
     # Replace placeholders
