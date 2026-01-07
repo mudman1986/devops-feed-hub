@@ -13,8 +13,7 @@ import unittest
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 # Import the functions we want to test
-from generate_summary import (generate_html_page,  # noqa: E402
-                              generate_markdown_summary)
+from generate_summary import generate_html_page, generate_markdown_summary  # noqa: E402
 
 
 class TestGenerateSummary(unittest.TestCase):
