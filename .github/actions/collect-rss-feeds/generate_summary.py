@@ -128,13 +128,108 @@ def generate_feed_nav(
     return nav_html
 
 
+def generate_failed_feeds_content(failed_feeds: list) -> str:
+    """
+    Generate HTML content for failed feeds section
+
+    Args:
+        failed_feeds: List of failed feed dictionaries
+
+    Returns:
+        HTML content string for failed feeds
+    """
+    content = """
+        <h2>❌ Failed Feeds</h2>
+"""
+    if failed_feeds:
+        content += """
+        <div class="failed-feeds">
+"""
+        for failed in failed_feeds:
+            escaped_name = html_escape(failed["name"])
+            escaped_url = html_escape(failed["url"])
+            content += f"""
+            <div class="failed-feed-item">
+                <div class="failed-feed-name">{escaped_name}</div>
+                <div class="failed-feed-url">{escaped_url}</div>
+            </div>
+"""
+        content += """
+        </div>
+"""
+    else:
+        content += """
+        <div class="no-articles">No failed feeds</div>
+"""
+    return content
+
+
+def generate_feed_articles_content(feeds_to_display: Dict[str, Any]) -> str:
+    """
+    Generate HTML content for feed articles section
+
+    Args:
+        feeds_to_display: Dictionary of feeds to display
+
+    Returns:
+        HTML content string for feed articles
+    """
+    if not feeds_to_display:
+        return ""
+
+    content = """
+        <h2>✅ Feed Articles</h2>
+"""
+    for feed_name, feed_data in feeds_to_display.items():
+        article_count = feed_data["count"]
+        escaped_feed_name = html_escape(feed_name)
+        article_plural = "s" if article_count != 1 else ""
+        content += f"""
+        <div class="feed-section">
+            <h3>{escaped_feed_name}
+                <span class="feed-count">
+                    {article_count} article{article_plural}
+                </span>
+            </h3>
+"""
+        if feed_data["articles"]:
+            content += """
+            <ul class="article-list">
+"""
+            for article in feed_data["articles"]:
+                escaped_title = html_escape(article["title"])
+                escaped_link = html_escape(article["link"])
+                escaped_published = html_escape(article["published"])
+                content += f"""
+                <li class="article-item">
+                    <a href="{escaped_link}" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        {escaped_title}
+                    </a>
+                    <div class="article-meta">Published: {escaped_published}</div>
+                </li>
+"""
+            content += """
+            </ul>
+"""
+        else:
+            content += """
+            <div class="no-articles">No new articles in this time period</div>
+"""
+        content += """
+        </div>
+"""
+    return content
+
+
 def generate_html_content(data: Dict[str, Any], current_feed: str = None) -> str:
     """
     Generate HTML content (without template wrapper) from RSS feed collection data
 
     Args:
         data: RSS feed collection data dictionary
-        current_feed: If specified, generate content for only this feed, or "failed" for failed feeds page
+        current_feed: If specified, generate content for only this feed,
+                      or "failed" for failed feeds page
 
     Returns:
         HTML content string to be injected into template
@@ -155,29 +250,7 @@ def generate_html_content(data: Dict[str, Any], current_feed: str = None) -> str
 
     # If showing failed feeds page
     if current_feed == "failed":
-        content += """
-        <h2>❌ Failed Feeds</h2>
-"""
-        if data.get("failed_feeds"):
-            content += """
-        <div class="failed-feeds">
-"""
-            for failed in data["failed_feeds"]:
-                escaped_name = html_escape(failed["name"])
-                escaped_url = html_escape(failed["url"])
-                content += f"""
-            <div class="failed-feed-item">
-                <div class="failed-feed-name">{escaped_name}</div>
-                <div class="failed-feed-url">{escaped_url}</div>
-            </div>
-"""
-            content += """
-        </div>
-"""
-        else:
-            content += """
-        <div class="no-articles">No failed feeds</div>
-"""
+        content += generate_failed_feeds_content(data.get("failed_feeds", []))
         return content
 
     # If showing a single feed, adjust the summary
@@ -228,49 +301,7 @@ def generate_html_content(data: Dict[str, Any], current_feed: str = None) -> str
         feeds_to_display = dict(sorted(data["feeds"].items()))
 
     # Display feeds
-    if feeds_to_display:
-        content += """
-        <h2>✅ Feed Articles</h2>
-"""
-        for feed_name, feed_data in feeds_to_display.items():
-            article_count = feed_data["count"]
-            escaped_feed_name = html_escape(feed_name)
-            article_plural = "s" if article_count != 1 else ""
-            content += f"""
-        <div class="feed-section">
-            <h3>{escaped_feed_name}
-                <span class="feed-count">
-                    {article_count} article{article_plural}
-                </span>
-            </h3>
-"""
-            if feed_data["articles"]:
-                content += """
-            <ul class="article-list">
-"""
-                for article in feed_data["articles"]:
-                    escaped_title = html_escape(article["title"])
-                    escaped_link = html_escape(article["link"])
-                    escaped_published = html_escape(article["published"])
-                    content += f"""
-                <li class="article-item">
-                    <a href="{escaped_link}" class="article-title"
-                       target="_blank" rel="noopener noreferrer">
-                        {escaped_title}
-                    </a>
-                    <div class="article-meta">Published: {escaped_published}</div>
-                </li>
-"""
-                content += """
-            </ul>
-"""
-            else:
-                content += """
-            <div class="no-articles">No new articles in this time period</div>
-"""
-            content += """
-        </div>
-"""
+    content += generate_feed_articles_content(feeds_to_display)
 
     return content
 

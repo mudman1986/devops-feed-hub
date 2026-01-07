@@ -752,9 +752,9 @@ class TestMultiPageGeneration(unittest.TestCase):
         data_with_failures["failed_feeds"] = [
             {"name": "Failed Feed", "url": "https://example.com/failed"}
         ]
-        
+
         nav_html = generate_feed_nav(data_with_failures["feeds"], None, True)
-        
+
         # Check failed feeds link appears
         self.assertIn('href="failed-feeds.html"', nav_html)
         self.assertIn("❌ Failed Feeds", nav_html)
@@ -762,7 +762,7 @@ class TestMultiPageGeneration(unittest.TestCase):
     def test_generate_feed_nav_without_failed_feeds(self):
         """Test navigation does not include failed feeds link when there are none"""
         nav_html = generate_feed_nav(self.sample_data["feeds"], None, False)
-        
+
         # Check failed feeds link does not appear
         self.assertNotIn('href="failed-feeds.html"', nav_html)
         self.assertNotIn("❌ Failed Feeds", nav_html)
@@ -774,16 +774,16 @@ class TestMultiPageGeneration(unittest.TestCase):
             {"name": "Failed Feed 1", "url": "https://example.com/failed1"},
             {"name": "Failed Feed 2", "url": "https://example.com/failed2"},
         ]
-        
+
         result = generate_html_page(data_with_failures, current_feed="failed")
-        
+
         # Check for failed feeds section
         self.assertIn("<h2>❌ Failed Feeds</h2>", result)
         self.assertIn("Failed Feed 1", result)
         self.assertIn("Failed Feed 2", result)
         self.assertIn("https://example.com/failed1", result)
         self.assertIn("https://example.com/failed2", result)
-        
+
         # Check that feed articles section is NOT present
         self.assertNotIn("<h2>✅ Feed Articles</h2>", result)
         self.assertNotIn("<h2>📊 Summary</h2>", result)
@@ -794,14 +794,14 @@ class TestMultiPageGeneration(unittest.TestCase):
         data_with_failures["failed_feeds"] = [
             {"name": "Failed Feed", "url": "https://example.com/failed"}
         ]
-        
+
         with tempfile.TemporaryDirectory() as tmpdir:
             generate_all_pages(data_with_failures, tmpdir)
-            
+
             # Check that failed-feeds.html was created
             failed_path = os.path.join(tmpdir, "failed-feeds.html")
             self.assertTrue(os.path.exists(failed_path))
-            
+
             # Verify failed feeds page content
             with open(failed_path, "r", encoding="utf-8") as f:
                 failed_content = f.read()
@@ -812,7 +812,7 @@ class TestMultiPageGeneration(unittest.TestCase):
         """Test that generate_all_pages does not create failed feeds page when there are no failures"""
         with tempfile.TemporaryDirectory() as tmpdir:
             generate_all_pages(self.sample_data, tmpdir)
-            
+
             # Check that failed-feeds.html was NOT created
             failed_path = os.path.join(tmpdir, "failed-feeds.html")
             self.assertFalse(os.path.exists(failed_path))
@@ -856,19 +856,19 @@ class TestMultiPageGeneration(unittest.TestCase):
                 ],
             },
         }
-        
+
         result = generate_html_page(unordered_data)
-        
+
         # Find positions of feed names in the HTML
         apple_pos = result.find(">Apple Blog<")
         microsoft_pos = result.find(">Microsoft Blog<")
         zebra_pos = result.find(">Zebra Blog<")
-        
+
         # All should be found
         self.assertNotEqual(apple_pos, -1)
         self.assertNotEqual(microsoft_pos, -1)
         self.assertNotEqual(zebra_pos, -1)
-        
+
         # Check they appear in alphabetical order
         self.assertLess(apple_pos, microsoft_pos)
         self.assertLess(microsoft_pos, zebra_pos)
