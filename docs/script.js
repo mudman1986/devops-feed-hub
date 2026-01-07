@@ -148,6 +148,8 @@ function applyTimeframeFilter(timeframe) {
 
   // Update feed counts and show/hide feed sections
   const feedSections = document.querySelectorAll(".feed-section");
+  const feedsData = [];
+
   feedSections.forEach((section) => {
     const articles = section.querySelectorAll(".article-item");
     const visibleArticles = Array.from(articles).filter(
@@ -180,7 +182,35 @@ function applyTimeframeFilter(timeframe) {
       if (articleList) articleList.style.display = "";
       if (noArticlesMsg) noArticlesMsg.style.display = "none";
     }
+
+    // Store feed data for reordering
+    feedsData.push({
+      element: section,
+      count: count,
+      name: section.querySelector("h3")?.textContent.trim() || "",
+    });
   });
+
+  // Reorder feeds: feeds with articles first, then empty feeds (both groups alphabetically)
+  if (feedSections.length > 0 && feedSections[0].parentNode) {
+    const parent = feedSections[0].parentNode;
+
+    // Separate feeds into two groups
+    const feedsWithArticles = feedsData
+      .filter((f) => f.count > 0)
+      .sort((a, b) => a.name.localeCompare(b.name));
+    const emptyFeeds = feedsData
+      .filter((f) => f.count === 0)
+      .sort((a, b) => a.name.localeCompare(b.name));
+
+    // Combine: feeds with articles first, then empty feeds
+    const orderedFeeds = [...feedsWithArticles, ...emptyFeeds];
+
+    // Reorder DOM elements
+    orderedFeeds.forEach((feedData) => {
+      parent.appendChild(feedData.element);
+    });
+  }
 
   // Update metadata display
   updateMetadataDisplay(timeframe);
