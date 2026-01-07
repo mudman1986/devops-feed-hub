@@ -4,12 +4,12 @@ Summary Generator for RSS Feed Collection
 Generates both markdown (for GitHub workflow summary) and HTML (for GitHub Pages)
 """
 
-import json
 import argparse
+import json
 import os
-from html import escape as html_escape
 from datetime import datetime
-from typing import Dict, Any
+from html import escape as html_escape
+from typing import Any, Dict
 
 
 def generate_markdown_summary(data: Dict[str, Any]) -> str:
@@ -37,37 +37,43 @@ def generate_markdown_summary(data: Dict[str, Any]) -> str:
     summary.append("")
 
     # Successful feeds
-    if data['feeds']:
+    if data["feeds"]:
         summary.append("## ✅ Successful Feeds\n")
-        for feed_name, feed_data in data['feeds'].items():
+        for feed_name, feed_data in data["feeds"].items():
             summary.append(f"### {feed_name}")
             summary.append(f"- **Articles:** {feed_data['count']}")
 
-            if feed_data['articles']:
+            if feed_data["articles"]:
                 summary.append("\n| Title | Published |")
                 summary.append("|-------|-----------|")
-                for article in feed_data['articles'][:10]:  # Limit to first 10
-                    title = article['title'][:80] + "..." if len(article['title']) > 80 else article['title']
-                    published = article['published']
+                for article in feed_data["articles"][:10]:  # Limit to first 10
+                    title = (
+                        article["title"][:80] + "..."
+                        if len(article["title"]) > 80
+                        else article["title"]
+                    )
+                    published = article["published"]
                     summary.append(f"| [{title}]({article['link']}) | {published} |")
 
-                if feed_data['count'] > 10:
-                    summary.append(f"\n*...and {feed_data['count'] - 10} more articles*")
+                if feed_data["count"] > 10:
+                    summary.append(
+                        f"\n*...and {feed_data['count'] - 10} more articles*"
+                    )
             else:
                 summary.append("*No new articles*")
 
             summary.append("")
 
     # Failed feeds
-    if data['failed_feeds']:
+    if data["failed_feeds"]:
         summary.append("## ❌ Failed Feeds\n")
         summary.append("| Feed Name | URL |")
         summary.append("|-----------|-----|")
-        for failed in data['failed_feeds']:
+        for failed in data["failed_feeds"]:
             summary.append(f"| {failed['name']} | {failed['url']} |")
         summary.append("")
 
-    return '\n'.join(summary)
+    return "\n".join(summary)
 
 
 def generate_html_content(data: Dict[str, Any]) -> str:
@@ -80,8 +86,10 @@ def generate_html_content(data: Dict[str, Any]) -> str:
     Returns:
         HTML content string to be injected into template
     """
-    collected_time = datetime.fromisoformat(data['metadata']['collected_at'].replace('Z', '+00:00'))
-    formatted_time = collected_time.strftime('%B %d, %Y at %I:%M %p UTC')
+    collected_time = datetime.fromisoformat(
+        data["metadata"]["collected_at"].replace("Z", "+00:00")
+    )
+    formatted_time = collected_time.strftime("%B %d, %Y at %I:%M %p UTC")
 
     content = f"""
         <div class="metadata">
@@ -111,14 +119,14 @@ def generate_html_content(data: Dict[str, Any]) -> str:
 """
 
     # Successful feeds
-    if data['feeds']:
+    if data["feeds"]:
         content += """
         <h2>✅ Feed Articles</h2>
 """
-        for feed_name, feed_data in data['feeds'].items():
-            article_count = feed_data['count']
+        for feed_name, feed_data in data["feeds"].items():
+            article_count = feed_data["count"]
             escaped_feed_name = html_escape(feed_name)
-            article_plural = 's' if article_count != 1 else ''
+            article_plural = "s" if article_count != 1 else ""
             content += f"""
         <div class="feed-section">
             <h3>{escaped_feed_name}
@@ -127,14 +135,14 @@ def generate_html_content(data: Dict[str, Any]) -> str:
                 </span>
             </h3>
 """
-            if feed_data['articles']:
+            if feed_data["articles"]:
                 content += """
             <ul class="article-list">
 """
-                for article in feed_data['articles']:
-                    escaped_title = html_escape(article['title'])
-                    escaped_link = html_escape(article['link'])
-                    escaped_published = html_escape(article['published'])
+                for article in feed_data["articles"]:
+                    escaped_title = html_escape(article["title"])
+                    escaped_link = html_escape(article["link"])
+                    escaped_published = html_escape(article["published"])
                     content += f"""
                 <li class="article-item">
                     <a href="{escaped_link}" class="article-title"
@@ -156,14 +164,14 @@ def generate_html_content(data: Dict[str, Any]) -> str:
 """
 
     # Failed feeds
-    if data['failed_feeds']:
+    if data["failed_feeds"]:
         content += """
         <h2>❌ Failed Feeds</h2>
         <div class="failed-feeds">
 """
-        for failed in data['failed_feeds']:
-            escaped_name = html_escape(failed['name'])
-            escaped_url = html_escape(failed['url'])
+        for failed in data["failed_feeds"]:
+            escaped_name = html_escape(failed["name"])
+            escaped_url = html_escape(failed["url"])
             content += f"""
             <div class="failed-feed-item">
                 <div class="failed-feed-name">{escaped_name}</div>
@@ -197,11 +205,11 @@ def generate_html_page(data: Dict[str, Any], template_path: str = None) -> str:
     # Get template path
     if template_path is None:
         script_dir = os.path.dirname(os.path.abspath(__file__))
-        template_path = os.path.join(script_dir, 'template.html')
+        template_path = os.path.join(script_dir, "template.html")
 
     # Read template with error handling and explicit UTF-8 encoding
     try:
-        with open(template_path, 'r', encoding='utf-8') as f:
+        with open(template_path, "r", encoding="utf-8") as f:
             template = f.read()
     except FileNotFoundError as exc:
         raise FileNotFoundError(
@@ -218,13 +226,13 @@ def generate_html_page(data: Dict[str, Any], template_path: str = None) -> str:
 
     # Get formatted timestamp
     collected_time = datetime.fromisoformat(
-        data['metadata']['collected_at'].replace('Z', '+00:00')
+        data["metadata"]["collected_at"].replace("Z", "+00:00")
     )
-    formatted_time = collected_time.strftime('%B %d, %Y at %I:%M %p UTC')
+    formatted_time = collected_time.strftime("%B %d, %Y at %I:%M %p UTC")
 
     # Replace placeholders
-    html = template.replace('<!-- CONTENT_PLACEHOLDER -->', content)
-    html = html.replace('<!-- TIMESTAMP_PLACEHOLDER -->', formatted_time)
+    html = template.replace("<!-- CONTENT_PLACEHOLDER -->", content)
+    html = html.replace("<!-- TIMESTAMP_PLACEHOLDER -->", formatted_time)
 
     return html
 
@@ -240,21 +248,19 @@ def main():
         int: 0 on success, 1 on error.
     """
     parser = argparse.ArgumentParser(
-        description='Generate summary from RSS feed collection data'
+        description="Generate summary from RSS feed collection data"
     )
     parser.add_argument(
-        '--input',
-        required=True,
-        help='Input JSON file from RSS feed collection'
+        "--input", required=True, help="Input JSON file from RSS feed collection"
     )
-    parser.add_argument('--markdown', help='Output markdown file path')
-    parser.add_argument('--html', help='Output HTML file path')
+    parser.add_argument("--markdown", help="Output markdown file path")
+    parser.add_argument("--html", help="Output HTML file path")
 
     args = parser.parse_args()
 
     # Read input JSON
     try:
-        with open(args.input, 'r', encoding='utf-8') as f:
+        with open(args.input, "r", encoding="utf-8") as f:
             data = json.load(f)
     except FileNotFoundError:
         print(f"Error: Input file {args.input} not found")
@@ -266,20 +272,21 @@ def main():
     # Generate markdown if requested
     if args.markdown:
         markdown_content = generate_markdown_summary(data)
-        with open(args.markdown, 'w', encoding='utf-8') as f:
+        with open(args.markdown, "w", encoding="utf-8") as f:
             f.write(markdown_content)
         print(f"✓ Markdown summary written to {args.markdown}")
 
     # Generate HTML if requested
     if args.html:
         html_content = generate_html_page(data)
-        with open(args.html, 'w', encoding='utf-8') as f:
+        with open(args.html, "w", encoding="utf-8") as f:
             f.write(html_content)
         print(f"✓ HTML page written to {args.html}")
 
     return 0
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     import sys
+
     sys.exit(main())

@@ -4,11 +4,11 @@ RSS Feed Collector
 Fetches and processes RSS/Atom feeds, outputting results in JSON format
 """
 
+import argparse
 import json
 import sys
-from datetime import datetime, timezone, timedelta
-from typing import List, Dict, Any
-import argparse
+from datetime import datetime, timedelta, timezone
+from typing import Any, Dict, List
 
 
 def parse_rss_feed(url: str, since_time: datetime) -> List[Dict[str, Any]]:
@@ -22,14 +22,15 @@ def parse_rss_feed(url: str, since_time: datetime) -> List[Dict[str, Any]]:
     Returns:
         List of article dictionaries with 'title', 'link', 'published'
     """
-    import feedparser
     from urllib.request import Request, urlopen
+
+    import feedparser
 
     articles = []
 
     try:
         # Add user agent to avoid 403 errors
-        req = Request(url, headers={'User-Agent': 'Mozilla/5.0 RSS-Feed-Collector/1.0'})
+        req = Request(url, headers={"User-Agent": "Mozilla/5.0 RSS-Feed-Collector/1.0"})
         with urlopen(req, timeout=30) as response:
             content = response.read()
 
@@ -38,18 +39,20 @@ def parse_rss_feed(url: str, since_time: datetime) -> List[Dict[str, Any]]:
 
         # Check for parsing errors
         if feed.bozo and not feed.entries:
-            raise Exception(f"Feed parsing error: {feed.get('bozo_exception', 'Unknown error')}")
+            raise Exception(
+                f"Feed parsing error: {feed.get('bozo_exception', 'Unknown error')}"
+            )
 
         # Process entries
         for entry in feed.entries:
-            title = entry.get('title', 'No title')
-            link = entry.get('link', '')
+            title = entry.get("title", "No title")
+            link = entry.get("link", "")
 
             # Get publication date - feedparser normalizes this
             pub_date = None
-            if hasattr(entry, 'published_parsed') and entry.published_parsed:
+            if hasattr(entry, "published_parsed") and entry.published_parsed:
                 pub_date = datetime(*entry.published_parsed[:6], tzinfo=timezone.utc)
-            elif hasattr(entry, 'updated_parsed') and entry.updated_parsed:
+            elif hasattr(entry, "updated_parsed") and entry.updated_parsed:
                 pub_date = datetime(*entry.updated_parsed[:6], tzinfo=timezone.utc)
 
             # Filter by date if available
@@ -57,18 +60,16 @@ def parse_rss_feed(url: str, since_time: datetime) -> List[Dict[str, Any]]:
                 # Convert to naive UTC for comparison
                 pub_date_naive = pub_date.replace(tzinfo=None)
                 if pub_date_naive > since_time:
-                    articles.append({
-                        'title': title,
-                        'link': link,
-                        'published': pub_date.isoformat()
-                    })
+                    articles.append(
+                        {
+                            "title": title,
+                            "link": link,
+                            "published": pub_date.isoformat(),
+                        }
+                    )
             else:
                 # No date available, include it anyway
-                articles.append({
-                    'title': title,
-                    'link': link,
-                    'published': 'Unknown'
-                })
+                articles.append({"title": title, "link": link, "published": "Unknown"})
 
     except Exception as e:
         # Return None to indicate this feed failed
@@ -88,37 +89,28 @@ def main():
     Returns:
         None
     """
-    parser = argparse.ArgumentParser(description='Collect RSS feeds')
+    parser = argparse.ArgumentParser(description="Collect RSS feeds")
     parser.add_argument(
-        '--config',
-        required=True,
-        help='Path to RSS feeds configuration file'
+        "--config", required=True, help="Path to RSS feeds configuration file"
     )
     parser.add_argument(
-        '--hours',
-        type=int,
-        default=24,
-        help='Fetch articles from the last N hours'
+        "--hours", type=int, default=24, help="Fetch articles from the last N hours"
     )
-    parser.add_argument(
-        '--output',
-        required=True,
-        help='Output JSON file path'
-    )
+    parser.add_argument("--output", required=True, help="Output JSON file path")
 
     args = parser.parse_args()
 
     # Calculate since_time
-    since_time = (
-        datetime.now(timezone.utc).replace(tzinfo=None) -
-        timedelta(hours=args.hours)
+    since_time = datetime.now(timezone.utc).replace(tzinfo=None) - timedelta(
+        hours=args.hours
     )
-    print(f"Fetching articles published after {since_time.isoformat()}",
-          file=sys.stderr)
+    print(
+        f"Fetching articles published after {since_time.isoformat()}", file=sys.stderr
+    )
 
     # Load RSS feeds configuration
     try:
-        with open(args.config, 'r', encoding='utf-8') as f:
+        with open(args.config, "r", encoding="utf-8") as f:
             config = json.load(f)
     except FileNotFoundError:
         print(f"Error: Configuration file {args.config} not found", file=sys.stderr)
@@ -128,20 +120,20 @@ def main():
         sys.exit(1)
 
     results = {
-        'metadata': {
-            'collected_at': datetime.now(timezone.utc).isoformat(),
-            'since': since_time.isoformat(),
-            'hours': args.hours
+        "metadata": {
+            "collected_at": datetime.now(timezone.utc).isoformat(),
+            "since": since_time.isoformat(),
+            "hours": args.hours,
         },
-        'feeds': {},
-        'failed_feeds': []
+        "feeds": {},
+        "failed_feeds": [],
     }
 
     # Fetch each feed
     total_articles = 0
-    for feed in config.get('feeds', []):
-        feed_name = feed.get('name', 'Unknown')
-        feed_url = feed.get('url', '')
+    for feed in config.get("feeds", []):
+        feed_name = feed.get("name", "Unknown")
+        feed_url = feed.get("url", "")
 
         if not feed_url:
             print(f"Skipping feed '{feed_name}': No URL provided", file=sys.stderr)
@@ -151,39 +143,36 @@ def main():
         articles = parse_rss_feed(feed_url, since_time)
 
         if articles is not None:
-            results['feeds'][feed_name] = {
-                'url': feed_url,
-                'articles': articles,
-                'count': len(articles)
+            results["feeds"][feed_name] = {
+                "url": feed_url,
+                "articles": articles,
+                "count": len(articles),
             }
             total_articles += len(articles)
             print(f"  ✓ Found {len(articles)} new articles", file=sys.stderr)
         else:
-            results['failed_feeds'].append({
-                'name': feed_name,
-                'url': feed_url
-            })
+            results["failed_feeds"].append({"name": feed_name, "url": feed_url})
             print("  ✗ Failed to fetch", file=sys.stderr)
 
     # Add summary to results
-    results['summary'] = {
-        'total_feeds': len(config.get('feeds', [])),
-        'successful_feeds': len(results['feeds']),
-        'failed_feeds': len(results['failed_feeds']),
-        'total_articles': total_articles
+    results["summary"] = {
+        "total_feeds": len(config.get("feeds", [])),
+        "successful_feeds": len(results["feeds"]),
+        "failed_feeds": len(results["failed_feeds"]),
+        "total_articles": total_articles,
     }
 
     # Save results as JSON
-    with open(args.output, 'w', encoding='utf-8') as f:
+    with open(args.output, "w", encoding="utf-8") as f:
         json.dump(results, f, indent=2)
 
     print(f"\n✓ Results saved to {args.output}", file=sys.stderr)
     print("\nSummary:", file=sys.stderr)
-    summary = results['summary']
+    summary = results["summary"]
     print(f"  Successful feeds: {summary['successful_feeds']}", file=sys.stderr)
     print(f"  Failed feeds: {summary['failed_feeds']}", file=sys.stderr)
     print(f"  Total articles: {summary['total_articles']}", file=sys.stderr)
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

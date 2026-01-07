@@ -2,20 +2,20 @@ name: RSS Feed Collector
 
 on:
   push:
-  
+
   schedule:
-    - cron: '0 9 * * 1-5'
+    - cron: "0 9 * * 1-5"
 
   workflow_dispatch:
     inputs:
       hours:
-        description: 'Fetch articles from the last N hours'
+        description: "Fetch articles from the last N hours"
         required: false
-        default: '24'
+        default: "24"
       target-branch:
-        description: 'Target branch for GitHub Pages content (default: github-pages)'
+        description: "Target branch for GitHub Pages content (default: github-pages)"
         required: false
-        default: 'github-pages'
+        default: "github-pages"
 
 permissions:
   contents: write
@@ -23,11 +23,11 @@ permissions:
 jobs:
   collect-feeds:
     runs-on: ubuntu-latest
-    
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-      
+
       - name: Get last successful run time
         id: last-run
         run: |
@@ -35,15 +35,15 @@ jobs:
           echo "hours=$HOURS" >> $GITHUB_OUTPUT
         env:
           GH_TOKEN: ${{ github.token }}
-      
+
       - name: Collect RSS Feeds
         id: collect
         uses: ./.github/actions/collect-rss-feeds
         with:
-          config-path: '.github/rss-feeds.json'
+          config-path: ".github/rss-feeds.json"
           hours: ${{ steps.last-run.outputs.hours }}
-          output-path: 'rss-feeds-output.json'
-      
+          output-path: "rss-feeds-output.json"
+
       - name: Upload results as artifact
         if: always()
         uses: actions/upload-artifact@v4
@@ -51,7 +51,7 @@ jobs:
           name: rss-feeds-${{ github.run_id }}
           path: rss-feeds-output.json
           retention-days: 30
-      
+
       - name: Display collection stats
         if: always()
         run: |
@@ -59,20 +59,20 @@ jobs:
           echo "- Total articles: ${{ steps.collect.outputs.total-articles }}"
           echo "- Successful feeds: ${{ steps.collect.outputs.successful-feeds }}"
           echo "- Failed feeds: ${{ steps.collect.outputs.failed-feeds }}"
-      
+
       - name: Generate GitHub Pages content
         if: success()
         run: |
           # Create docs directory if it doesn't exist
           mkdir -p docs
-          
+
           # Generate HTML page
           python3 .github/actions/collect-rss-feeds/generate_summary.py \
             --input rss-feeds-output.json \
             --html docs/index.html
-          
+
           echo "✓ GitHub Pages content generated"
-      
+
       - name: Commit and push GitHub Pages content
         if: success()
         run: |
