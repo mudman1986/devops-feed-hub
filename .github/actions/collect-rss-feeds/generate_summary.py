@@ -354,7 +354,9 @@ def generate_html_page(
 
     # Update title if this is a feed-specific page
     page_title = "RSS Feed Collection"
-    if current_feed:
+    if current_feed == "failed":
+        page_title = "Failed Feeds - RSS Feed Collection"
+    elif current_feed:
         page_title = f"{current_feed} - RSS Feed Collection"
 
     # Replace placeholders
