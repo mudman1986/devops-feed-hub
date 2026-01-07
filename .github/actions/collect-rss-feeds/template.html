@@ -248,17 +248,18 @@
         
         .feed-nav {
             display: flex;
-            flex-wrap: wrap;
+            flex-direction: column;
             gap: 10px;
             margin-bottom: 20px;
             padding: 15px;
             background-color: var(--bg-tertiary);
             border-radius: 6px;
             transition: background-color 0.3s ease;
+            min-width: 200px;
         }
         
         .nav-link {
-            padding: 8px 16px;
+            padding: 10px 16px;
             background-color: var(--bg-secondary);
             color: var(--text-link);
             text-decoration: none;
@@ -266,6 +267,8 @@
             border: 1px solid var(--border-primary);
             transition: all 0.2s ease;
             font-size: 0.9em;
+            text-align: left;
+            display: block;
         }
         
         .nav-link:hover {
@@ -309,10 +312,6 @@
                 flex-direction: column;
                 gap: 15px;
                 align-items: flex-start;
-            }
-            
-            .feed-nav {
-                flex-direction: column;
             }
             
             .nav-link {

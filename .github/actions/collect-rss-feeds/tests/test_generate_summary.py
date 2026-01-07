@@ -176,7 +176,8 @@ class TestGenerateSummary(unittest.TestCase):
         self.assertIn("<h1>📰 RSS Feed Collection</h1>", result)
         self.assertIn("<h2>📊 Summary</h2>", result)
         self.assertIn("<h2>✅ Feed Articles</h2>", result)
-        self.assertIn("<h2>❌ Failed Feeds</h2>", result)
+        # Failed feeds should NOT be in the main page anymore
+        self.assertNotIn("<h2>❌ Failed Feeds</h2>", result)
 
     def test_generate_html_page_content(self):
         """Test that HTML page includes all content"""
@@ -194,9 +195,10 @@ class TestGenerateSummary(unittest.TestCase):
         self.assertIn("https://example.com/article1", result)
         self.assertIn("https://example.com/article4", result)
 
-        # Check for failed feed
-        self.assertIn("Failed Feed", result)
-        self.assertIn("https://example.com/failed", result)
+        # Failed feeds should appear in navigation link but not in main content
+        self.assertIn('href="failed-feeds.html"', result)
+        # Failed feed details should NOT be in the main page
+        self.assertNotIn("https://example.com/failed", result)
 
     def test_generate_html_page_stats(self):
         """Test that HTML page includes correct statistics"""
@@ -584,7 +586,7 @@ class TestMultiPageGeneration(unittest.TestCase):
 
     def test_generate_feed_nav(self):
         """Test navigation generation"""
-        nav_html = generate_feed_nav(self.sample_data["feeds"])
+        nav_html = generate_feed_nav(self.sample_data["feeds"], None, False)
 
         # Check navigation structure
         self.assertIn('<nav class="feed-nav">', nav_html)
@@ -602,7 +604,7 @@ class TestMultiPageGeneration(unittest.TestCase):
 
     def test_generate_feed_nav_with_current(self):
         """Test navigation with active feed"""
-        nav_html = generate_feed_nav(self.sample_data["feeds"], "Test Feed 1")
+        nav_html = generate_feed_nav(self.sample_data["feeds"], "Test Feed 1", False)
 
         # Check that current feed has active class
         self.assertIn('class="nav-link active"', nav_html)
@@ -743,6 +745,133 @@ class TestMultiPageGeneration(unittest.TestCase):
         # Title should be escaped
         self.assertIn("&lt;script&gt;", result)
         self.assertNotIn("<script>alert('XSS')</script>", result)
+
+    def test_generate_feed_nav_with_failed_feeds(self):
+        """Test navigation includes failed feeds link when there are failed feeds"""
+        data_with_failures = self.sample_data.copy()
+        data_with_failures["failed_feeds"] = [
+            {"name": "Failed Feed", "url": "https://example.com/failed"}
+        ]
+        
+        nav_html = generate_feed_nav(data_with_failures["feeds"], None, True)
+        
+        # Check failed feeds link appears
+        self.assertIn('href="failed-feeds.html"', nav_html)
+        self.assertIn("❌ Failed Feeds", nav_html)
+
+    def test_generate_feed_nav_without_failed_feeds(self):
+        """Test navigation does not include failed feeds link when there are none"""
+        nav_html = generate_feed_nav(self.sample_data["feeds"], None, False)
+        
+        # Check failed feeds link does not appear
+        self.assertNotIn('href="failed-feeds.html"', nav_html)
+        self.assertNotIn("❌ Failed Feeds", nav_html)
+
+    def test_generate_failed_feeds_page(self):
+        """Test generation of failed feeds page"""
+        data_with_failures = self.sample_data.copy()
+        data_with_failures["failed_feeds"] = [
+            {"name": "Failed Feed 1", "url": "https://example.com/failed1"},
+            {"name": "Failed Feed 2", "url": "https://example.com/failed2"},
+        ]
+        
+        result = generate_html_page(data_with_failures, current_feed="failed")
+        
+        # Check for failed feeds section
+        self.assertIn("<h2>❌ Failed Feeds</h2>", result)
+        self.assertIn("Failed Feed 1", result)
+        self.assertIn("Failed Feed 2", result)
+        self.assertIn("https://example.com/failed1", result)
+        self.assertIn("https://example.com/failed2", result)
+        
+        # Check that feed articles section is NOT present
+        self.assertNotIn("<h2>✅ Feed Articles</h2>", result)
+        self.assertNotIn("<h2>📊 Summary</h2>", result)
+
+    def test_generate_all_pages_with_failed_feeds(self):
+        """Test that generate_all_pages creates failed feeds page when there are failures"""
+        data_with_failures = self.sample_data.copy()
+        data_with_failures["failed_feeds"] = [
+            {"name": "Failed Feed", "url": "https://example.com/failed"}
+        ]
+        
+        with tempfile.TemporaryDirectory() as tmpdir:
+            generate_all_pages(data_with_failures, tmpdir)
+            
+            # Check that failed-feeds.html was created
+            failed_path = os.path.join(tmpdir, "failed-feeds.html")
+            self.assertTrue(os.path.exists(failed_path))
+            
+            # Verify failed feeds page content
+            with open(failed_path, "r", encoding="utf-8") as f:
+                failed_content = f.read()
+            self.assertIn("Failed Feed", failed_content)
+            self.assertIn("https://example.com/failed", failed_content)
+
+    def test_generate_all_pages_without_failed_feeds(self):
+        """Test that generate_all_pages does not create failed feeds page when there are no failures"""
+        with tempfile.TemporaryDirectory() as tmpdir:
+            generate_all_pages(self.sample_data, tmpdir)
+            
+            # Check that failed-feeds.html was NOT created
+            failed_path = os.path.join(tmpdir, "failed-feeds.html")
+            self.assertFalse(os.path.exists(failed_path))
+
+    def test_alphabetical_feed_ordering(self):
+        """Test that feeds are displayed in alphabetical order"""
+        # Create data with feeds in non-alphabetical order
+        unordered_data = self.sample_data.copy()
+        unordered_data["feeds"] = {
+            "Zebra Blog": {
+                "url": "https://example.com/zebra",
+                "count": 1,
+                "articles": [
+                    {
+                        "title": "Zebra Article",
+                        "link": "https://example.com/zebra/1",
+                        "published": "2024-01-15T09:00:00Z",
+                    }
+                ],
+            },
+            "Apple Blog": {
+                "url": "https://example.com/apple",
+                "count": 1,
+                "articles": [
+                    {
+                        "title": "Apple Article",
+                        "link": "https://example.com/apple/1",
+                        "published": "2024-01-15T09:00:00Z",
+                    }
+                ],
+            },
+            "Microsoft Blog": {
+                "url": "https://example.com/microsoft",
+                "count": 1,
+                "articles": [
+                    {
+                        "title": "Microsoft Article",
+                        "link": "https://example.com/microsoft/1",
+                        "published": "2024-01-15T09:00:00Z",
+                    }
+                ],
+            },
+        }
+        
+        result = generate_html_page(unordered_data)
+        
+        # Find positions of feed names in the HTML
+        apple_pos = result.find(">Apple Blog<")
+        microsoft_pos = result.find(">Microsoft Blog<")
+        zebra_pos = result.find(">Zebra Blog<")
+        
+        # All should be found
+        self.assertNotEqual(apple_pos, -1)
+        self.assertNotEqual(microsoft_pos, -1)
+        self.assertNotEqual(zebra_pos, -1)
+        
+        # Check they appear in alphabetical order
+        self.assertLess(apple_pos, microsoft_pos)
+        self.assertLess(microsoft_pos, zebra_pos)
 
 
 if __name__ == "__main__":
