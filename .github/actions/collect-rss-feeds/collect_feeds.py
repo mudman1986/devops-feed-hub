@@ -94,7 +94,10 @@ def main():
         "--config", required=True, help="Path to RSS feeds configuration file"
     )
     parser.add_argument(
-        "--hours", type=int, default=720, help="Fetch articles from the last N hours (default: 720 = 30 days)"
+        "--hours",
+        type=int,
+        default=720,
+        help="Fetch articles from the last N hours (default: 720 = 30 days)",
     )
     parser.add_argument("--output", required=True, help="Output JSON file path")
 
@@ -107,7 +110,9 @@ def main():
         hours=max_hours
     )
     print(
-        f"Fetching articles published after {since_time.isoformat()} (last {max_hours} hours)", file=sys.stderr
+        f"Fetching articles published after {since_time.isoformat()} "
+        f"(last {max_hours} hours)",
+        file=sys.stderr,
     )
 
     # Load RSS feeds configuration
