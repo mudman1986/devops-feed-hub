@@ -194,6 +194,7 @@ function applyTimeframeFilter(timeframe) {
   // Reorder feeds: feeds with articles first, then empty feeds (both groups alphabetically)
   if (feedSections.length > 0 && feedSections[0].parentNode) {
     const parent = feedSections[0].parentNode;
+    const footer = parent.querySelector(".footer");
 
     // Separate feeds into two groups
     const feedsWithArticles = feedsData
@@ -206,9 +207,13 @@ function applyTimeframeFilter(timeframe) {
     // Combine: feeds with articles first, then empty feeds
     const orderedFeeds = [...feedsWithArticles, ...emptyFeeds];
 
-    // Reorder DOM elements
+    // Reorder DOM elements - insert before footer to keep footer at bottom
     orderedFeeds.forEach((feedData) => {
-      parent.appendChild(feedData.element);
+      if (footer) {
+        parent.insertBefore(feedData.element, footer);
+      } else {
+        parent.appendChild(feedData.element);
+      }
     });
   }
 
