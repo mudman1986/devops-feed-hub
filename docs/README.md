@@ -34,6 +34,7 @@ The page is automatically updated by the workflow:
 3. **Manual**: You can trigger the workflow manually from the Actions tab
 
 When the workflow runs:
+
 - It collects RSS feeds from configured sources
 - Generates a new `index.html` file with the latest articles
 - Commits and pushes the updated file to the `docs/` directory
@@ -56,16 +57,19 @@ The HTML styling can be customized by modifying the generation logic in:
 ## Troubleshooting
 
 ### Page not updating?
+
 - Check the Actions tab to see if the workflow is running successfully
 - Verify that the workflow has `contents: write` permission
 - Check that the `docs/index.html` file is being committed
 
 ### Page not accessible?
+
 - Ensure GitHub Pages is enabled in repository settings
 - Verify the branch and folder settings are correct (`main` branch, `/docs` folder)
 - Check if the repository is public (GitHub Pages on free tier requires public repos)
 
 ### 404 Error?
+
 - Make sure the `docs/index.html` file exists in the repository
 - Verify GitHub Pages is configured to use the `/docs` folder
 - Wait a few minutes for GitHub to deploy the changes
