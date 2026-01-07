@@ -1,49 +1,11 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="RSS Feed Collection - Latest articles from tech blogs and news sources">
     <title>RSS Feed Collection</title>
     <style>
-        :root {
-            --bg-primary: #f6f8fa;
-            --bg-secondary: #ffffff;
-            --bg-tertiary: #f6f8fa;
-            --bg-hover: #e1e4e8;
-            --bg-error: #fff5f5;
-            --text-primary: #24292e;
-            --text-secondary: #586069;
-            --text-link: #0366d6;
-            --text-error: #d73a49;
-            --border-primary: #e1e4e8;
-            --border-accent: #0366d6;
-            --border-success: #28a745;
-            --border-error: #d73a49;
-            --shadow: rgba(0, 0, 0, 0.12);
-            --badge-bg: #0366d6;
-            --badge-text: #ffffff;
-        }
-        
-        [data-theme="dark"] {
-            --bg-primary: #0d1117;
-            --bg-secondary: #161b22;
-            --bg-tertiary: #21262d;
-            --bg-hover: #30363d;
-            --bg-error: #2d1517;
-            --text-primary: #c9d1d9;
-            --text-secondary: #8b949e;
-            --text-link: #58a6ff;
-            --text-error: #f85149;
-            --border-primary: #30363d;
-            --border-accent: #58a6ff;
-            --border-success: #3fb950;
-            --border-error: #f85149;
-            --shadow: rgba(0, 0, 0, 0.3);
-            --badge-bg: #58a6ff;
-            --badge-text: #0d1117;
-        }
-        
         * {
             margin: 0;
             padding: 0;
@@ -53,83 +15,48 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
             line-height: 1.6;
-            color: var(--text-primary);
-            background-color: var(--bg-primary);
+            color: #24292e;
+            background-color: #f6f8fa;
             padding: 20px;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-        
-        .header {
-            max-width: 1200px;
-            margin: 0 auto 20px;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-        }
-        
-        .theme-toggle {
-            background: var(--bg-tertiary);
-            border: 1px solid var(--border-primary);
-            color: var(--text-primary);
-            padding: 8px 16px;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 0.9em;
-            transition: all 0.2s ease;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        
-        .theme-toggle:hover {
-            background: var(--bg-hover);
-            border-color: var(--border-accent);
-        }
-        
-        .theme-toggle:focus {
-            outline: 2px solid var(--border-accent);
-            outline-offset: 2px;
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            background-color: var(--bg-secondary);
+            background-color: white;
             padding: 30px;
             border-radius: 8px;
-            box-shadow: 0 1px 3px var(--shadow);
-            transition: background-color 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.12);
         }
         
         h1 {
-            color: var(--text-link);
+            color: #0366d6;
             margin-bottom: 10px;
             font-size: 2em;
         }
         
         h2 {
-            color: var(--text-primary);
+            color: #24292e;
             margin-top: 30px;
             margin-bottom: 15px;
             padding-bottom: 10px;
-            border-bottom: 2px solid var(--border-primary);
+            border-bottom: 2px solid #e1e4e8;
             font-size: 1.5em;
         }
         
         h3 {
-            color: var(--text-link);
+            color: #0366d6;
             margin-top: 20px;
             margin-bottom: 10px;
             font-size: 1.2em;
         }
         
         .metadata {
-            color: var(--text-secondary);
+            color: #586069;
             margin-bottom: 20px;
             padding: 15px;
-            background-color: var(--bg-tertiary);
+            background-color: #f6f8fa;
             border-radius: 6px;
-            transition: background-color 0.3s ease;
         }
         
         .stats {
@@ -141,30 +68,29 @@
         
         .stat-card {
             padding: 20px;
-            background-color: var(--bg-tertiary);
+            background-color: #f6f8fa;
             border-radius: 6px;
-            border-left: 4px solid var(--border-accent);
-            transition: background-color 0.3s ease;
+            border-left: 4px solid #0366d6;
         }
         
         .stat-card.success {
-            border-left-color: var(--border-success);
+            border-left-color: #28a745;
         }
         
         .stat-card.error {
-            border-left-color: var(--border-error);
+            border-left-color: #d73a49;
         }
         
         .stat-label {
             font-size: 0.9em;
-            color: var(--text-secondary);
+            color: #586069;
             margin-bottom: 5px;
         }
         
         .stat-value {
             font-size: 2em;
             font-weight: bold;
-            color: var(--text-primary);
+            color: #24292e;
         }
         
         .feed-section {
@@ -179,17 +105,17 @@
         .article-item {
             padding: 12px;
             margin-bottom: 8px;
-            background-color: var(--bg-tertiary);
+            background-color: #f6f8fa;
             border-radius: 6px;
-            transition: background-color 0.2s ease;
+            transition: background-color 0.2s;
         }
         
         .article-item:hover {
-            background-color: var(--bg-hover);
+            background-color: #e1e4e8;
         }
         
         .article-title {
-            color: var(--text-link);
+            color: #0366d6;
             text-decoration: none;
             font-weight: 500;
             display: block;
@@ -202,26 +128,24 @@
         
         .article-meta {
             font-size: 0.9em;
-            color: var(--text-secondary);
+            color: #586069;
         }
         
         .feed-count {
             display: inline-block;
-            background-color: var(--badge-bg);
-            color: var(--badge-text);
+            background-color: #0366d6;
+            color: white;
             padding: 2px 8px;
             border-radius: 12px;
             font-size: 0.85em;
             margin-left: 10px;
-            transition: background-color 0.3s ease, color 0.3s ease;
         }
         
         .failed-feeds {
-            background-color: var(--bg-error);
+            background-color: #fff5f5;
             padding: 15px;
             border-radius: 6px;
-            border-left: 4px solid var(--border-error);
-            transition: background-color 0.3s ease;
+            border-left: 4px solid #d73a49;
         }
         
         .failed-feed-item {
@@ -231,17 +155,17 @@
         
         .failed-feed-name {
             font-weight: 500;
-            color: var(--text-error);
+            color: #d73a49;
         }
         
         .failed-feed-url {
             font-size: 0.9em;
-            color: var(--text-secondary);
+            color: #586069;
             word-break: break-all;
         }
         
         .no-articles {
-            color: var(--text-secondary);
+            color: #586069;
             font-style: italic;
             padding: 10px;
         }
@@ -249,9 +173,9 @@
         .footer {
             margin-top: 40px;
             padding-top: 20px;
-            border-top: 1px solid var(--border-primary);
+            border-top: 1px solid #e1e4e8;
             text-align: center;
-            color: var(--text-secondary);
+            color: #586069;
             font-size: 0.9em;
         }
         
@@ -271,31 +195,18 @@
             .stats {
                 grid-template-columns: 1fr;
             }
-            
-            .header {
-                flex-direction: column;
-                gap: 15px;
-                align-items: flex-start;
-            }
         }
     </style>
 </head>
 <body>
-    <div class="header">
-        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
-            <span id="theme-icon">☀️</span>
-            <span id="theme-text">Light Mode</span>
-        </button>
-    </div>
     <div class="container">
         <h1>📰 RSS Feed Collection</h1>
         
-        
         <div class="metadata">
-            <strong>Last Updated:</strong> January 06, 2026 at 10:23 PM UTC<br>
-            <strong>Time Range:</strong> Last 24 hours
+            <strong>Last Updated:</strong> January 07, 2026 at 09:35 AM UTC<br>
+            <strong>Time Range:</strong> Last 11 hours
         </div>
-
+        
         <h2>📊 Summary</h2>
         <div class="stats">
             <div class="stat-card">
@@ -312,113 +223,51 @@
             </div>
             <div class="stat-card">
                 <div class="stat-label">Total Articles</div>
-                <div class="stat-value">4</div>
+                <div class="stat-value">0</div>
             </div>
         </div>
 
         <h2>✅ Feed Articles</h2>
 
         <div class="feed-section">
-            <h3>Microsoft DevOps Blog
-                <span class="feed-count">
-                    0 articles
-                </span>
-            </h3>
+            <h3>Microsoft DevOps Blog<span class="feed-count">0 articles</span></h3>
 
             <div class="no-articles">No new articles in this time period</div>
 
         </div>
 
         <div class="feed-section">
-            <h3>GitHub Blog
-                <span class="feed-count">
-                    0 articles
-                </span>
-            </h3>
+            <h3>GitHub Blog<span class="feed-count">0 articles</span></h3>
 
             <div class="no-articles">No new articles in this time period</div>
 
         </div>
 
         <div class="feed-section">
-            <h3>Microsoft Entra Blog
-                <span class="feed-count">
-                    0 articles
-                </span>
-            </h3>
+            <h3>Microsoft Entra Blog<span class="feed-count">0 articles</span></h3>
 
             <div class="no-articles">No new articles in this time period</div>
 
         </div>
 
         <div class="feed-section">
-            <h3>GitHub Changelog
-                <span class="feed-count">
-                    1 article
-                </span>
-            </h3>
+            <h3>GitHub Changelog<span class="feed-count">0 articles</span></h3>
 
-            <ul class="article-list">
-
-                <li class="article-item">
-                    <a href="https://github.blog/changelog/2026-01-06-gemini-3-flash-is-now-available-in-visual-studio-jetbrains-ides-xcode-and-eclipse" class="article-title"
-                       target="_blank" rel="noopener noreferrer">
-                        Gemini 3 Flash is now available in Visual Studio, JetBrains IDEs, Xcode, and Eclipse
-                    </a>
-                    <div class="article-meta">Published: 2026-01-06T19:24:20+00:00</div>
-                </li>
-
-            </ul>
+            <div class="no-articles">No new articles in this time period</div>
 
         </div>
 
         <div class="feed-section">
-            <h3>HashiCorp Blog
-                <span class="feed-count">
-                    1 article
-                </span>
-            </h3>
+            <h3>HashiCorp Blog<span class="feed-count">0 articles</span></h3>
 
-            <ul class="article-list">
-
-                <li class="article-item">
-                    <a href="https://www.hashicorp.com/blog/how-airfrance-klm-built-secure-automation-platform-global-scale-terraform-vault-ansible" class="article-title"
-                       target="_blank" rel="noopener noreferrer">
-                        How AirFrance-KLM built a secure automation platform at global scale with Terraform, Vault, and Ansible
-                    </a>
-                    <div class="article-meta">Published: 2026-01-06T15:00:00+00:00</div>
-                </li>
-
-            </ul>
+            <div class="no-articles">No new articles in this time period</div>
 
         </div>
 
         <div class="feed-section">
-            <h3>Microsoft Security
-                <span class="feed-count">
-                    2 articles
-                </span>
-            </h3>
+            <h3>Microsoft Security<span class="feed-count">0 articles</span></h3>
 
-            <ul class="article-list">
-
-                <li class="article-item">
-                    <a href="https://www.microsoft.com/en-us/security/blog/2026/01/06/phishing-actors-exploit-complex-routing-and-misconfigurations-to-spoof-domains/" class="article-title"
-                       target="_blank" rel="noopener noreferrer">
-                        Phishing actors exploit complex routing and misconfigurations to spoof domains
-                    </a>
-                    <div class="article-meta">Published: 2026-01-06T18:00:00+00:00</div>
-                </li>
-
-                <li class="article-item">
-                    <a href="https://www.microsoft.com/en-us/security/blog/2026/01/06/introducing-the-microsoft-defender-experts-suite-elevate-your-security-with-expert-led-services/" class="article-title"
-                       target="_blank" rel="noopener noreferrer">
-                        Introducing the Microsoft Defender Experts Suite: Elevate your security with expert-led services
-                    </a>
-                    <div class="article-meta">Published: 2026-01-06T17:00:00+00:00</div>
-                </li>
-
-            </ul>
+            <div class="no-articles">No new articles in this time period</div>
 
         </div>
 
@@ -432,56 +281,9 @@
 
         </div>
 
-        
         <div class="footer">
-            Generated by RSS Feed Collector | Last updated: January 06, 2026 at 10:23 PM UTC
+            Generated by RSS Feed Collector | Last updated: January 07, 2026 at 09:35 AM UTC
         </div>
     </div>
-    
-    <script>
-        // Theme toggle functionality
-        const themeToggle = document.getElementById('theme-toggle');
-        const themeIcon = document.getElementById('theme-icon');
-        const themeText = document.getElementById('theme-text');
-        const htmlElement = document.documentElement;
-        
-        // Get saved theme preference or default to dark
-        let savedTheme = 'dark';
-        try {
-            savedTheme = localStorage.getItem('theme') || 'dark';
-        } catch (e) {
-            // localStorage might be unavailable (privacy mode, quota exceeded, etc.)
-            console.warn('localStorage unavailable, using default theme:', e);
-        }
-        
-        htmlElement.setAttribute('data-theme', savedTheme);
-        updateThemeButton(savedTheme);
-        
-        themeToggle.addEventListener('click', () => {
-            const currentTheme = htmlElement.getAttribute('data-theme');
-            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
-            
-            htmlElement.setAttribute('data-theme', newTheme);
-            
-            try {
-                localStorage.setItem('theme', newTheme);
-            } catch (e) {
-                // localStorage might be unavailable, theme will reset on reload
-                console.warn('Unable to save theme preference:', e);
-            }
-            
-            updateThemeButton(newTheme);
-        });
-        
-        function updateThemeButton(theme) {
-            if (theme === 'dark') {
-                themeIcon.textContent = '☀️';
-                themeText.textContent = 'Light Mode';
-            } else {
-                themeIcon.textContent = '🌙';
-                themeText.textContent = 'Dark Mode';
-            }
-        }
-    </script>
 </body>
 </html>
