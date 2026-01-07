@@ -8,10 +8,14 @@ import argparse
 import json
 import sys
 from datetime import datetime, timedelta, timezone
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional
+from urllib.request import Request, urlopen
+
+import feedparser
 
 
-def parse_rss_feed(url: str, since_time: datetime) -> List[Dict[str, Any]]:
+# pylint: disable=too-many-locals,broad-exception-caught,broad-exception-raised
+def parse_rss_feed(url: str, since_time: datetime) -> Optional[List[Dict[str, Any]]]:
     """
     Parse an RSS/Atom feed and return articles published after since_time
 
@@ -22,10 +26,6 @@ def parse_rss_feed(url: str, since_time: datetime) -> List[Dict[str, Any]]:
     Returns:
         List of article dictionaries with 'title', 'link', 'published'
     """
-    from urllib.request import Request, urlopen
-
-    import feedparser
-
     articles = []
 
     try:
@@ -39,7 +39,7 @@ def parse_rss_feed(url: str, since_time: datetime) -> List[Dict[str, Any]]:
 
         # Check for parsing errors
         if feed.bozo and not feed.entries:
-            raise Exception(
+            raise ValueError(
                 f"Feed parsing error: {feed.get('bozo_exception', 'Unknown error')}"
             )
 
@@ -51,9 +51,13 @@ def parse_rss_feed(url: str, since_time: datetime) -> List[Dict[str, Any]]:
             # Get publication date - feedparser normalizes this
             pub_date = None
             if hasattr(entry, "published_parsed") and entry.published_parsed:
-                pub_date = datetime(*entry.published_parsed[:6], tzinfo=timezone.utc)
+                # Extract date components and create datetime
+                time_tuple = entry.published_parsed[:6]
+                pub_date = datetime(*time_tuple).replace(tzinfo=timezone.utc)
             elif hasattr(entry, "updated_parsed") and entry.updated_parsed:
-                pub_date = datetime(*entry.updated_parsed[:6], tzinfo=timezone.utc)
+                # Extract date components and create datetime
+                time_tuple = entry.updated_parsed[:6]
+                pub_date = datetime(*time_tuple).replace(tzinfo=timezone.utc)
 
             # Filter by date if available
             if pub_date:
@@ -94,18 +98,25 @@ def main():
         "--config", required=True, help="Path to RSS feeds configuration file"
     )
     parser.add_argument(
-        "--hours", type=int, default=24, help="Fetch articles from the last N hours"
+        "--hours",
+        type=int,
+        default=720,
+        help="Fetch articles from the last N hours (default: 720 = 30 days)",
     )
     parser.add_argument("--output", required=True, help="Output JSON file path")
 
     args = parser.parse_args()
 
-    # Calculate since_time
+    # Always collect for the maximum timeframe to support all filter options
+    # Default to 30 days (720 hours) to support all timeframe options
+    max_hours = max(args.hours, 720)
     since_time = datetime.now(timezone.utc).replace(tzinfo=None) - timedelta(
-        hours=args.hours
+        hours=max_hours
     )
     print(
-        f"Fetching articles published after {since_time.isoformat()}", file=sys.stderr
+        f"Fetching articles published after {since_time.isoformat()} "
+        f"(last {max_hours} hours)",
+        file=sys.stderr,
     )
 
     # Load RSS feeds configuration
@@ -123,7 +134,7 @@ def main():
         "metadata": {
             "collected_at": datetime.now(timezone.utc).isoformat(),
             "since": since_time.isoformat(),
-            "hours": args.hours,
+            "hours": max_hours,
         },
         "feeds": {},
         "failed_feeds": [],

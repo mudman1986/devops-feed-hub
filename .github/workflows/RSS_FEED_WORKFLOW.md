@@ -8,7 +8,7 @@ This implementation uses a **composite action** approach to provide a clean, reu
 
 ### Architecture
 
-```
+```text
 .github/
 ├── actions/
 │   └── collect-rss-feeds/          # Reusable composite action

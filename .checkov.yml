@@ -1,0 +1,6 @@
+skip-check:
+  # Allow workflow_dispatch inputs for manual workflow triggering
+  # CKV_GHA_7: The build output cannot be affected by user parameters...
+  # This is a false positive - our inputs are for operational parameters (hours, branch)
+  # not build artifacts, and are necessary for manual workflow operation
+  - CKV_GHA_7
