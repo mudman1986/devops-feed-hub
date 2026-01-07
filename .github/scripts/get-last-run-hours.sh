@@ -11,10 +11,10 @@ HOURS=720
 
 # Use manual input if provided, otherwise use 720 hours
 if [ -n "$MANUAL_HOURS" ]; then
-  HOURS="$MANUAL_HOURS"
-  echo "Using manual input: $HOURS hours" >&2
+	HOURS="$MANUAL_HOURS"
+	echo "Using manual input: $HOURS hours" >&2
 else
-  echo "Fetching articles from last $HOURS hours (30 days) to support all timeframe filters" >&2
+	echo "Fetching articles from last $HOURS hours (30 days) to support all timeframe filters" >&2
 fi
 
 echo "$HOURS"

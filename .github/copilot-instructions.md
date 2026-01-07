@@ -43,7 +43,7 @@
 - **Prefer scripts**: Use separate script files instead of inline code in workflows and actions
 - **Maintainability**: Scripts are easier to test, debug, and maintain than inline code
 - **Testing**: Separate scripts enable better unit testing and validation
-- **Version control**: Scripts provide better visibility of changes through git diffs
+- **Version control**: Scripts provide better visibility of changes through Git diffs
 
 ### Testing Requirements
 
@@ -54,9 +54,9 @@
 
 ### Documentation Guidelines
 
-- **Prefer compact documentation**: Use inline comments and concise documentation over extensive README files
+- **Prefer compact documentation**: Use inline comments and concise documentation over extensive readme files
 - **Inline comments**: Document complex logic directly in code with clear, concise comments
-- **Minimal README files**: Keep README files brief and focused on essential information
+- **Minimal readme files**: Keep readme files brief and focused on essential information
 - **Self-documenting code**: Write clear, readable code that minimizes the need for extensive documentation
 - **Code over docs**: Prioritize writing clear code over writing extensive documentation
 
@@ -104,7 +104,8 @@
 
 ### Running Super-Linter Locally
 
-- **Always run super-linter locally** before pushing changes to verify code quality
+- **MANDATORY: Always run super-linter locally** before pushing changes to verify code quality
+- **DO NOT use pylint or other individual linters** - use super-linter exclusively to match CI
 - Super-linter must pass with the same configuration as the CI workflow
 - Run super-linter using Docker to match CI environment exactly:
   ```bash
@@ -118,21 +119,32 @@
 - Common linters that run:
   - **GITHUB_ACTIONS**: Validates workflow YAML files with shellcheck for embedded scripts
   - **BASH**: Validates shell scripts with shellcheck
-  - **PYTHON_PYLINT**: Validates Python files (note: uses different config than local pylint)
+  - **PYTHON_BLACK**: Python code formatting (double quotes, line breaks)
+  - **PYTHON_PYLINT**: Python linting (different config than local .pylintrc)
+  - **PYTHON_MYPY**: Python type checking
   - **HTML**: Validates HTML files
-  - **MARKDOWN**: Validates markdown files
-- **Important**: Super-linter may use different configurations than local tools
-  - Local `.pylintrc` settings may not apply to super-linter's pylint
+  - **HTML_PRETTIER**: HTML formatting
+  - **Markdown**: Validates Markdown files
+  - **MARKDOWN_PRETTIER**: Markdown formatting
+  - **NATURAL_LANGUAGE**: Terminology consistency (e.g., "GitHub" not "github", "readme" not "README")
+  - **SHELL_SHFMT**: Shell script formatting (uses tabs for indentation)
+  - **JSCPD**: Copy-paste detection
+  - **CHECKOV**: Security scanning for workflows
+- **Important**: Super-linter configurations differ from local tools:
+  - PYTHON_BLACK uses double quotes and enforces line breaks
+  - SHELL_SHFMT uses tabs for indentation (not spaces)
+  - NATURAL_LANGUAGE enforces specific terminology
+  - Local `.pylintrc` settings DO NOT apply to super-linter
   - Super-linter uses shellcheck on embedded scripts in workflow YAML files
   - Quote all variables in shell scripts to pass shellcheck (e.g., `"$VAR"` not `$VAR`)
-- Fix all linter errors before committing changes
-- This prevents CI failures and ensures consistent code quality
+- **Fix ALL linting errors** before committing changes (not just errors you introduced)
+- This prevents CI failures and ensures consistent code quality across the entire codebase
 - If you encounter errors, run super-linter with specific validators to debug:
   ```bash
   docker run --rm \
     -e RUN_LOCAL=true \
     -e USE_FIND_ALGORITHM=true \
-    -e VALIDATE_GITHUB_ACTIONS=true \
+    -e VALIDATE_PYTHON_BLACK=true \
     -e VALIDATE_BASH=true \
     -v $(pwd):/tmp/lint \
     ghcr.io/super-linter/super-linter:v7.4.0

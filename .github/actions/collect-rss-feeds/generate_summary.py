@@ -38,9 +38,11 @@ def generate_markdown_summary(data: Dict[str, Any]) -> str:
     summary = []
     summary.append("# 📰 RSS Feed Collection Summary\n")
     summary.append(f"**Collected at:** {data['metadata']['collected_at']}\n")
-    hours = data['metadata'].get('hours', 24)
+    hours = data["metadata"].get("hours", 24)
     summary.append(f"**Time range:** Last {hours} hours\n")
-    summary.append("**Note:** Web interface provides filtering for 1 day, 7 days, or 30 days\n")
+    summary.append(
+        "**Note:** Web interface provides filtering for 1 day, 7 days, or 30 days\n"
+    )
     summary.append("")
 
     # Overall summary

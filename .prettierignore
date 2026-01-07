@@ -1,2 +1,5 @@
 # Don't format the HTML template as it's used in tests and formatting may break them
 .github/actions/collect-rss-feeds/template.html
+
+# Don't format generated HTML files
+docs/index.html
