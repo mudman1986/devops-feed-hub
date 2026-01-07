@@ -114,11 +114,6 @@ def generate_feed_nav(
         nav_html += " active"
     nav_html += '">All Feeds</a>\n'
 
-    nav_html += '  <a href="summary.html" class="nav-link'
-    if current_feed == "summary":
-        nav_html += " active"
-    nav_html += '">Summary</a>\n'
-
     for feed_name in sorted(feeds.keys()):
         feed_slug = generate_feed_slug(feed_name)
 
@@ -126,6 +121,11 @@ def generate_feed_nav(
         if current_feed == feed_name:
             nav_html += " active"
         nav_html += f'">{html_escape(feed_name)}</a>\n'
+
+    nav_html += '  <a href="summary.html" class="nav-link'
+    if current_feed == "summary":
+        nav_html += " active"
+    nav_html += '">Summary</a>\n'
 
     nav_html += "</nav>\n"
     return nav_html
@@ -303,8 +303,20 @@ def generate_html_content(
         if current_feed in data["feeds"]:
             feeds_to_display = {current_feed: data["feeds"][current_feed]}
     else:
-        # All feeds view - sort alphabetically
-        feeds_to_display = dict(sorted(data["feeds"].items()))
+        # All feeds view - sort with feeds having articles first, then empty feeds
+        # Within each group, sort alphabetically
+        feeds_with_articles = {}
+        empty_feeds = {}
+        
+        for feed_name, feed_data in data["feeds"].items():
+            if feed_data["count"] > 0:
+                feeds_with_articles[feed_name] = feed_data
+            else:
+                empty_feeds[feed_name] = feed_data
+        
+        # Combine: feeds with articles (sorted), then empty feeds (sorted)
+        feeds_to_display = dict(sorted(feeds_with_articles.items()))
+        feeds_to_display.update(dict(sorted(empty_feeds.items())))
 
     # Display feeds
     content += generate_feed_articles_content(feeds_to_display)
