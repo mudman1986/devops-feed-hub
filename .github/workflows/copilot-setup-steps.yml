@@ -31,7 +31,7 @@ jobs:
           python-version: "3.x"
 
       - name: Install Python dependencies
-        run: pip install feedparser pytest
+        run: pip install feedparser pytest black isort
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
@@ -40,15 +40,21 @@ jobs:
           cache: "npm"
 
       - name: Install JavaScript dependencies
-        run: npm install
+        run: npm ci
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium
 
       - name: Verify Python setup
         run: |
           python3 --version
-          pip list | grep -E "feedparser|pytest"
+          pip list | grep -E "feedparser|pytest|black|isort"
 
       - name: Verify Node.js setup
         run: |
           node --version
           npm --version
           npm list --depth=0
+
+      - name: Verify Playwright setup
+        run: npx playwright --version
