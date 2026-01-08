@@ -394,12 +394,12 @@ function updateFeedCountsAfterReadFilter () {
   feedSections.forEach((section) => {
     const articleList = section.querySelector('.article-list')
     if (!articleList) return
-    
+
     const articles = section.querySelectorAll('.article-item')
     const visibleArticles = Array.from(articles).filter(
       (a) => a.style.display !== 'none'
     )
-    
+
     // Count unread articles (not just visible)
     const unreadArticles = Array.from(articles).filter((article) => {
       const link = article.querySelector('.article-title')
@@ -407,7 +407,7 @@ function updateFeedCountsAfterReadFilter () {
       const articleUrl = link.getAttribute('href')
       return !isArticleRead(articleUrl) && !article.hasAttribute('data-hidden-by-timeframe')
     })
-    
+
     const count = visibleArticles.length
     const unreadCount = unreadArticles.length
 
@@ -438,7 +438,7 @@ function updateFeedCountsAfterReadFilter () {
       if (articleList) articleList.style.display = ''
       if (noArticlesMsg) noArticlesMsg.style.display = 'none'
     }
-    
+
     // Store feed data for reordering
     feedsData.push({
       element: section,
@@ -446,7 +446,7 @@ function updateFeedCountsAfterReadFilter () {
       name: section.querySelector('h3')?.textContent.trim() || ''
     })
   })
-  
+
   // Reorder feeds based on unread count
   reorderFeedsByUnreadStatus(feedsData)
 
@@ -457,27 +457,27 @@ function updateFeedCountsAfterReadFilter () {
 // Reorder articles within a feed: unread articles first, then read articles
 function reorderArticlesInFeed(articleList, articles) {
   if (!articleList || articles.length === 0) return
-  
+
   // Separate articles into unread and read
   const articleData = Array.from(articles).map((article) => {
     const link = article.querySelector('.article-title')
     const articleUrl = link ? link.getAttribute('href') : null
     const isRead = articleUrl ? isArticleRead(articleUrl) : false
-    
+
     return {
       element: article,
       isRead,
       articleUrl
     }
   })
-  
+
   // Separate into two groups: unread first, read second
   const unreadArticles = articleData.filter(a => !a.isRead)
   const readArticles = articleData.filter(a => a.isRead)
-  
+
   // Combine: unread articles first, then read articles
   const orderedArticles = [...unreadArticles, ...readArticles]
-  
+
   // Reorder DOM elements within the article list
   orderedArticles.forEach((articleData) => {
     articleList.appendChild(articleData.element)
@@ -487,15 +487,15 @@ function reorderArticlesInFeed(articleList, articles) {
 // Reorder feeds: feeds with unread articles first, then feeds with all read articles
 function reorderFeedsByUnreadStatus(feedsData) {
   if (feedsData.length === 0) return
-  
+
   const feedSections = document.querySelectorAll('.feed-section')
   if (feedSections.length === 0) return
-  
+
   const parent = feedSections[0].parentNode
   if (!parent) return
-  
+
   const footer = parent.querySelector('.footer')
-  
+
   // Separate feeds into two groups based on unread articles
   const feedsWithUnread = feedsData
     .filter((f) => f.unreadCount > 0)
@@ -503,10 +503,10 @@ function reorderFeedsByUnreadStatus(feedsData) {
   const feedsAllRead = feedsData
     .filter((f) => f.unreadCount === 0)
     .sort((a, b) => a.name.localeCompare(b.name))
-  
+
   // Combine: feeds with unread first, then all-read feeds
   const orderedFeeds = [...feedsWithUnread, ...feedsAllRead]
-  
+
   // Reorder DOM elements - insert before footer to keep footer at bottom
   orderedFeeds.forEach((feedData) => {
     if (footer) {
@@ -520,7 +520,7 @@ function reorderFeedsByUnreadStatus(feedsData) {
 // Store and restore original feed order
 function captureOriginalFeedOrder() {
   if (originalFeedOrder.length > 0) return // Already captured
-  
+
   const feedSections = document.querySelectorAll('.feed-section')
   feedSections.forEach((section) => {
     originalFeedOrder.push({
@@ -532,12 +532,12 @@ function captureOriginalFeedOrder() {
 
 function restoreOriginalFeedOrder() {
   if (originalFeedOrder.length === 0) return
-  
+
   const parent = originalFeedOrder[0].element.parentNode
   if (!parent) return
-  
+
   const footer = parent.querySelector('.footer')
-  
+
   // Restore original order
   originalFeedOrder.forEach((feedData) => {
     if (footer) {
