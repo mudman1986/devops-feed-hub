@@ -192,6 +192,17 @@
     ghcr.io/super-linter/super-linter:v7.4.0
   ```
 
+### Environment Setup
+
+- **Copilot Setup Steps**: This repository has a `.github/copilot-setup-steps.yml` file that automates environment configuration
+- **MANDATORY**: When you notice you need to manually install dependencies or configure your environment:
+  1. Update the `.github/copilot-setup-steps.yml` file with the new setup steps
+  2. Add clear descriptions for each setup step
+  3. Test that the setup steps work correctly
+  4. Document any new dependencies in this section
+- **Continuous improvement**: Keep the setup steps file up-to-date as the project evolves
+- **Purpose**: This ensures a consistent, ready-to-code environment for all Copilot Workspace sessions
+
 ### Running Tests
 
 - **Always run tests before committing changes**
