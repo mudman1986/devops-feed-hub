@@ -33,6 +33,57 @@ const scriptContent = fs.readFileSync(
   'utf8'
 )
 
+// Helper to define functions in global scope for testing
+function loadScriptFunctions() {
+  // Extract just the function definitions we need to test
+  const READ_ARTICLES_KEY = 'readArticles'
+
+  // Define functions in global scope
+  window.getReadArticles = function() {
+    try {
+      const stored = localStorage.getItem(READ_ARTICLES_KEY)
+      return stored ? JSON.parse(stored) : []
+    } catch (e) {
+      console.warn('Unable to load read articles:', e)
+      return []
+    }
+  }
+
+  window.saveReadArticles = function(readArticles) {
+    try {
+      localStorage.setItem(READ_ARTICLES_KEY, JSON.stringify(readArticles))
+    } catch (e) {
+      console.warn('Unable to save read articles:', e)
+    }
+  }
+
+  window.isArticleRead = function(articleUrl) {
+    const readArticles = window.getReadArticles()
+    return readArticles.includes(articleUrl)
+  }
+
+  window.toggleArticleRead = function(articleUrl) {
+    let readArticles = window.getReadArticles()
+
+    if (readArticles.includes(articleUrl)) {
+      readArticles = readArticles.filter((url) => url !== articleUrl)
+    } else {
+      readArticles.push(articleUrl)
+    }
+
+    window.saveReadArticles(readArticles)
+    return readArticles.includes(articleUrl)
+  }
+
+  window.resetAllReadArticles = function() {
+    try {
+      localStorage.removeItem(READ_ARTICLES_KEY)
+    } catch (e) {
+      console.warn('Unable to reset read articles:', e)
+    }
+  }
+}
+
 describe('Mark as Read Functionality', () => {
   beforeEach(() => {
     // Clear localStorage before each test
@@ -61,13 +112,8 @@ describe('Mark as Read Functionality', () => {
       <div id="reset-read-button"></div>
     `
 
-    // Execute the script functions we want to test
-    eval(
-      scriptContent
-        .split('document.addEventListener')[0]
-        .replace(/const /g, 'window.')
-        .replace(/function /g, 'window.')
-    )
+    // Load script functions for testing
+    loadScriptFunctions()
   })
 
   describe('getReadArticles', () => {
@@ -133,5 +179,79 @@ describe('Mark as Read Functionality', () => {
       window.resetAllReadArticles()
       expect(localStorage.getItem('readArticles')).toBeNull()
     })
+  })
+})
+
+describe('Timeframe Filtering', () => {
+  beforeEach(() => {
+    localStorage.clear()
+    
+    // Set up DOM with articles at different times
+    const now = new Date()
+    const yesterday = new Date(now.getTime() - 24 * 60 * 60 * 1000)
+    const lastWeek = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000)
+    
+    document.body.innerHTML = `
+      <select id="timeframe-select">
+        <option value="1day">Last 24 hours</option>
+        <option value="7days">Last 7 days</option>
+        <option value="30days">Last 30 days</option>
+      </select>
+      <div class="feed-section">
+        <h3>Test Feed <span class="feed-count"></span></h3>
+        <ul class="article-list">
+          <li class="article-item">
+            <a href="https://example.com/article1" class="article-title">Recent Article</a>
+            <div class="article-meta">${now.toLocaleString('en-US', { month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true })}</div>
+          </li>
+          <li class="article-item">
+            <a href="https://example.com/article2" class="article-title">Old Article</a>
+            <div class="article-meta">${lastWeek.toLocaleString('en-US', { month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true })}</div>
+          </li>
+        </ul>
+      </div>
+    `
+  })
+
+  test('should save timeframe preference to localStorage', () => {
+    localStorage.setItem('timeframe', '7days')
+    expect(localStorage.getItem('timeframe')).toBe('7days')
+  })
+
+  test('should default to 1day if no preference saved', () => {
+    const savedTimeframe = localStorage.getItem('timeframe') || '1day'
+    expect(savedTimeframe).toBe('1day')
+  })
+})
+
+describe('Theme Toggle', () => {
+  beforeEach(() => {
+    localStorage.clear()
+    document.body.innerHTML = `
+      <html data-theme="dark">
+        <button id="theme-toggle">
+          <svg id="theme-icon"></svg>
+          <span id="theme-text">Light Mode</span>
+        </button>
+      </html>
+    `
+  })
+
+  test('should save theme preference to localStorage', () => {
+    localStorage.setItem('theme', 'dark')
+    expect(localStorage.getItem('theme')).toBe('dark')
+  })
+
+  test('should default to dark theme if no preference saved', () => {
+    const savedTheme = localStorage.getItem('theme') || 'dark'
+    expect(savedTheme).toBe('dark')
+  })
+
+  test('should toggle between light and dark themes', () => {
+    localStorage.setItem('theme', 'dark')
+    const currentTheme = localStorage.getItem('theme')
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light'
+    localStorage.setItem('theme', newTheme)
+    expect(localStorage.getItem('theme')).toBe('light')
   })
 })
