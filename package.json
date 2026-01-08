@@ -26,5 +26,14 @@
     "collectCoverageFrom": [
       "docs/script.js"
     ]
+  },
+  "standard": {
+    "ignore": [
+      "**/*.test.js",
+      "**/*.spec.js",
+      "tests/**",
+      "test/**",
+      "playwright.config.js"
+    ]
   }
 }

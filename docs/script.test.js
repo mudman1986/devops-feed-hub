@@ -3,7 +3,6 @@
  */
 
 /* eslint-env jest */
-/* global localStorage */
 
 // Mock localStorage
 const localStorageMock = (() => {
