@@ -2,7 +2,6 @@
 
 // Mark as Read constants
 const READ_ARTICLES_KEY = 'readArticles'
-const HIDE_READ_KEY = 'hideReadArticles'
 
 // Theme toggle functionality
 const themeToggle = document.getElementById('theme-toggle')
@@ -241,9 +240,6 @@ function applyTimeframeFilter (timeframe) {
 
   // Update stats if on main page
   updateStats()
-
-  // Apply read filter after timeframe filter
-  applyReadFilter()
 }
 
 function updateMetadataDisplay () {
@@ -328,7 +324,7 @@ function resetAllReadArticles () {
     initializeReadStatus()
     // Restore original feed order when reset
     restoreOriginalFeedOrder()
-    applyReadFilter()
+    updateFeedCountsAfterReadFilter()
   } catch (e) {
     console.warn('Unable to reset read articles:', e)
   }
@@ -365,7 +361,7 @@ function initializeReadStatus () {
       e.stopPropagation()
       toggleArticleRead(articleUrl)
       updateArticleReadState(article, articleUrl)
-      applyReadFilter()
+      updateFeedCountsAfterReadFilter()
     })
 
     // Insert indicator at the beginning of the article
@@ -390,57 +386,7 @@ function updateArticleReadState (article, articleUrl) {
   }
 }
 
-// Get hide read preference
-function getHideReadPreference () {
-  try {
-    return localStorage.getItem(HIDE_READ_KEY) === 'true'
-  } catch (e) {
-    return false
-  }
-}
-
-// Save hide read preference
-function saveHideReadPreference (hideRead) {
-  try {
-    localStorage.setItem(HIDE_READ_KEY, hideRead.toString())
-  } catch (e) {
-    console.warn('Unable to save hide read preference:', e)
-  }
-}
-
-// Apply read filter to show/hide read articles
-function applyReadFilter () {
-  const hideRead = getHideReadPreference()
-  const articles = document.querySelectorAll('.article-item')
-
-  articles.forEach((article) => {
-    const link = article.querySelector('.article-title')
-    if (!link) return
-
-    const articleUrl = link.getAttribute('href')
-    const isRead = isArticleRead(articleUrl)
-
-    // Check if article is hidden by timeframe filter
-    const hiddenByTimeframe = article.hasAttribute('data-hidden-by-timeframe')
-
-    // Apply read filter logic
-    if (hideRead && isRead && !hiddenByTimeframe) {
-      article.setAttribute('data-hidden-by-read', 'true')
-      article.style.display = 'none'
-    } else if (article.getAttribute('data-hidden-by-read') === 'true') {
-      article.removeAttribute('data-hidden-by-read')
-      // Only show if not hidden by timeframe
-      if (!hiddenByTimeframe) {
-        article.style.display = ''
-      }
-    }
-  })
-
-  // Update feed counts after filtering
-  updateFeedCountsAfterReadFilter()
-}
-
-// Update feed counts after read filter is applied
+// Update feed counts after read status changes
 function updateFeedCountsAfterReadFilter () {
   const feedSections = document.querySelectorAll('.feed-section')
   const feedsData = []
@@ -569,28 +515,13 @@ function restoreOriginalFeedOrder() {
 
 // Set up UI controls for mark as read feature
 function setupMarkAsReadControls () {
-  // Set up hide read toggle button
-  const hideReadToggle = document.getElementById('hide-read-toggle')
-  if (hideReadToggle) {
-    const isHidden = getHideReadPreference()
-    hideReadToggle.setAttribute('aria-pressed', isHidden.toString())
-
-    hideReadToggle.addEventListener('click', () => {
-      const currentState = hideReadToggle.getAttribute('aria-pressed') === 'true'
-      const newState = !currentState
-      hideReadToggle.setAttribute('aria-pressed', newState.toString())
-      saveHideReadPreference(newState)
-      applyReadFilter()
-    })
-  }
-
-  // Set up reset button
+  // Set up Clear All Read button
   const resetButton = document.getElementById('reset-read-button')
   if (resetButton) {
     resetButton.addEventListener('click', () => {
       if (
         confirm(
-          'Are you sure you want to reset all read articles? This will mark all articles as unread.'
+          'Are you sure you want to clear all read articles? This will mark all articles as unread and restore the original feed order.'
         )
       ) {
         resetAllReadArticles()
@@ -604,7 +535,7 @@ function initializeMarkAsReadFeature () {
   // Capture original feed order before any modifications
   captureOriginalFeedOrder()
   initializeReadStatus()
-  applyReadFilter()
+  updateFeedCountsAfterReadFilter()
   setupMarkAsReadControls()
 }
 
