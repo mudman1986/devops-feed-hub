@@ -708,14 +708,11 @@ h3 {
   .reset-read-button {
     padding: 0.625rem 1rem;
     font-size: 0.875rem;
+    justify-content: center;
   }
 
   .hide-read-label {
     font-size: 0.875rem;
-  }
-
-  .reset-read-button {
-    justify-content: center;
   }
 
   .read-indicator {
