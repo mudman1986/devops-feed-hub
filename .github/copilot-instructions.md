@@ -1,155 +1,53 @@
 # Copilot Instructions for DevOps Feed Hub Repository
 
-## Code Quality Standards
+## Overview
 
-### Fix All Issues, Not Just Your Changes
+This repository is maintained primarily by GitHub Copilot. Path-specific instructions exist for specialized contexts:
 
-- **MANDATORY**: Fix ALL linting errors before committing, not just errors you introduced
-- **Comprehensive responsibility**: You are responsible for fixing all issues in the codebase, not just those related to your changes
-- **Proactive issue resolution**: When you encounter linting errors, security vulnerabilities, or code quality issues anywhere in the codebase, fix them
-- **Leave it better**: Always leave the codebase in a better state than you found it
-- **No selective fixing**: Don't limit yourself to only fixing issues you introduced; address all findable issues
-- **No excuses**: Don't act like a lazy developer - fix everything that super-linter reports
+- **RSS Feed Action**: `.github/actions/collect-rss-feeds/.github/copilot-instructions.md`
+- **Workflows**: `.github/workflows/.github/copilot-instructions.md`
+- **Shell Scripts**: `.github/scripts/.github/copilot-instructions.md`
+- **Frontend/UI**: `docs/.github/copilot-instructions.md`
+- **UI Testing**: `tests/.github/copilot-instructions.md`
+- **Code Review**: `.github/copilot-instructions-code-review.md`
 
-### Continuous Refactoring and Optimization
+## Core Principles
 
-- **Always refactor and improve**: With each change to the codebase, actively look for opportunities to refactor and improve existing code
-- **Avoid patch-over-patch mentality**: Don't just add patches on top of existing code; take time to refactor and improve the underlying structure
-- **Code review mindset**: Before adding new code, evaluate if existing code can be simplified or improved
-- **Clean code principles**: Favor clean, maintainable solutions over quick fixes
-- **Technical debt**: Address technical debt proactively rather than accumulating it
-- **Performance considerations**: Consider the performance implications of your changes
+### Fix All Issues, Leave Code Better
 
-### Use Open Source Packages
+- Fix **ALL** linting errors before committing, not just those you introduced
+- Proactively address security vulnerabilities and code quality issues throughout the codebase
+- Leave the codebase in a better state than you found it
 
-- **Check for existing solutions**: Before writing custom code, always check if there are open source packages that solve the problem
-- **Package quality standards**: When selecting open source packages, ensure they meet these criteria:
-  - **Open source license**: Package must have a proper open source license (MIT, Apache, GPL, etc.)
-  - **Active maintenance**: Regularly updated with recent commits and releases
-  - **Community adoption**: Widely used with good download statistics and GitHub stars
-  - **Good documentation**: Clear documentation and examples
-  - **Security**: No known critical vulnerabilities, actively maintained security patches
-  - **Compatibility**: Works with our technology stack and versions
-- **Avoid reinventing the wheel**: Use battle-tested solutions instead of custom implementations when possible
-- **Balance**: Custom code is acceptable when no suitable package exists or when packages add unnecessary complexity
+### Continuous Refactoring
 
-### DRY (Don't Repeat Yourself) and Modularity
+- Actively look for opportunities to refactor and improve existing code
+- Avoid patch-over-patch mentality - refactor underlying structure
+- Favor clean, maintainable solutions over quick fixes
+- Address technical debt proactively
 
-- **Keep code DRY**: Avoid code duplication by extracting common functionality into reusable functions or modules
-- **Modular design**: Break down complex functionality into smaller, focused, and reusable modules
-- **Single responsibility**: Each function/module should have a single, well-defined purpose
-- **Reusability**: Design components to be reusable across different parts of the codebase
+### Code Quality Standards
 
-### Scripts over Inline Code
-
-- **Prefer scripts**: Use separate script files instead of inline code in workflows and actions
-- **Maintainability**: Scripts are easier to test, debug, and maintain than inline code
-- **Testing**: Separate scripts enable better unit testing and validation
-- **Version control**: Scripts provide better visibility of changes through Git diffs
+- **Use open source packages** when available instead of custom code
+- **Keep code DRY**: Extract common functionality into reusable modules
+- **Modular design**: Single-purpose functions and focused modules
+- **Prefer scripts**: Use separate script files instead of inline workflow code
+- **Self-documenting code**: Write clear code with minimal extensive documentation
 
 ### Testing Requirements
 
 - **MANDATORY: Add tests for all new features and bugfixes**
-  - **New features**: Create unit tests and/or end-to-end tests that verify the feature works as expected
-  - **Bugfixes**: Create tests that reproduce the bug and verify the fix prevents regression
-  - **Test coverage**: Ensure critical paths, edge cases, and error conditions are covered
-  - **Test maintenance**: Update existing tests when modifying functionality
-  - **Test-driven approach**: Consider writing tests before implementing features when appropriate
+- Test edge cases, error conditions, and critical paths
+- Update existing tests when modifying functionality
+- All tests must pass before committing
 
-- **Test Types**:
-  - **Unit tests**: Test individual functions and modules in isolation
-  - **Integration tests**: Test how components work together
-  - **End-to-end tests**: Test complete user workflows
-  - **Regression tests**: Tests that prevent previously fixed bugs from reoccurring
-
-- **JavaScript Testing**:
-  - Use Jest for JavaScript unit tests
-  - Install dependencies: `npm install`
-  - Run JavaScript tests: `npm test`
-  - Generate coverage report: `npm run test:coverage`
-  - All tests must pass before pushing changes
-
-- **Python Testing**:
-  - Use pytest for Python unit tests
-  - Install dependencies: `pip install pytest feedparser`
-  - Run Python tests: `python3 -m pytest .github/actions/collect-rss-feeds/tests/ -v`
-  - All tests must pass before pushing changes
-
-### UI/UX Validation Requirements
-
-- **MANDATORY: Validate UI on all screen sizes for every feature**
-  - **Desktop view** (1920x1080 and 1366x768): Ensure layout, spacing, and alignment are correct
-  - **Tablet view** (768x1024): Verify responsive behavior and touch-friendly controls
-  - **Mobile view** (375x667 and 414x896): Confirm all elements are visible and properly aligned
-  - **UI degradation check**: Verify that new features don't break existing UI or cause misalignment
-  - **Text alignment**: Ensure button text, labels, and icons are centered and properly spaced
-  - **Touch targets**: Mobile buttons must be at least 44x44px for accessibility
-  - **Overflow handling**: Check that content doesn't overflow containers on any screen size
-
-- **Visual validation checklist**:
-  - Take screenshots of changes on mobile, tablet, and desktop views
-  - Verify button and control alignment in all viewports
-  - Check spacing and padding consistency across screen sizes
-  - Ensure icons and text are visually balanced within buttons
-  - Test navigation and menu visibility on mobile devices
-  - Verify that modals, dropdowns, and overlays work correctly on all devices
-
-### Documentation Guidelines
-
-- **Prefer compact documentation**: Use inline comments and concise documentation over extensive readme files
-- **Inline comments**: Document complex logic directly in code with clear, concise comments
-- **Minimal readme files**: Keep readme files brief and focused on essential information
-- **Self-documenting code**: Write clear, readable code that minimizes the need for extensive documentation
-- **Code over docs**: Prioritize writing clear code over writing extensive documentation
-
-## Workflow and Action Development
-
-### Best Practices
-
-- Use composite actions for reusable workflow components
-- Keep workflows focused and single-purpose
-- Document all inputs, outputs, and environment variables
-- Handle errors gracefully with appropriate error messages
-- Use secrets and variables appropriately (never hardcode sensitive data)
-- **Always verify workflows**: After making any changes, verify that all affected workflows still execute successfully
-
-### Python Development
-
-- Follow PEP 8 style guidelines
-- Use type hints for function parameters and return values
-- Include docstrings for all functions and modules
-- Handle exceptions appropriately with specific error messages
-- Use context managers (with statements) for file operations
-
-### RSS Feed Workflow
-
-- The RSS feed collector workflow runs on schedule and manual dispatch
-- Output should be stored in formats suitable for both automation and GitHub Pages
-- Keep the JSON output structure stable for consumers
-
-## GitHub Pages
-
-### Structure
-
-- Use the `docs/` directory for GitHub Pages content
-- Generate static HTML from dynamic data
-- Ensure responsive design for mobile devices
-- Include proper metadata and SEO tags
-
-### Content Updates
-
-- Automate content generation through GitHub Actions
-- Commit generated content back to the repository when appropriate
-- Use proper permissions for GitHub Actions to write to the repository
 
 ## Local Development and Validation
 
 ### Running Super-Linter Locally
 
-- **MANDATORY: Always run super-linter locally** before pushing changes to verify code quality
-- **DO NOT use pylint or other individual linters** - use super-linter exclusively to match CI
-- Super-linter must pass with the same configuration as the CI workflow
-- Run super-linter using Docker to match CI environment exactly:
+- **MANDATORY: Always run super-linter locally** before pushing changes
+- Run using Docker to match CI environment:
   ```bash
   docker run --rm \
     -e RUN_LOCAL=true \
@@ -157,66 +55,61 @@
     -v $(pwd):/tmp/lint \
     ghcr.io/super-linter/super-linter:v7.4.0
   ```
-- By default, super-linter validates **all supported file types** automatically
-- Common linters that run:
-  - **GITHUB_ACTIONS**: Validates workflow YAML files with shellcheck for embedded scripts
-  - **BASH**: Validates shell scripts with shellcheck
-  - **PYTHON_BLACK**: Python code formatting (double quotes, line breaks)
-  - **PYTHON_PYLINT**: Python linting (different config than local .pylintrc)
-  - **PYTHON_MYPY**: Python type checking
-  - **HTML**: Validates HTML files
-  - **HTML_PRETTIER**: HTML formatting
-  - **Markdown**: Validates Markdown files
-  - **MARKDOWN_PRETTIER**: Markdown formatting
-  - **NATURAL_LANGUAGE**: Terminology consistency (e.g., "GitHub" not "gh", "readme" not "readme")
-  - **SHELL_SHFMT**: Shell script formatting (uses tabs for indentation)
-  - **JSCPD**: Copypaste detection
-  - **CHECKOV**: Security scanning for workflows
-- **Important**: Super-linter configurations differ from local tools:
-  - PYTHON_BLACK uses double quotes and enforces line breaks
-  - SHELL_SHFMT uses tabs for indentation (not spaces)
-  - NATURAL_LANGUAGE enforces specific terminology
-  - Local `.pylintrc` settings DO NOT apply to super-linter
-  - Super-linter uses shellcheck on embedded scripts in workflow YAML files
-  - Quote all variables in shell scripts to pass shellcheck (e.g., `"$VAR"` not `$VAR`)
-- **Fix ALL linting errors** before committing changes (not just errors you introduced)
-- This prevents CI failures and ensures consistent code quality across the entire codebase
-- If you encounter errors, run super-linter with specific validators to debug:
-  ```bash
-  docker run --rm \
-    -e RUN_LOCAL=true \
-    -e USE_FIND_ALGORITHM=true \
-    -e VALIDATE_PYTHON_BLACK=true \
-    -e VALIDATE_BASH=true \
-    -v $(pwd):/tmp/lint \
-    ghcr.io/super-linter/super-linter:v7.4.0
-  ```
+- Fix **ALL** linting errors before committing (not just errors you introduced)
 
-### Environment Setup
+### Key Super-Linter Differences
 
-- **Copilot Setup Steps**: This repository has a `.github/workflows/copilot-setup-steps.yml` file that automates environment configuration
-- **MANDATORY**: When you notice you need to manually install dependencies or configure your environment:
-  1. Update the `.github/workflows/copilot-setup-steps.yml` file with the new setup steps
-  2. Follow GitHub Actions workflow syntax (see [docs](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/customize-the-agent-environment))
-  3. Add steps to the `copilot-setup-steps` job
-  4. Test that the setup steps work correctly by running the workflow manually
-  5. Document any new dependencies in this section
-- **Continuous improvement**: Keep the setup steps file up-to-date as the project evolves
-- **Purpose**: This ensures a consistent, ready-to-code environment for all Copilot Workspace sessions
-- **File location**: Must be at `.github/workflows/copilot-setup-steps.yml` (not in `.github/` root)
+- PYTHON_BLACK uses double quotes and enforces line breaks
+- SHELL_SHFMT uses tabs for indentation (not spaces)
+- NATURAL_LANGUAGE enforces specific terminology (e.g., "GitHub" not "gh")
+- Quote all variables in shell scripts: `"$VAR"` not `$VAR`
+- Shellcheck validates embedded scripts in workflow YAML files
 
 ### Running Tests
 
-- **Always run tests before committing changes**
+- **JavaScript**: `npm test` (all tests must pass)
+- **Python**: `python3 -m pytest .github/actions/collect-rss-feeds/tests/ -v` (all tests must pass)
+- **UI Tests**: `npm run test:ui`
+- **Shell Scripts**: `bats .github/scripts/test_*.bats`
 
-- **Python Tests**:
-  - Install test dependencies: `pip install pytest feedparser`
-  - Run all Python tests: `python3 -m pytest .github/actions/collect-rss-feeds/tests/ -v`
-  - All tests must pass before pushing changes
+### Environment Setup
 
-- **JavaScript Tests**:
-  - Install test dependencies: `npm install`
-  - Run all JavaScript tests: `npm test`
-  - Run tests in watch mode: `npm run test:watch`
-  - Generate coverage report: `npm run test:coverage`
-  - All tests must pass before pushing changes
+- Update `.github/workflows/copilot-setup-steps.yml` when you need to install dependencies
+- This ensures a consistent, ready-to-code environment for all Copilot sessions
+
+## Pre-Completion Checklist
+
+Before completing any task and presenting work as finished, verify:
+
+- [ ] **All tests pass**: JavaScript, Python, UI tests, shell script tests
+- [ ] **Super-linter passes**: Run locally and fix ALL linting errors
+- [ ] **Security scan passes**: No new vulnerabilities introduced
+- [ ] **Code quality improved**: Refactored code, eliminated duplication
+- [ ] **Tests added**: New features and bugfixes have test coverage
+- [ ] **UI validated** (if applicable): Tested on desktop, tablet, and mobile
+- [ ] **Workflows verified** (if applicable): All affected workflows execute successfully
+- [ ] **Documentation updated** (if needed): Inline comments and minimal docs
+- [ ] **No secrets committed**: No hardcoded credentials or sensitive data
+- [ ] **Changes are minimal**: Smallest possible changes to achieve the goal
+- [ ] **Code review requested**: Use code review tool before finalizing
+- [ ] **All issues resolved**: No new linting, security, or test failures
+
+## Repository Structure
+
+### Key Directories
+
+- `.github/actions/` - Composite actions (e.g., RSS feed collector)
+- `.github/workflows/` - GitHub Actions workflows
+- `.github/scripts/` - Shell scripts used by workflows
+- `docs/` - GitHub Pages content (HTML, CSS, JavaScript)
+- `tests/` - Playwright UI tests
+- `.github/agents/` - Custom agent instructions (read-only)
+
+### Important Files
+
+- `.github/rss-feeds.json` - RSS feed configuration
+- `.github/workflows/copilot-setup-steps.yml` - Environment setup automation
+- `package.json` - JavaScript dependencies and test scripts
+- `pyproject.toml` - Python project configuration
+- `playwright.config.js` - UI test configuration
+

@@ -1,40 +1,33 @@
-# RSS Feed Collector - Workflow Documentation
+# RSS Feed Workflow - Overview
 
-A modular GitHub Actions workflow for collecting RSS/Atom feeds.
+Modular GitHub Actions workflow for collecting RSS/Atom feeds using a composite action approach.
 
-## Overview
-
-This implementation uses a **composite action** approach to provide a clean, reusable, and DRY (Don't Repeat Yourself) solution for RSS feed collection.
-
-### Architecture
+## Architecture
 
 ```text
 .github/
-├── actions/
-│   └── collect-rss-feeds/          # Reusable composite action
-│       ├── action.yml               # Action definition
-│       ├── collect_feeds.py         # Python script using feedparser
-│       └── README.md                # Action documentation
-├── workflows/
-│   └── rss-feed-collector.yml       # Main workflow
-└── rss-feeds.json                   # Feed configuration
+├── actions/collect-rss-feeds/   # Reusable composite action
+├── workflows/rss-github-page.yml # Main workflow
+└── rss-feeds.json                # Feed configuration
 ```
 
 ## Features
 
-- ✅ **Modular Design**: Composite action can be reused in multiple workflows
-- ✅ **DRY Principle**: Single source of truth for RSS collection logic
-- ✅ **Modern Library**: Uses `feedparser` for robust RSS/Atom parsing
-- ✅ **JSON Output**: Structured data for easy integration
-- ✅ **GitHub Summary**: Formatted results displayed in workflow summary
-- ✅ **Artifact Storage**: Results saved for 30 days
-- ✅ **Smart Scheduling**: Fetches articles since last successful run
+- Composite action for reusability across workflows
+- Modern `feedparser` library for RSS/Atom parsing
+- Structured JSON output for easy integration
+- Formatted workflow summaries
+- Smart scheduling (fetches since last run)
 
-## Quick Start
+## Workflow Schedule
 
-### 1. Configure RSS Feeds
+- **Automatic**: Monday-Friday at 9 AM UTC
+- **On push**: To main branch
+- **Manual**: workflow_dispatch with custom hours parameter
 
-Edit `.github/rss-feeds.json`:
+## Configuration
+
+Edit `.github/rss-feeds.json` to add/modify feeds:
 
 ```json
 {
@@ -42,131 +35,30 @@ Edit `.github/rss-feeds.json`:
     {
       "name": "Microsoft DevOps Blog",
       "url": "https://devblogs.microsoft.com/devops/feed/"
-    },
-    {
-      "name": "GitHub Blog",
-      "url": "https://github.com/blog/all.atom"
     }
   ]
 }
 ```
 
-### 2. Run the Workflow
+## Results
 
-The workflow runs automatically:
-
-- **Schedule**: Monday-Friday at 9 AM UTC
-- **Trigger**: On every push to main branch
-- **Manual**: Via workflow_dispatch with custom hours parameter
-
-### 3. View Results
-
-Results are available in:
-
+Available in:
 1. **Workflow Summary**: Formatted tables with articles
-2. **Artifacts**: Download `rss-feeds-output.json` for 30 days
-3. **Logs**: Detailed collection progress
+2. **Artifacts**: `rss-feeds-output.json` (30 day retention)
+3. **GitHub Pages**: Automatically generated HTML
 
-## Using the Composite Action
+## Extending with Notifications
 
-The composite action can be reused in any workflow:
-
-```yaml
-- name: Collect RSS Feeds
-  id: collect
-  uses: ./.github/actions/collect-rss-feeds
-  with:
-    config-path: ".github/rss-feeds.json"
-    hours: 24
-    output-path: "feeds.json"
-
-- name: Process results
-  run: |
-    echo "Found ${{ steps.collect.outputs.total-articles }} articles"
-    # Use feeds.json for further processing
-```
-
-## Future Extensions
-
-The modular design makes it easy to add notification integrations:
-
-### Email Notifications
+The modular design supports adding notification integrations:
 
 ```yaml
 - name: Collect Feeds
   id: collect
   uses: ./.github/actions/collect-rss-feeds
 
-- name: Send Email
+- name: Send to Slack/Teams/Email
   run: |
     # Read ${{ steps.collect.outputs.output-file }}
-    # Format and send email
+    # Send notifications
 ```
 
-### Slack Notifications
-
-```yaml
-- name: Collect Feeds
-  id: collect
-  uses: ./.github/actions/collect-rss-feeds
-
-- name: Send to Slack
-  env:
-    SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
-  run: |
-    # Read JSON output
-    # Post to Slack
-```
-
-### Microsoft Teams
-
-```yaml
-- name: Collect Feeds
-  id: collect
-  uses: ./.github/actions/collect-rss-feeds
-
-- name: Send to Teams
-  env:
-    TEAMS_WEBHOOK: ${{ secrets.TEAMS_WEBHOOK }}
-  run: |
-    # Read JSON output
-    # Post to Teams channel
-```
-
-## Configuration
-
-### RSS Feeds
-
-Edit `.github/rss-feeds.json` to add or remove feeds.
-
-### Time Window
-
-The workflow automatically calculates the time window:
-
-- If last run was today: fetch last 24 hours
-- Otherwise: fetch since last successful run (max 7 days)
-- Manual runs: specify custom hours via workflow_dispatch
-
-## Output Format
-
-The action generates a structured JSON file with feed data, articles, and summary statistics.
-
-## Library Choice
-
-**feedparser** was chosen because:
-
-- Most popular Python RSS/Atom parser (18K+ stars on GitHub)
-- Handles both RSS 2.0 and Atom feeds
-- Robust error handling
-- Normalizes different feed formats
-- Active maintenance and wide adoption
-- Pure Python, no external dependencies
-
-## Advantages
-
-1. **Reusability**: The composite action can be used in multiple workflows
-2. **Maintainability**: Single location for RSS collection logic
-3. **Extensibility**: Easy to add new notification methods
-4. **Modern**: Uses industry-standard `feedparser` library
-5. **Clean**: Separation of concerns (collection vs. notification)
-6. **Testable**: Action can be tested independently
