@@ -265,7 +265,7 @@ test.describe("Mark as Read Tests", () => {
     await firstIndicator.click();
 
     // Wait for article to get 'read' class
-    await expect(article).toHaveClass(/read/);
+    await expect(article).toHaveClass(/article-item read/);
   });
 
   test("should toggle read status when clicking indicator twice", async ({
@@ -283,11 +283,11 @@ test.describe("Mark as Read Tests", () => {
 
     // Mark as read
     await firstIndicator.click();
-    await expect(article).toHaveClass(/read/);
+    await expect(article).toHaveClass(/article-item read/);
 
     // Mark as unread
     await firstIndicator.click();
-    await expect(article).not.toHaveClass(/read/);
+    await expect(article).toHaveClass("article-item");
   });
 
   test("should clear all read articles when clicking reset button", async ({
@@ -306,7 +306,7 @@ test.describe("Mark as Read Tests", () => {
     // Mark first article as read
     await readIndicators.first().click();
     const article = readIndicators.first().locator("xpath=..");
-    await expect(article).toHaveClass(/read/);
+    await expect(article).toHaveClass(/article-item read/);
 
     // Handle confirm dialog
     page.once("dialog", (dialog) => dialog.accept());
@@ -315,7 +315,7 @@ test.describe("Mark as Read Tests", () => {
     await resetButton.click();
 
     // Wait for articles to be unmarked
-    await expect(article).not.toHaveClass(/read/);
+    await expect(article).toHaveClass("article-item");
 
     // No articles should have 'read' class
     const readArticles = page.locator(".article-item.read");
