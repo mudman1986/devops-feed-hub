@@ -1,6 +1,6 @@
 # Testing Documentation
 
-This document describes the comprehensive testing strategy for the RSS Feed Collection project.
+This document describes the comprehensive testing strategy for the DevOps Feed Hub project.
 
 ## Test Coverage Overview
 

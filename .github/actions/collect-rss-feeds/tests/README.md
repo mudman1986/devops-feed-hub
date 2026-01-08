@@ -1,6 +1,6 @@
-# Tests for RSS Feed Collection Action
+# Tests for DevOps Feed Hub Action
 
-This directory contains unit tests for the RSS feed collection action.
+This directory contains unit tests for the DevOps Feed Hub RSS feed collection action.
 
 ## Running Tests
 

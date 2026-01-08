@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Summary Generator for RSS Feed Collection
+Summary Generator for DevOps Feed Hub
 Generates both markdown (for GitHub workflow summary) and HTML (for GitHub Pages)
 """
 
@@ -36,7 +36,7 @@ def generate_markdown_summary(data: Dict[str, Any]) -> str:
         Markdown formatted string
     """
     summary = []
-    summary.append("# 📰 RSS Feed Collection Summary\n")
+    summary.append("# 📰 DevOps Feed Hub Summary\n")
     summary.append(f"**Collected at:** {data['metadata']['collected_at']}\n")
     hours = data["metadata"].get("hours", 24)
     summary.append(f"**Time range:** Last {hours} hours\n")
@@ -376,20 +376,20 @@ def generate_html_page(
     formatted_time = collected_time.strftime("%B %d, %Y at %I:%M %p UTC")
 
     # Update title if this is a feed-specific page
-    page_title = "RSS Feed Collection"
+    page_title = "DevOps Feed Hub"
     if current_feed == "summary":
-        page_title = "Summary - RSS Feed Collection"
+        page_title = "Summary - DevOps Feed Hub"
     elif current_feed == "failed":
-        page_title = "Failed Feeds - RSS Feed Collection"
+        page_title = "Failed Feeds - DevOps Feed Hub"
     elif current_feed:
-        page_title = f"{current_feed} - RSS Feed Collection"
+        page_title = f"{current_feed} - DevOps Feed Hub"
 
     # Replace placeholders
     html = template.replace("<!-- CONTENT_PLACEHOLDER -->", content)
     html = html.replace("<!-- SIDEBAR_PLACEHOLDER -->", sidebar_content)
     html = html.replace("<!-- TIMESTAMP_PLACEHOLDER -->", formatted_time)
     html = html.replace(
-        "<title>RSS Feed Collection</title>",
+        "<title>DevOps Feed Hub</title>",
         f"<title>{html_escape(page_title)}</title>",
     )
 

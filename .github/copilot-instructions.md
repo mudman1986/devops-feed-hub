@@ -1,4 +1,4 @@
-# Copilot Instructions for Mudman1986 Repository
+# Copilot Instructions for DevOps Feed Hub Repository
 
 ## Code Quality Standards
 
