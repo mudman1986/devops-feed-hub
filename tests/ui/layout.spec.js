@@ -230,8 +230,7 @@ test.describe("Visual Consistency Tests", () => {
 
     // Wait until the layout stabilizes relative to the initial height
     await page.waitForFunction(
-      (startHeight) =>
-        Math.abs(document.body.scrollHeight - startHeight) < 50,
+      (startHeight) => Math.abs(document.body.scrollHeight - startHeight) < 50,
       initialHeight,
       { timeout: 1000 },
     );

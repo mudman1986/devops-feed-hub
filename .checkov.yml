@@ -4,3 +4,6 @@ skip-check:
   # This is a false positive - our inputs are for operational parameters (hours, branch)
   # not build artifacts, and are necessary for manual workflow operation
   - CKV_GHA_7
+  # CKV2_GHA_1: Ensure top-level permissions are not set to write-all
+  # This is a false positive - permissions are explicitly set to contents: read in copilot-setup-steps.yml
+  - CKV2_GHA_1
