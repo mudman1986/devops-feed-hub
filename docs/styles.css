@@ -517,38 +517,45 @@ h3 {
 
   .header {
     padding: 1rem;
-    padding-top: 4rem;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 1rem;
+    flex-wrap: wrap;
+    position: relative;
   }
 
   .header-title {
     font-size: 1.25rem;
+    flex: 1;
+    min-width: 0;
+    padding-right: 3.5rem;
   }
 
   .header-controls {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0.5rem;
+    flex-direction: column;
+    width: 100%;
+    order: 3;
+    align-items: stretch;
   }
 
   .timeframe-selector {
-    grid-column: 1 / -1;
+    width: 100%;
+  }
+
+  .hide-read-toggle,
+  .reset-read-button,
+  .nav-toggle {
+    justify-content: flex-start;
   }
 
   .theme-toggle {
-    position: fixed;
+    position: absolute;
     top: 1rem;
     right: 1rem;
-    z-index: 1001;
     padding: 0.75rem;
     width: 2.75rem;
     height: 2.75rem;
     border-radius: 50%;
     box-shadow: var(--shadow-lg);
     justify-content: center;
-    grid-column: unset;
+    order: 0;
   }
 
   #theme-text {
