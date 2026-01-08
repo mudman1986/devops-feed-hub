@@ -3,17 +3,15 @@
 Unit tests for parse_rss_feed function in collect_feeds.py
 """
 
+import os
+
+# Import the function we want to test
+import sys
 import unittest
 from datetime import datetime, timezone
 from unittest.mock import MagicMock, patch
 
-# Import the function we want to test
-import sys
-import os
-
-sys.path.insert(
-    0, os.path.join(os.path.dirname(__file__), "..")
-)
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 from collect_feeds import parse_rss_feed
 
@@ -35,7 +33,7 @@ class TestParseRssFeed(unittest.TestCase):
         # Mock feedparser response with proper entry objects
         mock_feed = MagicMock()
         mock_feed.bozo = False
-        
+
         entry1 = MagicMock()
         entry1.get.side_effect = lambda key, default=None: {
             "title": "Test Article 1",
@@ -43,7 +41,7 @@ class TestParseRssFeed(unittest.TestCase):
         }.get(key, default)
         entry1.published_parsed = (2026, 1, 8, 12, 0, 0, 0, 0, 0)
         type(entry1).updated_parsed = property(lambda self: None)
-        
+
         entry2 = MagicMock()
         entry2.get.side_effect = lambda key, default=None: {
             "title": "Test Article 2",
@@ -51,7 +49,7 @@ class TestParseRssFeed(unittest.TestCase):
         }.get(key, default)
         entry2.published_parsed = (2026, 1, 7, 12, 0, 0, 0, 0, 0)
         type(entry2).updated_parsed = property(lambda self: None)
-        
+
         mock_feed.entries = [entry1, entry2]
         mock_feedparser.return_value = mock_feed
 
@@ -78,7 +76,7 @@ class TestParseRssFeed(unittest.TestCase):
 
         mock_feed = MagicMock()
         mock_feed.bozo = False
-        
+
         # Create mock entries with proper attributes
         recent_entry = MagicMock()
         recent_entry.get.side_effect = lambda key, default=None: {
@@ -87,7 +85,7 @@ class TestParseRssFeed(unittest.TestCase):
         }.get(key, default)
         recent_entry.published_parsed = (2026, 1, 8, 12, 0, 0, 0, 0, 0)
         type(recent_entry).updated_parsed = property(lambda self: None)
-        
+
         old_entry = MagicMock()
         old_entry.get.side_effect = lambda key, default=None: {
             "title": "Old Article",
@@ -95,7 +93,7 @@ class TestParseRssFeed(unittest.TestCase):
         }.get(key, default)
         old_entry.published_parsed = (2025, 12, 1, 12, 0, 0, 0, 0, 0)
         type(old_entry).updated_parsed = property(lambda self: None)
-        
+
         mock_feed.entries = [recent_entry, old_entry]
         mock_feedparser.return_value = mock_feed
 

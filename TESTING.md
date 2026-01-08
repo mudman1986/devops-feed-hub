@@ -7,12 +7,14 @@ This document describes the comprehensive testing strategy for the RSS Feed Coll
 ### Unit Tests
 
 #### JavaScript Tests (Jest)
+
 - **Location**: `docs/script.test.js`
 - **Coverage**: Mark as Read functionality, Theme toggle, Timeframe filtering
 - **Run**: `npm test`
 - **Coverage Report**: `npm run test:coverage`
 
 **Tests Include:**
+
 - Mark as Read functionality
   - Get/save read articles from localStorage
   - Toggle read status
@@ -25,17 +27,20 @@ This document describes the comprehensive testing strategy for the RSS Feed Coll
   - Filter articles by time period
 
 #### Python Tests (pytest)
+
 - **Location**: `.github/actions/collect-rss-feeds/tests/`
 - **Coverage**: RSS feed collection, HTML generation, feed ordering
 - **Run**: `python3 -m pytest .github/actions/collect-rss-feeds/tests/ -v`
 
 **Test Files:**
+
 - `test_collect_feeds.py` - Configuration validation
 - `test_parse_rss_feed.py` - RSS feed parsing logic
 - `test_generate_summary.py` - HTML/Markdown generation
 - `test_feed_ordering.py` - Feed sorting and display logic
 
 #### Shell Script Tests (BATS)
+
 - **Location**: `.github/scripts/test_commit_github_pages.bats`
 - **Coverage**: GitHub Pages commit script
 - **Run**: `bats .github/scripts/test_commit_github_pages.bats`
@@ -43,7 +48,9 @@ This document describes the comprehensive testing strategy for the RSS Feed Coll
 ### UI Tests (Playwright)
 
 #### Multi-Device Testing
+
 UI tests run on multiple device sizes to ensure responsive design:
+
 - **Desktop**: 1920x1080, 1366x768
 - **Tablet**: iPad (768x1024)
 - **Mobile**: iPhone SE (375x667), iPhone 12 Pro (414x896)
@@ -51,6 +58,7 @@ UI tests run on multiple device sizes to ensure responsive design:
 #### Test Suites
 
 **Layout Tests** (`tests/ui/layout.spec.js`)
+
 - Header visibility and alignment
 - Sidebar visibility (desktop vs mobile)
 - Feed section spacing and structure
@@ -61,6 +69,7 @@ UI tests run on multiple device sizes to ensure responsive design:
 - Visual consistency (no layout shifts)
 
 **Functionality Tests** (`tests/ui/functionality.spec.js`)
+
 - Theme toggle
   - Switch between light/dark modes
   - Icon and text updates
@@ -104,18 +113,23 @@ npx playwright test --project="Mobile iPhone SE"
 ### Automated Testing Workflows
 
 #### CI Tests (`ci-tests.yml`)
+
 Runs on every push and pull request:
+
 - Python unit tests
 - JavaScript unit tests with coverage
 
 #### UI Tests (`ui-tests.yml`)
+
 Runs on every push to main and pull requests:
+
 - Playwright tests across all device configurations
 - Uploads test reports and screenshots on failure
 
 ### Test Reports
 
 Test results are available as GitHub Actions artifacts:
+
 - **Playwright Report**: Visual HTML report with test results
 - **Screenshots**: Captured on test failures for debugging
 - **Coverage Reports**: JavaScript code coverage metrics
@@ -127,12 +141,12 @@ Test results are available as GitHub Actions artifacts:
 Add tests to `docs/script.test.js`:
 
 ```javascript
-describe('New Feature Tests', () => {
-  test('should do something', () => {
+describe("New Feature Tests", () => {
+  test("should do something", () => {
     // Test implementation
-    expect(result).toBe(expected)
-  })
-})
+    expect(result).toBe(expected);
+  });
+});
 ```
 
 ### Python Unit Tests
@@ -153,13 +167,13 @@ class TestNewFeature(unittest.TestCase):
 Add tests to `tests/ui/`:
 
 ```javascript
-import { test, expect } from '@playwright/test'
+import { test, expect } from "@playwright/test";
 
-test('should validate new UI feature', async ({ page }) => {
-  await page.goto('/')
-  const element = page.locator('.new-feature')
-  await expect(element).toBeVisible()
-})
+test("should validate new UI feature", async ({ page }) => {
+  await page.goto("/");
+  const element = page.locator(".new-feature");
+  await expect(element).toBeVisible();
+});
 ```
 
 ## Test Coverage Goals
@@ -182,6 +196,7 @@ test('should validate new UI feature', async ({ page }) => {
 ### UI Tests Failing Locally
 
 If UI tests fail locally but pass in CI:
+
 1. Ensure you have the latest Playwright browsers: `npx playwright install`
 2. Check that http-server is installed: `npm ci`
 3. Verify no other service is using port 8080
@@ -189,6 +204,7 @@ If UI tests fail locally but pass in CI:
 ### Coverage Reports Not Generated
 
 If coverage reports aren't generated:
+
 1. Ensure all dependencies are installed: `npm ci`
 2. Check Jest configuration in `package.json`
 3. Run with verbose output: `npm run test:coverage -- --verbose`
