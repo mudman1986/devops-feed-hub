@@ -49,9 +49,9 @@
 
 ### Testing Requirements
 
-- **MANDATORY: Add tests for all new features and bug fixes**
+- **MANDATORY: Add tests for all new features and bugfixes**
   - **New features**: Create unit tests and/or end-to-end tests that verify the feature works as expected
-  - **Bug fixes**: Create tests that reproduce the bug and verify the fix prevents regression
+  - **Bugfixes**: Create tests that reproduce the bug and verify the fix prevents regression
   - **Test coverage**: Ensure critical paths, edge cases, and error conditions are covered
   - **Test maintenance**: Update existing tests when modifying functionality
   - **Test-driven approach**: Consider writing tests before implementing features when appropriate
