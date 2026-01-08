@@ -8,7 +8,7 @@ permissions:
   contents: read
 
 jobs:
-  test:
+  python-tests:
     name: Run Python Tests
     runs-on: ubuntu-latest
 
@@ -21,10 +21,35 @@ jobs:
         with:
           python-version: "3.11"
 
-      - name: Install dependencies
+      - name: Install Python dependencies
         run: |
-          pip install feedparser
+          pip install feedparser pytest
 
-      - name: Run tests
+      - name: Run Python tests
         run: |
-          python3 -m unittest discover -s .github/actions/collect-rss-feeds/tests/ -v
+          python3 -m pytest .github/actions/collect-rss-feeds/tests/ -v
+
+  javascript-tests:
+    name: Run JavaScript Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Install JavaScript dependencies
+        run: |
+          npm ci
+
+      - name: Run JavaScript tests
+        run: |
+          npm test
+
+      - name: Generate coverage report
+        run: |
+          npm run test:coverage

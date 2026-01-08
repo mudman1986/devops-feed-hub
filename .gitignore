@@ -16,6 +16,10 @@ yarn-debug.log*
 yarn-error.log*
 coverage/
 
+# Playwright
+playwright-report/
+test-results/
+
 # RSS feed outputs (temporary files from testing)
 rss-output.json
 rss-output.md
