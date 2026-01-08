@@ -28,10 +28,8 @@ Object.defineProperty(window, "localStorage", {
 // Load the script content
 const fs = require("fs");
 const path = require("path");
-const scriptContent = fs.readFileSync(
-  path.join(__dirname, "script.js"),
-  "utf8",
-);
+// Note: script content loaded for reference but functions are defined directly in tests
+// const scriptContent = fs.readFileSync(path.join(__dirname, "script.js"), "utf8");
 
 // Helper to define functions in global scope for testing
 function loadScriptFunctions() {
