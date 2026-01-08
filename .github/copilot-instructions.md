@@ -75,6 +75,25 @@
   - Run Python tests: `python3 -m pytest .github/actions/collect-rss-feeds/tests/ -v`
   - All tests must pass before pushing changes
 
+### UI/UX Validation Requirements
+
+- **MANDATORY: Validate UI on all screen sizes for every feature**
+  - **Desktop view** (1920x1080 and 1366x768): Ensure layout, spacing, and alignment are correct
+  - **Tablet view** (768x1024): Verify responsive behavior and touch-friendly controls
+  - **Mobile view** (375x667 and 414x896): Confirm all elements are visible and properly aligned
+  - **UI degradation check**: Verify that new features don't break existing UI or cause misalignment
+  - **Text alignment**: Ensure button text, labels, and icons are centered and properly spaced
+  - **Touch targets**: Mobile buttons must be at least 44x44px for accessibility
+  - **Overflow handling**: Check that content doesn't overflow containers on any screen size
+
+- **Visual validation checklist**:
+  - Take screenshots of changes on mobile, tablet, and desktop views
+  - Verify button and control alignment in all viewports
+  - Check spacing and padding consistency across screen sizes
+  - Ensure icons and text are visually balanced within buttons
+  - Test navigation and menu visibility on mobile devices
+  - Verify that modals, dropdowns, and overlays work correctly on all devices
+
 ### Documentation Guidelines
 
 - **Prefer compact documentation**: Use inline comments and concise documentation over extensive readme files
