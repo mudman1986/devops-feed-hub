@@ -9,6 +9,13 @@ dist/
 build/
 .pytest_cache/
 
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+coverage/
+
 # RSS feed outputs (temporary files from testing)
 rss-output.json
 rss-output.md
