@@ -5,16 +5,16 @@ This module tests both server-side (Python) and client-side (JavaScript simulati
 feed ordering to ensure feeds with articles appear before empty feeds.
 """
 
-import json
 import os
 import sys
 import unittest
 from datetime import datetime, timedelta, timezone
 
 # Add parent directory to path to import generate_summary
+# pylint: disable=wrong-import-position
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
-from generate_summary import (
+from generate_summary import (  # noqa: E402
     generate_html_content,
     generate_html_page,
 )
