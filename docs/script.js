@@ -259,3 +259,271 @@ function updateStats () {
     }
   })
 }
+
+// Mark as Read functionality
+const READ_ARTICLES_KEY = 'readArticles'
+const HIDE_READ_KEY = 'hideReadArticles'
+
+// Get read articles from localStorage
+function getReadArticles () {
+  try {
+    const stored = localStorage.getItem(READ_ARTICLES_KEY)
+    return stored ? JSON.parse(stored) : []
+  } catch (e) {
+    console.warn('Unable to load read articles:', e)
+    return []
+  }
+}
+
+// Save read articles to localStorage
+function saveReadArticles (readArticles) {
+  try {
+    localStorage.setItem(READ_ARTICLES_KEY, JSON.stringify(readArticles))
+  } catch (e) {
+    console.warn('Unable to save read articles:', e)
+  }
+}
+
+// Check if an article is read
+function isArticleRead (articleUrl) {
+  const readArticles = getReadArticles()
+  return readArticles.includes(articleUrl)
+}
+
+// Toggle read status of an article
+function toggleArticleRead (articleUrl) {
+  let readArticles = getReadArticles()
+
+  if (readArticles.includes(articleUrl)) {
+    // Remove from read list
+    readArticles = readArticles.filter((url) => url !== articleUrl)
+  } else {
+    // Add to read list
+    readArticles.push(articleUrl)
+  }
+
+  saveReadArticles(readArticles)
+  return !readArticles.includes(articleUrl) // Return new unread state
+}
+
+// Reset all read articles
+function resetAllReadArticles () {
+  try {
+    localStorage.removeItem(READ_ARTICLES_KEY)
+    initializeReadStatus()
+    applyReadFilter()
+  } catch (e) {
+    console.warn('Unable to reset read articles:', e)
+  }
+}
+
+// Initialize read status for all articles
+function initializeReadStatus () {
+  const articles = document.querySelectorAll('.article-item')
+
+  articles.forEach((article) => {
+    const link = article.querySelector('.article-title')
+    if (!link) return
+
+    const articleUrl = link.getAttribute('href')
+    if (!articleUrl) return
+
+    // Remove existing read indicator if present
+    const existingIndicator = article.querySelector('.read-indicator')
+    if (existingIndicator) {
+      existingIndicator.remove()
+    }
+
+    // Create read indicator (checkmark icon)
+    const indicator = document.createElement('button')
+    indicator.className = 'read-indicator'
+    indicator.setAttribute('aria-label', 'Mark as read/unread')
+    indicator.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="20 6 9 17 4 12"></polyline>
+    </svg>`
+
+    // Add click handler
+    indicator.addEventListener('click', (e) => {
+      e.preventDefault()
+      e.stopPropagation()
+      toggleArticleRead(articleUrl)
+      updateArticleReadState(article, articleUrl)
+      applyReadFilter()
+    })
+
+    // Insert indicator at the beginning of the article
+    article.insertBefore(indicator, article.firstChild)
+
+    // Update initial state
+    updateArticleReadState(article, articleUrl)
+  })
+}
+
+// Update the visual state of an article based on read status
+function updateArticleReadState (article, articleUrl) {
+  const indicator = article.querySelector('.read-indicator')
+  const isRead = isArticleRead(articleUrl)
+
+  if (isRead) {
+    article.classList.add('read')
+    if (indicator) indicator.classList.add('active')
+  } else {
+    article.classList.remove('read')
+    if (indicator) indicator.classList.remove('active')
+  }
+}
+
+// Get hide read preference
+function getHideReadPreference () {
+  try {
+    return localStorage.getItem(HIDE_READ_KEY) === 'true'
+  } catch (e) {
+    return false
+  }
+}
+
+// Save hide read preference
+function saveHideReadPreference (hideRead) {
+  try {
+    localStorage.setItem(HIDE_READ_KEY, hideRead.toString())
+  } catch (e) {
+    console.warn('Unable to save hide read preference:', e)
+  }
+}
+
+// Apply read filter to show/hide read articles
+function applyReadFilter () {
+  const hideRead = getHideReadPreference()
+  const articles = document.querySelectorAll('.article-item')
+
+  articles.forEach((article) => {
+    const link = article.querySelector('.article-title')
+    if (!link) return
+
+    const articleUrl = link.getAttribute('href')
+    const isRead = isArticleRead(articleUrl)
+
+    // Only hide if hideRead is enabled AND article is read AND not already hidden by timeframe
+    if (hideRead && isRead && article.style.display !== 'none') {
+      article.setAttribute('data-hidden-by-read', 'true')
+      article.style.display = 'none'
+    } else if (article.getAttribute('data-hidden-by-read') === 'true') {
+      article.removeAttribute('data-hidden-by-read')
+      article.style.display = ''
+    }
+  })
+
+  // Update feed counts after filtering
+  updateFeedCountsAfterReadFilter()
+}
+
+// Update feed counts after read filter is applied
+function updateFeedCountsAfterReadFilter () {
+  const feedSections = document.querySelectorAll('.feed-section')
+
+  feedSections.forEach((section) => {
+    const articles = section.querySelectorAll('.article-item')
+    const visibleArticles = Array.from(articles).filter(
+      (a) => a.style.display !== 'none'
+    )
+    const count = visibleArticles.length
+
+    // Update count badge
+    const countBadge = section.querySelector('.feed-count')
+    if (countBadge) {
+      const plural = count !== 1 ? 's' : ''
+      countBadge.textContent = `${count} article${plural}`
+    }
+
+    // Update no articles message
+    const noArticlesMsg = section.querySelector('.no-articles')
+    const articleList = section.querySelector('.article-list')
+
+    if (count === 0) {
+      if (articleList) articleList.style.display = 'none'
+      if (!noArticlesMsg) {
+        const msg = document.createElement('div')
+        msg.className = 'no-articles'
+        msg.textContent = 'No articles to display'
+        section.appendChild(msg)
+      } else {
+        noArticlesMsg.style.display = ''
+      }
+    } else {
+      if (articleList) articleList.style.display = ''
+      if (noArticlesMsg) noArticlesMsg.style.display = 'none'
+    }
+  })
+
+  // Update stats
+  updateStats()
+}
+
+// Initialize mark as read feature when page loads
+document.addEventListener('DOMContentLoaded', () => {
+  initializeReadStatus()
+  applyReadFilter()
+
+  // Set up hide read checkbox
+  const hideReadCheckbox = document.getElementById('hide-read-checkbox')
+  if (hideReadCheckbox) {
+    hideReadCheckbox.checked = getHideReadPreference()
+
+    hideReadCheckbox.addEventListener('change', () => {
+      const hideRead = hideReadCheckbox.checked
+      saveHideReadPreference(hideRead)
+      applyReadFilter()
+    })
+  }
+
+  // Set up reset button
+  const resetButton = document.getElementById('reset-read-button')
+  if (resetButton) {
+    resetButton.addEventListener('click', () => {
+      if (
+        confirm(
+          'Are you sure you want to reset all read articles? This will mark all articles as unread.'
+        )
+      ) {
+        resetAllReadArticles()
+      }
+    })
+  }
+})
+
+// Also initialize if DOMContentLoaded has already fired
+if (
+  document.readyState === 'complete' ||
+  document.readyState === 'interactive'
+) {
+  setTimeout(() => {
+    initializeReadStatus()
+    applyReadFilter()
+
+    // Set up hide read checkbox
+    const hideReadCheckbox = document.getElementById('hide-read-checkbox')
+    if (hideReadCheckbox) {
+      hideReadCheckbox.checked = getHideReadPreference()
+
+      hideReadCheckbox.addEventListener('change', () => {
+        const hideRead = hideReadCheckbox.checked
+        saveHideReadPreference(hideRead)
+        applyReadFilter()
+      })
+    }
+
+    // Set up reset button
+    const resetButton = document.getElementById('reset-read-button')
+    if (resetButton) {
+      resetButton.addEventListener('click', () => {
+        if (
+          confirm(
+            'Are you sure you want to reset all read articles? This will mark all articles as unread.'
+          )
+        ) {
+          resetAllReadArticles()
+        }
+      })
+    }
+  }, 0)
+}
