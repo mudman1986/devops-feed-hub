@@ -303,7 +303,8 @@ function toggleArticleRead (articleUrl) {
   }
 
   saveReadArticles(readArticles)
-  return !readArticles.includes(articleUrl) // Return new unread state
+  // Return true if article is now read, false if unread
+  return readArticles.includes(articleUrl)
 }
 
 // Reset all read articles
@@ -459,11 +460,8 @@ function updateFeedCountsAfterReadFilter () {
   updateStats()
 }
 
-// Initialize mark as read feature when page loads
-document.addEventListener('DOMContentLoaded', () => {
-  initializeReadStatus()
-  applyReadFilter()
-
+// Set up UI controls for mark as read feature
+function setupMarkAsReadControls () {
   // Set up hide read checkbox
   const hideReadCheckbox = document.getElementById('hide-read-checkbox')
   if (hideReadCheckbox) {
@@ -489,41 +487,22 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     })
   }
-})
+}
+
+// Initialize mark as read feature
+function initializeMarkAsReadFeature () {
+  initializeReadStatus()
+  applyReadFilter()
+  setupMarkAsReadControls()
+}
+
+// Initialize mark as read feature when page loads
+document.addEventListener('DOMContentLoaded', initializeMarkAsReadFeature)
 
 // Also initialize if DOMContentLoaded has already fired
 if (
   document.readyState === 'complete' ||
   document.readyState === 'interactive'
 ) {
-  setTimeout(() => {
-    initializeReadStatus()
-    applyReadFilter()
-
-    // Set up hide read checkbox
-    const hideReadCheckbox = document.getElementById('hide-read-checkbox')
-    if (hideReadCheckbox) {
-      hideReadCheckbox.checked = getHideReadPreference()
-
-      hideReadCheckbox.addEventListener('change', () => {
-        const hideRead = hideReadCheckbox.checked
-        saveHideReadPreference(hideRead)
-        applyReadFilter()
-      })
-    }
-
-    // Set up reset button
-    const resetButton = document.getElementById('reset-read-button')
-    if (resetButton) {
-      resetButton.addEventListener('click', () => {
-        if (
-          confirm(
-            'Are you sure you want to reset all read articles? This will mark all articles as unread.'
-          )
-        ) {
-          resetAllReadArticles()
-        }
-      })
-    }
-  }, 0)
+  setTimeout(initializeMarkAsReadFeature, 0)
 }
