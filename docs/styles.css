@@ -536,20 +536,28 @@ h3 {
     gap: 0.5rem;
   }
 
-  .timeframe-selector {
-    order: 2;
-  }
-
   .nav-toggle {
     order: 1;
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .timeframe-selector {
+    order: 2;
+    grid-column: 2;
+    grid-row: 1;
   }
 
   .reset-read-button {
     order: 3;
+    grid-column: 1;
+    grid-row: 2;
   }
 
   .hide-read-toggle {
     order: 4;
+    grid-column: 2;
+    grid-row: 2;
   }
 
   .hide-read-toggle,
