@@ -814,9 +814,7 @@ class TestMultiPageGeneration(unittest.TestCase):
             self.assertIn("Failed Feed", summary_content)
             self.assertIn("https://example.com/failed", summary_content)
             # Check page title
-            self.assertIn(
-                "<title>Summary - DevOps Feed Hub</title>", summary_content
-            )
+            self.assertIn("<title>Summary - DevOps Feed Hub</title>", summary_content)
 
     def test_generate_all_pages_without_failed_feeds(self):
         """Test generate_all_pages without failed feeds page"""
