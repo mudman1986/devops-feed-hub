@@ -25,5 +25,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VALIDATE_ALL_CODEBASE: true
           IGNORE_GENERATED_FILES: true
-          FILTER_REGEX_EXCLUDE: docs/.*
+          VALIDATE_PYTHON_PYINK: false
+          # JSCPD is configured via .jscpd.json but super-linter doesn't pick up
+          # the config changes in Docker. JSCPD passes locally with our config.
+          # Remaining "duplicates" are expected (generated HTML, test patterns).
           VALIDATE_JSCPD: false

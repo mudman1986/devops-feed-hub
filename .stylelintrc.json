@@ -1,0 +1,9 @@
+{
+  "rules": {
+    "color-hex-length": "short",
+    "alpha-value-notation": "percentage",
+    "color-function-notation": "modern",
+    "property-no-vendor-prefix": null,
+    "font-family-name-quotes": "always-unless-keyword"
+  }
+}
