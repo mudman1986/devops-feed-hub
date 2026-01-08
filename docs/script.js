@@ -137,20 +137,25 @@ function applyTimeframeFilter (timeframe) {
         const publishDate = new Date(publishedText)
         if (!isNaN(publishDate.getTime())) {
           if (publishDate >= cutoffTime) {
+            article.removeAttribute('data-hidden-by-timeframe')
             article.style.display = ''
           } else {
+            article.setAttribute('data-hidden-by-timeframe', 'true')
             article.style.display = 'none'
           }
         } else {
           // If date parsing fails, show the article
+          article.removeAttribute('data-hidden-by-timeframe')
           article.style.display = ''
         }
       } catch (e) {
         // If there's an error, show the article
+        article.removeAttribute('data-hidden-by-timeframe')
         article.style.display = ''
       }
     } else {
       // Show articles without dates
+      article.removeAttribute('data-hidden-by-timeframe')
       article.style.display = ''
     }
   })
@@ -231,6 +236,9 @@ function applyTimeframeFilter (timeframe) {
 
   // Update stats if on main page
   updateStats()
+
+  // Apply read filter after timeframe filter
+  applyReadFilter()
 }
 
 function updateMetadataDisplay () {
@@ -404,13 +412,19 @@ function applyReadFilter () {
     const articleUrl = link.getAttribute('href')
     const isRead = isArticleRead(articleUrl)
 
-    // Only hide if hideRead is enabled AND article is read AND not already hidden by timeframe
-    if (hideRead && isRead && article.style.display !== 'none') {
+    // Check if article is hidden by timeframe filter
+    const hiddenByTimeframe = article.hasAttribute('data-hidden-by-timeframe')
+
+    // Apply read filter logic
+    if (hideRead && isRead && !hiddenByTimeframe) {
       article.setAttribute('data-hidden-by-read', 'true')
       article.style.display = 'none'
     } else if (article.getAttribute('data-hidden-by-read') === 'true') {
       article.removeAttribute('data-hidden-by-read')
-      article.style.display = ''
+      // Only show if not hidden by timeframe
+      if (!hiddenByTimeframe) {
+        article.style.display = ''
+      }
     }
   })
 

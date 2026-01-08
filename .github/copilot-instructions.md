@@ -49,10 +49,31 @@
 
 ### Testing Requirements
 
-- **Add unit tests**: Create unit tests for all new functionality you develop
-- **Test coverage**: Ensure critical paths and edge cases are covered
-- **Test maintenance**: Update existing tests when modifying functionality
-- **Test-driven approach**: Consider writing tests before implementing features when appropriate
+- **MANDATORY: Add tests for all new features and bug fixes**
+  - **New features**: Create unit tests and/or end-to-end tests that verify the feature works as expected
+  - **Bug fixes**: Create tests that reproduce the bug and verify the fix prevents regression
+  - **Test coverage**: Ensure critical paths, edge cases, and error conditions are covered
+  - **Test maintenance**: Update existing tests when modifying functionality
+  - **Test-driven approach**: Consider writing tests before implementing features when appropriate
+
+- **Test Types**:
+  - **Unit tests**: Test individual functions and modules in isolation
+  - **Integration tests**: Test how components work together
+  - **End-to-end tests**: Test complete user workflows
+  - **Regression tests**: Tests that prevent previously fixed bugs from reoccurring
+
+- **JavaScript Testing**:
+  - Use Jest for JavaScript unit tests
+  - Install dependencies: `npm install`
+  - Run JavaScript tests: `npm test`
+  - Generate coverage report: `npm run test:coverage`
+  - All tests must pass before pushing changes
+
+- **Python Testing**:
+  - Use pytest for Python unit tests
+  - Install dependencies: `pip install pytest feedparser`
+  - Run Python tests: `python3 -m pytest .github/actions/collect-rss-feeds/tests/ -v`
+  - All tests must pass before pushing changes
 
 ### Documentation Guidelines
 
@@ -154,7 +175,16 @@
 
 ### Running Tests
 
-- Always run tests before committing changes
-- Install test dependencies: `pip install pytest feedparser`
-- Run all tests: `python3 -m pytest .github/actions/collect-rss-feeds/tests/ -v`
-- All tests must pass before pushing changes
+- **Always run tests before committing changes**
+
+- **Python Tests**:
+  - Install test dependencies: `pip install pytest feedparser`
+  - Run all Python tests: `python3 -m pytest .github/actions/collect-rss-feeds/tests/ -v`
+  - All tests must pass before pushing changes
+
+- **JavaScript Tests**:
+  - Install test dependencies: `npm install`
+  - Run all JavaScript tests: `npm test`
+  - Run tests in watch mode: `npm run test:watch`
+  - Generate coverage report: `npm run test:coverage`
+  - All tests must pass before pushing changes
