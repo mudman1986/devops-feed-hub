@@ -1,6 +1,6 @@
 :root {
   --bg-primary: #f5f7fa;
-  --bg-secondary: #ffffff;
+  --bg-secondary: #fff;
   --bg-tertiary: #e8ecf1;
   --bg-hover: #dfe3e8;
   --bg-error: #fef2f2;
@@ -12,9 +12,9 @@
   --border-accent: #2563eb;
   --border-success: #059669;
   --border-error: #dc2626;
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.08);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.15);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 8%);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 15%);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 20%);
   --badge-bg: #dbeafe;
   --badge-text: #1e3a8a;
   --gradient-start: #2563eb;
@@ -35,9 +35,9 @@
   --border-accent: #60a5fa;
   --border-success: #34d399;
   --border-error: #f87171;
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.5);
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 30%);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 40%);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 50%);
   --badge-bg: #1e3a8a;
   --badge-text: #bfdbfe;
   --gradient-start: #60a5fa;
@@ -52,7 +52,7 @@
 
 body {
   font-family:
-    -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", Helvetica, Arial,
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial,
     sans-serif;
   line-height: 1.7;
   color: var(--text-primary);
@@ -88,6 +88,7 @@ body {
     var(--gradient-start),
     var(--gradient-end)
   );
+  /* stylelint-disable-next-line property-no-vendor-prefix */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -499,7 +500,7 @@ h3 {
   font-size: 0.875rem;
 }
 
-@media (max-width: 768px) {
+@media (width <= 768px) {
   body {
     padding: 0;
   }
@@ -584,5 +585,3 @@ h3 {
 .nav-toggle:active {
   transform: translateY(0);
 }
-
-
