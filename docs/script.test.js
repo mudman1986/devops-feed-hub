@@ -198,7 +198,6 @@ describe('Timeframe Filtering', () => {
     
     // Set up DOM with articles at different times
     const now = new Date()
-    const yesterday = new Date(now.getTime() - 24 * 60 * 60 * 1000)
     const lastWeek = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000)
     
     document.body.innerHTML = `
