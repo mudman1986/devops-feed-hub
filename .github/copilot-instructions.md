@@ -4,11 +4,11 @@
 
 This repository is maintained primarily by GitHub Copilot. Path-specific instructions exist for specialized contexts:
 
-- **RSS Feed Action**: `.github/actions/collect-rss-feeds/.github/copilot-instructions.md`
-- **Workflows**: `.github/workflows/.github/copilot-instructions.md`
-- **Shell Scripts**: `.github/scripts/.github/copilot-instructions.md`
-- **Frontend/UI**: `docs/.github/copilot-instructions.md`
-- **UI Testing**: `tests/.github/copilot-instructions.md`
+- **Python RSS Action Code**: `.github/instructions/python-rss-action.instructions.md`
+- **Workflow YAML Files**: `.github/instructions/workflows.instructions.md`
+- **Shell Scripts**: `.github/instructions/shell-scripts.instructions.md`
+- **Frontend/UI Code**: `.github/instructions/frontend-ui.instructions.md`
+- **UI Test Files**: `.github/instructions/ui-testing.instructions.md`
 - **Code Review**: `.github/copilot-instructions-code-review.md`
 
 ## Core Principles

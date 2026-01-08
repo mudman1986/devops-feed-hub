@@ -54,8 +54,8 @@ test.describe("Theme Toggle Tests", () => {
 
     // Wait for icon content to change
     await page.waitForFunction(
-      (iconEl) => iconEl.innerHTML !== initialIcon,
-      await themeIcon.elementHandle(),
+      ({ iconEl, initial }) => iconEl.innerHTML !== initial,
+      { iconEl: await themeIcon.elementHandle(), initial: initialIcon },
     );
 
     // Verify icon changed
