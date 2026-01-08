@@ -550,17 +550,10 @@ h3 {
 
   .reset-read-button {
     order: 3;
-    grid-column: 1;
+    grid-column: 1 / -1;
     grid-row: 2;
   }
 
-  .hide-read-toggle {
-    order: 4;
-    grid-column: 2;
-    grid-row: 2;
-  }
-
-  .hide-read-toggle,
   .reset-read-button,
   .nav-toggle {
     justify-content: flex-start;
@@ -691,45 +684,6 @@ h3 {
   opacity: 1;
 }
 
-.hide-read-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  background: var(--bg-tertiary);
-  border: 1px solid var(--border-primary);
-  padding: 0.625rem 1.25rem;
-  border-radius: 0.5rem;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  user-select: none;
-  font-size: 0.875rem;
-  font-weight: 500;
-  color: var(--text-primary);
-}
-
-.hide-read-toggle:hover {
-  background: var(--bg-hover);
-  border-color: var(--border-accent);
-  transform: translateY(-1px);
-  box-shadow: var(--shadow-sm);
-}
-
-.hide-read-toggle:focus {
-  outline: 2px solid var(--border-accent);
-  outline-offset: 2px;
-}
-
-.hide-read-toggle:active {
-  transform: translateY(0);
-}
-
-.hide-read-toggle[aria-pressed="true"] {
-  border: 2px solid var(--border-accent);
-  font-weight: 600;
-  background: var(--bg-hover);
-}
-
 .reset-read-button {
   background: var(--bg-tertiary);
   border: 1px solid var(--border-primary);
@@ -762,7 +716,6 @@ h3 {
 }
 
 @media (width <= 768px) {
-  .hide-read-toggle,
   .reset-read-button {
     padding: 0.625rem 1rem;
     font-size: 0.875rem;
@@ -783,7 +736,6 @@ h3 {
 }
 
 @media (width <= 480px) {
-  .hide-read-toggle,
   .reset-read-button,
   .nav-toggle {
     padding: 0.5rem 0.75rem;
