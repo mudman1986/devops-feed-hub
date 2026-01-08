@@ -116,7 +116,7 @@ class TestGenerateSummary(unittest.TestCase):
         self.assertIsInstance(result, str)
 
         # Check for key sections
-        self.assertIn("# 📰 RSS Feed Collection Summary", result)
+        self.assertIn("# 📰 DevOps Feed Hub Summary", result)
         self.assertIn("## 📊 Summary", result)
         self.assertIn("## ✅ Successful Feeds", result)
         self.assertIn("## ❌ Failed Feeds", result)
@@ -151,7 +151,7 @@ class TestGenerateSummary(unittest.TestCase):
         result = generate_markdown_summary(self.empty_data)
 
         # Should still have basic structure
-        self.assertIn("# 📰 RSS Feed Collection Summary", result)
+        self.assertIn("# 📰 DevOps Feed Hub Summary", result)
         self.assertIn("## 📊 Summary", result)
 
         # Should indicate no articles
@@ -176,7 +176,7 @@ class TestGenerateSummary(unittest.TestCase):
         self.assertIn("</html>", result)
 
         # Check for key sections - no emojis in new design
-        self.assertIn("RSS Feed Collection", result)
+        self.assertIn("DevOps Feed Hub", result)
         # The new design doesn't have h1/h2 headers with emojis on the main page
         # Instead it has feed sections with h3 headers
 
@@ -228,7 +228,7 @@ class TestGenerateSummary(unittest.TestCase):
 
         # Should still have basic structure
         self.assertIn("<!DOCTYPE html>", result)
-        self.assertIn("RSS Feed Collection", result)
+        self.assertIn("DevOps Feed Hub", result)
 
         # Should indicate no articles (shown in article count badge)
         self.assertIn("0 articles", result)
@@ -643,7 +643,7 @@ class TestMultiPageGeneration(unittest.TestCase):
         self.assertIn('href="feed-test-feed-1.html"', result)
 
         # Check page title is updated
-        self.assertIn("<title>Test Feed 1 - RSS Feed Collection</title>", result)
+        self.assertIn("<title>Test Feed 1 - DevOps Feed Hub</title>", result)
 
     def test_generate_html_page_main_index(self):
         """Test HTML page generation for main index (all feeds)"""
@@ -815,7 +815,7 @@ class TestMultiPageGeneration(unittest.TestCase):
             self.assertIn("https://example.com/failed", summary_content)
             # Check page title
             self.assertIn(
-                "<title>Summary - RSS Feed Collection</title>", summary_content
+                "<title>Summary - DevOps Feed Hub</title>", summary_content
             )
 
     def test_generate_all_pages_without_failed_feeds(self):

@@ -1,5 +1,5 @@
 """
-Tests for feed ordering functionality in the RSS Feed Collection UI.
+Tests for feed ordering functionality in the DevOps Feed Hub UI.
 
 This module tests both server-side (Python) and client-side (JavaScript simulation)
 feed ordering to ensure feeds with articles appear before empty feeds.

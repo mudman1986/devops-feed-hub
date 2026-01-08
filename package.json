@@ -1,7 +1,7 @@
 {
-  "name": "rss-feed-collection",
+  "name": "devops-feed-hub",
   "version": "1.0.0",
-  "description": "RSS Feed Collection with mark as read functionality",
+  "description": "DevOps Feed Hub - Centralized RSS feed aggregator for DevOps and tech news",
   "scripts": {
     "test": "jest",
     "test:watch": "jest --watch",
