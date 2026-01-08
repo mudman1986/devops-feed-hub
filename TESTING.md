@@ -7,6 +7,7 @@ Comprehensive testing strategy for DevOps Feed Hub.
 ### Unit Tests
 
 #### JavaScript (Jest)
+
 - **Location**: `docs/script.test.js`
 - **Run**: `npm test`
 - **Coverage**: `npm run test:coverage`
@@ -14,12 +15,14 @@ Comprehensive testing strategy for DevOps Feed Hub.
 Tests: Mark as Read, Theme toggle, Timeframe filtering
 
 #### Python (pytest)
+
 - **Location**: `.github/actions/collect-rss-feeds/tests/`
 - **Run**: `python3 -m pytest .github/actions/collect-rss-feeds/tests/ -v`
 
 Tests: RSS parsing, HTML generation, feed ordering, configuration validation
 
 #### Shell Scripts (BATS)
+
 - **Location**: `.github/scripts/test_commit_github_pages.bats`
 - **Run**: `bats .github/scripts/test_commit_github_pages.bats`
 
@@ -28,10 +31,12 @@ Tests: RSS parsing, HTML generation, feed ordering, configuration validation
 Multi-device testing on Desktop (1920x1080, 1366x768), Tablet (768x1024), Mobile (375x667, 414x896)
 
 **Test Suites:**
+
 - `tests/ui/layout.spec.js` - Header, sidebar, spacing, alignment, touch targets
 - `tests/ui/functionality.spec.js` - Theme toggle, filtering, mark as read, navigation
 
 **Running:**
+
 ```bash
 npm run test:ui              # All tests
 npm run test:ui:headed       # See browser
@@ -47,6 +52,7 @@ npm run test:ui:debug        # Step through
 ## Writing Tests
 
 ### JavaScript
+
 ```javascript
 describe("Feature", () => {
   test("should work", () => {
@@ -56,6 +62,7 @@ describe("Feature", () => {
 ```
 
 ### Python
+
 ```python
 class TestFeature(unittest.TestCase):
     def test_something(self):
@@ -63,6 +70,7 @@ class TestFeature(unittest.TestCase):
 ```
 
 ### UI Tests
+
 ```javascript
 test("validates feature", async ({ page }) => {
   await page.goto("/");
@@ -84,4 +92,3 @@ test("validates feature", async ({ page }) => {
 - **JavaScript**: >80% code coverage
 - **Python**: Test all public functions and edge cases
 - **UI**: Cover all features across all device sizes
-

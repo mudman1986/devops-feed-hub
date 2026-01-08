@@ -28,20 +28,20 @@ Reusable GitHub Actions composite action for collecting RSS/Atom feeds using `fe
 
 ## Inputs
 
-| Input         | Description                          | Default                  |
-| ------------- | ------------------------------------ | ------------------------ |
-| `config-path` | RSS feeds configuration JSON file    | `.github/rss-feeds.json` |
-| `hours`       | Fetch articles from last N hours     | `24`                     |
-| `output-path` | Path for output JSON                 | `rss-feeds-output.json`  |
+| Input         | Description                       | Default                  |
+| ------------- | --------------------------------- | ------------------------ |
+| `config-path` | RSS feeds configuration JSON file | `.github/rss-feeds.json` |
+| `hours`       | Fetch articles from last N hours  | `24`                     |
+| `output-path` | Path for output JSON              | `rss-feeds-output.json`  |
 
 ## Outputs
 
-| Output             | Description                        |
-| ------------------ | ---------------------------------- |
-| `output-file`      | Generated JSON output file path    |
-| `total-articles`   | Total articles collected           |
-| `successful-feeds` | Successfully fetched feeds count   |
-| `failed-feeds`     | Failed feeds count                 |
+| Output             | Description                      |
+| ------------------ | -------------------------------- |
+| `output-file`      | Generated JSON output file path  |
+| `total-articles`   | Total articles collected         |
+| `successful-feeds` | Successfully fetched feeds count |
+| `failed-feeds`     | Failed feeds count               |
 
 ## Configuration Format
 
@@ -80,4 +80,3 @@ Reusable GitHub Actions composite action for collecting RSS/Atom feeds using `fe
   }
 }
 ```
-

@@ -29,4 +29,3 @@ The RSS Feed Collector workflow generates and commits updated HTML files to this
 
 - **Edit feeds**: `.github/rss-feeds.json`
 - **Modify styling**: `.github/actions/collect-rss-feeds/generate_summary.py`
-

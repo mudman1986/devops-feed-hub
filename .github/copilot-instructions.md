@@ -41,7 +41,6 @@ This repository is maintained primarily by GitHub Copilot. Path-specific instruc
 - Update existing tests when modifying functionality
 - All tests must pass before committing
 
-
 ## Local Development and Validation
 
 ### Running Super-Linter Locally
@@ -112,4 +111,3 @@ Before completing any task and presenting work as finished, verify:
 - `package.json` - JavaScript dependencies and test scripts
 - `pyproject.toml` - Python project configuration
 - `playwright.config.js` - UI test configuration
-

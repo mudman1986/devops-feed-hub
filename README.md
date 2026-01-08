@@ -39,4 +39,3 @@ See [TESTING.md](TESTING.md) for details.
 ## 🔧 Configuration
 
 Edit `.github/rss-feeds.json` to add or modify RSS feeds.
-

@@ -43,6 +43,7 @@ Edit `.github/rss-feeds.json` to add/modify feeds:
 ## Results
 
 Available in:
+
 1. **Workflow Summary**: Formatted tables with articles
 2. **Artifacts**: `rss-feeds-output.json` (30 day retention)
 3. **GitHub Pages**: Automatically generated HTML
@@ -61,4 +62,3 @@ The modular design supports adding notification integrations:
     # Read ${{ steps.collect.outputs.output-file }}
     # Send notifications
 ```
-
