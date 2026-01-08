@@ -1,4 +1,9 @@
 /* eslint-env browser */
+
+// Mark as Read constants
+const READ_ARTICLES_KEY = 'readArticles'
+const HIDE_READ_KEY = 'hideReadArticles'
+
 // Theme toggle functionality
 const themeToggle = document.getElementById('theme-toggle')
 const htmlElement = document.documentElement
@@ -268,9 +273,7 @@ function updateStats () {
   })
 }
 
-// Mark as Read functionality
-const READ_ARTICLES_KEY = 'readArticles'
-const HIDE_READ_KEY = 'hideReadArticles'
+// Mark as Read functionality - constants defined at top of file
 
 // Get read articles from localStorage
 function getReadArticles () {
