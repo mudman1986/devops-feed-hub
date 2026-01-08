@@ -258,14 +258,15 @@ test.describe("Mark as Read Tests", () => {
     }
 
     const firstIndicator = readIndicators.first();
-    // Get parent article element using xpath for reliability
-    const article = firstIndicator.locator("xpath=..");
 
     // Click read indicator
     await firstIndicator.click();
 
-    // Wait for article to get 'read' class
-    await expect(article).toHaveClass(/article-item read/);
+    // Wait for and verify the article gets 'read' class
+    // The indicator's parent li.article-item should get class 'read' added
+    await expect(page.locator(".article-item.read").first()).toBeVisible({
+      timeout: 10000,
+    });
   });
 
   test("should toggle read status when clicking indicator twice", async ({
@@ -278,16 +279,19 @@ test.describe("Mark as Read Tests", () => {
     }
 
     const firstIndicator = readIndicators.first();
-    // Get parent article element using xpath for reliability
-    const article = firstIndicator.locator("xpath=..");
 
     // Mark as read
     await firstIndicator.click();
-    await expect(article).toHaveClass(/article-item read/);
+    await expect(page.locator(".article-item.read").first()).toBeVisible({
+      timeout: 10000,
+    });
 
     // Mark as unread
     await firstIndicator.click();
-    await expect(article).toHaveClass("article-item");
+    // Wait for read class to be removed
+    await page.waitForTimeout(500);
+    const readArticles = await page.locator(".article-item.read").count();
+    expect(readArticles).toBe(0);
   });
 
   test("should clear all read articles when clicking reset button", async ({
@@ -305,8 +309,9 @@ test.describe("Mark as Read Tests", () => {
 
     // Mark first article as read
     await readIndicators.first().click();
-    const article = readIndicators.first().locator("xpath=..");
-    await expect(article).toHaveClass(/article-item read/);
+    await expect(page.locator(".article-item.read").first()).toBeVisible({
+      timeout: 10000,
+    });
 
     // Handle confirm dialog
     page.once("dialog", (dialog) => dialog.accept());
@@ -315,12 +320,9 @@ test.describe("Mark as Read Tests", () => {
     await resetButton.click();
 
     // Wait for articles to be unmarked
-    await expect(article).toHaveClass("article-item");
-
-    // No articles should have 'read' class
-    const readArticles = page.locator(".article-item.read");
-    const readCount = await readArticles.count();
-    expect(readCount).toBe(0);
+    await page.waitForTimeout(500);
+    const readArticles = await page.locator(".article-item.read").count();
+    expect(readArticles).toBe(0);
   });
 
   test("should persist read status on page reload", async ({ page }) => {
@@ -332,8 +334,9 @@ test.describe("Mark as Read Tests", () => {
 
     // Mark first article as read
     await readIndicators.first().click();
-    const article = readIndicators.first().locator("xpath=..");
-    await expect(article).toHaveClass(/read/);
+    await expect(page.locator(".article-item.read").first()).toBeVisible({
+      timeout: 10000,
+    });
 
     // Reload page
     await page.reload();

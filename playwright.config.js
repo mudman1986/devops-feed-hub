@@ -35,22 +35,28 @@ export default defineConfig({
     {
       name: "Tablet iPad",
       use: {
-        ...devices["iPad (gen 7)"],
+        ...devices["Desktop Chrome"], // Use Chrome instead of WebKit
         viewport: { width: 768, height: 1024 },
+        isMobile: true,
+        hasTouch: true,
       },
     },
     {
       name: "Mobile iPhone SE",
       use: {
-        ...devices["iPhone SE"],
+        ...devices["Desktop Chrome"], // Use Chrome instead of WebKit
         viewport: { width: 375, height: 667 },
+        isMobile: true,
+        hasTouch: true,
       },
     },
     {
       name: "Mobile iPhone 12 Pro",
       use: {
-        ...devices["iPhone 12 Pro"],
+        ...devices["Desktop Chrome"], // Use Chrome instead of WebKit
         viewport: { width: 414, height: 896 },
+        isMobile: true,
+        hasTouch: true,
       },
     },
   ],

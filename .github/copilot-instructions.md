@@ -81,6 +81,11 @@ This repository is maintained primarily by GitHub Copilot. Path-specific instruc
 Before completing any task and presenting work as finished, verify:
 
 - [ ] **All tests pass**: JavaScript, Python, UI tests, shell script tests
+  - **MANDATORY: Run tests after every fix to verify** - Never assume a fix works
+  - Run `npm test` for JavaScript tests
+  - Run `python3 -m pytest .github/actions/collect-rss-feeds/tests/ -v` for Python
+  - Run `npm run test:ui` for Playwright tests
+  - Fix failures immediately and rerun until all pass
 - [ ] **Super-linter passes**: Run locally and fix ALL linting errors
 - [ ] **Security scan passes**: No new vulnerabilities introduced
 - [ ] **Code quality improved**: Refactored code, eliminated duplication
