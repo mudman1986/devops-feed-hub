@@ -1,6 +1,11 @@
+---
+applyTo: "**"
+excludeAgent: "coding-agent"
+---
+
 # Copilot Code Review Instructions
 
-This file contains specific instructions for code review tasks in the DevOps Feed Hub repository.
+Instructions for code review tasks in the DevOps Feed Hub repository.
 
 ## Code Review Focus Areas
 

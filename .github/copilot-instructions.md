@@ -9,7 +9,7 @@ This repository is maintained primarily by GitHub Copilot. Path-specific instruc
 - **Shell Scripts**: `.github/instructions/shell-scripts.instructions.md`
 - **Frontend/UI Code**: `.github/instructions/frontend-ui.instructions.md`
 - **UI Test Files**: `.github/instructions/ui-testing.instructions.md`
-- **Code Review**: `.github/copilot-instructions-code-review.md`
+- **Code Review**: `.github/instructions/code-review.instructions.md`
 
 ## Core Principles
 
