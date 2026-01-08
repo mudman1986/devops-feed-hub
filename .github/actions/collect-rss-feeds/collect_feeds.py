@@ -14,7 +14,6 @@ from urllib.request import Request, urlopen
 import feedparser
 
 
-# pylint: disable=too-many-locals,broad-exception-caught,broad-exception-raised
 def parse_rss_feed(url: str, since_time: datetime) -> Optional[List[Dict[str, Any]]]:
     """
     Parse an RSS/Atom feed and return articles published after since_time
@@ -75,8 +74,9 @@ def parse_rss_feed(url: str, since_time: datetime) -> Optional[List[Dict[str, An
                 # No date available, include it anyway
                 articles.append({"title": title, "link": link, "published": "Unknown"})
 
-    except Exception as e:
+    except Exception as e:  # pylint: disable=broad-exception-caught
         # Return None to indicate this feed failed
+        # We catch all exceptions here because network/parsing can fail in many ways
         print(f"Error fetching feed {url}: {str(e)}", file=sys.stderr)
         return None
 
