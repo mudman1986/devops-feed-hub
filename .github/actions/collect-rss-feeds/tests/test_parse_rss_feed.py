@@ -6,7 +6,7 @@ Unit tests for parse_rss_feed function in collect_feeds.py
 import os
 import sys
 import unittest
-from datetime import datetime, timezone
+from datetime import datetime
 from unittest.mock import MagicMock, patch
 
 # Add parent directory to path to import the module

@@ -20,12 +20,8 @@ test.describe("Theme Toggle Tests", () => {
     // Click theme toggle
     await themeToggle.click();
 
-    // Wait for theme change
-    await page.waitForTimeout(300);
-
-    // Verify theme changed
-    const newTheme = await htmlElement.getAttribute("data-theme");
-    expect(newTheme).not.toBe(initialTheme);
+    // Verify theme changed (Playwright will auto-wait for the change)
+    await expect(htmlElement).not.toHaveAttribute("data-theme", initialTheme);
   });
 
   test("should update button text when theme changes", async ({ page }) => {
@@ -37,13 +33,12 @@ test.describe("Theme Toggle Tests", () => {
 
     // Click toggle
     await themeToggle.click();
-    await page.waitForTimeout(300);
 
-    // Verify text changed
-    const newText = await themeText.textContent();
-    expect(newText).not.toBe(initialText);
+    // Verify text changed (Playwright will auto-wait for the change)
+    await expect(themeText).not.toHaveText(initialText);
 
     // Text should be either "Light Mode" or "Dark Mode"
+    const newText = await themeText.textContent();
     expect(["Light Mode", "Dark Mode"]).toContain(newText);
   });
 
@@ -56,7 +51,12 @@ test.describe("Theme Toggle Tests", () => {
 
     // Click toggle
     await themeToggle.click();
-    await page.waitForTimeout(300);
+
+    // Wait for icon content to change
+    await page.waitForFunction(
+      (iconEl) => iconEl.innerHTML !== initialIcon,
+      await themeIcon.elementHandle(),
+    );
 
     // Verify icon changed
     const newIcon = await themeIcon.innerHTML();
@@ -69,8 +69,9 @@ test.describe("Theme Toggle Tests", () => {
 
     // Click toggle to change theme
     await themeToggle.click();
-    await page.waitForTimeout(300);
 
+    // Wait for theme to change
+    await page.waitForLoadState("load");
     const themeAfterToggle = await htmlElement.getAttribute("data-theme");
 
     // Reload page
@@ -104,12 +105,14 @@ test.describe("Timeframe Filtering Tests", () => {
   test("should filter articles when timeframe changes", async ({ page }) => {
     const timeframeSelect = page.locator("#timeframe-select");
 
-    // Get initial article count
-    const initialArticles = await page.locator(".article-item").count();
-
     // Change timeframe
     await timeframeSelect.selectOption("7days");
-    await page.waitForTimeout(500);
+
+    // Wait for filtering to complete by checking that feed counts are updated
+    await page.waitForFunction(() => {
+      const feedCounts = document.querySelectorAll(".feed-count");
+      return feedCounts.length > 0;
+    });
 
     // Articles may have changed (could be more or less)
     const newArticles = await page.locator(".article-item").count();
@@ -121,10 +124,11 @@ test.describe("Timeframe Filtering Tests", () => {
 
     // Change timeframe
     await timeframeSelect.selectOption("30days");
-    await page.waitForTimeout(500);
 
-    // Verify feed counts are displayed
+    // Wait for feed counts to be displayed
     const feedCounts = page.locator(".feed-count");
+    await expect(feedCounts.first()).toBeVisible();
+
     const count = await feedCounts.count();
     expect(count).toBeGreaterThan(0);
 
@@ -138,7 +142,6 @@ test.describe("Timeframe Filtering Tests", () => {
 
     // Select a specific timeframe
     await timeframeSelect.selectOption("7days");
-    await page.waitForTimeout(300);
 
     // Reload page
     await page.reload();
@@ -179,7 +182,12 @@ test.describe("Sidebar Toggle Tests", () => {
 
     // Click toggle to expand
     await navToggle.click();
-    await page.waitForTimeout(300);
+
+    // Wait for sidebar to expand
+    await page.waitForFunction(
+      (sidebarEl) => !sidebarEl.classList.contains("collapsed"),
+      await sidebar.elementHandle(),
+    );
 
     // Sidebar should now be expanded
     const afterToggle = await sidebar.evaluate((el) =>
@@ -200,13 +208,23 @@ test.describe("Sidebar Toggle Tests", () => {
 
     // Open sidebar
     await navToggle.click();
-    await page.waitForTimeout(300);
+
+    // Wait for sidebar to open
+    await page.waitForFunction(
+      (sidebarEl) => !sidebarEl.classList.contains("collapsed"),
+      await sidebar.elementHandle(),
+    );
 
     // Click outside sidebar (on main content)
     const mainContent = page.locator(".main-content");
     if ((await mainContent.count()) > 0) {
       await mainContent.click({ position: { x: 10, y: 10 } });
-      await page.waitForTimeout(300);
+
+      // Wait for sidebar to collapse
+      await page.waitForFunction(
+        (sidebarEl) => sidebarEl.classList.contains("collapsed"),
+        await sidebar.elementHandle(),
+      );
 
       // Sidebar should close
       const isCollapsed = await sidebar.evaluate((el) =>
@@ -245,13 +263,9 @@ test.describe("Mark as Read Tests", () => {
 
     // Click read indicator
     await firstIndicator.click();
-    await page.waitForTimeout(300);
 
-    // Article should have 'read' class
-    const hasReadClass = await article.evaluate((el) =>
-      el.classList.contains("read"),
-    );
-    expect(hasReadClass).toBe(true);
+    // Wait for article to get 'read' class
+    await expect(article).toHaveClass(/read/);
   });
 
   test("should toggle read status when clicking indicator twice", async ({
@@ -269,17 +283,11 @@ test.describe("Mark as Read Tests", () => {
 
     // Mark as read
     await firstIndicator.click();
-    await page.waitForTimeout(300);
+    await expect(article).toHaveClass(/read/);
 
     // Mark as unread
     await firstIndicator.click();
-    await page.waitForTimeout(300);
-
-    // Article should not have 'read' class
-    const hasReadClass = await article.evaluate((el) =>
-      el.classList.contains("read"),
-    );
-    expect(hasReadClass).toBe(false);
+    await expect(article).not.toHaveClass(/read/);
   });
 
   test("should clear all read articles when clicking reset button", async ({
@@ -297,14 +305,17 @@ test.describe("Mark as Read Tests", () => {
 
     // Mark first article as read
     await readIndicators.first().click();
-    await page.waitForTimeout(300);
+    const article = readIndicators.first().locator("xpath=..");
+    await expect(article).toHaveClass(/read/);
 
     // Handle confirm dialog
     page.once("dialog", (dialog) => dialog.accept());
 
     // Click reset button
     await resetButton.click();
-    await page.waitForTimeout(300);
+
+    // Wait for articles to be unmarked
+    await expect(article).not.toHaveClass(/read/);
 
     // No articles should have 'read' class
     const readArticles = page.locator(".article-item.read");
@@ -321,7 +332,8 @@ test.describe("Mark as Read Tests", () => {
 
     // Mark first article as read
     await readIndicators.first().click();
-    await page.waitForTimeout(300);
+    const article = readIndicators.first().locator("xpath=..");
+    await expect(article).toHaveClass(/read/);
 
     // Reload page
     await page.reload();
@@ -329,6 +341,7 @@ test.describe("Mark as Read Tests", () => {
 
     // Article should still be marked as read
     const readArticles = page.locator(".article-item.read");
+    await expect(readArticles.first()).toBeVisible();
     const readCount = await readArticles.count();
     expect(readCount).toBeGreaterThan(0);
   });

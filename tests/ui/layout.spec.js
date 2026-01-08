@@ -228,8 +228,13 @@ test.describe("Visual Consistency Tests", () => {
     // Take initial measurement
     const initialHeight = await page.evaluate(() => document.body.scrollHeight);
 
-    // Wait a bit to see if there are layout shifts
-    await page.waitForTimeout(1000);
+    // Wait until the layout stabilizes relative to the initial height
+    await page.waitForFunction(
+      (startHeight) =>
+        Math.abs(document.body.scrollHeight - startHeight) < 50,
+      initialHeight,
+      { timeout: 1000 },
+    );
 
     const finalHeight = await page.evaluate(() => document.body.scrollHeight);
 
