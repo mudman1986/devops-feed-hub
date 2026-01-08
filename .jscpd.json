@@ -8,7 +8,7 @@
     ".github/actions/collect-rss-feeds/template.html",
     "docs/**/*.html"
   ],
-  "format": ["markup", "python"],
+  "format": ["markup", "python", "css"],
   "minLines": 10,
   "minTokens": 70
 }

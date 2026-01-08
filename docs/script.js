@@ -234,7 +234,8 @@ function applyTimeframeFilter (timeframe) {
 }
 
 function updateMetadataDisplay () {
-  // Metadata is now hidden, but keep this function for compatibility
+  // Kept for compatibility with generated HTML pages that may reference this function
+  // Metadata display functionality has been moved to CSS (display: none)
 }
 
 function updateStats () {
