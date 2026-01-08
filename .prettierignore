@@ -7,3 +7,6 @@ docs/feed-*.html
 # Don't format the main index and summary (they are generated)
 docs/index.html
 docs/summary.html
+
+# Don't format JavaScript as we use JavaScript Standard Style (conflicts with Prettier)
+docs/script.js
