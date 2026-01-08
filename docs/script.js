@@ -275,6 +275,9 @@ function updateStats () {
 
 // Mark as Read functionality - constants defined at top of file
 
+// Store original feed order for restoration when read status is reset
+let originalFeedOrder = []
+
 // Get read articles from localStorage
 function getReadArticles () {
   try {
@@ -323,6 +326,8 @@ function resetAllReadArticles () {
   try {
     localStorage.removeItem(READ_ARTICLES_KEY)
     initializeReadStatus()
+    // Restore original feed order when reset
+    restoreOriginalFeedOrder()
     applyReadFilter()
   } catch (e) {
     console.warn('Unable to reset read articles:', e)
@@ -438,13 +443,24 @@ function applyReadFilter () {
 // Update feed counts after read filter is applied
 function updateFeedCountsAfterReadFilter () {
   const feedSections = document.querySelectorAll('.feed-section')
+  const feedsData = []
 
   feedSections.forEach((section) => {
     const articles = section.querySelectorAll('.article-item')
     const visibleArticles = Array.from(articles).filter(
       (a) => a.style.display !== 'none'
     )
+    
+    // Count unread articles (not just visible)
+    const unreadArticles = Array.from(articles).filter((article) => {
+      const link = article.querySelector('.article-title')
+      if (!link) return false
+      const articleUrl = link.getAttribute('href')
+      return !isArticleRead(articleUrl) && !article.hasAttribute('data-hidden-by-timeframe')
+    })
+    
     const count = visibleArticles.length
+    const unreadCount = unreadArticles.length
 
     // Update count badge
     const countBadge = section.querySelector('.feed-count')
@@ -471,10 +487,84 @@ function updateFeedCountsAfterReadFilter () {
       if (articleList) articleList.style.display = ''
       if (noArticlesMsg) noArticlesMsg.style.display = 'none'
     }
+    
+    // Store feed data for reordering
+    feedsData.push({
+      element: section,
+      unreadCount,
+      name: section.querySelector('h3')?.textContent.trim() || ''
+    })
   })
+  
+  // Reorder feeds based on unread count
+  reorderFeedsByUnreadStatus(feedsData)
 
   // Update stats
   updateStats()
+}
+
+// Reorder feeds: feeds with unread articles first, then feeds with all read articles
+function reorderFeedsByUnreadStatus(feedsData) {
+  if (feedsData.length === 0) return
+  
+  const feedSections = document.querySelectorAll('.feed-section')
+  if (feedSections.length === 0) return
+  
+  const parent = feedSections[0].parentNode
+  if (!parent) return
+  
+  const footer = parent.querySelector('.footer')
+  
+  // Separate feeds into two groups based on unread articles
+  const feedsWithUnread = feedsData
+    .filter((f) => f.unreadCount > 0)
+    .sort((a, b) => a.name.localeCompare(b.name))
+  const feedsAllRead = feedsData
+    .filter((f) => f.unreadCount === 0)
+    .sort((a, b) => a.name.localeCompare(b.name))
+  
+  // Combine: feeds with unread first, then all-read feeds
+  const orderedFeeds = [...feedsWithUnread, ...feedsAllRead]
+  
+  // Reorder DOM elements - insert before footer to keep footer at bottom
+  orderedFeeds.forEach((feedData) => {
+    if (footer) {
+      parent.insertBefore(feedData.element, footer)
+    } else {
+      parent.appendChild(feedData.element)
+    }
+  })
+}
+
+// Store and restore original feed order
+function captureOriginalFeedOrder() {
+  if (originalFeedOrder.length > 0) return // Already captured
+  
+  const feedSections = document.querySelectorAll('.feed-section')
+  feedSections.forEach((section) => {
+    originalFeedOrder.push({
+      element: section,
+      name: section.querySelector('h3')?.textContent.trim() || ''
+    })
+  })
+}
+
+function restoreOriginalFeedOrder() {
+  if (originalFeedOrder.length === 0) return
+  
+  const parent = originalFeedOrder[0].element.parentNode
+  if (!parent) return
+  
+  const footer = parent.querySelector('.footer')
+  
+  // Restore original order
+  originalFeedOrder.forEach((feedData) => {
+    if (footer) {
+      parent.insertBefore(feedData.element, footer)
+    } else {
+      parent.appendChild(feedData.element)
+    }
+  })
 }
 
 // Set up UI controls for mark as read feature
@@ -511,6 +601,8 @@ function setupMarkAsReadControls () {
 
 // Initialize mark as read feature
 function initializeMarkAsReadFeature () {
+  // Capture original feed order before any modifications
+  captureOriginalFeedOrder()
   initializeReadStatus()
   applyReadFilter()
   setupMarkAsReadControls()
