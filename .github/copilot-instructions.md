@@ -194,14 +194,16 @@
 
 ### Environment Setup
 
-- **Copilot Setup Steps**: This repository has a `.github/copilot-setup-steps.yml` file that automates environment configuration
+- **Copilot Setup Steps**: This repository has a `.github/workflows/copilot-setup-steps.yml` file that automates environment configuration
 - **MANDATORY**: When you notice you need to manually install dependencies or configure your environment:
-  1. Update the `.github/copilot-setup-steps.yml` file with the new setup steps
-  2. Add clear descriptions for each setup step
-  3. Test that the setup steps work correctly
-  4. Document any new dependencies in this section
+  1. Update the `.github/workflows/copilot-setup-steps.yml` file with the new setup steps
+  2. Follow GitHub Actions workflow syntax (see [docs](https://docs.github.com/en/copilot/how-tos/use-copilot-agents/coding-agent/customize-the-agent-environment))
+  3. Add steps to the `copilot-setup-steps` job
+  4. Test that the setup steps work correctly by running the workflow manually
+  5. Document any new dependencies in this section
 - **Continuous improvement**: Keep the setup steps file up-to-date as the project evolves
 - **Purpose**: This ensures a consistent, ready-to-code environment for all Copilot Workspace sessions
+- **File location**: Must be at `.github/workflows/copilot-setup-steps.yml` (not in `.github/` root)
 
 ### Running Tests
 
