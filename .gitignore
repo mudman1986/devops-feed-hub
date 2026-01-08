@@ -7,6 +7,7 @@ __pycache__/
 *.egg-info/
 dist/
 build/
+.pytest_cache/
 
 # RSS feed outputs (temporary files from testing)
 rss-output.json
@@ -20,6 +21,8 @@ discord-message.json
 
 # GitHub Pages - keep docs/index.html, ignore other temporary HTML files
 !docs/
+# Ignore test feed files (generated during tests)
+docs/feed-test-feed-*.html
 
 # IDE
 .vscode/

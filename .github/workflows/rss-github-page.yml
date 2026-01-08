@@ -61,6 +61,12 @@ jobs:
 
           echo "✓ GitHub Pages content generated (multi-page)"
 
+      - name: Format HTML files
+        if: success()
+        run: |
+          npx prettier --write docs/*.html
+          echo "✓ HTML files formatted with Prettier"
+
       - name: Commit and push GitHub Pages content
         if: success()
         run: |
