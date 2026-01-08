@@ -183,6 +183,16 @@ describe('Mark as Read Functionality', () => {
 })
 
 describe('Timeframe Filtering', () => {
+  // Date formatting options for consistent formatting
+  const dateFormat = {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+    hour: 'numeric',
+    minute: '2-digit',
+    hour12: true
+  }
+
   beforeEach(() => {
     localStorage.clear()
     
@@ -202,11 +212,11 @@ describe('Timeframe Filtering', () => {
         <ul class="article-list">
           <li class="article-item">
             <a href="https://example.com/article1" class="article-title">Recent Article</a>
-            <div class="article-meta">${now.toLocaleString('en-US', { month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true })}</div>
+            <div class="article-meta">${now.toLocaleString('en-US', dateFormat)}</div>
           </li>
           <li class="article-item">
             <a href="https://example.com/article2" class="article-title">Old Article</a>
-            <div class="article-meta">${lastWeek.toLocaleString('en-US', { month: 'short', day: 'numeric', year: 'numeric', hour: 'numeric', minute: '2-digit', hour12: true })}</div>
+            <div class="article-meta">${lastWeek.toLocaleString('en-US', dateFormat)}</div>
           </li>
         </ul>
       </div>
