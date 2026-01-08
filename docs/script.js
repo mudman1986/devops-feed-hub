@@ -272,7 +272,7 @@ function updateStats () {
 // Mark as Read functionality - constants defined at top of file
 
 // Store original feed order for restoration when read status is reset
-let originalFeedOrder = []
+const originalFeedOrder = []
 
 // Get read articles from localStorage
 function getReadArticles () {
@@ -455,7 +455,7 @@ function updateFeedCountsAfterReadFilter () {
 }
 
 // Reorder articles within a feed: unread articles first, then read articles
-function reorderArticlesInFeed(articleList, articles) {
+function reorderArticlesInFeed (articleList, articles) {
   if (!articleList || articles.length === 0) return
 
   // Separate articles into unread and read
@@ -485,7 +485,7 @@ function reorderArticlesInFeed(articleList, articles) {
 }
 
 // Reorder feeds: feeds with unread articles first, then feeds with all read articles
-function reorderFeedsByUnreadStatus(feedsData) {
+function reorderFeedsByUnreadStatus (feedsData) {
   if (feedsData.length === 0) return
 
   const feedSections = document.querySelectorAll('.feed-section')
@@ -518,7 +518,7 @@ function reorderFeedsByUnreadStatus(feedsData) {
 }
 
 // Store and restore original feed order
-function captureOriginalFeedOrder() {
+function captureOriginalFeedOrder () {
   if (originalFeedOrder.length > 0) return // Already captured
 
   const feedSections = document.querySelectorAll('.feed-section')
@@ -530,7 +530,7 @@ function captureOriginalFeedOrder() {
   })
 }
 
-function restoreOriginalFeedOrder() {
+function restoreOriginalFeedOrder () {
   if (originalFeedOrder.length === 0) return
 
   const parent = originalFeedOrder[0].element.parentNode
