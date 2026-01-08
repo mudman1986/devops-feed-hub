@@ -529,14 +529,28 @@ h3 {
   }
 
   .header-controls {
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
     width: 100%;
     order: 3;
-    align-items: stretch;
+    gap: 0.5rem;
   }
 
   .timeframe-selector {
+    grid-column: 1 / -1;
     width: 100%;
+  }
+
+  .nav-toggle {
+    order: 1;
+  }
+
+  .reset-read-button {
+    order: 2;
+  }
+
+  .hide-read-toggle {
+    order: 3;
   }
 
   .hide-read-toggle,
@@ -555,7 +569,6 @@ h3 {
     border-radius: 50%;
     box-shadow: var(--shadow-lg);
     justify-content: center;
-    order: 0;
   }
 
   #theme-text {
