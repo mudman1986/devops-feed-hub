@@ -240,7 +240,8 @@ test.describe("Mark as Read Tests", () => {
     }
 
     const firstIndicator = readIndicators.first();
-    const article = firstIndicator.locator("..");
+    // Get parent article element using xpath for reliability
+    const article = firstIndicator.locator("xpath=..");
 
     // Click read indicator
     await firstIndicator.click();
@@ -263,7 +264,8 @@ test.describe("Mark as Read Tests", () => {
     }
 
     const firstIndicator = readIndicators.first();
-    const article = firstIndicator.locator("..");
+    // Get parent article element using xpath for reliability
+    const article = firstIndicator.locator("xpath=..");
 
     // Mark as read
     await firstIndicator.click();

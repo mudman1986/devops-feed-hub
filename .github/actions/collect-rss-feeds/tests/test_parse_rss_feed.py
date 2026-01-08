@@ -4,16 +4,15 @@ Unit tests for parse_rss_feed function in collect_feeds.py
 """
 
 import os
-
-# Import the function we want to test
 import sys
 import unittest
 from datetime import datetime, timezone
 from unittest.mock import MagicMock, patch
 
+# Add parent directory to path to import the module
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
-from collect_feeds import parse_rss_feed
+from collect_feeds import parse_rss_feed  # noqa: E402
 
 
 class TestParseRssFeed(unittest.TestCase):
