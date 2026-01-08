@@ -392,6 +392,9 @@ function updateFeedCountsAfterReadFilter () {
   const feedsData = []
 
   feedSections.forEach((section) => {
+    const articleList = section.querySelector('.article-list')
+    if (!articleList) return
+    
     const articles = section.querySelectorAll('.article-item')
     const visibleArticles = Array.from(articles).filter(
       (a) => a.style.display !== 'none'
@@ -408,6 +411,9 @@ function updateFeedCountsAfterReadFilter () {
     const count = visibleArticles.length
     const unreadCount = unreadArticles.length
 
+    // Reorder articles within this feed: unread first, then read
+    reorderArticlesInFeed(articleList, articles)
+
     // Update count badge
     const countBadge = section.querySelector('.feed-count')
     if (countBadge) {
@@ -417,7 +423,6 @@ function updateFeedCountsAfterReadFilter () {
 
     // Update no articles message
     const noArticlesMsg = section.querySelector('.no-articles')
-    const articleList = section.querySelector('.article-list')
 
     if (count === 0) {
       if (articleList) articleList.style.display = 'none'
@@ -447,6 +452,36 @@ function updateFeedCountsAfterReadFilter () {
 
   // Update stats
   updateStats()
+}
+
+// Reorder articles within a feed: unread articles first, then read articles
+function reorderArticlesInFeed(articleList, articles) {
+  if (!articleList || articles.length === 0) return
+  
+  // Separate articles into unread and read
+  const articleData = Array.from(articles).map((article) => {
+    const link = article.querySelector('.article-title')
+    const articleUrl = link ? link.getAttribute('href') : null
+    const isRead = articleUrl ? isArticleRead(articleUrl) : false
+    
+    return {
+      element: article,
+      isRead,
+      articleUrl
+    }
+  })
+  
+  // Separate into two groups: unread first, read second
+  const unreadArticles = articleData.filter(a => !a.isRead)
+  const readArticles = articleData.filter(a => a.isRead)
+  
+  // Combine: unread articles first, then read articles
+  const orderedArticles = [...unreadArticles, ...readArticles]
+  
+  // Reorder DOM elements within the article list
+  orderedArticles.forEach((articleData) => {
+    articleList.appendChild(articleData.element)
+  })
 }
 
 // Reorder feeds: feeds with unread articles first, then feeds with all read articles
