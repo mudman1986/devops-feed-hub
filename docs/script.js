@@ -479,14 +479,17 @@ function updateFeedCountsAfterReadFilter () {
 
 // Set up UI controls for mark as read feature
 function setupMarkAsReadControls () {
-  // Set up hide read checkbox
-  const hideReadCheckbox = document.getElementById('hide-read-checkbox')
-  if (hideReadCheckbox) {
-    hideReadCheckbox.checked = getHideReadPreference()
+  // Set up hide read toggle button
+  const hideReadToggle = document.getElementById('hide-read-toggle')
+  if (hideReadToggle) {
+    const isHidden = getHideReadPreference()
+    hideReadToggle.setAttribute('aria-pressed', isHidden.toString())
 
-    hideReadCheckbox.addEventListener('change', () => {
-      const hideRead = hideReadCheckbox.checked
-      saveHideReadPreference(hideRead)
+    hideReadToggle.addEventListener('click', () => {
+      const currentState = hideReadToggle.getAttribute('aria-pressed') === 'true'
+      const newState = !currentState
+      hideReadToggle.setAttribute('aria-pressed', newState.toString())
+      saveHideReadPreference(newState)
       applyReadFilter()
     })
   }
