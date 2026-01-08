@@ -20,7 +20,7 @@ setup() {
 	git config user.name "Test User"
 
 	# Create initial commit
-	echo "# Test" > README.md
+	echo "# Test">README.md
 	git add README.md
 	git commit -m "Initial commit"
 }
@@ -42,7 +42,7 @@ teardown() {
 
 	# Create docs directory with content
 	mkdir -p docs
-	echo "<html>test</html>" > docs/index.html
+	echo "<html>test</html>">docs/index.html
 
 	git add docs/
 
@@ -58,7 +58,7 @@ teardown() {
 
 	# Create and commit docs directory
 	mkdir -p docs
-	echo "<html>test</html>" > docs/index.html
+	echo "<html>test</html>">docs/index.html
 	git add docs/
 	git commit -m "Add docs"
 
@@ -74,7 +74,7 @@ teardown() {
 
 	# Run script
 	mkdir -p docs
-	echo "<html>test</html>" > docs/index.html
+	echo "<html>test</html>">docs/index.html
 	bash commit-github-pages.sh "docs" "current" 2>&1 || true
 
 	# Verify git config was set
@@ -92,7 +92,7 @@ teardown() {
 
 	# Create default docs directory
 	mkdir -p docs
-	echo "<html>test</html>" > docs/index.html
+	echo "<html>test</html>">docs/index.html
 
 	# Run script without content directory parameter (should default to docs)
 	run bash commit-github-pages.sh
