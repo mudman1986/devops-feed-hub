@@ -1,0 +1,6 @@
+# Mark generated HTML files as linguist-generated
+docs/*.html linguist-generated=true
+
+# Mark extracted CSS and JS as linguist-generated (derived from template)
+docs/styles.css linguist-generated=true
+docs/script.js linguist-generated=true

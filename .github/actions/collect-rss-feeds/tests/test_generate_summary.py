@@ -175,12 +175,10 @@ class TestGenerateSummary(unittest.TestCase):
         )  # Updated to allow for data-theme attribute
         self.assertIn("</html>", result)
 
-        # Check for key sections
-        self.assertIn("<h1>📰 RSS Feed Collection</h1>", result)
-        self.assertIn("<h2>📊 Summary</h2>", result)
-        self.assertIn("<h2>✅ Feed Articles</h2>", result)
-        # Failed feeds should NOT be in the main page anymore
-        self.assertNotIn("<h2>❌ Failed Feeds</h2>", result)
+        # Check for key sections - no emojis in new design
+        self.assertIn("RSS Feed Collection", result)
+        # The new design doesn't have h1/h2 headers with emojis on the main page
+        # Instead it has feed sections with h3 headers
 
     def test_generate_html_page_content(self):
         """Test that HTML page includes all content"""
@@ -198,16 +196,16 @@ class TestGenerateSummary(unittest.TestCase):
         self.assertIn("https://example.com/article1", result)
         self.assertIn("https://example.com/article4", result)
 
-        # Failed feeds should appear in navigation link but not in main content
-        self.assertIn('href="failed-feeds.html"', result)
+        # Failed feeds are now on the summary page, not a separate failed-feeds.html page
+        self.assertNotIn('href="failed-feeds.html"', result)
         # Failed feed details should NOT be in the main page
         self.assertNotIn("https://example.com/failed", result)
 
     def test_generate_html_page_stats(self):
-        """Test that HTML page includes correct statistics"""
-        result = generate_html_page(self.sample_data)
+        """Test that HTML page includes correct statistics on summary page"""
+        result = generate_html_page(self.sample_data, current_feed="summary")
 
-        # Check for stats values
+        # Check for stats values on summary page
         self.assertIn(">3</div>", result)  # total_feeds
         self.assertIn(">2</div>", result)  # successful_feeds
         self.assertIn(">1</div>", result)  # failed_feeds
@@ -221,8 +219,8 @@ class TestGenerateSummary(unittest.TestCase):
         self.assertIn('name="viewport"', result)
         self.assertIn("width=device-width", result)
 
-        # Check for CSS media query
-        self.assertIn("@media (max-width: 768px)", result)
+        # CSS is now external, so media queries are in styles.css, not in the HTML
+        self.assertIn('link rel="stylesheet" href="styles.css"', result)
 
     def test_generate_html_page_empty_feeds(self):
         """Test HTML generation with empty feeds"""
@@ -230,14 +228,14 @@ class TestGenerateSummary(unittest.TestCase):
 
         # Should still have basic structure
         self.assertIn("<!DOCTYPE html>", result)
-        self.assertIn("<h1>📰 RSS Feed Collection</h1>", result)
+        self.assertIn("RSS Feed Collection", result)
 
-        # Should indicate no articles
-        self.assertIn(">0</div>", result)  # total_articles
+        # Should indicate no articles (shown in article count badge)
+        self.assertIn("0 articles", result)
         self.assertIn("No new articles", result)
 
-        # Should not have failed feeds section
-        self.assertNotIn("<h2>❌ Failed Feeds</h2>", result)
+        # Should not have failed feeds section on main page (no emojis)
+        self.assertNotIn("<h2>Failed Feeds</h2>", result)
 
     def test_markdown_table_formatting(self):
         """Test that markdown tables are properly formatted"""
@@ -392,11 +390,12 @@ class TestGenerateSummary(unittest.TestCase):
         self.assertIn("theme-toggle", result)
         self.assertIn('aria-label="Toggle theme"', result)
 
-        # Check for theme icons
-        self.assertIn("☀️", result)  # Light mode icon (shown in dark mode)
+        # Check for SVG icons (new design uses SVG, not emoji)
+        self.assertIn("<svg", result)
+        self.assertIn('id="theme-icon"', result)
 
-        # Check for theme script
-        self.assertIn("localStorage", result)
+        # Check for theme script (external JS file)
+        self.assertIn('script src="script.js"', result)
         self.assertIn("data-theme", result)
 
     def test_placeholder_replacement(self):
@@ -589,7 +588,7 @@ class TestMultiPageGeneration(unittest.TestCase):
 
     def test_generate_feed_nav(self):
         """Test navigation generation"""
-        nav_html = generate_feed_nav(self.sample_data["feeds"], None, False)
+        nav_html = generate_feed_nav(self.sample_data["feeds"], None)
 
         # Check navigation structure
         self.assertIn('<nav class="feed-nav">', nav_html)
@@ -597,7 +596,11 @@ class TestMultiPageGeneration(unittest.TestCase):
 
         # Check all feeds link
         self.assertIn('href="index.html"', nav_html)
-        self.assertIn("📊 All Feeds", nav_html)
+        self.assertIn("All Feeds", nav_html)
+
+        # Check summary link
+        self.assertIn('href="summary.html"', nav_html)
+        self.assertIn("Summary", nav_html)
 
         # Check feed links
         self.assertIn('href="feed-test-feed-1.html"', nav_html)
@@ -607,7 +610,7 @@ class TestMultiPageGeneration(unittest.TestCase):
 
     def test_generate_feed_nav_with_current(self):
         """Test navigation with active feed"""
-        nav_html = generate_feed_nav(self.sample_data["feeds"], "Test Feed 1", False)
+        nav_html = generate_feed_nav(self.sample_data["feeds"], "Test Feed 1")
 
         # Check that current feed has active class
         self.assertIn('class="nav-link active"', nav_html)
@@ -750,49 +753,49 @@ class TestMultiPageGeneration(unittest.TestCase):
         self.assertNotIn("<script>alert('XSS')</script>", result)
 
     def test_generate_feed_nav_with_failed_feeds(self):
-        """Test navigation includes failed feeds link when there are failed feeds"""
+        """Test navigation includes summary link (failed feeds now shown on summary page)"""
         data_with_failures = self.sample_data.copy()
         data_with_failures["failed_feeds"] = [
             {"name": "Failed Feed", "url": "https://example.com/failed"}
         ]
 
-        nav_html = generate_feed_nav(data_with_failures["feeds"], None, True)
+        nav_html = generate_feed_nav(data_with_failures["feeds"], None)
 
-        # Check failed feeds link appears
-        self.assertIn('href="failed-feeds.html"', nav_html)
-        self.assertIn("❌ Failed Feeds", nav_html)
+        # Check summary link appears (failed feeds are now on summary page)
+        self.assertIn('href="summary.html"', nav_html)
+        self.assertIn("Summary", nav_html)
 
     def test_generate_feed_nav_without_failed_feeds(self):
-        """Test navigation does not include failed feeds link when there are none"""
-        nav_html = generate_feed_nav(self.sample_data["feeds"], None, False)
+        """Test navigation includes summary link"""
+        nav_html = generate_feed_nav(self.sample_data["feeds"], None)
 
-        # Check failed feeds link does not appear
-        self.assertNotIn('href="failed-feeds.html"', nav_html)
-        self.assertNotIn("❌ Failed Feeds", nav_html)
+        # Check summary link appears
+        self.assertIn('href="summary.html"', nav_html)
+        self.assertIn("Summary", nav_html)
 
     def test_generate_failed_feeds_page(self):
-        """Test generation of failed feeds page"""
+        """Test generation of failed feeds page (now part of summary page)"""
         data_with_failures = self.sample_data.copy()
         data_with_failures["failed_feeds"] = [
             {"name": "Failed Feed 1", "url": "https://example.com/failed1"},
             {"name": "Failed Feed 2", "url": "https://example.com/failed2"},
         ]
 
-        result = generate_html_page(data_with_failures, current_feed="failed")
+        # Failed feeds are now shown on the summary page, not a separate page
+        result = generate_html_page(data_with_failures, current_feed="summary")
 
-        # Check for failed feeds section
-        self.assertIn("<h2>❌ Failed Feeds</h2>", result)
+        # Check for failed feeds section (no emoji in new design)
+        self.assertIn("<h2>Failed Feeds</h2>", result)
         self.assertIn("Failed Feed 1", result)
         self.assertIn("Failed Feed 2", result)
         self.assertIn("https://example.com/failed1", result)
         self.assertIn("https://example.com/failed2", result)
 
-        # Check that feed articles section is NOT present
-        self.assertNotIn("<h2>✅ Feed Articles</h2>", result)
-        self.assertNotIn("<h2>📊 Summary</h2>", result)
+        # Summary page should also have stats
+        self.assertIn("<h2>Summary</h2>", result)
 
     def test_generate_all_pages_with_failed_feeds(self):
-        """Test that generate_all_pages creates failed feeds page when there are failures"""
+        """Test that generate_all_pages includes failed feeds on summary page"""
         data_with_failures = self.sample_data.copy()
         data_with_failures["failed_feeds"] = [
             {"name": "Failed Feed", "url": "https://example.com/failed"}
@@ -801,18 +804,18 @@ class TestMultiPageGeneration(unittest.TestCase):
         with tempfile.TemporaryDirectory() as tmpdir:
             generate_all_pages(data_with_failures, tmpdir)
 
-            # Check that failed-feeds.html was created
-            failed_path = os.path.join(tmpdir, "failed-feeds.html")
-            self.assertTrue(os.path.exists(failed_path))
+            # Failed feeds are now on summary.html, not failed-feeds.html
+            summary_path = os.path.join(tmpdir, "summary.html")
+            self.assertTrue(os.path.exists(summary_path))
 
-            # Verify failed feeds page content
-            with open(failed_path, "r", encoding="utf-8") as f:
-                failed_content = f.read()
-            self.assertIn("Failed Feed", failed_content)
-            self.assertIn("https://example.com/failed", failed_content)
+            # Verify failed feeds appear on summary page
+            with open(summary_path, "r", encoding="utf-8") as f:
+                summary_content = f.read()
+            self.assertIn("Failed Feed", summary_content)
+            self.assertIn("https://example.com/failed", summary_content)
             # Check page title
             self.assertIn(
-                "<title>Failed Feeds - RSS Feed Collection</title>", failed_content
+                "<title>Summary - RSS Feed Collection</title>", summary_content
             )
 
     def test_generate_all_pages_without_failed_feeds(self):
