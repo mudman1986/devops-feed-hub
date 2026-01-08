@@ -519,10 +519,21 @@ h3 {
     padding: 1rem;
     flex-direction: column;
     align-items: stretch;
+    gap: 1rem;
   }
 
   .header-title {
     font-size: 1.25rem;
+  }
+
+  .header-controls {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+
+  .timeframe-selector {
+    grid-column: 1 / -1;
   }
 
   .container {
@@ -695,16 +706,16 @@ h3 {
 @media (width <= 768px) {
   .hide-read-toggle,
   .reset-read-button {
-    padding: 0.5rem 1rem;
-    font-size: 0.8125rem;
+    padding: 0.625rem 1rem;
+    font-size: 0.875rem;
   }
 
-  .hide-read-label span {
-    display: none;
+  .hide-read-label {
+    font-size: 0.875rem;
   }
 
-  .reset-read-button span {
-    display: none;
+  .reset-read-button {
+    justify-content: center;
   }
 
   .read-indicator {
