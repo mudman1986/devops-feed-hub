@@ -1,7 +1,5 @@
 // Theme toggle functionality
 const themeToggle = document.getElementById("theme-toggle");
-const themeIcon = document.getElementById("theme-icon");
-const themeText = document.getElementById("theme-text");
 const htmlElement = document.documentElement;
 
 // Get saved theme preference or default to dark
@@ -49,11 +47,26 @@ function updateThemeButton(theme) {
   }
 }
 
+// Initialize sidebar state based on screen size
+function initializeSidebarState(sidebar) {
+  if (window.innerWidth <= 768) {
+    sidebar.classList.add("collapsed");
+  } else {
+    sidebar.classList.remove("collapsed");
+  }
+}
+
 // Sidebar toggle functionality (mobile)
 const sidebarToggle = document.getElementById("nav-toggle");
 const sidebar = document.getElementById("sidebar");
 
 if (sidebarToggle && sidebar) {
+  // Set initial state
+  initializeSidebarState(sidebar);
+
+  // Handle window resize
+  window.addEventListener("resize", () => initializeSidebarState(sidebar));
+
   sidebarToggle.addEventListener("click", () => {
     sidebar.classList.toggle("collapsed");
   });
@@ -114,7 +127,6 @@ function applyTimeframeFilter(timeframe) {
 
   // Filter articles by timeframe
   const allArticles = document.querySelectorAll(".article-item");
-  let visibleCount = 0;
 
   allArticles.forEach((article) => {
     const publishedText = article.querySelector(".article-meta")?.textContent;
@@ -125,24 +137,20 @@ function applyTimeframeFilter(timeframe) {
         if (!isNaN(publishDate.getTime())) {
           if (publishDate >= cutoffTime) {
             article.style.display = "";
-            visibleCount++;
           } else {
             article.style.display = "none";
           }
         } else {
           // If date parsing fails, show the article
           article.style.display = "";
-          visibleCount++;
         }
       } catch (e) {
         // If there's an error, show the article
         article.style.display = "";
-        visibleCount++;
       }
     } else {
       // Show articles without dates
       article.style.display = "";
-      visibleCount++;
     }
   });
 
@@ -218,13 +226,13 @@ function applyTimeframeFilter(timeframe) {
   }
 
   // Update metadata display
-  updateMetadataDisplay(timeframe);
+  updateMetadataDisplay();
 
   // Update stats if on main page
   updateStats();
 }
 
-function updateMetadataDisplay(timeframe) {
+function updateMetadataDisplay() {
   // Metadata is now hidden, but keep this function for compatibility
   return;
 }
