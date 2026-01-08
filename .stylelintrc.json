@@ -1,0 +1,7 @@
+{
+  "rules": {
+    "color-hex-length": "long",
+    "alpha-value-notation": "percentage",
+    "color-function-notation": "modern"
+  }
+}
