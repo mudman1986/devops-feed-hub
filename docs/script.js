@@ -134,11 +134,11 @@ function applyTimeframeFilter (timeframe) {
   const allArticles = document.querySelectorAll('.article-item')
 
   allArticles.forEach((article) => {
-    const publishedText = article.querySelector('.article-meta')?.textContent
-    if (publishedText) {
+    const publishedISO = article.getAttribute('data-published')
+    if (publishedISO) {
       try {
-        // Parse the formatted date (e.g., "Jan 6, 2026 at 7:24 PM")
-        const publishDate = new Date(publishedText)
+        // Parse the ISO timestamp from data-published attribute
+        const publishDate = new Date(publishedISO)
         if (!isNaN(publishDate.getTime())) {
           if (publishDate >= cutoffTime) {
             article.removeAttribute('data-hidden-by-timeframe')
