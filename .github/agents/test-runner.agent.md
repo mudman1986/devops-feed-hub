@@ -30,7 +30,7 @@ Run these checks in order and fix any failures:
      -e FIX_CSS_PRETTIER=true \
      -e FIX_HTML_PRETTIER=true \
      -v $(pwd):/tmp/lint \
-     ghcr.io/super-linter/super-linter:latest
+     ghcr.io/super-linter/super-linter:v8.3.2
    ```
 
 ## Key Linting Requirements

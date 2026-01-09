@@ -57,7 +57,7 @@ docker run --rm \
   -e VALIDATE_ALL_CODEBASE=true \
   -e DEFAULT_BRANCH=main \
   -v $(pwd):/tmp/lint \
-  ghcr.io/super-linter/super-linter:latest
+  ghcr.io/super-linter/super-linter:v8.3.2
 ```
 
 **IMPORTANT:** Always set `VALIDATE_ALL_CODEBASE=true` to ensure comprehensive validation of the entire codebase.
@@ -90,7 +90,7 @@ docker run --rm \
   -e FIX_MARKDOWN_PRETTIER=true \
   -e FIX_YAML_PRETTIER=true \
   -v $(pwd):/tmp/lint \
-  ghcr.io/super-linter/super-linter:latest
+  ghcr.io/super-linter/super-linter:v8.3.2
 ```
 
 **Note:** Not all linters support autofix. The above are the most commonly used in this repository.

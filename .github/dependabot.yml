@@ -33,3 +33,14 @@ updates:
       - "dependencies"
       - "npm"
     open-pull-requests-limit: 5
+
+  # Docker - update Docker images used in GitHub Actions workflows
+  - package-ecosystem: "docker"
+    directory: "/.github/workflows"
+    schedule:
+      interval: "weekly"
+      day: "monday"
+    labels:
+      - "dependencies"
+      - "docker"
+    open-pull-requests-limit: 5

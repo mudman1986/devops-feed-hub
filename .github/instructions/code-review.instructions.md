@@ -59,7 +59,7 @@ docker run --rm \
   -e VALIDATE_ALL_CODEBASE=true \
   -e DEFAULT_BRANCH=main \
   -v $(pwd):/tmp/lint \
-  ghcr.io/super-linter/super-linter:latest
+  ghcr.io/super-linter/super-linter:v8.3.2
 ```
 
 **IMPORTANT:** Always set `VALIDATE_ALL_CODEBASE=true` to ensure comprehensive validation.
@@ -82,7 +82,7 @@ docker run --rm \
   -e FIX_CSS_PRETTIER=true \
   -e FIX_HTML_PRETTIER=true \
   -v $(pwd):/tmp/lint \
-  ghcr.io/super-linter/super-linter:latest
+  ghcr.io/super-linter/super-linter:v8.3.2
 ```
 
 Common FIX\_ variables:

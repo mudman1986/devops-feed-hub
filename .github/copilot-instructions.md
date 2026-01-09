@@ -62,7 +62,7 @@ This repository is maintained primarily by GitHub Copilot. Path-specific instruc
     -e FIX_HTML_PRETTIER=true \
     -e FIX_NATURAL_LANGUAGE=true \
     -v $(pwd):/tmp/lint \
-    ghcr.io/super-linter/super-linter:latest
+    ghcr.io/super-linter/super-linter:v8.3.2
   ```
 - **DO NOT use USE_FIND_ALGORITHM** - it's incompatible with VALIDATE_ALL_CODEBASE
 - **Always use VALIDATE_ALL_CODEBASE=true** to lint the entire codebase
