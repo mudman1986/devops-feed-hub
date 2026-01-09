@@ -47,12 +47,9 @@ jobs:
 
       - name: Run Playwright tests
         run: npx playwright test --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
-        # Debug logging to diagnose workflow stalling issues
-        # Uses pw:webserver* to see server startup and pw:test to see test progress
-        timeout-minutes: 60
+        timeout-minutes: 30
         env:
           CI: true
-          DEBUG: pw:webserver*,pw:test
 
       - name: Upload test results
         if: always()
