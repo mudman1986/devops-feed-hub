@@ -22,7 +22,7 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Collect RSS Feeds
         id: collect
@@ -34,7 +34,7 @@ jobs:
 
       - name: Upload results as artifact
         if: always()
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v6
         with:
           name: rss-feeds-${{ github.run_id }}
           path: rss-feeds-output.json
