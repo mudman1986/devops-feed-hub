@@ -32,13 +32,22 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install --with-deps chromium
 
+      - name: Debug - Check docs directory exists
+        run: |
+          echo "Checking docs directory..."
+          ls -la docs/ || echo "docs/ not found"
+          echo "Current directory:"
+          pwd
+          ls -la
+
       - name: Run Playwright tests
         run: npm run test:ui
-        # Note: Workers configured in playwright.config.js (2 workers for CI)
-        # Debug logging removed - it significantly slows down CI execution
-        timeout-minutes: 5
+        # Debug logging to diagnose workflow stalling issues
+        # Uses pw:webserver* to see server startup and pw:test to see test progress
+        timeout-minutes: 60
         env:
           CI: true
+          DEBUG: pw:webserver*,pw:test
 
       - name: Upload test results
         if: always()
