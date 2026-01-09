@@ -2,9 +2,6 @@ name: UI Tests
 
 on:
   pull_request:
-  push:
-    branches:
-      - main
 
 concurrency:
   group: ui-tests-${{ github.ref }}
@@ -36,12 +33,13 @@ jobs:
         run: npx playwright install --with-deps chromium
 
       - name: Run Playwright tests
-        run: npm run test:ui
+        run: npm run test:ui -- --debug
         # Note: Workers configured in playwright.config.js (2 workers for CI)
-        # Removed explicit --workers flag to avoid redundancy
+        # Debug flag enabled to troubleshoot stalling issues
         timeout-minutes: 5
         env:
           CI: true
+          DEBUG: pw:api
 
       - name: Upload test results
         if: always()

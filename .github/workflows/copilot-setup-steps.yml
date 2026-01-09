@@ -59,6 +59,9 @@ jobs:
       - name: Verify Playwright setup
         run: npx playwright --version
 
+      - name: Pull super-linter Docker image
+        run: docker pull ghcr.io/super-linter/super-linter:v7.4.0
+
       - name: Generate HTML files for testing
         run: |
           # Generate minimal RSS feed data structure for testing

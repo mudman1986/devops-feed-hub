@@ -67,7 +67,7 @@ This repository is maintained primarily by GitHub Copilot. Path-specific instruc
 - **DO NOT use USE_FIND_ALGORITHM** - it's incompatible with VALIDATE_ALL_CODEBASE
 - **Always use VALIDATE_ALL_CODEBASE=true** to lint the entire codebase
 - **Always use DEFAULT_BRANCH=main** for this repository
-- **Enable all FIX_* flags** to automatically fix formatting issues
+- **Enable all FIX\_\* flags** to automatically fix formatting issues
 - Fix **ALL** remaining linting errors before committing (not just errors you introduced)
 
 ### Key Super-Linter Differences
