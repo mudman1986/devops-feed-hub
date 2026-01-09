@@ -886,9 +886,7 @@ class TestMultiPageGeneration(unittest.TestCase):
         import re
 
         # Read the template file
-        template_path = os.path.join(
-            os.path.dirname(__file__), "..", "template.html"
-        )
+        template_path = os.path.join(os.path.dirname(__file__), "..", "template.html")
         with open(template_path, "r", encoding="utf-8") as f:
             template_content = f.read()
 
@@ -896,14 +894,14 @@ class TestMultiPageGeneration(unittest.TestCase):
         # This prevents the timeframe selector bug where hardcoded selected
         # prevents JavaScript from setting the correct value from localStorage
         # Use regex to catch all variations: selected, selected="selected", selected>, etc.
-        selected_pattern = re.compile(r'<option[^>]*\sselected[\s>=]', re.IGNORECASE)
+        selected_pattern = re.compile(r"<option[^>]*\sselected[\s>=]", re.IGNORECASE)
         match = selected_pattern.search(template_content)
 
         self.assertIsNone(
             match,
             f"Template should not have hardcoded 'selected' attribute on option tags. "
             f"Found at position {match.start() if match else 'N/A'}: {match.group() if match else 'N/A'}. "
-            f"JavaScript should set the timeframe value programmatically from localStorage."
+            f"JavaScript should set the timeframe value programmatically from localStorage.",
         )
 
 
