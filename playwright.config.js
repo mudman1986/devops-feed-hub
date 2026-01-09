@@ -61,14 +61,10 @@ export default defineConfig({
     },
   ],
 
-  // webServer configuration removed - server started in CI workflow
-  // to avoid port conflicts when running parallel shards
-  webServer: process.env.CI
-    ? undefined
-    : {
-        command: "npx http-server docs -p 8080",
-        port: 8080,
-        reuseExistingServer: true,
-        timeout: 30000,
-      },
+  webServer: {
+    command: "npx http-server docs -p 8080",
+    port: 8080,
+    reuseExistingServer: !process.env.CI,
+    timeout: 30000,
+  },
 });
