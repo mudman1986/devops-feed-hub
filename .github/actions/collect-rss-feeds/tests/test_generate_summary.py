@@ -725,8 +725,8 @@ class TestMultiPageGeneration(unittest.TestCase):
         """Test that single feed page shows only articles from that feed"""
         result = generate_html_page(self.sample_data, current_feed="Test Feed 1")
 
-        # Count article items - should only have 2 for Test Feed 1
-        article_count = result.count('<li class="article-item">')
+        # Count article items with data-published attribute - should only have 2 for Test Feed 1
+        article_count = result.count('class="article-item" data-published=')
         self.assertEqual(article_count, 2)
 
         # Verify correct articles are shown
