@@ -30,11 +30,8 @@ teams-message-final.json
 slack-message.json
 discord-message.json
 
-# GitHub Pages - Generated HTML files (created by workflow, not committed to source)
-# These are generated from template.html and rss-feeds-output.json
-docs/*.html
-!docs/README.md
-# Keep the docs directory itself
+# GitHub Pages - Keep generated HTML files in git for GitHub Pages deployment
+# Template is in .github/actions/collect-rss-feeds/template.html
 !docs/
 
 # IDE

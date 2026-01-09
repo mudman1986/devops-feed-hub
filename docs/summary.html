@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<!-- @generated - This file is auto-generated. Do not edit manually. -->
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="DevOps Feed Hub - Centralized RSS feed aggregator for DevOps and tech news"
+    />
+    <title>Summary - DevOps Feed Hub</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-title">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M4 11a9 9 0 0 1 9 9"></path>
+          <path d="M4 4a16 16 0 0 1 16 16"></path>
+          <circle cx="5" cy="19" r="1"></circle>
+        </svg>
+        DevOps Feed Hub
+      </div>
+      <div class="header-controls">
+        <div class="timeframe-selector">
+          <select
+            class="timeframe-select"
+            id="timeframe-select"
+            aria-label="Select time range"
+          >
+            <option value="1day">Last 24 hours</option>
+            <option value="7days">Last 7 days</option>
+            <option value="30days">Last 30 days</option>
+          </select>
+        </div>
+        <button
+          class="reset-read-button"
+          id="reset-read-button"
+          aria-label="Clear all read articles"
+        >
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polyline points="23 4 23 10 17 10"></polyline>
+            <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+          </svg>
+          <span>Clear All Read</span>
+        </button>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+          <svg
+            id="theme-icon"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <span id="theme-text">Light Mode</span>
+        </button>
+        <button
+          class="nav-toggle"
+          id="nav-toggle"
+          aria-label="Toggle navigation"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+          <span id="nav-text">Menu</span>
+        </button>
+      </div>
+    </div>
+    <div class="container">
+      <div class="main-content">
+        
+        <h2>Summary</h2>
+        <div class="stats">
+            <div class="stat-card">
+                <div class="stat-label">Total Feeds</div>
+                <div class="stat-value">7</div>
+            </div>
+            <div class="stat-card success">
+                <div class="stat-label">Successful</div>
+                <div class="stat-value">6</div>
+            </div>
+            <div class="stat-card error">
+                <div class="stat-label">Failed</div>
+                <div class="stat-value">1</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-label">Total Articles</div>
+                <div class="stat-value">49</div>
+            </div>
+        </div>
+
+        <h2>Failed Feeds</h2>
+
+        <div class="failed-feeds">
+
+            <div class="failed-feed-item">
+                <div class="failed-feed-name">Azure Updates</div>
+                <div class="failed-feed-url">https://aztty.azurewebsites.net/rss/updates?service=40</div>
+            </div>
+
+        </div>
+
+
+        <div class="footer">
+          Generated by RSS Feed Collector | Last updated:
+          January 09, 2026 at 02:25 PM UTC
+        </div>
+      </div>
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar-header">Navigation</div>
+        <nav class="feed-nav">
+  <a href="index.html" class="nav-link">All Feeds</a>
+  <a href="feed-github-blog.html" class="nav-link">GitHub Blog</a>
+  <a href="feed-github-changelog.html" class="nav-link">GitHub Changelog</a>
+  <a href="feed-hashicorp-blog.html" class="nav-link">HashiCorp Blog</a>
+  <a href="feed-microsoft-devops-blog.html" class="nav-link">Microsoft DevOps Blog</a>
+  <a href="feed-microsoft-entra-blog.html" class="nav-link">Microsoft Entra Blog</a>
+  <a href="feed-microsoft-security.html" class="nav-link">Microsoft Security</a>
+  <a href="summary.html" class="nav-link active">Summary</a>
+</nav>
+
+      </aside>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
