@@ -37,22 +37,18 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install --with-deps chromium
 
-      - name: Debug - Check docs directory exists
+      - name: Start web server
         run: |
-          echo "Checking docs directory..."
-          ls -la docs/ || echo "docs/ not found"
-          echo "Current directory:"
-          pwd
-          ls -la
+          npx http-server docs -p 8080 &
+          # Wait for server to be ready
+          timeout 30 bash -c 'until curl -s http://localhost:8080 > /dev/null; do sleep 1; done' || exit 1
+          echo "Web server started successfully"
 
       - name: Run Playwright tests
         run: npx playwright test --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
-        # Debug logging to diagnose workflow stalling issues
-        # Uses pw:webserver* to see server startup and pw:test to see test progress
         timeout-minutes: 60
         env:
           CI: true
-          DEBUG: pw:webserver*,pw:test
 
       - name: Upload test results
         if: always()
