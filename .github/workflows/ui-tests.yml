@@ -17,7 +17,7 @@ jobs:
   ui-tests:
     name: Run Playwright UI Tests
     runs-on: ubuntu-latest
-    timeout-minutes: 30
+    timeout-minutes: 15
 
     steps:
       - name: Checkout Code
@@ -37,6 +37,11 @@ jobs:
 
       - name: Run Playwright tests
         run: npm run test:ui
+        # Note: Workers configured in playwright.config.js (2 workers for CI)
+        # Removed explicit --workers flag to avoid redundancy
+        timeout-minutes: 5
+        env:
+          CI: true
 
       - name: Upload test results
         if: always()

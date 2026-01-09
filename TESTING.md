@@ -69,7 +69,7 @@ Super-linter supports autofixing for many linters. Enable autofix by setting `FI
 **Common autofix options:**
 
 - `FIX_PYTHON_BLACK=true` - autoformat Python with Black
-- `FIX_PYTHON_ISORT=true` - Auto-sort Python imports
+- `FIX_PYTHON_ISORT=true` - autosort Python imports
 - `FIX_SHELL_SHFMT=true` - autoformat shell scripts
 - `FIX_JAVASCRIPT_PRETTIER=true` - autoformat JavaScript
 - `FIX_MARKDOWN_PRETTIER=true` - autoformat Markdown
