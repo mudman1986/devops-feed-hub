@@ -67,7 +67,8 @@ docker run --rm \
   ghcr.io/super-linter/super-linter:v7.4.0
 ```
 
-Common FIX_ variables:
+Common FIX\_ variables:
+
 - `FIX_PYTHON_BLACK=true` - Auto-format Python with Black
 - `FIX_PYTHON_ISORT=true` - Auto-sort Python imports
 - `FIX_SHELL_SHFMT=true` - Auto-format shell scripts (tabs for indentation)
