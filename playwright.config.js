@@ -15,7 +15,6 @@ export default defineConfig({
     baseURL: "http://localhost:8080",
     trace: "on-first-retry",
     screenshot: "only-on-failure",
-    headless: true, // Always run headless, even in debug mode
   },
 
   projects: [
