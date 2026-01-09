@@ -37,13 +37,27 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install --with-deps chromium
 
-      - name: Debug - Check docs directory exists
+      - name: Collect RSS Feeds
+        id: collect
+        uses: ./.github/actions/collect-rss-feeds
+        with:
+          hours: "720"
+          config-path: ".github/rss-feeds.json"
+          output-path: "rss-feeds-output.json"
+
+      - name: Generate HTML files for testing
         run: |
-          echo "Checking docs directory..."
-          ls -la docs/ || echo "docs/ not found"
-          echo "Current directory:"
-          pwd
-          ls -la
+          # Generate multi-page HTML (main index + individual feed pages)
+          python3 .github/actions/collect-rss-feeds/generate_summary.py \
+            --input rss-feeds-output.json \
+            --output-dir docs
+
+          echo "Generated HTML files:"
+          ls -la docs/*.html
+
+          # Show article count for debugging
+          echo "Article counts:"
+          grep -h "feed-count" docs/index.html || echo "No count found"
 
       - name: Run Playwright tests
         run: npx playwright test --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
