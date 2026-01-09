@@ -9,6 +9,10 @@ on:
 permissions:
   contents: read
 
+concurrency:
+  group: ui-tests-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   ui-tests:
     name: Run Playwright UI Tests
