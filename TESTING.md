@@ -47,15 +47,20 @@ npm run test:ui:debug        # Step through
 
 ### Super-Linter (Local Development)
 
-Run super-linter locally to catch issues before pushing:
+**MANDATORY: Always run super-linter locally before pushing changes**
+
+Run super-linter to validate all code in the repository:
 
 ```bash
 docker run --rm \
   -e RUN_LOCAL=true \
   -e USE_FIND_ALGORITHM=true \
+  -e VALIDATE_ALL_CODEBASE=true \
   -v $(pwd):/tmp/lint \
   ghcr.io/super-linter/super-linter:v7.4.0
 ```
+
+**IMPORTANT:** Always set `VALIDATE_ALL_CODEBASE=true` to ensure comprehensive validation of the entire codebase.
 
 #### Auto-Fix Mode
 
@@ -78,6 +83,7 @@ Super-linter supports auto-fixing for many linters. Enable auto-fix by setting `
 docker run --rm \
   -e RUN_LOCAL=true \
   -e USE_FIND_ALGORITHM=true \
+  -e VALIDATE_ALL_CODEBASE=true \
   -e FIX_PYTHON_BLACK=true \
   -e FIX_PYTHON_ISORT=true \
   -e FIX_SHELL_SHFMT=true \
