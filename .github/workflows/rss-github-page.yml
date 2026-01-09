@@ -2,13 +2,6 @@ name: RSS News Dashboard
 
 on:
   push:
-    branches:
-      - main
-    paths-ignore:
-      - "**.md"
-      - ".github/workflows/**"
-      - "tests/**"
-      - "docs/**"
 
   schedule:
     - cron: "0 9 * * 1-5"
@@ -22,10 +15,6 @@ on:
 
 permissions:
   contents: write
-
-concurrency:
-  group: rss-feed-collection
-  cancel-in-progress: false
 
 jobs:
   collect-feeds:
