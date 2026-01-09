@@ -219,8 +219,9 @@ def generate_feed_articles_content(feeds_to_display: Dict[str, Any]) -> str:
                 escaped_title = html_escape(article["title"])
                 escaped_link = html_escape(article["link"])
                 formatted_date = format_publish_date(article["published"])
+                iso_timestamp = html_escape(article["published"])
                 content += f"""
-                <li class="article-item">
+                <li class="article-item" data-published="{iso_timestamp}">
                     <a href="{escaped_link}" class="article-title"
                        target="_blank" rel="noopener noreferrer">
                         {escaped_title}

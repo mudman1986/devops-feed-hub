@@ -25,14 +25,6 @@ Object.defineProperty(window, 'localStorage', {
   value: localStorageMock
 })
 
-// Load the script content
-const fs = require('fs')
-const path = require('path')
-const scriptContent = fs.readFileSync(
-  path.join(__dirname, 'script.js'),
-  'utf8'
-)
-
 // Helper to define functions in global scope for testing
 function loadScriptFunctions() {
   // Extract just the function definitions we need to test

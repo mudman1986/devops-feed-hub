@@ -1,218 +1,94 @@
 # Testing Documentation
 
-This document describes the comprehensive testing strategy for the DevOps Feed Hub project.
+Comprehensive testing strategy for DevOps Feed Hub.
 
-## Test Coverage Overview
+## Test Coverage
 
 ### Unit Tests
 
-#### JavaScript Tests (Jest)
+#### JavaScript (Jest)
 
 - **Location**: `docs/script.test.js`
-- **Coverage**: Mark as Read functionality, Theme toggle, Timeframe filtering
 - **Run**: `npm test`
-- **Coverage Report**: `npm run test:coverage`
+- **Coverage**: `npm run test:coverage`
 
-**Tests Include:**
+Tests: Mark as Read, Theme toggle, Timeframe filtering
 
-- Mark as Read functionality
-  - Get/save read articles from localStorage
-  - Toggle read status
-  - Reset all read articles
-- Theme toggle
-  - Save/load theme preference
-  - Toggle between light and dark modes
-- Timeframe filtering
-  - Save/load timeframe preference
-  - Filter articles by time period
-
-#### Python Tests (pytest)
+#### Python (pytest)
 
 - **Location**: `.github/actions/collect-rss-feeds/tests/`
-- **Coverage**: RSS feed collection, HTML generation, feed ordering
 - **Run**: `python3 -m pytest .github/actions/collect-rss-feeds/tests/ -v`
 
-**Test Files:**
+Tests: RSS parsing, HTML generation, feed ordering, configuration validation
 
-- `test_collect_feeds.py` - Configuration validation
-- `test_parse_rss_feed.py` - RSS feed parsing logic
-- `test_generate_summary.py` - HTML/Markdown generation
-- `test_feed_ordering.py` - Feed sorting and display logic
-
-#### Shell Script Tests (BATS)
+#### Shell Scripts (BATS)
 
 - **Location**: `.github/scripts/test_commit_github_pages.bats`
-- **Coverage**: GitHub Pages commit script
 - **Run**: `bats .github/scripts/test_commit_github_pages.bats`
 
 ### UI Tests (Playwright)
 
-#### Multi-Device Testing
+Multi-device testing on Desktop (1920x1080, 1366x768), Tablet (768x1024), Mobile (375x667, 414x896)
 
-UI tests run on multiple device sizes to ensure responsive design:
+**Test Suites:**
 
-- **Desktop**: 1920x1080, 1366x768
-- **Tablet**: iPad (768x1024)
-- **Mobile**: iPhone SE (375x667), iPhone 12 Pro (414x896)
+- `tests/ui/layout.spec.js` - Header, sidebar, spacing, alignment, touch targets
+- `tests/ui/functionality.spec.js` - Theme toggle, filtering, mark as read, navigation
 
-#### Test Suites
-
-**Layout Tests** (`tests/ui/layout.spec.js`)
-
-- Header visibility and alignment
-- Sidebar visibility (desktop vs mobile)
-- Feed section spacing and structure
-- Button alignment and positioning
-- Footer placement
-- Touch-friendly button sizes (mobile)
-- Text readability across devices
-- Visual consistency (no layout shifts)
-
-**Functionality Tests** (`tests/ui/functionality.spec.js`)
-
-- Theme toggle
-  - Switch between light/dark modes
-  - Icon and text updates
-  - Persistence across reloads
-- Timeframe filtering
-  - Filter articles by 1 day, 7 days, 30 days
-  - Update feed counts
-  - Persistence across reloads
-- Sidebar toggle (mobile)
-  - Collapse/expand on button click
-  - Close when clicking outside
-- Mark as Read
-  - Toggle read status
-  - Reset all read articles
-  - Persistence across reloads
-- Navigation
-  - Sidebar navigation links
-  - Article links
-
-#### Running UI Tests
+**Running:**
 
 ```bash
-# Run all UI tests
-npm run test:ui
-
-# Run in headed mode (see browser)
-npm run test:ui:headed
-
-# Debug mode (step through tests)
-npm run test:ui:debug
-
-# Run specific test file
-npx playwright test tests/ui/layout.spec.js
-
-# Run tests for specific device
-npx playwright test --project="Mobile iPhone SE"
+npm run test:ui              # All tests
+npm run test:ui:headed       # See browser
+npm run test:ui:debug        # Step through
 ```
 
 ## CI/CD Integration
 
-### Automated Testing Workflows
+- **CI Tests** (`ci-tests.yml`): Python and JavaScript tests on every push/PR
+- **UI Tests** (`ui-tests.yml`): Playwright tests on all devices
+- **Reports**: Available as GitHub Actions artifacts
 
-#### CI Tests (`ci-tests.yml`)
+## Writing Tests
 
-Runs on every push and pull request:
-
-- Python unit tests
-- JavaScript unit tests with coverage
-
-#### UI Tests (`ui-tests.yml`)
-
-Runs on every push to main and pull requests:
-
-- Playwright tests across all device configurations
-- Uploads test reports and screenshots on failure
-
-### Test Reports
-
-Test results are available as GitHub Actions artifacts:
-
-- **Playwright Report**: Visual HTML report with test results
-- **Screenshots**: Captured on test failures for debugging
-- **Coverage Reports**: JavaScript code coverage metrics
-
-## Writing New Tests
-
-### JavaScript Unit Tests
-
-Add tests to `docs/script.test.js`:
+### JavaScript
 
 ```javascript
-describe("New Feature Tests", () => {
-  test("should do something", () => {
-    // Test implementation
+describe("Feature", () => {
+  test("should work", () => {
     expect(result).toBe(expected);
   });
 });
 ```
 
-### Python Unit Tests
-
-Create test files in `.github/actions/collect-rss-feeds/tests/`:
+### Python
 
 ```python
-import unittest
-
-class TestNewFeature(unittest.TestCase):
+class TestFeature(unittest.TestCase):
     def test_something(self):
-        # Test implementation
         self.assertEqual(result, expected)
 ```
 
 ### UI Tests
 
-Add tests to `tests/ui/`:
-
 ```javascript
-import { test, expect } from "@playwright/test";
-
-test("should validate new UI feature", async ({ page }) => {
+test("validates feature", async ({ page }) => {
   await page.goto("/");
-  const element = page.locator(".new-feature");
-  await expect(element).toBeVisible();
+  await expect(page.locator(".feature")).toBeVisible();
 });
 ```
 
-## Test Coverage Goals
-
-- **JavaScript**: Maintain >80% code coverage
-- **Python**: Test all public functions and edge cases
-- **UI**: Cover all interactive features across all device sizes
-
 ## Best Practices
 
-1. **Write tests before fixing bugs** - Reproduce the bug in a test first
-2. **Test edge cases** - Empty states, error conditions, boundary values
-3. **Keep tests isolated** - Each test should be independent
-4. **Use descriptive names** - Test names should describe what they verify
-5. **Clean up after tests** - Reset state, clear localStorage, etc.
-6. **Run tests locally** - Before pushing changes, verify all tests pass
+1. Write tests before fixing bugs
+2. Test edge cases and error conditions
+3. Keep tests isolated and independent
+4. Use descriptive test names
+5. Clean up after tests
+6. Run tests locally before pushing
 
-## Troubleshooting
+## Coverage Goals
 
-### UI Tests Failing Locally
-
-If UI tests fail locally but pass in CI:
-
-1. Ensure you have the latest Playwright browsers: `npx playwright install`
-2. Check that http-server is installed: `npm ci`
-3. Verify no other service is using port 8080
-
-### Coverage Reports Not Generated
-
-If coverage reports aren't generated:
-
-1. Ensure all dependencies are installed: `npm ci`
-2. Check Jest configuration in `package.json`
-3. Run with verbose output: `npm run test:coverage -- --verbose`
-
-## Future Enhancements
-
-- [ ] Visual regression testing with screenshot comparison
-- [ ] Performance testing (Lighthouse CI)
-- [ ] Accessibility testing (axe-core)
-- [ ] Cross-browser testing (Firefox, Safari, Edge)
-- [ ] API mocking for more comprehensive feed testing
+- **JavaScript**: >80% code coverage
+- **Python**: Test all public functions and edge cases
+- **UI**: Cover all features across all device sizes
