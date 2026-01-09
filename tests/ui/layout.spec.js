@@ -12,12 +12,18 @@ test.describe("Desktop Layout Tests", () => {
   test("header should be visible and properly aligned @desktop", async ({
     page,
   }) => {
+    // Skip on mobile/tablet viewports
+    const viewport = page.viewportSize();
+    if (viewport && viewport.width < 768) {
+      test.skip();
+    }
+
     const header = page.locator(".header");
     await expect(header).toBeVisible();
 
     const headerTitle = page.locator(".header-title");
     await expect(headerTitle).toBeVisible();
-    await expect(headerTitle).toContainText("RSS Feed Collection");
+    await expect(headerTitle).toContainText("DevOps Feed Hub");
 
     // Verify header controls are visible
     const themeToggle = page.locator("#theme-toggle");
@@ -25,6 +31,12 @@ test.describe("Desktop Layout Tests", () => {
   });
 
   test("sidebar should be visible on desktop @desktop", async ({ page }) => {
+    // Skip on mobile/tablet viewports
+    const viewport = page.viewportSize();
+    if (viewport && viewport.width < 1024) {
+      test.skip();
+    }
+
     const sidebar = page.locator("#sidebar");
     await expect(sidebar).toBeVisible();
 
@@ -55,6 +67,12 @@ test.describe("Desktop Layout Tests", () => {
   });
 
   test("buttons should be properly aligned @desktop", async ({ page }) => {
+    // Skip on mobile/tablet viewports
+    const viewport = page.viewportSize();
+    if (viewport && viewport.width < 1024) {
+      test.skip();
+    }
+
     const themeToggle = page.locator("#theme-toggle");
     await expect(themeToggle).toBeVisible();
 
@@ -64,9 +82,11 @@ test.describe("Desktop Layout Tests", () => {
     expect(box.width).toBeGreaterThan(0);
     expect(box.height).toBeGreaterThan(0);
 
-    // Verify button text is visible
+    // Verify button text is visible on desktop (may be hidden on mobile)
     const buttonText = themeToggle.locator("#theme-text");
-    await expect(buttonText).toBeVisible();
+    const isVisible = await buttonText.isVisible().catch(() => false);
+    // On desktop, button text should be visible
+    expect(isVisible).toBe(true);
   });
 
   test("timeframe selector should be visible and functional @desktop", async ({
@@ -157,6 +177,12 @@ test.describe("Mobile Layout Tests", () => {
   test("sidebar should be collapsed by default on mobile @mobile", async ({
     page,
   }) => {
+    // Only run on mobile viewports
+    const viewport = page.viewportSize();
+    if (!viewport || viewport.width >= 768) {
+      test.skip();
+    }
+
     const sidebar = page.locator("#sidebar");
 
     if ((await sidebar.count()) > 0) {
@@ -195,6 +221,12 @@ test.describe("Mobile Layout Tests", () => {
   test("buttons should be touch-friendly on mobile @mobile", async ({
     page,
   }) => {
+    // Only run on mobile viewports
+    const viewport = page.viewportSize();
+    if (!viewport || viewport.width >= 768) {
+      test.skip();
+    }
+
     const themeToggle = page.locator("#theme-toggle");
     await expect(themeToggle).toBeVisible();
 

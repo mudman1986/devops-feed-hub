@@ -279,17 +279,19 @@ test.describe("Mark as Read Tests", () => {
     }
 
     const firstIndicator = readIndicators.first();
+    const firstArticle = page.locator(".article-item").first();
 
     // Mark as read
     await firstIndicator.click();
-    await expect(page.locator(".article-item.read").first()).toBeVisible({
-      timeout: 10000,
-    });
+    await expect(firstArticle).toHaveClass(/read/, { timeout: 10000 });
 
-    // Mark as unread
+    // Mark as unread - click the same indicator again
     await firstIndicator.click();
-    // Wait for read class to be removed
-    await page.waitForTimeout(500);
+
+    // Wait for the read class to be removed
+    await expect(firstArticle).not.toHaveClass(/read/, { timeout: 10000 });
+
+    // Verify no articles are marked as read
     const readArticles = await page.locator(".article-item.read").count();
     expect(readArticles).toBe(0);
   });
@@ -388,5 +390,107 @@ test.describe("Navigation Tests", () => {
     const href = await firstLink.getAttribute("href");
     expect(href).toBeTruthy();
     expect(href).toMatch(/^https?:\/\//);
+  });
+});
+
+/**
+ * Timeframe Selector Tests
+ * Tests for the time filtering functionality
+ */
+test.describe("Timeframe Selector Tests", () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto("/");
+    // Clear localStorage to start fresh
+    await page.evaluate(() => localStorage.clear());
+  });
+
+  test("should have timeframe selector visible", async ({ page }) => {
+    const timeframeSelect = page.locator("#timeframe-select");
+    await expect(timeframeSelect).toBeVisible();
+
+    // Verify all options are present
+    const options = await timeframeSelect.locator("option").all();
+    expect(options.length).toBe(3);
+  });
+
+  test("should change timeframe when selecting different option", async ({
+    page,
+  }) => {
+    const timeframeSelect = page.locator("#timeframe-select");
+
+    // Default should be 1day
+    const initialValue = await timeframeSelect.inputValue();
+
+    // Change to 7days
+    await timeframeSelect.selectOption("7days");
+    await page.waitForTimeout(100);
+
+    // Verify value changed
+    const newValue = await timeframeSelect.inputValue();
+    expect(newValue).toBe("7days");
+    expect(newValue).not.toBe(initialValue);
+  });
+
+  test("should save timeframe preference to localStorage", async ({ page }) => {
+    const timeframeSelect = page.locator("#timeframe-select");
+
+    // Select 30days
+    await timeframeSelect.selectOption("30days");
+    await page.waitForTimeout(100);
+
+    // Check localStorage
+    const savedTimeframe = await page.evaluate(() =>
+      localStorage.getItem("timeframe"),
+    );
+    expect(savedTimeframe).toBe("30days");
+  });
+
+  test("should persist timeframe selection across page reload", async ({
+    page,
+  }) => {
+    const timeframeSelect = page.locator("#timeframe-select");
+
+    // Select 7days
+    await timeframeSelect.selectOption("7days");
+    await page.waitForTimeout(100);
+
+    // Reload page
+    await page.reload();
+    await page.waitForLoadState("networkidle");
+
+    // Verify selection persisted
+    const timeframeAfterReload = page.locator("#timeframe-select");
+    const value = await timeframeAfterReload.inputValue();
+    expect(value).toBe("7days");
+  });
+
+  test("should not have hardcoded selected attribute on options", async ({
+    page,
+  }) => {
+    const timeframeSelect = page.locator("#timeframe-select");
+    const options = await timeframeSelect.locator("option").all();
+
+    // Check that no option has the selected attribute in HTML
+    // This ensures JavaScript controls the selection, not hardcoded HTML
+    for (const option of options) {
+      const hasSelectedAttr = await option.evaluate((el) =>
+        el.hasAttribute("selected"),
+      );
+      expect(hasSelectedAttr).toBe(false);
+    }
+  });
+
+  test("should load saved preference on first page load", async ({ page }) => {
+    // Set a preference in localStorage before page loads
+    await page.evaluate(() => localStorage.setItem("timeframe", "30days"));
+
+    // Reload to apply the saved preference
+    await page.reload();
+    await page.waitForLoadState("networkidle");
+
+    // Verify the select has the saved value
+    const timeframeSelect = page.locator("#timeframe-select");
+    const value = await timeframeSelect.inputValue();
+    expect(value).toBe("30days");
   });
 });
