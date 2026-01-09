@@ -59,7 +59,7 @@ docker run --rm \
   -e USE_FIND_ALGORITHM=true \
   -e VALIDATE_ALL_CODEBASE=true \
   -v $(pwd):/tmp/lint \
-  ghcr.io/super-linter/super-linter:v7.4.0
+  ghcr.io/super-linter/super-linter:latest
 ```
 
 **IMPORTANT:** Always set `VALIDATE_ALL_CODEBASE=true` to ensure comprehensive validation.
@@ -82,7 +82,7 @@ docker run --rm \
   -e FIX_CSS_PRETTIER=true \
   -e FIX_HTML_PRETTIER=true \
   -v $(pwd):/tmp/lint \
-  ghcr.io/super-linter/super-linter:v7.4.0
+  ghcr.io/super-linter/super-linter:latest
 ```
 
 Common FIX\_ variables:

@@ -33,13 +33,13 @@ jobs:
         run: npx playwright install --with-deps chromium
 
       - name: Run Playwright tests
-        run: npm run test:ui -- --debug
+        run: npm run test:ui
         # Note: Workers configured in playwright.config.js (2 workers for CI)
-        # Debug flag enabled to troubleshoot stalling issues
+        # Verbose logging enabled via DEBUG env var for troubleshooting
         timeout-minutes: 5
         env:
           CI: true
-          DEBUG: pw:api
+          DEBUG: pw:browser*
 
       - name: Upload test results
         if: always()

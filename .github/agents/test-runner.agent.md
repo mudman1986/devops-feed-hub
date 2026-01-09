@@ -18,7 +18,7 @@ Run these checks in order and fix any failures:
 4. **Super-linter** (if Docker available):
    ```bash
    docker run --rm -e RUN_LOCAL=true -e USE_FIND_ALGORITHM=true \
-     -v $(pwd):/tmp/lint ghcr.io/super-linter/super-linter:v7.4.0
+     -v $(pwd):/tmp/lint ghcr.io/super-linter/super-linter:latest
    ```
 
 ## Key Linting Requirements
