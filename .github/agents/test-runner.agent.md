@@ -17,8 +17,21 @@ Run these checks in order and fix any failures:
 3. **UI tests**: `npm run test:ui`
 4. **Super-linter** (if Docker available):
    ```bash
-   docker run --rm -e RUN_LOCAL=true -e USE_FIND_ALGORITHM=true \
-     -v $(pwd):/tmp/lint ghcr.io/super-linter/super-linter:latest
+   docker run --rm \
+     -e RUN_LOCAL=true \
+     -e USE_FIND_ALGORITHM=true \
+     -e VALIDATE_ALL_CODEBASE=true \
+     -e DEFAULT_BRANCH=main \
+     -e FIX_PYTHON_BLACK=true \
+     -e FIX_PYTHON_ISORT=true \
+     -e FIX_SHELL_SHFMT=true \
+     -e FIX_MARKDOWN_PRETTIER=true \
+     -e FIX_YAML_PRETTIER=true \
+     -e FIX_JAVASCRIPT_PRETTIER=true \
+     -e FIX_CSS_PRETTIER=true \
+     -e FIX_HTML_PRETTIER=true \
+     -v $(pwd):/tmp/lint \
+     ghcr.io/super-linter/super-linter:latest
    ```
 
 ## Key Linting Requirements
