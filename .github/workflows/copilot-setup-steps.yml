@@ -58,3 +58,37 @@ jobs:
 
       - name: Verify Playwright setup
         run: npx playwright --version
+
+      - name: Generate HTML files for testing
+        run: |
+          # Generate minimal RSS feed data structure for testing
+          cat > rss-feeds-output.json << 'EOF'
+          {
+            "metadata": {
+              "collected_at": "2024-01-15T10:30:00Z",
+              "since": "2024-01-14T10:30:00Z",
+              "hours": 24
+            },
+            "summary": {
+              "total_feeds": 1,
+              "successful_feeds": 1,
+              "failed_feeds": 0,
+              "total_articles": 0
+            },
+            "feeds": {
+              "GitHub Blog": {
+                "url": "https://github.blog/feed/",
+                "count": 0,
+                "articles": []
+              }
+            },
+            "articles": []
+          }
+          EOF
+          
+          # Generate HTML files from template
+          python3 .github/actions/collect-rss-feeds/generate_summary.py \
+            --input rss-feeds-output.json \
+            --output-dir docs
+          
+          echo "✓ HTML files generated for testing"

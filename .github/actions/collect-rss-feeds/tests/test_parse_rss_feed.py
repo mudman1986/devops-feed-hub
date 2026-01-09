@@ -12,7 +12,9 @@ from unittest.mock import MagicMock, patch
 # Add parent directory to path to import the module
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
-from collect_feeds import parse_rss_feed  # noqa: E402
+from collect_feeds import (  # noqa: E402 pylint: disable=wrong-import-position
+    parse_rss_feed,
+)
 
 
 class TestParseRssFeed(unittest.TestCase):

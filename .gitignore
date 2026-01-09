@@ -30,10 +30,10 @@ teams-message-final.json
 slack-message.json
 discord-message.json
 
-# GitHub Pages - keep docs/index.html, ignore other temporary HTML files
-!docs/
-# Ignore test feed files (generated during tests)
-docs/feed-test-feed-*.html
+# GitHub Pages - Generated HTML files are build artifacts
+# Workflow generates these from template.html + RSS data and pushes to github-pages branch
+# Source branches don't need them - only github-pages branch does
+docs/*.html
 
 # IDE
 .vscode/
