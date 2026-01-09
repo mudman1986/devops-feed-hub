@@ -45,7 +45,56 @@ Instructions for code review tasks in the DevOps Feed Hub repository.
 - **JavaScript**: ES6+, consistent style
 - **Shell scripts**: shellcheck compliance, proper quoting, tabs for indentation
 - **Workflows**: Clear naming, proper triggers, minimal permissions
-- **Super-linter**: All code must pass super-linter validation
+- **Super-linter**: All code must pass super-linter validation before committing
+
+#### Super-Linter Validation
+
+**MANDATORY: Always run super-linter locally before pushing changes**
+
+Run super-linter to validate all code in the repository:
+
+```bash
+docker run --rm \
+  -e RUN_LOCAL=true \
+  -e USE_FIND_ALGORITHM=true \
+  -e VALIDATE_ALL_CODEBASE=true \
+  -v $(pwd):/tmp/lint \
+  ghcr.io/super-linter/super-linter:v7.4.0
+```
+
+**IMPORTANT:** Always set `VALIDATE_ALL_CODEBASE=true` to ensure comprehensive validation.
+
+#### Super-Linter Auto-Fix
+
+Use auto-fix mode to automatically correct linting errors:
+
+```bash
+docker run --rm \
+  -e RUN_LOCAL=true \
+  -e USE_FIND_ALGORITHM=true \
+  -e VALIDATE_ALL_CODEBASE=true \
+  -e FIX_PYTHON_BLACK=true \
+  -e FIX_PYTHON_ISORT=true \
+  -e FIX_SHELL_SHFMT=true \
+  -e FIX_MARKDOWN_PRETTIER=true \
+  -e FIX_YAML_PRETTIER=true \
+  -e FIX_JAVASCRIPT_PRETTIER=true \
+  -e FIX_CSS_PRETTIER=true \
+  -e FIX_HTML_PRETTIER=true \
+  -v $(pwd):/tmp/lint \
+  ghcr.io/super-linter/super-linter:v7.4.0
+```
+
+Common FIX\_ variables:
+
+- `FIX_PYTHON_BLACK=true` - Auto-format Python with Black
+- `FIX_PYTHON_ISORT=true` - Auto-sort Python imports
+- `FIX_SHELL_SHFMT=true` - Auto-format shell scripts (tabs for indentation)
+- `FIX_MARKDOWN_PRETTIER=true` - Auto-format Markdown
+- `FIX_YAML_PRETTIER=true` - Auto-format YAML
+- `FIX_JAVASCRIPT_PRETTIER=true` - Auto-format JavaScript
+- `FIX_CSS_PRETTIER=true` - Auto-format CSS
+- `FIX_HTML_PRETTIER=true` - Auto-format HTML
 
 ## Review Checklist
 
@@ -56,7 +105,8 @@ When reviewing code changes, verify:
 - [ ] Proper error handling throughout
 - [ ] Tests added for new functionality or bugfixes
 - [ ] All tests pass
-- [ ] Super-linter passes
+- [ ] **Super-linter passes with VALIDATE_ALL_CODEBASE=true** (run locally before pushing)
+- [ ] All linting errors fixed (use auto-fix mode when possible)
 - [ ] No new security vulnerabilities introduced
 - [ ] Documentation updated if needed
 - [ ] No unnecessary code duplication

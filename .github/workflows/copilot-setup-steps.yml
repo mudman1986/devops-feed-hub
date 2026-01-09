@@ -85,10 +85,10 @@ jobs:
             "articles": []
           }
           EOF
-          
+
           # Generate HTML files from template
           python3 .github/actions/collect-rss-feeds/generate_summary.py \
             --input rss-feeds-output.json \
             --output-dir docs
-          
+
           echo "✓ HTML files generated for testing"
