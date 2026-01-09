@@ -54,8 +54,8 @@ Run super-linter to validate all code in the repository:
 ```bash
 docker run --rm \
   -e RUN_LOCAL=true \
-  -e USE_FIND_ALGORITHM=true \
   -e VALIDATE_ALL_CODEBASE=true \
+  -e DEFAULT_BRANCH=main \
   -v $(pwd):/tmp/lint \
   ghcr.io/super-linter/super-linter:latest
 ```
@@ -82,8 +82,8 @@ Super-linter supports autofixing for many linters. Enable autofix by setting `FI
 ```bash
 docker run --rm \
   -e RUN_LOCAL=true \
-  -e USE_FIND_ALGORITHM=true \
   -e VALIDATE_ALL_CODEBASE=true \
+  -e DEFAULT_BRANCH=main \
   -e FIX_PYTHON_BLACK=true \
   -e FIX_PYTHON_ISORT=true \
   -e FIX_SHELL_SHFMT=true \

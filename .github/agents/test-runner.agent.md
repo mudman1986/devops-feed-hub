@@ -19,7 +19,6 @@ Run these checks in order and fix any failures:
    ```bash
    docker run --rm \
      -e RUN_LOCAL=true \
-     -e USE_FIND_ALGORITHM=true \
      -e VALIDATE_ALL_CODEBASE=true \
      -e DEFAULT_BRANCH=main \
      -e FIX_PYTHON_BLACK=true \
