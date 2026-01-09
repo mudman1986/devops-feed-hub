@@ -88,7 +88,7 @@ docker run --rm \
 Common FIX\_ variables:
 
 - `FIX_PYTHON_BLACK=true` - autoformat Python with Black
-- `FIX_PYTHON_ISORT=true` - Auto-sort Python imports
+- `FIX_PYTHON_ISORT=true` - autosort Python imports
 - `FIX_SHELL_SHFMT=true` - autoformat shell scripts (tabs for indentation)
 - `FIX_MARKDOWN_PRETTIER=true` - autoformat Markdown
 - `FIX_YAML_PRETTIER=true` - autoformat YAML
