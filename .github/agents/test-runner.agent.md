@@ -15,7 +15,7 @@ Run these checks in order and fix any failures:
 1. **JavaScript tests**: `npm test`
 2. **Python tests**: `python3 -m pytest .github/actions/collect-rss-feeds/tests/ -v`
 3. **UI tests**: `npm run test:ui`
-4. **Super-linter** (if Docker available): 
+4. **Super-linter** (if Docker available):
    ```bash
    docker run --rm -e RUN_LOCAL=true -e USE_FIND_ALGORITHM=true \
      -v $(pwd):/tmp/lint ghcr.io/super-linter/super-linter:v7.4.0

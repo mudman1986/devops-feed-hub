@@ -6,6 +6,10 @@ on:
     branches:
       - main
 
+concurrency:
+  group: ui-tests-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: read
 
@@ -29,10 +33,10 @@ jobs:
         run: npm ci
 
       - name: Install Playwright browsers
-        run: npx playwright install --with-deps chromium
+        run: npx playwright install --with-deps chromium webkit
 
       - name: Run Playwright tests
-        run: npm run test:ui
+        run: npm run test:ui -- --workers=2
 
       - name: Upload test results
         if: always()

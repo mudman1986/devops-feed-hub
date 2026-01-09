@@ -64,9 +64,9 @@ docker run --rm \
 
 **IMPORTANT:** Always set `VALIDATE_ALL_CODEBASE=true` to ensure comprehensive validation.
 
-#### Super-Linter Auto-Fix
+#### Super-Linter autofix
 
-Use auto-fix mode to automatically correct linting errors:
+Use autofix mode to automatically correct linting errors:
 
 ```bash
 docker run --rm \
@@ -87,12 +87,12 @@ docker run --rm \
 
 Common FIX\_ variables:
 
-- `FIX_PYTHON_BLACK=true` - Auto-format Python with Black
+- `FIX_PYTHON_BLACK=true` - autoformat Python with Black
 - `FIX_PYTHON_ISORT=true` - Auto-sort Python imports
-- `FIX_SHELL_SHFMT=true` - Auto-format shell scripts (tabs for indentation)
-- `FIX_MARKDOWN_PRETTIER=true` - Auto-format Markdown
-- `FIX_YAML_PRETTIER=true` - Auto-format YAML
-- `FIX_JAVASCRIPT_PRETTIER=true` - Auto-format JavaScript
+- `FIX_SHELL_SHFMT=true` - autoformat shell scripts (tabs for indentation)
+- `FIX_MARKDOWN_PRETTIER=true` - autoformat Markdown
+- `FIX_YAML_PRETTIER=true` - autoformat YAML
+- `FIX_JAVASCRIPT_PRETTIER=true` - autoformat JavaScript
 - `FIX_CSS_PRETTIER=true` - Auto-format CSS
 - `FIX_HTML_PRETTIER=true` - Auto-format HTML
 

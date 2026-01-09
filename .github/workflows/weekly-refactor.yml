@@ -18,30 +18,16 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            const issueBody = `Do at least the following and check if you can find more improvements that we can make:
+            const issueBody = `Review the codebase and make improvements:
 
-            - Review and fix any failing tests in our codebase (superlinter, ci, ui tests)
-            - Evaluate workflow triggers and optimize for efficiency
-            - Check for code duplication and opportunities for refactoring
-            - Review documentation for accuracy and completeness
-            - Look for security vulnerabilities and address them
-            - Identify outdated dependencies that should be updated
-            - Check for performance optimization opportunities
-            - Ensure all linting rules pass
-            - Look for opportunities to improve code maintainability
-            - Review error handling and logging practices
-            - Check for accessibility improvements in the UI
-            - Identify areas where custom agents could be beneficial
-            - Review test coverage and add tests where needed
+            - Fix failing tests (superlinter, ci, ui tests)
+            - Refactor duplicate code
+            - Address security vulnerabilities
+            - Improve code maintainability and performance
+            - Enhance UI accessibility
+            - Increase test coverage
 
-            **Guidelines:**
-            - Make surgical, minimal changes that improve the codebase
-            - Run all linters and tests before completing
-            - Document any significant changes or decisions
-            - Use existing tools and libraries when possible
-            - Follow the existing code style and conventions
-
-            This is an automated weekly refactor task. Focus on continuous improvement while maintaining stability.`;
+            **Rules:** Make minimal surgical changes, run all linters/tests before completing.`;
 
             const issue = await github.rest.issues.create({
               owner: context.repo.owner,
@@ -53,7 +39,6 @@ jobs:
 
             console.log(\`Created issue #\${issue.data.number}\`);
 
-            // Assign to copilot by adding a comment
             await github.rest.issues.createComment({
               owner: context.repo.owner,
               repo: context.repo.repo,

@@ -1,7 +1,15 @@
 ---
 name: ui-specialist
 description: Reviews UI/UX for responsive design, accessibility, and visual consistency
-tools: ["read", "edit", "playwright-browser_navigate", "playwright-browser_take_screenshot", "playwright-browser_snapshot", "bash"]
+tools:
+  [
+    "read",
+    "edit",
+    "playwright-browser_navigate",
+    "playwright-browser_take_screenshot",
+    "playwright-browser_snapshot",
+    "bash",
+  ]
 ---
 
 # UI/UX Specialist
@@ -11,6 +19,7 @@ You review and improve the user interface for responsive design and accessibilit
 ## Your Focus
 
 Test responsive design on these viewports:
+
 - Desktop: 1920x1080, 1366x768
 - Tablet: 768x1024
 - Mobile: 375x667, 414x896
