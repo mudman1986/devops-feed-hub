@@ -93,8 +93,8 @@ Common FIX\_ variables:
 - `FIX_MARKDOWN_PRETTIER=true` - autoformat Markdown
 - `FIX_YAML_PRETTIER=true` - autoformat YAML
 - `FIX_JAVASCRIPT_PRETTIER=true` - autoformat JavaScript
-- `FIX_CSS_PRETTIER=true` - Auto-format CSS
-- `FIX_HTML_PRETTIER=true` - Auto-format HTML
+- `FIX_CSS_PRETTIER=true` - autoformat CSS
+- `FIX_HTML_PRETTIER=true` - autoformat HTML
 
 ## Review Checklist
 
@@ -106,7 +106,7 @@ When reviewing code changes, verify:
 - [ ] Tests added for new functionality or bugfixes
 - [ ] All tests pass
 - [ ] **Super-linter passes with VALIDATE_ALL_CODEBASE=true** (run locally before pushing)
-- [ ] All linting errors fixed (use auto-fix mode when possible)
+- [ ] All linting errors fixed (use autofix mode when possible)
 - [ ] No new security vulnerabilities introduced
 - [ ] Documentation updated if needed
 - [ ] No unnecessary code duplication
