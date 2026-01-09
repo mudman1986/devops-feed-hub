@@ -35,11 +35,10 @@ jobs:
       - name: Run Playwright tests
         run: npm run test:ui
         # Note: Workers configured in playwright.config.js (2 workers for CI)
-        # Verbose logging enabled via DEBUG env var for troubleshooting
+        # Debug logging removed - it significantly slows down CI execution
         timeout-minutes: 5
         env:
           CI: true
-          DEBUG: pw:browser*
 
       - name: Upload test results
         if: always()

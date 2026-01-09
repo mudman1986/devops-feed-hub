@@ -66,7 +66,7 @@ export default defineConfig({
     command: "npx http-server docs -p 8080 --silent",
     port: 8080,
     reuseExistingServer: !process.env.CI,
-    timeout: 60000,
+    timeout: 30000, // Reduced from 60s - CI should start faster
     stderr: "pipe",
     stdout: "pipe",
   },
