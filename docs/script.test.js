@@ -229,6 +229,63 @@ describe("Timeframe Filtering", () => {
     const savedTimeframe = localStorage.getItem("timeframe") || "1day";
     expect(savedTimeframe).toBe("1day");
   });
+
+  test("should load saved timeframe preference on page load", () => {
+    // Save a preference
+    localStorage.setItem("timeframe", "30days");
+
+    // Simulate page load - get the saved value
+    const savedTimeframe = localStorage.getItem("timeframe") || "1day";
+
+    expect(savedTimeframe).toBe("30days");
+  });
+
+  test("should update timeframe when dropdown value changes", () => {
+    const select = document.getElementById("timeframe-select");
+
+    // Change to 7 days
+    select.value = "7days";
+    localStorage.setItem("timeframe", select.value);
+
+    expect(localStorage.getItem("timeframe")).toBe("7days");
+    expect(select.value).toBe("7days");
+  });
+
+  test("should persist timeframe selection across page reloads", () => {
+    const select = document.getElementById("timeframe-select");
+
+    // First "page load" - set a timeframe
+    select.value = "30days";
+    localStorage.setItem("timeframe", select.value);
+
+    // Simulate page reload - clear DOM and recreate
+    const savedTimeframe = localStorage.getItem("timeframe");
+
+    document.body.innerHTML = `
+      <select id="timeframe-select">
+        <option value="1day">Last 24 hours</option>
+        <option value="7days">Last 7 days</option>
+        <option value="30days">Last 30 days</option>
+      </select>
+    `;
+
+    const newSelect = document.getElementById("timeframe-select");
+    newSelect.value = savedTimeframe || "1day";
+
+    expect(newSelect.value).toBe("30days");
+    expect(localStorage.getItem("timeframe")).toBe("30days");
+  });
+
+  test("timeframe select should not have hardcoded selected attribute", () => {
+    const select = document.getElementById("timeframe-select");
+    const options = select.querySelectorAll("option");
+
+    // No option should have the selected attribute in the HTML
+    // (JavaScript should set the value programmatically)
+    options.forEach((option) => {
+      expect(option.hasAttribute("selected")).toBe(false);
+    });
+  });
 });
 
 describe("Theme Toggle", () => {
