@@ -74,3 +74,5 @@ jobs:
           test -f .github/actions/collect-rss-feeds/template.html
           
           echo "✓ All RSS collection components verified"
+
+          echo "✓ HTML files generated for testing"
