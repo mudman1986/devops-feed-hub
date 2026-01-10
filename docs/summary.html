@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <!-- @generated - This file is auto-generated. Do not edit manually. -->
 <html lang="en" data-theme="dark">
   <head>
@@ -8,15 +8,12 @@
       name="description"
       content="DevOps Feed Hub - Centralized RSS feed aggregator for DevOps and tech news"
     />
-    <meta
-      http-equiv="Cache-Control"
-      content="no-cache, no-store, must-revalidate"
-    />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
     <title>Summary - DevOps Feed Hub</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-    <link rel="stylesheet" href="styles.css?v=January 10, 2026 at 10:15 PM UTC" />
+    <link rel="stylesheet" href="styles.css?v=January 10, 2026 at 10:18 PM UTC" />
   </head>
   <body>
     <div class="header">
@@ -70,10 +67,29 @@
           <span>Clear All Read</span>
         </button>
         <button
-          class="theme-toggle"
-          id="theme-toggle"
-          aria-label="Toggle theme"
+          class="settings-button"
+          id="settings-button"
+          aria-label="Settings"
+          onclick="window.location.href='settings.html'"
         >
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="12" cy="12" r="3"></circle>
+            <path
+              d="M12 1v6m0 6v6m5.66-13.66l-4.24 4.24m-2.83 2.83l-4.24 4.24M23 12h-6m-6 0H1m18.36-5.64l-4.24 4.24m-2.83 2.83l-4.24 4.24"
+            ></path>
+          </svg>
+          <span>Settings</span>
+        </button>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
           <svg
             id="theme-icon"
             width="16"
@@ -146,7 +162,7 @@
                     </svg>
                 </div>
                 <div class="stat-label">Total Feeds</div>
-                <div class="stat-value">7</div>
+                <div class="stat-value">15</div>
             </div>
             <div class="stat-card success">
                 <div class="stat-icon">
@@ -165,7 +181,7 @@
                     </svg>
                 </div>
                 <div class="stat-label">Successful</div>
-                <div class="stat-value">6</div>
+                <div class="stat-value">11</div>
             </div>
             <div class="stat-card error">
                 <div class="stat-icon">
@@ -187,7 +203,7 @@
                     </svg>
                 </div>
                 <div class="stat-label">Failed</div>
-                <div class="stat-value">1</div>
+                <div class="stat-value">4</div>
             </div>
             <div class="stat-card">
                 <div class="stat-icon">
@@ -207,7 +223,7 @@
                     </svg>
                 </div>
                 <div class="stat-label">Total Articles</div>
-                <div class="stat-value">42</div>
+                <div class="stat-value">70</div>
             </div>
         </div>
 
@@ -218,7 +234,25 @@
             <div class="failed-feed-item">
                 <div class="failed-feed-name">Azure Updates</div>
                 <div class="failed-feed-url">https://aztty.azurewebsites.net/rss/updates?service=40</div>
-                <div class="failed-feed-error">Error: Connection error: [SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1016)</div>
+                <div class="failed-feed-error">Error: HTTP 403: Site Disabled</div>
+            </div>
+
+            <div class="failed-feed-item">
+                <div class="failed-feed-name">GitLab Blog</div>
+                <div class="failed-feed-url">https://about.gitlab.com/blog/categories/releases/feed.xml</div>
+                <div class="failed-feed-error">Error: HTTP 404: Not Found</div>
+            </div>
+
+            <div class="failed-feed-item">
+                <div class="failed-feed-name">Jenkins Blog</div>
+                <div class="failed-feed-url">https://www.jenkins.io/node/feed.xml</div>
+                <div class="failed-feed-error">Error: HTTP 404: Not Found</div>
+            </div>
+
+            <div class="failed-feed-item">
+                <div class="failed-feed-name">Red Hat Developer</div>
+                <div class="failed-feed-url">https://developers.redhat.com/blog/feed/</div>
+                <div class="failed-feed-error">Error: HTTP 403: Forbidden</div>
             </div>
 
         </div>
@@ -228,13 +262,37 @@
 
             <div class="feed-breakdown-item">
                 <div class="feed-breakdown-header">
+                    <a href="feed-kubernetes-blog.html" class="feed-breakdown-name">
+                        Kubernetes Blog
+                    </a>
+                    <div class="feed-breakdown-count">14 articles</div>
+                </div>
+                <div class="feed-breakdown-bar">
+                    <div class="feed-breakdown-fill" style="width: 20.0%"></div>
+                </div>
+            </div>
+
+            <div class="feed-breakdown-item">
+                <div class="feed-breakdown-header">
                     <a href="feed-github-changelog.html" class="feed-breakdown-name">
                         GitHub Changelog
                     </a>
                     <div class="feed-breakdown-count">10 articles</div>
                 </div>
                 <div class="feed-breakdown-bar">
-                    <div class="feed-breakdown-fill" style="width: 23.8%"></div>
+                    <div class="feed-breakdown-fill" style="width: 14.3%"></div>
+                </div>
+            </div>
+
+            <div class="feed-breakdown-item">
+                <div class="feed-breakdown-header">
+                    <a href="feed-docker-blog.html" class="feed-breakdown-name">
+                        Docker Blog
+                    </a>
+                    <div class="feed-breakdown-count">10 articles</div>
+                </div>
+                <div class="feed-breakdown-bar">
+                    <div class="feed-breakdown-fill" style="width: 14.3%"></div>
                 </div>
             </div>
 
@@ -246,7 +304,7 @@
                     <div class="feed-breakdown-count">9 articles</div>
                 </div>
                 <div class="feed-breakdown-bar">
-                    <div class="feed-breakdown-fill" style="width: 21.4%"></div>
+                    <div class="feed-breakdown-fill" style="width: 12.9%"></div>
                 </div>
             </div>
 
@@ -258,7 +316,7 @@
                     <div class="feed-breakdown-count">9 articles</div>
                 </div>
                 <div class="feed-breakdown-bar">
-                    <div class="feed-breakdown-fill" style="width: 21.4%"></div>
+                    <div class="feed-breakdown-fill" style="width: 12.9%"></div>
                 </div>
             </div>
 
@@ -270,7 +328,7 @@
                     <div class="feed-breakdown-count">7 articles</div>
                 </div>
                 <div class="feed-breakdown-bar">
-                    <div class="feed-breakdown-fill" style="width: 16.7%"></div>
+                    <div class="feed-breakdown-fill" style="width: 10.0%"></div>
                 </div>
             </div>
 
@@ -282,7 +340,7 @@
                     <div class="feed-breakdown-count">4 articles</div>
                 </div>
                 <div class="feed-breakdown-bar">
-                    <div class="feed-breakdown-fill" style="width: 9.5%"></div>
+                    <div class="feed-breakdown-fill" style="width: 5.7%"></div>
                 </div>
             </div>
 
@@ -294,7 +352,43 @@
                     <div class="feed-breakdown-count">3 articles</div>
                 </div>
                 <div class="feed-breakdown-bar">
-                    <div class="feed-breakdown-fill" style="width: 7.1%"></div>
+                    <div class="feed-breakdown-fill" style="width: 4.3%"></div>
+                </div>
+            </div>
+
+            <div class="feed-breakdown-item">
+                <div class="feed-breakdown-header">
+                    <a href="feed-aws-devops-blog.html" class="feed-breakdown-name">
+                        AWS DevOps Blog
+                    </a>
+                    <div class="feed-breakdown-count">2 articles</div>
+                </div>
+                <div class="feed-breakdown-bar">
+                    <div class="feed-breakdown-fill" style="width: 2.9%"></div>
+                </div>
+            </div>
+
+            <div class="feed-breakdown-item">
+                <div class="feed-breakdown-header">
+                    <a href="feed-circleci-blog.html" class="feed-breakdown-name">
+                        CircleCI Blog
+                    </a>
+                    <div class="feed-breakdown-count">2 articles</div>
+                </div>
+                <div class="feed-breakdown-bar">
+                    <div class="feed-breakdown-fill" style="width: 2.9%"></div>
+                </div>
+            </div>
+
+            <div class="feed-breakdown-item">
+                <div class="feed-breakdown-header">
+                    <a href="feed-atlassian-devops.html" class="feed-breakdown-name">
+                        Atlassian DevOps
+                    </a>
+                    <div class="feed-breakdown-count">0 articles</div>
+                </div>
+                <div class="feed-breakdown-bar">
+                    <div class="feed-breakdown-fill" style="width: 0.0%"></div>
                 </div>
             </div>
 
@@ -303,17 +397,23 @@
 
         <div class="footer">
           Generated by RSS Feed Collector | Last updated:
-          January 10, 2026 at 10:15 PM UTC
+          January 10, 2026 at 10:18 PM UTC
         </div>
       </div>
       <aside class="sidebar" id="sidebar">
         <div class="sidebar-content">
           <div class="sidebar-header">Navigation</div>
           <nav class="feed-nav">
+  <script type="application/json" id="feed-list-data">[&quot;AWS DevOps Blog&quot;, &quot;Atlassian DevOps&quot;, &quot;CircleCI Blog&quot;, &quot;Docker Blog&quot;, &quot;GitHub Blog&quot;, &quot;GitHub Changelog&quot;, &quot;HashiCorp Blog&quot;, &quot;Kubernetes Blog&quot;, &quot;Microsoft DevOps Blog&quot;, &quot;Microsoft Entra Blog&quot;, &quot;Microsoft Security&quot;]</script>
   <a href="index.html" class="nav-link">All Feeds</a>
+  <a href="feed-aws-devops-blog.html" class="nav-link">AWS DevOps Blog</a>
+  <a href="feed-atlassian-devops.html" class="nav-link">Atlassian DevOps</a>
+  <a href="feed-circleci-blog.html" class="nav-link">CircleCI Blog</a>
+  <a href="feed-docker-blog.html" class="nav-link">Docker Blog</a>
   <a href="feed-github-blog.html" class="nav-link">GitHub Blog</a>
   <a href="feed-github-changelog.html" class="nav-link">GitHub Changelog</a>
   <a href="feed-hashicorp-blog.html" class="nav-link">HashiCorp Blog</a>
+  <a href="feed-kubernetes-blog.html" class="nav-link">Kubernetes Blog</a>
   <a href="feed-microsoft-devops-blog.html" class="nav-link">Microsoft DevOps Blog</a>
   <a href="feed-microsoft-entra-blog.html" class="nav-link">Microsoft Entra Blog</a>
   <a href="feed-microsoft-security.html" class="nav-link">Microsoft Security</a>
