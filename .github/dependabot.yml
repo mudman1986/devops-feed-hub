@@ -1,10 +1,7 @@
 ---
-# Dependabot configuration for DevOps Feed Hub
-# Groups dependencies by ecosystem to minimize pull requests
 
 version: 2
 updates:
-  # GitHub Actions - group all action updates together
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
@@ -19,7 +16,6 @@ updates:
       - "github-actions"
     open-pull-requests-limit: 5
 
-  # npm dependencies - group all npm updates together
   - package-ecosystem: "npm"
     directory: "/"
     schedule:

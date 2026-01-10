@@ -54,46 +54,46 @@ Run super-linter to validate all code in the repository:
 ```bash
 docker run --rm \
   -e RUN_LOCAL=true \
-  -e USE_FIND_ALGORITHM=true \
   -e VALIDATE_ALL_CODEBASE=true \
+  -e DEFAULT_BRANCH=main \
   -v $(pwd):/tmp/lint \
-  ghcr.io/super-linter/super-linter:v7.4.0
+  ghcr.io/super-linter/super-linter:v8.3.2
 ```
 
 **IMPORTANT:** Always set `VALIDATE_ALL_CODEBASE=true` to ensure comprehensive validation of the entire codebase.
 
-#### Auto-Fix Mode
+#### Autofix Mode
 
-Super-linter supports auto-fixing for many linters. Enable auto-fix by setting `FIX_<LANGUAGE>=true`:
+Super-linter supports autofixing for many linters. Enable autofix by setting `FIX_<LANGUAGE>=true`:
 
-**Common auto-fix options:**
+**Common autofix options:**
 
-- `FIX_PYTHON_BLACK=true` - Auto-format Python with Black
-- `FIX_PYTHON_ISORT=true` - Auto-sort Python imports
-- `FIX_SHELL_SHFMT=true` - Auto-format shell scripts
-- `FIX_JAVASCRIPT_PRETTIER=true` - Auto-format JavaScript
-- `FIX_MARKDOWN_PRETTIER=true` - Auto-format Markdown
-- `FIX_YAML_PRETTIER=true` - Auto-format YAML
-- `FIX_CSS_PRETTIER=true` - Auto-format CSS
-- `FIX_HTML_PRETTIER=true` - Auto-format HTML
+- `FIX_PYTHON_BLACK=true` - autoformat Python with Black
+- `FIX_PYTHON_ISORT=true` - autosort Python imports
+- `FIX_SHELL_SHFMT=true` - autoformat shell scripts
+- `FIX_JAVASCRIPT_PRETTIER=true` - autoformat JavaScript
+- `FIX_MARKDOWN_PRETTIER=true` - autoformat Markdown
+- `FIX_YAML_PRETTIER=true` - autoformat YAML
+- `FIX_CSS_PRETTIER=true` - autoformat CSS
+- `FIX_HTML_PRETTIER=true` - autoformat HTML
 
-**Example with auto-fix:**
+**Example with autofix:**
 
 ```bash
 docker run --rm \
   -e RUN_LOCAL=true \
-  -e USE_FIND_ALGORITHM=true \
   -e VALIDATE_ALL_CODEBASE=true \
+  -e DEFAULT_BRANCH=main \
   -e FIX_PYTHON_BLACK=true \
   -e FIX_PYTHON_ISORT=true \
   -e FIX_SHELL_SHFMT=true \
   -e FIX_MARKDOWN_PRETTIER=true \
   -e FIX_YAML_PRETTIER=true \
   -v $(pwd):/tmp/lint \
-  ghcr.io/super-linter/super-linter:v7.4.0
+  ghcr.io/super-linter/super-linter:v8.3.2
 ```
 
-**Note:** Not all linters support auto-fix. The above are the most commonly used in this repository.
+**Note:** Not all linters support autofix. The above are the most commonly used in this repository.
 
 ## CI/CD Integration
 

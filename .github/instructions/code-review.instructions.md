@@ -1,6 +1,5 @@
 ---
 applyTo: "**"
-excludeAgent: "coding-agent"
 ---
 
 # Copilot Code Review Instructions
@@ -56,23 +55,23 @@ Run super-linter to validate all code in the repository:
 ```bash
 docker run --rm \
   -e RUN_LOCAL=true \
-  -e USE_FIND_ALGORITHM=true \
   -e VALIDATE_ALL_CODEBASE=true \
+  -e DEFAULT_BRANCH=main \
   -v $(pwd):/tmp/lint \
-  ghcr.io/super-linter/super-linter:v7.4.0
+  ghcr.io/super-linter/super-linter:v8.3.2
 ```
 
 **IMPORTANT:** Always set `VALIDATE_ALL_CODEBASE=true` to ensure comprehensive validation.
 
-#### Super-Linter Auto-Fix
+#### Super-Linter autofix
 
-Use auto-fix mode to automatically correct linting errors:
+Use autofix mode to automatically correct linting errors:
 
 ```bash
 docker run --rm \
   -e RUN_LOCAL=true \
-  -e USE_FIND_ALGORITHM=true \
   -e VALIDATE_ALL_CODEBASE=true \
+  -e DEFAULT_BRANCH=main \
   -e FIX_PYTHON_BLACK=true \
   -e FIX_PYTHON_ISORT=true \
   -e FIX_SHELL_SHFMT=true \
@@ -82,19 +81,19 @@ docker run --rm \
   -e FIX_CSS_PRETTIER=true \
   -e FIX_HTML_PRETTIER=true \
   -v $(pwd):/tmp/lint \
-  ghcr.io/super-linter/super-linter:v7.4.0
+  ghcr.io/super-linter/super-linter:v8.3.2
 ```
 
 Common FIX\_ variables:
 
-- `FIX_PYTHON_BLACK=true` - Auto-format Python with Black
-- `FIX_PYTHON_ISORT=true` - Auto-sort Python imports
-- `FIX_SHELL_SHFMT=true` - Auto-format shell scripts (tabs for indentation)
-- `FIX_MARKDOWN_PRETTIER=true` - Auto-format Markdown
-- `FIX_YAML_PRETTIER=true` - Auto-format YAML
-- `FIX_JAVASCRIPT_PRETTIER=true` - Auto-format JavaScript
-- `FIX_CSS_PRETTIER=true` - Auto-format CSS
-- `FIX_HTML_PRETTIER=true` - Auto-format HTML
+- `FIX_PYTHON_BLACK=true` - autoformat Python with Black
+- `FIX_PYTHON_ISORT=true` - autosort Python imports
+- `FIX_SHELL_SHFMT=true` - autoformat shell scripts (tabs for indentation)
+- `FIX_MARKDOWN_PRETTIER=true` - autoformat Markdown
+- `FIX_YAML_PRETTIER=true` - autoformat YAML
+- `FIX_JAVASCRIPT_PRETTIER=true` - autoformat JavaScript
+- `FIX_CSS_PRETTIER=true` - autoformat CSS
+- `FIX_HTML_PRETTIER=true` - autoformat HTML
 
 ## Review Checklist
 
@@ -106,7 +105,7 @@ When reviewing code changes, verify:
 - [ ] Tests added for new functionality or bugfixes
 - [ ] All tests pass
 - [ ] **Super-linter passes with VALIDATE_ALL_CODEBASE=true** (run locally before pushing)
-- [ ] All linting errors fixed (use auto-fix mode when possible)
+- [ ] All linting errors fixed (use autofix mode when possible)
 - [ ] No new security vulnerabilities introduced
 - [ ] Documentation updated if needed
 - [ ] No unnecessary code duplication
