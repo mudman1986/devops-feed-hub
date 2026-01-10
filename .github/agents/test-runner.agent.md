@@ -48,7 +48,7 @@ Run these checks in order and fix any failures:
      ghcr.io/super-linter/super-linter:v8.3.2
    ```
 
-## Bug Fix Workflow (Test-Driven Development)
+## Bugfix Workflow (Test-Driven Development)
 
 When asked to fix a bug, follow this process:
 
