@@ -8,9 +8,12 @@
       name="description"
       content="DevOps Feed Hub - Centralized RSS feed aggregator for DevOps and tech news"
     />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
     <title>DevOps Feed Hub</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css?v=<!-- TIMESTAMP_PLACEHOLDER -->" />
   </head>
   <body>
     <div class="header">
@@ -120,8 +123,23 @@
         </div>
       </div>
       <aside class="sidebar" id="sidebar">
-        <div class="sidebar-header">Navigation</div>
-        <!-- SIDEBAR_PLACEHOLDER -->
+        <div class="sidebar-content">
+          <div class="sidebar-header">Navigation</div>
+          <!-- SIDEBAR_PLACEHOLDER -->
+        </div>
+        <div class="sidebar-footer">
+          <div class="view-selector">
+            <label for="view-select" class="view-label">View</label>
+            <select
+              class="view-select"
+              id="view-select"
+              aria-label="Select site view"
+            >
+              <option value="list">List</option>
+              <option value="card">Card</option>
+            </select>
+          </div>
+        </div>
       </aside>
     </div>
 

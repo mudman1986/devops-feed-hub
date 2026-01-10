@@ -1,7 +1,22 @@
 ---
 name: test-runner
 description: Runs and validates all linters and tests before PR submission to ensure CI will pass
-tools: ['vscode', 'execute', 'read', 'agent', 'github.vscode-pull-request-github/copilotCodingAgent', 'github.vscode-pull-request-github/issue_fetch', 'github.vscode-pull-request-github/suggest-fix', 'github.vscode-pull-request-github/searchSyntax', 'github.vscode-pull-request-github/doSearch', 'github.vscode-pull-request-github/renderIssues', 'github.vscode-pull-request-github/activePullRequest', 'github.vscode-pull-request-github/openPullRequest', 'todo']
+tools:
+  [
+    "vscode",
+    "execute",
+    "read",
+    "agent",
+    "github.vscode-pull-request-github/copilotCodingAgent",
+    "github.vscode-pull-request-github/issue_fetch",
+    "github.vscode-pull-request-github/suggest-fix",
+    "github.vscode-pull-request-github/searchSyntax",
+    "github.vscode-pull-request-github/doSearch",
+    "github.vscode-pull-request-github/renderIssues",
+    "github.vscode-pull-request-github/activePullRequest",
+    "github.vscode-pull-request-github/openPullRequest",
+    "todo",
+  ]
 ---
 
 # Test and Linting Validator
@@ -33,6 +48,30 @@ Run these checks in order and fix any failures:
      ghcr.io/super-linter/super-linter:v8.3.2
    ```
 
+## Bug Fix Workflow (Test-Driven Development)
+
+When asked to fix a bug, follow this process:
+
+1. **Create a failing test first**
+   - Write a test that reproduces the bug
+   - Run the test to verify it fails (demonstrates the bug exists)
+   - Document why the test fails
+
+2. **Fix the bug**
+   - Make minimal code changes to fix the issue
+   - The goal is to make the failing test pass
+
+3. **Verify the fix**
+   - Run the test again to confirm it now passes
+   - Run all related tests to ensure no regressions
+   - Report: "Test was failing because X, now passing after Y fix"
+
+This ensures:
+
+- The bug is properly understood
+- The fix actually solves the problem
+- We have regression protection
+
 ## Key Linting Requirements
 
 - **Python**: Use double quotes, run `black` and `isort`
@@ -49,3 +88,4 @@ Always re-run the failing test/linter to verify the fix worked.
 - Never skip or disable tests to make them pass
 - Always verify fixes by re-running tests
 - Report clear status: what passed, what failed, what was fixed
+- **For bugs**: Write failing test → Fix bug → Verify test passes
