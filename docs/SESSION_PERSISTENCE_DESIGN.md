@@ -48,7 +48,7 @@ The following user preferences are currently stored in `localStorage`:
 **Implementation**:
 
 ```javascript
-// Example URL: https://mudman1986.github.io/devops-feed-hub/#theme=dark&view=list&timeframe=7days
+// Example URL: https://yoursite.com/devops-feed-hub/#theme=dark&view=list&timeframe=7days
 
 // On settings change, update URL hash
 function updateURLState() {
@@ -232,6 +232,11 @@ Option B: Document how users can sync localStorage via browser features
 ```javascript
 // Authenticate with GitHub OAuth
 async function loginWithGitHub() {
+  // Validate CLIENT_ID is configured
+  if (!CLIENT_ID || CLIENT_ID.trim() === "") {
+    throw new Error("CLIENT_ID not configured");
+  }
+
   // Redirect to GitHub OAuth
   window.location.href = `https://github.com/login/oauth/authorize?client_id=${CLIENT_ID}&scope=gist`;
 }
@@ -654,7 +659,8 @@ class URLStateManager {
 // Usage
 if (URLStateManager.loadFromURL()) {
   console.log("Settings loaded from URL");
-  location.reload();
+  // Reload or dynamically update UI based on new settings
+  location.reload(); // Simplest approach - or call applyTheme(), applyView(), etc.
 }
 
 // Update URL when settings change
@@ -731,6 +737,7 @@ const importInput = document.getElementById("import-settings");
 
 exportBtn.addEventListener("click", () => {
   SettingsManager.export();
+  // In production, use a toast notification instead of alert()
   alert("Settings exported successfully!");
 });
 
@@ -740,9 +747,11 @@ importInput.addEventListener("change", async (e) => {
 
   try {
     await SettingsManager.import(file);
+    // In production, use a toast notification instead of alert()
     alert("Settings imported successfully! The page will reload.");
-    location.reload();
+    location.reload(); // Or dynamically update UI without reload
   } catch (error) {
+    // In production, use a toast notification instead of alert()
     alert(error.message);
   }
 });
