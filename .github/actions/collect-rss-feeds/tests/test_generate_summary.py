@@ -974,8 +974,9 @@ class TestMultiPageGeneration(unittest.TestCase):
 
         # Check for stat icons
         self.assertIn("stat-icon", result)
-        # Check for SVG elements in stats
-        self.assertIn('<svg width="24" height="24"', result)
+        # Check for SVG elements in stats (multiline format)
+        self.assertIn('width="32"', result)
+        self.assertIn('height="32"', result)
 
     def test_summary_page_has_intro_text(self):
         """Test that summary page includes introductory text"""
