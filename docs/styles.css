@@ -52,8 +52,8 @@
 
 body {
   font-family:
-    -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", "Helvetica",
-    "Arial", sans-serif;
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Inter, Helvetica, Arial,
+    sans-serif;
   line-height: 1.7;
   color: var(--text-primary);
   background: linear-gradient(
@@ -152,75 +152,9 @@ body {
   width: 280px;
   background-color: var(--bg-secondary);
   border-left: 1px solid var(--border-primary);
-  transition: all 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  height: 100%;
-}
-
-.sidebar-content {
-  flex: 1;
-  overflow-y: auto;
-  overflow-x: hidden;
   padding: 1.5rem;
-}
-
-.sidebar-footer {
-  position: sticky;
-  position: -webkit-sticky;
-  bottom: 0;
-  flex-shrink: 0;
-  padding: 1rem 1.5rem;
-  background-color: var(--bg-secondary);
-  border-top: 1px solid var(--border-primary);
-  z-index: 100;
-}
-
-.view-selector {
-  position: relative;
-}
-
-.view-label {
-  display: block;
-  font-size: 0.75rem;
-  color: var(--text-secondary);
-  margin-bottom: 0.5rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-  font-weight: 600;
-}
-
-.view-select {
-  width: 100%;
-  padding: 0.625rem 2.5rem 0.625rem 1rem;
-  background-color: var(--bg-tertiary);
-  color: var(--text-primary);
-  border: 1px solid var(--border-primary);
-  border-radius: 0.5rem;
-  cursor: pointer;
-  font-size: 0.875rem;
-  font-weight: 500;
-  transition: all 0.2s ease;
-  appearance: none;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-  background-repeat: no-repeat;
-  background-position: right 0.75rem center;
-  background-size: 1rem;
-}
-
-[data-theme="dark"] .view-select {
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2394a3b8' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
-}
-
-.view-select:hover {
-  background-color: var(--bg-hover);
-  border-color: var(--border-accent);
-}
-
-.view-select:focus {
-  outline: 2px solid var(--border-accent);
-  outline-offset: 2px;
+  overflow-y: auto;
+  transition: all 0.3s ease;
 }
 
 .sidebar-toggle {
@@ -421,7 +355,7 @@ h3 {
 }
 
 .article-item.read {
-  opacity: 60%;
+  opacity: 0.6;
 }
 
 .article-item.read .article-title {
@@ -490,16 +424,6 @@ h3 {
 
 .feed-section .no-articles {
   margin-top: 0.5rem;
-}
-
-/* List view - style no-articles message to match */
-[data-view="list"] .no-articles {
-  background-color: transparent;
-  border-radius: 0;
-  padding: 0.5rem 0.75rem;
-  text-align: left;
-  font-style: normal;
-  border-bottom: 1px dotted var(--border-primary);
 }
 
 .feed-nav {
@@ -742,12 +666,12 @@ h3 {
   justify-content: center;
   transition: all 0.2s ease;
   color: var(--text-secondary);
-  opacity: 50%;
+  opacity: 0.5;
   z-index: 1;
 }
 
 .read-indicator:hover {
-  opacity: 100%;
+  opacity: 1;
   background: var(--bg-hover);
   border-color: var(--border-accent);
   transform: scale(1.1);
@@ -757,7 +681,7 @@ h3 {
   background: var(--border-success);
   border-color: var(--border-success);
   color: white;
-  opacity: 100%;
+  opacity: 1;
 }
 
 .reset-read-button {
@@ -818,111 +742,4 @@ h3 {
     font-size: 0.8125rem;
     gap: 0.375rem;
   }
-}
-
-/* Card view mode - original card-based design */
-[data-view="card"] .feed-section {
-  margin-bottom: 3rem;
-  background-color: var(--bg-secondary);
-  padding: 2rem;
-  border-radius: 1rem;
-  border: 1px solid var(--border-primary);
-  box-shadow: var(--shadow-sm);
-}
-
-[data-view="card"] .feed-section:hover {
-  box-shadow: var(--shadow-md);
-}
-
-[data-view="card"] .article-list {
-  margin-top: 1rem;
-}
-
-[data-view="card"] .article-item {
-  padding: 1.25rem 3rem 1.25rem 1.25rem;
-  margin-bottom: 0.75rem;
-  background-color: var(--bg-tertiary);
-  border-radius: 0.75rem;
-  border: 1px solid transparent;
-}
-
-[data-view="card"] .article-item:hover {
-  background-color: var(--bg-hover);
-  border-color: var(--border-accent);
-  transform: translateX(4px);
-  box-shadow: var(--shadow-sm);
-}
-
-/* List view mode - simple list with dotted borders */
-[data-view="list"] body {
-  line-height: 1.35;
-}
-
-[data-view="list"] .feed-section {
-  background-color: transparent;
-  border: none;
-  box-shadow: none;
-  border-radius: 0;
-  border-bottom: 2px solid var(--border-primary);
-  padding-bottom: 0.75rem;
-  margin-bottom: 1.5rem;
-  padding: 0.35rem;
-}
-
-[data-view="list"] .article-item {
-  background-color: transparent;
-  border-radius: 0;
-  border: none;
-  border-bottom: 1px dotted var(--border-primary);
-  padding: 0.35rem 2.5rem 0.35rem 0.75rem;
-  margin-bottom: 0;
-}
-
-[data-view="list"] .article-item:hover {
-  background-color: var(--bg-tertiary);
-  transform: none;
-  box-shadow: none;
-}
-
-[data-view="list"] .article-list {
-  margin-top: 0.2rem;
-  border-top: none;
-}
-
-[data-view="list"] h3 {
-  font-size: 0.8125rem;
-  margin-bottom: 0.35rem;
-  padding-bottom: 0.25rem;
-  border-bottom: 1px solid var(--border-primary);
-}
-
-[data-view="list"] .article-title {
-  font-size: 0.8125rem;
-  line-height: 1.35;
-  font-weight: 500;
-  display: inline;
-}
-
-[data-view="list"] .article-meta {
-  font-size: 0.6875rem;
-  margin-left: 0.4rem;
-  display: inline;
-  color: var(--text-secondary);
-}
-
-[data-view="list"] .feed-count {
-  font-size: 0.6875rem;
-  padding: 0.2rem 0.45rem;
-}
-
-[data-view="list"] .read-indicator {
-  width: 1.35rem;
-  height: 1.35rem;
-  top: 0.3rem;
-  right: 0.3rem;
-}
-
-[data-view="list"] .read-indicator svg {
-  width: 11px;
-  height: 11px;
 }

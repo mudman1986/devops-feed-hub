@@ -52,49 +52,6 @@ function updateThemeButton (theme) {
   }
 }
 
-// View selector functionality (list/card)
-const viewSelect = document.getElementById('view-select')
-
-// Get saved view preference or default to list
-let savedView = 'list'
-try {
-  savedView = localStorage.getItem('view') || 'list'
-} catch (e) {
-  // localStorage might be unavailable (privacy mode, quota exceeded, etc.)
-  console.warn('localStorage unavailable, using default view:', e)
-}
-
-// Set dropdown value and apply view
-if (viewSelect) {
-  viewSelect.value = savedView
-  applyView(savedView)
-
-  // Add change listener to dropdown
-  viewSelect.addEventListener('change', () => {
-    const view = viewSelect.value
-
-    // Save preference
-    try {
-      localStorage.setItem('view', view)
-    } catch (e) {
-      console.warn('Unable to save view preference:', e)
-    }
-
-    // Apply view
-    applyView(view)
-  })
-}
-
-function applyView (view) {
-  // List is now the default, card needs the attribute
-  if (view === 'card') {
-    htmlElement.setAttribute('data-view', 'card')
-  } else {
-    // For list view, set data-view="list" to apply list styles
-    htmlElement.setAttribute('data-view', 'list')
-  }
-}
-
 // Initialize sidebar state based on screen size
 function initializeSidebarState (sidebar) {
   if (window.innerWidth <= 768) {
@@ -239,13 +196,9 @@ function applyTimeframeFilter (timeframe) {
       } else {
         noArticlesMsg.style.display = ''
       }
-      // In list view, the CSS will hide the entire section
     } else {
       if (articleList) articleList.style.display = ''
-      // Remove the no-articles message completely so CSS doesn't hide the section
-      if (noArticlesMsg) {
-        noArticlesMsg.remove()
-      }
+      if (noArticlesMsg) noArticlesMsg.style.display = 'none'
     }
 
     // Store feed data for reordering
@@ -600,36 +553,15 @@ function setupMarkAsReadControls () {
   // Set up Clear All Read button
   const resetButton = document.getElementById('reset-read-button')
   if (resetButton) {
-    // Remove any existing listeners to avoid duplicates
-    const newButton = resetButton.cloneNode(true)
-    resetButton.parentNode.replaceChild(newButton, resetButton)
-    
-    newButton.addEventListener(
-      'click',
-      function handleResetClick (e) {
-        e.preventDefault()
-        e.stopPropagation()
-        e.stopImmediatePropagation()
-
-        try {
-          // Use window.confirm explicitly
-          const confirmed = window.confirm(
-            'Are you sure you want to clear all read articles? This will mark all articles as unread and restore the original feed order.'
-          )
-
-          if (confirmed === true) {
-            resetAllReadArticles()
-          }
-        } catch (error) {
-          console.error('Error in reset button handler:', error)
-          // Fallback: just reset without confirmation if confirm fails
-          resetAllReadArticles()
-        }
-
-        return false
-      },
-      { passive: false, capture: true }
-    )
+    resetButton.addEventListener('click', () => {
+      if (
+        confirm(
+          'Are you sure you want to clear all read articles? This will mark all articles as unread and restore the original feed order.'
+        )
+      ) {
+        resetAllReadArticles()
+      }
+    })
   }
 }
 
