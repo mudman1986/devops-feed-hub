@@ -13,7 +13,7 @@ applyTo: ".github/workflows/*.yml,.github/workflows/*.yaml"
 
 ## Shell Scripts
 
-- Prefer separate script files over inline bash
+- Prefer separate script files over inline Bash
 - Quote all variables: `"$VAR"` not `$VAR`
 - Extract complex logic to `.github/scripts/`
 

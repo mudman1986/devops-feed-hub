@@ -219,8 +219,8 @@ class TestGenerateSummary(unittest.TestCase):
         self.assertIn('name="viewport"', result)
         self.assertIn("width=device-width", result)
 
-        # CSS is now external, so media queries are in styles.css, not in the HTML
-        self.assertIn('link rel="stylesheet" href="styles.css"', result)
+        # CSS is now external with cache-busting version parameter
+        self.assertIn('link rel="stylesheet" href="styles.css?v=', result)
 
     def test_generate_html_page_empty_feeds(self):
         """Test HTML generation with empty feeds"""

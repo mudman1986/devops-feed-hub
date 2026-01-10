@@ -52,6 +52,47 @@ function updateThemeButton (theme) {
   }
 }
 
+// View selector functionality (normal/list)
+const viewSelect = document.getElementById('view-select')
+
+// Get saved view preference or default to normal
+let savedView = 'normal'
+try {
+  savedView = localStorage.getItem('view') || 'normal'
+} catch (e) {
+  // localStorage might be unavailable (privacy mode, quota exceeded, etc.)
+  console.warn('localStorage unavailable, using default view:', e)
+}
+
+// Set dropdown value and apply view
+if (viewSelect) {
+  viewSelect.value = savedView
+  applyView(savedView)
+
+  // Add change listener to dropdown
+  viewSelect.addEventListener('change', () => {
+    const view = viewSelect.value
+
+    // Save preference
+    try {
+      localStorage.setItem('view', view)
+    } catch (e) {
+      console.warn('Unable to save view preference:', e)
+    }
+
+    // Apply view
+    applyView(view)
+  })
+}
+
+function applyView (view) {
+  if (view && view !== 'normal') {
+    htmlElement.setAttribute('data-view', view)
+  } else {
+    htmlElement.removeAttribute('data-view')
+  }
+}
+
 // Initialize sidebar state based on screen size
 function initializeSidebarState (sidebar) {
   if (window.innerWidth <= 768) {

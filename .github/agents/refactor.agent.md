@@ -1,7 +1,22 @@
 ---
 name: refactor
 description: Specialized in refactoring code to improve quality, reduce complexity, and eliminate duplication
-tools: ['vscode', 'execute', 'read', 'agent', 'github.vscode-pull-request-github/copilotCodingAgent', 'github.vscode-pull-request-github/issue_fetch', 'github.vscode-pull-request-github/suggest-fix', 'github.vscode-pull-request-github/searchSyntax', 'github.vscode-pull-request-github/doSearch', 'github.vscode-pull-request-github/renderIssues', 'github.vscode-pull-request-github/activePullRequest', 'github.vscode-pull-request-github/openPullRequest', 'todo']
+tools:
+  [
+    "vscode",
+    "execute",
+    "read",
+    "agent",
+    "github.vscode-pull-request-github/copilotCodingAgent",
+    "github.vscode-pull-request-github/issue_fetch",
+    "github.vscode-pull-request-github/suggest-fix",
+    "github.vscode-pull-request-github/searchSyntax",
+    "github.vscode-pull-request-github/doSearch",
+    "github.vscode-pull-request-github/renderIssues",
+    "github.vscode-pull-request-github/activePullRequest",
+    "github.vscode-pull-request-github/openPullRequest",
+    "todo",
+  ]
 ---
 
 # Refactoring Specialist
@@ -29,5 +44,5 @@ You specialize in refactoring code to improve quality, maintainability, and orga
 - Never modify working code unnecessarily
 - Always run tests after refactoring
 - Extract magic numbers/strings to named constants
-- Prefer scripts over inline bash in workflows
+- Prefer scripts over inline Bash in workflows
 - Keep documentation minimal and code self-explanatory
