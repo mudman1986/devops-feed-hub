@@ -392,8 +392,10 @@ def generate_html_page(
     html = html.replace("<!-- SIDEBAR_PLACEHOLDER -->", sidebar_content)
     html = html.replace("<!-- TIMESTAMP_PLACEHOLDER -->", formatted_time)
     # Replace timestamp in CSS link for cache busting
-    html = html.replace('href="styles.css?v=<!-- TIMESTAMP_PLACEHOLDER -->"', 
-                       f'href="styles.css?v={cache_version}"')
+    html = html.replace(
+        'href="styles.css?v=<!-- TIMESTAMP_PLACEHOLDER -->"',
+        f'href="styles.css?v={cache_version}"',
+    )
     html = html.replace(
         "<title>DevOps Feed Hub</title>",
         f"<title>{html_escape(page_title)}</title>",
