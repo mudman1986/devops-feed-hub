@@ -31,7 +31,7 @@ function loadScriptFunctions() {
   const READ_ARTICLES_KEY = "readArticles";
 
   // Define functions in global scope
-  window.getReadArticles = function () {
+  window.getReadArticles = () {
     try {
       const stored = localStorage.getItem(READ_ARTICLES_KEY);
       return stored ? JSON.parse(stored) : [];
@@ -54,7 +54,7 @@ function loadScriptFunctions() {
     return readArticles.includes(articleUrl);
   };
 
-  window.toggleArticleRead = function (articleUrl) {
+  window.toggleArticleRead = (articleUrl) => {
     let readArticles = window.getReadArticles();
 
     if (readArticles.includes(articleUrl)) {
@@ -67,7 +67,7 @@ function loadScriptFunctions() {
     return readArticles.includes(articleUrl);
   };
 
-  window.resetAllReadArticles = function () {
+  window.resetAllReadArticles = () => {
     try {
       localStorage.removeItem(READ_ARTICLES_KEY);
     } catch (e) {
@@ -282,7 +282,7 @@ describe("Article Reordering", () => {
     loadScriptFunctions();
 
     // Use the FIXED implementation with date sorting
-    window.reorderArticlesInFeed = function (articleList, articles) {
+    window.reorderArticlesInFeed = (articleList, articles) => {
       if (!articleList || articles.length === 0) return;
 
       // Separate articles into unread and read
