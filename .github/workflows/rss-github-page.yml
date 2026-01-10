@@ -53,6 +53,13 @@ jobs:
 
           echo "✓ GitHub Pages content generated (multi-page)"
 
+          # Generate RSS feeds (master + individual feeds)
+          python3 .github/actions/collect-rss-feeds/generate_rss.py \
+            --input rss-feeds-output.json \
+            --output-dir docs
+
+          echo "✓ RSS feeds generated"
+
       - name: Format HTML files
         if: success()
         run: |

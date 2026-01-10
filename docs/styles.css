@@ -62,7 +62,12 @@
 
 body {
   font-family:
-    -apple-system, BlinkMacSystemFont, Segoe UI, Inter, Helvetica, Arial,
+    -apple-system,
+    BlinkMacSystemFont,
+    Segoe UI,
+    Inter,
+    Helvetica,
+    Arial,
     sans-serif;
   line-height: 1.7;
   color: var(--text-primary);
@@ -334,7 +339,7 @@ h3 {
   padding: 1.75rem;
   background: var(--card-bg);
   backdrop-filter: blur(10px);
-  
+
   border-radius: 1rem;
   border: 1px solid var(--card-border);
   box-shadow:
@@ -502,7 +507,7 @@ h3 {
 .failed-feeds {
   background: var(--card-bg);
   backdrop-filter: blur(10px);
-  
+
   padding: 1.5rem;
   border-radius: 0.75rem;
   border: 1px solid var(--card-border);
@@ -571,7 +576,7 @@ h3 {
 .feed-breakdown {
   background: var(--card-bg);
   backdrop-filter: blur(10px);
-  
+
   padding: 1.75rem;
   border-radius: 1rem;
   border: 1px solid var(--card-border);
@@ -1065,4 +1070,36 @@ h3 {
 [data-view="list"] .read-indicator svg {
   width: 11px;
   height: 11px;
+}
+
+/* RSS Feeds Section */
+.rss-feeds-section {
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border-primary);
+}
+
+.rss-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.rss-link svg {
+  flex-shrink: 0;
+  color: var(--accent-primary);
+}
+
+.rss-link:hover svg {
+  color: var(--accent-hover);
+}
+
+/* List view adjustments for RSS links */
+[data-view="list"] .rss-link {
+  font-size: 0.8125rem;
+}
+
+[data-view="list"] .rss-link svg {
+  width: 14px;
+  height: 14px;
 }
