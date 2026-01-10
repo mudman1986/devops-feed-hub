@@ -37,72 +37,71 @@ test.describe("View Mode Selector", () => {
     await expect(viewSelectInFooter).toBeVisible();
   });
 
-  test("should have Normal and List options", async ({ page }) => {
+  test("should have List and Card options", async ({ page }) => {
     const viewSelect = page.locator("#view-select");
     const options = await viewSelect.locator("option").allTextContents();
 
-    expect(options).toContain("Normal");
     expect(options).toContain("List");
+    expect(options).toContain("Card");
     expect(options.length).toBe(2);
   });
 
-  test("should default to Normal view", async ({ page }) => {
+  test("should default to List view", async ({ page }) => {
     const htmlElement = page.locator("html");
     const viewAttr = await htmlElement.getAttribute("data-view");
 
-    // Normal view has no data-view attribute
-    expect(viewAttr).toBeNull();
+    // List view is now default with data-view="list"
+    expect(viewAttr).toBe("list");
 
     const viewSelect = page.locator("#view-select");
     const value = await viewSelect.inputValue();
-    expect(value).toBe("normal");
+    expect(value).toBe("list");
   });
 
-  test("should switch to List view when selected", async ({ page }) => {
+  test("should switch to Card view when selected", async ({ page }) => {
     const htmlElement = page.locator("html");
     const viewSelect = page.locator("#view-select");
 
-    // Switch to List view
-    await viewSelect.selectOption("list");
+    // Switch to Card view
+    await viewSelect.selectOption("card");
     await page.waitForTimeout(100);
 
-    // Verify data-view attribute is set
-    await expect(htmlElement).toHaveAttribute("data-view", "list");
+    // Verify data-view attribute is set to card
+    await expect(htmlElement).toHaveAttribute("data-view", "card");
   });
 
-  test("should switch back to Normal view", async ({ page }) => {
+  test("should switch back to List view", async ({ page }) => {
     const htmlElement = page.locator("html");
     const viewSelect = page.locator("#view-select");
 
-    // Switch to List view
+    // Switch to Card view
+    await viewSelect.selectOption("card");
+    await page.waitForTimeout(100);
+    await expect(htmlElement).toHaveAttribute("data-view", "card");
+
+    // Switch back to List
     await viewSelect.selectOption("list");
     await page.waitForTimeout(100);
+
+    // Verify data-view attribute is set to list
     await expect(htmlElement).toHaveAttribute("data-view", "list");
-
-    // Switch back to Normal
-    await viewSelect.selectOption("normal");
-    await page.waitForTimeout(100);
-
-    // Verify data-view attribute is removed
-    const viewAttr = await htmlElement.getAttribute("data-view");
-    expect(viewAttr).toBeNull();
   });
 
   test("should persist view selection to localStorage", async ({ page }) => {
     const viewSelect = page.locator("#view-select");
 
-    // Switch to List view
-    await viewSelect.selectOption("list");
+    // Switch to Card view
+    await viewSelect.selectOption("card");
     await page.waitForTimeout(100);
 
     // Check localStorage
     const savedView = await page.evaluate(() => localStorage.getItem("view"));
-    expect(savedView).toBe("list");
+    expect(savedView).toBe("card");
   });
 
   test("should load saved view preference on page load", async ({ page }) => {
     // Set preference before page loads
-    await page.evaluate(() => localStorage.setItem("view", "list"));
+    await page.evaluate(() => localStorage.setItem("view", "card"));
 
     // Reload page
     await page.reload();
@@ -110,15 +109,15 @@ test.describe("View Mode Selector", () => {
 
     // Verify view is applied
     const htmlElement = page.locator("html");
-    await expect(htmlElement).toHaveAttribute("data-view", "list");
+    await expect(htmlElement).toHaveAttribute("data-view", "card");
 
     // Verify dropdown shows correct selection
     const viewSelect = page.locator("#view-select");
     const value = await viewSelect.inputValue();
-    expect(value).toBe("list");
+    expect(value).toBe("card");
   });
 
-  test("should apply List view styles correctly", async ({ page }) => {
+  test("should apply Card view styles correctly", async ({ page }) => {
     const viewSelect = page.locator("#view-select");
     const feedSection = page.locator(".feed-section").first();
 
@@ -126,30 +125,26 @@ test.describe("View Mode Selector", () => {
       test.skip();
     }
 
-    // Get styles in Normal view
-    const normalBorder = await feedSection.evaluate((el) => {
-      return window.getComputedStyle(el).border;
-    });
-
-    // Switch to List view
-    await viewSelect.selectOption("list");
-    await page.waitForTimeout(100);
-
-    // Get styles in List view
+    // Get styles in List view (default)
     const listBorder = await feedSection.evaluate((el) => {
       return window.getComputedStyle(el).border;
     });
 
+    // Switch to Card view
+    await viewSelect.selectOption("card");
+    await page.waitForTimeout(100);
+
+    // Get styles in Card view
+    const cardBorder = await feedSection.evaluate((el) => {
+      return window.getComputedStyle(el).border;
+    });
+
     // Borders should be different
-    expect(listBorder).not.toBe(normalBorder);
+    expect(cardBorder).not.toBe(listBorder);
   });
 
   test("should show empty feeds in List view", async ({ page }) => {
-    const viewSelect = page.locator("#view-select");
-
-    // Switch to List view
-    await viewSelect.selectOption("list");
-    await page.waitForTimeout(100);
+    // List is default, already in list view
 
     // Check if any feed sections have no-articles class
     const noArticlesSections = page.locator(".feed-section:has(.no-articles)");

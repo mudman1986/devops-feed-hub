@@ -52,13 +52,13 @@ function updateThemeButton (theme) {
   }
 }
 
-// View selector functionality (normal/list)
+// View selector functionality (list/card)
 const viewSelect = document.getElementById('view-select')
 
-// Get saved view preference or default to normal
-let savedView = 'normal'
+// Get saved view preference or default to list
+let savedView = 'list'
 try {
-  savedView = localStorage.getItem('view') || 'normal'
+  savedView = localStorage.getItem('view') || 'list'
 } catch (e) {
   // localStorage might be unavailable (privacy mode, quota exceeded, etc.)
   console.warn('localStorage unavailable, using default view:', e)
@@ -86,10 +86,12 @@ if (viewSelect) {
 }
 
 function applyView (view) {
-  if (view && view !== 'normal') {
-    htmlElement.setAttribute('data-view', view)
+  // List is now the default, card needs the attribute
+  if (view === 'card') {
+    htmlElement.setAttribute('data-view', 'card')
   } else {
-    htmlElement.removeAttribute('data-view')
+    // For list view, set data-view="list" to apply list styles
+    htmlElement.setAttribute('data-view', 'list')
   }
 }
 
@@ -598,24 +600,36 @@ function setupMarkAsReadControls () {
   // Set up Clear All Read button
   const resetButton = document.getElementById('reset-read-button')
   if (resetButton) {
-    resetButton.addEventListener('click', (e) => {
-      e.preventDefault()
-      e.stopPropagation()
-      
-      try {
-        const confirmed = confirm(
-          'Are you sure you want to clear all read articles? This will mark all articles as unread and restore the original feed order.'
-        )
-        
-        if (confirmed) {
+    // Remove any existing listeners to avoid duplicates
+    const newButton = resetButton.cloneNode(true)
+    resetButton.parentNode.replaceChild(newButton, resetButton)
+    
+    newButton.addEventListener(
+      'click',
+      function handleResetClick (e) {
+        e.preventDefault()
+        e.stopPropagation()
+        e.stopImmediatePropagation()
+
+        try {
+          // Use window.confirm explicitly
+          const confirmed = window.confirm(
+            'Are you sure you want to clear all read articles? This will mark all articles as unread and restore the original feed order.'
+          )
+
+          if (confirmed === true) {
+            resetAllReadArticles()
+          }
+        } catch (error) {
+          console.error('Error in reset button handler:', error)
+          // Fallback: just reset without confirmation if confirm fails
           resetAllReadArticles()
         }
-      } catch (error) {
-        console.error('Error in reset button handler:', error)
-        // Fallback: just reset without confirmation if confirm fails
-        resetAllReadArticles()
-      }
-    }, { passive: false })
+
+        return false
+      },
+      { passive: false, capture: true }
+    )
   }
 }
 
