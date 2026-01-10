@@ -52,8 +52,8 @@
 
 body {
   font-family:
-    -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", "Helvetica", "Arial",
-    sans-serif;
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Inter", "Helvetica",
+    "Arial", sans-serif;
   line-height: 1.7;
   color: var(--text-primary);
   background: linear-gradient(
@@ -160,9 +160,13 @@ body {
 }
 
 .sidebar-footer {
+  position: sticky;
+  bottom: 0;
+  padding: 1rem 0 0;
   margin-top: auto;
-  padding-top: 1rem;
+  background-color: var(--bg-secondary);
   border-top: 1px solid var(--border-primary);
+  z-index: 10;
 }
 
 .view-selector {
@@ -870,9 +874,4 @@ h3 {
 [data-view="list"] .read-indicator svg {
   width: 11px;
   height: 11px;
-}
-
-/* List view - hide empty feed sections */
-[data-view="list"] .feed-section:has(.no-articles) {
-  display: none;
 }
