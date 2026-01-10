@@ -91,8 +91,8 @@ if (viewSelect) {
 }
 
 function applyView (view) {
-  if (view === 'compact') {
-    htmlElement.setAttribute('data-view', 'compact')
+  if (view && view !== 'comfortable') {
+    htmlElement.setAttribute('data-view', view)
   } else {
     htmlElement.removeAttribute('data-view')
   }

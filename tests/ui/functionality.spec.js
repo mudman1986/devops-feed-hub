@@ -527,7 +527,11 @@ test.describe("View Selector Tests", () => {
     // Verify options exist
     const options = await viewSelect.locator("option").allTextContents();
     expect(options).toContain("Comfortable");
+    expect(options).toContain("Cozy");
     expect(options).toContain("Compact");
+    expect(options).toContain("Dense");
+    expect(options).toContain("List");
+    expect(options.length).toBe(5);
   });
 
   test("should persist view preference on reload", async ({ page }) => {
@@ -604,5 +608,27 @@ test.describe("View Selector Tests", () => {
 
     // Compact padding should be different (smaller) than comfortable padding
     expect(compactPadding).not.toBe(comfortablePadding);
+  });
+
+  test("should apply all view modes correctly", async ({ page }) => {
+    const htmlElement = page.locator("html");
+    const viewSelect = page.locator("#view-select");
+
+    // Test each view mode
+    const viewModes = ["comfortable", "cozy", "compact", "dense", "list"];
+
+    for (const mode of viewModes) {
+      await viewSelect.selectOption(mode);
+      await page.waitForTimeout(100);
+
+      if (mode === "comfortable") {
+        // Comfortable should not have data-view attribute
+        const viewAttr = await htmlElement.getAttribute("data-view");
+        expect(viewAttr).toBeNull();
+      } else {
+        // Other modes should have data-view attribute set
+        await expect(htmlElement).toHaveAttribute("data-view", mode);
+      }
+    }
   });
 });
