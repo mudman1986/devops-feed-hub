@@ -195,8 +195,8 @@ function applyTimeframeFilter (timeframe) {
           article.removeAttribute('data-hidden-by-timeframe')
           article.style.display = ''
         }
-      } catch {
-        // If there's an error parsing the date, show the article anyway
+      } catch (e) {
+        // If there's an error, show the article
         article.removeAttribute('data-hidden-by-timeframe')
         article.style.display = ''
       }
@@ -610,7 +610,7 @@ function setupMarkAsReadControls () {
     // Remove any existing listeners to avoid duplicates
     const newButton = resetButton.cloneNode(true)
     resetButton.parentNode.replaceChild(newButton, resetButton)
-
+    
     newButton.addEventListener(
       'click',
       function handleResetClick (e) {
