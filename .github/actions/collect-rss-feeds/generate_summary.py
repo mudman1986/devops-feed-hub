@@ -265,19 +265,19 @@ def generate_html_content(
         <div class="stats">
             <div class="stat-card">
                 <div class="stat-label">Total Feeds</div>
-                <div class="stat-value">{data['summary']['total_feeds']}</div>
+                <div class="stat-value">{data["summary"]["total_feeds"]}</div>
             </div>
             <div class="stat-card success">
                 <div class="stat-label">Successful</div>
-                <div class="stat-value">{data['summary']['successful_feeds']}</div>
+                <div class="stat-value">{data["summary"]["successful_feeds"]}</div>
             </div>
             <div class="stat-card error">
                 <div class="stat-label">Failed</div>
-                <div class="stat-value">{data['summary']['failed_feeds']}</div>
+                <div class="stat-value">{data["summary"]["failed_feeds"]}</div>
             </div>
             <div class="stat-card">
                 <div class="stat-label">Total Articles</div>
-                <div class="stat-value">{data['summary']['total_articles']}</div>
+                <div class="stat-value">{data["summary"]["total_articles"]}</div>
             </div>
         </div>
 """
@@ -375,6 +375,8 @@ def generate_html_page(
     # Get formatted timestamp
     collected_time = parse_iso_timestamp(data["metadata"]["collected_at"])
     formatted_time = collected_time.strftime("%B %d, %Y at %I:%M %p UTC")
+    # Create a version string for cache busting (epoch timestamp)
+    cache_version = str(int(collected_time.timestamp()))
 
     # Update title if this is a feed-specific page
     page_title = "DevOps Feed Hub"
@@ -389,6 +391,11 @@ def generate_html_page(
     html = template.replace("<!-- CONTENT_PLACEHOLDER -->", content)
     html = html.replace("<!-- SIDEBAR_PLACEHOLDER -->", sidebar_content)
     html = html.replace("<!-- TIMESTAMP_PLACEHOLDER -->", formatted_time)
+    # Replace timestamp in CSS link for cache busting
+    html = html.replace(
+        'href="styles.css?v=<!-- TIMESTAMP_PLACEHOLDER -->"',
+        f'href="styles.css?v={cache_version}"',
+    )
     html = html.replace(
         "<title>DevOps Feed Hub</title>",
         f"<title>{html_escape(page_title)}</title>",
