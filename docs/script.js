@@ -598,15 +598,24 @@ function setupMarkAsReadControls () {
   // Set up Clear All Read button
   const resetButton = document.getElementById('reset-read-button')
   if (resetButton) {
-    resetButton.addEventListener('click', () => {
-      if (
-        confirm(
+    resetButton.addEventListener('click', (e) => {
+      e.preventDefault()
+      e.stopPropagation()
+      
+      try {
+        const confirmed = confirm(
           'Are you sure you want to clear all read articles? This will mark all articles as unread and restore the original feed order.'
         )
-      ) {
+        
+        if (confirmed) {
+          resetAllReadArticles()
+        }
+      } catch (error) {
+        console.error('Error in reset button handler:', error)
+        // Fallback: just reset without confirmation if confirm fails
         resetAllReadArticles()
       }
-    })
+    }, { passive: false })
   }
 }
 
