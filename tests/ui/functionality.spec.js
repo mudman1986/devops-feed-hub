@@ -476,10 +476,10 @@ test.describe("Timeframe Selector Tests", () => {
 });
 
 /**
- * View Toggle Functionality Tests
- * Tests compact/comfortable view switching
+ * View Selector Functionality Tests
+ * Tests compact/comfortable view switching via dropdown
  */
-test.describe("View Toggle Tests", () => {
+test.describe("View Selector Tests", () => {
   test.beforeEach(async ({ page }) => {
     await page.goto("/");
     // Clear localStorage to start fresh
@@ -487,78 +487,55 @@ test.describe("View Toggle Tests", () => {
     await page.reload();
   });
 
-  test("should toggle between comfortable and compact views", async ({
+  test("should switch between comfortable and compact views", async ({
     page,
   }) => {
     const htmlElement = page.locator("html");
-    const viewToggle = page.locator("#view-toggle");
+    const viewSelect = page.locator("#view-select");
 
     // Should start without data-view attribute (comfortable mode)
     const initialView = await htmlElement.getAttribute("data-view");
     expect(initialView).toBeNull();
 
-    // Click view toggle
-    await viewToggle.click();
+    // Select compact view
+    await viewSelect.selectOption("compact");
 
     // Verify view changed to compact
     await expect(htmlElement).toHaveAttribute("data-view", "compact");
 
-    // Click again to go back to comfortable
-    await viewToggle.click();
+    // Select comfortable view
+    await viewSelect.selectOption("comfortable");
 
     // Verify view is back to comfortable (no data-view attribute)
     const finalView = await htmlElement.getAttribute("data-view");
     expect(finalView).toBeNull();
   });
 
-  test("should update button text when view changes", async ({ page }) => {
-    const viewToggle = page.locator("#view-toggle");
-    const viewText = page.locator("#view-text");
+  test("should have view selector in sidebar", async ({ page }) => {
+    const viewSelect = page.locator("#view-select");
+    await expect(viewSelect).toBeVisible();
 
-    // Get initial button text (should be "Compact")
-    const initialText = await viewText.textContent();
-    expect(initialText).toBe("Compact");
-
-    // Click toggle
-    await viewToggle.click();
-
-    // Verify text changed to "Comfortable"
-    await expect(viewText).toHaveText("Comfortable");
-
-    // Click again
-    await viewToggle.click();
-
-    // Verify text is back to "Compact"
-    await expect(viewText).toHaveText("Compact");
+    // Verify it's in the sidebar
+    const sidebar = page.locator("#sidebar");
+    const selectInSidebar = sidebar.locator("#view-select");
+    await expect(selectInSidebar).toBeVisible();
   });
 
-  test("should update view icon when toggling", async ({ page }) => {
-    const viewIcon = page.locator("#view-icon");
-    const viewToggle = page.locator("#view-toggle");
+  test("should have correct options in view selector", async ({ page }) => {
+    const viewSelect = page.locator("#view-select");
 
-    // Get initial icon content
-    const initialIcon = await viewIcon.innerHTML();
-
-    // Click toggle
-    await viewToggle.click();
-
-    // Wait for icon content to change
-    await page.waitForFunction(
-      ({ iconEl, initial }) => iconEl.innerHTML !== initial,
-      { iconEl: await viewIcon.elementHandle(), initial: initialIcon },
-    );
-
-    // Verify icon changed
-    const newIcon = await viewIcon.innerHTML();
-    expect(newIcon).not.toBe(initialIcon);
+    // Verify options exist
+    const options = await viewSelect.locator("option").allTextContents();
+    expect(options).toContain("Comfortable");
+    expect(options).toContain("Compact");
   });
 
   test("should persist view preference on reload", async ({ page }) => {
     const htmlElement = page.locator("html");
-    const viewToggle = page.locator("#view-toggle");
+    const viewSelect = page.locator("#view-select");
 
-    // Click toggle to change to compact view
-    await viewToggle.click();
+    // Select compact view
+    await viewSelect.selectOption("compact");
 
     // Wait for view to change
     await expect(htmlElement).toHaveAttribute("data-view", "compact");
@@ -572,10 +549,10 @@ test.describe("View Toggle Tests", () => {
   });
 
   test("should save view preference to localStorage", async ({ page }) => {
-    const viewToggle = page.locator("#view-toggle");
+    const viewSelect = page.locator("#view-select");
 
-    // Click toggle to change to compact view
-    await viewToggle.click();
+    // Select compact view
+    await viewSelect.selectOption("compact");
     await page.waitForTimeout(100);
 
     // Check localStorage
@@ -594,12 +571,17 @@ test.describe("View Toggle Tests", () => {
     // Verify the html element has the saved view
     const htmlElement = page.locator("html");
     await expect(htmlElement).toHaveAttribute("data-view", "compact");
+
+    // Verify the select has the saved value
+    const viewSelect = page.locator("#view-select");
+    const value = await viewSelect.inputValue();
+    expect(value).toBe("compact");
   });
 
   test("should apply compact spacing styles when in compact mode", async ({
     page,
   }) => {
-    const viewToggle = page.locator("#view-toggle");
+    const viewSelect = page.locator("#view-select");
     const feedSection = page.locator(".feed-section").first();
 
     if ((await feedSection.count()) === 0) {
@@ -612,7 +594,7 @@ test.describe("View Toggle Tests", () => {
     });
 
     // Switch to compact mode
-    await viewToggle.click();
+    await viewSelect.selectOption("compact");
     await page.waitForTimeout(100);
 
     // Get padding in compact mode
