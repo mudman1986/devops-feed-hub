@@ -1,7 +1,6 @@
 name: UI Tests
 
 on:
-  push:
   pull_request:
 
 concurrency:
