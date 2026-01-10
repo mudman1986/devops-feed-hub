@@ -84,10 +84,11 @@ def generate_markdown_summary(data: Dict[str, Any]) -> str:
     # Failed feeds
     if data["failed_feeds"]:
         summary.append("## ❌ Failed Feeds\n")
-        summary.append("| Feed Name | URL |")
-        summary.append("|-----------|-----|")
+        summary.append("| Feed Name | URL | Error |")
+        summary.append("|-----------|-----|-------|")
         for failed in data["failed_feeds"]:
-            summary.append(f"| {failed['name']} | {failed['url']} |")
+            error_reason = failed.get("error", "Unknown")
+            summary.append(f"| {failed['name']} | {failed['url']} | {error_reason} |")
         summary.append("")
 
     return "\n".join(summary)
@@ -151,10 +152,14 @@ def generate_failed_feeds_content(failed_feeds: list) -> str:
         for failed in failed_feeds:
             escaped_name = html_escape(failed["name"])
             escaped_url = html_escape(failed["url"])
+            # Get error reason, default to "Unknown" if not present
+            error_reason = failed.get("error", "Unknown")
+            escaped_error = html_escape(error_reason)
             content += f"""
             <div class="failed-feed-item">
                 <div class="failed-feed-name">{escaped_name}</div>
                 <div class="failed-feed-url">{escaped_url}</div>
+                <div class="failed-feed-error">Error: {escaped_error}</div>
             </div>
 """
         content += """
@@ -260,30 +265,144 @@ def generate_html_content(
 
     # If showing summary page
     if current_feed == "summary":
-        content += f"""
-        <h2>Summary</h2>
+        content += """
+        <h2>Feed Collection Summary</h2>
+        <div class="summary-intro">
+            Overview of RSS feed collection status and statistics.
+        </div>
         <div class="stats">
             <div class="stat-card">
+                <div class="stat-icon">
+                    <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <path d="M4 11a9 9 0 0 1 9 9"></path>
+                        <path d="M4 4a16 16 0 0 1 16 16"></path>
+                        <circle cx="5" cy="19" r="1"></circle>
+                    </svg>
+                </div>
                 <div class="stat-label">Total Feeds</div>
-                <div class="stat-value">{data["summary"]["total_feeds"]}</div>
+                <div class="stat-value">"""
+        content += f"{data['summary']['total_feeds']}"
+        content += """</div>
             </div>
             <div class="stat-card success">
+                <div class="stat-icon">
+                    <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                        <polyline points="9 12 11 14 15 10"></polyline>
+                    </svg>
+                </div>
                 <div class="stat-label">Successful</div>
-                <div class="stat-value">{data["summary"]["successful_feeds"]}</div>
+                <div class="stat-value">"""
+        content += f"{data['summary']['successful_feeds']}"
+        content += """</div>
             </div>
             <div class="stat-card error">
+                <div class="stat-icon">
+                    <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <path
+                            d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"
+                        ></path>
+                        <line x1="12" y1="9" x2="12" y2="13"></line>
+                        <line x1="12" y1="17" x2="12.01" y2="17"></line>
+                    </svg>
+                </div>
                 <div class="stat-label">Failed</div>
-                <div class="stat-value">{data["summary"]["failed_feeds"]}</div>
+                <div class="stat-value">"""
+        content += f"{data['summary']['failed_feeds']}"
+        content += """</div>
             </div>
             <div class="stat-card">
+                <div class="stat-icon">
+                    <svg
+                        width="32"
+                        height="32"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                    >
+                        <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+                        <polyline points="2 17 12 22 22 17"></polyline>
+                        <polyline points="2 12 12 17 22 12"></polyline>
+                    </svg>
+                </div>
                 <div class="stat-label">Total Articles</div>
-                <div class="stat-value">{data["summary"]["total_articles"]}</div>
+                <div class="stat-value">"""
+        content += f"{data['summary']['total_articles']}"
+        content += """</div>
             </div>
         </div>
 """
         # Add failed feeds section to summary page
         if data.get("failed_feeds"):
             content += generate_failed_feeds_content(data.get("failed_feeds", []))
+
+        # Add feed breakdown section
+        if data.get("feeds"):
+            content += """
+        <h2>Feed Breakdown</h2>
+        <div class="feed-breakdown">
+"""
+            # Sort feeds by article count (descending)
+            sorted_feeds = sorted(
+                data["feeds"].items(), key=lambda x: x[1]["count"], reverse=True
+            )
+
+            for feed_name, feed_data in sorted_feeds:
+                escaped_name = html_escape(feed_name)
+                article_count = feed_data["count"]
+                total_articles = data["summary"]["total_articles"]
+                percentage = (
+                    (article_count / total_articles * 100) if total_articles > 0 else 0
+                )
+                feed_slug = generate_feed_slug(feed_name)
+
+                content += f"""
+            <div class="feed-breakdown-item">
+                <div class="feed-breakdown-header">
+                    <a href="feed-{feed_slug}.html" class="feed-breakdown-name">
+                        {escaped_name}
+                    </a>
+                    <div class="feed-breakdown-count">{article_count} articles</div>
+                </div>
+                <div class="feed-breakdown-bar">
+                    <div class="feed-breakdown-fill" style="width: {percentage:.1f}%"></div>
+                </div>
+            </div>
+"""
+            content += """
+        </div>
+"""
+
         return content
 
     # If showing failed feeds page (deprecated - now part of summary)

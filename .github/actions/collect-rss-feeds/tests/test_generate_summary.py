@@ -791,8 +791,9 @@ class TestMultiPageGeneration(unittest.TestCase):
         self.assertIn("https://example.com/failed1", result)
         self.assertIn("https://example.com/failed2", result)
 
-        # Summary page should also have stats
-        self.assertIn("<h2>Summary</h2>", result)
+        # Summary page should also have stats (with new title)
+        self.assertIn("<h2>Feed Collection Summary</h2>", result)
+        self.assertIn("Error: Unknown", result)  # Should show error reason
 
     def test_generate_all_pages_with_failed_feeds(self):
         """Test that generate_all_pages includes failed feeds on summary page"""
@@ -904,6 +905,86 @@ class TestMultiPageGeneration(unittest.TestCase):
             f"{match.group() if match else 'N/A'}. "
             f"JavaScript should set timeframe from localStorage.",
         )
+
+    def test_failed_feeds_with_error_reasons(self):
+        """Test that failed feeds display error reasons"""
+        data_with_errors = self.sample_data.copy()
+        data_with_errors["failed_feeds"] = [
+            {
+                "name": "Broken Feed",
+                "url": "https://example.com/broken",
+                "error": "HTTP 404: Not Found",
+            },
+            {
+                "name": "Timeout Feed",
+                "url": "https://example.com/timeout",
+                "error": "Connection timeout",
+            },
+        ]
+
+        result = generate_html_page(data_with_errors, current_feed="summary")
+
+        # Check that error reasons are displayed
+        self.assertIn("Error: HTTP 404: Not Found", result)
+        self.assertIn("Error: Connection timeout", result)
+        self.assertIn("failed-feed-error", result)
+
+    def test_failed_feeds_without_error_defaults_to_unknown(self):
+        """Test that failed feeds without error field default to 'Unknown'"""
+        data_without_errors = self.sample_data.copy()
+        data_without_errors["failed_feeds"] = [
+            {"name": "Old Feed", "url": "https://example.com/old"}
+        ]
+
+        result = generate_html_page(data_without_errors, current_feed="summary")
+
+        # Check that default error is displayed
+        self.assertIn("Error: Unknown", result)
+
+    def test_summary_page_has_feed_breakdown(self):
+        """Test that summary page includes feed breakdown section"""
+        result = generate_html_page(self.sample_data, current_feed="summary")
+
+        # Check for feed breakdown section
+        self.assertIn("<h2>Feed Breakdown</h2>", result)
+        self.assertIn("feed-breakdown", result)
+        self.assertIn("feed-breakdown-item", result)
+        self.assertIn("feed-breakdown-bar", result)
+
+    def test_feed_breakdown_shows_article_counts(self):
+        """Test that feed breakdown shows correct article counts"""
+        result = generate_html_page(self.sample_data, current_feed="summary")
+
+        # Check that article counts are displayed (Test Blog 1 has 3, Test Blog 2 has 2)
+        # Note: The sample_data uses "Test Blog 1" and "Test Blog 2"
+        self.assertIn("2 articles", result)
+
+    def test_feed_breakdown_links_to_feed_pages(self):
+        """Test that feed breakdown links to individual feed pages"""
+        result = generate_html_page(self.sample_data, current_feed="summary")
+
+        # Check that feed links are present (slugified versions)
+        # The Multi Multilpagegen class sample_data uses "Test Feed 1" and "Test Feed 2"
+        self.assertIn('href="feed-test-feed-1.html"', result)
+        self.assertIn('href="feed-test-feed-2.html"', result)
+
+    def test_summary_page_has_icons_in_stat_cards(self):
+        """Test that summary page stat cards include SVG icons"""
+        result = generate_html_page(self.sample_data, current_feed="summary")
+
+        # Check for stat icons
+        self.assertIn("stat-icon", result)
+        # Check for SVG elements in stats (multiline format)
+        self.assertIn('width="32"', result)
+        self.assertIn('height="32"', result)
+
+    def test_summary_page_has_intro_text(self):
+        """Test that summary page includes introductory text"""
+        result = generate_html_page(self.sample_data, current_feed="summary")
+
+        # Check for intro section
+        self.assertIn("summary-intro", result)
+        self.assertIn("Overview of RSS feed collection status and statistics", result)
 
 
 if __name__ == "__main__":

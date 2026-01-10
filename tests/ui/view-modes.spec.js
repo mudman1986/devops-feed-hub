@@ -414,7 +414,6 @@ test.describe("Timeframe Filtering in Different Views", () => {
     }
 
     // Get initial counts
-    const initialTexts = await feedCounts.allTextContents();
 
     // Change timeframe
     await timeframeSelect.selectOption("30days");

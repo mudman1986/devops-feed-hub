@@ -8,13 +8,16 @@ import argparse
 import json
 import sys
 from datetime import datetime, timedelta, timezone
-from typing import Any, Dict, List, Optional
+from typing import Any, Dict, List, Optional, Tuple
+from urllib.error import HTTPError, URLError
 from urllib.request import Request, urlopen
 
 import feedparser
 
 
-def parse_rss_feed(url: str, since_time: datetime) -> Optional[List[Dict[str, Any]]]:
+def parse_rss_feed(
+    url: str, since_time: datetime
+) -> Tuple[Optional[List[Dict[str, Any]]], Optional[str]]:
     """
     Parse an RSS/Atom feed and return articles published after since_time
 
@@ -23,7 +26,8 @@ def parse_rss_feed(url: str, since_time: datetime) -> Optional[List[Dict[str, An
         since_time: datetime object - only return articles after this time
 
     Returns:
-        List of article dictionaries with 'title', 'link', 'published'
+        Tuple of (articles list, error message). If successful, error is None.
+        If failed, articles is None and error contains the reason.
     """
     articles = []
 
@@ -38,9 +42,8 @@ def parse_rss_feed(url: str, since_time: datetime) -> Optional[List[Dict[str, An
 
         # Check for parsing errors
         if feed.bozo and not feed.entries:
-            raise ValueError(
-                f"Feed parsing error: {feed.get('bozo_exception', 'Unknown error')}"
-            )
+            error_msg = str(feed.get("bozo_exception", "Unknown parsing error"))
+            raise ValueError(f"Feed parsing error: {error_msg}")
 
         # Process entries
         for entry in feed.entries:
@@ -74,13 +77,30 @@ def parse_rss_feed(url: str, since_time: datetime) -> Optional[List[Dict[str, An
                 # No date available, include it anyway
                 articles.append({"title": title, "link": link, "published": "Unknown"})
 
+    except HTTPError as e:
+        error_msg = f"HTTP {e.code}: {e.reason}"
+        print(f"Error fetching feed {url}: {error_msg}", file=sys.stderr)
+        return None, error_msg
+    except URLError as e:
+        error_msg = f"Connection error: {e.reason}"
+        print(f"Error fetching feed {url}: {error_msg}", file=sys.stderr)
+        return None, error_msg
+    except TimeoutError:
+        error_msg = "Connection timeout"
+        print(f"Error fetching feed {url}: {error_msg}", file=sys.stderr)
+        return None, error_msg
+    except ValueError as e:
+        error_msg = str(e)
+        print(f"Error fetching feed {url}: {error_msg}", file=sys.stderr)
+        return None, error_msg
     except Exception as e:  # pylint: disable=broad-exception-caught
-        # Return None to indicate this feed failed
+        # Catch any other exceptions and provide a generic error
         # We catch all exceptions here because network/parsing can fail in many ways
-        print(f"Error fetching feed {url}: {str(e)}", file=sys.stderr)
-        return None
+        error_msg = f"Unknown error: {str(e)}" if str(e) else "Unknown error"
+        print(f"Error fetching feed {url}: {error_msg}", file=sys.stderr)
+        return None, error_msg
 
-    return articles
+    return articles, None
 
 
 def main():
@@ -151,7 +171,7 @@ def main():
             continue
 
         print(f"Fetching {feed_name}...", file=sys.stderr)
-        articles = parse_rss_feed(feed_url, since_time)
+        articles, error = parse_rss_feed(feed_url, since_time)
 
         if articles is not None:
             results["feeds"][feed_name] = {
@@ -162,8 +182,11 @@ def main():
             total_articles += len(articles)
             print(f"  ✓ Found {len(articles)} new articles", file=sys.stderr)
         else:
-            results["failed_feeds"].append({"name": feed_name, "url": feed_url})
-            print("  ✗ Failed to fetch", file=sys.stderr)
+            error_reason = error if error else "Unknown"
+            results["failed_feeds"].append(
+                {"name": feed_name, "url": feed_url, "error": error_reason}
+            )
+            print(f"  ✗ Failed to fetch: {error_reason}", file=sys.stderr)
 
     # Add summary to results
     results["summary"] = {
