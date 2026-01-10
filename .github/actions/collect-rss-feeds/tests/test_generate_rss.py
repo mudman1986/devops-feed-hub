@@ -16,11 +16,11 @@ from generate_rss import (
     create_rss_feed,
     format_rfc822_date,
     generate_all_feeds,
-    generate_feed_slug,
     generate_individual_feed,
     generate_master_feed,
     parse_iso_timestamp,
 )
+from utils import generate_feed_slug
 
 
 def test_parse_iso_timestamp():

@@ -11,6 +11,8 @@ from datetime import datetime
 from typing import Any, Dict, List
 from xml.etree import ElementTree as ET
 
+from utils import generate_feed_slug
+
 
 def parse_iso_timestamp(iso_string: str) -> datetime:
     """
@@ -42,27 +44,6 @@ def format_rfc822_date(iso_date_str: str) -> str:
     except (ValueError, AttributeError):
         # If parsing fails, return current time
         return datetime.now().strftime("%a, %d %b %Y %H:%M:%S +0000")
-
-
-def generate_feed_slug(feed_name: str) -> str:
-    """
-    Generate a URL-safe slug from a feed name
-
-    Args:
-            feed_name: The feed name
-
-    Returns:
-            URL-safe slug string
-    """
-    feed_slug = feed_name.lower().replace(" ", "-").replace("/", "-")
-    # Remove any other non-alphanumeric characters except hyphens
-    feed_slug = "".join(c if c.isalnum() or c == "-" else "" for c in feed_slug)
-    # Remove consecutive hyphens
-    while "--" in feed_slug:
-        feed_slug = feed_slug.replace("--", "-")
-    # Remove leading/trailing hyphens
-    feed_slug = feed_slug.strip("-")
-    return feed_slug
 
 
 def create_rss_feed(
