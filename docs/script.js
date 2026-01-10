@@ -17,32 +17,27 @@ try {
 }
 
 htmlElement.setAttribute('data-theme', savedTheme)
+updateThemeButton(savedTheme)
 
-if (themeToggle) {
-  updateThemeButton(savedTheme)
+themeToggle.addEventListener('click', () => {
+  const currentTheme = htmlElement.getAttribute('data-theme')
+  const newTheme = currentTheme === 'light' ? 'dark' : 'light'
 
-  themeToggle.addEventListener('click', () => {
-    const currentTheme = htmlElement.getAttribute('data-theme')
-    const newTheme = currentTheme === 'light' ? 'dark' : 'light'
+  htmlElement.setAttribute('data-theme', newTheme)
 
-    htmlElement.setAttribute('data-theme', newTheme)
+  try {
+    localStorage.setItem('theme', newTheme)
+  } catch (e) {
+    // localStorage might be unavailable, theme will reset on reload
+    console.warn('Unable to save theme preference:', e)
+  }
 
-    try {
-      localStorage.setItem('theme', newTheme)
-    } catch (e) {
-      // localStorage might be unavailable, theme will reset on reload
-      console.warn('Unable to save theme preference:', e)
-    }
-
-    updateThemeButton(newTheme)
-  })
-}
+  updateThemeButton(newTheme)
+})
 
 function updateThemeButton (theme) {
   const iconSVG = document.getElementById('theme-icon')
   const themeText = document.getElementById('theme-text')
-
-  if (!iconSVG || !themeText) return
 
   if (theme === 'dark') {
     // Sun icon for light mode
@@ -54,47 +49,6 @@ function updateThemeButton (theme) {
     iconSVG.innerHTML =
       '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>'
     themeText.textContent = 'Dark Mode'
-  }
-}
-
-// View selector functionality (compact/comfortable)
-const viewSelect = document.getElementById('view-select')
-
-// Get saved view preference or default to comfortable
-let savedView = 'comfortable'
-try {
-  savedView = localStorage.getItem('view') || 'comfortable'
-} catch (e) {
-  // localStorage might be unavailable (privacy mode, quota exceeded, etc.)
-  console.warn('localStorage unavailable, using default view:', e)
-}
-
-// Set dropdown value and apply view
-if (viewSelect) {
-  viewSelect.value = savedView
-  applyView(savedView)
-
-  // Add change listener to dropdown
-  viewSelect.addEventListener('change', () => {
-    const view = viewSelect.value
-
-    // Save preference
-    try {
-      localStorage.setItem('view', view)
-    } catch (e) {
-      console.warn('Unable to save view preference:', e)
-    }
-
-    // Apply view
-    applyView(view)
-  })
-}
-
-function applyView (view) {
-  if (view && view !== 'comfortable') {
-    htmlElement.setAttribute('data-view', view)
-  } else {
-    htmlElement.removeAttribute('data-view')
   }
 }
 
