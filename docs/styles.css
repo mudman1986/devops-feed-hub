@@ -484,6 +484,16 @@ h3 {
   margin-top: 0.5rem;
 }
 
+/* List view - style no-articles message to match */
+[data-view="list"] .no-articles {
+  background-color: transparent;
+  border-radius: 0;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  font-style: normal;
+  border-bottom: 1px dotted var(--border-primary);
+}
+
 .feed-nav {
   display: flex;
   flex-direction: column;
