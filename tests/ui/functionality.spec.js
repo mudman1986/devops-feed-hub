@@ -613,6 +613,17 @@ test.describe("View Selector Tests", () => {
   test("should apply all view modes correctly", async ({ page }) => {
     const htmlElement = page.locator("html");
     const viewSelect = page.locator("#view-select");
+    
+    // Open sidebar if it's collapsed (on mobile/tablet)
+    const sidebar = page.locator("#sidebar");
+    const sidebarCollapsed = await sidebar.evaluate(el => el.classList.contains('collapsed')).catch(() => false);
+    if (sidebarCollapsed) {
+      const navToggle = page.locator("#nav-toggle");
+      if (await navToggle.count() > 0) {
+        await navToggle.click();
+        await page.waitForTimeout(300);
+      }
+    }
 
     // Test each view mode
     const viewModes = ["comfortable", "cozy", "compact", "dense", "list"];
