@@ -265,19 +265,19 @@ def generate_html_content(
         <div class="stats">
             <div class="stat-card">
                 <div class="stat-label">Total Feeds</div>
-                <div class="stat-value">{data['summary']['total_feeds']}</div>
+                <div class="stat-value">{data["summary"]["total_feeds"]}</div>
             </div>
             <div class="stat-card success">
                 <div class="stat-label">Successful</div>
-                <div class="stat-value">{data['summary']['successful_feeds']}</div>
+                <div class="stat-value">{data["summary"]["successful_feeds"]}</div>
             </div>
             <div class="stat-card error">
                 <div class="stat-label">Failed</div>
-                <div class="stat-value">{data['summary']['failed_feeds']}</div>
+                <div class="stat-value">{data["summary"]["failed_feeds"]}</div>
             </div>
             <div class="stat-card">
                 <div class="stat-label">Total Articles</div>
-                <div class="stat-value">{data['summary']['total_articles']}</div>
+                <div class="stat-value">{data["summary"]["total_articles"]}</div>
             </div>
         </div>
 """

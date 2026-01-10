@@ -125,22 +125,26 @@ test.describe("View Mode Selector", () => {
       test.skip();
     }
 
-    // Get styles in List view (default)
-    const listBorder = await feedSection.evaluate((el) => {
-      return window.getComputedStyle(el).border;
+    // Get background color in List view (default) - should be transparent
+    const listBgColor = await feedSection.evaluate((el) => {
+      return window.getComputedStyle(el).backgroundColor;
     });
 
     // Switch to Card view
     await viewSelect.selectOption("card");
     await page.waitForTimeout(100);
 
-    // Get styles in Card view
-    const cardBorder = await feedSection.evaluate((el) => {
-      return window.getComputedStyle(el).border;
+    // Get background color in Card view - should have a background
+    const cardBgColor = await feedSection.evaluate((el) => {
+      return window.getComputedStyle(el).backgroundColor;
     });
 
-    // Borders should be different
-    expect(cardBorder).not.toBe(listBorder);
+    // Background colors should be different
+    // List view should be transparent (rgba(0, 0, 0, 0))
+    // Card view should have a color
+    expect(listBgColor).toContain("rgba(0, 0, 0, 0)");
+    expect(cardBgColor).not.toContain("rgba(0, 0, 0, 0)");
+    expect(cardBgColor).not.toBe(listBgColor);
   });
 
   test("should show empty feeds in List view", async ({ page }) => {
@@ -184,6 +188,115 @@ test.describe("View Mode Selector", () => {
     });
 
     expect(position).toBe("sticky");
+  });
+
+  test("view selector should stay visible when scrolling sidebar content", async ({
+    page,
+  }) => {
+    // Open sidebar if collapsed
+    const sidebar = page.locator("#sidebar");
+    const isCollapsed = await sidebar
+      .evaluate((el) => el.classList.contains("collapsed"))
+      .catch(() => false);
+
+    if (isCollapsed) {
+      const navToggle = page.locator("#nav-toggle");
+      if ((await navToggle.count()) > 0) {
+        await navToggle.click();
+        await page.waitForTimeout(300);
+      }
+    }
+
+    const sidebarContent = page.locator(".sidebar-content");
+    const sidebarFooter = page.locator(".sidebar-footer");
+    const viewSelect = page.locator("#view-select");
+
+    // Check if sidebar has scrollable content
+    const hasScroll = await sidebarContent.evaluate((el) => {
+      return el.scrollHeight > el.clientHeight;
+    });
+
+    if (!hasScroll) {
+      // If no scroll, skip this test
+      test.skip();
+    }
+
+    // Get initial footer position
+    const initialFooterBox = await sidebarFooter.boundingBox();
+    const initialSelectBox = await viewSelect.boundingBox();
+
+    // Verify footer and selector are initially visible
+    expect(initialFooterBox).not.toBeNull();
+    expect(initialSelectBox).not.toBeNull();
+    await expect(sidebarFooter).toBeVisible();
+    await expect(viewSelect).toBeVisible();
+
+    // Scroll the sidebar content to middle
+    await sidebarContent.evaluate((el) => {
+      el.scrollTop = el.scrollHeight / 2;
+    });
+    await page.waitForTimeout(100);
+
+    // Footer should still be visible and at the same viewport position
+    const afterScrollFooterBox = await sidebarFooter.boundingBox();
+    const afterScrollSelectBox = await viewSelect.boundingBox();
+
+    expect(afterScrollFooterBox).not.toBeNull();
+    expect(afterScrollSelectBox).not.toBeNull();
+    await expect(sidebarFooter).toBeVisible();
+    await expect(viewSelect).toBeVisible();
+
+    // Footer should stay at approximately the same Y position (sticky behavior)
+    if (initialFooterBox && afterScrollFooterBox) {
+      const yDifference = Math.abs(initialFooterBox.y - afterScrollFooterBox.y);
+      expect(yDifference).toBeLessThan(5); // Allow small rounding differences
+    }
+
+    // Scroll to bottom
+    await sidebarContent.evaluate((el) => {
+      el.scrollTop = el.scrollHeight;
+    });
+    await page.waitForTimeout(100);
+
+    // Footer should still be visible
+    await expect(sidebarFooter).toBeVisible();
+    await expect(viewSelect).toBeVisible();
+  });
+
+  test("sidebar should have proper structure for sticky positioning", async ({
+    page,
+  }) => {
+    const sidebar = page.locator("#sidebar");
+    const sidebarContent = page.locator(".sidebar-content");
+    const sidebarFooter = page.locator(".sidebar-footer");
+
+    // Verify structure exists
+    await expect(sidebar).toBeVisible();
+    await expect(sidebarContent).toBeVisible();
+    await expect(sidebarFooter).toBeVisible();
+
+    // Check sidebar is flex container
+    const sidebarDisplay = await sidebar.evaluate((el) => {
+      return window.getComputedStyle(el).display;
+    });
+    expect(sidebarDisplay).toBe("flex");
+
+    const sidebarFlexDirection = await sidebar.evaluate((el) => {
+      return window.getComputedStyle(el).flexDirection;
+    });
+    expect(sidebarFlexDirection).toBe("column");
+
+    // Check sidebar-content has overflow
+    const contentOverflowY = await sidebarContent.evaluate((el) => {
+      return window.getComputedStyle(el).overflowY;
+    });
+    expect(contentOverflowY).toBe("auto");
+
+    // Check footer has flex-shrink: 0 (doesn't shrink)
+    const footerFlexShrink = await sidebarFooter.evaluate((el) => {
+      return window.getComputedStyle(el).flexShrink;
+    });
+    expect(footerFlexShrink).toBe("0");
   });
 });
 

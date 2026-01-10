@@ -100,6 +100,10 @@ Before completing any task and presenting work as finished, verify:
   - Run `python3 -m pytest .github/actions/collect-rss-feeds/tests/ -v` for Python
   - Run `npm run test:ui` for Playwright tests
   - Fix failures immediately and rerun until all pass
+- [ ] **Bug fixes require test-driven approach**:
+  - **ALWAYS assign bugs to test-runner agent first**
+  - Test agent will create failing test → fix bug → verify test passes
+  - This ensures bugs are properly reproduced and fixed
 - [ ] **Use test-runner and ui-specialist agents**: Before committing, use specialized agents to verify your work
   - Use `test-runner` agent to run all linters and tests
   - Use `ui-specialist` agent to review UI changes for responsiveness and accessibility
