@@ -15,3 +15,6 @@ max-line-length=100
 [DESIGN]
 # Maximum number of local variables for function / method body
 max-locals=20
+
+# Maximum number of public methods for a class
+max-public-methods=30
