@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" data-theme="dark">
   <head>
     <meta charset="UTF-8" />
@@ -35,7 +35,7 @@
           class="settings-back-button"
           id="settings-back-button"
           aria-label="Back to feeds"
-          onclick="window.location.href='index.html'"
+          onclick="window.location.href = 'index.html'"
         >
           <svg
             width="16"
@@ -206,284 +206,288 @@
     <script src="script.js"></script>
     <script>
       // Settings page-specific functionality
-      ;(function () {
-        'use strict'
+      (function () {
+        "use strict";
 
         // Get all available feeds from navigation
         function getAllFeeds() {
           // This will be populated when the main index.html is generated
           // For now, we'll fetch it from the existing navigation if available
-          const feeds = []
+          const feeds = [];
           // We'll populate this dynamically from localStorage or a fetch
-          return feeds
+          return feeds;
         }
 
         // Initialize settings page
         function initSettings() {
           // Menu navigation
-          const menuItems = document.querySelectorAll('.settings-menu-item')
-          const sections = document.querySelectorAll('.settings-section')
+          const menuItems = document.querySelectorAll(".settings-menu-item");
+          const sections = document.querySelectorAll(".settings-section");
 
           menuItems.forEach((item) => {
-            item.addEventListener('click', () => {
-              const sectionId = item.getAttribute('data-section')
+            item.addEventListener("click", () => {
+              const sectionId = item.getAttribute("data-section");
 
               // Update active menu item
-              menuItems.forEach((mi) => mi.classList.remove('active'))
-              item.classList.add('active')
+              menuItems.forEach((mi) => mi.classList.remove("active"));
+              item.classList.add("active");
 
               // Update active section
               sections.forEach((section) => {
-                section.classList.remove('active')
-              })
+                section.classList.remove("active");
+              });
               const targetSection = document.getElementById(
-                `${sectionId}-section`
-              )
+                `${sectionId}-section`,
+              );
               if (targetSection) {
-                targetSection.classList.add('active')
+                targetSection.classList.add("active");
               }
-            })
-          })
+            });
+          });
 
           // Load current settings
-          loadSettings()
+          loadSettings();
 
           // Setup event listeners for settings controls
-          setupSettingsListeners()
+          setupSettingsListeners();
 
           // Load and display feed checkboxes
-          loadFeedCheckboxes()
+          loadFeedCheckboxes();
         }
 
         function loadSettings() {
           // Load theme
           try {
-            const theme = localStorage.getItem('theme') || 'dark'
-            const themeSelect = document.getElementById('theme-setting')
-            if (themeSelect) themeSelect.value = theme
+            const theme = localStorage.getItem("theme") || "dark";
+            const themeSelect = document.getElementById("theme-setting");
+            if (themeSelect) themeSelect.value = theme;
           } catch (e) {
-            console.warn('Unable to load theme setting:', e)
+            console.warn("Unable to load theme setting:", e);
           }
 
           // Load view
           try {
-            const view = localStorage.getItem('view') || 'list'
-            const viewSelect = document.getElementById('view-setting')
-            if (viewSelect) viewSelect.value = view
+            const view = localStorage.getItem("view") || "list";
+            const viewSelect = document.getElementById("view-setting");
+            if (viewSelect) viewSelect.value = view;
           } catch (e) {
-            console.warn('Unable to load view setting:', e)
+            console.warn("Unable to load view setting:", e);
           }
 
           // Load timeframe
           try {
-            const timeframe = localStorage.getItem('timeframe') || '1day'
-            const timeframeSelect = document.getElementById('timeframe-setting')
-            if (timeframeSelect) timeframeSelect.value = timeframe
+            const timeframe = localStorage.getItem("timeframe") || "1day";
+            const timeframeSelect =
+              document.getElementById("timeframe-setting");
+            if (timeframeSelect) timeframeSelect.value = timeframe;
           } catch (e) {
-            console.warn('Unable to load timeframe setting:', e)
+            console.warn("Unable to load timeframe setting:", e);
           }
         }
 
         function setupSettingsListeners() {
           // Theme setting
-          const themeSelect = document.getElementById('theme-setting')
+          const themeSelect = document.getElementById("theme-setting");
           if (themeSelect) {
-            themeSelect.addEventListener('change', (e) => {
-              const theme = e.target.value
+            themeSelect.addEventListener("change", (e) => {
+              const theme = e.target.value;
               try {
-                localStorage.setItem('theme', theme)
-                document.documentElement.setAttribute('data-theme', theme)
+                localStorage.setItem("theme", theme);
+                document.documentElement.setAttribute("data-theme", theme);
               } catch (err) {
-                console.warn('Unable to save theme:', err)
+                console.warn("Unable to save theme:", err);
               }
-            })
+            });
           }
 
           // View setting
-          const viewSelect = document.getElementById('view-setting')
+          const viewSelect = document.getElementById("view-setting");
           if (viewSelect) {
-            viewSelect.addEventListener('change', (e) => {
-              const view = e.target.value
+            viewSelect.addEventListener("change", (e) => {
+              const view = e.target.value;
               try {
-                localStorage.setItem('view', view)
+                localStorage.setItem("view", view);
               } catch (err) {
-                console.warn('Unable to save view:', err)
+                console.warn("Unable to save view:", err);
               }
-            })
+            });
           }
 
           // Timeframe setting
-          const timeframeSelect = document.getElementById('timeframe-setting')
+          const timeframeSelect = document.getElementById("timeframe-setting");
           if (timeframeSelect) {
-            timeframeSelect.addEventListener('change', (e) => {
-              const timeframe = e.target.value
+            timeframeSelect.addEventListener("change", (e) => {
+              const timeframe = e.target.value;
               try {
-                localStorage.setItem('timeframe', timeframe)
+                localStorage.setItem("timeframe", timeframe);
               } catch (err) {
-                console.warn('Unable to save timeframe:', err)
+                console.warn("Unable to save timeframe:", err);
               }
-            })
+            });
           }
 
           // Select/Deselect all feeds
-          const selectAllBtn = document.getElementById('select-all-feeds')
-          const deselectAllBtn = document.getElementById('deselect-all-feeds')
+          const selectAllBtn = document.getElementById("select-all-feeds");
+          const deselectAllBtn = document.getElementById("deselect-all-feeds");
 
           if (selectAllBtn) {
-            selectAllBtn.addEventListener('click', () => {
+            selectAllBtn.addEventListener("click", () => {
               const checkboxes = document.querySelectorAll(
-                '.feed-checkbox-item input[type="checkbox"]'
-              )
+                '.feed-checkbox-item input[type="checkbox"]',
+              );
               checkboxes.forEach((cb) => {
-                cb.checked = true
-              })
-              saveFeedSettings()
-            })
+                cb.checked = true;
+              });
+              saveFeedSettings();
+            });
           }
 
           if (deselectAllBtn) {
-            deselectAllBtn.addEventListener('click', () => {
+            deselectAllBtn.addEventListener("click", () => {
               const checkboxes = document.querySelectorAll(
-                '.feed-checkbox-item input[type="checkbox"]'
-              )
+                '.feed-checkbox-item input[type="checkbox"]',
+              );
               checkboxes.forEach((cb) => {
-                cb.checked = false
-              })
-              saveFeedSettings()
-            })
+                cb.checked = false;
+              });
+              saveFeedSettings();
+            });
           }
         }
 
         function loadFeedCheckboxes() {
           // Get enabled feeds from localStorage
-          let enabledFeeds = []
+          let enabledFeeds = [];
           try {
-            const stored = localStorage.getItem('enabledFeeds')
-            enabledFeeds = stored ? JSON.parse(stored) : []
+            const stored = localStorage.getItem("enabledFeeds");
+            enabledFeeds = stored ? JSON.parse(stored) : [];
           } catch (e) {
-            console.warn('Unable to load enabled feeds:', e)
+            console.warn("Unable to load enabled feeds:", e);
           }
 
-          const feedContainer = document.getElementById('feed-checkboxes')
-          if (!feedContainer) return
+          const feedContainer = document.getElementById("feed-checkboxes");
+          if (!feedContainer) return;
 
           // Try to fetch the feed list from index.html
-          fetch('index.html')
+          fetch("index.html")
             .then((response) => response.text())
             .then((html) => {
-              const parser = new DOMParser()
-              const doc = parser.parseFromString(html, 'text/html')
-              const feedListEl = doc.getElementById('feed-list-data')
-              
-              let feeds = []
+              const parser = new DOMParser();
+              const doc = parser.parseFromString(html, "text/html");
+              const feedListEl = doc.getElementById("feed-list-data");
+
+              let feeds = [];
               if (feedListEl && feedListEl.textContent) {
                 try {
-                  feeds = JSON.parse(feedListEl.textContent)
+                  feeds = JSON.parse(feedListEl.textContent);
                 } catch (e) {
-                  console.warn('Unable to parse feed list:', e)
+                  console.warn("Unable to parse feed list:", e);
                 }
               }
 
               // If fetch failed or no data, use default list
               if (feeds.length === 0) {
-                feeds = getDefaultFeedList()
+                feeds = getDefaultFeedList();
               }
 
-              renderFeedCheckboxes(feeds, enabledFeeds, feedContainer)
+              renderFeedCheckboxes(feeds, enabledFeeds, feedContainer);
             })
             .catch(() => {
               // If fetch fails, use default list
-              const feeds = getDefaultFeedList()
-              renderFeedCheckboxes(feeds, enabledFeeds, feedContainer)
-            })
+              const feeds = getDefaultFeedList();
+              renderFeedCheckboxes(feeds, enabledFeeds, feedContainer);
+            });
         }
 
         function getDefaultFeedList() {
           return [
-            'Atlassian DevOps',
-            'AWS DevOps Blog',
-            'Azure Updates',
-            'CircleCI Blog',
-            'Docker Blog',
-            'GitLab Blog',
-            'GitHub Blog',
-            'GitHub Changelog',
-            'HashiCorp Blog',
-            'Jenkins Blog',
-            'Kubernetes Blog',
-            'Microsoft DevOps Blog',
-            'Microsoft Entra Blog',
-            'Microsoft Security',
-            'Red Hat Developer'
-          ]
+            "Atlassian DevOps",
+            "AWS DevOps Blog",
+            "Azure Updates",
+            "CircleCI Blog",
+            "Docker Blog",
+            "GitLab Blog",
+            "GitHub Blog",
+            "GitHub Changelog",
+            "HashiCorp Blog",
+            "Jenkins Blog",
+            "Kubernetes Blog",
+            "Microsoft DevOps Blog",
+            "Microsoft Entra Blog",
+            "Microsoft Security",
+            "Red Hat Developer",
+          ];
         }
 
         function renderFeedCheckboxes(feeds, enabledFeeds, container) {
           // If no feeds are stored yet, enable all by default
           if (enabledFeeds.length === 0) {
-            enabledFeeds = [...feeds]
+            enabledFeeds = [...feeds];
             try {
-              localStorage.setItem('enabledFeeds', JSON.stringify(enabledFeeds))
+              localStorage.setItem(
+                "enabledFeeds",
+                JSON.stringify(enabledFeeds),
+              );
             } catch (e) {
-              console.warn('Unable to save enabled feeds:', e)
+              console.warn("Unable to save enabled feeds:", e);
             }
           }
 
           // Sort feeds alphabetically
-          feeds.sort()
+          feeds.sort();
 
           // Create checkboxes
           feeds.forEach((feedName) => {
-            const item = document.createElement('div')
-            item.className = 'feed-checkbox-item'
+            const item = document.createElement("div");
+            item.className = "feed-checkbox-item";
 
-            const checkbox = document.createElement('input')
-            checkbox.type = 'checkbox'
-            checkbox.id = `feed-${feedName.replace(/\s+/g, '-').toLowerCase()}`
-            checkbox.value = feedName
-            checkbox.checked = enabledFeeds.includes(feedName)
+            const checkbox = document.createElement("input");
+            checkbox.type = "checkbox";
+            checkbox.id = `feed-${feedName.replace(/\s+/g, "-").toLowerCase()}`;
+            checkbox.value = feedName;
+            checkbox.checked = enabledFeeds.includes(feedName);
 
-            checkbox.addEventListener('change', saveFeedSettings)
+            checkbox.addEventListener("change", saveFeedSettings);
 
-            const label = document.createElement('label')
-            label.setAttribute('for', checkbox.id)
-            label.textContent = feedName
+            const label = document.createElement("label");
+            label.setAttribute("for", checkbox.id);
+            label.textContent = feedName;
 
-            item.appendChild(checkbox)
-            item.appendChild(label)
-            container.appendChild(item)
-          })
+            item.appendChild(checkbox);
+            item.appendChild(label);
+            container.appendChild(item);
+          });
         }
 
         function saveFeedSettings() {
           const checkboxes = document.querySelectorAll(
-            '.feed-checkbox-item input[type="checkbox"]'
-          )
-          const enabledFeeds = []
+            '.feed-checkbox-item input[type="checkbox"]',
+          );
+          const enabledFeeds = [];
 
           checkboxes.forEach((cb) => {
             if (cb.checked) {
-              enabledFeeds.push(cb.value)
+              enabledFeeds.push(cb.value);
             }
-          })
+          });
 
           try {
-            localStorage.setItem('enabledFeeds', JSON.stringify(enabledFeeds))
+            localStorage.setItem("enabledFeeds", JSON.stringify(enabledFeeds));
           } catch (e) {
-            console.warn('Unable to save feed settings:', e)
+            console.warn("Unable to save feed settings:", e);
           }
         }
 
         // Initialize when DOM is ready
         if (
-          document.readyState === 'complete' ||
-          document.readyState === 'interactive'
+          document.readyState === "complete" ||
+          document.readyState === "interactive"
         ) {
-          setTimeout(initSettings, 0)
+          setTimeout(initSettings, 0);
         } else {
-          document.addEventListener('DOMContentLoaded', initSettings)
+          document.addEventListener("DOMContentLoaded", initSettings);
         }
-      })()
+      })();
     </script>
   </body>
 </html>

@@ -182,7 +182,7 @@ function applyTimeframeFilter (timeframe) {
       try {
         // Parse the ISO timestamp from data-published attribute
         const publishDate = new Date(publishedISO)
-        if (!isNaN(publishDate.getTime())) {
+        if (!Number.isNaN(publishDate.getTime())) {
           if (publishDate >= cutoffTime) {
             article.removeAttribute('data-hidden-by-timeframe')
             article.style.display = ''
