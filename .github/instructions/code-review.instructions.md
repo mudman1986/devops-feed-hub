@@ -57,6 +57,64 @@ docker run --rm \
   -e RUN_LOCAL=true \
   -e VALIDATE_ALL_CODEBASE=true \
   -e DEFAULT_BRANCH=main \
+  -e IGNORE_GITIGNORED_FILES=true \
+  -e SAVE_SUPER_LINTER_SUMMARY=true \
+  -v $(pwd):/tmp/lint \
+  ghcr.io/super-linter/super-linter:v8.3.2
+```
+
+**IMPORTANT:** 
+- Always set `VALIDATE_ALL_CODEBASE=true` to ensure comprehensive validation
+- Always set `IGNORE_GITIGNORED_FILES=true` to respect .gitignore
+- Always set `SAVE_SUPER_LINTER_SUMMARY=true` to generate summary reports
+- All linter configuration files are in `.github/linters/`
+
+#### Super-Linter autofix
+
+Use autofix mode to automatically correct linting errors:
+
+```bash
+docker run --rm \
+  -e RUN_LOCAL=true \
+  -e VALIDATE_ALL_CODEBASE=true \
+  -e DEFAULT_BRANCH=main \
+  -e IGNORE_GITIGNORED_FILES=true \
+  -e SAVE_SUPER_LINTER_SUMMARY=true \
+  -e FIX_PYTHON_BLACK=true \
+  -e FIX_PYTHON_ISORT=true \
+  -e FIX_SHELL_SHFMT=true \
+  -e FIX_MARKDOWN_PRETTIER=true \
+  -e FIX_YAML_PRETTIER=true \
+  -e FIX_JAVASCRIPT_PRETTIER=true \
+  -e FIX_CSS_PRETTIER=true \
+  -e FIX_HTML_PRETTIER=true \
+  -e FIX_NATURAL_LANGUAGE=true \
+  -v $(pwd):/tmp/lint \
+  ghcr.io/super-linter/super-linter:v8.3.2
+```
+
+Common FIX\_ variables:
+
+- `FIX_PYTHON_BLACK=true` - autoformat Python with Black
+- `FIX_PYTHON_ISORT=true` - autosort Python imports
+- `FIX_SHELL_SHFMT=true` - autoformat shell scripts (tabs for indentation)
+- `FIX_MARKDOWN_PRETTIER=true` - autoformat Markdown
+- `FIX_YAML_PRETTIER=true` - autoformat YAML
+- `FIX_JAVASCRIPT_PRETTIER=true` - autoformat JavaScript
+- `FIX_CSS_PRETTIER=true` - autoformat CSS
+- `FIX_HTML_PRETTIER=true` - autoformat HTML
+- `FIX_NATURAL_LANGUAGE=true` - autoformat natural language files
+#### Super-Linter Validation
+
+**MANDATORY: Always run super-linter locally before pushing changes**
+
+Run super-linter to validate all code in the repository:
+
+```bash
+docker run --rm \
+  -e RUN_LOCAL=true \
+  -e VALIDATE_ALL_CODEBASE=true \
+  -e DEFAULT_BRANCH=main \
   -v $(pwd):/tmp/lint \
   ghcr.io/super-linter/super-linter:v8.3.2
 ```

@@ -52,6 +52,37 @@ This repository is maintained primarily by GitHub Copilot. Path-specific instruc
     -e RUN_LOCAL=true \
     -e VALIDATE_ALL_CODEBASE=true \
     -e DEFAULT_BRANCH=main \
+    -e IGNORE_GITIGNORED_FILES=true \
+    -e SAVE_SUPER_LINTER_SUMMARY=true \
+    -e FIX_PYTHON_BLACK=true \
+    -e FIX_PYTHON_ISORT=true \
+    -e FIX_SHELL_SHFMT=true \
+    -e FIX_MARKDOWN_PRETTIER=true \
+    -e FIX_YAML_PRETTIER=true \
+    -e FIX_JAVASCRIPT_PRETTIER=true \
+    -e FIX_CSS_PRETTIER=true \
+    -e FIX_HTML_PRETTIER=true \
+    -e FIX_NATURAL_LANGUAGE=true \
+    -v $(pwd):/tmp/lint \
+    ghcr.io/super-linter/super-linter:v8.3.2
+  ```
+- **DO NOT use USE_FIND_ALGORITHM** - it's incompatible with VALIDATE_ALL_CODEBASE
+- **Always use VALIDATE_ALL_CODEBASE=true** to lint the entire codebase
+- **Always use DEFAULT_BRANCH=main** for this repository
+- **Always use IGNORE_GITIGNORED_FILES=true** to respect .gitignore
+- **Always use SAVE_SUPER_LINTER_SUMMARY=true** to generate summary reports
+- **Enable all FIX_\* flags** to automatically fix formatting issues
+- **Linter configs**: All linter configuration files are in `.github/linters/`
+- Fix **ALL** remaining linting errors before committing (not just errors you introduced)
+### Running Super-Linter Locally
+
+- **MANDATORY: Always run super-linter locally** before pushing changes
+- Run using Docker to match CI environment with autofix enabled:
+  ```bash
+  docker run --rm \
+    -e RUN_LOCAL=true \
+    -e VALIDATE_ALL_CODEBASE=true \
+    -e DEFAULT_BRANCH=main \
     -e FIX_PYTHON_BLACK=true \
     -e FIX_PYTHON_ISORT=true \
     -e FIX_SHELL_SHFMT=true \
