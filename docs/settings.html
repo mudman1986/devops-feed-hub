@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="DevOps Feed Hub Settings - Configure your RSS feed preferences"
+    />
+    <title>Settings - DevOps Feed Hub</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-title">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M4 11a9 9 0 0 1 9 9"></path>
+          <path d="M4 4a16 16 0 0 1 16 16"></path>
+          <circle cx="5" cy="19" r="1"></circle>
+        </svg>
+        DevOps Feed Hub
+      </div>
+      <div class="header-controls">
+        <button
+          class="settings-back-button"
+          id="settings-back-button"
+          aria-label="Back to feeds"
+          onclick="window.location.href='index.html'"
+        >
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          <span>Back to Feeds</span>
+        </button>
+      </div>
+    </div>
+    <div class="settings-container">
+      <nav class="settings-sidebar">
+        <div class="settings-menu">
+          <div class="settings-menu-item active" data-section="appearance">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="14.31" y1="8" x2="20.05" y2="17.94"></line>
+              <line x1="9.69" y1="8" x2="21.17" y2="8"></line>
+              <line x1="7.38" y1="12" x2="13.12" y2="2.06"></line>
+              <line x1="9.69" y1="16" x2="3.95" y2="6.06"></line>
+              <line x1="14.31" y1="16" x2="2.83" y2="16"></line>
+              <line x1="16.62" y1="12" x2="10.88" y2="21.94"></line>
+            </svg>
+            <span>Appearance</span>
+          </div>
+          <div class="settings-menu-item" data-section="feeds">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M4 11a9 9 0 0 1 9 9"></path>
+              <path d="M4 4a16 16 0 0 1 16 16"></path>
+              <circle cx="5" cy="19" r="1"></circle>
+            </svg>
+            <span>Feed Selection</span>
+          </div>
+          <div class="settings-menu-item" data-section="display">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+              <line x1="8" y1="21" x2="16" y2="21"></line>
+              <line x1="12" y1="17" x2="12" y2="21"></line>
+            </svg>
+            <span>Display Options</span>
+          </div>
+        </div>
+      </nav>
+      <main class="settings-content">
+        <section class="settings-section active" id="appearance-section">
+          <h2 class="settings-section-title">Appearance</h2>
+          <div class="settings-group">
+            <div class="settings-item">
+              <div class="settings-item-label">
+                <label for="theme-setting">Theme</label>
+                <p class="settings-item-description">
+                  Choose between light and dark theme
+                </p>
+              </div>
+              <div class="settings-item-control">
+                <select id="theme-setting" class="settings-select">
+                  <option value="dark">Dark</option>
+                  <option value="light">Light</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="settings-section" id="feeds-section">
+          <h2 class="settings-section-title">Feed Selection</h2>
+          <div class="settings-group">
+            <p class="settings-group-description">
+              Select which feeds you want to see. Disabled feeds will be hidden
+              from the navigation and main view.
+            </p>
+            <div class="settings-item">
+              <div class="settings-item-actions">
+                <button
+                  id="select-all-feeds"
+                  class="settings-action-button"
+                  aria-label="Select all feeds"
+                >
+                  Select All
+                </button>
+                <button
+                  id="deselect-all-feeds"
+                  class="settings-action-button"
+                  aria-label="Deselect all feeds"
+                >
+                  Deselect All
+                </button>
+              </div>
+            </div>
+            <div id="feed-checkboxes" class="feed-checkboxes">
+              <!-- Feed checkboxes will be dynamically inserted here -->
+            </div>
+          </div>
+        </section>
+
+        <section class="settings-section" id="display-section">
+          <h2 class="settings-section-title">Display Options</h2>
+          <div class="settings-group">
+            <div class="settings-item">
+              <div class="settings-item-label">
+                <label for="view-setting">View Mode</label>
+                <p class="settings-item-description">
+                  Choose how articles are displayed
+                </p>
+              </div>
+              <div class="settings-item-control">
+                <select id="view-setting" class="settings-select">
+                  <option value="list">List View</option>
+                  <option value="card">Card View</option>
+                </select>
+              </div>
+            </div>
+            <div class="settings-item">
+              <div class="settings-item-label">
+                <label for="timeframe-setting">Default Time Range</label>
+                <p class="settings-item-description">
+                  Set the default time range for article filtering
+                </p>
+              </div>
+              <div class="settings-item-control">
+                <select id="timeframe-setting" class="settings-select">
+                  <option value="1day">Last 24 hours</option>
+                  <option value="7days">Last 7 days</option>
+                  <option value="30days">Last 30 days</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      // Settings page-specific functionality
+      ;(function () {
+        'use strict'
+
+        // Get all available feeds from navigation
+        function getAllFeeds() {
+          // This will be populated when the main index.html is generated
+          // For now, we'll fetch it from the existing navigation if available
+          const feeds = []
+          // We'll populate this dynamically from localStorage or a fetch
+          return feeds
+        }
+
+        // Initialize settings page
+        function initSettings() {
+          // Menu navigation
+          const menuItems = document.querySelectorAll('.settings-menu-item')
+          const sections = document.querySelectorAll('.settings-section')
+
+          menuItems.forEach((item) => {
+            item.addEventListener('click', () => {
+              const sectionId = item.getAttribute('data-section')
+
+              // Update active menu item
+              menuItems.forEach((mi) => mi.classList.remove('active'))
+              item.classList.add('active')
+
+              // Update active section
+              sections.forEach((section) => {
+                section.classList.remove('active')
+              })
+              const targetSection = document.getElementById(
+                `${sectionId}-section`
+              )
+              if (targetSection) {
+                targetSection.classList.add('active')
+              }
+            })
+          })
+
+          // Load current settings
+          loadSettings()
+
+          // Setup event listeners for settings controls
+          setupSettingsListeners()
+
+          // Load and display feed checkboxes
+          loadFeedCheckboxes()
+        }
+
+        function loadSettings() {
+          // Load theme
+          try {
+            const theme = localStorage.getItem('theme') || 'dark'
+            const themeSelect = document.getElementById('theme-setting')
+            if (themeSelect) themeSelect.value = theme
+          } catch (e) {
+            console.warn('Unable to load theme setting:', e)
+          }
+
+          // Load view
+          try {
+            const view = localStorage.getItem('view') || 'list'
+            const viewSelect = document.getElementById('view-setting')
+            if (viewSelect) viewSelect.value = view
+          } catch (e) {
+            console.warn('Unable to load view setting:', e)
+          }
+
+          // Load timeframe
+          try {
+            const timeframe = localStorage.getItem('timeframe') || '1day'
+            const timeframeSelect = document.getElementById('timeframe-setting')
+            if (timeframeSelect) timeframeSelect.value = timeframe
+          } catch (e) {
+            console.warn('Unable to load timeframe setting:', e)
+          }
+        }
+
+        function setupSettingsListeners() {
+          // Theme setting
+          const themeSelect = document.getElementById('theme-setting')
+          if (themeSelect) {
+            themeSelect.addEventListener('change', (e) => {
+              const theme = e.target.value
+              try {
+                localStorage.setItem('theme', theme)
+                document.documentElement.setAttribute('data-theme', theme)
+              } catch (err) {
+                console.warn('Unable to save theme:', err)
+              }
+            })
+          }
+
+          // View setting
+          const viewSelect = document.getElementById('view-setting')
+          if (viewSelect) {
+            viewSelect.addEventListener('change', (e) => {
+              const view = e.target.value
+              try {
+                localStorage.setItem('view', view)
+              } catch (err) {
+                console.warn('Unable to save view:', err)
+              }
+            })
+          }
+
+          // Timeframe setting
+          const timeframeSelect = document.getElementById('timeframe-setting')
+          if (timeframeSelect) {
+            timeframeSelect.addEventListener('change', (e) => {
+              const timeframe = e.target.value
+              try {
+                localStorage.setItem('timeframe', timeframe)
+              } catch (err) {
+                console.warn('Unable to save timeframe:', err)
+              }
+            })
+          }
+
+          // Select/Deselect all feeds
+          const selectAllBtn = document.getElementById('select-all-feeds')
+          const deselectAllBtn = document.getElementById('deselect-all-feeds')
+
+          if (selectAllBtn) {
+            selectAllBtn.addEventListener('click', () => {
+              const checkboxes = document.querySelectorAll(
+                '.feed-checkbox-item input[type="checkbox"]'
+              )
+              checkboxes.forEach((cb) => {
+                cb.checked = true
+              })
+              saveFeedSettings()
+            })
+          }
+
+          if (deselectAllBtn) {
+            deselectAllBtn.addEventListener('click', () => {
+              const checkboxes = document.querySelectorAll(
+                '.feed-checkbox-item input[type="checkbox"]'
+              )
+              checkboxes.forEach((cb) => {
+                cb.checked = false
+              })
+              saveFeedSettings()
+            })
+          }
+        }
+
+        function loadFeedCheckboxes() {
+          // Get enabled feeds from localStorage
+          let enabledFeeds = []
+          try {
+            const stored = localStorage.getItem('enabledFeeds')
+            enabledFeeds = stored ? JSON.parse(stored) : []
+          } catch (e) {
+            console.warn('Unable to load enabled feeds:', e)
+          }
+
+          const feedContainer = document.getElementById('feed-checkboxes')
+          if (!feedContainer) return
+
+          // Try to fetch the feed list from index.html
+          fetch('index.html')
+            .then((response) => response.text())
+            .then((html) => {
+              const parser = new DOMParser()
+              const doc = parser.parseFromString(html, 'text/html')
+              const feedListEl = doc.getElementById('feed-list-data')
+              
+              let feeds = []
+              if (feedListEl && feedListEl.textContent) {
+                try {
+                  feeds = JSON.parse(feedListEl.textContent)
+                } catch (e) {
+                  console.warn('Unable to parse feed list:', e)
+                }
+              }
+
+              // If fetch failed or no data, use default list
+              if (feeds.length === 0) {
+                feeds = getDefaultFeedList()
+              }
+
+              renderFeedCheckboxes(feeds, enabledFeeds, feedContainer)
+            })
+            .catch(() => {
+              // If fetch fails, use default list
+              const feeds = getDefaultFeedList()
+              renderFeedCheckboxes(feeds, enabledFeeds, feedContainer)
+            })
+        }
+
+        function getDefaultFeedList() {
+          return [
+            'Atlassian DevOps',
+            'AWS DevOps Blog',
+            'Azure Updates',
+            'CircleCI Blog',
+            'Docker Blog',
+            'GitLab Blog',
+            'GitHub Blog',
+            'GitHub Changelog',
+            'HashiCorp Blog',
+            'Jenkins Blog',
+            'Kubernetes Blog',
+            'Microsoft DevOps Blog',
+            'Microsoft Entra Blog',
+            'Microsoft Security',
+            'Red Hat Developer'
+          ]
+        }
+
+        function renderFeedCheckboxes(feeds, enabledFeeds, container) {
+          // If no feeds are stored yet, enable all by default
+          if (enabledFeeds.length === 0) {
+            enabledFeeds = [...feeds]
+            try {
+              localStorage.setItem('enabledFeeds', JSON.stringify(enabledFeeds))
+            } catch (e) {
+              console.warn('Unable to save enabled feeds:', e)
+            }
+          }
+
+          // Sort feeds alphabetically
+          feeds.sort()
+
+          // Create checkboxes
+          feeds.forEach((feedName) => {
+            const item = document.createElement('div')
+            item.className = 'feed-checkbox-item'
+
+            const checkbox = document.createElement('input')
+            checkbox.type = 'checkbox'
+            checkbox.id = `feed-${feedName.replace(/\s+/g, '-').toLowerCase()}`
+            checkbox.value = feedName
+            checkbox.checked = enabledFeeds.includes(feedName)
+
+            checkbox.addEventListener('change', saveFeedSettings)
+
+            const label = document.createElement('label')
+            label.setAttribute('for', checkbox.id)
+            label.textContent = feedName
+
+            item.appendChild(checkbox)
+            item.appendChild(label)
+            container.appendChild(item)
+          })
+        }
+
+        function saveFeedSettings() {
+          const checkboxes = document.querySelectorAll(
+            '.feed-checkbox-item input[type="checkbox"]'
+          )
+          const enabledFeeds = []
+
+          checkboxes.forEach((cb) => {
+            if (cb.checked) {
+              enabledFeeds.push(cb.value)
+            }
+          })
+
+          try {
+            localStorage.setItem('enabledFeeds', JSON.stringify(enabledFeeds))
+          } catch (e) {
+            console.warn('Unable to save feed settings:', e)
+          }
+        }
+
+        // Initialize when DOM is ready
+        if (
+          document.readyState === 'complete' ||
+          document.readyState === 'interactive'
+        ) {
+          setTimeout(initSettings, 0)
+        } else {
+          document.addEventListener('DOMContentLoaded', initSettings)
+        }
+      })()
+    </script>
+  </body>
+</html>
