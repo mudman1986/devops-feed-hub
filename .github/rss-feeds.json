@@ -13,6 +13,10 @@
       "url": "https://techcommunity.microsoft.com/t5/s/gxcuf89792/rss/board?board.id=microsoft-entra-blog"
     },
     {
+      "name": "Azure Updates",
+      "url": "https://aztty.azurewebsites.net/rss/updates?service=40"
+    },
+    {
       "name": "GitHub Changelog",
       "url": "https://github.blog/changelog/feed/"
     },
