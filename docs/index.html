@@ -1,4 +1,4 @@
-<!doctype html>
+<!DOCTYPE html>
 <!-- @generated - This file is auto-generated. Do not edit manually. -->
 <html lang="en" data-theme="dark">
   <head>
@@ -8,15 +8,12 @@
       name="description"
       content="DevOps Feed Hub - Centralized RSS feed aggregator for DevOps and tech news"
     />
-    <meta
-      http-equiv="Cache-Control"
-      content="no-cache, no-store, must-revalidate"
-    />
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
     <meta http-equiv="Pragma" content="no-cache" />
     <meta http-equiv="Expires" content="0" />
     <title>DevOps Feed Hub</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
-    <link rel="stylesheet" href="styles.css?v=January 10, 2026 at 10:07 PM UTC" />
+    <link rel="stylesheet" href="styles.css?v=January 10, 2026 at 10:14 PM UTC" />
   </head>
   <body>
     <div class="header">
@@ -70,10 +67,29 @@
           <span>Clear All Read</span>
         </button>
         <button
-          class="theme-toggle"
-          id="theme-toggle"
-          aria-label="Toggle theme"
+          class="settings-button"
+          id="settings-button"
+          aria-label="Settings"
+          onclick="window.location.href='settings.html'"
         >
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="12" cy="12" r="3"></circle>
+            <path
+              d="M12 1v6m0 6v6m5.66-13.66l-4.24 4.24m-2.83 2.83l-4.24 4.24M23 12h-6m-6 0H1m18.36-5.64l-4.24 4.24m-2.83 2.83l-4.24 4.24"
+            ></path>
+          </svg>
+          <span>Settings</span>
+        </button>
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle theme">
           <svg
             id="theme-icon"
             width="16"
@@ -124,13 +140,172 @@
       <div class="main-content">
         
         <div class="feed-section">
-            <h3>GitHub Blog
+            <h3>AWS DevOps Blog
                 <span class="feed-count">
-                    8 articles
+                    2 articles
                 </span>
             </h3>
 
             <ul class="article-list">
+
+                <li class="article-item" data-published="2026-01-08T20:40:13+00:00">
+                    <a href="https://aws.amazon.com/blogs/devops/automating-aws-sdk-for-java-v1-to-v2-upgrades-with-aws-transform/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Automating AWS SDK for Java v1 to v2 Upgrades with AWS Transform
+                    </a>
+                    <div class="article-meta">Jan 08, 2026 at 08:40 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-18T14:54:45+00:00">
+                    <a href="https://aws.amazon.com/blogs/devops/how-kaltura-accelerates-ci-cd-using-aws-codebuild-hosted-runners/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        How Kaltura Accelerates CI/CD Using AWS CodeBuild-hosted Runners
+                    </a>
+                    <div class="article-meta">Dec 18, 2025 at 02:54 PM</div>
+                </li>
+
+            </ul>
+
+        </div>
+
+        <div class="feed-section">
+            <h3>CircleCI Blog
+                <span class="feed-count">
+                    2 articles
+                </span>
+            </h3>
+
+            <ul class="article-list">
+
+                <li class="article-item" data-published="2025-12-22T07:00:00+00:00">
+                    <a href="https://circleci.com/blog/sign-oci-containers-and-other-artifacts-using-sigstore-cosign/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Sign OCI containers &amp; other artifacts using Sigstore Cosign &amp; CircleCI OIDC tokens
+                    </a>
+                    <div class="article-meta">Dec 22, 2025 at 07:00 AM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-16T11:50:00+00:00">
+                    <a href="https://circleci.com/blog/roi-of-autonomous-validation/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        The ROI of autonomous validation: How to unlock $1.8M in engineering value
+                    </a>
+                    <div class="article-meta">Dec 16, 2025 at 11:50 AM</div>
+                </li>
+
+            </ul>
+
+        </div>
+
+        <div class="feed-section">
+            <h3>Docker Blog
+                <span class="feed-count">
+                    10 articles
+                </span>
+            </h3>
+
+            <ul class="article-list">
+
+                <li class="article-item" data-published="2026-01-09T16:11:53+00:00">
+                    <a href="https://www.docker.com/blog/security-is-a-developer-experience-problem-rooted-in-our-foundations/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Security Is a Developer Experience Problem, Rooted in Our Foundations
+                    </a>
+                    <div class="article-meta">Jan 09, 2026 at 04:11 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-01-06T19:16:04+00:00">
+                    <a href="https://www.docker.com/blog/deterministic-ai-testing-with-session-recording-in-cagent/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Deterministic AI Testing with Session Recording in cagent
+                    </a>
+                    <div class="article-meta">Jan 06, 2026 at 07:16 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-20T13:45:00+00:00">
+                    <a href="https://www.docker.com/blog/2025-recap-the-year-software-development-changed-shape/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        2025 Recap: The Year Software Development Changed Shape
+                    </a>
+                    <div class="article-meta">Dec 20, 2025 at 01:45 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-19T14:00:00+00:00">
+                    <a href="https://www.docker.com/blog/from-the-captains-chair-igor-aleksandrov/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        From the Captain’s Chair: Igor Aleksandrov
+                    </a>
+                    <div class="article-meta">Dec 19, 2025 at 02:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-19T13:50:24+00:00">
+                    <a href="https://www.docker.com/blog/docker-hardened-images-security-independently-validated-by-srlabs/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Docker Hardened Images: Security Independently Validated by SRLabs
+                    </a>
+                    <div class="article-meta">Dec 19, 2025 at 01:50 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-17T13:55:11+00:00">
+                    <a href="https://www.docker.com/blog/docker-hardened-images-for-every-developer/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        A Safer Container Ecosystem with Docker: Free Docker Hardened Images
+                    </a>
+                    <div class="article-meta">Dec 17, 2025 at 01:55 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-16T14:00:00+00:00">
+                    <a href="https://www.docker.com/blog/develop-deploy-voice-ai-apps/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Develop and deploy voice AI apps using Docker
+                    </a>
+                    <div class="article-meta">Dec 16, 2025 at 02:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-16T12:24:50+00:00">
+                    <a href="https://www.docker.com/blog/docker-model-runner-universal-blue/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Docker Model Runner now included with the Universal Blue family
+                    </a>
+                    <div class="article-meta">Dec 16, 2025 at 12:24 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-14T14:00:00+00:00">
+                    <a href="https://www.docker.com/blog/private-mcp-catalogs-oci-composable-enterprise-ai/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Private MCP Catalogs and the Path to Composable Enterprise AI
+                    </a>
+                    <div class="article-meta">Dec 14, 2025 at 02:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-12T20:22:05+00:00">
+                    <a href="https://www.docker.com/blog/aws-reinvent-kiro-docker-sandboxes-mcp-catalog/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Highlights from AWS re:Invent: Supercharging Kiro with Docker Sandboxes and MCP Catalog
+                    </a>
+                    <div class="article-meta">Dec 12, 2025 at 08:22 PM</div>
+                </li>
+
+            </ul>
+
+        </div>
+
+        <div class="feed-section">
+            <h3>GitHub Blog
+                <span class="feed-count">
+                    9 articles
+                </span>
+            </h3>
+
+            <ul class="article-list">
+
+                <li class="article-item" data-published="2026-01-10T21:36:00+00:00">
+                    <a href="https://github.blog/open-source/gaming/light-waves-rising-tides-and-drifting-ships-game-off-2025-winners/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Light waves, rising tides, and drifting ships: Game Off 2025 winners
+                    </a>
+                    <div class="article-meta">Jan 10, 2026 at 09:36 PM</div>
+                </li>
 
                 <li class="article-item" data-published="2026-01-08T22:25:54+00:00">
                     <a href="https://github.blog/ai-and-ml/llms/why-ai-is-pushing-developers-toward-typed-languages/" class="article-title"
@@ -379,6 +554,131 @@
         </div>
 
         <div class="feed-section">
+            <h3>Kubernetes Blog
+                <span class="feed-count">
+                    14 articles
+                </span>
+            </h3>
+
+            <ul class="article-list">
+
+                <li class="article-item" data-published="2026-01-09T18:30:00+00:00">
+                    <a href="https://kubernetes.io/blog/2026/01/09/kubernetes-v1-35-kuberc-credential-plugin-allowlist/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Kubernetes v1.35: Restricting executables invoked by kubeconfigs via exec plugin allowList added to kuberc
+                    </a>
+                    <div class="article-meta">Jan 09, 2026 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-01-08T18:30:00+00:00">
+                    <a href="https://kubernetes.io/blog/2026/01/08/kubernetes-v1-35-mutable-pv-nodeaffinity/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Kubernetes v1.35: Mutable PersistentVolume Node Affinity (alpha)
+                    </a>
+                    <div class="article-meta">Jan 08, 2026 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-01-07T18:30:00+00:00">
+                    <a href="https://kubernetes.io/blog/2026/01/07/kubernetes-v1-35-csi-sa-tokens-secrets-field-beta/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Kubernetes v1.35: A Better Way to Pass Service Account Tokens to CSI Drivers
+                    </a>
+                    <div class="article-meta">Jan 07, 2026 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-01-05T18:30:00+00:00">
+                    <a href="https://kubernetes.io/blog/2026/01/05/kubernetes-v1-35-numeric-toleration-operators/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Kubernetes v1.35: Extended Toleration Operators to Support Numeric Comparisons (Alpha)
+                    </a>
+                    <div class="article-meta">Jan 05, 2026 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-01-02T18:30:00+00:00">
+                    <a href="https://kubernetes.io/blog/2026/01/02/kubernetes-v1-35-restart-all-containers/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Kubernetes v1.35: New level of efficiency with in-place Pod restart
+                    </a>
+                    <div class="article-meta">Jan 02, 2026 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-31T18:30:00+00:00">
+                    <a href="https://kubernetes.io/blog/2025/12/31/kubernetes-v1-35-structured-zpages/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Kubernetes 1.35: Enhanced Debugging with Versioned z-pages APIs
+                    </a>
+                    <div class="article-meta">Dec 31, 2025 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-30T18:30:00+00:00">
+                    <a href="https://kubernetes.io/blog/2025/12/30/kubernetes-v1-35-watch-based-route-reconciliation-in-ccm/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Kubernetes v1.35: Watch Based Route Reconciliation in the Cloud Controller Manager
+                    </a>
+                    <div class="article-meta">Dec 30, 2025 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-29T18:30:00+00:00">
+                    <a href="https://kubernetes.io/blog/2025/12/29/kubernetes-v1-35-introducing-workload-aware-scheduling/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Kubernetes v1.35: Introducing Workload Aware Scheduling
+                    </a>
+                    <div class="article-meta">Dec 29, 2025 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-23T18:30:00+00:00">
+                    <a href="https://kubernetes.io/blog/2025/12/23/kubernetes-v1-35-fine-grained-supplementalgroups-control-ga/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Kubernetes v1.35: Fine-grained Supplemental Groups Control Graduates to GA
+                    </a>
+                    <div class="article-meta">Dec 23, 2025 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-22T18:30:00+00:00">
+                    <a href="https://kubernetes.io/blog/2025/12/22/kubernetes-v1-35-kubelet-config-drop-in-directory-ga/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Kubernetes v1.35: Kubelet Configuration Drop-in Directory Graduates to GA
+                    </a>
+                    <div class="article-meta">Dec 22, 2025 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-21T00:00:00+00:00">
+                    <a href="https://kubernetes.io/blog/2025/12/21/preventing-etcd-zombies/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Avoiding Zombie Cluster Members When Upgrading to etcd v3.6
+                    </a>
+                    <div class="article-meta">Dec 21, 2025 at 12:00 AM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-19T18:30:00+00:00">
+                    <a href="https://kubernetes.io/blog/2025/12/19/kubernetes-v1-35-in-place-pod-resize-ga/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Kubernetes 1.35: In-Place Pod Resize Graduates to Stable
+                    </a>
+                    <div class="article-meta">Dec 19, 2025 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-18T18:30:00+00:00">
+                    <a href="https://kubernetes.io/blog/2025/12/18/kubernetes-v1-35-job-managedby-for-jobs-goes-ga/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Kubernetes v1.35: Job Managed By Goes GA
+                    </a>
+                    <div class="article-meta">Dec 18, 2025 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-17T18:30:00+00:00">
+                    <a href="https://kubernetes.io/blog/2025/12/17/kubernetes-v1-35-release/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Kubernetes v1.35: Timbernetes (The World Tree Release)
+                    </a>
+                    <div class="article-meta">Dec 17, 2025 at 06:30 PM</div>
+                </li>
+
+            </ul>
+
+        </div>
+
+        <div class="feed-section">
             <h3>Microsoft DevOps Blog
                 <span class="feed-count">
                     4 articles
@@ -529,20 +829,37 @@
 
         </div>
 
+        <div class="feed-section">
+            <h3>Atlassian DevOps
+                <span class="feed-count">
+                    0 articles
+                </span>
+            </h3>
+
+            <div class="no-articles">No new articles in this time period</div>
+
+        </div>
+
 
         <div class="footer">
           Generated by RSS Feed Collector | Last updated:
-          January 10, 2026 at 10:07 PM UTC
+          January 10, 2026 at 10:14 PM UTC
         </div>
       </div>
       <aside class="sidebar" id="sidebar">
         <div class="sidebar-content">
           <div class="sidebar-header">Navigation</div>
           <nav class="feed-nav">
+  <script type="application/json" id="feed-list-data">[&quot;AWS DevOps Blog&quot;, &quot;Atlassian DevOps&quot;, &quot;CircleCI Blog&quot;, &quot;Docker Blog&quot;, &quot;GitHub Blog&quot;, &quot;GitHub Changelog&quot;, &quot;HashiCorp Blog&quot;, &quot;Kubernetes Blog&quot;, &quot;Microsoft DevOps Blog&quot;, &quot;Microsoft Entra Blog&quot;, &quot;Microsoft Security&quot;]</script>
   <a href="index.html" class="nav-link active">All Feeds</a>
+  <a href="feed-aws-devops-blog.html" class="nav-link">AWS DevOps Blog</a>
+  <a href="feed-atlassian-devops.html" class="nav-link">Atlassian DevOps</a>
+  <a href="feed-circleci-blog.html" class="nav-link">CircleCI Blog</a>
+  <a href="feed-docker-blog.html" class="nav-link">Docker Blog</a>
   <a href="feed-github-blog.html" class="nav-link">GitHub Blog</a>
   <a href="feed-github-changelog.html" class="nav-link">GitHub Changelog</a>
   <a href="feed-hashicorp-blog.html" class="nav-link">HashiCorp Blog</a>
+  <a href="feed-kubernetes-blog.html" class="nav-link">Kubernetes Blog</a>
   <a href="feed-microsoft-devops-blog.html" class="nav-link">Microsoft DevOps Blog</a>
   <a href="feed-microsoft-entra-blog.html" class="nav-link">Microsoft Entra Blog</a>
   <a href="feed-microsoft-security.html" class="nav-link">Microsoft Security</a>
