@@ -20,9 +20,11 @@ if [ "$TARGET_BRANCH" = "current" ] || [ -z "$TARGET_BRANCH" ]; then
 	# Add the content directory
 	git add "$CONTENT_DIR/"
 	
-	# Force add static source files that might be ignored by .gitignore
-	# These are source files that should be deployed, not generated files
-	git add -f "$CONTENT_DIR/settings.html" 2>/dev/null || true
+	# Force add ALL HTML files that might be ignored by .gitignore
+	# The github-pages branch has docs/*.html in .gitignore, but we need to deploy them
+	git add -f "$CONTENT_DIR"/*.html 2>/dev/null || true
+	
+	# Also force add other static source files
 	git add -f "$CONTENT_DIR/styles.css" 2>/dev/null || true
 	git add -f "$CONTENT_DIR/script.js" 2>/dev/null || true
 	git add -f "$CONTENT_DIR/favicon.svg" 2>/dev/null || true
@@ -89,9 +91,11 @@ else
 	# Add the content directory
 	git add "$CONTENT_DIR/"
 	
-	# Force add static source files that might be ignored by .gitignore
-	# These are source files that should be deployed, not generated files
-	git add -f "$CONTENT_DIR/settings.html" 2>/dev/null || true
+	# Force add ALL HTML files that might be ignored by .gitignore
+	# The github-pages branch has docs/*.html in .gitignore, but we need to deploy them
+	git add -f "$CONTENT_DIR"/*.html 2>/dev/null || true
+	
+	# Also force add other static source files
 	git add -f "$CONTENT_DIR/styles.css" 2>/dev/null || true
 	git add -f "$CONTENT_DIR/script.js" 2>/dev/null || true
 	git add -f "$CONTENT_DIR/favicon.svg" 2>/dev/null || true
