@@ -53,11 +53,19 @@ jobs:
             --output-dir docs
 
           echo "Generated HTML files:"
-          ls -la docs/*.html
+          ls -lh docs/*.html
 
-          # Show article count for debugging
-          echo "Article counts:"
-          grep -h "feed-count" docs/index.html || echo "No count found"
+          # Verify HTML has actual content (should be >10KB for index with articles)
+          INDEX_SIZE=$(stat -f%z docs/index.html 2>/dev/null || stat -c%s docs/index.html)
+          echo "Index file size: $INDEX_SIZE bytes"
+          
+          if [ "$INDEX_SIZE" -lt 10000 ]; then
+            echo "ERROR: index.html is too small ($INDEX_SIZE bytes)"
+            echo "This indicates no articles were collected or HTML generation failed"
+            exit 1
+          fi
+          
+          echo "✓ HTML files generated successfully with article data"
 
       - name: Run Playwright tests
         run: npx playwright test --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
