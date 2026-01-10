@@ -1,6 +1,7 @@
 name: UI Tests
 
 on:
+  push:
   pull_request:
 
 concurrency:
@@ -37,14 +38,6 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install --with-deps chromium
 
-      # - name: Collect RSS Feeds
-      #   id: collect
-      #   uses: ./.github/actions/collect-rss-feeds
-      #   with:
-      #     hours: "24"
-      #     config-path: ".github/rss-feeds.json"
-      #     output-path: "rss-feeds-output.json"
-
       - name: Generate HTML files for testing
         run: |
           # Use static test fixture instead of live RSS data for consistent tests
@@ -65,7 +58,7 @@ jobs:
 
       - name: Run Playwright tests
         run: npx playwright test --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
-        timeout-minutes: 30
+        timeout-minutes: 5
         env:
           CI: true
 
@@ -75,7 +68,7 @@ jobs:
         with:
           name: playwright-report-${{ matrix.shardIndex }}
           path: playwright-report/
-          retention-days: 30
+          retention-days: 3
 
       - name: Upload test screenshots
         if: failure()
@@ -83,4 +76,4 @@ jobs:
         with:
           name: playwright-screenshots-${{ matrix.shardIndex }}
           path: test-results/
-          retention-days: 7
+          retention-days: 3
