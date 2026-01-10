@@ -163,3 +163,82 @@ test("validates feature", async ({ page }) => {
 - **JavaScript**: >80% code coverage
 - **Python**: Test all public functions and edge cases
 - **UI**: Cover all features across all device sizes
+
+## UI Tests (Playwright)
+
+### Prerequisites
+
+Playwright UI tests require generated HTML files in the `docs/` directory. Before running UI tests, generate test data:
+
+```bash
+# Create test RSS feed data
+cat > /tmp/test-rss-data.json << 'TESTDATA'
+{
+  "metadata": {
+    "collected_at": "2026-01-10T23:00:00Z",
+    "since": "2026-01-09T23:00:00Z",
+    "hours": 24
+  },
+  "summary": {
+    "total_feeds": 2,
+    "successful_feeds": 2,
+    "failed_feeds": 0,
+    "total_articles": 2
+  },
+  "feeds": {
+    "GitHub Blog": {
+      "url": "https://github.com/blog/all.atom",
+      "count": 1,
+      "articles": [
+        {
+          "title": "Test Article 1",
+          "link": "https://github.com/blog/test1",
+          "published": "2026-01-10T12:00:00Z"
+        }
+      ]
+    },
+    "Docker Blog": {
+      "url": "https://www.docker.com/blog/feed/",
+      "count": 1,
+      "articles": [
+        {
+          "title": "Test Article 2",
+          "link": "https://docker.com/blog/test2",
+          "published": "2026-01-10T11:00:00Z"
+        }
+      ]
+    }
+  },
+  "failed_feeds": []
+}
+TESTDATA
+
+# Generate HTML pages for testing
+python3 .github/actions/collect-rss-feeds/generate_summary.py \
+  --input /tmp/test-rss-data.json \
+  --output-dir docs
+
+# Run UI tests
+npm run test:ui
+```
+
+### Running Specific UI Tests
+
+```bash
+# Run all UI tests
+npm run test:ui
+
+# Run specific test file
+npx playwright test tests/ui/settings.spec.js
+
+# Run with headed browser (see what's happening)
+npx playwright test --headed
+
+# Run in debug mode
+npx playwright test --debug
+```
+
+### Troubleshooting
+
+If UI tests fail with "data-theme is null" or similar errors, ensure you've generated the HTML files first.
+
