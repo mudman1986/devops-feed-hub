@@ -48,7 +48,7 @@ The following user preferences are currently stored in `localStorage`:
 **Implementation**:
 
 ```javascript
-// Example URL: https://yoursite.com/devops-feed-hub/#theme=dark&view=list&timeframe=7days
+// Example URL: https://example.com/devops-feed-hub/#theme=dark&view=list&timeframe=7days
 
 // On settings change, update URL hash
 function updateURLState() {
