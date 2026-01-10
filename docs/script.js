@@ -237,9 +237,13 @@ function applyTimeframeFilter (timeframe) {
       } else {
         noArticlesMsg.style.display = ''
       }
+      // In list view, the CSS will hide the entire section
     } else {
       if (articleList) articleList.style.display = ''
-      if (noArticlesMsg) noArticlesMsg.style.display = 'none'
+      // Remove the no-articles message completely so CSS doesn't hide the section
+      if (noArticlesMsg) {
+        noArticlesMsg.remove()
+      }
     }
 
     // Store feed data for reordering
