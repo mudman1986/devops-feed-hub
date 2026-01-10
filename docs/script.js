@@ -659,3 +659,86 @@ if (
 ) {
   setTimeout(initializeMarkAsReadFeature, 0)
 }
+
+// Feed filtering based on enabled feeds setting
+function getEnabledFeeds () {
+  try {
+    const stored = localStorage.getItem('enabledFeeds')
+    return stored ? JSON.parse(stored) : null
+  } catch (e) {
+    console.warn('Unable to load enabled feeds:', e)
+    return null
+  }
+}
+
+function applyFeedFilter () {
+  const enabledFeeds = getEnabledFeeds()
+  
+  // If no filter is set, show all feeds
+  if (!enabledFeeds || enabledFeeds.length === 0) {
+    return
+  }
+
+  // Filter navigation links
+  const navLinks = document.querySelectorAll('.nav-link')
+  navLinks.forEach((link) => {
+    const linkText = link.textContent.trim()
+    // Don't filter "All Feeds" and "Summary" links
+    if (linkText === 'All Feeds' || linkText === 'Summary') {
+      return
+    }
+    
+    // Hide if not in enabled feeds
+    if (!enabledFeeds.includes(linkText)) {
+      link.style.display = 'none'
+    } else {
+      link.style.display = ''
+    }
+  })
+
+  // Filter feed sections
+  const feedSections = document.querySelectorAll('.feed-section')
+  feedSections.forEach((section) => {
+    const heading = section.querySelector('h3')
+    if (!heading) return
+    
+    // Extract feed name from heading (remove count badge)
+    const feedNameElement = heading.childNodes[0]
+    const feedName = feedNameElement ? feedNameElement.textContent.trim() : heading.textContent.trim()
+    
+    // Hide if not in enabled feeds
+    if (!enabledFeeds.includes(feedName)) {
+      section.style.display = 'none'
+      section.setAttribute('data-hidden-by-filter', 'true')
+    } else {
+      section.style.display = ''
+      section.removeAttribute('data-hidden-by-filter')
+    }
+  })
+
+  // Update stats after filtering
+  updateStats()
+}
+
+// Initialize feed filtering when page loads
+function initializeFeedFilter () {
+  applyFeedFilter()
+}
+
+// Add to initialization
+document.addEventListener('DOMContentLoaded', initializeFeedFilter)
+
+// Also initialize if DOMContentLoaded has already fired
+if (
+  document.readyState === 'complete' ||
+  document.readyState === 'interactive'
+) {
+  setTimeout(initializeFeedFilter, 0)
+}
+
+// Listen for storage changes (when settings are updated in another tab)
+window.addEventListener('storage', (e) => {
+  if (e.key === 'enabledFeeds') {
+    applyFeedFilter()
+  }
+})

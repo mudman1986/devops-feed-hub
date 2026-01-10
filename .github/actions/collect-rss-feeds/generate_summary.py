@@ -109,13 +109,18 @@ def generate_feed_nav(
     Returns:
         HTML navigation string
     """
+    # Create a hidden element with feed names as JSON for settings page
+    feed_names = sorted(feeds.keys())
+    feed_list_json = json.dumps(feed_names)
+    
     nav_html = '<nav class="feed-nav">\n'
+    nav_html += f'  <script type="application/json" id="feed-list-data">{feed_list_json}</script>\n'
     nav_html += '  <a href="index.html" class="nav-link'
     if current_feed is None:
         nav_html += " active"
     nav_html += '">All Feeds</a>\n'
 
-    for feed_name in sorted(feeds.keys()):
+    for feed_name in feed_names:
         feed_slug = generate_feed_slug(feed_name)
 
         nav_html += f'  <a href="feed-{feed_slug}.html" class="nav-link'
