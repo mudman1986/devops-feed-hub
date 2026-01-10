@@ -140,7 +140,7 @@ When reviewing code changes, verify:
 
 ### GitHub Workflows
 
-- Inline bash instead of separate scripts
+- Inline Bash instead of separate scripts
 - Overly broad permissions
 - Missing error handling
 - Hardcoded values instead of variables
