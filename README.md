@@ -39,3 +39,7 @@ See [TESTING.md](TESTING.md) for details.
 ## 🔧 Configuration
 
 Edit `.github/rss-feeds.json` to add or modify RSS feeds.
+
+## 📋 Design Documents
+
+- **[Session Persistence Design](docs/SESSION_PERSISTENCE_DESIGN.md)**: Comprehensive design for cross-device settings sync (5 solutions ranked by complexity)
