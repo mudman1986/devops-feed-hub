@@ -57,11 +57,18 @@ docker run --rm \
   -e RUN_LOCAL=true \
   -e VALIDATE_ALL_CODEBASE=true \
   -e DEFAULT_BRANCH=main \
+  -e IGNORE_GITIGNORED_FILES=true \
+  -e SAVE_SUPER_LINTER_SUMMARY=true \
   -v $(pwd):/tmp/lint \
   ghcr.io/super-linter/super-linter:v8.3.2
 ```
 
-**IMPORTANT:** Always set `VALIDATE_ALL_CODEBASE=true` to ensure comprehensive validation.
+**IMPORTANT:**
+
+- Always set `VALIDATE_ALL_CODEBASE=true` to ensure comprehensive validation
+- Always set `IGNORE_GITIGNORED_FILES=true` to respect .gitignore
+- Always set `SAVE_SUPER_LINTER_SUMMARY=true` to generate summary reports
+- All linter configuration files are in `.github/linters/`
 
 #### Super-Linter autofix
 
@@ -72,6 +79,8 @@ docker run --rm \
   -e RUN_LOCAL=true \
   -e VALIDATE_ALL_CODEBASE=true \
   -e DEFAULT_BRANCH=main \
+  -e IGNORE_GITIGNORED_FILES=true \
+  -e SAVE_SUPER_LINTER_SUMMARY=true \
   -e FIX_PYTHON_BLACK=true \
   -e FIX_PYTHON_ISORT=true \
   -e FIX_SHELL_SHFMT=true \
@@ -80,6 +89,7 @@ docker run --rm \
   -e FIX_JAVASCRIPT_PRETTIER=true \
   -e FIX_CSS_PRETTIER=true \
   -e FIX_HTML_PRETTIER=true \
+  -e FIX_NATURAL_LANGUAGE=true \
   -v $(pwd):/tmp/lint \
   ghcr.io/super-linter/super-linter:v8.3.2
 ```
@@ -94,6 +104,7 @@ Common FIX\_ variables:
 - `FIX_JAVASCRIPT_PRETTIER=true` - autoformat JavaScript
 - `FIX_CSS_PRETTIER=true` - autoformat CSS
 - `FIX_HTML_PRETTIER=true` - autoformat HTML
+- `FIX_NATURAL_LANGUAGE=true` - autoformat natural language files
 
 ## Review Checklist
 
