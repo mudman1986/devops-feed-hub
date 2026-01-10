@@ -17,27 +17,32 @@ try {
 }
 
 htmlElement.setAttribute('data-theme', savedTheme)
-updateThemeButton(savedTheme)
 
-themeToggle.addEventListener('click', () => {
-  const currentTheme = htmlElement.getAttribute('data-theme')
-  const newTheme = currentTheme === 'light' ? 'dark' : 'light'
+if (themeToggle) {
+  updateThemeButton(savedTheme)
 
-  htmlElement.setAttribute('data-theme', newTheme)
+  themeToggle.addEventListener('click', () => {
+    const currentTheme = htmlElement.getAttribute('data-theme')
+    const newTheme = currentTheme === 'light' ? 'dark' : 'light'
 
-  try {
-    localStorage.setItem('theme', newTheme)
-  } catch (e) {
-    // localStorage might be unavailable, theme will reset on reload
-    console.warn('Unable to save theme preference:', e)
-  }
+    htmlElement.setAttribute('data-theme', newTheme)
 
-  updateThemeButton(newTheme)
-})
+    try {
+      localStorage.setItem('theme', newTheme)
+    } catch (e) {
+      // localStorage might be unavailable, theme will reset on reload
+      console.warn('Unable to save theme preference:', e)
+    }
+
+    updateThemeButton(newTheme)
+  })
+}
 
 function updateThemeButton (theme) {
   const iconSVG = document.getElementById('theme-icon')
   const themeText = document.getElementById('theme-text')
+
+  if (!iconSVG || !themeText) return
 
   if (theme === 'dark') {
     // Sun icon for light mode
