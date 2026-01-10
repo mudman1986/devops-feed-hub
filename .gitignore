@@ -48,3 +48,6 @@ docs/*.html
 # OS
 .DS_Store
 Thumbs.db
+
+# Super-linter output
+super-linter-output/

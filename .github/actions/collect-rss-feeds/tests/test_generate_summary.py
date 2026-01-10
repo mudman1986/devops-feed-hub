@@ -169,7 +169,7 @@ class TestGenerateSummary(unittest.TestCase):
         self.assertIsInstance(result, str)
 
         # Check for HTML structure
-        self.assertIn("<!DOCTYPE html>", result)
+        self.assertIn("<!doctype html>", result)
         self.assertIn(
             '<html lang="en"', result
         )  # Updated to allow for data-theme attribute
@@ -227,7 +227,7 @@ class TestGenerateSummary(unittest.TestCase):
         result = generate_html_page(self.empty_data)
 
         # Should still have basic structure
-        self.assertIn("<!DOCTYPE html>", result)
+        self.assertIn("<!doctype html>", result)
         self.assertIn("DevOps Feed Hub", result)
 
         # Should indicate no articles (shown in article count badge)
@@ -310,7 +310,7 @@ class TestGenerateSummary(unittest.TestCase):
         result = generate_html_page(self.sample_data)
 
         # Check that template elements are present
-        self.assertIn("<!DOCTYPE html>", result)
+        self.assertIn("<!doctype html>", result)
         self.assertIn('<html lang="en"', result)
         self.assertIn("data-theme=", result)  # Dark mode attribute
 
@@ -322,7 +322,7 @@ class TestGenerateSummary(unittest.TestCase):
         ) as f:
             custom_template = f.name
             f.write(
-                """<!DOCTYPE html>
+                """<!doctype html>
 <html>
 <head><title>Custom Template</title></head>
 <body>
@@ -362,7 +362,7 @@ class TestGenerateSummary(unittest.TestCase):
         ) as f:
             utf8_template = f.name
             f.write(
-                """<!DOCTYPE html>
+                """<!doctype html>
 <html>
 <head><title>Test 🌙☀️</title></head>
 <body>
@@ -518,7 +518,7 @@ class TestSummaryIntegration(unittest.TestCase):
             with open(html_file, "r", encoding="utf-8") as f:
                 content = f.read()
 
-            self.assertIn("<!DOCTYPE html>", content)
+            self.assertIn("<!doctype html>", content)
             self.assertIn("Test Feed", content)
             self.assertIn("Test Article", content)
         finally:

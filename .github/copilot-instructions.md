@@ -52,6 +52,8 @@ This repository is maintained primarily by GitHub Copilot. Path-specific instruc
     -e RUN_LOCAL=true \
     -e VALIDATE_ALL_CODEBASE=true \
     -e DEFAULT_BRANCH=main \
+    -e IGNORE_GITIGNORED_FILES=true \
+    -e SAVE_SUPER_LINTER_SUMMARY=true \
     -e FIX_PYTHON_BLACK=true \
     -e FIX_PYTHON_ISORT=true \
     -e FIX_SHELL_SHFMT=true \
@@ -67,8 +69,12 @@ This repository is maintained primarily by GitHub Copilot. Path-specific instruc
 - **DO NOT use USE_FIND_ALGORITHM** - it's incompatible with VALIDATE_ALL_CODEBASE
 - **Always use VALIDATE_ALL_CODEBASE=true** to lint the entire codebase
 - **Always use DEFAULT_BRANCH=main** for this repository
+- **Always use IGNORE_GITIGNORED_FILES=true** to respect .gitignore
+- **Always use SAVE_SUPER_LINTER_SUMMARY=true** to generate summary reports
 - **Enable all FIX\_\* flags** to automatically fix formatting issues
+- **Linter configs**: All linter configuration files are in `.github/linters/`
 - Fix **ALL** remaining linting errors before committing (not just errors you introduced)
+
 
 ### Key Super-Linter Differences
 
