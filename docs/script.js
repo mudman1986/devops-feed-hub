@@ -52,6 +52,62 @@ function updateThemeButton (theme) {
   }
 }
 
+// View toggle functionality (compact/comfortable)
+const viewToggle = document.getElementById('view-toggle')
+
+// Get saved view preference or default to comfortable
+let savedView = 'comfortable'
+try {
+  savedView = localStorage.getItem('view') || 'comfortable'
+} catch (e) {
+  // localStorage might be unavailable (privacy mode, quota exceeded, etc.)
+  console.warn('localStorage unavailable, using default view:', e)
+}
+
+// Apply saved view
+if (savedView === 'compact') {
+  htmlElement.setAttribute('data-view', 'compact')
+}
+updateViewButton(savedView)
+
+viewToggle.addEventListener('click', () => {
+  const currentView = htmlElement.getAttribute('data-view')
+  const newView = currentView === 'compact' ? 'comfortable' : 'compact'
+
+  if (newView === 'compact') {
+    htmlElement.setAttribute('data-view', 'compact')
+  } else {
+    htmlElement.removeAttribute('data-view')
+  }
+
+  try {
+    localStorage.setItem('view', newView)
+  } catch (e) {
+    // localStorage might be unavailable, view will reset on reload
+    console.warn('Unable to save view preference:', e)
+  }
+
+  updateViewButton(newView)
+})
+
+function updateViewButton (view) {
+  const iconSVG = document.getElementById('view-icon')
+  const viewText = document.getElementById('view-text')
+
+  if (view === 'comfortable') {
+    // Compact list icon for compact mode
+    iconSVG.innerHTML =
+      '<line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="18" x2="21" y2="18"></line>'
+    viewText.textContent = 'Compact'
+  } else {
+    // Comfortable list icon for comfortable mode
+    iconSVG.innerHTML =
+      '<line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line>'
+    viewText.textContent = 'Comfortable'
+  }
+}
+
+
 // Initialize sidebar state based on screen size
 function initializeSidebarState (sidebar) {
   if (window.innerWidth <= 768) {
