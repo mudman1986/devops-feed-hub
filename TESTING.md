@@ -26,197 +26,40 @@ Tests: RSS parsing, HTML generation, feed ordering, configuration validation
 - **Location**: `.github/scripts/test_commit_github_pages.bats`
 - **Run**: `bats .github/scripts/test_commit_github_pages.bats`
 
-### UI Tests (Playwright)
-
-Multi-device testing on Desktop (1920x1080, 1366x768), Tablet (768x1024), Mobile (375x667, 414x896)
-
-**Test Suites:**
-
-- `tests/ui/layout.spec.js` - Header, sidebar, spacing, alignment, touch targets
-- `tests/ui/functionality.spec.js` - Theme toggle, filtering, mark as read, navigation
-
-**Running:**
-
-```bash
-npm run test:ui              # All tests
-npm run test:ui:headed       # See browser
-npm run test:ui:debug        # Step through
-```
-
-## Linting
-
-### Super-Linter (Local Development)
-
-**MANDATORY: Always run super-linter locally before pushing changes**
-
-Run super-linter to validate all code in the repository:
-
-```bash
-docker run --rm \
-  -e RUN_LOCAL=true \
-  -e VALIDATE_ALL_CODEBASE=true \
-  -e DEFAULT_BRANCH=main \
-  -e IGNORE_GITIGNORED_FILES=true \
-  -e SAVE_SUPER_LINTER_SUMMARY=true \
-  -v $(pwd):/tmp/lint \
-  ghcr.io/super-linter/super-linter:v8.3.2
-```
-
-**IMPORTANT:**
-
-- Always set `VALIDATE_ALL_CODEBASE=true` to ensure comprehensive validation of the entire codebase
-- Always set `IGNORE_GITIGNORED_FILES=true` to respect .gitignore
-- Always set `SAVE_SUPER_LINTER_SUMMARY=true` to generate summary reports
-- All linter configuration files are in `.github/linters/`
-
-#### Autofix Mode
-
-Super-linter supports autofixing for many linters. Enable autofix by setting `FIX_<LANGUAGE>=true`:
-
-**Common autofix options:**
-
-- `FIX_PYTHON_BLACK=true` - autoformat Python with Black
-- `FIX_PYTHON_ISORT=true` - autosort Python imports
-- `FIX_SHELL_SHFMT=true` - autoformat shell scripts
-- `FIX_JAVASCRIPT_PRETTIER=true` - autoformat JavaScript
-- `FIX_MARKDOWN_PRETTIER=true` - autoformat Markdown
-- `FIX_YAML_PRETTIER=true` - autoformat YAML
-- `FIX_CSS_PRETTIER=true` - autoformat CSS
-- `FIX_HTML_PRETTIER=true` - autoformat HTML
-- `FIX_NATURAL_LANGUAGE=true` - autoformat natural language files
-
-**Example with autofix:**
-
-```bash
-docker run --rm \
-  -e RUN_LOCAL=true \
-  -e VALIDATE_ALL_CODEBASE=true \
-  -e DEFAULT_BRANCH=main \
-  -e IGNORE_GITIGNORED_FILES=true \
-  -e SAVE_SUPER_LINTER_SUMMARY=true \
-  -e FIX_PYTHON_BLACK=true \
-  -e FIX_PYTHON_ISORT=true \
-  -e FIX_SHELL_SHFMT=true \
-  -e FIX_MARKDOWN_PRETTIER=true \
-  -e FIX_YAML_PRETTIER=true \
-  -e FIX_JAVASCRIPT_PRETTIER=true \
-  -e FIX_CSS_PRETTIER=true \
-  -e FIX_HTML_PRETTIER=true \
-  -e FIX_NATURAL_LANGUAGE=true \
-  -v $(pwd):/tmp/lint \
-  ghcr.io/super-linter/super-linter:v8.3.2
-```
-
-**Note:** Not all linters support autofix. The above are the most commonly used in this repository.
-
-```
-
-**Note:** Not all linters support autofix. The above are the most commonly used in this repository.
-
-## CI/CD Integration
-
-- **CI Tests** (`ci-tests.yml`): Python and JavaScript tests on every push/PR
-- **UI Tests** (`ui-tests.yml`): Playwright tests on all devices
-- **Super-Linter** (`super-linter.yml`): Validates code style and quality
-- **Reports**: Available as GitHub Actions artifacts
-
-## Writing Tests
-
-### JavaScript
-
-```javascript
-describe("Feature", () => {
-  test("should work", () => {
-    expect(result).toBe(expected);
-  });
-});
-```
-
-### Python
-
-```python
-class TestFeature(unittest.TestCase):
-    def test_something(self):
-        self.assertEqual(result, expected)
-```
-
-### UI Tests
-
-```javascript
-test("validates feature", async ({ page }) => {
-  await page.goto("/");
-  await expect(page.locator(".feature")).toBeVisible();
-});
-```
-
-## Best Practices
-
-1. Write tests before fixing bugs
-2. Test edge cases and error conditions
-3. Keep tests isolated and independent
-4. Use descriptive test names
-5. Clean up after tests
-6. Run tests locally before pushing
-
-## Coverage Goals
-
-- **JavaScript**: >80% code coverage
-- **Python**: Test all public functions and edge cases
-- **UI**: Cover all features across all device sizes
+#
 
 ## UI Tests (Playwright)
 
-### Prerequisites
+### ⚠️ Important: UI Test Prerequisites
 
-Playwright UI tests require generated HTML files in the `docs/` directory. Before running UI tests, generate test data:
+**Playwright UI tests require generated HTML files to run.** The tests navigate to pages like `index.html`, `settings.html`, and `feed-*.html` which must exist in the `docs/` directory.
+
+### Quick Setup (Recommended)
+
+Use the provided script with existing test fixtures:
 
 ```bash
-# Create test RSS feed data
-cat > /tmp/test-rss-data.json << 'TESTDATA'
-{
-  "metadata": {
-    "collected_at": "2026-01-10T23:00:00Z",
-    "since": "2026-01-09T23:00:00Z",
-    "hours": 24
-  },
-  "summary": {
-    "total_feeds": 2,
-    "successful_feeds": 2,
-    "failed_feeds": 0,
-    "total_articles": 2
-  },
-  "feeds": {
-    "GitHub Blog": {
-      "url": "https://github.com/blog/all.atom",
-      "count": 1,
-      "articles": [
-        {
-          "title": "Test Article 1",
-          "link": "https://github.com/blog/test1",
-          "published": "2026-01-10T12:00:00Z"
-        }
-      ]
-    },
-    "Docker Blog": {
-      "url": "https://www.docker.com/blog/feed/",
-      "count": 1,
-      "articles": [
-        {
-          "title": "Test Article 2",
-          "link": "https://docker.com/blog/test2",
-          "published": "2026-01-10T11:00:00Z"
-        }
-      ]
-    }
-  },
-  "failed_feeds": []
-}
-TESTDATA
+# Generate test HTML files from test fixtures
+bash .github/scripts/generate-test-data.sh
 
-# Generate HTML pages for testing
+# Run UI tests
+npm run test:ui
+```
+
+**Note**: This script uses test data from `.github/workflows/test-fixtures/rss-test-data.json` which is already in the repository.
+
+### Manual Setup
+
+If you need to generate test data manually:
+
+```bash
+# Generate HTML pages from existing test fixtures
 python3 .github/actions/collect-rss-feeds/generate_summary.py \
-  --input /tmp/test-rss-data.json \
+  --input .github/workflows/test-fixtures/rss-test-data.json \
   --output-dir docs
+
+# Verify files were created
+ls docs/*.html
 
 # Run UI tests
 npm run test:ui
@@ -231,14 +74,72 @@ npm run test:ui
 # Run specific test file
 npx playwright test tests/ui/settings.spec.js
 
+# Run specific project (viewport)
+npx playwright test --project="Desktop Chrome 1920x1080"
+
 # Run with headed browser (see what's happening)
 npx playwright test --headed
 
 # Run in debug mode
 npx playwright test --debug
+
+# Run with specific reporter
+npx playwright test --reporter=list
+```
+
+### CI/CD Integration
+
+For automated testing in CI/CD, add this before running UI tests:
+
+```yaml
+- name: Generate test data for UI tests
+  run: bash .github/scripts/generate-test-data.sh
+
+- name: Run UI tests
+  run: npm run test:ui
 ```
 
 ### Troubleshooting
 
-If UI tests fail with "data-theme is null" or similar errors, ensure you've generated the HTML files first.
+**Problem**: Tests fail with "data-theme is null" or "element not found"  
+**Solution**: Generate HTML files first:
+```bash
+bash .github/scripts/generate-test-data.sh
+```
 
+**Problem**: Tests timeout waiting for elements  
+**Solution**: Ensure `docs/index.html` exists and contains valid HTML:
+```bash
+ls -la docs/index.html
+```
+
+**Problem**: "http://localhost:8080 is already used"  
+**Solution**: Kill the existing server:
+```bash
+kill $(lsof -ti:8080) 2>/dev/null || true
+npm run test:ui
+```
+
+**Problem**: Strict mode violations in tests  
+**Solution**: Tests have been updated with specific selectors (see commit 2eb018b)
+
+### Test Data
+
+The UI tests use test fixtures located in `.github/workflows/test-fixtures/`:
+- `rss-test-data.json` - Complete test data with 3 feeds and 15 articles
+- `rss-empty-data.json` - Empty test data for edge case testing
+
+These fixtures are maintained in the repository and used by both the test suite and CI/CD workflows.
+
+### Why is This Needed?
+
+The UI tests use Playwright to test actual rendered HTML pages. Unlike unit tests that can mock everything, UI tests need real HTML files to navigate to and interact with. The `generate_summary.py` script creates these files from RSS feed data.
+
+**In production**: The RSS feed workflow generates these files automatically  
+**For testing**: We use test fixtures to generate the required HTML structure
+
+This approach ensures:
+- Tests run consistently with known data
+- No external dependencies (no actual RSS feeds needed)
+- Fast test execution
+- Reproducible test results
