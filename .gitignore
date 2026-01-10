@@ -35,6 +35,10 @@ discord-message.json
 # Source branches don't need them - only github-pages branch does
 docs/*.html
 
+# GitHub Pages - Generated RSS feed files are build artifacts  
+# Workflow generates these from collected RSS data and pushes to github-pages branch
+docs/*.xml
+
 # IDE
 .vscode/
 .idea/
