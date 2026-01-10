@@ -618,6 +618,9 @@ class TestMultiPageGeneration(unittest.TestCase):
         # Verify the active link is for the current feed
         lines = nav_html.split("\n")
         for line in lines:
+            # Skip the feed-list-data script tag
+            if "feed-list-data" in line:
+                continue
             if "Test Feed 1" in line:
                 # The active class should be in the same line
                 self.assertIn("active", line)
