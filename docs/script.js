@@ -510,17 +510,24 @@ function reorderArticlesInFeed (articleList, articles) {
     const link = article.querySelector('.article-title')
     const articleUrl = link ? link.getAttribute('href') : null
     const isRead = articleUrl ? isArticleRead(articleUrl) : false
+    const publishedISO = article.getAttribute('data-published')
+    const publishDate = publishedISO ? new Date(publishedISO) : new Date(0)
 
     return {
       element: article,
       isRead,
-      articleUrl
+      articleUrl,
+      publishDate
     }
   })
 
-  // Separate into two groups: unread first, read second
-  const unreadArticles = articleData.filter(a => !a.isRead)
-  const readArticles = articleData.filter(a => a.isRead)
+  // Separate into two groups and sort by date (newest first)
+  const unreadArticles = articleData
+    .filter(a => !a.isRead)
+    .sort((a, b) => b.publishDate - a.publishDate)
+  const readArticles = articleData
+    .filter(a => a.isRead)
+    .sort((a, b) => b.publishDate - a.publishDate)
 
   // Combine: unread articles first, then read articles
   const orderedArticles = [...unreadArticles, ...readArticles]
