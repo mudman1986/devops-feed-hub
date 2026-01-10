@@ -2,14 +2,7 @@
 name: ui-specialist
 description: Reviews UI/UX for responsive design, accessibility, and visual consistency
 tools:
-  [
-    "read",
-    "edit",
-    "playwright-browser_navigate",
-    "playwright-browser_take_screenshot",
-    "playwright-browser_snapshot",
-    "bash",
-  ]
+  ['vscode', 'execute', 'read', 'agent', 'github.vscode-pull-request-github/copilotCodingAgent', 'github.vscode-pull-request-github/issue_fetch', 'github.vscode-pull-request-github/suggest-fix', 'github.vscode-pull-request-github/searchSyntax', 'github.vscode-pull-request-github/doSearch', 'github.vscode-pull-request-github/renderIssues', 'github.vscode-pull-request-github/activePullRequest', 'github.vscode-pull-request-github/openPullRequest', 'todo']
 ---
 
 # UI/UX Specialist

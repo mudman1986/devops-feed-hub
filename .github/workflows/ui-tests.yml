@@ -37,13 +37,13 @@ jobs:
       - name: Install Playwright browsers
         run: npx playwright install --with-deps chromium
 
-      - name: Collect RSS Feeds
-        id: collect
-        uses: ./.github/actions/collect-rss-feeds
-        with:
-          hours: "24"
-          config-path: ".github/rss-feeds.json"
-          output-path: "rss-feeds-output.json"
+      # - name: Collect RSS Feeds
+      #   id: collect
+      #   uses: ./.github/actions/collect-rss-feeds
+      #   with:
+      #     hours: "24"
+      #     config-path: ".github/rss-feeds.json"
+      #     output-path: "rss-feeds-output.json"
 
       - name: Generate HTML files for testing
         run: |

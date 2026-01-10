@@ -18,17 +18,18 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            const issueBody = `Review the codebase and make improvements:
-
-- Fix failing tests (superlinter, ci, ui tests)
-- Refactor duplicate code
-- Address security vulnerabilities
-- Improve code maintainability and performance
-- Enhance UI accessibility
-- Increase test coverage
-
-**Rules:** Make minimal surgical changes, run all linters/tests before completing.`;
-
+            const issueBody = [
+              'Review the codebase and make improvements:',
+              '',
+              '- Fix failing tests (superlinter, ci, ui tests)',
+              '- Refactor duplicate code',
+              '- Address security vulnerabilities',
+              '- Improve code maintainability and performance',
+              '- Enhance UI accessibility',
+              '- Increase test coverage',
+              '',
+              '**Rules:** Make minimal surgical changes, run all linters/tests before completing.'
+            ].join('\n');
             const issue = await github.rest.issues.create({
               owner: context.repo.owner,
               repo: context.repo.repo,

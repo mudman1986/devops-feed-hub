@@ -1,6 +1,5 @@
 ---
 applyTo: "docs/**/*.js,docs/**/*.html,docs/**/*.css"
-excludeAgent: "code-review"
 ---
 
 # Frontend/UI Development

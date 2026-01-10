@@ -1,7 +1,7 @@
 ---
 name: refactor
 description: Specialized in refactoring code to improve quality, reduce complexity, and eliminate duplication
-tools: ["read", "edit", "search", "grep", "glob"]
+tools: ['vscode', 'execute', 'read', 'agent', 'github.vscode-pull-request-github/copilotCodingAgent', 'github.vscode-pull-request-github/issue_fetch', 'github.vscode-pull-request-github/suggest-fix', 'github.vscode-pull-request-github/searchSyntax', 'github.vscode-pull-request-github/doSearch', 'github.vscode-pull-request-github/renderIssues', 'github.vscode-pull-request-github/activePullRequest', 'github.vscode-pull-request-github/openPullRequest', 'todo']
 ---
 
 # Refactoring Specialist
