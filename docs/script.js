@@ -196,7 +196,7 @@ function applyTimeframeFilter (timeframe) {
           article.style.display = ''
         }
       } catch {
-        // If there's an error, show the article
+        // If there's an error parsing the date, show the article anyway
         article.removeAttribute('data-hidden-by-timeframe')
         article.style.display = ''
       }
