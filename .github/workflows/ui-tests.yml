@@ -47,7 +47,26 @@ jobs:
 
       - name: Generate HTML files for testing
         run: |
+          # Clean docs directory to remove any stale HTML files
+          echo "Cleaning docs directory..."
+          rm -f docs/*.html
+          
+          # Verify RSS data was collected
+          if [ ! -f "rss-feeds-output.json" ]; then
+            echo "ERROR: rss-feeds-output.json not found"
+            exit 1
+          fi
+          
+          ARTICLE_COUNT=$(jq -r '.summary.total_articles' rss-feeds-output.json)
+          echo "RSS data contains $ARTICLE_COUNT articles"
+          
+          if [ "$ARTICLE_COUNT" -eq 0 ]; then
+            echo "ERROR: No articles collected from RSS feeds"
+            exit 1
+          fi
+          
           # Generate multi-page HTML (main index + individual feed pages)
+          echo "Generating HTML files..."
           python3 .github/actions/collect-rss-feeds/generate_summary.py \
             --input rss-feeds-output.json \
             --output-dir docs
@@ -61,11 +80,11 @@ jobs:
           
           if [ "$INDEX_SIZE" -lt 10000 ]; then
             echo "ERROR: index.html is too small ($INDEX_SIZE bytes)"
-            echo "This indicates no articles were collected or HTML generation failed"
+            cat docs/index.html | head -50
             exit 1
           fi
           
-          echo "✓ HTML files generated successfully with article data"
+          echo "✓ HTML files generated successfully with $ARTICLE_COUNT articles"
 
       - name: Run Playwright tests
         run: npx playwright test --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
