@@ -17,32 +17,27 @@ try {
 }
 
 htmlElement.setAttribute('data-theme', savedTheme)
+updateThemeButton(savedTheme)
 
-if (themeToggle) {
-  updateThemeButton(savedTheme)
+themeToggle.addEventListener('click', () => {
+  const currentTheme = htmlElement.getAttribute('data-theme')
+  const newTheme = currentTheme === 'light' ? 'dark' : 'light'
 
-  themeToggle.addEventListener('click', () => {
-    const currentTheme = htmlElement.getAttribute('data-theme')
-    const newTheme = currentTheme === 'light' ? 'dark' : 'light'
+  htmlElement.setAttribute('data-theme', newTheme)
 
-    htmlElement.setAttribute('data-theme', newTheme)
+  try {
+    localStorage.setItem('theme', newTheme)
+  } catch (e) {
+    // localStorage might be unavailable, theme will reset on reload
+    console.warn('Unable to save theme preference:', e)
+  }
 
-    try {
-      localStorage.setItem('theme', newTheme)
-    } catch (e) {
-      // localStorage might be unavailable, theme will reset on reload
-      console.warn('Unable to save theme preference:', e)
-    }
-
-    updateThemeButton(newTheme)
-  })
-}
+  updateThemeButton(newTheme)
+})
 
 function updateThemeButton (theme) {
   const iconSVG = document.getElementById('theme-icon')
   const themeText = document.getElementById('theme-text')
-
-  if (!iconSVG || !themeText) return
 
   if (theme === 'dark') {
     // Sun icon for light mode
@@ -57,13 +52,13 @@ function updateThemeButton (theme) {
   }
 }
 
-// View selector functionality (compact/comfortable)
+// View selector functionality (normal/list)
 const viewSelect = document.getElementById('view-select')
 
-// Get saved view preference or default to comfortable
-let savedView = 'comfortable'
+// Get saved view preference or default to normal
+let savedView = 'normal'
 try {
-  savedView = localStorage.getItem('view') || 'comfortable'
+  savedView = localStorage.getItem('view') || 'normal'
 } catch (e) {
   // localStorage might be unavailable (privacy mode, quota exceeded, etc.)
   console.warn('localStorage unavailable, using default view:', e)
@@ -91,7 +86,7 @@ if (viewSelect) {
 }
 
 function applyView (view) {
-  if (view && view !== 'comfortable') {
+  if (view && view !== 'normal') {
     htmlElement.setAttribute('data-view', view)
   } else {
     htmlElement.removeAttribute('data-view')

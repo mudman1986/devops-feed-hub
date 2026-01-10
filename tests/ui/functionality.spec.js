@@ -477,7 +477,7 @@ test.describe("Timeframe Selector Tests", () => {
 
 /**
  * View Selector Functionality Tests
- * Tests compact/comfortable view switching via dropdown
+ * Tests normal/list view switching via dropdown
  */
 test.describe("View Selector Tests", () => {
   test.beforeEach(async ({ page }) => {
@@ -487,36 +487,47 @@ test.describe("View Selector Tests", () => {
     await page.reload();
   });
 
-  test("should switch between comfortable and compact views", async ({
-    page,
-  }) => {
+  test("should switch between normal and list views", async ({ page }) => {
     const htmlElement = page.locator("html");
     const viewSelect = page.locator("#view-select");
 
-    // Should start without data-view attribute (comfortable mode)
+    // Should start without data-view attribute (normal mode)
     const initialView = await htmlElement.getAttribute("data-view");
     expect(initialView).toBeNull();
 
-    // Select compact view
-    await viewSelect.selectOption("compact");
+    // Select list view
+    await viewSelect.selectOption("list");
 
-    // Verify view changed to compact
-    await expect(htmlElement).toHaveAttribute("data-view", "compact");
+    // Verify view changed to list
+    await expect(htmlElement).toHaveAttribute("data-view", "list");
 
-    // Select comfortable view
-    await viewSelect.selectOption("comfortable");
+    // Select normal view
+    await viewSelect.selectOption("normal");
 
-    // Verify view is back to comfortable (no data-view attribute)
+    // Verify view is back to normal (no data-view attribute)
     const finalView = await htmlElement.getAttribute("data-view");
     expect(finalView).toBeNull();
   });
 
   test("should have view selector in sidebar", async ({ page }) => {
     const viewSelect = page.locator("#view-select");
+
+    // Open sidebar if it's collapsed (on mobile/tablet)
+    const sidebar = page.locator("#sidebar");
+    const sidebarCollapsed = await sidebar
+      .evaluate((el) => el.classList.contains("collapsed"))
+      .catch(() => false);
+    if (sidebarCollapsed) {
+      const navToggle = page.locator("#nav-toggle");
+      if ((await navToggle.count()) > 0) {
+        await navToggle.click();
+        await page.waitForTimeout(300);
+      }
+    }
+
     await expect(viewSelect).toBeVisible();
 
     // Verify it's in the sidebar
-    const sidebar = page.locator("#sidebar");
     const selectInSidebar = sidebar.locator("#view-select");
     await expect(selectInSidebar).toBeVisible();
   });
@@ -526,47 +537,44 @@ test.describe("View Selector Tests", () => {
 
     // Verify options exist
     const options = await viewSelect.locator("option").allTextContents();
-    expect(options).toContain("Comfortable");
-    expect(options).toContain("Cozy");
-    expect(options).toContain("Compact");
-    expect(options).toContain("Dense");
+    expect(options).toContain("Normal");
     expect(options).toContain("List");
-    expect(options.length).toBe(5);
+    expect(options.length).toBe(2);
   });
 
   test("should persist view preference on reload", async ({ page }) => {
     const htmlElement = page.locator("html");
     const viewSelect = page.locator("#view-select");
 
-    // Select compact view
-    await viewSelect.selectOption("compact");
+    // Select list view
+    await viewSelect.selectOption("list");
 
     // Wait for view to change
-    await expect(htmlElement).toHaveAttribute("data-view", "compact");
+    await expect(htmlElement).toHaveAttribute("data-view", "list");
 
     // Reload page
     await page.reload();
     await page.waitForLoadState("networkidle");
 
     // Verify view persisted
-    await expect(htmlElement).toHaveAttribute("data-view", "compact");
+    await expect(htmlElement).toHaveAttribute("data-view", "list");
   });
 
   test("should save view preference to localStorage", async ({ page }) => {
     const viewSelect = page.locator("#view-select");
 
-    // Select compact view
-    await viewSelect.selectOption("compact");
+    // Select list view
+    await viewSelect.selectOption("list");
     await page.waitForTimeout(100);
 
     // Check localStorage
     const savedView = await page.evaluate(() => localStorage.getItem("view"));
-    expect(savedView).toBe("compact");
+    expect(savedView).toBe("list");
   });
 
   test("should load saved preference on first page load", async ({ page }) => {
     // Set a preference in localStorage before page loads
-    await page.evaluate(() => localStorage.setItem("view", "compact"));
+    await page.evaluate(() => localStorage.setItem("view", "list"));
 
     // Reload to apply the saved preference
     await page.reload();
@@ -574,72 +582,11 @@ test.describe("View Selector Tests", () => {
 
     // Verify the html element has the saved view
     const htmlElement = page.locator("html");
-    await expect(htmlElement).toHaveAttribute("data-view", "compact");
+    await expect(htmlElement).toHaveAttribute("data-view", "list");
 
     // Verify the select has the saved value
     const viewSelect = page.locator("#view-select");
     const value = await viewSelect.inputValue();
-    expect(value).toBe("compact");
-  });
-
-  test("should apply compact spacing styles when in compact mode", async ({
-    page,
-  }) => {
-    const viewSelect = page.locator("#view-select");
-    const feedSection = page.locator(".feed-section").first();
-
-    if ((await feedSection.count()) === 0) {
-      test.skip();
-    }
-
-    // Get initial padding in comfortable mode
-    const comfortablePadding = await feedSection.evaluate((el) => {
-      return window.getComputedStyle(el).padding;
-    });
-
-    // Switch to compact mode
-    await viewSelect.selectOption("compact");
-    await page.waitForTimeout(100);
-
-    // Get padding in compact mode
-    const compactPadding = await feedSection.evaluate((el) => {
-      return window.getComputedStyle(el).padding;
-    });
-
-    // Compact padding should be different (smaller) than comfortable padding
-    expect(compactPadding).not.toBe(comfortablePadding);
-  });
-
-  test("should apply all view modes correctly", async ({ page }) => {
-    const htmlElement = page.locator("html");
-    const viewSelect = page.locator("#view-select");
-    
-    // Open sidebar if it's collapsed (on mobile/tablet)
-    const sidebar = page.locator("#sidebar");
-    const sidebarCollapsed = await sidebar.evaluate(el => el.classList.contains('collapsed')).catch(() => false);
-    if (sidebarCollapsed) {
-      const navToggle = page.locator("#nav-toggle");
-      if (await navToggle.count() > 0) {
-        await navToggle.click();
-        await page.waitForTimeout(300);
-      }
-    }
-
-    // Test each view mode
-    const viewModes = ["comfortable", "cozy", "compact", "dense", "list"];
-
-    for (const mode of viewModes) {
-      await viewSelect.selectOption(mode);
-      await page.waitForTimeout(100);
-
-      if (mode === "comfortable") {
-        // Comfortable should not have data-view attribute
-        const viewAttr = await htmlElement.getAttribute("data-view");
-        expect(viewAttr).toBeNull();
-      } else {
-        // Other modes should have data-view attribute set
-        await expect(htmlElement).toHaveAttribute("data-view", mode);
-      }
-    }
+    expect(value).toBe("list");
   });
 });
