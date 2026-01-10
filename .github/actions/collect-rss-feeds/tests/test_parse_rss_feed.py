@@ -56,14 +56,15 @@ class TestParseRssFeed(unittest.TestCase):
 
         # Call the function
         since_time = datetime(2026, 1, 6, 0, 0, 0)
-        result = parse_rss_feed("https://example.com/feed.xml", since_time)
+        articles, error = parse_rss_feed("https://example.com/feed.xml", since_time)
 
         # Verify results
-        self.assertIsNotNone(result)
-        self.assertEqual(len(result), 2)
-        self.assertEqual(result[0]["title"], "Test Article 1")
-        self.assertEqual(result[0]["link"], "https://example.com/article1")
-        self.assertIn("published", result[0])
+        self.assertIsNotNone(articles)
+        self.assertIsNone(error)
+        self.assertEqual(len(articles), 2)
+        self.assertEqual(articles[0]["title"], "Test Article 1")
+        self.assertEqual(articles[0]["link"], "https://example.com/article1")
+        self.assertIn("published", articles[0])
 
     @patch("collect_feeds.urlopen")
     @patch("collect_feeds.feedparser.parse")
@@ -99,10 +100,11 @@ class TestParseRssFeed(unittest.TestCase):
         mock_feedparser.return_value = mock_feed
 
         since_time = datetime(2026, 1, 1, 0, 0, 0)
-        result = parse_rss_feed("https://example.com/feed.xml", since_time)
+        articles, error = parse_rss_feed("https://example.com/feed.xml", since_time)
 
-        self.assertEqual(len(result), 1)
-        self.assertEqual(result[0]["title"], "Recent Article")
+        self.assertIsNone(error)
+        self.assertEqual(len(articles), 1)
+        self.assertEqual(articles[0]["title"], "Recent Article")
 
     @patch("collect_feeds.urlopen")
     @patch("collect_feeds.feedparser.parse")
@@ -140,10 +142,11 @@ class TestParseRssFeed(unittest.TestCase):
         mock_feedparser.return_value = mock_feed
 
         since_time = datetime(2026, 1, 1, 0, 0, 0)
-        result = parse_rss_feed("https://example.com/feed.xml", since_time)
+        articles, error = parse_rss_feed("https://example.com/feed.xml", since_time)
 
-        self.assertEqual(len(result), 1)
-        self.assertEqual(result[0]["title"], "Updated Article")
+        self.assertIsNone(error)
+        self.assertEqual(len(articles), 1)
+        self.assertEqual(articles[0]["title"], "Updated Article")
 
     @patch("collect_feeds.urlopen")
     @patch("collect_feeds.feedparser.parse")
@@ -170,11 +173,12 @@ class TestParseRssFeed(unittest.TestCase):
         mock_feedparser.return_value = mock_feed
 
         since_time = datetime(2026, 1, 1, 0, 0, 0)
-        result = parse_rss_feed("https://example.com/feed.xml", since_time)
+        articles, error = parse_rss_feed("https://example.com/feed.xml", since_time)
 
-        self.assertEqual(len(result), 1)
-        self.assertEqual(result[0]["title"], "No Date Article")
-        self.assertEqual(result[0]["published"], "Unknown")
+        self.assertIsNone(error)
+        self.assertEqual(len(articles), 1)
+        self.assertEqual(articles[0]["title"], "No Date Article")
+        self.assertEqual(articles[0]["published"], "Unknown")
 
     @patch("collect_feeds.urlopen")
     def test_parse_feed_network_error(self, mock_urlopen):
@@ -182,9 +186,11 @@ class TestParseRssFeed(unittest.TestCase):
         mock_urlopen.side_effect = Exception("Network error")
 
         since_time = datetime(2026, 1, 1, 0, 0, 0)
-        result = parse_rss_feed("https://example.com/feed.xml", since_time)
+        articles, error = parse_rss_feed("https://example.com/feed.xml", since_time)
 
-        self.assertIsNone(result)
+        self.assertIsNone(articles)
+        self.assertIsNotNone(error)
+        self.assertIn("Network error", error)
 
     @patch("collect_feeds.urlopen")
     @patch("collect_feeds.feedparser.parse")
@@ -203,9 +209,11 @@ class TestParseRssFeed(unittest.TestCase):
         mock_feedparser.return_value = mock_feed
 
         since_time = datetime(2026, 1, 1, 0, 0, 0)
-        result = parse_rss_feed("https://example.com/feed.xml", since_time)
+        articles, error = parse_rss_feed("https://example.com/feed.xml", since_time)
 
-        self.assertIsNone(result)
+        self.assertIsNone(articles)
+        self.assertIsNotNone(error)
+        self.assertIn("Feed parsing error", error)
 
     @patch("collect_feeds.urlopen")
     @patch("collect_feeds.feedparser.parse")
@@ -223,10 +231,11 @@ class TestParseRssFeed(unittest.TestCase):
         mock_feedparser.return_value = mock_feed
 
         since_time = datetime(2026, 1, 1, 0, 0, 0)
-        result = parse_rss_feed("https://example.com/feed.xml", since_time)
+        articles, error = parse_rss_feed("https://example.com/feed.xml", since_time)
 
-        self.assertIsNotNone(result)
-        self.assertEqual(len(result), 0)
+        self.assertIsNotNone(articles)
+        self.assertIsNone(error)
+        self.assertEqual(len(articles), 0)
 
 
 if __name__ == "__main__":
