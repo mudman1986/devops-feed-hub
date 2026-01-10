@@ -52,47 +52,6 @@ function updateThemeButton (theme) {
   }
 }
 
-// View selector functionality (compact/comfortable)
-const viewSelect = document.getElementById('view-select')
-
-// Get saved view preference or default to comfortable
-let savedView = 'comfortable'
-try {
-  savedView = localStorage.getItem('view') || 'comfortable'
-} catch (e) {
-  // localStorage might be unavailable (privacy mode, quota exceeded, etc.)
-  console.warn('localStorage unavailable, using default view:', e)
-}
-
-// Set dropdown value and apply view
-if (viewSelect) {
-  viewSelect.value = savedView
-  applyView(savedView)
-
-  // Add change listener to dropdown
-  viewSelect.addEventListener('change', () => {
-    const view = viewSelect.value
-
-    // Save preference
-    try {
-      localStorage.setItem('view', view)
-    } catch (e) {
-      console.warn('Unable to save view preference:', e)
-    }
-
-    // Apply view
-    applyView(view)
-  })
-}
-
-function applyView (view) {
-  if (view === 'compact') {
-    htmlElement.setAttribute('data-view', 'compact')
-  } else {
-    htmlElement.removeAttribute('data-view')
-  }
-}
-
 // Initialize sidebar state based on screen size
 function initializeSidebarState (sidebar) {
   if (window.innerWidth <= 768) {
