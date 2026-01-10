@@ -74,6 +74,11 @@ jobs:
           echo "Generated HTML files:"
           ls -lh docs/*.html
 
+          # Force filesystem sync to ensure all HTML files are written to disk
+          # This prevents race conditions where Playwright starts before files are flushed
+          sync
+          echo "✓ Filesystem synced"
+
           # Verify HTML has actual content (should be >10KB for index with articles)
           INDEX_SIZE=$(stat -f%z docs/index.html 2>/dev/null || stat -c%s docs/index.html)
           echo "Index file size: $INDEX_SIZE bytes"
