@@ -1,4 +1,4 @@
-name: RSS News Dashboard
+name: DevOps Feed Hub
 
 on:
   push:
