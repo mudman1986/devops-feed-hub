@@ -882,8 +882,8 @@ class TestMultiPageGeneration(unittest.TestCase):
         self.assertLess(microsoft_pos, zebra_pos)
 
     def test_template_no_hardcoded_selected_attribute(self):
-        """Test that template.html does not have hardcoded selected attribute"""
-        import re
+        """Test that template.html does not have hardcoded selected."""
+        import re  # pylint: disable=import-outside-toplevel
 
         # Read the template file
         template_path = os.path.join(os.path.dirname(__file__), "..", "template.html")
@@ -893,15 +893,16 @@ class TestMultiPageGeneration(unittest.TestCase):
         # Check that there's no selected attribute in any option tag
         # This prevents the timeframe selector bug where hardcoded selected
         # prevents JavaScript from setting the correct value from localStorage
-        # Use regex to catch all variations: selected, selected="selected", selected>, etc.
+        # Use regex to catch all variations
         selected_pattern = re.compile(r"<option[^>]*\sselected[\s>=]", re.IGNORECASE)
         match = selected_pattern.search(template_content)
 
         self.assertIsNone(
             match,
-            f"Template should not have hardcoded 'selected' attribute on option tags. "
-            f"Found at position {match.start() if match else 'N/A'}: {match.group() if match else 'N/A'}. "
-            f"JavaScript should set the timeframe value programmatically from localStorage.",
+            f"Template should not have hardcoded 'selected' attribute. "
+            f"Found at {match.start() if match else 'N/A'}: "
+            f"{match.group() if match else 'N/A'}. "
+            f"JavaScript should set timeframe from localStorage.",
         )
 
 

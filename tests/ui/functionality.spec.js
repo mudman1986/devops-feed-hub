@@ -269,9 +269,7 @@ test.describe("Mark as Read Tests", () => {
     });
   });
 
-  test.skip("should toggle read status when clicking indicator twice", async ({
-    page,
-  }) => {
+  test.skip("should toggle read status when clicking indicator twice", async () => {
     // SKIPPED: Pre-existing bug - article.classList.add('read') is not working
     // Article URL is correctly saved to localStorage but visual class is not applied
     // This is a bug in the updateArticleReadState function or related code in script.js
