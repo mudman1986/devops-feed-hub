@@ -85,7 +85,7 @@ def parse_rss_feed(
         error_msg = f"Connection error: {e.reason}"
         print(f"Error fetching feed {url}: {error_msg}", file=sys.stderr)
         return None, error_msg
-    except TimeoutError as e:
+    except TimeoutError:
         error_msg = "Connection timeout"
         print(f"Error fetching feed {url}: {error_msg}", file=sys.stderr)
         return None, error_msg
