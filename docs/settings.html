@@ -447,6 +447,59 @@
           loadRSSFeedLinks();
         }
 
+        // List of valid experimental themes
+        const VALID_EXPERIMENTAL_THEMES = [
+          "midnight-blue",
+          "forest-green",
+          "purple-haze",
+          "sunset-orange",
+          "ocean-deep",
+          "rose-gold",
+          "arctic-blue",
+          "pastel-dream",
+          "high-contrast-dark",
+          "high-contrast-light",
+          "monochrome",
+          "solarized-dark",
+          "dracula",
+          "minimalist",
+          "terminal",
+          "magazine",
+          "glassmorphism",
+          "retro",
+          "futuristic",
+          "newspaper",
+          "compact",
+          "sidebar-first",
+          "vertical-cards",
+          "horizontal-scroll",
+          "masonry-grid",
+          "split-screen",
+          "giant-text",
+          "tiny-text",
+          "floating-panels",
+          "center-stage",
+          "bottom-heavy",
+          "diagonal-split",
+          "circular-nav",
+          "hero-featured",
+          "grid-cards",
+          "sidebar-magazine",
+          "top-strip",
+          "list-dense",
+          "timeline-vertical",
+          "carousel-featured",
+        ];
+
+        // Helper function to apply theme
+        function applyTheme(themeName) {
+          if (themeName && !VALID_EXPERIMENTAL_THEMES.includes(themeName) && themeName !== "dark" && themeName !== "light") {
+            console.warn(`Invalid theme: ${themeName}. Falling back to dark.`);
+            themeName = "dark";
+          }
+          document.documentElement.setAttribute("data-theme", themeName || "dark");
+        }
+
         function loadSettings() {
           // Load theme
           try {
@@ -467,12 +520,9 @@
             if (experimentalThemeSelect)
               experimentalThemeSelect.value = experimentalTheme;
 
-            // Apply experimental theme if set
-            if (experimentalTheme) {
-              document.documentElement.setAttribute(
-                "data-theme",
-                experimentalTheme,
-              );
+            // Apply experimental theme if set and valid
+            if (experimentalTheme && VALID_EXPERIMENTAL_THEMES.includes(experimentalTheme)) {
+              applyTheme(experimentalTheme);
             }
           } catch (e) {
             console.warn("Unable to load experimental theme setting:", e);
@@ -512,7 +562,7 @@
                   "experimental-theme-setting",
                 );
                 if (experimentalThemeSelect) experimentalThemeSelect.value = "";
-                document.documentElement.setAttribute("data-theme", theme);
+                applyTheme(theme);
               } catch (err) {
                 console.warn("Unable to save theme:", err);
               }
@@ -528,17 +578,18 @@
               const experimentalTheme = e.target.value;
               try {
                 if (experimentalTheme) {
-                  // Save experimental theme
-                  localStorage.setItem("experimentalTheme", experimentalTheme);
-                  document.documentElement.setAttribute(
-                    "data-theme",
-                    experimentalTheme,
-                  );
+                  // Save experimental theme if valid
+                  if (VALID_EXPERIMENTAL_THEMES.includes(experimentalTheme)) {
+                    localStorage.setItem("experimentalTheme", experimentalTheme);
+                    applyTheme(experimentalTheme);
+                  } else {
+                    console.warn(`Invalid experimental theme: ${experimentalTheme}`);
+                  }
                 } else {
                   // Clear experimental theme and revert to standard theme
                   localStorage.removeItem("experimentalTheme");
                   const theme = localStorage.getItem("theme") || "dark";
-                  document.documentElement.setAttribute("data-theme", theme);
+                  applyTheme(theme);
                 }
               } catch (err) {
                 console.warn("Unable to save experimental theme:", err);

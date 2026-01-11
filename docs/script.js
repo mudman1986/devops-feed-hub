@@ -3,6 +3,21 @@
 // Mark as Read constants
 const READ_ARTICLES_KEY = "readArticles";
 
+// List of valid experimental themes
+const VALID_EXPERIMENTAL_THEMES = [
+  "midnight-blue", "forest-green", "purple-haze", "sunset-orange",
+  "ocean-deep", "rose-gold", "arctic-blue", "pastel-dream",
+  "high-contrast-dark", "high-contrast-light", "monochrome",
+  "solarized-dark", "dracula", "minimalist", "terminal",
+  "magazine", "glassmorphism", "retro", "futuristic",
+  "newspaper", "compact", "sidebar-first", "vertical-cards",
+  "horizontal-scroll", "masonry-grid", "split-screen", "giant-text",
+  "tiny-text", "floating-panels", "center-stage", "bottom-heavy",
+  "diagonal-split", "circular-nav", "hero-featured", "grid-cards",
+  "sidebar-magazine", "top-strip", "list-dense", "timeline-vertical",
+  "carousel-featured",
+];
+
 // Theme toggle functionality
 const themeToggle = document.getElementById("theme-toggle");
 const htmlElement = document.documentElement;
@@ -11,9 +26,13 @@ const htmlElement = document.documentElement;
 let savedTheme = "dark";
 try {
   const experimentalTheme = localStorage.getItem("experimentalTheme");
-  if (experimentalTheme) {
+  if (experimentalTheme && VALID_EXPERIMENTAL_THEMES.includes(experimentalTheme)) {
     savedTheme = experimentalTheme;
   } else {
+    if (experimentalTheme) {
+      console.warn(`Invalid experimental theme: ${experimentalTheme}. Using default.`);
+      localStorage.removeItem("experimentalTheme");
+    }
     savedTheme = localStorage.getItem("theme") || "dark";
   }
 } catch (e) {
