@@ -41,6 +41,15 @@ This repository is maintained primarily by GitHub Copilot. Path-specific instruc
 - Update existing tests when modifying functionality
 - All tests must pass before committing
 
+## Agent Integration Requirement
+
+### Coordination with Specialized Agents
+
+- **MANDATORY: For every task, the coding agent MUST assign tasks to all available specialized agents in the repository (e.g., UI/UX Specialist, Test Runner, Code Review, etc.) alongside performing its own work.**
+- The coding agent is responsible not only for completing its assigned coding or refactoring, but also for ensuring that all relevant agents are engaged to apply their expertise for each change (for example: test runner validates tests and coverage, UI specialist reviews and iterates on UI/UX, etc.).
+- Assignment to specialized agents must happen automatically as part of the workflow for every new task, regardless of perceived necessity.
+- This ensures that every pull request or significant code change receives focused review and validation from all aspects: UI/UX, testing/coverage, accessibility, code linting, and documentation, according to agent roles.
+
 ## Local Development and Validation
 
 ### Running Super-Linter Locally
@@ -99,14 +108,6 @@ This repository is maintained primarily by GitHub Copilot. Path-specific instruc
 - **Enable all FIX\_\* flags** to automatically fix formatting issues
 - **Linter configs**: All linter configuration files are in `.github/linters/`
 - Fix **ALL** remaining linting errors before committing (not just errors you introduced)
-
-### Key Super-Linter Differences
-
-- PYTHON_BLACK uses double quotes and enforces line breaks
-- SHELL_SHFMT uses tabs for indentation (not spaces)
-- NATURAL_LANGUAGE enforces specific terminology (e.g., "GitHub" not "gh")
-- Quote all variables in shell scripts: `"$VAR"` not `$VAR`
-- Shellcheck validates embedded scripts in workflow YAML files
 
 ### Running Tests
 
