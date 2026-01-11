@@ -148,6 +148,85 @@
                 </select>
               </div>
             </div>
+          </div>
+          
+          <h3 class="settings-subsection-title">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+              <polyline points="2 17 12 22 22 17"></polyline>
+              <polyline points="2 12 12 17 22 12"></polyline>
+            </svg>
+            Experimental Themes
+          </h3>
+          <div class="settings-group experimental-themes">
+            <div class="experimental-disclaimer">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                style="flex-shrink: 0; margin-top: 0.125rem;"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+              <p>
+                <strong>Work in Progress:</strong> These experimental themes are under active development and may change or be removed without notice. They represent different visual and layout approaches to explore alternative UI/UX designs.
+              </p>
+            </div>
+            
+            <div class="settings-item">
+              <div class="settings-item-label">
+                <label for="experimental-theme-setting">Experimental Theme</label>
+                <p class="settings-item-description">
+                  Try out new color schemes and completely redesigned layouts
+                </p>
+              </div>
+              <div class="settings-item-control">
+                <select id="experimental-theme-setting" class="settings-select">
+                  <option value="">None (Use Standard Theme)</option>
+                  <optgroup label="Color Variations">
+                    <option value="midnight-blue">Midnight Blue</option>
+                    <option value="forest-green">Forest Green</option>
+                    <option value="purple-haze">Purple Haze</option>
+                    <option value="sunset-orange">Sunset Orange</option>
+                    <option value="ocean-deep">Ocean Deep</option>
+                    <option value="rose-gold">Rose Gold</option>
+                    <option value="arctic-blue">Arctic Blue</option>
+                    <option value="pastel-dream">Pastel Dream</option>
+                    <option value="high-contrast-dark">High Contrast Dark</option>
+                    <option value="high-contrast-light">High Contrast Light</option>
+                    <option value="monochrome">Monochrome</option>
+                    <option value="solarized-dark">Solarized Dark</option>
+                    <option value="dracula">Dracula</option>
+                  </optgroup>
+                  <optgroup label="Layout Redesigns">
+                    <option value="minimalist">Minimalist - Clean & Simple</option>
+                    <option value="terminal">Terminal - Monospace Command-Line</option>
+                    <option value="magazine">Magazine - Multi-Column Editorial</option>
+                    <option value="glassmorphism">Glassmorphism - Frosted Glass</option>
+                    <option value="retro">Retro - 80s/90s Inspired</option>
+                    <option value="futuristic">Futuristic - Sci-Fi Neon</option>
+                    <option value="newspaper">Newspaper - Classic Print</option>
+                    <option value="compact">Compact - Dense Information</option>
+                  </optgroup>
+                </select>
+              </div>
+            </div>
             <div class="settings-item">
               <div class="settings-item-label">
                 <label for="view-setting">View Mode</label>
@@ -324,6 +403,27 @@
             console.warn("Unable to load theme setting:", e);
           }
 
+          // Load experimental theme
+          try {
+            const experimentalTheme =
+              localStorage.getItem("experimentalTheme") || "";
+            const experimentalThemeSelect = document.getElementById(
+              "experimental-theme-setting",
+            );
+            if (experimentalThemeSelect)
+              experimentalThemeSelect.value = experimentalTheme;
+
+            // Apply experimental theme if set
+            if (experimentalTheme) {
+              document.documentElement.setAttribute(
+                "data-theme",
+                experimentalTheme,
+              );
+            }
+          } catch (e) {
+            console.warn("Unable to load experimental theme setting:", e);
+          }
+
           // Load view
           try {
             const view = localStorage.getItem("view") || "list";
@@ -352,9 +452,42 @@
               const theme = e.target.value;
               try {
                 localStorage.setItem("theme", theme);
+                // Clear experimental theme when standard theme is selected
+                localStorage.removeItem("experimentalTheme");
+                const experimentalThemeSelect = document.getElementById(
+                  "experimental-theme-setting",
+                );
+                if (experimentalThemeSelect) experimentalThemeSelect.value = "";
                 document.documentElement.setAttribute("data-theme", theme);
               } catch (err) {
                 console.warn("Unable to save theme:", err);
+              }
+            });
+          }
+
+          // Experimental theme setting
+          const experimentalThemeSelect = document.getElementById(
+            "experimental-theme-setting",
+          );
+          if (experimentalThemeSelect) {
+            experimentalThemeSelect.addEventListener("change", (e) => {
+              const experimentalTheme = e.target.value;
+              try {
+                if (experimentalTheme) {
+                  // Save experimental theme
+                  localStorage.setItem("experimentalTheme", experimentalTheme);
+                  document.documentElement.setAttribute(
+                    "data-theme",
+                    experimentalTheme,
+                  );
+                } else {
+                  // Clear experimental theme and revert to standard theme
+                  localStorage.removeItem("experimentalTheme");
+                  const theme = localStorage.getItem("theme") || "dark";
+                  document.documentElement.setAttribute("data-theme", theme);
+                }
+              } catch (err) {
+                console.warn("Unable to save experimental theme:", err);
               }
             });
           }

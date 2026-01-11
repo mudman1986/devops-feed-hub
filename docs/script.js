@@ -7,10 +7,15 @@ const READ_ARTICLES_KEY = "readArticles";
 const themeToggle = document.getElementById("theme-toggle");
 const htmlElement = document.documentElement;
 
-// Get saved theme preference or default to dark
+// Check for experimental theme first, then fall back to standard theme
 let savedTheme = "dark";
 try {
-  savedTheme = localStorage.getItem("theme") || "dark";
+  const experimentalTheme = localStorage.getItem("experimentalTheme");
+  if (experimentalTheme) {
+    savedTheme = experimentalTheme;
+  } else {
+    savedTheme = localStorage.getItem("theme") || "dark";
+  }
 } catch (e) {
   // localStorage might be unavailable (privacy mode, quota exceeded, etc.)
   console.warn("localStorage unavailable, using default theme:", e);
@@ -27,6 +32,8 @@ themeToggle.addEventListener("click", () => {
 
   try {
     localStorage.setItem("theme", newTheme);
+    // Clear experimental theme when toggling standard theme
+    localStorage.removeItem("experimentalTheme");
   } catch (e) {
     // localStorage might be unavailable, theme will reset on reload
     console.warn("Unable to save theme preference:", e);
