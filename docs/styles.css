@@ -54,6 +54,385 @@
   --card-border: rgb(51 65 85 / 50%);
 }
 
+/* Experimental Themes */
+
+/* Midnight Blue - Deep blue dark theme */
+[data-theme="midnight-blue"] {
+  --bg-primary: #0a0e27;
+  --bg-secondary: #141b3d;
+  --bg-tertiary: #1e2952;
+  --bg-hover: #2a3868;
+  --bg-error: #2d0a0a;
+  --text-primary: #e6f0ff;
+  --text-secondary: #8ea5d9;
+  --text-link: #8ea5d9;
+  --text-error: #ff6b6b;
+  --border-primary: #1e2952;
+  --border-accent: #4a6fa5;
+  --border-success: #4ecdc4;
+  --border-error: #ff6b6b;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 40%);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 50%);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 60%);
+  --badge-bg: #1e3a8a;
+  --badge-text: #bfdbfe;
+  --gradient-start: #1e3a8a;
+  --gradient-end: #3b82f6;
+  --accent-primary: #60a5fa;
+  --accent-success: #4ecdc4;
+  --accent-error: #ff6b6b;
+  --card-bg: rgb(20 27 61 / 70%);
+  --card-border: rgb(30 41 82 / 50%);
+}
+
+/* Forest Green - Nature-inspired dark theme */
+[data-theme="forest-green"] {
+  --bg-primary: #0d1f12;
+  --bg-secondary: #1a2f20;
+  --bg-tertiary: #2d4a36;
+  --bg-hover: #3d5f47;
+  --bg-error: #3d1a1a;
+  --text-primary: #e8f5e9;
+  --text-secondary: #a5d6a7;
+  --text-link: #a5d6a7;
+  --text-error: #ef5350;
+  --border-primary: #2d4a36;
+  --border-accent: #66bb6a;
+  --border-success: #81c784;
+  --border-error: #ef5350;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 35%);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 45%);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 55%);
+  --badge-bg: #1b5e20;
+  --badge-text: #c8e6c9;
+  --gradient-start: #2e7d32;
+  --gradient-end: #66bb6a;
+  --accent-primary: #66bb6a;
+  --accent-success: #81c784;
+  --accent-error: #ef5350;
+  --card-bg: rgb(26 47 32 / 70%);
+  --card-border: rgb(45 74 54 / 50%);
+}
+
+/* Purple Haze - Vibrant purple theme */
+[data-theme="purple-haze"] {
+  --bg-primary: #1a0b2e;
+  --bg-secondary: #2d1b4e;
+  --bg-tertiary: #432c6f;
+  --bg-hover: #59408f;
+  --bg-error: #3d0a1a;
+  --text-primary: #f3e8ff;
+  --text-secondary: #d8b4fe;
+  --text-link: #d8b4fe;
+  --text-error: #f87171;
+  --border-primary: #432c6f;
+  --border-accent: #a78bfa;
+  --border-success: #c084fc;
+  --border-error: #f87171;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 35%);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 45%);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 55%);
+  --badge-bg: #581c87;
+  --badge-text: #e9d5ff;
+  --gradient-start: #7c3aed;
+  --gradient-end: #c084fc;
+  --accent-primary: #a78bfa;
+  --accent-success: #c084fc;
+  --accent-error: #f87171;
+  --card-bg: rgb(45 27 78 / 70%);
+  --card-border: rgb(67 44 111 / 50%);
+}
+
+/* Sunset Orange - Warm orange/red theme */
+[data-theme="sunset-orange"] {
+  --bg-primary: #2d1810;
+  --bg-secondary: #3d2518;
+  --bg-tertiary: #5a3828;
+  --bg-hover: #744b38;
+  --bg-error: #3d0a0a;
+  --text-primary: #fff5ec;
+  --text-secondary: #ffcc99;
+  --text-link: #ffcc99;
+  --text-error: #ff6b6b;
+  --border-primary: #5a3828;
+  --border-accent: #ff8c42;
+  --border-success: #ffa94d;
+  --border-error: #ff6b6b;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 35%);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 45%);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 55%);
+  --badge-bg: #9a3412;
+  --badge-text: #fed7aa;
+  --gradient-start: #ea580c;
+  --gradient-end: #fb923c;
+  --accent-primary: #fb923c;
+  --accent-success: #ffa94d;
+  --accent-error: #ff6b6b;
+  --card-bg: rgb(61 37 24 / 70%);
+  --card-border: rgb(90 56 40 / 50%);
+}
+
+/* Ocean Deep - Teal/cyan theme */
+[data-theme="ocean-deep"] {
+  --bg-primary: #0a1a1f;
+  --bg-secondary: #0f2832;
+  --bg-tertiary: #1a4050;
+  --bg-hover: #255768;
+  --bg-error: #2d0a0a;
+  --text-primary: #e0f7fa;
+  --text-secondary: #80deea;
+  --text-link: #80deea;
+  --text-error: #ff6b6b;
+  --border-primary: #1a4050;
+  --border-accent: #26c6da;
+  --border-success: #4dd0e1;
+  --border-error: #ff6b6b;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 40%);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 50%);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 60%);
+  --badge-bg: #006064;
+  --badge-text: #b2ebf2;
+  --gradient-start: #0097a7;
+  --gradient-end: #26c6da;
+  --accent-primary: #26c6da;
+  --accent-success: #4dd0e1;
+  --accent-error: #ff6b6b;
+  --card-bg: rgb(15 40 50 / 70%);
+  --card-border: rgb(26 64 80 / 50%);
+}
+
+/* Rose Gold - Elegant pink/gold theme */
+[data-theme="rose-gold"] {
+  --bg-primary: #2d1a1f;
+  --bg-secondary: #3d2630;
+  --bg-tertiary: #5a3d47;
+  --bg-hover: #73505e;
+  --bg-error: #3d0a0a;
+  --text-primary: #ffe4e6;
+  --text-secondary: #fda4af;
+  --text-link: #fda4af;
+  --text-error: #fb7185;
+  --border-primary: #5a3d47;
+  --border-accent: #f472b6;
+  --border-success: #ec4899;
+  --border-error: #fb7185;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 35%);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 45%);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 55%);
+  --badge-bg: #831843;
+  --badge-text: #fbcfe8;
+  --gradient-start: #db2777;
+  --gradient-end: #f472b6;
+  --accent-primary: #f472b6;
+  --accent-success: #ec4899;
+  --accent-error: #fb7185;
+  --card-bg: rgb(61 38 48 / 70%);
+  --card-border: rgb(90 61 71 / 50%);
+}
+
+/* Arctic Blue - Cool light blue theme */
+[data-theme="arctic-blue"] {
+  --bg-primary: #e0f2fe;
+  --bg-secondary: #f0f9ff;
+  --bg-tertiary: #bae6fd;
+  --bg-hover: #a5dff8;
+  --bg-error: #fee2e2;
+  --text-primary: #0c4a6e;
+  --text-secondary: #075985;
+  --text-link: #075985;
+  --text-error: #dc2626;
+  --border-primary: #7dd3fc;
+  --border-accent: #0284c7;
+  --border-success: #0ea5e9;
+  --border-error: #dc2626;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 8%);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 15%);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 20%);
+  --badge-bg: #bae6fd;
+  --badge-text: #075985;
+  --gradient-start: #0284c7;
+  --gradient-end: #0ea5e9;
+  --accent-primary: #0284c7;
+  --accent-success: #0ea5e9;
+  --accent-error: #dc2626;
+  --card-bg: rgb(240 249 255 / 70%);
+  --card-border: rgb(186 230 253 / 50%);
+}
+
+/* Pastel Dream - Soft pastel colors */
+[data-theme="pastel-dream"] {
+  --bg-primary: #faf5ff;
+  --bg-secondary: #fef3ff;
+  --bg-tertiary: #f3e8ff;
+  --bg-hover: #e9d5ff;
+  --bg-error: #fef2f2;
+  --text-primary: #581c87;
+  --text-secondary: #7e22ce;
+  --text-link: #7e22ce;
+  --text-error: #dc2626;
+  --border-primary: #d8b4fe;
+  --border-accent: #a855f7;
+  --border-success: #c084fc;
+  --border-error: #dc2626;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 8%);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 15%);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 20%);
+  --badge-bg: #e9d5ff;
+  --badge-text: #581c87;
+  --gradient-start: #a855f7;
+  --gradient-end: #c084fc;
+  --accent-primary: #a855f7;
+  --accent-success: #c084fc;
+  --accent-error: #dc2626;
+  --card-bg: rgb(254 243 255 / 70%);
+  --card-border: rgb(216 180 254 / 50%);
+}
+
+/* High Contrast Dark - Maximum contrast for accessibility */
+[data-theme="high-contrast-dark"] {
+  --bg-primary: #000;
+  --bg-secondary: #1a1a1a;
+  --bg-tertiary: #2d2d2d;
+  --bg-hover: #404040;
+  --bg-error: #2d0000;
+  --text-primary: #fff;
+  --text-secondary: #e0e0e0;
+  --text-link: #e0e0e0;
+  --text-error: #ff4d4d;
+  --border-primary: #4d4d4d;
+  --border-accent: #fff;
+  --border-success: #00ff00;
+  --border-error: #ff4d4d;
+  --shadow-sm: 0 1px 2px 0 rgb(255 255 255 / 10%);
+  --shadow-md: 0 4px 6px -1px rgb(255 255 255 / 15%);
+  --shadow-lg: 0 10px 15px -3px rgb(255 255 255 / 20%);
+  --badge-bg: #4d4d4d;
+  --badge-text: #fff;
+  --gradient-start: #666;
+  --gradient-end: #fff;
+  --accent-primary: #fff;
+  --accent-success: #00ff00;
+  --accent-error: #ff4d4d;
+  --card-bg: rgb(26 26 26 / 90%);
+  --card-border: rgb(77 77 77 / 70%);
+}
+
+/* High Contrast Light - Maximum contrast for accessibility */
+[data-theme="high-contrast-light"] {
+  --bg-primary: #fff;
+  --bg-secondary: #f5f5f5;
+  --bg-tertiary: #e0e0e0;
+  --bg-hover: #d0d0d0;
+  --bg-error: #ffe0e0;
+  --text-primary: #000;
+  --text-secondary: #1a1a1a;
+  --text-link: #1a1a1a;
+  --text-error: #c00;
+  --border-primary: #000;
+  --border-accent: #000;
+  --border-success: #008000;
+  --border-error: #c00;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 15%);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 25%);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 35%);
+  --badge-bg: #e0e0e0;
+  --badge-text: #000;
+  --gradient-start: #000;
+  --gradient-end: #333;
+  --accent-primary: #000;
+  --accent-success: #008000;
+  --accent-error: #c00;
+  --card-bg: rgb(245 245 245 / 90%);
+  --card-border: rgb(0 0 0 / 50%);
+}
+
+/* Monochrome - Pure black and white */
+[data-theme="monochrome"] {
+  --bg-primary: #1a1a1a;
+  --bg-secondary: #2d2d2d;
+  --bg-tertiary: #404040;
+  --bg-hover: #525252;
+  --bg-error: #2d0a0a;
+  --text-primary: #f5f5f5;
+  --text-secondary: #d0d0d0;
+  --text-link: #d0d0d0;
+  --text-error: #e0e0e0;
+  --border-primary: #525252;
+  --border-accent: #a0a0a0;
+  --border-success: #c0c0c0;
+  --border-error: #e0e0e0;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 30%);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 40%);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 50%);
+  --badge-bg: #525252;
+  --badge-text: #f5f5f5;
+  --gradient-start: #404040;
+  --gradient-end: #a0a0a0;
+  --accent-primary: #c0c0c0;
+  --accent-success: #c0c0c0;
+  --accent-error: #e0e0e0;
+  --card-bg: rgb(45 45 45 / 70%);
+  --card-border: rgb(82 82 82 / 50%);
+}
+
+/* Solarized Dark - Popular developer theme */
+[data-theme="solarized-dark"] {
+  --bg-primary: #002b36;
+  --bg-secondary: #073642;
+  --bg-tertiary: #094656;
+  --bg-hover: #0d5668;
+  --bg-error: #2d0a0a;
+  --text-primary: #fdf6e3;
+  --text-secondary: #93a1a1;
+  --text-link: #93a1a1;
+  --text-error: #dc322f;
+  --border-primary: #094656;
+  --border-accent: #268bd2;
+  --border-success: #859900;
+  --border-error: #dc322f;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 35%);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 45%);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 55%);
+  --badge-bg: #094656;
+  --badge-text: #eee8d5;
+  --gradient-start: #268bd2;
+  --gradient-end: #2aa198;
+  --accent-primary: #268bd2;
+  --accent-success: #859900;
+  --accent-error: #dc322f;
+  --card-bg: rgb(7 54 66 / 70%);
+  --card-border: rgb(9 70 86 / 50%);
+}
+
+/* Dracula - Popular dark theme */
+[data-theme="dracula"] {
+  --bg-primary: #282a36;
+  --bg-secondary: #343746;
+  --bg-tertiary: #44475a;
+  --bg-hover: #565869;
+  --bg-error: #3d0a0a;
+  --text-primary: #f8f8f2;
+  --text-secondary: #6272a4;
+  --text-link: #8be9fd;
+  --text-error: #ff5555;
+  --border-primary: #44475a;
+  --border-accent: #bd93f9;
+  --border-success: #50fa7b;
+  --border-error: #ff5555;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 35%);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 45%);
+  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 55%);
+  --badge-bg: #44475a;
+  --badge-text: #f8f8f2;
+  --gradient-start: #bd93f9;
+  --gradient-end: #ff79c6;
+  --accent-primary: #8be9fd;
+  --accent-success: #50fa7b;
+  --accent-error: #ff5555;
+  --card-bg: rgb(52 55 70 / 70%);
+  --card-border: rgb(68 71 90 / 50%);
+}
+
 * {
   margin: 0;
   padding: 0;
