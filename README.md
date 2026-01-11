@@ -16,6 +16,9 @@ Stay updated with the fast-paced DevOps ecosystem through a single destination t
 - **Modern Web Interface**: Responsive design with dark/light theme support
 - **Smart Filtering**: View articles from last 24 hours, 7 days, or 30 days
 - **Mark as Read**: Track read articles with localStorage persistence
+- **RSS Feed Endpoint**: Subscribe to aggregated feeds via RSS
+  - Master feed with all articles: [feed.xml](https://mudman1986.github.io/devops-feed-hub/feed.xml)
+  - Individual feed sources available in the sidebar
 
 ## 📖 Live Site
 
@@ -25,7 +28,7 @@ View at: [https://mudman1986.github.io/devops-feed-hub/](https://mudman1986.gith
 
 1. GitHub Actions workflow runs on schedule (weekdays at 9:00 AM UTC) and on push
 2. Collects RSS feeds from configured sources (`.github/rss-feeds.json`)
-3. Generates HTML pages with latest articles
+3. Generates HTML pages and RSS feeds with latest articles
 4. Automatically updates GitHub Pages
 
 ## 🧪 Testing
