@@ -39,7 +39,3 @@ See [TESTING.md](TESTING.md) for details.
 ## 🔧 Configuration
 
 Edit `.github/rss-feeds.json` to add or modify RSS feeds.
-
-## 📋 Design Documents
-
-- **[Session Persistence Design](docs/SESSION_PERSISTENCE_DESIGN.md)**: OAuth-based cross-device settings sync (GitHub and Sign in with Apple options)
