@@ -1318,6 +1318,11 @@ h3 {
   gap: 0.5rem;
 }
 
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
 .settings-back-button:hover {
   background: var(--bg-hover);
   border-color: var(--border-accent);

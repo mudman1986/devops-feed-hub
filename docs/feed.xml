@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sun, 11 Jan 2026 13:59:42 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 11 Jan 2026 14:48:30 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Light waves, rising tides, and drifting ships: Game Off 2025 winners</title>
@@ -29,6 +29,20 @@
       <source>Docker Blog</source>
     </item>
     <item>
+      <title>[In preview] Public Preview: Azure Cosmos DB Mirroring with Private Endpoints</title>
+      <link>https://azure.microsoft.com/updates?id=543086</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=543086</guid>
+      <pubDate>Fri, 09 Jan 2026 14:30:36 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>Strengthening GitLab.com security: Mandatory multi-factor authentication</title>
+      <link>https://about.gitlab.com/blog/strengthening-gitlab-com-security-mandatory-multi-factor-authentication/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/strengthening-gitlab-com-security-mandatory-multi-factor-authentication/</guid>
+      <pubDate>Fri, 09 Jan 2026 00:00:00 +0000</pubDate>
+      <source>GitLab Blog</source>
+    </item>
+    <item>
       <title>Why AI is pushing developers toward typed languages</title>
       <link>https://github.blog/ai-and-ml/llms/why-ai-is-pushing-developers-toward-typed-languages/</link>
       <guid isPermaLink="true">https://github.blog/ai-and-ml/llms/why-ai-is-pushing-developers-toward-typed-languages/</guid>
@@ -50,6 +64,20 @@
       <source>Kubernetes Blog</source>
     </item>
     <item>
+      <title>AI is reshaping DevSecOps: Attend GitLab Transcend to see what’s next</title>
+      <link>https://about.gitlab.com/blog/ai-is-reshaping-devsecops-attend-gitlab-transcend-to-see-whats-next/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/ai-is-reshaping-devsecops-attend-gitlab-transcend-to-see-whats-next/</guid>
+      <pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate>
+      <source>GitLab Blog</source>
+    </item>
+    <item>
+      <title>How IIT Bombay students are coding the future with GitLab</title>
+      <link>https://about.gitlab.com/blog/how-iit-bombay-students-code-future-with-gitlab/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/how-iit-bombay-students-code-future-with-gitlab/</guid>
+      <pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate>
+      <source>GitLab Blog</source>
+    </item>
+    <item>
       <title>Kubernetes v1.35: A Better Way to Pass Service Account Tokens to CSI Drivers</title>
       <link>https://kubernetes.io/blog/2026/01/07/kubernetes-v1-35-csi-sa-tokens-secrets-field-beta/</link>
       <guid isPermaLink="true">https://kubernetes.io/blog/2026/01/07/kubernetes-v1-35-csi-sa-tokens-secrets-field-beta/</guid>
@@ -69,6 +97,13 @@
       <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/07/explore-the-latest-microsoft-incident-response-proactive-services-for-enhanced-resilience/</guid>
       <pubDate>Wed, 07 Jan 2026 17:00:00 +0000</pubDate>
       <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>OWASP Top 10 2025: What's changed and why it matters</title>
+      <link>https://about.gitlab.com/blog/2025-owasp-top-10-whats-changed-and-why-it-matters/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/2025-owasp-top-10-whats-changed-and-why-it-matters/</guid>
+      <pubDate>Wed, 07 Jan 2026 00:00:00 +0000</pubDate>
+      <source>GitLab Blog</source>
     </item>
     <item>
       <title>Gemini 3 Flash is now available in Visual Studio, JetBrains IDEs, Xcode, and Eclipse</title>
@@ -106,11 +141,32 @@
       <source>HashiCorp Blog</source>
     </item>
     <item>
+      <title>AI-powered vulnerability triaging with GitLab Duo Security Agent</title>
+      <link>https://about.gitlab.com/blog/vulnerability-triage-made-simple-with-gitlab-security-analyst-agent/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/vulnerability-triage-made-simple-with-gitlab-security-analyst-agent/</guid>
+      <pubDate>Tue, 06 Jan 2026 00:00:00 +0000</pubDate>
+      <source>GitLab Blog</source>
+    </item>
+    <item>
       <title>Kubernetes v1.35: Extended Toleration Operators to Support Numeric Comparisons (Alpha)</title>
       <link>https://kubernetes.io/blog/2026/01/05/kubernetes-v1-35-numeric-toleration-operators/</link>
       <guid isPermaLink="true">https://kubernetes.io/blog/2026/01/05/kubernetes-v1-35-numeric-toleration-operators/</guid>
       <pubDate>Mon, 05 Jan 2026 18:30:00 +0000</pubDate>
       <source>Kubernetes Blog</source>
+    </item>
+    <item>
+      <title>Building trust in agentic tools: What we learned from our users</title>
+      <link>https://about.gitlab.com/blog/building-trust-in-agentic-tools-what-we-learned-from-our-users/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/building-trust-in-agentic-tools-what-we-learned-from-our-users/</guid>
+      <pubDate>Mon, 05 Jan 2026 00:00:00 +0000</pubDate>
+      <source>GitLab Blog</source>
+    </item>
+    <item>
+      <title>Google Summer of Code 2026: Volunteers Needed to Mentor Future Jenkins Contributors</title>
+      <link>https://www.jenkins.io/blog/2026/01/05/google-summer-of-code-2026-volunteers-needed-to-mentor-future-jenkins-contributors/</link>
+      <guid isPermaLink="true">https://www.jenkins.io/blog/2026/01/05/google-summer-of-code-2026-volunteers-needed-to-mentor-future-jenkins-contributors/</guid>
+      <pubDate>Mon, 05 Jan 2026 00:00:00 +0000</pubDate>
+      <source>Jenkins Blog</source>
     </item>
     <item>
       <title>Kubernetes v1.35: New level of efficiency with in-place Pod restart</title>
@@ -125,6 +181,27 @@
       <guid isPermaLink="true">https://github.blog/changelog/2026-01-01-reduced-pricing-for-github-hosted-runners-usage</guid>
       <pubDate>Thu, 01 Jan 2026 17:00:03 +0000</pubDate>
       <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Cloud-native apps on Kubernetes pricing calculator scenario</title>
+      <link>https://azure.microsoft.com/updates?id=536560</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=536560</guid>
+      <pubDate>Wed, 31 Dec 2025 21:00:35 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Geo-Replication for Azure Service Bus Premium</title>
+      <link>https://azure.microsoft.com/updates?id=490149</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=490149</guid>
+      <pubDate>Wed, 31 Dec 2025 21:00:35 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Azure Premium SSD v2 Disk is now available in Austria East and in a second Availability Zone in Japan West</title>
+      <link>https://azure.microsoft.com/updates?id=544080</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=544080</guid>
+      <pubDate>Wed, 31 Dec 2025 20:45:49 +0000</pubDate>
+      <source>Azure Updates</source>
     </item>
     <item>
       <title>Kubernetes 1.35: Enhanced Debugging with Versioned z-pages APIs</title>
@@ -162,11 +239,25 @@
       <source>Kubernetes Blog</source>
     </item>
     <item>
+      <title>Retirement: Deprecation of Custom Resource Providers</title>
+      <link>https://azure.microsoft.com/updates?id=513892</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=513892</guid>
+      <pubDate>Mon, 29 Dec 2025 17:30:40 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
       <title>New year, new cloud strategy: 5 shifts cloud leaders will be making in 2026</title>
       <link>https://www.hashicorp.com/blog/new-year-new-cloud-strategy-5-shifts-cloud-leaders-will-be-making-in-2026</link>
       <guid isPermaLink="true">https://www.hashicorp.com/blog/new-year-new-cloud-strategy-5-shifts-cloud-leaders-will-be-making-in-2026</guid>
       <pubDate>Mon, 29 Dec 2025 17:00:00 +0000</pubDate>
       <source>HashiCorp Blog</source>
+    </item>
+    <item>
+      <title>2025 Jenkins Board and Officer Election Results</title>
+      <link>https://www.jenkins.io/blog/2025/12/29/election-results-2025/</link>
+      <guid isPermaLink="true">https://www.jenkins.io/blog/2025/12/29/election-results-2025/</guid>
+      <pubDate>Mon, 29 Dec 2025 00:00:00 +0000</pubDate>
+      <source>Jenkins Blog</source>
     </item>
     <item>
       <title>WRAP up your backlog with GitHub Copilot coding agent</title>
@@ -195,6 +286,13 @@
       <guid isPermaLink="true">https://github.blog/open-source/maintainers/5-podcast-episodes-to-help-you-build-with-confidence-in-2026/</guid>
       <pubDate>Tue, 23 Dec 2025 00:15:00 +0000</pubDate>
       <source>GitHub Blog</source>
+    </item>
+    <item>
+      <title>Jenkins 2.543 and 2.541.1: New Linux Repository Signing Keys</title>
+      <link>https://www.jenkins.io/blog/2025/12/23/repository-signing-keys-changing/</link>
+      <guid isPermaLink="true">https://www.jenkins.io/blog/2025/12/23/repository-signing-keys-changing/</guid>
+      <pubDate>Tue, 23 Dec 2025 00:00:00 +0000</pubDate>
+      <source>Jenkins Blog</source>
     </item>
     <item>
       <title>This year’s most influential open source projects</title>
@@ -330,6 +428,13 @@
       <source>HashiCorp Blog</source>
     </item>
     <item>
+      <title>[In preview] Public Preview: Azure Blob-to-Blob migration made simple with Azure Storage Mover</title>
+      <link>https://azure.microsoft.com/updates?id=542813</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=542813</guid>
+      <pubDate>Thu, 18 Dec 2025 18:45:03 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
       <title>Kubernetes v1.35: Job Managed By Goes GA</title>
       <link>https://kubernetes.io/blog/2025/12/18/kubernetes-v1-35-job-managedby-for-jobs-goes-ga/</link>
       <guid isPermaLink="true">https://kubernetes.io/blog/2025/12/18/kubernetes-v1-35-job-managedby-for-jobs-goes-ga/</guid>
@@ -372,11 +477,39 @@
       <source>AWS DevOps Blog</source>
     </item>
     <item>
+      <title>GitLab 18.7: Advancing AI automation, governance, and developer experience</title>
+      <link>https://about.gitlab.com/blog/gitlab-18-7-advancing-ai-automation/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/gitlab-18-7-advancing-ai-automation/</guid>
+      <pubDate>Thu, 18 Dec 2025 00:00:00 +0000</pubDate>
+      <source>GitLab Blog</source>
+    </item>
+    <item>
       <title>Continuing HCP Terraform’s enhanced free tier experience</title>
       <link>https://www.hashicorp.com/blog/continuing-hcp-terraform-s-enhanced-free-tier-experience</link>
       <guid isPermaLink="true">https://www.hashicorp.com/blog/continuing-hcp-terraform-s-enhanced-free-tier-experience</guid>
       <pubDate>Wed, 17 Dec 2025 21:00:00 +0000</pubDate>
       <source>HashiCorp Blog</source>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Service Bus SDK type bindings in Azure Functions for Node.js</title>
+      <link>https://azure.microsoft.com/updates?id=541427</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=541427</guid>
+      <pubDate>Wed, 17 Dec 2025 18:45:01 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>[Launched] Generally Avaailable: Azure SQL updates for early December 2025</title>
+      <link>https://azure.microsoft.com/updates?id=541818</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=541818</guid>
+      <pubDate>Wed, 17 Dec 2025 18:30:05 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Use Azure SRE Agent with Azure Cosmos DB</title>
+      <link>https://azure.microsoft.com/updates?id=541813</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=541813</guid>
+      <pubDate>Wed, 17 Dec 2025 18:30:05 +0000</pubDate>
+      <source>Azure Updates</source>
     </item>
     <item>
       <title>Kubernetes v1.35: Timbernetes (The World Tree Release)</title>
@@ -391,6 +524,13 @@
       <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2025/12/17/access-fabric-a-modern-approach-to-identity-and-network-access/</guid>
       <pubDate>Wed, 17 Dec 2025 17:00:00 +0000</pubDate>
       <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>Issue #256 - AWS Credits, Shift Left at Scale: Enterprise IaC, GitHub Repo Automation, CDK for Terraform (bye), and AWS IAM Security</title>
+      <link>https://www.weekly.tf/p/issue-256-aws-credits-shift-left-at-scale-enterprise-iac-github-repo-automation-cdk-for-terraform-by</link>
+      <guid isPermaLink="true">https://www.weekly.tf/p/issue-256-aws-credits-shift-left-at-scale-enterprise-iac-github-repo-automation-cdk-for-terraform-by</guid>
+      <pubDate>Wed, 17 Dec 2025 16:00:34 +0000</pubDate>
+      <source>Terraform weekly</source>
     </item>
     <item>
       <title>Surfing the AI Wave: Manage, Govern, and Protect AI Agents with Microsoft Entra Agent ID</title>
@@ -412,6 +552,20 @@
       <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/synced-passkeys-and-high-assurance-account-recovery/ba-p/3627343</guid>
       <pubDate>Tue, 16 Dec 2025 16:00:00 +0000</pubDate>
       <source>Microsoft Entra Blog</source>
+    </item>
+    <item>
+      <title>[In preview] Generally Available: Azure NetApp Files cross-zone-region replication (CZRR)</title>
+      <link>https://azure.microsoft.com/updates?id=537106</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=537106</guid>
+      <pubDate>Tue, 16 Dec 2025 15:45:45 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Azure NetApp Files advanced ransomware protection</title>
+      <link>https://azure.microsoft.com/updates?id=536699</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=536699</guid>
+      <pubDate>Tue, 16 Dec 2025 15:45:45 +0000</pubDate>
+      <source>Azure Updates</source>
     </item>
     <item>
       <title>Deliver secrets to Kubernetes pods without storing in etcd, using VSO</title>
@@ -463,6 +617,13 @@
       <source>Microsoft Security</source>
     </item>
     <item>
+      <title>Taming tool sprawl: How to boost university IT productivity</title>
+      <link>https://about.gitlab.com/blog/taming-tool-sprawl-how-to-boost-university-it-productivity/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/taming-tool-sprawl-how-to-boost-university-it-productivity/</guid>
+      <pubDate>Mon, 15 Dec 2025 00:00:00 +0000</pubDate>
+      <source>GitLab Blog</source>
+    </item>
+    <item>
       <title>Private MCP Catalogs and the Path to Composable Enterprise AI</title>
       <link>https://www.docker.com/blog/private-mcp-catalogs-oci-composable-enterprise-ai/</link>
       <guid isPermaLink="true">https://www.docker.com/blog/private-mcp-catalogs-oci-composable-enterprise-ai/</guid>
@@ -489,13 +650,6 @@
       <guid isPermaLink="true">https://www.hashicorp.com/blog/hashicorp-year-in-review-2025-lessons-in-simplifying-the-cloud</guid>
       <pubDate>Fri, 12 Dec 2025 17:00:00 +0000</pubDate>
       <source>HashiCorp Blog</source>
-    </item>
-    <item>
-      <title>Retirement of Global Personal Access Tokens in Azure DevOps</title>
-      <link>https://devblogs.microsoft.com/devops/retirement-of-global-personal-access-tokens-in-azure-devops/</link>
-      <guid isPermaLink="true">https://devblogs.microsoft.com/devops/retirement-of-global-personal-access-tokens-in-azure-devops/</guid>
-      <pubDate>Fri, 12 Dec 2025 14:15:06 +0000</pubDate>
-      <source>Microsoft DevOps Blog</source>
     </item>
   </channel>
 </rss>

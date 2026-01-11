@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-microsoft-devops-blog.xml</link>
     <description>Articles from Microsoft DevOps Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-microsoft-devops-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sun, 11 Jan 2026 13:59:42 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 11 Jan 2026 14:48:30 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>The New Test Run Hub is Going Generally Available!</title>
@@ -24,12 +24,6 @@
       <link>https://devblogs.microsoft.com/devops/github-copilot-for-azure-boards/</link>
       <guid isPermaLink="true">https://devblogs.microsoft.com/devops/github-copilot-for-azure-boards/</guid>
       <pubDate>Tue, 16 Dec 2025 13:17:08 +0000</pubDate>
-    </item>
-    <item>
-      <title>Retirement of Global Personal Access Tokens in Azure DevOps</title>
-      <link>https://devblogs.microsoft.com/devops/retirement-of-global-personal-access-tokens-in-azure-devops/</link>
-      <guid isPermaLink="true">https://devblogs.microsoft.com/devops/retirement-of-global-personal-access-tokens-in-azure-devops/</guid>
-      <pubDate>Fri, 12 Dec 2025 14:15:06 +0000</pubDate>
     </item>
   </channel>
 </rss>

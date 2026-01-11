@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DevOps Feed Hub - Azure Updates</title>
+    <link>https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml</link>
+    <description>Articles from Azure Updates</description>
+    <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 11 Jan 2026 14:48:30 +0000</lastBuildDate>
+    <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>[In preview] Public Preview: Azure Cosmos DB Mirroring with Private Endpoints</title>
+      <link>https://azure.microsoft.com/updates?id=543086</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=543086</guid>
+      <pubDate>Fri, 09 Jan 2026 14:30:36 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Cloud-native apps on Kubernetes pricing calculator scenario</title>
+      <link>https://azure.microsoft.com/updates?id=536560</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=536560</guid>
+      <pubDate>Wed, 31 Dec 2025 21:00:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Geo-Replication for Azure Service Bus Premium</title>
+      <link>https://azure.microsoft.com/updates?id=490149</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=490149</guid>
+      <pubDate>Wed, 31 Dec 2025 21:00:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Azure Premium SSD v2 Disk is now available in Austria East and in a second Availability Zone in Japan West</title>
+      <link>https://azure.microsoft.com/updates?id=544080</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=544080</guid>
+      <pubDate>Wed, 31 Dec 2025 20:45:49 +0000</pubDate>
+    </item>
+    <item>
+      <title>Retirement: Deprecation of Custom Resource Providers</title>
+      <link>https://azure.microsoft.com/updates?id=513892</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=513892</guid>
+      <pubDate>Mon, 29 Dec 2025 17:30:40 +0000</pubDate>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Azure Blob-to-Blob migration made simple with Azure Storage Mover</title>
+      <link>https://azure.microsoft.com/updates?id=542813</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=542813</guid>
+      <pubDate>Thu, 18 Dec 2025 18:45:03 +0000</pubDate>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Service Bus SDK type bindings in Azure Functions for Node.js</title>
+      <link>https://azure.microsoft.com/updates?id=541427</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=541427</guid>
+      <pubDate>Wed, 17 Dec 2025 18:45:01 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Launched] Generally Avaailable: Azure SQL updates for early December 2025</title>
+      <link>https://azure.microsoft.com/updates?id=541818</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=541818</guid>
+      <pubDate>Wed, 17 Dec 2025 18:30:05 +0000</pubDate>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Use Azure SRE Agent with Azure Cosmos DB</title>
+      <link>https://azure.microsoft.com/updates?id=541813</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=541813</guid>
+      <pubDate>Wed, 17 Dec 2025 18:30:05 +0000</pubDate>
+    </item>
+    <item>
+      <title>[In preview] Generally Available: Azure NetApp Files cross-zone-region replication (CZRR)</title>
+      <link>https://azure.microsoft.com/updates?id=537106</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=537106</guid>
+      <pubDate>Tue, 16 Dec 2025 15:45:45 +0000</pubDate>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Azure NetApp Files advanced ransomware protection</title>
+      <link>https://azure.microsoft.com/updates?id=536699</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=536699</guid>
+      <pubDate>Tue, 16 Dec 2025 15:45:45 +0000</pubDate>
+    </item>
+  </channel>
+</rss>

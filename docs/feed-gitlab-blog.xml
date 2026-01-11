@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DevOps Feed Hub - GitLab Blog</title>
+    <link>https://mudman1986.github.io/devops-feed-hub/feed-gitlab-blog.xml</link>
+    <description>Articles from GitLab Blog</description>
+    <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-gitlab-blog.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 11 Jan 2026 14:48:30 +0000</lastBuildDate>
+    <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Strengthening GitLab.com security: Mandatory multi-factor authentication</title>
+      <link>https://about.gitlab.com/blog/strengthening-gitlab-com-security-mandatory-multi-factor-authentication/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/strengthening-gitlab-com-security-mandatory-multi-factor-authentication/</guid>
+      <pubDate>Fri, 09 Jan 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>AI is reshaping DevSecOps: Attend GitLab Transcend to see what’s next</title>
+      <link>https://about.gitlab.com/blog/ai-is-reshaping-devsecops-attend-gitlab-transcend-to-see-whats-next/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/ai-is-reshaping-devsecops-attend-gitlab-transcend-to-see-whats-next/</guid>
+      <pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>How IIT Bombay students are coding the future with GitLab</title>
+      <link>https://about.gitlab.com/blog/how-iit-bombay-students-code-future-with-gitlab/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/how-iit-bombay-students-code-future-with-gitlab/</guid>
+      <pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>OWASP Top 10 2025: What's changed and why it matters</title>
+      <link>https://about.gitlab.com/blog/2025-owasp-top-10-whats-changed-and-why-it-matters/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/2025-owasp-top-10-whats-changed-and-why-it-matters/</guid>
+      <pubDate>Wed, 07 Jan 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>AI-powered vulnerability triaging with GitLab Duo Security Agent</title>
+      <link>https://about.gitlab.com/blog/vulnerability-triage-made-simple-with-gitlab-security-analyst-agent/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/vulnerability-triage-made-simple-with-gitlab-security-analyst-agent/</guid>
+      <pubDate>Tue, 06 Jan 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Building trust in agentic tools: What we learned from our users</title>
+      <link>https://about.gitlab.com/blog/building-trust-in-agentic-tools-what-we-learned-from-our-users/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/building-trust-in-agentic-tools-what-we-learned-from-our-users/</guid>
+      <pubDate>Mon, 05 Jan 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>GitLab 18.7: Advancing AI automation, governance, and developer experience</title>
+      <link>https://about.gitlab.com/blog/gitlab-18-7-advancing-ai-automation/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/gitlab-18-7-advancing-ai-automation/</guid>
+      <pubDate>Thu, 18 Dec 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Taming tool sprawl: How to boost university IT productivity</title>
+      <link>https://about.gitlab.com/blog/taming-tool-sprawl-how-to-boost-university-it-productivity/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/taming-tool-sprawl-how-to-boost-university-it-productivity/</guid>
+      <pubDate>Mon, 15 Dec 2025 00:00:00 +0000</pubDate>
+    </item>
+  </channel>
+</rss>
