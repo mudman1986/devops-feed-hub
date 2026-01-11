@@ -99,10 +99,10 @@ test.describe("Settings Page Tests", () => {
       await page.locator('.settings-menu-item:has-text("Feed Selection")').click();
 
       // Wait for feed list to load - increased timeout for fetch
-      await page.waitForSelector(".feed-list", { timeout: 15000 });
+      await page.waitForSelector("#feed-checkboxes", { timeout: 15000 });
 
       // Check that feed checkboxes exist
-      const feedCheckboxes = page.locator('.feed-list input[type="checkbox"]');
+      const feedCheckboxes = page.locator('#feed-checkboxes input[type="checkbox"]');
       const count = await feedCheckboxes.count();
       expect(count).toBeGreaterThan(0);
     });
@@ -113,7 +113,7 @@ test.describe("Settings Page Tests", () => {
       await page.goto("/settings.html");
       await page.waitForSelector(".settings-sidebar", { timeout: 10000 });
       await page.locator('.settings-menu-item:has-text("Feed Selection")').click();
-      await page.waitForSelector(".feed-list", { timeout: 15000 });
+      await page.waitForSelector("#feed-checkboxes", { timeout: 15000 });
 
       await expect(page.locator("#select-all-feeds")).toBeVisible({ timeout: 10000 });
       await expect(page.locator("#deselect-all-feeds")).toBeVisible({ timeout: 10000 });
@@ -125,14 +125,14 @@ test.describe("Settings Page Tests", () => {
       await page.goto("/settings.html");
       await page.waitForSelector(".settings-sidebar", { timeout: 10000 });
       await page.locator('.settings-menu-item:has-text("Feed Selection")').click();
-      await page.waitForSelector(".feed-list", { timeout: 15000 });
+      await page.waitForSelector("#feed-checkboxes", { timeout: 15000 });
 
       // Click select all
       await page.locator("#select-all-feeds").click();
       await page.waitForTimeout(500); // Give time for checkboxes to update
 
       // Check all checkboxes are checked
-      const checkboxes = page.locator('.feed-list input[type="checkbox"]');
+      const checkboxes = page.locator('#feed-checkboxes input[type="checkbox"]');
       const count = await checkboxes.count();
 
       for (let i = 0; i < count; i++) {
@@ -146,7 +146,7 @@ test.describe("Settings Page Tests", () => {
       await page.goto("/settings.html");
       await page.waitForSelector(".settings-sidebar", { timeout: 10000 });
       await page.locator('.settings-menu-item:has-text("Feed Selection")').click();
-      await page.waitForSelector(".feed-list", { timeout: 15000 });
+      await page.waitForSelector("#feed-checkboxes", { timeout: 15000 });
 
       // First select all
       await page.locator("#select-all-feeds").click();
@@ -157,7 +157,7 @@ test.describe("Settings Page Tests", () => {
       await page.waitForTimeout(500);
 
       // Check all checkboxes are unchecked
-      const checkboxes = page.locator('.feed-list input[type="checkbox"]');
+      const checkboxes = page.locator('#feed-checkboxes input[type="checkbox"]');
       const count = await checkboxes.count();
 
       for (let i = 0; i < count; i++) {
@@ -169,7 +169,7 @@ test.describe("Settings Page Tests", () => {
       await page.goto("/settings.html");
       await page.waitForSelector(".settings-sidebar", { timeout: 10000 });
       await page.locator('.settings-menu-item:has-text("Feed Selection")').click();
-      await page.waitForSelector(".feed-list", { timeout: 15000 });
+      await page.waitForSelector("#feed-checkboxes", { timeout: 15000 });
 
       // Select specific feeds
       await page.locator("#select-all-feeds").click();
@@ -209,7 +209,8 @@ test.describe("Settings Page Tests", () => {
       await page.locator('.settings-menu-item:has-text("Display Options")').click();
 
       // Check for view mode options
-      const displaySection = page.locator("#display-section, .settings-section").first();
+      await page.waitForSelector("#display-section:visible", { timeout: 10000 });
+      const displaySection = page.locator("#display-section");
       await expect(displaySection).toBeVisible({ timeout: 10000 });
     });
 
@@ -219,7 +220,8 @@ test.describe("Settings Page Tests", () => {
       await page.locator('.settings-menu-item:has-text("Display Options")').click();
 
       // Check for timeframe section
-      const displaySection = page.locator("#display-section, .settings-section").first();
+      await page.waitForSelector("#display-section:visible", { timeout: 10000 });
+      const displaySection = page.locator("#display-section");
       await expect(displaySection).toBeVisible({ timeout: 10000 });
     });
   });
@@ -229,7 +231,7 @@ test.describe("Settings Page Tests", () => {
       await page.goto("/settings.html");
       await page.waitForSelector(".settings-sidebar", { timeout: 10000 });
       await page.locator('.settings-menu-item:has-text("Feed Selection")').click();
-      await page.waitForSelector(".feed-list", { timeout: 15000 });
+      await page.waitForSelector("#feed-checkboxes", { timeout: 15000 });
 
       // Select all feeds
       await page.locator("#select-all-feeds").click();
@@ -243,10 +245,10 @@ test.describe("Settings Page Tests", () => {
       await page.goto("/settings.html");
       await page.waitForSelector(".settings-sidebar", { timeout: 10000 });
       await page.locator('.settings-menu-item:has-text("Feed Selection")').click();
-      await page.waitForSelector(".feed-list", { timeout: 15000 });
+      await page.waitForSelector("#feed-checkboxes", { timeout: 15000 });
 
       // Check that feeds are still selected
-      const checkboxes = page.locator('.feed-list input[type="checkbox"]');
+      const checkboxes = page.locator('#feed-checkboxes input[type="checkbox"]');
       const firstCheckbox = checkboxes.first();
       await expect(firstCheckbox).toBeChecked();
     });
