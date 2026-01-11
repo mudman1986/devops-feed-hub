@@ -35,7 +35,9 @@ test.describe("Theme Toggle Tests", () => {
     await expect(htmlElement).not.toHaveAttribute("data-theme", initialTheme);
   });
 
-  test("should update button aria-label when theme changes", async ({ page }) => {
+  test("should update button aria-label when theme changes", async ({
+    page,
+  }) => {
     const themeToggle = page.locator("#theme-toggle");
 
     // Get initial theme

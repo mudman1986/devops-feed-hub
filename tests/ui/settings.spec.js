@@ -48,16 +48,14 @@ test.describe("Settings Page Tests", () => {
       await expect(page).toHaveURL(/settings\.html/);
     });
 
-    test("settings button should be in header controls", async ({
-      page,
-    }) => {
+    test("settings button should be in header controls", async ({ page }) => {
       await page.goto("/");
       await page.waitForSelector("#settings-button", { timeout: 10000 });
       const settingsButton = page.locator("#settings-button");
 
       // Settings button is now in header (icon-only)
       await expect(settingsButton).toBeVisible();
-      
+
       // Verify it has proper aria-label for accessibility
       await expect(settingsButton).toHaveAttribute("aria-label", "Settings");
     });
@@ -258,7 +256,7 @@ test.describe("Settings Page Tests", () => {
       });
       const appearanceSection = page.locator("#appearance-section");
       await expect(appearanceSection).toBeVisible({ timeout: 10000 });
-      
+
       // Verify view mode setting is present
       const viewSetting = page.locator("#view-setting");
       await expect(viewSetting).toBeVisible({ timeout: 10000 });
@@ -277,7 +275,7 @@ test.describe("Settings Page Tests", () => {
       });
       const appearanceSection = page.locator("#appearance-section");
       await expect(appearanceSection).toBeVisible({ timeout: 10000 });
-      
+
       // Verify timeframe setting is present
       const timeframeSetting = page.locator("#timeframe-setting");
       await expect(timeframeSetting).toBeVisible({ timeout: 10000 });
