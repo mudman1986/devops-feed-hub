@@ -59,15 +59,23 @@ test.describe("Experimental Themes", () => {
       const colorVariations = page.locator(
         '#experimental-theme-setting optgroup[label="Color Variations"]',
       );
-      const layoutRedesigns = page.locator(
-        '#experimental-theme-setting optgroup[label="Layout Redesigns"]',
+      const layoutRedesignsStyling = page.locator(
+        '#experimental-theme-setting optgroup[label="Layout Redesigns - Styling"]',
+      );
+      const layoutRedesignsRadical = page.locator(
+        '#experimental-theme-setting optgroup[label="Layout Redesigns - Radical Structure"]',
+      );
+      const newsSiteInspired = page.locator(
+        '#experimental-theme-setting optgroup[label="News Site Inspired"]',
       );
 
       await expect(colorVariations).toBeAttached();
-      await expect(layoutRedesigns).toBeAttached();
+      await expect(layoutRedesignsStyling).toBeAttached();
+      await expect(layoutRedesignsRadical).toBeAttached();
+      await expect(newsSiteInspired).toBeAttached();
     });
 
-    test("should have at least 10 experimental themes available", async ({
+    test("should have at least 40 experimental themes available", async ({
       page,
     }) => {
       await page.goto("/settings.html");
@@ -79,7 +87,7 @@ test.describe("Experimental Themes", () => {
 
       // Count options (excluding the "None" option)
       const count = await options.count();
-      expect(count).toBeGreaterThanOrEqual(11); // 10+ themes + 1 "None" option
+      expect(count).toBeGreaterThanOrEqual(41); // 40+ themes + 1 "None" option
     });
   });
 
