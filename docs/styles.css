@@ -1323,7 +1323,6 @@ h3 {
   gap: 0.5rem;
 }
 
->>>>>>> bcd386942444ec2adf3a4654e7e7b8985a4041b4
 .settings-back-button:hover {
   background: var(--bg-hover);
   border-color: var(--border-accent);
@@ -1428,36 +1427,4 @@ h3 {
 
 .settings-button:active {
   transform: translateY(0);
-}
-
-/* RSS Feeds Section */
-.rss-feeds-section {
-  margin-top: 2rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--border-primary);
-}
-
-.rss-link {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.rss-link svg {
-  flex-shrink: 0;
-  color: var(--accent-primary);
-}
-
-.rss-link:hover svg {
-  color: var(--accent-hover);
-}
-
-/* List view adjustments for RSS links */
-[data-view="list"] .rss-link {
-  font-size: 0.8125rem;
-}
-
-[data-view="list"] .rss-link svg {
-  width: 14px;
-  height: 14px;
 }
