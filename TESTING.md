@@ -26,7 +26,6 @@ Tests: RSS parsing, HTML generation, feed ordering, configuration validation
 - **Location**: `.github/scripts/test_commit_github_pages.bats`
 - **Run**: `bats .github/scripts/test_commit_github_pages.bats`
 
-#
 
 ## UI Tests (Playwright)
 
@@ -103,18 +102,21 @@ For automated testing in CI/CD, add this before running UI tests:
 
 **Problem**: Tests fail with "data-theme is null" or "element not found"  
 **Solution**: Generate HTML files first:
+
 ```bash
 bash .github/scripts/generate-test-data.sh
 ```
 
 **Problem**: Tests timeout waiting for elements  
 **Solution**: Ensure `docs/index.html` exists and contains valid HTML:
+
 ```bash
 ls -la docs/index.html
 ```
 
-**Problem**: "http://localhost:8080 is already used"  
+**Problem**: "`http://localhost:8080` is already used"  
 **Solution**: Kill the existing server:
+
 ```bash
 kill $(lsof -ti:8080) 2>/dev/null || true
 npm run test:ui
@@ -126,6 +128,7 @@ npm run test:ui
 ### Test Data
 
 The UI tests use test fixtures located in `.github/workflows/test-fixtures/`:
+
 - `rss-test-data.json` - Complete test data with 3 feeds and 15 articles
 - `rss-empty-data.json` - Empty test data for edge case testing
 
@@ -139,6 +142,7 @@ The UI tests use Playwright to test actual rendered HTML pages. Unlike unit test
 **For testing**: We use test fixtures to generate the required HTML structure
 
 This approach ensures:
+
 - Tests run consistently with known data
 - No external dependencies (no actual RSS feeds needed)
 - Fast test execution

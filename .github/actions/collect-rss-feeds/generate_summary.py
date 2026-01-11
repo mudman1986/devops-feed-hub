@@ -119,7 +119,7 @@ def generate_feed_nav(
     escaped_feed_list_json = html_escape(feed_list_json)
 
     nav_html = '<nav class="feed-nav">\n'
-    nav_html += f'  <script type="application/json" '
+    nav_html += '  <script type="application/json" '
     nav_html += f'id="feed-list-data">{escaped_feed_list_json}</script>\n'
     nav_html += '  <a href="index.html" class="nav-link'
     if current_feed is None:
@@ -533,8 +533,6 @@ def generate_html_page(
     )
 
     return html
-
-
 
 
 def generate_all_pages(data: Dict[str, Any], output_dir: str) -> None:

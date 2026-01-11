@@ -75,7 +75,6 @@ This repository is maintained primarily by GitHub Copilot. Path-specific instruc
 - **Linter configs**: All linter configuration files are in `.github/linters/`
 - Fix **ALL** remaining linting errors before committing (not just errors you introduced)
 
-
 ### Key Super-Linter Differences
 
 - PYTHON_BLACK uses double quotes and enforces line breaks

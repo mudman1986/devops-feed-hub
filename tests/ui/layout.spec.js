@@ -8,7 +8,6 @@ test.beforeEach(async ({ page }) => {
   });
 });
 
-
 /**
  * UI Layout Tests - Desktop
  * Validates layout and positioning on desktop screen sizes

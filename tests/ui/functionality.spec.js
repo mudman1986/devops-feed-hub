@@ -11,7 +11,6 @@ test.beforeEach(async ({ page }) => {
   });
 });
 
-
 /**
  * Theme Toggle Functionality Tests
  * Tests dark/light mode switching
@@ -260,13 +259,14 @@ test.describe("Mark as Read Tests", () => {
     await page.waitForLoadState("networkidle");
     await page.waitForSelector(".article-item", { timeout: 5000 });
     // Wait for read indicators to be added by JavaScript
-    await page.waitForSelector(".read-indicator", { timeout: 10000 }).catch(() => {});
+    await page
+      .waitForSelector(".read-indicator", { timeout: 10000 })
+      .catch(() => {});
   });
 
   test("should mark article as read when clicking indicator", async ({
     page,
   }) => {
-    
     const readIndicators = page.locator(".read-indicator");
 
     if ((await readIndicators.count()) === 0) {
@@ -296,7 +296,7 @@ test.describe("Mark as Read Tests", () => {
     page,
   }) => {
     // Wait for JavaScript to initialize
-    
+
     const readIndicators = page.locator(".read-indicator");
     const resetButton = page.locator("#reset-read-button");
 
