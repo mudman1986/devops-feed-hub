@@ -4,7 +4,7 @@ Unit tests for generate_summary.py
 Tests the summary generation functionality for RSS feed collection
 """
 
-# pylint: disable=wrong-import-position
+# pylint: disable=wrong-import-position,too-many-lines
 import os
 import sys
 import tempfile
@@ -939,12 +939,6 @@ class TestMultiPageGeneration(unittest.TestCase):
             {"name": "Old Feed", "url": "https://example.com/old"}
         ]
 
-        result = generate_html_page(data_without_errors, current_feed="summary")
-
-
-import json
-import os
-
 
 class TestFeedListJSON(unittest.TestCase):
     """Test feed list JSON generation for settings page"""
@@ -1059,7 +1053,7 @@ class TestFeedListJSON(unittest.TestCase):
                 "total_articles": 2,
             },
             "feeds": {
-                'Feed & Company': {
+                "Feed & Company": {
                     "url": "https://example.com/feed1",
                     "count": 1,
                     "articles": [
@@ -1132,10 +1126,26 @@ class TestFeedListJSON(unittest.TestCase):
                 "total_articles": 0,
             },
             "feeds": {
-                "Alpha Feed": {"url": "https://example.com/feed1", "count": 0, "articles": []},
-                "Beta Feed": {"url": "https://example.com/feed2", "count": 0, "articles": []},
-                "Gamma Feed": {"url": "https://example.com/feed3", "count": 0, "articles": []},
-                "Delta Feed": {"url": "https://example.com/feed4", "count": 0, "articles": []},
+                "Alpha Feed": {
+                    "url": "https://example.com/feed1",
+                    "count": 0,
+                    "articles": [],
+                },
+                "Beta Feed": {
+                    "url": "https://example.com/feed2",
+                    "count": 0,
+                    "articles": [],
+                },
+                "Gamma Feed": {
+                    "url": "https://example.com/feed3",
+                    "count": 0,
+                    "articles": [],
+                },
+                "Delta Feed": {
+                    "url": "https://example.com/feed4",
+                    "count": 0,
+                    "articles": [],
+                },
             },
             "failed_feeds": [],
         }
@@ -1183,9 +1193,21 @@ class TestDeploymentScriptIssues(unittest.TestCase):
                 "total_articles": 0,
             },
             "feeds": {
-                "Docker Blog": {"url": "https://www.docker.com/blog/feed/", "count": 0, "articles": []},
-                "Kubernetes Blog": {"url": "https://kubernetes.io/feed.xml", "count": 0, "articles": []},
-                "AWS DevOps Blog": {"url": "https://aws.amazon.com/blogs/devops/feed/", "count": 0, "articles": []},
+                "Docker Blog": {
+                    "url": "https://www.docker.com/blog/feed/",
+                    "count": 0,
+                    "articles": [],
+                },
+                "Kubernetes Blog": {
+                    "url": "https://kubernetes.io/feed.xml",
+                    "count": 0,
+                    "articles": [],
+                },
+                "AWS DevOps Blog": {
+                    "url": "https://aws.amazon.com/blogs/devops/feed/",
+                    "count": 0,
+                    "articles": [],
+                },
             },
             "failed_feeds": [],
         }

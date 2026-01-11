@@ -54,6 +54,30 @@ This repository is maintained primarily by GitHub Copilot. Path-specific instruc
     -e DEFAULT_BRANCH=main \
     -e IGNORE_GITIGNORED_FILES=true \
     -e SAVE_SUPER_LINTER_SUMMARY=true \
+    -e VALIDATE_BASH=true \
+    -e VALIDATE_BASH_EXEC=true \
+    -e VALIDATE_SHELL_SHFMT=true \
+    -e VALIDATE_PYTHON_BLACK=true \
+    -e VALIDATE_PYTHON_ISORT=true \
+    -e VALIDATE_PYTHON_PYLINT=true \
+    -e VALIDATE_PYTHON_FLAKE8=true \
+    -e VALIDATE_PYTHON_MYPY=true \
+    -e VALIDATE_JAVASCRIPT_ES=true \
+    -e VALIDATE_JAVASCRIPT_PRETTIER=true \
+    -e VALIDATE_CSS=true \
+    -e VALIDATE_CSS_PRETTIER=true \
+    -e VALIDATE_HTML=true \
+    -e VALIDATE_HTML_PRETTIER=true \
+    -e VALIDATE_JSON=true \
+    -e VALIDATE_JSON_PRETTIER=true \
+    -e VALIDATE_YAML=true \
+    -e VALIDATE_YAML_PRETTIER=true \
+    -e VALIDATE_MARKDOWN=true \
+    -e VALIDATE_MARKDOWN_PRETTIER=true \
+    -e VALIDATE_NATURAL_LANGUAGE=true \
+    -e VALIDATE_GITHUB_ACTIONS=true \
+    -e VALIDATE_GITLEAKS=true \
+    -e VALIDATE_GIT_MERGE_CONFLICT_MARKERS=true \
     -e FIX_PYTHON_BLACK=true \
     -e FIX_PYTHON_ISORT=true \
     -e FIX_SHELL_SHFMT=true \
@@ -66,6 +90,7 @@ This repository is maintained primarily by GitHub Copilot. Path-specific instruc
     -v $(pwd):/tmp/lint \
     ghcr.io/super-linter/super-linter:v8.3.2
   ```
+- **IMPORTANT: Keep running super-linter and fixing errors until it reports "Successfully linted" with no errors**
 - **DO NOT use USE_FIND_ALGORITHM** - it's incompatible with VALIDATE_ALL_CODEBASE
 - **Always use VALIDATE_ALL_CODEBASE=true** to lint the entire codebase
 - **Always use DEFAULT_BRANCH=main** for this repository
@@ -74,7 +99,6 @@ This repository is maintained primarily by GitHub Copilot. Path-specific instruc
 - **Enable all FIX\_\* flags** to automatically fix formatting issues
 - **Linter configs**: All linter configuration files are in `.github/linters/`
 - Fix **ALL** remaining linting errors before committing (not just errors you introduced)
-
 
 ### Key Super-Linter Differences
 

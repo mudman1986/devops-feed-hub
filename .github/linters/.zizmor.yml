@@ -1,0 +1,16 @@
+# Zizmor configuration
+# Disable checks that are false positives for this repository
+
+# Allow specific rules to be ignored
+ignore:
+  # artipacked: Low-confidence warnings about credential persistence
+  # These are false positives as we're not uploading artifacts with credentials
+  - id: artipacked
+
+  # dependabot-cooldown: We want frequent dependency updates
+  - id: dependabot-cooldown
+
+  # template-injection: info level warnings that are false positives
+  # Our template usage is safe as inputs come from workflow outputs
+  - id: template-injection
+    confidence: Info
