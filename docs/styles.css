@@ -1461,3 +1461,45 @@ h3 {
 .header-controls .settings-button {
   justify-content: center;
 }
+
+/* Mobile UX Improvements */
+@media (width <= 768px) {
+  /* Position settings button next to theme toggle on mobile */
+  .header-controls .settings-button {
+    position: absolute;
+    top: 1rem;
+    right: 4.5rem;
+    padding: 0.75rem;
+    width: 2.75rem;
+    height: 2.75rem;
+    border-radius: 50%;
+    box-shadow: var(--shadow-lg);
+    justify-content: center;
+    order: 0;
+  }
+
+  /* Make settings back button more compact on mobile */
+  .settings-back-button {
+    padding: 0.625rem 1rem !important;
+    font-size: 0.875rem !important;
+    width: auto !important;
+    display: inline-flex !important;
+  }
+
+  /* Improve settings menu tabs on mobile */
+  .settings-menu-item {
+    padding: 0.625rem 1rem;
+    font-size: 0.875rem;
+    white-space: nowrap;
+  }
+
+  .settings-menu-item svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  /* Better spacing for mobile header */
+  .header-title {
+    padding-right: 8rem !important;
+  }
+}
