@@ -88,6 +88,7 @@ Always re-run the failing test/linter to verify the fix worked.
 
 - **Fix ALL linting errors across the entire codebase, not just new ones**
 - **Fix ALL test failures, even if unrelated to current task**
+- **Super-linter workflow is a required status check - ALL linters must pass**
 - Never skip or disable tests to make them pass
 - Always verify fixes by re-running tests
 - Report clear status: what passed, what failed, what was fixed

@@ -20,7 +20,9 @@ from generate_rss import (  # noqa: E402 # pylint: disable=wrong-import-position
     generate_master_feed,
     parse_iso_timestamp,
 )
-from utils import generate_feed_slug  # noqa: E402 # pylint: disable=wrong-import-position
+from utils import (  # noqa: E402 # pylint: disable=wrong-import-position
+    generate_feed_slug,
+)
 
 
 def test_parse_iso_timestamp():

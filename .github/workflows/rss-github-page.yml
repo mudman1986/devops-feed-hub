@@ -34,11 +34,15 @@ jobs:
 
       - name: Display collection stats
         if: always()
+        env:
+          TOTAL_ARTICLES: ${{ steps.collect.outputs.total-articles }}
+          SUCCESSFUL_FEEDS: ${{ steps.collect.outputs.successful-feeds }}
+          FAILED_FEEDS: ${{ steps.collect.outputs.failed-feeds }}
         run: |
           echo "## Collection Statistics"
-          echo "- Total articles: ${{ steps.collect.outputs.total-articles }}"
-          echo "- Successful feeds: ${{ steps.collect.outputs.successful-feeds }}"
-          echo "- Failed feeds: ${{ steps.collect.outputs.failed-feeds }}"
+          echo "- Total articles: $TOTAL_ARTICLES"
+          echo "- Successful feeds: $SUCCESSFUL_FEEDS"
+          echo "- Failed feeds: $FAILED_FEEDS"
 
       - name: Generate GitHub Pages content
         if: success()
@@ -68,10 +72,12 @@ jobs:
 
       - name: Commit and push GitHub Pages content
         if: success()
+        env:
+          TARGET_BRANCH_INPUT: ${{ github.event.inputs.target-branch }}
         run: |
           # Default to 'github-pages' branch, override with workflow_dispatch input if provided
           TARGET_BRANCH="github-pages"
-          if [ -n "${{ github.event.inputs.target-branch }}" ]; then
-            TARGET_BRANCH="${{ github.event.inputs.target-branch }}"
+          if [ -n "$TARGET_BRANCH_INPUT" ]; then
+            TARGET_BRANCH="$TARGET_BRANCH_INPUT"
           fi
           bash .github/scripts/commit-github-pages.sh "docs" "$TARGET_BRANCH"

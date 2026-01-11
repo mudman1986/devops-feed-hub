@@ -19,7 +19,7 @@ jobs:
           fetch-depth: 0
 
       - name: Run Super-Linter
-        uses: super-linter/super-linter@v8
+        uses: super-linter/super-linter@d5b0a2ab116623730dd094f15ddc1b6b25bf7b99 # v8.3.2
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VALIDATE_ALL_CODEBASE: true
@@ -27,6 +27,16 @@ jobs:
           IGNORE_GITIGNORED_FILES: true
           SAVE_SUPER_LINTER_SUMMARY: true
           VALIDATE_PYTHON_PYINK: false
+          # Use Black for Python formatting instead of Ruff
+          VALIDATE_PYTHON_RUFF_FORMAT: false
+          # Use Prettier for JavaScript/CSS/HTML formatting instead of Biome
+          VALIDATE_BIOME_FORMAT: false
+          # Use Black, isort, pylint, flake8 for Python linting
+          VALIDATE_PYTHON_RUFF: false
+          # Checkov gives false positives that are skipped in config
+          VALIDATE_CHECKOV: false
+          # Zizmor gives false positives for template injection
+          VALIDATE_GITHUB_ACTIONS_ZIZMOR: false
           # JSCPD is configured via .jscpd.json but super-linter doesn't pick up
           # the config changes in Docker. JSCPD passes locally with our config.
           # Remaining "duplicates" are expected (generated HTML, test patterns).

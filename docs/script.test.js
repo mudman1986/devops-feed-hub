@@ -31,7 +31,7 @@ function loadScriptFunctions() {
   const READ_ARTICLES_KEY = "readArticles";
 
   // Define functions in global scope
-  window.getReadArticles = function () {
+  window.getReadArticles = () => {
     try {
       const stored = localStorage.getItem(READ_ARTICLES_KEY);
       return stored ? JSON.parse(stored) : [];
@@ -41,7 +41,7 @@ function loadScriptFunctions() {
     }
   };
 
-  window.saveReadArticles = function (readArticles) {
+  window.saveReadArticles = (readArticles) => {
     try {
       localStorage.setItem(READ_ARTICLES_KEY, JSON.stringify(readArticles));
     } catch (e) {
@@ -49,12 +49,12 @@ function loadScriptFunctions() {
     }
   };
 
-  window.isArticleRead = function (articleUrl) {
+  window.isArticleRead = (articleUrl) => {
     const readArticles = window.getReadArticles();
     return readArticles.includes(articleUrl);
   };
 
-  window.toggleArticleRead = function (articleUrl) {
+  window.toggleArticleRead = (articleUrl) => {
     let readArticles = window.getReadArticles();
 
     if (readArticles.includes(articleUrl)) {
@@ -67,7 +67,7 @@ function loadScriptFunctions() {
     return readArticles.includes(articleUrl);
   };
 
-  window.resetAllReadArticles = function () {
+  window.resetAllReadArticles = () => {
     try {
       localStorage.removeItem(READ_ARTICLES_KEY);
     } catch (e) {
@@ -282,7 +282,7 @@ describe("Article Reordering", () => {
     loadScriptFunctions();
 
     // Use the FIXED implementation with date sorting
-    window.reorderArticlesInFeed = function (articleList, articles) {
+    window.reorderArticlesInFeed = (articleList, articles) => {
       if (!articleList || articles.length === 0) return;
 
       // Separate articles into unread and read
@@ -405,7 +405,7 @@ describe("Feed Filtering Functionality", () => {
     localStorage.clear();
 
     // Define functions for testing
-    getEnabledFeeds = function () {
+    getEnabledFeeds = () => {
       try {
         const stored = localStorage.getItem("enabledFeeds");
         return stored ? JSON.parse(stored) : null;
@@ -415,7 +415,7 @@ describe("Feed Filtering Functionality", () => {
       }
     };
 
-    saveEnabledFeeds = function (feeds) {
+    saveEnabledFeeds = (feeds) => {
       try {
         localStorage.setItem("enabledFeeds", JSON.stringify(feeds));
       } catch (e) {

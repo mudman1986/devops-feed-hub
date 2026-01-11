@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { expect, test } from "@playwright/test";
 
 // Mock system date to match test data (2026-01-11, 12 hours after collection)
 test.beforeEach(async ({ page }) => {
