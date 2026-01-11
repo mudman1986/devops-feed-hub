@@ -12,7 +12,7 @@ from xml.etree import ElementTree as ET
 
 sys.path.insert(0, os.path.dirname(os.path.dirname(__file__)))
 
-from generate_rss import (
+from generate_rss import (  # noqa: E402 # pylint: disable=wrong-import-position
     create_rss_feed,
     format_rfc822_date,
     generate_all_feeds,
@@ -20,7 +20,9 @@ from generate_rss import (
     generate_master_feed,
     parse_iso_timestamp,
 )
-from utils import generate_feed_slug
+from utils import (  # noqa: E402 # pylint: disable=wrong-import-position
+    generate_feed_slug,
+)
 
 
 def test_parse_iso_timestamp():

@@ -1,6 +1,12 @@
 # DevOps Feed Hub 📰
 
+[![CI Tests](https://github.com/mudman1986/devops-feed-hub/actions/workflows/ci-tests.yml/badge.svg)](https://github.com/mudman1986/devops-feed-hub/actions/workflows/ci-tests.yml)
+[![UI Tests](https://github.com/mudman1986/devops-feed-hub/actions/workflows/ui-tests.yml/badge.svg)](https://github.com/mudman1986/devops-feed-hub/actions/workflows/ui-tests.yml)
+[![Super-Linter](https://github.com/mudman1986/devops-feed-hub/actions/workflows/super-linter.yml/badge.svg)](https://github.com/mudman1986/devops-feed-hub/actions/workflows/super-linter.yml)
+
 A centralized RSS feed aggregator for DevOps, cloud, and technology news.
+
+> **📊 Test Coverage**: Coverage reports are generated with each CI run and available as artifacts in the [CI Tests workflow](https://github.com/mudman1986/devops-feed-hub/actions/workflows/ci-tests.yml).
 
 ## 🎯 Purpose
 
@@ -37,7 +43,7 @@ View at: [https://mudman1986.github.io/devops-feed-hub/](https://mudman1986.gith
 - **Python**: `python3 -m pytest .github/actions/collect-rss-feeds/tests/ -v`
 - **UI Tests**: `npm run test:ui`
 
-See [TESTING.md](TESTING.md) for details.
+See [TESTING.md](../TESTING.md) for details.
 
 ## 🔧 Configuration
 

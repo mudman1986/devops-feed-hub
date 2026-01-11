@@ -232,10 +232,10 @@
                 </p>
               </div>
               <div class="settings-item-control">
-                <a 
-                  href="feed.xml" 
-                  class="settings-button" 
-                  target="_blank" 
+                <a
+                  href="feed.xml"
+                  class="settings-button"
+                  target="_blank"
                   rel="noopener noreferrer"
                 >
                   <svg
@@ -267,11 +267,11 @@
     <script src="script.js"></script>
     <script>
       // Settings page-specific functionality
-      (function () {
+      (() => {
         "use strict";
 
         // Get all available feeds from navigation
-        function getAllFeeds() {
+        function _getAllFeeds() {
           // This will be populated when the main index.html is generated
           // For now, we'll fetch it from the existing navigation if available
           const feeds = [];
@@ -290,7 +290,9 @@
               const sectionId = item.getAttribute("data-section");
 
               // Update active menu item
-              menuItems.forEach((mi) => mi.classList.remove("active"));
+              menuItems.forEach((mi) => {
+                mi.classList.remove("active");
+              });
               item.classList.add("active");
 
               // Update active section
@@ -441,7 +443,7 @@
               const feedListEl = doc.getElementById("feed-list-data");
 
               let feeds = [];
-              if (feedListEl && feedListEl.textContent) {
+              if (feedListEl?.textContent) {
                 try {
                   feeds = JSON.parse(feedListEl.textContent);
                 } catch (e) {
@@ -536,7 +538,7 @@
               const feedListEl = doc.getElementById("feed-list-data");
 
               let feeds = [];
-              if (feedListEl && feedListEl.textContent) {
+              if (feedListEl?.textContent) {
                 try {
                   feeds = JSON.parse(feedListEl.textContent);
                 } catch (e) {

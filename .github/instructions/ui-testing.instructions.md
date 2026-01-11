@@ -19,6 +19,7 @@ npm run test:ui
 ### What the Script Does
 
 The `generate-test-data.sh` script:
+
 1. Uses test data from `.github/workflows/test-fixtures/rss-test-data.json`
 2. Generates HTML files: `index.html`, `summary.html`, `feed-*.html`
 3. Places them in `docs/` directory for Playwright to access
@@ -47,6 +48,7 @@ npx playwright test --debug
 **Location**: `.github/workflows/test-fixtures/rss-test-data.json`
 
 This file contains:
+
 - 3 test feeds (Test Feed A, B, C)
 - 15 test articles
 - Complete metadata structure
@@ -56,14 +58,17 @@ This file contains:
 ## Troubleshooting
 
 ### Error: "data-theme is null"
+
 **Cause**: Missing `index.html`  
 **Fix**: Run `bash .github/scripts/generate-test-data.sh`
 
-### Error: "http://localhost:8080 is already used"
+### Error: "`http://localhost:8080` is already used"
+
 **Cause**: Previous test server still running  
 **Fix**: `kill $(lsof -ti:8080) 2>/dev/null || true`
 
 ### Error: "Strict mode violation"
+
 **Cause**: Selector matches multiple elements  
 **Fix**: Use specific selectors like `.settings-sidebar .menu-item:has-text("Text")`
 
@@ -78,7 +83,9 @@ Use specific selectors to avoid strict mode violations:
 await page.locator('text="Appearance"').click();
 
 // ✅ GOOD - specific to sidebar menu
-await page.locator('.settings-sidebar .menu-item:has-text("Appearance")').click();
+await page
+  .locator('.settings-sidebar .menu-item:has-text("Appearance")')
+  .click();
 ```
 
 ### Required Test Setup
@@ -95,6 +102,7 @@ test.beforeEach(async ({ page }) => {
 ### Test Data Dependencies
 
 UI tests depend on generated HTML containing:
+
 - Valid HTML structure with `data-theme` attribute
 - Navigation links in `.nav-link` elements
 - Feed sections with proper IDs

@@ -25,6 +25,8 @@ You ensure all linters and tests pass before code is submitted.
 
 ## Your Job
 
+**ALWAYS fix all linter and test issues, even if not explicitly mentioned in the current task.**
+
 Run these checks in order and fix any failures:
 
 1. **JavaScript tests**: `npm test`
@@ -36,6 +38,32 @@ Run these checks in order and fix any failures:
      -e RUN_LOCAL=true \
      -e VALIDATE_ALL_CODEBASE=true \
      -e DEFAULT_BRANCH=main \
+     -e IGNORE_GITIGNORED_FILES=true \
+     -e SAVE_SUPER_LINTER_SUMMARY=true \
+     -e VALIDATE_BASH=true \
+     -e VALIDATE_BASH_EXEC=true \
+     -e VALIDATE_SHELL_SHFMT=true \
+     -e VALIDATE_PYTHON_BLACK=true \
+     -e VALIDATE_PYTHON_ISORT=true \
+     -e VALIDATE_PYTHON_PYLINT=true \
+     -e VALIDATE_PYTHON_FLAKE8=true \
+     -e VALIDATE_PYTHON_MYPY=true \
+     -e VALIDATE_JAVASCRIPT_ES=true \
+     -e VALIDATE_JAVASCRIPT_PRETTIER=true \
+     -e VALIDATE_CSS=true \
+     -e VALIDATE_CSS_PRETTIER=true \
+     -e VALIDATE_HTML=true \
+     -e VALIDATE_HTML_PRETTIER=true \
+     -e VALIDATE_JSON=true \
+     -e VALIDATE_JSON_PRETTIER=true \
+     -e VALIDATE_YAML=true \
+     -e VALIDATE_YAML_PRETTIER=true \
+     -e VALIDATE_MARKDOWN=true \
+     -e VALIDATE_MARKDOWN_PRETTIER=true \
+     -e VALIDATE_NATURAL_LANGUAGE=true \
+     -e VALIDATE_GITHUB_ACTIONS=true \
+     -e VALIDATE_GITLEAKS=true \
+     -e VALIDATE_GIT_MERGE_CONFLICT_MARKERS=true \
      -e FIX_PYTHON_BLACK=true \
      -e FIX_PYTHON_ISORT=true \
      -e FIX_SHELL_SHFMT=true \
@@ -44,9 +72,11 @@ Run these checks in order and fix any failures:
      -e FIX_JAVASCRIPT_PRETTIER=true \
      -e FIX_CSS_PRETTIER=true \
      -e FIX_HTML_PRETTIER=true \
+     -e FIX_NATURAL_LANGUAGE=true \
      -v $(pwd):/tmp/lint \
      ghcr.io/super-linter/super-linter:v8.3.2
    ```
+   **IMPORTANT: Keep running super-linter and fixing errors until it reports "Successfully linted" with no errors.**
 
 ## Bugfix Workflow (Test-Driven Development)
 
@@ -84,8 +114,11 @@ Always re-run the failing test/linter to verify the fix worked.
 
 ## Rules
 
-- Fix ALL linting errors, not just new ones
+- **Fix ALL linting errors across the entire codebase, not just new ones**
+- **Fix ALL test failures, even if unrelated to current task**
+- **Super-linter workflow is a required status check - ALL linters must pass**
 - Never skip or disable tests to make them pass
 - Always verify fixes by re-running tests
 - Report clear status: what passed, what failed, what was fixed
 - **For bugs**: Write failing test → Fix bug → Verify test passes
+- **This applies to every task, whether explicitly requested or not**

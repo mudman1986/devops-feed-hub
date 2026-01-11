@@ -22,13 +22,18 @@ jobs:
         with:
           fetch-depth: 0
 
+      - name: Fetch main branch
+        run: |
+          git fetch origin main:main || echo "Main branch already exists locally"
+
       - name: Set up Python
         uses: actions/setup-python@v6
         with:
           python-version: "3.x"
 
       - name: Install Python dependencies
-        run: pip install feedparser pytest black isort
+        run: |
+          pip install -r requirements.txt
 
       - name: Set up Node.js
         uses: actions/setup-node@v6
