@@ -76,9 +76,9 @@ test.describe("Settings Page Tests", () => {
       await page.goto("/settings.html");
 
       // Check for menu items in sidebar - use more specific selectors
-      await expect(page.locator('.settings-sidebar .menu-item:has-text("Appearance")')).toBeVisible();
-      await expect(page.locator('.settings-sidebar .menu-item:has-text("Feed Selection")')).toBeVisible();
-      await expect(page.locator('.settings-sidebar .menu-item:has-text("Display Options")')).toBeVisible();
+      await expect(page.locator('.settings-menu-item:has-text("Appearance")')).toBeVisible();
+      await expect(page.locator('.settings-menu-item:has-text("Feed Selection")')).toBeVisible();
+      await expect(page.locator('.settings-menu-item:has-text("Display Options")')).toBeVisible();
     });
 
     test("should have back to feeds button", async ({ page }) => {
@@ -94,7 +94,7 @@ test.describe("Settings Page Tests", () => {
       await page.goto("/settings.html");
 
       // Click on Feed Selection menu item in sidebar
-      await page.locator('.settings-sidebar .menu-item:has-text("Feed Selection")').click();
+      await page.locator('.settings-menu-item:has-text("Feed Selection")').click();
 
       // Wait for feed list to load
       await page.waitForSelector(".feed-list", { timeout: 10000 });
@@ -109,7 +109,7 @@ test.describe("Settings Page Tests", () => {
       page,
     }) => {
       await page.goto("/settings.html");
-      await page.locator('.settings-sidebar .menu-item:has-text("Feed Selection")').click();
+      await page.locator('.settings-menu-item:has-text("Feed Selection")').click();
 
       await expect(page.locator("#select-all-feeds")).toBeVisible();
       await expect(page.locator("#deselect-all-feeds")).toBeVisible();
@@ -119,7 +119,7 @@ test.describe("Settings Page Tests", () => {
       page,
     }) => {
       await page.goto("/settings.html");
-      await page.locator('.settings-sidebar .menu-item:has-text("Feed Selection")').click();
+      await page.locator('.settings-menu-item:has-text("Feed Selection")').click();
 
       // Wait for feed list
       await page.waitForSelector(".feed-list");
@@ -140,7 +140,7 @@ test.describe("Settings Page Tests", () => {
       page,
     }) => {
       await page.goto("/settings.html");
-      await page.locator('.settings-sidebar .menu-item:has-text("Feed Selection")').click();
+      await page.locator('.settings-menu-item:has-text("Feed Selection")').click();
 
       // Wait for feed list
       await page.waitForSelector(".feed-list");
@@ -162,7 +162,7 @@ test.describe("Settings Page Tests", () => {
 
     test("should persist feed selection in localStorage", async ({ page }) => {
       await page.goto("/settings.html");
-      await page.locator('.settings-sidebar .menu-item:has-text("Feed Selection")').click();
+      await page.locator('.settings-menu-item:has-text("Feed Selection")').click();
 
       // Wait for feed list
       await page.waitForSelector(".feed-list");
@@ -188,7 +188,7 @@ test.describe("Settings Page Tests", () => {
       page,
     }) => {
       await page.goto("/settings.html");
-      await page.locator('.settings-sidebar .menu-item:has-text("Appearance")').click();
+      await page.locator('.settings-menu-item:has-text("Appearance")').click();
 
       // Check for theme section
       const appearanceSection = page.locator("#appearance-section, .settings-section").first();
@@ -199,7 +199,7 @@ test.describe("Settings Page Tests", () => {
   test.describe("Display Options Settings", () => {
     test("should display view mode selector", async ({ page }) => {
       await page.goto("/settings.html");
-      await page.locator('.settings-sidebar .menu-item:has-text("Display Options")').click();
+      await page.locator('.settings-menu-item:has-text("Display Options")').click();
 
       // Check for view mode options - be more flexible with selector
       const displaySection = page.locator("#display-section, .settings-section").first();
@@ -208,7 +208,7 @@ test.describe("Settings Page Tests", () => {
 
     test("should display timeframe default selector", async ({ page }) => {
       await page.goto("/settings.html");
-      await page.locator('.settings-sidebar .menu-item:has-text("Display Options")').click();
+      await page.locator('.settings-menu-item:has-text("Display Options")').click();
 
       // Check for timeframe section
       const displaySection = page.locator("#display-section, .settings-section").first();
@@ -219,7 +219,7 @@ test.describe("Settings Page Tests", () => {
   test.describe("Settings Persistence", () => {
     test("should maintain settings across navigation", async ({ page }) => {
       await page.goto("/settings.html");
-      await page.locator('.settings-sidebar .menu-item:has-text("Feed Selection")').click();
+      await page.locator('.settings-menu-item:has-text("Feed Selection")').click();
       await page.waitForSelector(".feed-list");
 
       // Select all feeds
@@ -230,7 +230,7 @@ test.describe("Settings Page Tests", () => {
 
       // Navigate back to settings
       await page.goto("/settings.html");
-      await page.locator('.settings-sidebar .menu-item:has-text("Feed Selection")').click();
+      await page.locator('.settings-menu-item:has-text("Feed Selection")').click();
       await page.waitForSelector(".feed-list");
 
       // Check that feeds are still selected
