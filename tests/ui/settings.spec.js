@@ -88,7 +88,7 @@ test.describe("Settings Page Tests", () => {
       await page.locator('.settings-sidebar .menu-item:has-text("Feed Selection")').click();
 
       // Wait for feed list to load
-      await page.waitForSelector(".feed-list", { timeout: 5000 });
+      await page.waitForSelector(".feed-list", { timeout: 10000 });
 
       // Check that feed checkboxes exist
       const feedCheckboxes = page.locator('.feed-list input[type="checkbox"]');

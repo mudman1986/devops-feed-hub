@@ -241,16 +241,18 @@ test.describe("Sidebar Toggle Tests", () => {
  */
 test.describe("Mark as Read Tests", () => {
   test.beforeEach(async ({ page }) => {
-    await page.goto("/");
-
-    // Clear localStorage to start fresh
     await page.evaluate(() => localStorage.clear());
-    await page.reload();
+    await page.goto("/");
+    await page.waitForLoadState("networkidle");
+    await page.waitForSelector(".article-item", { timeout: 5000 });
+    // Wait a bit for DOMContentLoaded handlers to run
+    await page.waitForTimeout(500);
   });
 
   test("should mark article as read when clicking indicator", async ({
     page,
   }) => {
+    
     const readIndicators = page.locator(".read-indicator");
 
     if ((await readIndicators.count()) === 0) {
@@ -279,6 +281,8 @@ test.describe("Mark as Read Tests", () => {
   test("should clear all read articles when clicking reset button", async ({
     page,
   }) => {
+    // Wait for JavaScript to initialize
+    
     const readIndicators = page.locator(".read-indicator");
     const resetButton = page.locator("#reset-read-button");
 
