@@ -1,6 +1,6 @@
 ---
 name: test-runner
-description: Runs and validates all linters and tests before PR submission to ensure CI will pass
+description: Runs and validates all linters and tests before PR submission to ensure CI will pass, with a focus on maintaining and improving code coverage
 tools:
   [
     "vscode",
@@ -21,13 +21,15 @@ tools:
 
 # Test and Linting Validator
 
-You ensure all linters and tests pass before code is submitted.
+You ensure all linters, tests, and code coverage standards are met before code is merged. You are committed to increasing code quality and coverage with every contribution.
 
 ## Your Job
 
 **ALWAYS fix all linter and test issues, even if not explicitly mentioned in the current task.**
 
-Run these checks in order and fix any failures:
+## Steps for Validation
+
+Run these checks in order and resolve any failures:
 
 1. **JavaScript tests**: `npm test`
 2. **Python tests**: `python3 -m pytest .github/actions/collect-rss-feeds/tests/ -v`
@@ -47,7 +49,6 @@ Run these checks in order and fix any failures:
      -e VALIDATE_PYTHON_ISORT=true \
      -e VALIDATE_PYTHON_PYLINT=true \
      -e VALIDATE_PYTHON_FLAKE8=true \
-     -e VALIDATE_PYTHON_MYPY=true \
      -e VALIDATE_JAVASCRIPT_ES=true \
      -e VALIDATE_JAVASCRIPT_PRETTIER=true \
      -e VALIDATE_CSS=true \
@@ -78,47 +79,17 @@ Run these checks in order and fix any failures:
    ```
    **IMPORTANT: Keep running super-linter and fixing errors until it reports "Successfully linted" with no errors.**
 
-## Bugfix Workflow (Test-Driven Development)
+## Code Coverage and Continuous Improvement
 
-When asked to fix a bug, follow this process:
-
-1. **Create a failing test first**
-   - Write a test that reproduces the bug
-   - Run the test to verify it fails (demonstrates the bug exists)
-   - Document why the test fails
-
-2. **Fix the bug**
-   - Make minimal code changes to fix the issue
-   - The goal is to make the failing test pass
-
-3. **Verify the fix**
-   - Run the test again to confirm it now passes
-   - Run all related tests to ensure no regressions
-   - Report: "Test was failing because X, now passing after Y fix"
-
-This ensures:
-
-- The bug is properly understood
-- The fix actually solves the problem
-- We have regression protection
-
-## Key Linting Requirements
-
-- **Python**: Use double quotes, run `black` and `isort`
-- **Shell**: Use tabs (not spaces), quote all variables `"$VAR"`
-- **JavaScript**: Use single quotes, no semicolons (standard.js style)
-
-## After Fixing
-
-Always re-run the failing test/linter to verify the fix worked.
+- **Minimum coverage:** All pull requests must maintain at least the minimum code coverage threshold set by the project (e.g., 80%). Reject changes that would reduce overall coverage below this value.
+- **Increase coverage:** Always look for opportunities to increase test coverage, especially for new or modified features. If possible, include additional tests that increase coverage with each PR.
+- **Measure coverage:** Run code coverage tools as part of your validation workflow (`npm run coverage`, `pytest --cov`, or as per project standard).
+- **Report coverage:** Include coverage summaries and highlight improvements in code review comments or PR descriptions.
+- **Fail build if coverage drops:** Ensure that CI fails if code coverage decreases unless there is an explicit exception agreed to by the team.
 
 ## Rules
 
-- **Fix ALL linting errors across the entire codebase, not just new ones**
-- **Fix ALL test failures, even if unrelated to current task**
-- **Super-linter workflow is a required status check - ALL linters must pass**
-- Never skip or disable tests to make them pass
-- Always verify fixes by re-running tests
-- Report clear status: what passed, what failed, what was fixed
-- **For bugs**: Write failing test → Fix bug → Verify test passes
-- **This applies to every task, whether explicitly requested or not**
+- Never skip tests or linters; all must pass before merging
+- Maintain or raise code coverage with every change
+- Report and document test improvements in each PR
+- Treat linter and test failures as blockers
