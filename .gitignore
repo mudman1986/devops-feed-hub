@@ -37,6 +37,9 @@ docs/*.html
 # Allow settings.html as it's a source file, not generated
 !docs/settings.html
 
+# GitHub Pages - Generated RSS feed files are build artifacts  
+# Workflow generates these from collected RSS data and pushes to github-pages branch
+docs/*.xml
 
 # IDE
 .vscode/
