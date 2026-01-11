@@ -56,8 +56,11 @@ test.describe("Experimental Themes", () => {
       await expect(experimentalThemeSelect).toBeVisible();
 
       // Check for optgroups
-      const colorVariations = page.locator(
-        '#experimental-theme-setting optgroup[label="Color Variations"]',
+      const colorVariationsDark = page.locator(
+        '#experimental-theme-setting optgroup[label="Color Variations - Dark"]',
+      );
+      const colorVariationsLight = page.locator(
+        '#experimental-theme-setting optgroup[label="Color Variations - Light"]',
       );
       const layoutRedesignsStyling = page.locator(
         '#experimental-theme-setting optgroup[label="Layout Redesigns - Styling"]',
@@ -69,13 +72,14 @@ test.describe("Experimental Themes", () => {
         '#experimental-theme-setting optgroup[label="News Site Inspired"]',
       );
 
-      await expect(colorVariations).toBeAttached();
+      await expect(colorVariationsDark).toBeAttached();
+      await expect(colorVariationsLight).toBeAttached();
       await expect(layoutRedesignsStyling).toBeAttached();
       await expect(layoutRedesignsRadical).toBeAttached();
       await expect(newsSiteInspired).toBeAttached();
     });
 
-    test("should have at least 40 experimental themes available", async ({
+    test("should have at least 48 experimental themes available (including light variants)", async ({
       page,
     }) => {
       await page.goto("/settings.html");
@@ -86,8 +90,9 @@ test.describe("Experimental Themes", () => {
       const options = experimentalThemeSelect.locator("option");
 
       // Count options (excluding the "None" option)
+      // 40 original themes + 8 new light variants = 48 + 1 "None" option
       const count = await options.count();
-      expect(count).toBeGreaterThanOrEqual(41); // 40+ themes + 1 "None" option
+      expect(count).toBeGreaterThanOrEqual(49);
     });
   });
 
@@ -398,5 +403,57 @@ test.describe("Theme Application Across All Pages", () => {
       document.documentElement.getAttribute("data-theme"),
     );
     expect(dataTheme).toBe(testTheme);
+  });
+});
+
+test.describe("Light Mode Variants", () => {
+  const lightThemes = [
+    "midnight-blue-light",
+    "forest-green-light",
+    "purple-haze-light",
+    "sunset-orange-light",
+    "ocean-deep-light",
+    "rose-gold-light",
+    "solarized-light",
+    "dracula-light",
+  ];
+
+  test("should have light mode variants for color themes", async ({ page }) => {
+    await page.goto("/settings.html");
+
+    for (const theme of lightThemes.slice(0, 3)) {
+      // Test first 3
+      const option = page.locator(`#experimental-theme-setting option[value="${theme}"]`);
+      await expect(option).toBeAttached();
+    }
+  });
+
+  test("should apply light mode variant theme", async ({ page }) => {
+    await page.goto("/settings.html");
+
+    await page
+      .locator("#experimental-theme-setting")
+      .selectOption("midnight-blue-light");
+
+    const dataTheme = await page.evaluate(() =>
+      document.documentElement.getAttribute("data-theme"),
+    );
+    expect(dataTheme).toBe("midnight-blue-light");
+  });
+
+  test("should persist light mode variant across pages", async ({ page }) => {
+    await page.goto("/settings.html");
+
+    await page
+      .locator("#experimental-theme-setting")
+      .selectOption("forest-green-light");
+
+    await page.goto("/");
+    await page.waitForLoadState("load");
+
+    const dataTheme = await page.evaluate(() =>
+      document.documentElement.getAttribute("data-theme"),
+    );
+    expect(dataTheme).toBe("forest-green-light");
   });
 });

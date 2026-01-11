@@ -5,11 +5,12 @@ const READ_ARTICLES_KEY = "readArticles";
 
 // List of valid experimental themes
 const VALID_EXPERIMENTAL_THEMES = [
-  "midnight-blue", "forest-green", "purple-haze", "sunset-orange",
-  "ocean-deep", "rose-gold", "arctic-blue", "pastel-dream",
-  "high-contrast-dark", "high-contrast-light", "monochrome",
-  "solarized-dark", "dracula", "minimalist", "terminal",
-  "magazine", "glassmorphism", "retro", "futuristic",
+  "midnight-blue", "midnight-blue-light", "forest-green", "forest-green-light",
+  "purple-haze", "purple-haze-light", "sunset-orange", "sunset-orange-light",
+  "ocean-deep", "ocean-deep-light", "rose-gold", "rose-gold-light",
+  "arctic-blue", "pastel-dream", "high-contrast-dark", "high-contrast-light",
+  "monochrome", "solarized-dark", "solarized-light", "dracula", "dracula-light",
+  "minimalist", "terminal", "magazine", "glassmorphism", "retro", "futuristic",
   "newspaper", "compact", "sidebar-first", "vertical-cards",
   "horizontal-scroll", "masonry-grid", "split-screen", "giant-text",
   "tiny-text", "floating-panels", "center-stage", "bottom-heavy",
