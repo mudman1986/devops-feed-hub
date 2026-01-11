@@ -90,11 +90,9 @@ test.describe("Desktop Layout Tests", () => {
     expect(box.width).toBeGreaterThan(0);
     expect(box.height).toBeGreaterThan(0);
 
-    // Verify button text is visible on desktop (may be hidden on mobile)
-    const buttonText = themeToggle.locator("#theme-text");
-    const isVisible = await buttonText.isVisible().catch(() => false);
-    // On desktop, button text should be visible
-    expect(isVisible).toBe(true);
+    // Verify button has icon (icon-only design)
+    const themeIcon = themeToggle.locator("#theme-icon");
+    await expect(themeIcon).toBeVisible();
   });
 
   test("timeframe selector should be visible and functional @desktop", async ({

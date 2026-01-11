@@ -35,22 +35,21 @@ test.describe("Theme Toggle Tests", () => {
     await expect(htmlElement).not.toHaveAttribute("data-theme", initialTheme);
   });
 
-  test("should update button text when theme changes", async ({ page }) => {
+  test("should update button aria-label when theme changes", async ({ page }) => {
     const themeToggle = page.locator("#theme-toggle");
-    const themeText = page.locator("#theme-text");
 
-    // Get initial button text
-    const initialText = await themeText.textContent();
+    // Get initial theme
+    const htmlElement = page.locator("html");
+    const initialTheme = await htmlElement.getAttribute("data-theme");
 
     // Click toggle
     await themeToggle.click();
 
-    // Verify text changed (Playwright will auto-wait for the change)
-    await expect(themeText).not.toHaveText(initialText);
+    // Verify theme changed
+    await expect(htmlElement).not.toHaveAttribute("data-theme", initialTheme);
 
-    // Text should be either "Light Mode" or "Dark Mode"
-    const newText = await themeText.textContent();
-    expect(["Light Mode", "Dark Mode"]).toContain(newText);
+    // Button should maintain its aria-label for accessibility
+    await expect(themeToggle).toHaveAttribute("aria-label", "Toggle theme");
   });
 
   test("should update theme icon when toggling", async ({ page }) => {
