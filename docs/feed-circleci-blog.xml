@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-circleci-blog.xml</link>
     <description>Articles from CircleCI Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-circleci-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sun, 11 Jan 2026 14:48:30 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 11 Jan 2026 16:04:23 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Sign OCI containers &amp; other artifacts using Sigstore Cosign &amp; CircleCI OIDC tokens</title>
