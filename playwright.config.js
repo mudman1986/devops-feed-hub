@@ -11,10 +11,13 @@ export default defineConfig({
   retries: process.env.CI ? 1 : 0,
   workers: process.env.CI ? 2 : undefined,
   reporter: "html",
+  timeout: 10000, // 10 seconds per test (static site, should be fast)
   use: {
     baseURL: "http://localhost:8080",
     trace: "on-first-retry",
     screenshot: "only-on-failure",
+    actionTimeout: 5000, // 5 seconds for individual actions
+    navigationTimeout: 5000, // 5 seconds for page navigation
   },
 
   projects: [
@@ -65,6 +68,6 @@ export default defineConfig({
     command: "npx http-server docs -p 8080 --silent",
     port: 8080,
     reuseExistingServer: !process.env.CI,
-    timeout: 120000,
+    timeout: 30000, // 30 seconds to start server (reasonable for CI)
   },
 });

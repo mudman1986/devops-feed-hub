@@ -1,5 +1,17 @@
 import { test, expect } from "@playwright/test";
 
+// Mock system date to a fixed time for consistent test data filtering
+// Test data uses 2026-01-10T12:00:00Z as collection time
+// We use 2026-01-11T00:00:00Z (12 hours later) to ensure articles are within "last 24h"
+test.beforeEach(async ({ page }) => {
+  // Mock Date.now() to return a fixed timestamp
+  await page.addInitScript(() => {
+    const fakeNow = new Date("2026-01-11T00:00:00Z").getTime();
+    Date.now = () => fakeNow;
+  });
+});
+
+
 /**
  * Theme Toggle Functionality Tests
  * Tests dark/light mode switching
@@ -242,15 +254,19 @@ test.describe("Sidebar Toggle Tests", () => {
 test.describe("Mark as Read Tests", () => {
   test.beforeEach(async ({ page }) => {
     await page.goto("/");
-
-    // Clear localStorage to start fresh
+    await page.waitForLoadState("load");
     await page.evaluate(() => localStorage.clear());
     await page.reload();
+    await page.waitForLoadState("networkidle");
+    await page.waitForSelector(".article-item", { timeout: 5000 });
+    // Wait for read indicators to be added by JavaScript
+    await page.waitForSelector(".read-indicator", { timeout: 10000 }).catch(() => {});
   });
 
   test("should mark article as read when clicking indicator", async ({
     page,
   }) => {
+    
     const readIndicators = page.locator(".read-indicator");
 
     if ((await readIndicators.count()) === 0) {
@@ -279,6 +295,8 @@ test.describe("Mark as Read Tests", () => {
   test("should clear all read articles when clicking reset button", async ({
     page,
   }) => {
+    // Wait for JavaScript to initialize
+    
     const readIndicators = page.locator(".read-indicator");
     const resetButton = page.locator("#reset-read-button");
 

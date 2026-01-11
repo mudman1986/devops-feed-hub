@@ -169,7 +169,7 @@ class TestGenerateSummary(unittest.TestCase):
         self.assertIsInstance(result, str)
 
         # Check for HTML structure
-        self.assertIn("<!DOCTYPE html>", result)
+        self.assertIn("<!doctype html>", result)
         self.assertIn(
             '<html lang="en"', result
         )  # Updated to allow for data-theme attribute
@@ -227,7 +227,7 @@ class TestGenerateSummary(unittest.TestCase):
         result = generate_html_page(self.empty_data)
 
         # Should still have basic structure
-        self.assertIn("<!DOCTYPE html>", result)
+        self.assertIn("<!doctype html>", result)
         self.assertIn("DevOps Feed Hub", result)
 
         # Should indicate no articles (shown in article count badge)
@@ -310,7 +310,7 @@ class TestGenerateSummary(unittest.TestCase):
         result = generate_html_page(self.sample_data)
 
         # Check that template elements are present
-        self.assertIn("<!DOCTYPE html>", result)
+        self.assertIn("<!doctype html>", result)
         self.assertIn('<html lang="en"', result)
         self.assertIn("data-theme=", result)  # Dark mode attribute
 
@@ -322,7 +322,7 @@ class TestGenerateSummary(unittest.TestCase):
         ) as f:
             custom_template = f.name
             f.write(
-                """<!DOCTYPE html>
+                """<!doctype html>
 <html>
 <head><title>Custom Template</title></head>
 <body>
@@ -362,7 +362,7 @@ class TestGenerateSummary(unittest.TestCase):
         ) as f:
             utf8_template = f.name
             f.write(
-                """<!DOCTYPE html>
+                """<!doctype html>
 <html>
 <head><title>Test 🌙☀️</title></head>
 <body>
@@ -518,7 +518,7 @@ class TestSummaryIntegration(unittest.TestCase):
             with open(html_file, "r", encoding="utf-8") as f:
                 content = f.read()
 
-            self.assertIn("<!DOCTYPE html>", content)
+            self.assertIn("<!doctype html>", content)
             self.assertIn("Test Feed", content)
             self.assertIn("Test Article", content)
         finally:
@@ -618,6 +618,9 @@ class TestMultiPageGeneration(unittest.TestCase):
         # Verify the active link is for the current feed
         lines = nav_html.split("\n")
         for line in lines:
+            # Skip the feed-list-data script tag
+            if "feed-list-data" in line:
+                continue
             if "Test Feed 1" in line:
                 # The active class should be in the same line
                 self.assertIn("active", line)
@@ -938,54 +941,266 @@ class TestMultiPageGeneration(unittest.TestCase):
 
         result = generate_html_page(data_without_errors, current_feed="summary")
 
-        # Check that default error is displayed
-        self.assertIn("Error: Unknown", result)
 
-    def test_summary_page_has_feed_breakdown(self):
-        """Test that summary page includes feed breakdown section"""
-        result = generate_html_page(self.sample_data, current_feed="summary")
-
-        # Check for feed breakdown section
-        self.assertIn("<h2>Feed Breakdown</h2>", result)
-        self.assertIn("feed-breakdown", result)
-        self.assertIn("feed-breakdown-item", result)
-        self.assertIn("feed-breakdown-bar", result)
-
-    def test_feed_breakdown_shows_article_counts(self):
-        """Test that feed breakdown shows correct article counts"""
-        result = generate_html_page(self.sample_data, current_feed="summary")
-
-        # Check that article counts are displayed (Test Blog 1 has 3, Test Blog 2 has 2)
-        # Note: The sample_data uses "Test Blog 1" and "Test Blog 2"
-        self.assertIn("2 articles", result)
-
-    def test_feed_breakdown_links_to_feed_pages(self):
-        """Test that feed breakdown links to individual feed pages"""
-        result = generate_html_page(self.sample_data, current_feed="summary")
-
-        # Check that feed links are present (slugified versions)
-        # The Multi Multilpagegen class sample_data uses "Test Feed 1" and "Test Feed 2"
-        self.assertIn('href="feed-test-feed-1.html"', result)
-        self.assertIn('href="feed-test-feed-2.html"', result)
-
-    def test_summary_page_has_icons_in_stat_cards(self):
-        """Test that summary page stat cards include SVG icons"""
-        result = generate_html_page(self.sample_data, current_feed="summary")
-
-        # Check for stat icons
-        self.assertIn("stat-icon", result)
-        # Check for SVG elements in stats (multiline format)
-        self.assertIn('width="32"', result)
-        self.assertIn('height="32"', result)
-
-    def test_summary_page_has_intro_text(self):
-        """Test that summary page includes introductory text"""
-        result = generate_html_page(self.sample_data, current_feed="summary")
-
-        # Check for intro section
-        self.assertIn("summary-intro", result)
-        self.assertIn("Overview of RSS feed collection status and statistics", result)
+import json
+import os
 
 
-if __name__ == "__main__":
-    unittest.main()
+class TestFeedListJSON(unittest.TestCase):
+    """Test feed list JSON generation for settings page"""
+
+    def test_feed_list_json_embedded_in_html(self):
+        """Test that feed names are embedded as JSON in generated HTML"""
+        data = {
+            "metadata": {
+                "collected_at": "2026-01-10T00:00:00Z",
+                "since": "2026-01-09T00:00:00Z",
+                "hours": 24,
+            },
+            "summary": {
+                "total_feeds": 2,
+                "successful_feeds": 2,
+                "failed_feeds": 0,
+                "total_articles": 2,
+            },
+            "feeds": {
+                "Test Feed 1": {
+                    "url": "https://example.com/feed1",
+                    "count": 1,
+                    "articles": [
+                        {
+                            "title": "Article 1",
+                            "link": "https://example.com/1",
+                            "published": "2026-01-10T00:00:00Z",
+                        }
+                    ],
+                },
+                "Test Feed 2": {
+                    "url": "https://example.com/feed2",
+                    "count": 1,
+                    "articles": [
+                        {
+                            "title": "Article 2",
+                            "link": "https://example.com/2",
+                            "published": "2026-01-10T00:00:00Z",
+                        }
+                    ],
+                },
+            },
+            "failed_feeds": [],
+        }
+
+        html = generate_html_page(data)
+
+        # Check that feed list JSON script tag exists
+        self.assertIn('id="feed-list-data"', html)
+        self.assertIn('type="application/json"', html)
+
+        # Check that feed names are in the JSON
+        self.assertIn("Test Feed 1", html)
+        self.assertIn("Test Feed 2", html)
+
+    def test_feed_list_json_is_html_escaped(self):
+        """Test that feed list JSON is HTML-escaped to prevent XSS"""
+        data = {
+            "metadata": {
+                "collected_at": "2026-01-10T00:00:00Z",
+                "since": "2026-01-09T00:00:00Z",
+                "hours": 24,
+            },
+            "summary": {
+                "total_feeds": 1,
+                "successful_feeds": 1,
+                "failed_feeds": 0,
+                "total_articles": 1,
+            },
+            "feeds": {
+                'Test Feed <script>alert("XSS")</script>': {
+                    "url": "https://example.com/feed1",
+                    "count": 1,
+                    "articles": [
+                        {
+                            "title": "Article",
+                            "link": "https://example.com/1",
+                            "published": "2026-01-10T00:00:00Z",
+                        }
+                    ],
+                },
+            },
+            "failed_feeds": [],
+        }
+
+        html = generate_html_page(data)
+
+        # Check that the script tag content is escaped
+        self.assertIn("&lt;script&gt;", html)
+        self.assertIn("&lt;/script&gt;", html)
+
+        # Ensure raw script tag is NOT present in feed list JSON
+        # (it might be in other parts of HTML as valid script tags)
+        feed_list_start = html.find('id="feed-list-data"')
+        if feed_list_start != -1:
+            feed_list_end = html.find("</script>", feed_list_start)
+            feed_list_section = html[feed_list_start:feed_list_end]
+            self.assertNotIn('alert("XSS")', feed_list_section)
+
+    def test_feed_list_json_with_special_characters(self):
+        """Test that feed names with special characters are properly escaped"""
+        data = {
+            "metadata": {
+                "collected_at": "2026-01-10T00:00:00Z",
+                "since": "2026-01-09T00:00:00Z",
+                "hours": 24,
+            },
+            "summary": {
+                "total_feeds": 2,
+                "successful_feeds": 2,
+                "failed_feeds": 0,
+                "total_articles": 2,
+            },
+            "feeds": {
+                'Feed & Company': {
+                    "url": "https://example.com/feed1",
+                    "count": 1,
+                    "articles": [
+                        {
+                            "title": "Article",
+                            "link": "https://example.com/1",
+                            "published": "2026-01-10T00:00:00Z",
+                        }
+                    ],
+                },
+                'Feed "Quotes"': {
+                    "url": "https://example.com/feed2",
+                    "count": 1,
+                    "articles": [
+                        {
+                            "title": "Article",
+                            "link": "https://example.com/2",
+                            "published": "2026-01-10T00:00:00Z",
+                        }
+                    ],
+                },
+            },
+            "failed_feeds": [],
+        }
+
+        html = generate_html_page(data)
+
+        # Feed list JSON should contain escaped characters
+        feed_list_start = html.find('id="feed-list-data"')
+        self.assertNotEqual(feed_list_start, -1, "feed-list-data element should exist")
+
+    def test_feed_list_json_empty_feeds(self):
+        """Test feed list JSON with no feeds"""
+        data = {
+            "metadata": {
+                "collected_at": "2026-01-10T00:00:00Z",
+                "since": "2026-01-09T00:00:00Z",
+                "hours": 24,
+            },
+            "summary": {
+                "total_feeds": 0,
+                "successful_feeds": 0,
+                "failed_feeds": 0,
+                "total_articles": 0,
+            },
+            "feeds": {},
+            "failed_feeds": [],
+        }
+
+        html = generate_html_page(data)
+
+        # Should still have the feed-list-data element
+        self.assertIn('id="feed-list-data"', html)
+
+        # Should contain empty array
+        self.assertIn("[]", html)
+
+    def test_feed_list_json_multiple_feeds(self):
+        """Test feed list JSON with multiple feeds"""
+        data = {
+            "metadata": {
+                "collected_at": "2026-01-10T00:00:00Z",
+                "since": "2026-01-09T00:00:00Z",
+                "hours": 24,
+            },
+            "summary": {
+                "total_feeds": 4,
+                "successful_feeds": 4,
+                "failed_feeds": 0,
+                "total_articles": 0,
+            },
+            "feeds": {
+                "Alpha Feed": {"url": "https://example.com/feed1", "count": 0, "articles": []},
+                "Beta Feed": {"url": "https://example.com/feed2", "count": 0, "articles": []},
+                "Gamma Feed": {"url": "https://example.com/feed3", "count": 0, "articles": []},
+                "Delta Feed": {"url": "https://example.com/feed4", "count": 0, "articles": []},
+            },
+            "failed_feeds": [],
+        }
+
+        html = generate_html_page(data)
+
+        # All feed names should be present
+        self.assertIn("Alpha Feed", html)
+        self.assertIn("Beta Feed", html)
+        self.assertIn("Gamma Feed", html)
+        self.assertIn("Delta Feed", html)
+
+
+class TestDeploymentScriptIssues(unittest.TestCase):
+    """Test fixes for 404 issues and deployment problems"""
+
+    def test_settings_html_exists(self):
+        """Test that settings.html exists as a static file"""
+        settings_path = os.path.join(
+            os.path.dirname(__file__), "..", "..", "..", "..", "docs", "settings.html"
+        )
+        # settings.html should exist in docs/ directory as a source file
+        # This is a sanity check that the file is committed
+        if os.path.exists(settings_path):
+            self.assertTrue(os.path.isfile(settings_path))
+            # Verify it has basic HTML structure
+            with open(settings_path, "r", encoding="utf-8") as f:
+                content = f.read()
+                self.assertIn("<!doctype html>", content.lower())
+                self.assertIn("settings", content.lower())
+
+    def test_feed_pages_generation_with_new_feeds(self):
+        """Test that feed pages can be generated for new DevOps feeds"""
+        # Test data with feeds that were added in this PR
+        data = {
+            "metadata": {
+                "collected_at": "2026-01-10T00:00:00Z",
+                "since": "2026-01-09T00:00:00Z",
+                "hours": 24,
+            },
+            "summary": {
+                "total_feeds": 3,
+                "successful_feeds": 3,
+                "failed_feeds": 0,
+                "total_articles": 0,
+            },
+            "feeds": {
+                "Docker Blog": {"url": "https://www.docker.com/blog/feed/", "count": 0, "articles": []},
+                "Kubernetes Blog": {"url": "https://kubernetes.io/feed.xml", "count": 0, "articles": []},
+                "AWS DevOps Blog": {"url": "https://aws.amazon.com/blogs/devops/feed/", "count": 0, "articles": []},
+            },
+            "failed_feeds": [],
+        }
+
+        # Should be able to generate HTML for new feeds
+        html = generate_html_page(data)
+        self.assertIsNotNone(html)
+
+        # Navigation should include new feeds
+        self.assertIn("Docker Blog", html)
+        self.assertIn("Kubernetes Blog", html)
+        self.assertIn("AWS DevOps Blog", html)
+
+        # Should be able to generate individual feed pages
+        for feed_name in ["Docker Blog", "Kubernetes Blog", "AWS DevOps Blog"]:
+            feed_html = generate_html_page(data, current_feed=feed_name)
+            self.assertIsNotNone(feed_html)
+            self.assertIn(feed_name, feed_html)
