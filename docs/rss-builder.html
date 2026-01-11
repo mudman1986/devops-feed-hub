@@ -1,0 +1,594 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="DevOps Feed Hub RSS Builder - Create custom RSS feeds from selected sources"
+    />
+    <title>RSS Feed Builder - DevOps Feed Hub</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="header">
+      <div class="header-title">
+        <svg
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M4 11a9 9 0 0 1 9 9"></path>
+          <path d="M4 4a16 16 0 0 1 16 16"></path>
+          <circle cx="5" cy="19" r="1"></circle>
+        </svg>
+        DevOps Feed Hub - RSS Builder
+      </div>
+      <div class="header-controls">
+        <button
+          class="settings-back-button"
+          id="settings-back-button"
+          aria-label="Back to feeds"
+          onclick="window.location.href = 'index.html'"
+        >
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          <span>Back to Feeds</span>
+        </button>
+      </div>
+    </div>
+    <div class="settings-container">
+      <main class="settings-content" style="max-width: 800px; margin: 0 auto">
+        <section class="settings-section active">
+          <h2 class="settings-section-title">Custom RSS Feed Builder</h2>
+          <div class="settings-group">
+            <p class="settings-group-description">
+              Select the feeds you want to combine into a single RSS feed. The
+              generated feed will include articles from all selected sources,
+              sorted by publication date.
+            </p>
+
+            <div class="settings-item">
+              <div class="settings-item-actions">
+                <button
+                  id="select-all-feeds"
+                  class="settings-action-button"
+                  aria-label="Select all feeds"
+                >
+                  Select All
+                </button>
+                <button
+                  id="deselect-all-feeds"
+                  class="settings-action-button"
+                  aria-label="Deselect all feeds"
+                >
+                  Deselect All
+                </button>
+              </div>
+            </div>
+
+            <div id="feed-checkboxes" class="feed-checkboxes">
+              <!-- Feed checkboxes will be dynamically inserted here -->
+            </div>
+
+            <div class="settings-item" style="margin-top: 2rem">
+              <button
+                id="generate-rss-button"
+                class="settings-button"
+                style="width: 100%; padding: 1rem"
+                aria-label="Generate custom RSS feed"
+              >
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M4 11a9 9 0 0 1 9 9"></path>
+                  <path d="M4 4a16 16 0 0 1 16 16"></path>
+                  <circle cx="5" cy="19" r="1"></circle>
+                </svg>
+                Generate Custom RSS Feed
+              </button>
+            </div>
+
+            <div
+              id="output-section"
+              style="display: none; margin-top: 2rem"
+              class="settings-group"
+            >
+              <h3 class="settings-section-title" style="font-size: 1.125rem">
+                Your Custom RSS Feed
+              </h3>
+              <p class="settings-group-description">
+                Copy the URL below to subscribe in your RSS reader, or download
+                the feed file.
+              </p>
+
+              <div class="settings-item">
+                <div class="settings-item-label">
+                  <label>Feed URL</label>
+                  <p class="settings-item-description">
+                    Use this URL in your RSS reader application
+                  </p>
+                </div>
+                <div class="settings-item-control">
+                  <div style="display: flex; gap: 0.5rem; width: 100%">
+                    <input
+                      type="text"
+                      id="feed-url"
+                      readonly
+                      style="
+                        flex: 1;
+                        padding: 0.5rem;
+                        border: 1px solid var(--border-primary);
+                        border-radius: 0.25rem;
+                        background: var(--bg-secondary);
+                        color: var(--text-primary);
+                      "
+                    />
+                    <button
+                      id="copy-url-button"
+                      class="settings-action-button"
+                      aria-label="Copy feed URL"
+                    >
+                      Copy
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="settings-item">
+                <div class="settings-item-label">
+                  <label>Download Feed</label>
+                  <p class="settings-item-description">
+                    Download the RSS feed as an XML file
+                  </p>
+                </div>
+                <div class="settings-item-control">
+                  <button
+                    id="download-button"
+                    class="settings-button"
+                    aria-label="Download RSS feed"
+                  >
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="2"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    >
+                      <path
+                        d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"
+                      ></path>
+                      <polyline points="7 10 12 15 17 10"></polyline>
+                      <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    Download Feed
+                  </button>
+                </div>
+              </div>
+
+              <div id="feed-preview" style="margin-top: 1rem">
+                <div class="settings-item-label">
+                  <label>Feed Preview</label>
+                  <p class="settings-item-description">
+                    Preview of your custom RSS feed content
+                  </p>
+                </div>
+                <div
+                  id="preview-content"
+                  style="
+                    background: var(--bg-secondary);
+                    border: 1px solid var(--border-primary);
+                    border-radius: 0.5rem;
+                    padding: 1rem;
+                    max-height: 400px;
+                    overflow-y: auto;
+                    font-family: monospace;
+                    font-size: 0.875rem;
+                  "
+                ></div>
+              </div>
+            </div>
+
+            <div
+              id="loading-section"
+              style="display: none; margin-top: 2rem; text-align: center"
+            >
+              <p style="color: var(--text-secondary)">
+                Generating your custom RSS feed...
+              </p>
+            </div>
+
+            <div
+              id="error-section"
+              style="
+                display: none;
+                margin-top: 2rem;
+                padding: 1rem;
+                background: var(--bg-secondary);
+                border: 1px solid #dc2626;
+                border-radius: 0.5rem;
+              "
+            >
+              <p
+                style="color: #dc2626; font-weight: 500; margin-bottom: 0.5rem"
+              >
+                Error generating feed
+              </p>
+              <p id="error-message" style="color: var(--text-secondary)"></p>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      // RSS Builder functionality
+      (function () {
+        "use strict";
+
+        let availableFeeds = [];
+        let generatedFeedXML = null;
+
+        // Initialize RSS builder
+        function initRSSBuilder() {
+          loadFeedCheckboxes();
+          setupEventListeners();
+        }
+
+        function setupEventListeners() {
+          // Select all button
+          const selectAllBtn = document.getElementById("select-all-feeds");
+          if (selectAllBtn) {
+            selectAllBtn.addEventListener("click", () => {
+              const checkboxes = document.querySelectorAll(
+                '.feed-checkbox-item input[type="checkbox"]',
+              );
+              checkboxes.forEach((cb) => {
+                cb.checked = true;
+              });
+            });
+          }
+
+          // Deselect all button
+          const deselectAllBtn = document.getElementById("deselect-all-feeds");
+          if (deselectAllBtn) {
+            deselectAllBtn.addEventListener("click", () => {
+              const checkboxes = document.querySelectorAll(
+                '.feed-checkbox-item input[type="checkbox"]',
+              );
+              checkboxes.forEach((cb) => {
+                cb.checked = false;
+              });
+            });
+          }
+
+          // Generate RSS button
+          const generateBtn = document.getElementById("generate-rss-button");
+          if (generateBtn) {
+            generateBtn.addEventListener("click", generateCustomRSS);
+          }
+
+          // Copy URL button
+          const copyBtn = document.getElementById("copy-url-button");
+          if (copyBtn) {
+            copyBtn.addEventListener("click", copyFeedURL);
+          }
+
+          // Download button
+          const downloadBtn = document.getElementById("download-button");
+          if (downloadBtn) {
+            downloadBtn.addEventListener("click", downloadFeed);
+          }
+        }
+
+        function loadFeedCheckboxes() {
+          const feedContainer = document.getElementById("feed-checkboxes");
+          if (!feedContainer) return;
+
+          // Try to fetch the feed list from index.html
+          fetch("index.html")
+            .then((response) => response.text())
+            .then((html) => {
+              const parser = new DOMParser();
+              const doc = parser.parseFromString(html, "text/html");
+              const feedListEl = doc.getElementById("feed-list-data");
+
+              let feeds = [];
+              if (feedListEl && feedListEl.textContent) {
+                try {
+                  feeds = JSON.parse(feedListEl.textContent);
+                } catch (e) {
+                  console.warn("Unable to parse feed list:", e);
+                }
+              }
+
+              if (feeds.length === 0) {
+                feeds = getDefaultFeedList();
+              }
+
+              availableFeeds = feeds;
+              renderFeedCheckboxes(feeds, feedContainer);
+            })
+            .catch(() => {
+              const feeds = getDefaultFeedList();
+              availableFeeds = feeds;
+              renderFeedCheckboxes(feeds, feedContainer);
+            });
+        }
+
+        function getDefaultFeedList() {
+          return [
+            "Atlassian DevOps",
+            "AWS DevOps Blog",
+            "Azure Updates",
+            "CircleCI Blog",
+            "Docker Blog",
+            "GitLab Blog",
+            "GitHub Blog",
+            "GitHub Changelog",
+            "HashiCorp Blog",
+            "Jenkins Blog",
+            "Kubernetes Blog",
+            "Microsoft DevOps Blog",
+            "Microsoft Entra Blog",
+            "Microsoft Security",
+            "Red Hat Developer",
+          ];
+        }
+
+        function renderFeedCheckboxes(feeds, container) {
+          // Sort feeds alphabetically
+          feeds.sort();
+
+          // Create checkboxes
+          feeds.forEach((feedName) => {
+            const item = document.createElement("div");
+            item.className = "feed-checkbox-item";
+
+            const checkbox = document.createElement("input");
+            checkbox.type = "checkbox";
+            checkbox.id = `feed-${feedName.replace(/\s+/g, "-").toLowerCase()}`;
+            checkbox.value = feedName;
+            checkbox.checked = false;
+
+            const label = document.createElement("label");
+            label.setAttribute("for", checkbox.id);
+            label.textContent = feedName;
+
+            item.appendChild(checkbox);
+            item.appendChild(label);
+            container.appendChild(item);
+          });
+        }
+
+        async function generateCustomRSS() {
+          // Get selected feeds
+          const checkboxes = document.querySelectorAll(
+            '.feed-checkbox-item input[type="checkbox"]:checked',
+          );
+          const selectedFeeds = Array.from(checkboxes).map((cb) => cb.value);
+
+          if (selectedFeeds.length === 0) {
+            showError("Please select at least one feed");
+            return;
+          }
+
+          // Show loading
+          showLoading();
+
+          try {
+            // Fetch all selected feed XMLs
+            const feedPromises = selectedFeeds.map((feedName) => {
+              const feedSlug = feedName.toLowerCase().replace(/\s+/g, "-");
+              return fetch(`feed-${feedSlug}.xml`)
+                .then((response) => response.text())
+                .then((xml) => ({ feedName, xml }))
+                .catch((error) => {
+                  console.warn(`Failed to fetch ${feedName}:`, error);
+                  return null;
+                });
+            });
+
+            const feedResults = await Promise.all(feedPromises);
+            const successfulFeeds = feedResults.filter((f) => f !== null);
+
+            if (successfulFeeds.length === 0) {
+              showError(
+                "Failed to fetch any of the selected feeds. Please try again.",
+              );
+              return;
+            }
+
+            // Parse and combine feeds
+            const combinedFeed = combineFeeds(successfulFeeds);
+
+            // Store generated feed
+            generatedFeedXML = combinedFeed;
+
+            // Create blob URL
+            const blob = new Blob([combinedFeed], {
+              type: "application/rss+xml",
+            });
+            const blobURL = URL.createObjectURL(blob);
+
+            // Show output
+            showOutput(blobURL, combinedFeed);
+          } catch (error) {
+            console.error("Error generating feed:", error);
+            showError("An error occurred while generating the feed");
+          }
+        }
+
+        function combineFeeds(feedResults) {
+          const parser = new DOMParser();
+          const allArticles = [];
+
+          // Parse each feed and extract articles
+          feedResults.forEach(({ feedName, xml }) => {
+            const doc = parser.parseFromString(xml, "text/xml");
+            const items = doc.querySelectorAll("item");
+
+            items.forEach((item) => {
+              const article = {
+                title: item.querySelector("title")?.textContent || "",
+                link: item.querySelector("link")?.textContent || "",
+                pubDate: item.querySelector("pubDate")?.textContent || "",
+                source: item.querySelector("source")?.textContent || feedName,
+                guid: item.querySelector("guid")?.textContent || "",
+              };
+              allArticles.push(article);
+            });
+          });
+
+          // Sort by publication date (newest first)
+          allArticles.sort((a, b) => {
+            const dateA = new Date(a.pubDate);
+            const dateB = new Date(b.pubDate);
+            return dateB - dateA;
+          });
+
+          // Create combined RSS feed
+          const selectedFeedNames = feedResults
+            .map((f) => f.feedName)
+            .join(", ");
+          const feedTitle = `DevOps Feed Hub - Custom Feed (${selectedFeedNames})`;
+          const feedDescription = `Combined RSS feed from selected sources: ${selectedFeedNames}`;
+
+          let rssXML = '<?xml version="1.0" encoding="UTF-8"?>\n';
+          rssXML +=
+            '<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">\n';
+          rssXML += "  <channel>\n";
+          rssXML += `    <title>${escapeXML(feedTitle)}</title>\n`;
+          rssXML += `    <link>https://mudman1986.github.io/devops-feed-hub/</link>\n`;
+          rssXML += `    <description>${escapeXML(feedDescription)}</description>\n`;
+          rssXML += `    <lastBuildDate>${new Date().toUTCString()}</lastBuildDate>\n`;
+          rssXML +=
+            '    <atom:link href="https://mudman1986.github.io/devops-feed-hub/rss-builder.html" rel="self" type="application/rss+xml"/>\n';
+
+          // Add articles
+          allArticles.forEach((article) => {
+            rssXML += "    <item>\n";
+            rssXML += `      <title>${escapeXML(article.title)}</title>\n`;
+            rssXML += `      <link>${escapeXML(article.link)}</link>\n`;
+            rssXML += `      <guid isPermaLink="true">${escapeXML(article.guid || article.link)}</guid>\n`;
+            if (article.pubDate) {
+              rssXML += `      <pubDate>${article.pubDate}</pubDate>\n`;
+            }
+            rssXML += `      <source>${escapeXML(article.source)}</source>\n`;
+            rssXML += "    </item>\n";
+          });
+
+          rssXML += "  </channel>\n";
+          rssXML += "</rss>";
+
+          return rssXML;
+        }
+
+        function escapeXML(str) {
+          return str
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&apos;");
+        }
+
+        function showLoading() {
+          document.getElementById("output-section").style.display = "none";
+          document.getElementById("error-section").style.display = "none";
+          document.getElementById("loading-section").style.display = "block";
+        }
+
+        function showOutput(blobURL, feedXML) {
+          document.getElementById("loading-section").style.display = "none";
+          document.getElementById("error-section").style.display = "none";
+
+          const feedUrlInput = document.getElementById("feed-url");
+          feedUrlInput.value = blobURL;
+
+          const previewContent = document.getElementById("preview-content");
+          previewContent.textContent = feedXML.substring(0, 1000) + "...";
+
+          document.getElementById("output-section").style.display = "block";
+        }
+
+        function showError(message) {
+          document.getElementById("loading-section").style.display = "none";
+          document.getElementById("output-section").style.display = "none";
+
+          const errorMessage = document.getElementById("error-message");
+          errorMessage.textContent = message;
+
+          document.getElementById("error-section").style.display = "block";
+        }
+
+        function copyFeedURL() {
+          const feedUrlInput = document.getElementById("feed-url");
+          feedUrlInput.select();
+          document.execCommand("copy");
+
+          const copyBtn = document.getElementById("copy-url-button");
+          const originalText = copyBtn.textContent;
+          copyBtn.textContent = "Copied!";
+          setTimeout(() => {
+            copyBtn.textContent = originalText;
+          }, 2000);
+        }
+
+        function downloadFeed() {
+          if (!generatedFeedXML) return;
+
+          const blob = new Blob([generatedFeedXML], {
+            type: "application/rss+xml",
+          });
+          const url = URL.createObjectURL(blob);
+          const a = document.createElement("a");
+          a.href = url;
+          a.download = "custom-feed.xml";
+          document.body.appendChild(a);
+          a.click();
+          document.body.removeChild(a);
+          URL.revokeObjectURL(url);
+        }
+
+        // Initialize when DOM is ready
+        if (
+          document.readyState === "complete" ||
+          document.readyState === "interactive"
+        ) {
+          setTimeout(initRSSBuilder, 0);
+        } else {
+          document.addEventListener("DOMContentLoaded", initRSSBuilder);
+        }
+      })();
+    </script>
+  </body>
+</html>

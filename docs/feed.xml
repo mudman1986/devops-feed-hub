@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sun, 11 Jan 2026 16:04:23 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 11 Jan 2026 17:06:01 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Light waves, rising tides, and drifting ships: Game Off 2025 winners</title>
@@ -643,13 +643,6 @@
       <guid isPermaLink="true">https://www.docker.com/blog/aws-reinvent-kiro-docker-sandboxes-mcp-catalog/</guid>
       <pubDate>Fri, 12 Dec 2025 20:22:05 +0000</pubDate>
       <source>Docker Blog</source>
-    </item>
-    <item>
-      <title>HashiCorp year in review 2025: Lessons in simplifying the cloud</title>
-      <link>https://www.hashicorp.com/blog/hashicorp-year-in-review-2025-lessons-in-simplifying-the-cloud</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/hashicorp-year-in-review-2025-lessons-in-simplifying-the-cloud</guid>
-      <pubDate>Fri, 12 Dec 2025 17:00:00 +0000</pubDate>
-      <source>HashiCorp Blog</source>
     </item>
   </channel>
 </rss>
