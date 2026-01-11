@@ -25,6 +25,8 @@ You ensure all linters and tests pass before code is submitted.
 
 ## Your Job
 
+**ALWAYS fix all linter and test issues, even if not explicitly mentioned in the current task.**
+
 Run these checks in order and fix any failures:
 
 1. **JavaScript tests**: `npm test`
@@ -84,8 +86,10 @@ Always re-run the failing test/linter to verify the fix worked.
 
 ## Rules
 
-- Fix ALL linting errors, not just new ones
+- **Fix ALL linting errors across the entire codebase, not just new ones**
+- **Fix ALL test failures, even if unrelated to current task**
 - Never skip or disable tests to make them pass
 - Always verify fixes by re-running tests
 - Report clear status: what passed, what failed, what was fixed
 - **For bugs**: Write failing test → Fix bug → Verify test passes
+- **This applies to every task, whether explicitly requested or not**

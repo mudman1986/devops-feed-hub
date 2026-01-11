@@ -3,9 +3,10 @@
 [![CI Tests](https://github.com/mudman1986/devops-feed-hub/actions/workflows/ci-tests.yml/badge.svg)](https://github.com/mudman1986/devops-feed-hub/actions/workflows/ci-tests.yml)
 [![UI Tests](https://github.com/mudman1986/devops-feed-hub/actions/workflows/ui-tests.yml/badge.svg)](https://github.com/mudman1986/devops-feed-hub/actions/workflows/ui-tests.yml)
 [![Super-Linter](https://github.com/mudman1986/devops-feed-hub/actions/workflows/super-linter.yml/badge.svg)](https://github.com/mudman1986/devops-feed-hub/actions/workflows/super-linter.yml)
-[![codecov](https://codecov.io/gh/mudman1986/devops-feed-hub/branch/main/graph/badge.svg)](https://codecov.io/gh/mudman1986/devops-feed-hub)
 
 A centralized RSS feed aggregator for DevOps, cloud, and technology news.
+
+> **📊 Test Coverage**: Coverage reports are generated with each CI run and available as artifacts in the [CI Tests workflow](https://github.com/mudman1986/devops-feed-hub/actions/workflows/ci-tests.yml).
 
 ## 🎯 Purpose
 

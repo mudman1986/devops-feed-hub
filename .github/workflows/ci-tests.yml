@@ -26,16 +26,18 @@ jobs:
 
       - name: Run Python tests with coverage
         run: |
-          python3 -m pytest .github/actions/collect-rss-feeds/tests/ -v --cov=.github/actions/collect-rss-feeds --cov-report=xml --cov-report=term
+          python3 -m pytest .github/actions/collect-rss-feeds/tests/ -v \
+            --cov=.github/actions/collect-rss-feeds \
+            --cov-report=html \
+            --cov-report=term
 
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v5
+      - name: Upload Python coverage report
+        if: always()
+        uses: actions/upload-artifact@v6
         with:
-          files: ./coverage.xml
-          flags: python
-          name: python-coverage
-          fail_ci_if_error: false
-          token: ${{ secrets.CODECOV_TOKEN }}
+          name: python-coverage-report
+          path: htmlcov/
+          retention-days: 30
 
   javascript-tests:
     name: Run JavaScript Tests
@@ -62,11 +64,10 @@ jobs:
         run: |
           npm run test:coverage
 
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v5
+      - name: Upload JavaScript coverage report
+        if: always()
+        uses: actions/upload-artifact@v6
         with:
-          files: ./coverage/lcov.info
-          flags: javascript
-          name: javascript-coverage
-          fail_ci_if_error: false
-          token: ${{ secrets.CODECOV_TOKEN }}
+          name: javascript-coverage-report
+          path: coverage/
+          retention-days: 30

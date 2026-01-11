@@ -104,6 +104,7 @@ def parse_rss_feed(
 
 
 def main():
+    # pylint: disable=too-many-locals
     """
     Main entry point for the RSS feed collector script.
 

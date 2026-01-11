@@ -4,7 +4,7 @@ Unit tests for generate_summary.py
 Tests the summary generation functionality for RSS feed collection
 """
 
-# pylint: disable=wrong-import-position
+# pylint: disable=wrong-import-position,too-many-lines
 import os
 import sys
 import tempfile

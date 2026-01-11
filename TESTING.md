@@ -26,7 +26,6 @@ Tests: RSS parsing, HTML generation, feed ordering, configuration validation
 - **Location**: `.github/scripts/test_commit_github_pages.bats`
 - **Run**: `bats .github/scripts/test_commit_github_pages.bats`
 
-
 ## UI Tests (Playwright)
 
 ### ⚠️ Important: UI Test Prerequisites
