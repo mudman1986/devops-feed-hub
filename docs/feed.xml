@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sun, 11 Jan 2026 20:40:31 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 11 Jan 2026 20:46:25 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Light waves, rising tides, and drifting ships: Game Off 2025 winners</title>
@@ -629,13 +629,6 @@
       <guid isPermaLink="true">https://www.docker.com/blog/private-mcp-catalogs-oci-composable-enterprise-ai/</guid>
       <pubDate>Sun, 14 Dec 2025 14:00:00 +0000</pubDate>
       <source>Docker Blog</source>
-    </item>
-    <item>
-      <title>The future of AI-powered software optimization (and how it can help your team)</title>
-      <link>https://github.blog/news-insights/policy-news-and-insights/the-future-of-ai-powered-software-optimization-and-how-it-can-help-your-team/</link>
-      <guid isPermaLink="true">https://github.blog/news-insights/policy-news-and-insights/the-future-of-ai-powered-software-optimization-and-how-it-can-help-your-team/</guid>
-      <pubDate>Fri, 12 Dec 2025 20:43:37 +0000</pubDate>
-      <source>GitHub Blog</source>
     </item>
   </channel>
 </rss>
