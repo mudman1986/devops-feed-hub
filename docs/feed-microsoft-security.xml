@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DevOps Feed Hub - Microsoft Security</title>
+    <link>https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml</link>
+    <description>Articles from Microsoft Security</description>
+    <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 11 Jan 2026 00:16:48 +0000</lastBuildDate>
+    <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Explore the latest Microsoft Incident Response proactive services for enhanced resilience</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/01/07/explore-the-latest-microsoft-incident-response-proactive-services-for-enhanced-resilience/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/07/explore-the-latest-microsoft-incident-response-proactive-services-for-enhanced-resilience/</guid>
+      <pubDate>Wed, 07 Jan 2026 17:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Phishing actors exploit complex routing and misconfigurations to spoof domains</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/01/06/phishing-actors-exploit-complex-routing-and-misconfigurations-to-spoof-domains/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/06/phishing-actors-exploit-complex-routing-and-misconfigurations-to-spoof-domains/</guid>
+      <pubDate>Tue, 06 Jan 2026 18:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Introducing the Microsoft Defender Experts Suite: Elevate your security with expert-led services</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/01/06/introducing-the-microsoft-defender-experts-suite-elevate-your-security-with-expert-led-services/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/06/introducing-the-microsoft-defender-experts-suite-elevate-your-security-with-expert-led-services/</guid>
+      <pubDate>Tue, 06 Jan 2026 17:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>New Microsoft e-book: 3 reasons point solutions are holding you back</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2025/12/18/new-microsoft-e-book-3-reasons-point-solutions-are-holding-you-back/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2025/12/18/new-microsoft-e-book-3-reasons-point-solutions-are-holding-you-back/</guid>
+      <pubDate>Thu, 18 Dec 2025 17:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Access Fabric: A modern approach to identity and network access</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2025/12/17/access-fabric-a-modern-approach-to-identity-and-network-access/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2025/12/17/access-fabric-a-modern-approach-to-identity-and-network-access/</guid>
+      <pubDate>Wed, 17 Dec 2025 17:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Defending against the CVE-2025-55182 (React2Shell) vulnerability in React Server Components</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2025/12/15/defending-against-the-cve-2025-55182-react2shell-vulnerability-in-react-server-components/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2025/12/15/defending-against-the-cve-2025-55182-react2shell-vulnerability-in-react-server-components/</guid>
+      <pubDate>Mon, 15 Dec 2025 19:35:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Microsoft named an overall leader in KuppingerCole Leadership Compass for Generative AI Defense</title>
+      <link>https://techcommunity.microsoft.com/blog/microsoft-security-blog/microsoft-named-an-overall-leader-in-kuppingercole-leadership-compass-for-genera/4478093</link>
+      <guid isPermaLink="true">https://techcommunity.microsoft.com/blog/microsoft-security-blog/microsoft-named-an-overall-leader-in-kuppingercole-leadership-compass-for-genera/4478093</guid>
+      <pubDate>Mon, 15 Dec 2025 18:05:00 +0000</pubDate>
+    </item>
+  </channel>
+</rss>

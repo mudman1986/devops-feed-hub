@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DevOps Feed Hub - GitHub Blog</title>
+    <link>https://mudman1986.github.io/devops-feed-hub/feed-github-blog.xml</link>
+    <description>Articles from GitHub Blog</description>
+    <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-blog.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 11 Jan 2026 00:16:48 +0000</lastBuildDate>
+    <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Light waves, rising tides, and drifting ships: Game Off 2025 winners</title>
+      <link>https://github.blog/open-source/gaming/light-waves-rising-tides-and-drifting-ships-game-off-2025-winners/</link>
+      <guid isPermaLink="true">https://github.blog/open-source/gaming/light-waves-rising-tides-and-drifting-ships-game-off-2025-winners/</guid>
+      <pubDate>Sat, 10 Jan 2026 21:36:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Why AI is pushing developers toward typed languages</title>
+      <link>https://github.blog/ai-and-ml/llms/why-ai-is-pushing-developers-toward-typed-languages/</link>
+      <guid isPermaLink="true">https://github.blog/ai-and-ml/llms/why-ai-is-pushing-developers-toward-typed-languages/</guid>
+      <pubDate>Thu, 08 Jan 2026 22:25:54 +0000</pubDate>
+    </item>
+    <item>
+      <title>Agentic AI, MCP, and spec-driven development: Top blog posts of 2025</title>
+      <link>https://github.blog/developer-skills/agentic-ai-mcp-and-spec-driven-development-top-blog-posts-of-2025/</link>
+      <guid isPermaLink="true">https://github.blog/developer-skills/agentic-ai-mcp-and-spec-driven-development-top-blog-posts-of-2025/</guid>
+      <pubDate>Tue, 30 Dec 2025 17:20:10 +0000</pubDate>
+    </item>
+    <item>
+      <title>Bugs that survive the heat of continuous fuzzing</title>
+      <link>https://github.blog/security/vulnerability-research/bugs-that-survive-the-heat-of-continuous-fuzzing/</link>
+      <guid isPermaLink="true">https://github.blog/security/vulnerability-research/bugs-that-survive-the-heat-of-continuous-fuzzing/</guid>
+      <pubDate>Mon, 29 Dec 2025 22:01:14 +0000</pubDate>
+    </item>
+    <item>
+      <title>WRAP up your backlog with GitHub Copilot coding agent</title>
+      <link>https://github.blog/ai-and-ml/github-copilot/wrap-up-your-backlog-with-github-copilot-coding-agent/</link>
+      <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/wrap-up-your-backlog-with-github-copilot-coding-agent/</guid>
+      <pubDate>Fri, 26 Dec 2025 17:56:38 +0000</pubDate>
+    </item>
+    <item>
+      <title>Strengthening supply chain security: Preparing for the next malware campaign</title>
+      <link>https://github.blog/security/supply-chain-security/strengthening-supply-chain-security-preparing-for-the-next-malware-campaign/</link>
+      <guid isPermaLink="true">https://github.blog/security/supply-chain-security/strengthening-supply-chain-security-preparing-for-the-next-malware-campaign/</guid>
+      <pubDate>Tue, 23 Dec 2025 23:52:08 +0000</pubDate>
+    </item>
+    <item>
+      <title>5 podcast episodes to help you build with confidence in 2026</title>
+      <link>https://github.blog/open-source/maintainers/5-podcast-episodes-to-help-you-build-with-confidence-in-2026/</link>
+      <guid isPermaLink="true">https://github.blog/open-source/maintainers/5-podcast-episodes-to-help-you-build-with-confidence-in-2026/</guid>
+      <pubDate>Tue, 23 Dec 2025 00:15:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>This year’s most influential open source projects</title>
+      <link>https://github.blog/open-source/maintainers/this-years-most-influential-open-source-projects/</link>
+      <guid isPermaLink="true">https://github.blog/open-source/maintainers/this-years-most-influential-open-source-projects/</guid>
+      <pubDate>Mon, 22 Dec 2025 23:48:52 +0000</pubDate>
+    </item>
+    <item>
+      <title>The future of AI-powered software optimization (and how it can help your team)</title>
+      <link>https://github.blog/news-insights/policy-news-and-insights/the-future-of-ai-powered-software-optimization-and-how-it-can-help-your-team/</link>
+      <guid isPermaLink="true">https://github.blog/news-insights/policy-news-and-insights/the-future-of-ai-powered-software-optimization-and-how-it-can-help-your-team/</guid>
+      <pubDate>Fri, 12 Dec 2025 20:43:37 +0000</pubDate>
+    </item>
+  </channel>
+</rss>
