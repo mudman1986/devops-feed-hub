@@ -9,24 +9,40 @@
     />
     <title>Settings - DevOps Feed Hub</title>
     <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png" />
+    <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png" />
+    <link rel="apple-touch-icon" sizes="192x192" href="favicon-192x192.png" />
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
     <div class="header">
       <div class="header-title">
         <svg
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          stroke-width="2"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          width="40"
+          height="40"
+          viewBox="0 0 100 100"
+          xmlns="http://www.w3.org/2000/svg"
         >
-          <path d="M4 11a9 9 0 0 1 9 9"></path>
-          <path d="M4 4a16 16 0 0 1 16 16"></path>
-          <circle cx="5" cy="19" r="1"></circle>
+          <defs>
+            <linearGradient id="header-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
+              <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+            </linearGradient>
+          </defs>
+          <g fill="url(#header-grad)">
+            <circle cx="50" cy="50" r="18" fill="url(#header-grad)"/>
+            <path d="M 50,10 L 45,22 L 55,22 Z"/>
+            <path d="M 78,28 L 71,34 L 77,40 Z"/>
+            <path d="M 90,50 L 78,45 L 78,55 Z"/>
+            <path d="M 78,72 L 77,60 L 71,66 Z"/>
+            <path d="M 50,90 L 55,78 L 45,78 Z"/>
+            <path d="M 22,72 L 29,66 L 23,60 Z"/>
+            <path d="M 10,50 L 22,55 L 22,45 Z"/>
+            <path d="M 22,28 L 23,40 L 29,34 Z"/>
+          </g>
+          <circle cx="50" cy="50" r="8" fill="#ffffff"/>
         </svg>
         DevOps Feed Hub
       </div>
@@ -76,7 +92,7 @@
               <line x1="14.31" y1="16" x2="2.83" y2="16"></line>
               <line x1="16.62" y1="12" x2="10.88" y2="21.94"></line>
             </svg>
-            <span>Appearance</span>
+            <span>Appearance & Display</span>
           </div>
           <div class="settings-menu-item" data-section="feeds">
             <svg
@@ -94,23 +110,6 @@
               <circle cx="5" cy="19" r="1"></circle>
             </svg>
             <span>Feed Selection</span>
-          </div>
-          <div class="settings-menu-item" data-section="display">
-            <svg
-              width="16"
-              height="16"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
-              <line x1="8" y1="21" x2="16" y2="21"></line>
-              <line x1="12" y1="17" x2="12" y2="21"></line>
-            </svg>
-            <span>Display Options</span>
           </div>
           <div class="settings-menu-item" data-section="rss">
             <svg
@@ -133,7 +132,7 @@
       </nav>
       <main class="settings-content">
         <section class="settings-section active" id="appearance-section">
-          <h2 class="settings-section-title">Appearance</h2>
+          <h2 class="settings-section-title">Appearance & Display</h2>
           <div class="settings-group">
             <div class="settings-item">
               <div class="settings-item-label">
@@ -146,6 +145,35 @@
                 <select id="theme-setting" class="settings-select">
                   <option value="dark">Dark</option>
                   <option value="light">Light</option>
+                </select>
+              </div>
+            </div>
+            <div class="settings-item">
+              <div class="settings-item-label">
+                <label for="view-setting">View Mode</label>
+                <p class="settings-item-description">
+                  Choose how articles are displayed
+                </p>
+              </div>
+              <div class="settings-item-control">
+                <select id="view-setting" class="settings-select">
+                  <option value="list">List View</option>
+                  <option value="card">Card View</option>
+                </select>
+              </div>
+            </div>
+            <div class="settings-item">
+              <div class="settings-item-label">
+                <label for="timeframe-setting">Default Time Range</label>
+                <p class="settings-item-description">
+                  Set the default time range for article filtering
+                </p>
+              </div>
+              <div class="settings-item-control">
+                <select id="timeframe-setting" class="settings-select">
+                  <option value="1day">Last 24 hours</option>
+                  <option value="7days">Last 7 days</option>
+                  <option value="30days">Last 30 days</option>
                 </select>
               </div>
             </div>
@@ -179,41 +207,6 @@
             </div>
             <div id="feed-checkboxes" class="feed-checkboxes">
               <!-- Feed checkboxes will be dynamically inserted here -->
-            </div>
-          </div>
-        </section>
-
-        <section class="settings-section" id="display-section">
-          <h2 class="settings-section-title">Display Options</h2>
-          <div class="settings-group">
-            <div class="settings-item">
-              <div class="settings-item-label">
-                <label for="view-setting">View Mode</label>
-                <p class="settings-item-description">
-                  Choose how articles are displayed
-                </p>
-              </div>
-              <div class="settings-item-control">
-                <select id="view-setting" class="settings-select">
-                  <option value="list">List View</option>
-                  <option value="card">Card View</option>
-                </select>
-              </div>
-            </div>
-            <div class="settings-item">
-              <div class="settings-item-label">
-                <label for="timeframe-setting">Default Time Range</label>
-                <p class="settings-item-description">
-                  Set the default time range for article filtering
-                </p>
-              </div>
-              <div class="settings-item-control">
-                <select id="timeframe-setting" class="settings-select">
-                  <option value="1day">Last 24 hours</option>
-                  <option value="7days">Last 7 days</option>
-                  <option value="30days">Last 30 days</option>
-                </select>
-              </div>
             </div>
           </div>
         </section>

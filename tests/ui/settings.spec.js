@@ -48,15 +48,16 @@ test.describe("Settings Page Tests", () => {
       await expect(page).toHaveURL(/settings\.html/);
     });
 
-    test("settings button should be in sidebar-footer below view selector", async ({
-      page,
-    }) => {
+    test("settings button should be in header controls", async ({ page }) => {
       await page.goto("/");
-      await page.waitForSelector(".sidebar-footer", { timeout: 10000 });
-      const sidebarFooter = page.locator(".sidebar-footer");
+      await page.waitForSelector("#settings-button", { timeout: 10000 });
+      const settingsButton = page.locator("#settings-button");
 
-      await expect(sidebarFooter).toContainText("View");
-      await expect(sidebarFooter).toContainText("Settings");
+      // Settings button is now in header (icon-only)
+      await expect(settingsButton).toBeVisible();
+
+      // Verify it has proper aria-label for accessibility
+      await expect(settingsButton).toHaveAttribute("aria-label", "Settings");
     });
   });
 
@@ -88,13 +89,10 @@ test.describe("Settings Page Tests", () => {
 
       // Check for menu items in sidebar
       await expect(
-        page.locator('.settings-menu-item:has-text("Appearance")'),
+        page.locator('.settings-menu-item:has-text("Appearance & Display")'),
       ).toBeVisible({ timeout: 10000 });
       await expect(
         page.locator('.settings-menu-item:has-text("Feed Selection")'),
-      ).toBeVisible({ timeout: 10000 });
-      await expect(
-        page.locator('.settings-menu-item:has-text("Display Options")'),
       ).toBeVisible({ timeout: 10000 });
     });
 
@@ -244,35 +242,43 @@ test.describe("Settings Page Tests", () => {
     });
   });
 
-  test.describe("Display Options Settings", () => {
+  test.describe("Appearance & Display Settings", () => {
     test("should display view mode selector", async ({ page }) => {
       await page.goto("/settings.html");
       await page.waitForSelector(".settings-sidebar", { timeout: 10000 });
       await page
-        .locator('.settings-menu-item:has-text("Display Options")')
+        .locator('.settings-menu-item:has-text("Appearance & Display")')
         .click();
 
-      // Check for view mode options
-      await page.waitForSelector("#display-section:visible", {
+      // Check for view mode options in appearance section (now merged)
+      await page.waitForSelector("#appearance-section:visible", {
         timeout: 10000,
       });
-      const displaySection = page.locator("#display-section");
-      await expect(displaySection).toBeVisible({ timeout: 10000 });
+      const appearanceSection = page.locator("#appearance-section");
+      await expect(appearanceSection).toBeVisible({ timeout: 10000 });
+
+      // Verify view mode setting is present
+      const viewSetting = page.locator("#view-setting");
+      await expect(viewSetting).toBeVisible({ timeout: 10000 });
     });
 
     test("should display timeframe default selector", async ({ page }) => {
       await page.goto("/settings.html");
       await page.waitForSelector(".settings-sidebar", { timeout: 10000 });
       await page
-        .locator('.settings-menu-item:has-text("Display Options")')
+        .locator('.settings-menu-item:has-text("Appearance & Display")')
         .click();
 
-      // Check for timeframe section
-      await page.waitForSelector("#display-section:visible", {
+      // Check for timeframe setting in appearance section (now merged)
+      await page.waitForSelector("#appearance-section:visible", {
         timeout: 10000,
       });
-      const displaySection = page.locator("#display-section");
-      await expect(displaySection).toBeVisible({ timeout: 10000 });
+      const appearanceSection = page.locator("#appearance-section");
+      await expect(appearanceSection).toBeVisible({ timeout: 10000 });
+
+      // Verify timeframe setting is present
+      const timeframeSetting = page.locator("#timeframe-setting");
+      await expect(timeframeSetting).toBeVisible({ timeout: 10000 });
     });
   });
 

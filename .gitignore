@@ -57,3 +57,6 @@ Thumbs.db
 
 # Super-linter output
 super-linter-output/
+
+# Backup files
+*.backup
