@@ -141,48 +141,6 @@ def generate_feed_nav(
 
     nav_html += "</nav>\n"
 
-    # Add RSS feed section
-    nav_html += '<div class="rss-feeds-section">\n'
-    nav_html += '  <div class="sidebar-header">RSS Feeds</div>\n'
-    nav_html += '  <nav class="feed-nav">\n'
-    nav_html += (
-        '    <a href="feed.xml" class="nav-link rss-link" '
-        'target="_blank" rel="noopener noreferrer">\n'
-    )
-    nav_html += (
-        '      <svg width="16" height="16" viewBox="0 0 24 24" '
-        'fill="none" stroke="currentColor" stroke-width="2" '
-        'stroke-linecap="round" stroke-linejoin="round">\n'
-    )
-    nav_html += '        <path d="M4 11a9 9 0 0 1 9 9"></path>\n'
-    nav_html += '        <path d="M4 4a16 16 0 0 1 16 16"></path>\n'
-    nav_html += '        <circle cx="5" cy="19" r="1"></circle>\n'
-    nav_html += "      </svg>\n"
-    nav_html += "      All Articles\n"
-    nav_html += "    </a>\n"
-
-    for feed_name in sorted(feeds.keys()):
-        feed_slug = generate_feed_slug(feed_name)
-        escaped_name = html_escape(feed_name)
-        nav_html += (
-            f'    <a href="feed-{feed_slug}.xml" class="nav-link rss-link" '
-            'target="_blank" rel="noopener noreferrer">\n'
-        )
-        nav_html += (
-            '      <svg width="16" height="16" viewBox="0 0 24 24" '
-            'fill="none" stroke="currentColor" stroke-width="2" '
-            'stroke-linecap="round" stroke-linejoin="round">\n'
-        )
-        nav_html += '        <path d="M4 11a9 9 0 0 1 9 9"></path>\n'
-        nav_html += '        <path d="M4 4a16 16 0 0 1 16 16"></path>\n'
-        nav_html += '        <circle cx="5" cy="19" r="1"></circle>\n'
-        nav_html += "      </svg>\n"
-        nav_html += f"      {escaped_name}\n"
-        nav_html += "    </a>\n"
-
-    nav_html += "  </nav>\n"
-    nav_html += "</div>\n"
-
     return nav_html
 
 
