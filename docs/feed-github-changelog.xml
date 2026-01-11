@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml</link>
     <description>Articles from GitHub Changelog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sun, 11 Jan 2026 18:35:51 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 11 Jan 2026 18:41:02 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Gemini 3 Flash is now available in Visual Studio, JetBrains IDEs, Xcode, and Eclipse</title>
