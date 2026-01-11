@@ -26,25 +26,42 @@ jobs:
           IGNORE_GENERATED_FILES: true
           IGNORE_GITIGNORED_FILES: true
           SAVE_SUPER_LINTER_SUMMARY: true
-          VALIDATE_PYTHON_PYINK: false
-          # Use Black for Python formatting instead of Ruff
-          VALIDATE_PYTHON_RUFF_FORMAT: false
-          # Use Prettier for JavaScript/CSS/HTML formatting instead of Biome
-          VALIDATE_BIOME_FORMAT: false
-          # Use Black, isort, pylint, flake8 for Python linting
-          VALIDATE_PYTHON_RUFF: false
-          # Checkov gives false positives that are skipped in config
-          VALIDATE_CHECKOV: false
-          # Zizmor gives false positives for template injection
-          VALIDATE_GITHUB_ACTIONS_ZIZMOR: false
-          # JSCPD is configured via .jscpd.json but super-linter doesn't pick up
-          # the config changes in Docker. JSCPD passes locally with our config.
-          # Remaining "duplicates" are expected (generated HTML, test patterns).
-          VALIDATE_JSCPD: false
-          # Disable Trivy due to connection issues with mirror.gcr.io
-          # If Trivy connection issues persist, keep this disabled
-          # To re-enable: Remove this line or set to true
-          VALIDATE_TRIVY: false
+          # Enable only useful, non-duplicate linters
+          # When specific VALIDATE_* are set to true, only those linters run
+          # Shell
+          VALIDATE_BASH: true
+          VALIDATE_BASH_EXEC: true
+          VALIDATE_SHELL_SHFMT: true
+          # Python
+          VALIDATE_PYTHON_BLACK: true
+          VALIDATE_PYTHON_ISORT: true
+          VALIDATE_PYTHON_PYLINT: true
+          VALIDATE_PYTHON_FLAKE8: true
+          VALIDATE_PYTHON_MYPY: true
+          # JavaScript/TypeScript
+          VALIDATE_JAVASCRIPT_ES: true
+          VALIDATE_JAVASCRIPT_PRETTIER: true
+          VALIDATE_TYPESCRIPT_ES: true
+          VALIDATE_TYPESCRIPT_PRETTIER: true
+          # CSS/HTML
+          VALIDATE_CSS: true
+          VALIDATE_CSS_PRETTIER: true
+          VALIDATE_HTML: true
+          VALIDATE_HTML_PRETTIER: true
+          # JSON/YAML
+          VALIDATE_JSON: true
+          VALIDATE_JSON_PRETTIER: true
+          VALIDATE_YAML: true
+          VALIDATE_YAML_PRETTIER: true
+          # Markdown
+          VALIDATE_MARKDOWN: true
+          VALIDATE_MARKDOWN_PRETTIER: true
+          VALIDATE_NATURAL_LANGUAGE: true
+          # GitHub Actions
+          VALIDATE_GITHUB_ACTIONS: true
+          # Security/Quality
+          VALIDATE_GITLEAKS: true
+          VALIDATE_GIT_MERGE_CONFLICT_MARKERS: true
           # Enable autofix for supported linters
           FIX_PYTHON_BLACK: true
           FIX_PYTHON_ISORT: true
