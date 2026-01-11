@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-docker-blog.xml</link>
     <description>Articles from Docker Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-docker-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sun, 11 Jan 2026 19:53:31 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 11 Jan 2026 20:32:51 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Security Is a Developer Experience Problem, Rooted in Our Foundations</title>
@@ -60,12 +60,6 @@
       <link>https://www.docker.com/blog/private-mcp-catalogs-oci-composable-enterprise-ai/</link>
       <guid isPermaLink="true">https://www.docker.com/blog/private-mcp-catalogs-oci-composable-enterprise-ai/</guid>
       <pubDate>Sun, 14 Dec 2025 14:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Highlights from AWS re:Invent: Supercharging Kiro with Docker Sandboxes and MCP Catalog</title>
-      <link>https://www.docker.com/blog/aws-reinvent-kiro-docker-sandboxes-mcp-catalog/</link>
-      <guid isPermaLink="true">https://www.docker.com/blog/aws-reinvent-kiro-docker-sandboxes-mcp-catalog/</guid>
-      <pubDate>Fri, 12 Dec 2025 20:22:05 +0000</pubDate>
     </item>
   </channel>
 </rss>
