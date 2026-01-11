@@ -12,7 +12,12 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
     <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png" />
-    <link rel="icon" type="image/png" sizes="192x192" href="favicon-192x192.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="favicon-192x192.png"
+    />
     <link rel="apple-touch-icon" sizes="192x192" href="favicon-192x192.png" />
     <link rel="stylesheet" href="styles.css" />
   </head>
@@ -26,23 +31,32 @@
           xmlns="http://www.w3.org/2000/svg"
         >
           <defs>
-            <linearGradient id="header-grad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" style="stop-color:#667eea;stop-opacity:1" />
-              <stop offset="100%" style="stop-color:#764ba2;stop-opacity:1" />
+            <linearGradient
+              id="header-grad"
+              x1="0%"
+              y1="0%"
+              x2="100%"
+              y2="100%"
+            >
+              <stop offset="0%" style="stop-color: #667eea; stop-opacity: 1" />
+              <stop
+                offset="100%"
+                style="stop-color: #764ba2; stop-opacity: 1"
+              />
             </linearGradient>
           </defs>
           <g fill="url(#header-grad)">
-            <circle cx="50" cy="50" r="18" fill="url(#header-grad)"/>
-            <path d="M 50,10 L 45,22 L 55,22 Z"/>
-            <path d="M 78,28 L 71,34 L 77,40 Z"/>
-            <path d="M 90,50 L 78,45 L 78,55 Z"/>
-            <path d="M 78,72 L 77,60 L 71,66 Z"/>
-            <path d="M 50,90 L 55,78 L 45,78 Z"/>
-            <path d="M 22,72 L 29,66 L 23,60 Z"/>
-            <path d="M 10,50 L 22,55 L 22,45 Z"/>
-            <path d="M 22,28 L 23,40 L 29,34 Z"/>
+            <circle cx="50" cy="50" r="18" fill="url(#header-grad)" />
+            <path d="M 50,10 L 45,22 L 55,22 Z" />
+            <path d="M 78,28 L 71,34 L 77,40 Z" />
+            <path d="M 90,50 L 78,45 L 78,55 Z" />
+            <path d="M 78,72 L 77,60 L 71,66 Z" />
+            <path d="M 50,90 L 55,78 L 45,78 Z" />
+            <path d="M 22,72 L 29,66 L 23,60 Z" />
+            <path d="M 10,50 L 22,55 L 22,45 Z" />
+            <path d="M 22,28 L 23,40 L 29,34 Z" />
           </g>
-          <circle cx="50" cy="50" r="8" fill="#ffffff"/>
+          <circle cx="50" cy="50" r="8" fill="#ffffff" />
         </svg>
         DevOps Feed Hub
       </div>
@@ -149,7 +163,7 @@
               </div>
             </div>
           </div>
-          
+
           <h3 class="settings-subsection-title">
             <svg
               width="20"
@@ -178,20 +192,25 @@
                 stroke-width="2"
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                style="flex-shrink: 0; margin-top: 0.125rem;"
+                style="flex-shrink: 0; margin-top: 0.125rem"
               >
                 <circle cx="12" cy="12" r="10"></circle>
                 <line x1="12" y1="8" x2="12" y2="12"></line>
                 <line x1="12" y1="16" x2="12.01" y2="16"></line>
               </svg>
               <p>
-                <strong>Work in Progress:</strong> These experimental themes are under active development and may change or be removed without notice. They represent different visual and layout approaches to explore alternative UI/UX designs.
+                <strong>Work in Progress:</strong> These experimental themes are
+                under active development and may change or be removed without
+                notice. They represent different visual and layout approaches to
+                explore alternative UI/UX designs.
               </p>
             </div>
-            
+
             <div class="settings-item">
               <div class="settings-item-label">
-                <label for="experimental-theme-setting">Experimental Theme</label>
+                <label for="experimental-theme-setting"
+                  >Experimental Theme</label
+                >
                 <p class="settings-item-description">
                   Try out new color schemes and completely redesigned layouts
                 </p>
@@ -208,21 +227,56 @@
                     <option value="rose-gold">Rose Gold</option>
                     <option value="arctic-blue">Arctic Blue</option>
                     <option value="pastel-dream">Pastel Dream</option>
-                    <option value="high-contrast-dark">High Contrast Dark</option>
-                    <option value="high-contrast-light">High Contrast Light</option>
+                    <option value="high-contrast-dark">
+                      High Contrast Dark
+                    </option>
+                    <option value="high-contrast-light">
+                      High Contrast Light
+                    </option>
                     <option value="monochrome">Monochrome</option>
                     <option value="solarized-dark">Solarized Dark</option>
                     <option value="dracula">Dracula</option>
                   </optgroup>
-                  <optgroup label="Layout Redesigns">
-                    <option value="minimalist">Minimalist - Clean & Simple</option>
-                    <option value="terminal">Terminal - Monospace Command-Line</option>
-                    <option value="magazine">Magazine - Multi-Column Editorial</option>
-                    <option value="glassmorphism">Glassmorphism - Frosted Glass</option>
+                  <optgroup label="Layout Redesigns - Styling">
+                    <option value="minimalist">
+                      Minimalist - Clean & Simple
+                    </option>
+                    <option value="terminal">
+                      Terminal - Monospace Command-Line
+                    </option>
+                    <option value="magazine">
+                      Magazine - Multi-Column Editorial
+                    </option>
+                    <option value="glassmorphism">
+                      Glassmorphism - Frosted Glass
+                    </option>
                     <option value="retro">Retro - 80s/90s Inspired</option>
                     <option value="futuristic">Futuristic - Sci-Fi Neon</option>
                     <option value="newspaper">Newspaper - Classic Print</option>
                     <option value="compact">Compact - Dense Information</option>
+                  </optgroup>
+                  <optgroup label="Layout Redesigns - Radical Structure">
+                    <option value="sidebar-first">Sidebar First - Dominant Left Panel</option>
+                    <option value="vertical-cards">Vertical Cards - Huge Stacked Cards</option>
+                    <option value="horizontal-scroll">Horizontal Scroll - Side-to-Side</option>
+                    <option value="masonry-grid">Masonry Grid - Pinterest Style</option>
+                    <option value="split-screen">Split Screen - 50/50 Division</option>
+                    <option value="giant-text">Giant Text - Enormous Typography</option>
+                    <option value="tiny-text">Tiny Text - Ultra Compact</option>
+                    <option value="floating-panels">Floating Panels - Tilted Cards</option>
+                    <option value="center-stage">Center Stage - Single Column Centered</option>
+                    <option value="bottom-heavy">Bottom Heavy - Sidebar at Bottom</option>
+                    <option value="diagonal-split">Diagonal Split - Angled Division</option>
+                    <option value="circular-nav">Circular Nav - Round Articles</option>
+                  </optgroup>
+                  <optgroup label="News Site Inspired">
+                    <option value="hero-featured">Hero Featured - NYT/WashPost Style</option>
+                    <option value="grid-cards">Grid Cards - BBC/Bloomberg Style</option>
+                    <option value="sidebar-magazine">Sidebar Magazine - The Hill Style</option>
+                    <option value="top-strip">Top Strip - Drudge Report Style</option>
+                    <option value="list-dense">List Dense - Reddit/HN Style</option>
+                    <option value="timeline-vertical">Timeline Vertical - Medium/Substack Style</option>
+                    <option value="carousel-featured">Carousel Featured - Auto-Rotating Stories</option>
                   </optgroup>
                 </select>
               </div>
