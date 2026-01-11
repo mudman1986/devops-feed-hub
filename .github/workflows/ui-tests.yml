@@ -14,12 +14,12 @@ jobs:
   ui-tests:
     name: UI Tests (Shard ${{ matrix.shardIndex }} of ${{ matrix.shardTotal }})
     runs-on: ubuntu-latest
-    timeout-minutes: 90
+    timeout-minutes: 15
     strategy:
       fail-fast: false
       matrix:
-        shardIndex: [1, 2, 3, 4]
-        shardTotal: [4]
+        shardIndex: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        shardTotal: [10]
 
     steps:
       - name: Checkout Code
