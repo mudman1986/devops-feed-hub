@@ -6,22 +6,23 @@ test.beforeEach(async ({ page }) => {
     const fakeNow = new Date("2026-01-11T00:00:00Z").getTime();
     Date.now = () => fakeNow;
   });
-  
-  // Navigate to page and clear localStorage in correct order
-  await page.goto("/");
-  await page.waitForLoadState("load");
-  await page.evaluate(() => localStorage.clear());
 });
+
 
 /**
  * Settings Page Tests
  * Tests settings page functionality including feed selection, theme, and view mode
  */
 test.describe("Settings Page Tests", () => {
+  test.beforeEach(async ({ page }) => {
+    // Clear localStorage before each test
+    await page.goto("/");
+    await page.evaluate(() => localStorage.clear());
+  });
+
   test.describe("Settings Page Navigation", () => {
     test("should have settings button in sidebar", async ({ page }) => {
       await page.goto("/");
-      await page.waitForSelector("#settings-button", { timeout: 10000 });
       const settingsButton = page.locator("#settings-button");
       await expect(settingsButton).toBeVisible();
     });
@@ -30,7 +31,6 @@ test.describe("Settings Page Tests", () => {
       page,
     }) => {
       await page.goto("/");
-      await page.waitForSelector("#settings-button", { timeout: 10000 });
       const settingsButton = page.locator("#settings-button");
       await settingsButton.click();
 
@@ -42,8 +42,9 @@ test.describe("Settings Page Tests", () => {
       page,
     }) => {
       await page.goto("/");
-      await page.waitForSelector(".sidebar-footer", { timeout: 10000 });
       const sidebarFooter = page.locator(".sidebar-footer");
+      const viewSelector = page.locator(".view-selector");
+      const settingsSelector = page.locator(".settings-selector");
 
       await expect(sidebarFooter).toContainText("View");
       await expect(sidebarFooter).toContainText("Settings");
@@ -55,7 +56,6 @@ test.describe("Settings Page Tests", () => {
       page,
     }) => {
       await page.goto("/settings.html");
-      await page.waitForSelector(".settings-container", { timeout: 10000 });
 
       // Check for main container
       const container = page.locator(".settings-container");
@@ -74,32 +74,30 @@ test.describe("Settings Page Tests", () => {
       page,
     }) => {
       await page.goto("/settings.html");
-      await page.waitForSelector(".settings-sidebar", { timeout: 10000 });
 
-      // Check for menu items in sidebar
-      await expect(page.locator('.settings-menu-item:has-text("Appearance")')).toBeVisible({ timeout: 10000 });
-      await expect(page.locator('.settings-menu-item:has-text("Feed Selection")')).toBeVisible({ timeout: 10000 });
-      await expect(page.locator('.settings-menu-item:has-text("Display Options")')).toBeVisible({ timeout: 10000 });
+      // Check for menu items in sidebar - use more specific selectors
+      await expect(page.locator('.settings-menu-item:has-text("Appearance")')).toBeVisible();
+      await expect(page.locator('.settings-menu-item:has-text("Feed Selection")')).toBeVisible();
+      await expect(page.locator('.settings-menu-item:has-text("Display Options")')).toBeVisible();
     });
 
     test("should have back to feeds button", async ({ page }) => {
       await page.goto("/settings.html");
-      await page.waitForLoadState("load");
-      const backButton = page.locator('.settings-back-button, #settings-back-button, a:has-text("Back to Feeds"), button:has-text("Back")').first();
-      await expect(backButton).toBeVisible({ timeout: 10000 });
+      // Update selector to match actual implementation
+      const backButton = page.locator('.back-button, a:has-text("Back to Feeds"), button:has-text("Back")').first();
+      await expect(backButton).toBeVisible();
     });
   });
 
   test.describe("Feed Selection Settings", () => {
     test("should display feed checkboxes", async ({ page }) => {
       await page.goto("/settings.html");
-      await page.waitForSelector(".settings-sidebar", { timeout: 10000 });
 
-      // Click on Feed Selection menu item
+      // Click on Feed Selection menu item in sidebar
       await page.locator('.settings-menu-item:has-text("Feed Selection")').click();
 
-      // Wait for feed list to load - increased timeout for fetch
-      await page.waitForSelector(".feed-list", { timeout: 15000 });
+      // Wait for feed list to load
+      await page.waitForSelector(".feed-list", { timeout: 10000 });
 
       // Check that feed checkboxes exist
       const feedCheckboxes = page.locator('.feed-list input[type="checkbox"]');
@@ -111,25 +109,23 @@ test.describe("Settings Page Tests", () => {
       page,
     }) => {
       await page.goto("/settings.html");
-      await page.waitForSelector(".settings-sidebar", { timeout: 10000 });
       await page.locator('.settings-menu-item:has-text("Feed Selection")').click();
-      await page.waitForSelector(".feed-list", { timeout: 15000 });
 
-      await expect(page.locator("#select-all-feeds")).toBeVisible({ timeout: 10000 });
-      await expect(page.locator("#deselect-all-feeds")).toBeVisible({ timeout: 10000 });
+      await expect(page.locator("#select-all-feeds")).toBeVisible();
+      await expect(page.locator("#deselect-all-feeds")).toBeVisible();
     });
 
     test("select all button should check all feed checkboxes", async ({
       page,
     }) => {
       await page.goto("/settings.html");
-      await page.waitForSelector(".settings-sidebar", { timeout: 10000 });
       await page.locator('.settings-menu-item:has-text("Feed Selection")').click();
-      await page.waitForSelector(".feed-list", { timeout: 15000 });
+
+      // Wait for feed list
+      await page.waitForSelector(".feed-list");
 
       // Click select all
       await page.locator("#select-all-feeds").click();
-      await page.waitForTimeout(500); // Give time for checkboxes to update
 
       // Check all checkboxes are checked
       const checkboxes = page.locator('.feed-list input[type="checkbox"]');
@@ -144,17 +140,16 @@ test.describe("Settings Page Tests", () => {
       page,
     }) => {
       await page.goto("/settings.html");
-      await page.waitForSelector(".settings-sidebar", { timeout: 10000 });
       await page.locator('.settings-menu-item:has-text("Feed Selection")').click();
-      await page.waitForSelector(".feed-list", { timeout: 15000 });
+
+      // Wait for feed list
+      await page.waitForSelector(".feed-list");
 
       // First select all
       await page.locator("#select-all-feeds").click();
-      await page.waitForTimeout(500);
 
       // Then deselect all
       await page.locator("#deselect-all-feeds").click();
-      await page.waitForTimeout(500);
 
       // Check all checkboxes are unchecked
       const checkboxes = page.locator('.feed-list input[type="checkbox"]');
@@ -167,13 +162,13 @@ test.describe("Settings Page Tests", () => {
 
     test("should persist feed selection in localStorage", async ({ page }) => {
       await page.goto("/settings.html");
-      await page.waitForSelector(".settings-sidebar", { timeout: 10000 });
       await page.locator('.settings-menu-item:has-text("Feed Selection")').click();
-      await page.waitForSelector(".feed-list", { timeout: 15000 });
+
+      // Wait for feed list
+      await page.waitForSelector(".feed-list");
 
       // Select specific feeds
       await page.locator("#select-all-feeds").click();
-      await page.waitForTimeout(500);
 
       // Check that enabledFeeds is in localStorage
       const enabledFeeds = await page.evaluate(() =>
@@ -193,57 +188,50 @@ test.describe("Settings Page Tests", () => {
       page,
     }) => {
       await page.goto("/settings.html");
-      await page.waitForSelector(".settings-sidebar", { timeout: 10000 });
       await page.locator('.settings-menu-item:has-text("Appearance")').click();
 
       // Check for theme section
       const appearanceSection = page.locator("#appearance-section, .settings-section").first();
-      await expect(appearanceSection).toBeVisible({ timeout: 10000 });
+      await expect(appearanceSection).toBeVisible();
     });
   });
 
   test.describe("Display Options Settings", () => {
     test("should display view mode selector", async ({ page }) => {
       await page.goto("/settings.html");
-      await page.waitForSelector(".settings-sidebar", { timeout: 10000 });
       await page.locator('.settings-menu-item:has-text("Display Options")').click();
 
-      // Check for view mode options
+      // Check for view mode options - be more flexible with selector
       const displaySection = page.locator("#display-section, .settings-section").first();
-      await expect(displaySection).toBeVisible({ timeout: 10000 });
+      await expect(displaySection).toBeVisible();
     });
 
     test("should display timeframe default selector", async ({ page }) => {
       await page.goto("/settings.html");
-      await page.waitForSelector(".settings-sidebar", { timeout: 10000 });
       await page.locator('.settings-menu-item:has-text("Display Options")').click();
 
       // Check for timeframe section
       const displaySection = page.locator("#display-section, .settings-section").first();
-      await expect(displaySection).toBeVisible({ timeout: 10000 });
+      await expect(displaySection).toBeVisible();
     });
   });
 
   test.describe("Settings Persistence", () => {
     test("should maintain settings across navigation", async ({ page }) => {
       await page.goto("/settings.html");
-      await page.waitForSelector(".settings-sidebar", { timeout: 10000 });
       await page.locator('.settings-menu-item:has-text("Feed Selection")').click();
-      await page.waitForSelector(".feed-list", { timeout: 15000 });
+      await page.waitForSelector(".feed-list");
 
       // Select all feeds
       await page.locator("#select-all-feeds").click();
-      await page.waitForTimeout(500);
 
       // Navigate away
       await page.goto("/");
-      await page.waitForLoadState("load");
 
       // Navigate back to settings
       await page.goto("/settings.html");
-      await page.waitForSelector(".settings-sidebar", { timeout: 10000 });
       await page.locator('.settings-menu-item:has-text("Feed Selection")').click();
-      await page.waitForSelector(".feed-list", { timeout: 15000 });
+      await page.waitForSelector(".feed-list");
 
       // Check that feeds are still selected
       const checkboxes = page.locator('.feed-list input[type="checkbox"]');
@@ -256,7 +244,6 @@ test.describe("Settings Page Tests", () => {
     test("should be responsive on mobile", async ({ page }) => {
       await page.setViewportSize({ width: 375, height: 667 });
       await page.goto("/settings.html");
-      await page.waitForSelector(".settings-container", { timeout: 10000 });
 
       const container = page.locator(".settings-container");
       await expect(container).toBeVisible();
@@ -265,7 +252,6 @@ test.describe("Settings Page Tests", () => {
     test("should be responsive on tablet", async ({ page }) => {
       await page.setViewportSize({ width: 768, height: 1024 });
       await page.goto("/settings.html");
-      await page.waitForSelector(".settings-container", { timeout: 10000 });
 
       const container = page.locator(".settings-container");
       await expect(container).toBeVisible();
@@ -274,7 +260,6 @@ test.describe("Settings Page Tests", () => {
     test("should be responsive on desktop", async ({ page }) => {
       await page.setViewportSize({ width: 1920, height: 1080 });
       await page.goto("/settings.html");
-      await page.waitForSelector(".settings-container", { timeout: 10000 });
 
       const container = page.locator(".settings-container");
       await expect(container).toBeVisible();
@@ -287,9 +272,13 @@ test.describe("Settings Page Tests", () => {
  * Tests that feed filtering works correctly on main page
  */
 test.describe("Feed Filtering Integration Tests", () => {
+  test.beforeEach(async ({ page }) => {
+    await page.goto("/");
+    await page.evaluate(() => localStorage.clear());
+  });
+
   test("should show all feeds when no filter is set", async ({ page }) => {
     await page.goto("/");
-    await page.waitForSelector(".nav-link", { timeout: 10000 });
 
     // All feed navigation links should be visible
     const navLinks = page.locator(".nav-link");
@@ -302,40 +291,32 @@ test.describe("Feed Filtering Integration Tests", () => {
 
   test("should hide disabled feeds from navigation", async ({ page }) => {
     // Set enabledFeeds to only include specific feeds
-    await page.goto("/");
-    await page.waitForLoadState("load");
     await page.evaluate(() => {
       localStorage.setItem(
         "enabledFeeds",
-        JSON.stringify(["Test Feed A", "Test Feed B"])
+        JSON.stringify(["GitHub Blog", "Docker Blog"])
       );
     });
 
-    await page.reload();
-    await page.waitForSelector(".nav-link", { timeout: 10000 });
+    await page.goto("/");
 
-    // Test Feed A and Test Feed B should be visible
-    const feedALink = page.locator('.nav-link:has-text("Test Feed A")');
-    if ((await feedALink.count()) > 0) {
-      await expect(feedALink).toBeVisible();
-    }
+    // GitHub Blog and Docker Blog should be visible
+    const githubLink = page.locator('.nav-link:has-text("GitHub Blog")');
+    await expect(githubLink).toBeVisible();
 
-    const feedBLink = page.locator('.nav-link:has-text("Test Feed B")');
-    if ((await feedBLink.count()) > 0) {
-      await expect(feedBLink).toBeVisible();
+    const dockerLink = page.locator('.nav-link:has-text("Docker Blog")');
+    if ((await dockerLink.count()) > 0) {
+      await expect(dockerLink).toBeVisible();
     }
   });
 
   test("should not filter All Feeds and Summary links", async ({ page }) => {
     // Set very restrictive filter
-    await page.goto("/");
-    await page.waitForLoadState("load");
     await page.evaluate(() => {
-      localStorage.setItem("enabledFeeds", JSON.stringify(["Test Feed A"]));
+      localStorage.setItem("enabledFeeds", JSON.stringify(["GitHub Blog"]));
     });
 
-    await page.reload();
-    await page.waitForSelector(".nav-link", { timeout: 10000 });
+    await page.goto("/");
 
     // All Feeds and Summary should always be visible
     const allFeedsLink = page.locator('.nav-link:has-text("All Feeds")');
