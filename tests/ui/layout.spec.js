@@ -1,5 +1,14 @@
 import { test, expect } from "@playwright/test";
 
+// Mock system date to match test data
+test.beforeEach(async ({ page }) => {
+  await page.addInitScript(() => {
+    const fakeNow = new Date("2026-01-11T00:00:00Z").getTime();
+    Date.now = () => fakeNow;
+  });
+});
+
+
 /**
  * UI Layout Tests - Desktop
  * Validates layout and positioning on desktop screen sizes

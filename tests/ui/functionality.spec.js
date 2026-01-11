@@ -1,5 +1,17 @@
 import { test, expect } from "@playwright/test";
 
+// Mock system date to a fixed time for consistent test data filtering
+// Test data uses 2026-01-10T12:00:00Z as collection time
+// We use 2026-01-11T00:00:00Z (12 hours later) to ensure articles are within "last 24h"
+test.beforeEach(async ({ page }) => {
+  // Mock Date.now() to return a fixed timestamp
+  await page.addInitScript(() => {
+    const fakeNow = new Date("2026-01-11T00:00:00Z").getTime();
+    Date.now = () => fakeNow;
+  });
+});
+
+
 /**
  * Theme Toggle Functionality Tests
  * Tests dark/light mode switching

@@ -1,5 +1,14 @@
 import { test, expect } from "@playwright/test";
 
+// Mock system date to match test data (2026-01-11, 12 hours after collection)
+test.beforeEach(async ({ page }) => {
+  await page.addInitScript(() => {
+    const fakeNow = new Date("2026-01-11T00:00:00Z").getTime();
+    Date.now = () => fakeNow;
+  });
+});
+
+
 /**
  * Settings Page Tests
  * Tests settings page functionality including feed selection, theme, and view mode
