@@ -1004,7 +1004,6 @@ h3 {
   border: none;
   box-shadow: none;
   border-radius: 0;
-  border-bottom: 2px solid var(--border-primary);
   margin-bottom: 1.5rem;
   padding: 0.35rem 0.35rem 0.75rem;
 }
@@ -1033,7 +1032,6 @@ h3 {
   font-size: 0.8125rem;
   margin-bottom: 0.35rem;
   padding-bottom: 0.25rem;
-  border-bottom: 1px solid var(--border-primary);
 }
 
 [data-view="list"] .article-title {
@@ -1449,4 +1447,17 @@ h3 {
 [data-view="list"] .rss-link svg {
   width: 14px;
   height: 14px;
+}
+
+/* Header button icon-only styles */
+.header-controls .theme-toggle,
+.header-controls .nav-toggle,
+.header-controls .settings-button {
+  padding: 0.625rem;
+  width: auto;
+  min-width: auto;
+}
+
+.header-controls .settings-button {
+  justify-content: center;
 }
