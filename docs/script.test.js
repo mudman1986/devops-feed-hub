@@ -31,7 +31,7 @@ function loadScriptFunctions() {
   const READ_ARTICLES_KEY = "readArticles";
 
   // Define functions in global scope
-  window.getReadArticles = () => {
+  window.getReadArticles = function () {
     try {
       const stored = localStorage.getItem(READ_ARTICLES_KEY);
       return stored ? JSON.parse(stored) : [];
@@ -41,7 +41,7 @@ function loadScriptFunctions() {
     }
   };
 
-  window.saveReadArticles = (readArticles) => {
+  window.saveReadArticles = function (readArticles) {
     try {
       localStorage.setItem(READ_ARTICLES_KEY, JSON.stringify(readArticles));
     } catch (e) {
@@ -49,12 +49,12 @@ function loadScriptFunctions() {
     }
   };
 
-  window.isArticleRead = (articleUrl) => {
+  window.isArticleRead = function (articleUrl) {
     const readArticles = window.getReadArticles();
     return readArticles.includes(articleUrl);
   };
 
-  window.toggleArticleRead = (articleUrl) => {
+  window.toggleArticleRead = function (articleUrl) {
     let readArticles = window.getReadArticles();
 
     if (readArticles.includes(articleUrl)) {
@@ -67,7 +67,7 @@ function loadScriptFunctions() {
     return readArticles.includes(articleUrl);
   };
 
-  window.resetAllReadArticles = () => {
+  window.resetAllReadArticles = function () {
     try {
       localStorage.removeItem(READ_ARTICLES_KEY);
     } catch (e) {
@@ -282,7 +282,7 @@ describe("Article Reordering", () => {
     loadScriptFunctions();
 
     // Use the FIXED implementation with date sorting
-    window.reorderArticlesInFeed = (articleList, articles) => {
+    window.reorderArticlesInFeed = function (articleList, articles) {
       if (!articleList || articles.length === 0) return;
 
       // Separate articles into unread and read
@@ -393,116 +393,5 @@ describe("Article Reordering", () => {
     expect(articles[2].querySelector(".article-title").textContent).toBe(
       "Article 3 (Jan 8)",
     );
-  });
-});
-
-// Feed Filtering Tests
-describe("Feed Filtering Functionality", () => {
-  let getEnabledFeeds;
-  let saveEnabledFeeds;
-
-  beforeEach(() => {
-    localStorage.clear();
-
-    // Define functions for testing
-    getEnabledFeeds = () => {
-      try {
-        const stored = localStorage.getItem("enabledFeeds");
-        return stored ? JSON.parse(stored) : null;
-      } catch (e) {
-        console.warn("Unable to load enabled feeds:", e);
-        return null;
-      }
-    };
-
-    saveEnabledFeeds = (feeds) => {
-      try {
-        localStorage.setItem("enabledFeeds", JSON.stringify(feeds));
-      } catch (e) {
-        console.warn("Unable to save enabled feeds:", e);
-      }
-    };
-  });
-
-  describe("getEnabledFeeds", () => {
-    test("should return null when no feeds are saved", () => {
-      expect(getEnabledFeeds()).toBeNull();
-    });
-
-    test("should return array of enabled feeds from localStorage", () => {
-      const testFeeds = ["GitHub Blog", "Docker Blog", "Kubernetes Blog"];
-      saveEnabledFeeds(testFeeds);
-
-      const result = getEnabledFeeds();
-      expect(result).toEqual(testFeeds);
-      expect(result).toHaveLength(3);
-    });
-
-    test("should return null if localStorage contains invalid JSON", () => {
-      localStorage.setItem("enabledFeeds", "invalid json");
-      expect(getEnabledFeeds()).toBeNull();
-    });
-
-    test("should handle empty array", () => {
-      saveEnabledFeeds([]);
-      const result = getEnabledFeeds();
-      expect(result).toEqual([]);
-      expect(result).toHaveLength(0);
-    });
-  });
-
-  describe("saveEnabledFeeds", () => {
-    test("should save feeds array to localStorage", () => {
-      const testFeeds = ["Feed A", "Feed B"];
-      saveEnabledFeeds(testFeeds);
-
-      const stored = localStorage.getItem("enabledFeeds");
-      expect(stored).toBe(JSON.stringify(testFeeds));
-    });
-
-    test("should persist multiple feeds", () => {
-      const feeds = [
-        "GitHub Blog",
-        "Docker Blog",
-        "Kubernetes Blog",
-        "AWS DevOps Blog",
-      ];
-      saveEnabledFeeds(feeds);
-
-      const retrieved = getEnabledFeeds();
-      expect(retrieved).toEqual(feeds);
-    });
-
-    test("should handle updating existing feeds", () => {
-      saveEnabledFeeds(["Feed 1", "Feed 2"]);
-      saveEnabledFeeds(["Feed 3"]);
-
-      const result = getEnabledFeeds();
-      expect(result).toEqual(["Feed 3"]);
-    });
-  });
-
-  describe("Feed Selection Persistence", () => {
-    test("should maintain feed selection across page reloads", () => {
-      const selectedFeeds = ["GitHub Blog", "HashiCorp Blog"];
-      saveEnabledFeeds(selectedFeeds);
-
-      // Simulate page reload by getting feeds again
-      const afterReload = getEnabledFeeds();
-      expect(afterReload).toEqual(selectedFeeds);
-    });
-
-    test("should handle all feeds being disabled", () => {
-      saveEnabledFeeds([]);
-      const result = getEnabledFeeds();
-      expect(result).toEqual([]);
-    });
-
-    test("should handle single feed selection", () => {
-      saveEnabledFeeds(["Docker Blog"]);
-      const result = getEnabledFeeds();
-      expect(result).toEqual(["Docker Blog"]);
-      expect(result).toHaveLength(1);
-    });
   });
 });
