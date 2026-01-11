@@ -30,8 +30,18 @@ test.describe("Settings Page Tests", () => {
       page,
     }) => {
       await page.goto("/");
+      
+      // On mobile/tablet, sidebar is hidden behind hamburger menu
+      // Check if menu toggle button exists (mobile view)
+      const menuToggle = page.locator('.menu-toggle, button:has-text("Menu")');
+      if (await menuToggle.isVisible().catch(() => false)) {
+        await menuToggle.click();
+        await page.waitForTimeout(300); // Wait for sidebar animation
+      }
+      
       await page.waitForSelector("#settings-button", { timeout: 10000 });
       const settingsButton = page.locator("#settings-button");
+      await settingsButton.scrollIntoViewIfNeeded();
       await settingsButton.click();
 
       // Verify we're on settings page
