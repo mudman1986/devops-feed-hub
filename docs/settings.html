@@ -218,24 +218,42 @@
               <div class="settings-item-control">
                 <select id="experimental-theme-setting" class="settings-select">
                   <option value="">None (Use Standard Theme)</option>
-                  <optgroup label="Color Variations">
-                    <option value="midnight-blue">Midnight Blue</option>
-                    <option value="forest-green">Forest Green</option>
-                    <option value="purple-haze">Purple Haze</option>
-                    <option value="sunset-orange">Sunset Orange</option>
-                    <option value="ocean-deep">Ocean Deep</option>
-                    <option value="rose-gold">Rose Gold</option>
-                    <option value="arctic-blue">Arctic Blue</option>
-                    <option value="pastel-dream">Pastel Dream</option>
+                  <optgroup label="Color Variations - Dark">
+                    <option value="midnight-blue">Midnight Blue (Dark)</option>
+                    <option value="forest-green">Forest Green (Dark)</option>
+                    <option value="purple-haze">Purple Haze (Dark)</option>
+                    <option value="sunset-orange">Sunset Orange (Dark)</option>
+                    <option value="ocean-deep">Ocean Deep (Dark)</option>
+                    <option value="rose-gold">Rose Gold (Dark)</option>
+                    <option value="arctic-blue">Arctic Blue (Light)</option>
+                    <option value="pastel-dream">Pastel Dream (Light)</option>
                     <option value="high-contrast-dark">
-                      High Contrast Dark
+                      High Contrast (Dark)
                     </option>
                     <option value="high-contrast-light">
-                      High Contrast Light
+                      High Contrast (Light)
                     </option>
-                    <option value="monochrome">Monochrome</option>
-                    <option value="solarized-dark">Solarized Dark</option>
-                    <option value="dracula">Dracula</option>
+                    <option value="monochrome">Monochrome (Dark)</option>
+                    <option value="solarized-dark">Solarized (Dark)</option>
+                    <option value="dracula">Dracula (Dark)</option>
+                  </optgroup>
+                  <optgroup label="Color Variations - Light">
+                    <option value="midnight-blue-light">
+                      Midnight Blue (Light)
+                    </option>
+                    <option value="forest-green-light">
+                      Forest Green (Light)
+                    </option>
+                    <option value="purple-haze-light">
+                      Purple Haze (Light)
+                    </option>
+                    <option value="sunset-orange-light">
+                      Sunset Orange (Light)
+                    </option>
+                    <option value="ocean-deep-light">Ocean Deep (Light)</option>
+                    <option value="rose-gold-light">Rose Gold (Light)</option>
+                    <option value="solarized-light">Solarized (Light)</option>
+                    <option value="dracula-light">Dracula (Light)</option>
                   </optgroup>
                   <optgroup label="Layout Redesigns - Styling">
                     <option value="minimalist">
@@ -483,6 +501,75 @@
           loadRSSFeedLinks();
         }
 
+        // List of valid experimental themes
+        const VALID_EXPERIMENTAL_THEMES = [
+          "midnight-blue",
+          "midnight-blue-light",
+          "forest-green",
+          "forest-green-light",
+          "purple-haze",
+          "purple-haze-light",
+          "sunset-orange",
+          "sunset-orange-light",
+          "ocean-deep",
+          "ocean-deep-light",
+          "rose-gold",
+          "rose-gold-light",
+          "arctic-blue",
+          "pastel-dream",
+          "high-contrast-dark",
+          "high-contrast-light",
+          "monochrome",
+          "solarized-dark",
+          "solarized-light",
+          "dracula",
+          "dracula-light",
+          "minimalist",
+          "terminal",
+          "magazine",
+          "glassmorphism",
+          "retro",
+          "futuristic",
+          "newspaper",
+          "compact",
+          "sidebar-first",
+          "vertical-cards",
+          "horizontal-scroll",
+          "masonry-grid",
+          "split-screen",
+          "giant-text",
+          "tiny-text",
+          "floating-panels",
+          "center-stage",
+          "bottom-heavy",
+          "diagonal-split",
+          "circular-nav",
+          "hero-featured",
+          "grid-cards",
+          "sidebar-magazine",
+          "top-strip",
+          "list-dense",
+          "timeline-vertical",
+          "carousel-featured",
+        ];
+
+        // Helper function to apply theme
+        function applyTheme(themeName) {
+          if (
+            themeName &&
+            !VALID_EXPERIMENTAL_THEMES.includes(themeName) &&
+            themeName !== "dark" &&
+            themeName !== "light"
+          ) {
+            console.warn(`Invalid theme: ${themeName}. Falling back to dark.`);
+            themeName = "dark";
+          }
+          document.documentElement.setAttribute(
+            "data-theme",
+            themeName || "dark",
+          );
+        }
+
         function loadSettings() {
           // Load theme
           try {
@@ -503,12 +590,12 @@
             if (experimentalThemeSelect)
               experimentalThemeSelect.value = experimentalTheme;
 
-            // Apply experimental theme if set
-            if (experimentalTheme) {
-              document.documentElement.setAttribute(
-                "data-theme",
-                experimentalTheme,
-              );
+            // Apply experimental theme if set and valid
+            if (
+              experimentalTheme &&
+              VALID_EXPERIMENTAL_THEMES.includes(experimentalTheme)
+            ) {
+              applyTheme(experimentalTheme);
             }
           } catch (e) {
             console.warn("Unable to load experimental theme setting:", e);
@@ -548,7 +635,7 @@
                   "experimental-theme-setting",
                 );
                 if (experimentalThemeSelect) experimentalThemeSelect.value = "";
-                document.documentElement.setAttribute("data-theme", theme);
+                applyTheme(theme);
               } catch (err) {
                 console.warn("Unable to save theme:", err);
               }
@@ -564,17 +651,23 @@
               const experimentalTheme = e.target.value;
               try {
                 if (experimentalTheme) {
-                  // Save experimental theme
-                  localStorage.setItem("experimentalTheme", experimentalTheme);
-                  document.documentElement.setAttribute(
-                    "data-theme",
-                    experimentalTheme,
-                  );
+                  // Save experimental theme if valid
+                  if (VALID_EXPERIMENTAL_THEMES.includes(experimentalTheme)) {
+                    localStorage.setItem(
+                      "experimentalTheme",
+                      experimentalTheme,
+                    );
+                    applyTheme(experimentalTheme);
+                  } else {
+                    console.warn(
+                      `Invalid experimental theme: ${experimentalTheme}`,
+                    );
+                  }
                 } else {
                   // Clear experimental theme and revert to standard theme
                   localStorage.removeItem("experimentalTheme");
                   const theme = localStorage.getItem("theme") || "dark";
-                  document.documentElement.setAttribute("data-theme", theme);
+                  applyTheme(theme);
                 }
               } catch (err) {
                 console.warn("Unable to save experimental theme:", err);
