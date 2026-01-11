@@ -89,6 +89,7 @@ This repository is maintained primarily by GitHub Copilot. Path-specific instruc
 - **JavaScript**: `npm test` (all tests must pass)
 - **Python**: `python3 -m pytest .github/actions/collect-rss-feeds/tests/ -v` (all tests must pass)
 - **UI Tests**: `npm run test:ui`
+  - **IMPORTANT**: UI tests require generated HTML files. Run `bash .github/scripts/generate-test-data.sh` first
 - **Shell Scripts**: `bats .github/scripts/test_*.bats`
 
 ### Environment Setup
