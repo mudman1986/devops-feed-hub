@@ -34,8 +34,9 @@ discord-message.json
 # Workflow generates these from template.html + RSS data and pushes to github-pages branch
 # Source branches don't need them - only github-pages branch does
 docs/*.html
-# Allow settings.html as it's a source file, not generated
+# Allow settings.html and rss-builder.html as they are source files, not generated
 !docs/settings.html
+!docs/rss-builder.html
 
 # GitHub Pages - Generated RSS feed files are build artifacts  
 # Workflow generates these from collected RSS data and pushes to github-pages branch
