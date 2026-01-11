@@ -253,12 +253,14 @@ test.describe("Sidebar Toggle Tests", () => {
  */
 test.describe("Mark as Read Tests", () => {
   test.beforeEach(async ({ page }) => {
-    await page.evaluate(() => localStorage.clear());
     await page.goto("/");
+    await page.waitForLoadState("load");
+    await page.evaluate(() => localStorage.clear());
+    await page.reload();
     await page.waitForLoadState("networkidle");
     await page.waitForSelector(".article-item", { timeout: 5000 });
-    // Wait a bit for DOMContentLoaded handlers to run
-    await page.waitForTimeout(500);
+    // Wait for read indicators to be added by JavaScript
+    await page.waitForSelector(".read-indicator", { timeout: 10000 }).catch(() => {});
   });
 
   test("should mark article as read when clicking indicator", async ({
