@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DevOps Feed Hub - Docker Blog</title>
+    <link>https://mudman1986.github.io/devops-feed-hub/feed-docker-blog.xml</link>
+    <description>Articles from Docker Blog</description>
+    <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-docker-blog.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 11 Jan 2026 13:59:42 +0000</lastBuildDate>
+    <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Security Is a Developer Experience Problem, Rooted in Our Foundations</title>
+      <link>https://www.docker.com/blog/security-is-a-developer-experience-problem-rooted-in-our-foundations/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/security-is-a-developer-experience-problem-rooted-in-our-foundations/</guid>
+      <pubDate>Fri, 09 Jan 2026 16:11:53 +0000</pubDate>
+    </item>
+    <item>
+      <title>Deterministic AI Testing with Session Recording in cagent</title>
+      <link>https://www.docker.com/blog/deterministic-ai-testing-with-session-recording-in-cagent/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/deterministic-ai-testing-with-session-recording-in-cagent/</guid>
+      <pubDate>Tue, 06 Jan 2026 19:16:04 +0000</pubDate>
+    </item>
+    <item>
+      <title>2025 Recap: The Year Software Development Changed Shape</title>
+      <link>https://www.docker.com/blog/2025-recap-the-year-software-development-changed-shape/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/2025-recap-the-year-software-development-changed-shape/</guid>
+      <pubDate>Sat, 20 Dec 2025 13:45:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>From the Captain’s Chair: Igor Aleksandrov</title>
+      <link>https://www.docker.com/blog/from-the-captains-chair-igor-aleksandrov/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/from-the-captains-chair-igor-aleksandrov/</guid>
+      <pubDate>Fri, 19 Dec 2025 14:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Docker Hardened Images: Security Independently Validated by SRLabs</title>
+      <link>https://www.docker.com/blog/docker-hardened-images-security-independently-validated-by-srlabs/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/docker-hardened-images-security-independently-validated-by-srlabs/</guid>
+      <pubDate>Fri, 19 Dec 2025 13:50:24 +0000</pubDate>
+    </item>
+    <item>
+      <title>A Safer Container Ecosystem with Docker: Free Docker Hardened Images</title>
+      <link>https://www.docker.com/blog/docker-hardened-images-for-every-developer/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/docker-hardened-images-for-every-developer/</guid>
+      <pubDate>Wed, 17 Dec 2025 13:55:11 +0000</pubDate>
+    </item>
+    <item>
+      <title>Develop and deploy voice AI apps using Docker</title>
+      <link>https://www.docker.com/blog/develop-deploy-voice-ai-apps/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/develop-deploy-voice-ai-apps/</guid>
+      <pubDate>Tue, 16 Dec 2025 14:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Docker Model Runner now included with the Universal Blue family</title>
+      <link>https://www.docker.com/blog/docker-model-runner-universal-blue/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/docker-model-runner-universal-blue/</guid>
+      <pubDate>Tue, 16 Dec 2025 12:24:50 +0000</pubDate>
+    </item>
+    <item>
+      <title>Private MCP Catalogs and the Path to Composable Enterprise AI</title>
+      <link>https://www.docker.com/blog/private-mcp-catalogs-oci-composable-enterprise-ai/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/private-mcp-catalogs-oci-composable-enterprise-ai/</guid>
+      <pubDate>Sun, 14 Dec 2025 14:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Highlights from AWS re:Invent: Supercharging Kiro with Docker Sandboxes and MCP Catalog</title>
+      <link>https://www.docker.com/blog/aws-reinvent-kiro-docker-sandboxes-mcp-catalog/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/aws-reinvent-kiro-docker-sandboxes-mcp-catalog/</guid>
+      <pubDate>Fri, 12 Dec 2025 20:22:05 +0000</pubDate>
+    </item>
+  </channel>
+</rss>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DevOps Feed Hub - Kubernetes Blog</title>
+    <link>https://mudman1986.github.io/devops-feed-hub/feed-kubernetes-blog.xml</link>
+    <description>Articles from Kubernetes Blog</description>
+    <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-kubernetes-blog.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 11 Jan 2026 13:59:42 +0000</lastBuildDate>
+    <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Kubernetes v1.35: Restricting executables invoked by kubeconfigs via exec plugin allowList added to kuberc</title>
+      <link>https://kubernetes.io/blog/2026/01/09/kubernetes-v1-35-kuberc-credential-plugin-allowlist/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2026/01/09/kubernetes-v1-35-kuberc-credential-plugin-allowlist/</guid>
+      <pubDate>Fri, 09 Jan 2026 18:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Kubernetes v1.35: Mutable PersistentVolume Node Affinity (alpha)</title>
+      <link>https://kubernetes.io/blog/2026/01/08/kubernetes-v1-35-mutable-pv-nodeaffinity/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2026/01/08/kubernetes-v1-35-mutable-pv-nodeaffinity/</guid>
+      <pubDate>Thu, 08 Jan 2026 18:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Kubernetes v1.35: A Better Way to Pass Service Account Tokens to CSI Drivers</title>
+      <link>https://kubernetes.io/blog/2026/01/07/kubernetes-v1-35-csi-sa-tokens-secrets-field-beta/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2026/01/07/kubernetes-v1-35-csi-sa-tokens-secrets-field-beta/</guid>
+      <pubDate>Wed, 07 Jan 2026 18:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Kubernetes v1.35: Extended Toleration Operators to Support Numeric Comparisons (Alpha)</title>
+      <link>https://kubernetes.io/blog/2026/01/05/kubernetes-v1-35-numeric-toleration-operators/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2026/01/05/kubernetes-v1-35-numeric-toleration-operators/</guid>
+      <pubDate>Mon, 05 Jan 2026 18:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Kubernetes v1.35: New level of efficiency with in-place Pod restart</title>
+      <link>https://kubernetes.io/blog/2026/01/02/kubernetes-v1-35-restart-all-containers/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2026/01/02/kubernetes-v1-35-restart-all-containers/</guid>
+      <pubDate>Fri, 02 Jan 2026 18:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Kubernetes 1.35: Enhanced Debugging with Versioned z-pages APIs</title>
+      <link>https://kubernetes.io/blog/2025/12/31/kubernetes-v1-35-structured-zpages/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/12/31/kubernetes-v1-35-structured-zpages/</guid>
+      <pubDate>Wed, 31 Dec 2025 18:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Kubernetes v1.35: Watch Based Route Reconciliation in the Cloud Controller Manager</title>
+      <link>https://kubernetes.io/blog/2025/12/30/kubernetes-v1-35-watch-based-route-reconciliation-in-ccm/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/12/30/kubernetes-v1-35-watch-based-route-reconciliation-in-ccm/</guid>
+      <pubDate>Tue, 30 Dec 2025 18:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Kubernetes v1.35: Introducing Workload Aware Scheduling</title>
+      <link>https://kubernetes.io/blog/2025/12/29/kubernetes-v1-35-introducing-workload-aware-scheduling/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/12/29/kubernetes-v1-35-introducing-workload-aware-scheduling/</guid>
+      <pubDate>Mon, 29 Dec 2025 18:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Kubernetes v1.35: Fine-grained Supplemental Groups Control Graduates to GA</title>
+      <link>https://kubernetes.io/blog/2025/12/23/kubernetes-v1-35-fine-grained-supplementalgroups-control-ga/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/12/23/kubernetes-v1-35-fine-grained-supplementalgroups-control-ga/</guid>
+      <pubDate>Tue, 23 Dec 2025 18:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Kubernetes v1.35: Kubelet Configuration Drop-in Directory Graduates to GA</title>
+      <link>https://kubernetes.io/blog/2025/12/22/kubernetes-v1-35-kubelet-config-drop-in-directory-ga/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/12/22/kubernetes-v1-35-kubelet-config-drop-in-directory-ga/</guid>
+      <pubDate>Mon, 22 Dec 2025 18:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Avoiding Zombie Cluster Members When Upgrading to etcd v3.6</title>
+      <link>https://kubernetes.io/blog/2025/12/21/preventing-etcd-zombies/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/12/21/preventing-etcd-zombies/</guid>
+      <pubDate>Sun, 21 Dec 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Kubernetes 1.35: In-Place Pod Resize Graduates to Stable</title>
+      <link>https://kubernetes.io/blog/2025/12/19/kubernetes-v1-35-in-place-pod-resize-ga/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/12/19/kubernetes-v1-35-in-place-pod-resize-ga/</guid>
+      <pubDate>Fri, 19 Dec 2025 18:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Kubernetes v1.35: Job Managed By Goes GA</title>
+      <link>https://kubernetes.io/blog/2025/12/18/kubernetes-v1-35-job-managedby-for-jobs-goes-ga/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/12/18/kubernetes-v1-35-job-managedby-for-jobs-goes-ga/</guid>
+      <pubDate>Thu, 18 Dec 2025 18:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Kubernetes v1.35: Timbernetes (The World Tree Release)</title>
+      <link>https://kubernetes.io/blog/2025/12/17/kubernetes-v1-35-release/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/12/17/kubernetes-v1-35-release/</guid>
+      <pubDate>Wed, 17 Dec 2025 18:30:00 +0000</pubDate>
+    </item>
+  </channel>
+</rss>

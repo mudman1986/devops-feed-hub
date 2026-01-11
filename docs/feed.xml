@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sun, 11 Jan 2026 00:16:48 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 11 Jan 2026 13:59:42 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Light waves, rising tides, and drifting ships: Game Off 2025 winners</title>
@@ -15,11 +15,46 @@
       <source>GitHub Blog</source>
     </item>
     <item>
+      <title>Kubernetes v1.35: Restricting executables invoked by kubeconfigs via exec plugin allowList added to kuberc</title>
+      <link>https://kubernetes.io/blog/2026/01/09/kubernetes-v1-35-kuberc-credential-plugin-allowlist/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2026/01/09/kubernetes-v1-35-kuberc-credential-plugin-allowlist/</guid>
+      <pubDate>Fri, 09 Jan 2026 18:30:00 +0000</pubDate>
+      <source>Kubernetes Blog</source>
+    </item>
+    <item>
+      <title>Security Is a Developer Experience Problem, Rooted in Our Foundations</title>
+      <link>https://www.docker.com/blog/security-is-a-developer-experience-problem-rooted-in-our-foundations/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/security-is-a-developer-experience-problem-rooted-in-our-foundations/</guid>
+      <pubDate>Fri, 09 Jan 2026 16:11:53 +0000</pubDate>
+      <source>Docker Blog</source>
+    </item>
+    <item>
       <title>Why AI is pushing developers toward typed languages</title>
       <link>https://github.blog/ai-and-ml/llms/why-ai-is-pushing-developers-toward-typed-languages/</link>
       <guid isPermaLink="true">https://github.blog/ai-and-ml/llms/why-ai-is-pushing-developers-toward-typed-languages/</guid>
       <pubDate>Thu, 08 Jan 2026 22:25:54 +0000</pubDate>
       <source>GitHub Blog</source>
+    </item>
+    <item>
+      <title>Automating AWS SDK for Java v1 to v2 Upgrades with AWS Transform</title>
+      <link>https://aws.amazon.com/blogs/devops/automating-aws-sdk-for-java-v1-to-v2-upgrades-with-aws-transform/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/automating-aws-sdk-for-java-v1-to-v2-upgrades-with-aws-transform/</guid>
+      <pubDate>Thu, 08 Jan 2026 20:40:13 +0000</pubDate>
+      <source>AWS DevOps Blog</source>
+    </item>
+    <item>
+      <title>Kubernetes v1.35: Mutable PersistentVolume Node Affinity (alpha)</title>
+      <link>https://kubernetes.io/blog/2026/01/08/kubernetes-v1-35-mutable-pv-nodeaffinity/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2026/01/08/kubernetes-v1-35-mutable-pv-nodeaffinity/</guid>
+      <pubDate>Thu, 08 Jan 2026 18:30:00 +0000</pubDate>
+      <source>Kubernetes Blog</source>
+    </item>
+    <item>
+      <title>Kubernetes v1.35: A Better Way to Pass Service Account Tokens to CSI Drivers</title>
+      <link>https://kubernetes.io/blog/2026/01/07/kubernetes-v1-35-csi-sa-tokens-secrets-field-beta/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2026/01/07/kubernetes-v1-35-csi-sa-tokens-secrets-field-beta/</guid>
+      <pubDate>Wed, 07 Jan 2026 18:30:00 +0000</pubDate>
+      <source>Kubernetes Blog</source>
     </item>
     <item>
       <title>The future of secrets and identity management</title>
@@ -43,6 +78,13 @@
       <source>GitHub Changelog</source>
     </item>
     <item>
+      <title>Deterministic AI Testing with Session Recording in cagent</title>
+      <link>https://www.docker.com/blog/deterministic-ai-testing-with-session-recording-in-cagent/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/deterministic-ai-testing-with-session-recording-in-cagent/</guid>
+      <pubDate>Tue, 06 Jan 2026 19:16:04 +0000</pubDate>
+      <source>Docker Blog</source>
+    </item>
+    <item>
       <title>Phishing actors exploit complex routing and misconfigurations to spoof domains</title>
       <link>https://www.microsoft.com/en-us/security/blog/2026/01/06/phishing-actors-exploit-complex-routing-and-misconfigurations-to-spoof-domains/</link>
       <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/06/phishing-actors-exploit-complex-routing-and-misconfigurations-to-spoof-domains/</guid>
@@ -64,11 +106,39 @@
       <source>HashiCorp Blog</source>
     </item>
     <item>
+      <title>Kubernetes v1.35: Extended Toleration Operators to Support Numeric Comparisons (Alpha)</title>
+      <link>https://kubernetes.io/blog/2026/01/05/kubernetes-v1-35-numeric-toleration-operators/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2026/01/05/kubernetes-v1-35-numeric-toleration-operators/</guid>
+      <pubDate>Mon, 05 Jan 2026 18:30:00 +0000</pubDate>
+      <source>Kubernetes Blog</source>
+    </item>
+    <item>
+      <title>Kubernetes v1.35: New level of efficiency with in-place Pod restart</title>
+      <link>https://kubernetes.io/blog/2026/01/02/kubernetes-v1-35-restart-all-containers/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2026/01/02/kubernetes-v1-35-restart-all-containers/</guid>
+      <pubDate>Fri, 02 Jan 2026 18:30:00 +0000</pubDate>
+      <source>Kubernetes Blog</source>
+    </item>
+    <item>
       <title>Reduced pricing for GitHub-hosted runners usage</title>
       <link>https://github.blog/changelog/2026-01-01-reduced-pricing-for-github-hosted-runners-usage</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-01-01-reduced-pricing-for-github-hosted-runners-usage</guid>
       <pubDate>Thu, 01 Jan 2026 17:00:03 +0000</pubDate>
       <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Kubernetes 1.35: Enhanced Debugging with Versioned z-pages APIs</title>
+      <link>https://kubernetes.io/blog/2025/12/31/kubernetes-v1-35-structured-zpages/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/12/31/kubernetes-v1-35-structured-zpages/</guid>
+      <pubDate>Wed, 31 Dec 2025 18:30:00 +0000</pubDate>
+      <source>Kubernetes Blog</source>
+    </item>
+    <item>
+      <title>Kubernetes v1.35: Watch Based Route Reconciliation in the Cloud Controller Manager</title>
+      <link>https://kubernetes.io/blog/2025/12/30/kubernetes-v1-35-watch-based-route-reconciliation-in-ccm/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/12/30/kubernetes-v1-35-watch-based-route-reconciliation-in-ccm/</guid>
+      <pubDate>Tue, 30 Dec 2025 18:30:00 +0000</pubDate>
+      <source>Kubernetes Blog</source>
     </item>
     <item>
       <title>Agentic AI, MCP, and spec-driven development: Top blog posts of 2025</title>
@@ -83,6 +153,13 @@
       <guid isPermaLink="true">https://github.blog/security/vulnerability-research/bugs-that-survive-the-heat-of-continuous-fuzzing/</guid>
       <pubDate>Mon, 29 Dec 2025 22:01:14 +0000</pubDate>
       <source>GitHub Blog</source>
+    </item>
+    <item>
+      <title>Kubernetes v1.35: Introducing Workload Aware Scheduling</title>
+      <link>https://kubernetes.io/blog/2025/12/29/kubernetes-v1-35-introducing-workload-aware-scheduling/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/12/29/kubernetes-v1-35-introducing-workload-aware-scheduling/</guid>
+      <pubDate>Mon, 29 Dec 2025 18:30:00 +0000</pubDate>
+      <source>Kubernetes Blog</source>
     </item>
     <item>
       <title>New year, new cloud strategy: 5 shifts cloud leaders will be making in 2026</title>
@@ -106,6 +183,13 @@
       <source>GitHub Blog</source>
     </item>
     <item>
+      <title>Kubernetes v1.35: Fine-grained Supplemental Groups Control Graduates to GA</title>
+      <link>https://kubernetes.io/blog/2025/12/23/kubernetes-v1-35-fine-grained-supplementalgroups-control-ga/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/12/23/kubernetes-v1-35-fine-grained-supplementalgroups-control-ga/</guid>
+      <pubDate>Tue, 23 Dec 2025 18:30:00 +0000</pubDate>
+      <source>Kubernetes Blog</source>
+    </item>
+    <item>
       <title>5 podcast episodes to help you build with confidence in 2026</title>
       <link>https://github.blog/open-source/maintainers/5-podcast-episodes-to-help-you-build-with-confidence-in-2026/</link>
       <guid isPermaLink="true">https://github.blog/open-source/maintainers/5-podcast-episodes-to-help-you-build-with-confidence-in-2026/</guid>
@@ -125,6 +209,13 @@
       <guid isPermaLink="true">https://github.blog/changelog/2025-12-22-improved-performance-for-github-actions-workflows-page</guid>
       <pubDate>Mon, 22 Dec 2025 21:40:47 +0000</pubDate>
       <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Kubernetes v1.35: Kubelet Configuration Drop-in Directory Graduates to GA</title>
+      <link>https://kubernetes.io/blog/2025/12/22/kubernetes-v1-35-kubelet-config-drop-in-directory-ga/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/12/22/kubernetes-v1-35-kubelet-config-drop-in-directory-ga/</guid>
+      <pubDate>Mon, 22 Dec 2025 18:30:00 +0000</pubDate>
+      <source>Kubernetes Blog</source>
     </item>
     <item>
       <title>Infrastructure as demos: A Terraform-selling platform, built on Terraform</title>
@@ -148,11 +239,39 @@
       <source>Microsoft DevOps Blog</source>
     </item>
     <item>
+      <title>Sign OCI containers &amp; other artifacts using Sigstore Cosign &amp; CircleCI OIDC tokens</title>
+      <link>https://circleci.com/blog/sign-oci-containers-and-other-artifacts-using-sigstore-cosign/</link>
+      <guid isPermaLink="true">https://circleci.com/blog/sign-oci-containers-and-other-artifacts-using-sigstore-cosign/</guid>
+      <pubDate>Mon, 22 Dec 2025 07:00:00 +0000</pubDate>
+      <source>CircleCI Blog</source>
+    </item>
+    <item>
+      <title>Avoiding Zombie Cluster Members When Upgrading to etcd v3.6</title>
+      <link>https://kubernetes.io/blog/2025/12/21/preventing-etcd-zombies/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/12/21/preventing-etcd-zombies/</guid>
+      <pubDate>Sun, 21 Dec 2025 00:00:00 +0000</pubDate>
+      <source>Kubernetes Blog</source>
+    </item>
+    <item>
+      <title>2025 Recap: The Year Software Development Changed Shape</title>
+      <link>https://www.docker.com/blog/2025-recap-the-year-software-development-changed-shape/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/2025-recap-the-year-software-development-changed-shape/</guid>
+      <pubDate>Sat, 20 Dec 2025 13:45:00 +0000</pubDate>
+      <source>Docker Blog</source>
+    </item>
+    <item>
       <title>You can now require reviews before closing Dependabot alerts with delegated alert dismissal</title>
       <link>https://github.blog/changelog/2025-12-19-you-can-now-require-reviews-before-closing-dependabot-alerts-with-delegated-alert-dismissal</link>
       <guid isPermaLink="true">https://github.blog/changelog/2025-12-19-you-can-now-require-reviews-before-closing-dependabot-alerts-with-delegated-alert-dismissal</guid>
       <pubDate>Fri, 19 Dec 2025 20:15:36 +0000</pubDate>
       <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Kubernetes 1.35: In-Place Pod Resize Graduates to Stable</title>
+      <link>https://kubernetes.io/blog/2025/12/19/kubernetes-v1-35-in-place-pod-resize-ga/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/12/19/kubernetes-v1-35-in-place-pod-resize-ga/</guid>
+      <pubDate>Fri, 19 Dec 2025 18:30:00 +0000</pubDate>
+      <source>Kubernetes Blog</source>
     </item>
     <item>
       <title>Work item linking for Advanced Security alerts now available</title>
@@ -176,6 +295,20 @@
       <source>Microsoft Entra Blog</source>
     </item>
     <item>
+      <title>From the Captain’s Chair: Igor Aleksandrov</title>
+      <link>https://www.docker.com/blog/from-the-captains-chair-igor-aleksandrov/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/from-the-captains-chair-igor-aleksandrov/</guid>
+      <pubDate>Fri, 19 Dec 2025 14:00:00 +0000</pubDate>
+      <source>Docker Blog</source>
+    </item>
+    <item>
+      <title>Docker Hardened Images: Security Independently Validated by SRLabs</title>
+      <link>https://www.docker.com/blog/docker-hardened-images-security-independently-validated-by-srlabs/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/docker-hardened-images-security-independently-validated-by-srlabs/</guid>
+      <pubDate>Fri, 19 Dec 2025 13:50:24 +0000</pubDate>
+      <source>Docker Blog</source>
+    </item>
+    <item>
       <title>CodeQL 2.23.7 and 2.23.8 add security queries for Go and Rust</title>
       <link>https://github.blog/changelog/2025-12-18-codeql-2-23-7-and-2-23-8-add-security-queries-for-go-and-rust</link>
       <guid isPermaLink="true">https://github.blog/changelog/2025-12-18-codeql-2-23-7-and-2-23-8-add-security-queries-for-go-and-rust</guid>
@@ -195,6 +328,13 @@
       <guid isPermaLink="true">https://www.hashicorp.com/blog/terraform-stacks-explained</guid>
       <pubDate>Thu, 18 Dec 2025 19:00:00 +0000</pubDate>
       <source>HashiCorp Blog</source>
+    </item>
+    <item>
+      <title>Kubernetes v1.35: Job Managed By Goes GA</title>
+      <link>https://kubernetes.io/blog/2025/12/18/kubernetes-v1-35-job-managedby-for-jobs-goes-ga/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/12/18/kubernetes-v1-35-job-managedby-for-jobs-goes-ga/</guid>
+      <pubDate>Thu, 18 Dec 2025 18:30:00 +0000</pubDate>
+      <source>Kubernetes Blog</source>
     </item>
     <item>
       <title>Assigning GitHub Copilot to an issue now adds you as an assignee</title>
@@ -225,11 +365,25 @@
       <source>Microsoft Security</source>
     </item>
     <item>
+      <title>How Kaltura Accelerates CI/CD Using AWS CodeBuild-hosted Runners</title>
+      <link>https://aws.amazon.com/blogs/devops/how-kaltura-accelerates-ci-cd-using-aws-codebuild-hosted-runners/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/how-kaltura-accelerates-ci-cd-using-aws-codebuild-hosted-runners/</guid>
+      <pubDate>Thu, 18 Dec 2025 14:54:45 +0000</pubDate>
+      <source>AWS DevOps Blog</source>
+    </item>
+    <item>
       <title>Continuing HCP Terraform’s enhanced free tier experience</title>
       <link>https://www.hashicorp.com/blog/continuing-hcp-terraform-s-enhanced-free-tier-experience</link>
       <guid isPermaLink="true">https://www.hashicorp.com/blog/continuing-hcp-terraform-s-enhanced-free-tier-experience</guid>
       <pubDate>Wed, 17 Dec 2025 21:00:00 +0000</pubDate>
       <source>HashiCorp Blog</source>
+    </item>
+    <item>
+      <title>Kubernetes v1.35: Timbernetes (The World Tree Release)</title>
+      <link>https://kubernetes.io/blog/2025/12/17/kubernetes-v1-35-release/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/12/17/kubernetes-v1-35-release/</guid>
+      <pubDate>Wed, 17 Dec 2025 18:30:00 +0000</pubDate>
+      <source>Kubernetes Blog</source>
     </item>
     <item>
       <title>Access Fabric: A modern approach to identity and network access</title>
@@ -246,6 +400,13 @@
       <source>Microsoft Entra Blog</source>
     </item>
     <item>
+      <title>A Safer Container Ecosystem with Docker: Free Docker Hardened Images</title>
+      <link>https://www.docker.com/blog/docker-hardened-images-for-every-developer/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/docker-hardened-images-for-every-developer/</guid>
+      <pubDate>Wed, 17 Dec 2025 13:55:11 +0000</pubDate>
+      <source>Docker Blog</source>
+    </item>
+    <item>
       <title>Synced passkeys and high assurance account recovery</title>
       <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/synced-passkeys-and-high-assurance-account-recovery/ba-p/3627343</link>
       <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/synced-passkeys-and-high-assurance-account-recovery/ba-p/3627343</guid>
@@ -260,11 +421,32 @@
       <source>HashiCorp Blog</source>
     </item>
     <item>
+      <title>Develop and deploy voice AI apps using Docker</title>
+      <link>https://www.docker.com/blog/develop-deploy-voice-ai-apps/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/develop-deploy-voice-ai-apps/</guid>
+      <pubDate>Tue, 16 Dec 2025 14:00:00 +0000</pubDate>
+      <source>Docker Blog</source>
+    </item>
+    <item>
       <title>Azure Boards integration with GitHub Copilot</title>
       <link>https://devblogs.microsoft.com/devops/github-copilot-for-azure-boards/</link>
       <guid isPermaLink="true">https://devblogs.microsoft.com/devops/github-copilot-for-azure-boards/</guid>
       <pubDate>Tue, 16 Dec 2025 13:17:08 +0000</pubDate>
       <source>Microsoft DevOps Blog</source>
+    </item>
+    <item>
+      <title>Docker Model Runner now included with the Universal Blue family</title>
+      <link>https://www.docker.com/blog/docker-model-runner-universal-blue/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/docker-model-runner-universal-blue/</guid>
+      <pubDate>Tue, 16 Dec 2025 12:24:50 +0000</pubDate>
+      <source>Docker Blog</source>
+    </item>
+    <item>
+      <title>The ROI of autonomous validation: How to unlock $1.8M in engineering value</title>
+      <link>https://circleci.com/blog/roi-of-autonomous-validation/</link>
+      <guid isPermaLink="true">https://circleci.com/blog/roi-of-autonomous-validation/</guid>
+      <pubDate>Tue, 16 Dec 2025 11:50:00 +0000</pubDate>
+      <source>CircleCI Blog</source>
     </item>
     <item>
       <title>Defending against the CVE-2025-55182 (React2Shell) vulnerability in React Server Components</title>
@@ -281,11 +463,25 @@
       <source>Microsoft Security</source>
     </item>
     <item>
+      <title>Private MCP Catalogs and the Path to Composable Enterprise AI</title>
+      <link>https://www.docker.com/blog/private-mcp-catalogs-oci-composable-enterprise-ai/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/private-mcp-catalogs-oci-composable-enterprise-ai/</guid>
+      <pubDate>Sun, 14 Dec 2025 14:00:00 +0000</pubDate>
+      <source>Docker Blog</source>
+    </item>
+    <item>
       <title>The future of AI-powered software optimization (and how it can help your team)</title>
       <link>https://github.blog/news-insights/policy-news-and-insights/the-future-of-ai-powered-software-optimization-and-how-it-can-help-your-team/</link>
       <guid isPermaLink="true">https://github.blog/news-insights/policy-news-and-insights/the-future-of-ai-powered-software-optimization-and-how-it-can-help-your-team/</guid>
       <pubDate>Fri, 12 Dec 2025 20:43:37 +0000</pubDate>
       <source>GitHub Blog</source>
+    </item>
+    <item>
+      <title>Highlights from AWS re:Invent: Supercharging Kiro with Docker Sandboxes and MCP Catalog</title>
+      <link>https://www.docker.com/blog/aws-reinvent-kiro-docker-sandboxes-mcp-catalog/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/aws-reinvent-kiro-docker-sandboxes-mcp-catalog/</guid>
+      <pubDate>Fri, 12 Dec 2025 20:22:05 +0000</pubDate>
+      <source>Docker Blog</source>
     </item>
     <item>
       <title>HashiCorp year in review 2025: Lessons in simplifying the cloud</title>
