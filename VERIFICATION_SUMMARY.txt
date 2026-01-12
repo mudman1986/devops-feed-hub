@@ -1,0 +1,60 @@
+================================================================================
+BUG #2 VERIFICATION SUMMARY - Feed Ordering Fix
+================================================================================
+
+STATUS: ✅ VERIFIED - BUG IS FIXED
+
+Test Date: January 12, 2026
+Test Environment: Desktop Chrome 1920x1080
+Test Type: Automated Playwright UI Test
+
+--------------------------------------------------------------------------------
+TEST SCENARIO
+--------------------------------------------------------------------------------
+Created test data with:
+- Test Feed A: 0 articles (empty feed)
+- Test Feed B: 5 articles
+- Test Feed C: 5 articles
+
+--------------------------------------------------------------------------------
+VERIFICATION STEPS
+--------------------------------------------------------------------------------
+
+1. ✅ Initial Page Load
+   - Feed order: B (5), C (5), A (0)
+   - Empty feed correctly at bottom
+
+2. ✅ Mark Articles as Read
+   - Marked 2 articles in Feed B, 1 in Feed C
+   - Feed order: B (3 unread), C (4 unread), A (0)
+   - Empty feed stayed at bottom
+
+3. ✅ Click "Reset Read Articles" Button
+   - All articles unmarked as read
+   - Feed order: B (5), C (5), A (0)
+   - **CRITICAL: Empty feed STAYED at bottom (bug is fixed!)**
+
+4. ✅ Change Timeframe to "Last 7 days"
+   - Feed order: B (5), C (5), A (0)
+   - Empty feed maintained position at bottom
+
+--------------------------------------------------------------------------------
+KEY FINDING
+--------------------------------------------------------------------------------
+
+BUG #2 FIXED: Empty feeds now correctly stay at the bottom after clicking
+"Reset Read Articles" button. Previously, they would jump back to the top.
+
+--------------------------------------------------------------------------------
+EVIDENCE
+--------------------------------------------------------------------------------
+
+Screenshots available at:
+1. Initial Load: https://github.com/user-attachments/assets/c4a3867b-fcbc-4ff3-88c6-2ccffaae0ecd
+2. After Marking Read: https://github.com/user-attachments/assets/1a184245-6a68-49f9-a89c-460ad22033f1
+3. After Reset: https://github.com/user-attachments/assets/6f9e1d17-c874-41f9-b88e-60ee65940c84
+4. After Timeframe Change: https://github.com/user-attachments/assets/96beaad9-30b6-4ea8-b8f4-1cf967c329d7
+
+Full verification report: VERIFICATION_REPORT.md
+
+================================================================================

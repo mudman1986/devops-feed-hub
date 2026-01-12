@@ -5,17 +5,53 @@ const READ_ARTICLES_KEY = "readArticles";
 
 // List of valid experimental themes
 const VALID_EXPERIMENTAL_THEMES = [
-  "midnight-blue", "midnight-blue-light", "forest-green", "forest-green-light",
-  "purple-haze", "purple-haze-light", "sunset-orange", "sunset-orange-light",
-  "ocean-deep", "ocean-deep-light", "rose-gold", "rose-gold-light",
-  "arctic-blue", "pastel-dream", "high-contrast-dark", "high-contrast-light",
-  "monochrome", "solarized-dark", "solarized-light", "dracula", "dracula-light",
-  "minimalist", "terminal", "magazine", "glassmorphism", "retro", "futuristic",
-  "newspaper", "compact", "sidebar-first", "vertical-cards",
-  "horizontal-scroll", "masonry-grid", "split-screen", "giant-text",
-  "tiny-text", "floating-panels", "center-stage", "bottom-heavy",
-  "diagonal-split", "circular-nav", "hero-featured", "grid-cards",
-  "sidebar-magazine", "top-strip", "list-dense", "timeline-vertical",
+  "midnight-blue",
+  "midnight-blue-light",
+  "forest-green",
+  "forest-green-light",
+  "purple-haze",
+  "purple-haze-light",
+  "sunset-orange",
+  "sunset-orange-light",
+  "ocean-deep",
+  "ocean-deep-light",
+  "rose-gold",
+  "rose-gold-light",
+  "arctic-blue",
+  "pastel-dream",
+  "high-contrast-dark",
+  "high-contrast-light",
+  "monochrome",
+  "solarized-dark",
+  "solarized-light",
+  "dracula",
+  "dracula-light",
+  "minimalist",
+  "terminal",
+  "magazine",
+  "glassmorphism",
+  "retro",
+  "futuristic",
+  "newspaper",
+  "compact",
+  "sidebar-first",
+  "vertical-cards",
+  "horizontal-scroll",
+  "masonry-grid",
+  "split-screen",
+  "giant-text",
+  "tiny-text",
+  "floating-panels",
+  "center-stage",
+  "bottom-heavy",
+  "diagonal-split",
+  "circular-nav",
+  "hero-featured",
+  "grid-cards",
+  "sidebar-magazine",
+  "top-strip",
+  "list-dense",
+  "timeline-vertical",
   "carousel-featured",
 ];
 
@@ -27,11 +63,16 @@ const htmlElement = document.documentElement;
 let savedTheme = "dark";
 try {
   const experimentalTheme = localStorage.getItem("experimentalTheme");
-  if (experimentalTheme && VALID_EXPERIMENTAL_THEMES.includes(experimentalTheme)) {
+  if (
+    experimentalTheme &&
+    VALID_EXPERIMENTAL_THEMES.includes(experimentalTheme)
+  ) {
     savedTheme = experimentalTheme;
   } else {
     if (experimentalTheme) {
-      console.warn(`Invalid experimental theme: ${experimentalTheme}. Using default.`);
+      console.warn(
+        `Invalid experimental theme: ${experimentalTheme}. Using default.`,
+      );
       localStorage.removeItem("experimentalTheme");
     }
     savedTheme = localStorage.getItem("theme") || "dark";
@@ -350,7 +391,6 @@ function updateStats() {
 // Mark as Read functionality - constants defined at top of file
 
 // Store original feed order for restoration when read status is reset
-const originalFeedOrder = [];
 
 // Get read articles from localStorage
 function getReadArticles() {
@@ -609,37 +649,6 @@ function reorderFeedsByUnreadStatus(feedsData) {
 }
 
 // Store and restore original feed order
-function captureOriginalFeedOrder() {
-  if (originalFeedOrder.length > 0) return; // Already captured
-
-  const feedSections = document.querySelectorAll(".feed-section");
-  feedSections.forEach((section) => {
-    originalFeedOrder.push({
-      element: section,
-      name: section.querySelector("h3")?.textContent.trim() || "",
-    });
-  });
-}
-
-function restoreOriginalFeedOrder() {
-  if (originalFeedOrder.length === 0) return;
-
-  const parent = originalFeedOrder[0].element.parentNode;
-  if (!parent) return;
-
-  const footer = parent.querySelector(".footer");
-
-  // Restore original order
-  originalFeedOrder.forEach((feedData) => {
-    if (footer) {
-      parent.insertBefore(feedData.element, footer);
-    } else {
-      parent.appendChild(feedData.element);
-    }
-  });
-}
-
-// Set up UI controls for mark as read feature
 function setupMarkAsReadControls() {
   // Set up Clear All Read button
   const resetButton = document.getElementById("reset-read-button");
@@ -680,7 +689,6 @@ function setupMarkAsReadControls() {
 // Initialize mark as read feature
 function initializeMarkAsReadFeature() {
   // Capture original feed order before any modifications
-  captureOriginalFeedOrder();
   initializeReadStatus();
   updateFeedCountsAfterReadFilter();
   setupMarkAsReadControls();

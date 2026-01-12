@@ -238,10 +238,18 @@
                     <option value="dracula">Dracula (Dark)</option>
                   </optgroup>
                   <optgroup label="Color Variations - Light">
-                    <option value="midnight-blue-light">Midnight Blue (Light)</option>
-                    <option value="forest-green-light">Forest Green (Light)</option>
-                    <option value="purple-haze-light">Purple Haze (Light)</option>
-                    <option value="sunset-orange-light">Sunset Orange (Light)</option>
+                    <option value="midnight-blue-light">
+                      Midnight Blue (Light)
+                    </option>
+                    <option value="forest-green-light">
+                      Forest Green (Light)
+                    </option>
+                    <option value="purple-haze-light">
+                      Purple Haze (Light)
+                    </option>
+                    <option value="sunset-orange-light">
+                      Sunset Orange (Light)
+                    </option>
                     <option value="ocean-deep-light">Ocean Deep (Light)</option>
                     <option value="rose-gold-light">Rose Gold (Light)</option>
                     <option value="solarized-light">Solarized (Light)</option>
@@ -266,27 +274,63 @@
                     <option value="compact">Compact - Dense Information</option>
                   </optgroup>
                   <optgroup label="Layout Redesigns - Radical Structure">
-                    <option value="sidebar-first">Sidebar First - Dominant Left Panel</option>
-                    <option value="vertical-cards">Vertical Cards - Huge Stacked Cards</option>
-                    <option value="horizontal-scroll">Horizontal Scroll - Side-to-Side</option>
-                    <option value="masonry-grid">Masonry Grid - Pinterest Style</option>
-                    <option value="split-screen">Split Screen - 50/50 Division</option>
-                    <option value="giant-text">Giant Text - Enormous Typography</option>
+                    <option value="sidebar-first">
+                      Sidebar First - Dominant Left Panel
+                    </option>
+                    <option value="vertical-cards">
+                      Vertical Cards - Huge Stacked Cards
+                    </option>
+                    <option value="horizontal-scroll">
+                      Horizontal Scroll - Side-to-Side
+                    </option>
+                    <option value="masonry-grid">
+                      Masonry Grid - Pinterest Style
+                    </option>
+                    <option value="split-screen">
+                      Split Screen - 50/50 Division
+                    </option>
+                    <option value="giant-text">
+                      Giant Text - Enormous Typography
+                    </option>
                     <option value="tiny-text">Tiny Text - Ultra Compact</option>
-                    <option value="floating-panels">Floating Panels - Tilted Cards</option>
-                    <option value="center-stage">Center Stage - Single Column Centered</option>
-                    <option value="bottom-heavy">Bottom Heavy - Sidebar at Bottom</option>
-                    <option value="diagonal-split">Diagonal Split - Angled Division</option>
-                    <option value="circular-nav">Circular Nav - Round Articles</option>
+                    <option value="floating-panels">
+                      Floating Panels - Tilted Cards
+                    </option>
+                    <option value="center-stage">
+                      Center Stage - Single Column Centered
+                    </option>
+                    <option value="bottom-heavy">
+                      Bottom Heavy - Sidebar at Bottom
+                    </option>
+                    <option value="diagonal-split">
+                      Diagonal Split - Angled Division
+                    </option>
+                    <option value="circular-nav">
+                      Circular Nav - Round Articles
+                    </option>
                   </optgroup>
                   <optgroup label="News Site Inspired">
-                    <option value="hero-featured">Hero Featured - NYT/WashPost Style</option>
-                    <option value="grid-cards">Grid Cards - BBC/Bloomberg Style</option>
-                    <option value="sidebar-magazine">Sidebar Magazine - The Hill Style</option>
-                    <option value="top-strip">Top Strip - Drudge Report Style</option>
-                    <option value="list-dense">List Dense - Reddit/HN Style</option>
-                    <option value="timeline-vertical">Timeline Vertical - Medium/Substack Style</option>
-                    <option value="carousel-featured">Carousel Featured - Auto-Rotating Stories</option>
+                    <option value="hero-featured">
+                      Hero Featured - NYT/WashPost Style
+                    </option>
+                    <option value="grid-cards">
+                      Grid Cards - BBC/Bloomberg Style
+                    </option>
+                    <option value="sidebar-magazine">
+                      Sidebar Magazine - The Hill Style
+                    </option>
+                    <option value="top-strip">
+                      Top Strip - Drudge Report Style
+                    </option>
+                    <option value="list-dense">
+                      List Dense - Reddit/HN Style
+                    </option>
+                    <option value="timeline-vertical">
+                      Timeline Vertical - Medium/Substack Style
+                    </option>
+                    <option value="carousel-featured">
+                      Carousel Featured - Auto-Rotating Stories
+                    </option>
                   </optgroup>
                 </select>
               </div>
@@ -511,11 +555,19 @@
 
         // Helper function to apply theme
         function applyTheme(themeName) {
-          if (themeName && !VALID_EXPERIMENTAL_THEMES.includes(themeName) && themeName !== "dark" && themeName !== "light") {
+          if (
+            themeName &&
+            !VALID_EXPERIMENTAL_THEMES.includes(themeName) &&
+            themeName !== "dark" &&
+            themeName !== "light"
+          ) {
             console.warn(`Invalid theme: ${themeName}. Falling back to dark.`);
             themeName = "dark";
           }
-          document.documentElement.setAttribute("data-theme", themeName || "dark");
+          document.documentElement.setAttribute(
+            "data-theme",
+            themeName || "dark",
+          );
         }
 
         function loadSettings() {
@@ -539,7 +591,10 @@
               experimentalThemeSelect.value = experimentalTheme;
 
             // Apply experimental theme if set and valid
-            if (experimentalTheme && VALID_EXPERIMENTAL_THEMES.includes(experimentalTheme)) {
+            if (
+              experimentalTheme &&
+              VALID_EXPERIMENTAL_THEMES.includes(experimentalTheme)
+            ) {
               applyTheme(experimentalTheme);
             }
           } catch (e) {
@@ -598,10 +653,15 @@
                 if (experimentalTheme) {
                   // Save experimental theme if valid
                   if (VALID_EXPERIMENTAL_THEMES.includes(experimentalTheme)) {
-                    localStorage.setItem("experimentalTheme", experimentalTheme);
+                    localStorage.setItem(
+                      "experimentalTheme",
+                      experimentalTheme,
+                    );
                     applyTheme(experimentalTheme);
                   } else {
-                    console.warn(`Invalid experimental theme: ${experimentalTheme}`);
+                    console.warn(
+                      `Invalid experimental theme: ${experimentalTheme}`,
+                    );
                   }
                 } else {
                   // Clear experimental theme and revert to standard theme

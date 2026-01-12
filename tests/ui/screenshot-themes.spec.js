@@ -11,7 +11,7 @@ const themes = [
   { name: "forest-green", category: "color" },
   { name: "purple-haze", category: "color" },
   { name: "dracula", category: "color" },
-  
+
   // Layout redesigns
   { name: "minimalist", category: "layout" },
   { name: "terminal", category: "layout" },

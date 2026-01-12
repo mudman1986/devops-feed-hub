@@ -165,9 +165,7 @@ test.describe("Experimental Themes", () => {
       await page.goto("/settings.html");
 
       // First set an experimental theme
-      await page
-        .locator("#experimental-theme-setting")
-        .selectOption("retro");
+      await page.locator("#experimental-theme-setting").selectOption("retro");
 
       // Then select "None"
       await page.locator("#experimental-theme-setting").selectOption("");
@@ -232,9 +230,7 @@ test.describe("Experimental Themes", () => {
       test(`should apply ${theme} color theme`, async ({ page }) => {
         await page.goto("/settings.html");
 
-        await page
-          .locator("#experimental-theme-setting")
-          .selectOption(theme);
+        await page.locator("#experimental-theme-setting").selectOption(theme);
 
         const dataTheme = await page.evaluate(() =>
           document.documentElement.getAttribute("data-theme"),
@@ -261,9 +257,7 @@ test.describe("Experimental Themes", () => {
       test(`should apply ${theme} layout theme`, async ({ page }) => {
         await page.goto("/settings.html");
 
-        await page
-          .locator("#experimental-theme-setting")
-          .selectOption(theme);
+        await page.locator("#experimental-theme-setting").selectOption(theme);
 
         const dataTheme = await page.evaluate(() =>
           document.documentElement.getAttribute("data-theme"),
@@ -326,9 +320,7 @@ test.describe("Theme Application Across All Pages", () => {
   test("should apply experimental theme on index page", async ({ page }) => {
     // Set theme via settings
     await page.goto("/settings.html");
-    await page
-      .locator("#experimental-theme-setting")
-      .selectOption(testTheme);
+    await page.locator("#experimental-theme-setting").selectOption(testTheme);
 
     // Navigate to index
     await page.goto("/");
@@ -343,9 +335,7 @@ test.describe("Theme Application Across All Pages", () => {
   test("should apply experimental theme on feed page", async ({ page }) => {
     // Set theme via settings
     await page.goto("/settings.html");
-    await page
-      .locator("#experimental-theme-setting")
-      .selectOption(testTheme);
+    await page.locator("#experimental-theme-setting").selectOption(testTheme);
 
     // Navigate to a feed page
     await page.goto("/feed-test-feed-a.html");
@@ -360,9 +350,7 @@ test.describe("Theme Application Across All Pages", () => {
   test("should apply experimental theme on summary page", async ({ page }) => {
     // Set theme via settings
     await page.goto("/settings.html");
-    await page
-      .locator("#experimental-theme-setting")
-      .selectOption(testTheme);
+    await page.locator("#experimental-theme-setting").selectOption(testTheme);
 
     // Navigate to summary page (if it exists)
     const response = await page.goto("/summary.html");
@@ -381,9 +369,7 @@ test.describe("Theme Application Across All Pages", () => {
   }) => {
     // Set theme
     await page.goto("/settings.html");
-    await page
-      .locator("#experimental-theme-setting")
-      .selectOption(testTheme);
+    await page.locator("#experimental-theme-setting").selectOption(testTheme);
 
     // Navigate through different pages
     await page.goto("/");
@@ -423,7 +409,9 @@ test.describe("Light Mode Variants", () => {
 
     for (const theme of lightThemes.slice(0, 3)) {
       // Test first 3
-      const option = page.locator(`#experimental-theme-setting option[value="${theme}"]`);
+      const option = page.locator(
+        `#experimental-theme-setting option[value="${theme}"]`,
+      );
       await expect(option).toBeAttached();
     }
   });
