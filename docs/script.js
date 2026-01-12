@@ -3,14 +3,39 @@
 // Mark as Read constants
 const READ_ARTICLES_KEY = "readArticles";
 
+// List of valid experimental themes
+const VALID_EXPERIMENTAL_THEMES = [
+  "midnight-blue", "midnight-blue-light", "forest-green", "forest-green-light",
+  "purple-haze", "purple-haze-light", "sunset-orange", "sunset-orange-light",
+  "ocean-deep", "ocean-deep-light", "rose-gold", "rose-gold-light",
+  "arctic-blue", "pastel-dream", "high-contrast-dark", "high-contrast-light",
+  "monochrome", "solarized-dark", "solarized-light", "dracula", "dracula-light",
+  "minimalist", "terminal", "magazine", "glassmorphism", "retro", "futuristic",
+  "newspaper", "compact", "sidebar-first", "vertical-cards",
+  "horizontal-scroll", "masonry-grid", "split-screen", "giant-text",
+  "tiny-text", "floating-panels", "center-stage", "bottom-heavy",
+  "diagonal-split", "circular-nav", "hero-featured", "grid-cards",
+  "sidebar-magazine", "top-strip", "list-dense", "timeline-vertical",
+  "carousel-featured",
+];
+
 // Theme toggle functionality
 const themeToggle = document.getElementById("theme-toggle");
 const htmlElement = document.documentElement;
 
-// Get saved theme preference or default to dark
+// Check for experimental theme first, then fall back to standard theme
 let savedTheme = "dark";
 try {
-  savedTheme = localStorage.getItem("theme") || "dark";
+  const experimentalTheme = localStorage.getItem("experimentalTheme");
+  if (experimentalTheme && VALID_EXPERIMENTAL_THEMES.includes(experimentalTheme)) {
+    savedTheme = experimentalTheme;
+  } else {
+    if (experimentalTheme) {
+      console.warn(`Invalid experimental theme: ${experimentalTheme}. Using default.`);
+      localStorage.removeItem("experimentalTheme");
+    }
+    savedTheme = localStorage.getItem("theme") || "dark";
+  }
 } catch (e) {
   // localStorage might be unavailable (privacy mode, quota exceeded, etc.)
   console.warn("localStorage unavailable, using default theme:", e);
@@ -27,6 +52,8 @@ themeToggle.addEventListener("click", () => {
 
   try {
     localStorage.setItem("theme", newTheme);
+    // Clear experimental theme when toggling standard theme
+    localStorage.removeItem("experimentalTheme");
   } catch (e) {
     // localStorage might be unavailable, theme will reset on reload
     console.warn("Unable to save theme preference:", e);

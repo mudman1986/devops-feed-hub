@@ -162,6 +162,179 @@
                 </select>
               </div>
             </div>
+          </div>
+
+          <h3 class="settings-subsection-title">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+              <polyline points="2 17 12 22 22 17"></polyline>
+              <polyline points="2 12 12 17 22 12"></polyline>
+            </svg>
+            Experimental Themes
+          </h3>
+          <div class="settings-group experimental-themes">
+            <div class="experimental-disclaimer">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                style="flex-shrink: 0; margin-top: 0.125rem"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+              <p>
+                <strong>Work in Progress:</strong> These experimental themes are
+                under active development and may change or be removed without
+                notice. They represent different visual and layout approaches to
+                explore alternative UI/UX designs.
+              </p>
+            </div>
+
+            <div class="settings-item">
+              <div class="settings-item-label">
+                <label for="experimental-theme-setting"
+                  >Experimental Theme</label
+                >
+                <p class="settings-item-description">
+                  Try out new color schemes and completely redesigned layouts
+                </p>
+              </div>
+              <div class="settings-item-control">
+                <select id="experimental-theme-setting" class="settings-select">
+                  <option value="">None (Use Standard Theme)</option>
+                  <optgroup label="Color Variations - Dark">
+                    <option value="midnight-blue">Midnight Blue (Dark)</option>
+                    <option value="forest-green">Forest Green (Dark)</option>
+                    <option value="purple-haze">Purple Haze (Dark)</option>
+                    <option value="sunset-orange">Sunset Orange (Dark)</option>
+                    <option value="ocean-deep">Ocean Deep (Dark)</option>
+                    <option value="rose-gold">Rose Gold (Dark)</option>
+                    <option value="arctic-blue">Arctic Blue (Light)</option>
+                    <option value="pastel-dream">Pastel Dream (Light)</option>
+                    <option value="high-contrast-dark">
+                      High Contrast (Dark)
+                    </option>
+                    <option value="high-contrast-light">
+                      High Contrast (Light)
+                    </option>
+                    <option value="monochrome">Monochrome (Dark)</option>
+                    <option value="solarized-dark">Solarized (Dark)</option>
+                    <option value="dracula">Dracula (Dark)</option>
+                  </optgroup>
+                  <optgroup label="Color Variations - Light">
+                    <option value="midnight-blue-light">
+                      Midnight Blue (Light)
+                    </option>
+                    <option value="forest-green-light">
+                      Forest Green (Light)
+                    </option>
+                    <option value="purple-haze-light">
+                      Purple Haze (Light)
+                    </option>
+                    <option value="sunset-orange-light">
+                      Sunset Orange (Light)
+                    </option>
+                    <option value="ocean-deep-light">Ocean Deep (Light)</option>
+                    <option value="rose-gold-light">Rose Gold (Light)</option>
+                    <option value="solarized-light">Solarized (Light)</option>
+                    <option value="dracula-light">Dracula (Light)</option>
+                  </optgroup>
+                  <optgroup label="Layout Redesigns - Styling">
+                    <option value="minimalist">
+                      Minimalist - Clean & Simple
+                    </option>
+                    <option value="terminal">
+                      Terminal - Monospace Command-Line
+                    </option>
+                    <option value="magazine">
+                      Magazine - Multi-Column Editorial
+                    </option>
+                    <option value="glassmorphism">
+                      Glassmorphism - Frosted Glass
+                    </option>
+                    <option value="retro">Retro - 80s/90s Inspired</option>
+                    <option value="futuristic">Futuristic - Sci-Fi Neon</option>
+                    <option value="newspaper">Newspaper - Classic Print</option>
+                    <option value="compact">Compact - Dense Information</option>
+                  </optgroup>
+                  <optgroup label="Layout Redesigns - Radical Structure">
+                    <option value="sidebar-first">
+                      Sidebar First - Dominant Left Panel
+                    </option>
+                    <option value="vertical-cards">
+                      Vertical Cards - Huge Stacked Cards
+                    </option>
+                    <option value="horizontal-scroll">
+                      Horizontal Scroll - Side-to-Side
+                    </option>
+                    <option value="masonry-grid">
+                      Masonry Grid - Pinterest Style
+                    </option>
+                    <option value="split-screen">
+                      Split Screen - 50/50 Division
+                    </option>
+                    <option value="giant-text">
+                      Giant Text - Enormous Typography
+                    </option>
+                    <option value="tiny-text">Tiny Text - Ultra Compact</option>
+                    <option value="floating-panels">
+                      Floating Panels - Tilted Cards
+                    </option>
+                    <option value="center-stage">
+                      Center Stage - Single Column Centered
+                    </option>
+                    <option value="bottom-heavy">
+                      Bottom Heavy - Sidebar at Bottom
+                    </option>
+                    <option value="diagonal-split">
+                      Diagonal Split - Angled Division
+                    </option>
+                    <option value="circular-nav">
+                      Circular Nav - Round Articles
+                    </option>
+                  </optgroup>
+                  <optgroup label="News Site Inspired">
+                    <option value="hero-featured">
+                      Hero Featured - NYT/WashPost Style
+                    </option>
+                    <option value="grid-cards">
+                      Grid Cards - BBC/Bloomberg Style
+                    </option>
+                    <option value="sidebar-magazine">
+                      Sidebar Magazine - The Hill Style
+                    </option>
+                    <option value="top-strip">
+                      Top Strip - Drudge Report Style
+                    </option>
+                    <option value="list-dense">
+                      List Dense - Reddit/HN Style
+                    </option>
+                    <option value="timeline-vertical">
+                      Timeline Vertical - Medium/Substack Style
+                    </option>
+                    <option value="carousel-featured">
+                      Carousel Featured - Auto-Rotating Stories
+                    </option>
+                  </optgroup>
+                </select>
+              </div>
+            </div>
             <div class="settings-item">
               <div class="settings-item-label">
                 <label for="view-setting">View Mode</label>
@@ -328,6 +501,75 @@
           loadRSSFeedLinks();
         }
 
+        // List of valid experimental themes
+        const VALID_EXPERIMENTAL_THEMES = [
+          "midnight-blue",
+          "midnight-blue-light",
+          "forest-green",
+          "forest-green-light",
+          "purple-haze",
+          "purple-haze-light",
+          "sunset-orange",
+          "sunset-orange-light",
+          "ocean-deep",
+          "ocean-deep-light",
+          "rose-gold",
+          "rose-gold-light",
+          "arctic-blue",
+          "pastel-dream",
+          "high-contrast-dark",
+          "high-contrast-light",
+          "monochrome",
+          "solarized-dark",
+          "solarized-light",
+          "dracula",
+          "dracula-light",
+          "minimalist",
+          "terminal",
+          "magazine",
+          "glassmorphism",
+          "retro",
+          "futuristic",
+          "newspaper",
+          "compact",
+          "sidebar-first",
+          "vertical-cards",
+          "horizontal-scroll",
+          "masonry-grid",
+          "split-screen",
+          "giant-text",
+          "tiny-text",
+          "floating-panels",
+          "center-stage",
+          "bottom-heavy",
+          "diagonal-split",
+          "circular-nav",
+          "hero-featured",
+          "grid-cards",
+          "sidebar-magazine",
+          "top-strip",
+          "list-dense",
+          "timeline-vertical",
+          "carousel-featured",
+        ];
+
+        // Helper function to apply theme
+        function applyTheme(themeName) {
+          if (
+            themeName &&
+            !VALID_EXPERIMENTAL_THEMES.includes(themeName) &&
+            themeName !== "dark" &&
+            themeName !== "light"
+          ) {
+            console.warn(`Invalid theme: ${themeName}. Falling back to dark.`);
+            themeName = "dark";
+          }
+          document.documentElement.setAttribute(
+            "data-theme",
+            themeName || "dark",
+          );
+        }
+
         function loadSettings() {
           // Load theme
           try {
@@ -336,6 +578,27 @@
             if (themeSelect) themeSelect.value = theme;
           } catch (e) {
             console.warn("Unable to load theme setting:", e);
+          }
+
+          // Load experimental theme
+          try {
+            const experimentalTheme =
+              localStorage.getItem("experimentalTheme") || "";
+            const experimentalThemeSelect = document.getElementById(
+              "experimental-theme-setting",
+            );
+            if (experimentalThemeSelect)
+              experimentalThemeSelect.value = experimentalTheme;
+
+            // Apply experimental theme if set and valid
+            if (
+              experimentalTheme &&
+              VALID_EXPERIMENTAL_THEMES.includes(experimentalTheme)
+            ) {
+              applyTheme(experimentalTheme);
+            }
+          } catch (e) {
+            console.warn("Unable to load experimental theme setting:", e);
           }
 
           // Load view
@@ -366,9 +629,48 @@
               const theme = e.target.value;
               try {
                 localStorage.setItem("theme", theme);
-                document.documentElement.setAttribute("data-theme", theme);
+                // Clear experimental theme when standard theme is selected
+                localStorage.removeItem("experimentalTheme");
+                const experimentalThemeSelect = document.getElementById(
+                  "experimental-theme-setting",
+                );
+                if (experimentalThemeSelect) experimentalThemeSelect.value = "";
+                applyTheme(theme);
               } catch (err) {
                 console.warn("Unable to save theme:", err);
+              }
+            });
+          }
+
+          // Experimental theme setting
+          const experimentalThemeSelect = document.getElementById(
+            "experimental-theme-setting",
+          );
+          if (experimentalThemeSelect) {
+            experimentalThemeSelect.addEventListener("change", (e) => {
+              const experimentalTheme = e.target.value;
+              try {
+                if (experimentalTheme) {
+                  // Save experimental theme if valid
+                  if (VALID_EXPERIMENTAL_THEMES.includes(experimentalTheme)) {
+                    localStorage.setItem(
+                      "experimentalTheme",
+                      experimentalTheme,
+                    );
+                    applyTheme(experimentalTheme);
+                  } else {
+                    console.warn(
+                      `Invalid experimental theme: ${experimentalTheme}`,
+                    );
+                  }
+                } else {
+                  // Clear experimental theme and revert to standard theme
+                  localStorage.removeItem("experimentalTheme");
+                  const theme = localStorage.getItem("theme") || "dark";
+                  applyTheme(theme);
+                }
+              } catch (err) {
+                console.warn("Unable to save experimental theme:", err);
               }
             });
           }

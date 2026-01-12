@@ -146,7 +146,7 @@ GitHub Gists are simple, shareable code snippets or documents that can be public
 1. **OAuth 2.0 Security**: Uses industry-standard OAuth 2.0 protocol
 2. **Encrypted Transport**: All communication over HTTPS (TLS 1.2+)
 3. **Token-based Auth**: Access tokens instead of passwords
-4. **Scoped Permissions**: OAuth scope limits to `gist` access only (no repository access)
+4. **Scoped Permissions**: OAuth scope limits to `gist` access only (no repo access)
 5. **User Control**: Users can revoke app access anytime from GitHub settings
 6. **Private by Default**: Gists created as private, only accessible by owner
 7. **GitHub's Infrastructure**: Benefits from GitHub's security measures and compliance
@@ -213,6 +213,8 @@ GitHub Gists are simple, shareable code snippets or documents that can be public
 | Cost                    | Free           | $10-15/month      | Free              |
 
 ---
+
+#### OAuth Provider Option B: Sign in with Apple
 
 #### OAuth Provider Option B: Sign in with Apple
 
@@ -325,7 +327,7 @@ async function saveSettings(userId, settings) {
 
 **Architecture for Sign in with Apple:**
 
-```text
+```
 ┌─────────────┐
 │   Browser   │
 │  (Frontend) │
@@ -398,7 +400,7 @@ async function saveSettings(userId, settings) {
    - Cost: $99/year for individual developer
    - Required even for web-only Sign in with Apple
 7. **Domain Verification**: Must verify domain ownership
-   - Add verification file to site
+   - Add verification file to website
    - Required for production use
 
 ❌ **Limitations:**
@@ -454,7 +456,7 @@ For future iOS app development, Sign in with Apple provides advantages:
 
 **Implementation Roadmap for iOS App:**
 
-```text
+```
 Phase 1: Web App with Sign in with Apple
 ├─ Implement OAuth flow
 ├─ Set up Cloudflare Workers/Supabase backend
@@ -571,7 +573,7 @@ async function loadSettings(userId) {
 
 **Flow for GitHub OAuth:**
 
-```text
+```
 1. User clicks "Sign in with GitHub"
 2. Redirect to GitHub OAuth
 3. GitHub returns access token
@@ -581,7 +583,7 @@ async function loadSettings(userId) {
 
 **Flow for Sign in with Apple:**
 
-```text
+```
 1. User clicks "Sign in with Apple"
 2. Redirect to Apple ID authentication
 3. Apple returns ID token + user identifier
@@ -592,7 +594,7 @@ async function loadSettings(userId) {
 
 **Unified Architecture Diagram:**
 
-```text
+```
                     ┌─────────────────┐
                     │   Browser App   │
                     │   (Frontend)    │
@@ -715,7 +717,7 @@ async function loadSettings(userId) {
 
 **Architecture**:
 
-```text
+```
 ┌─────────────┐
 │   Browser   │
 │  (Frontend) │
@@ -906,7 +908,7 @@ Based on your requirements (no user account management, interest in OAuth soluti
 
 ### Recommended Implementation Order
 
-```text
+```
 Month 1-2:  GitHub OAuth + Gist
             └─ Launch with developer sync
 
@@ -977,7 +979,7 @@ You mentioned not wanting to manage user accounts. Here's why OAuth (Solution 1)
 - **XSS Protection**: Prevent code injection attacks
 - **CORS**: Configure properly for any backend APIs
 
-### Security for OAuth Solutions (Solution 1)
+### For OAuth Solutions (Solution 1)
 
 - Use `state` parameter to prevent CSRF attacks
 - Store tokens in `sessionStorage`, not `localStorage`
@@ -988,7 +990,7 @@ You mentioned not wanting to manage user accounts. Here's why OAuth (Solution 1)
 - Implement Content Security Policy (CSP)
 - Handle token revocation gracefully
 
-### Security for Backend Solutions (Solution 2)
+### For Backend Solutions (Solution 2)
 
 - Use bcrypt/argon2 for password hashing (min 12 rounds)
 - Implement rate limiting on API endpoints
@@ -1029,7 +1031,7 @@ If implementing any sync solution, consider migration for existing users:
 - Test network failures and recovery
 - Test data synchronization conflicts
 
-### Testing for OAuth Solutions (Solution 1)
+### For OAuth Solutions (Solution 1)
 
 - Test GitHub OAuth flow in different browsers
 - Test Sign in with Apple flow on iOS, macOS, web
@@ -1040,7 +1042,7 @@ If implementing any sync solution, consider migration for existing users:
 - Test provider account deletion (what happens to settings)
 - Verify OAuth security (state parameter, CSRF protection)
 
-### Testing for Backend Solutions (Solution 2)
+### For Backend Solutions (Solution 2)
 
 - Load testing for API endpoints
 - Test database connection pooling
