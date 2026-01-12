@@ -5,8 +5,15 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 12 Jan 2026 22:04:45 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 12 Jan 2026 23:24:12 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Selectively showing "act on your behalf" warning for GitHub Apps is in public preview</title>
+      <link>https://github.blog/changelog/2026-01-12-selectively-showing-act-on-your-behalf-warning-for-github-apps-is-in-public-preview</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-01-12-selectively-showing-act-on-your-behalf-warning-for-github-apps-is-in-public-preview</guid>
+      <pubDate>Mon, 12 Jan 2026 22:16:06 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
     <item>
       <title>Controlling who can request apps for your organization is now generally available</title>
       <link>https://github.blog/changelog/2026-01-12-controlling-who-can-request-apps-for-your-organization-is-now-generally-available</link>
@@ -468,13 +475,6 @@
       <guid isPermaLink="true">https://kubernetes.io/blog/2025/12/18/kubernetes-v1-35-job-managedby-for-jobs-goes-ga/</guid>
       <pubDate>Thu, 18 Dec 2025 18:30:00 +0000</pubDate>
       <source>Kubernetes Blog</source>
-    </item>
-    <item>
-      <title>Assigning GitHub Copilot to an issue now adds you as an assignee</title>
-      <link>https://github.blog/changelog/2025-12-18-assigning-github-copilot-to-an-issue-now-adds-you-as-an-assignee</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2025-12-18-assigning-github-copilot-to-an-issue-now-adds-you-as-an-assignee</guid>
-      <pubDate>Thu, 18 Dec 2025 17:46:17 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>New Microsoft e-book: 3 reasons point solutions are holding you back</title>

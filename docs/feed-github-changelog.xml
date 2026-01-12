@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml</link>
     <description>Articles from GitHub Changelog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 12 Jan 2026 22:04:45 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 12 Jan 2026 23:24:12 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Selectively showing "act on your behalf" warning for GitHub Apps is in public preview</title>
+      <link>https://github.blog/changelog/2026-01-12-selectively-showing-act-on-your-behalf-warning-for-github-apps-is-in-public-preview</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-01-12-selectively-showing-act-on-your-behalf-warning-for-github-apps-is-in-public-preview</guid>
+      <pubDate>Mon, 12 Jan 2026 22:16:06 +0000</pubDate>
+    </item>
     <item>
       <title>Controlling who can request apps for your organization is now generally available</title>
       <link>https://github.blog/changelog/2026-01-12-controlling-who-can-request-apps-for-your-organization-is-now-generally-available</link>
@@ -60,12 +66,6 @@
       <link>https://github.blog/changelog/2025-12-18-codeql-2-23-7-and-2-23-8-add-security-queries-for-go-and-rust</link>
       <guid isPermaLink="true">https://github.blog/changelog/2025-12-18-codeql-2-23-7-and-2-23-8-add-security-queries-for-go-and-rust</guid>
       <pubDate>Thu, 18 Dec 2025 23:03:15 +0000</pubDate>
-    </item>
-    <item>
-      <title>Assigning GitHub Copilot to an issue now adds you as an assignee</title>
-      <link>https://github.blog/changelog/2025-12-18-assigning-github-copilot-to-an-issue-now-adds-you-as-an-assignee</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2025-12-18-assigning-github-copilot-to-an-issue-now-adds-you-as-an-assignee</guid>
-      <pubDate>Thu, 18 Dec 2025 17:46:17 +0000</pubDate>
     </item>
   </channel>
 </rss>
