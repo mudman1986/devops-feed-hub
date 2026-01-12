@@ -1,7 +1,6 @@
 name: Weekly Refactor
 
 on:
-  push:
   schedule:
     - cron: "0 9 * * 1"
   workflow_dispatch:
@@ -77,7 +76,7 @@ jobs:
                 '- Enhance UI accessibility',
                 '- Increase test coverage',
                 '',
-                '**Rules:**:',
+                '**Rules:**',
                 '- Assign tasks to all available specialized agents in the repository (e.g., UI/UX Specialist, Test Runner, Code Review, etc.)',
                 '- Make minimal surgical changes, run all linters/tests before completing.'
               ].join('\n'),
