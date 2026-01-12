@@ -142,6 +142,23 @@
             </svg>
             <span>RSS Feeds</span>
           </div>
+          <div class="settings-menu-item" data-section="experimental">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+              <polyline points="2 17 12 22 22 17"></polyline>
+              <polyline points="2 12 12 17 22 12"></polyline>
+            </svg>
+            <span>Experimental Themes</span>
+          </div>
         </div>
       </nav>
       <main class="settings-content">
@@ -162,25 +179,115 @@
                 </select>
               </div>
             </div>
+            <div class="settings-item">
+              <div class="settings-item-label">
+                <label for="view-setting">View Mode</label>
+                <p class="settings-item-description">
+                  Choose how articles are displayed
+                </p>
+              </div>
+              <div class="settings-item-control">
+                <select id="view-setting" class="settings-select">
+                  <option value="list">List View</option>
+                  <option value="card">Card View</option>
+                </select>
+              </div>
+            </div>
+            <div class="settings-item">
+              <div class="settings-item-label">
+                <label for="timeframe-setting">Default Time Range</label>
+                <p class="settings-item-description">
+                  Set the default time range for article filtering
+                </p>
+              </div>
+              <div class="settings-item-control">
+                <select id="timeframe-setting" class="settings-select">
+                  <option value="1day">Last 24 hours</option>
+                  <option value="7days">Last 7 days</option>
+                  <option value="30days">Last 30 days</option>
+                </select>
+              </div>
+            </div>
           </div>
+        </section>
 
-          <h3 class="settings-subsection-title">
-            <svg
-              width="20"
-              height="20"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            >
-              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
-              <polyline points="2 17 12 22 22 17"></polyline>
-              <polyline points="2 12 12 17 22 12"></polyline>
-            </svg>
-            Experimental Themes
-          </h3>
+        <section class="settings-section" id="feeds-section">
+          <h2 class="settings-section-title">Feed Selection</h2>
+          <div class="settings-group">
+            <p class="settings-group-description">
+              Select which feeds you want to see. Disabled feeds will be hidden
+              from the navigation and main view.
+            </p>
+            <div class="settings-item">
+              <div class="settings-item-actions">
+                <button
+                  id="select-all-feeds"
+                  class="settings-action-button"
+                  aria-label="Select all feeds"
+                >
+                  Select All
+                </button>
+                <button
+                  id="deselect-all-feeds"
+                  class="settings-action-button"
+                  aria-label="Deselect all feeds"
+                >
+                  Deselect All
+                </button>
+              </div>
+            </div>
+            <div id="feed-checkboxes" class="feed-checkboxes">
+              <!-- Feed checkboxes will be dynamically inserted here -->
+            </div>
+          </div>
+        </section>
+
+        <section class="settings-section" id="rss-section">
+          <h2 class="settings-section-title">RSS Feeds</h2>
+          <div class="settings-group">
+            <p class="settings-group-description">
+              Subscribe to RSS feeds to get updates in your favorite RSS reader.
+            </p>
+            <div class="settings-item">
+              <div class="settings-item-label">
+                <label>All Articles</label>
+                <p class="settings-item-description">
+                  Get all articles from all feeds in one RSS feed
+                </p>
+              </div>
+              <div class="settings-item-control">
+                <a
+                  href="feed.xml"
+                  class="settings-button"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M4 11a9 9 0 0 1 9 9"></path>
+                    <path d="M4 4a16 16 0 0 1 16 16"></path>
+                    <circle cx="5" cy="19" r="1"></circle>
+                  </svg>
+                  Subscribe to All
+                </a>
+              </div>
+            </div>
+            <div id="rss-feed-links" class="rss-feed-links">
+              <!-- Individual RSS feed links will be dynamically inserted here -->
+            </div>
+          </div>
+        </section>
+
+        <section class="settings-section" id="experimental-section">
+          <h2 class="settings-section-title">Experimental Themes</h2>
           <div class="settings-group experimental-themes">
             <div class="experimental-disclaimer">
               <svg
@@ -334,110 +441,6 @@
                   </optgroup>
                 </select>
               </div>
-            </div>
-            <div class="settings-item">
-              <div class="settings-item-label">
-                <label for="view-setting">View Mode</label>
-                <p class="settings-item-description">
-                  Choose how articles are displayed
-                </p>
-              </div>
-              <div class="settings-item-control">
-                <select id="view-setting" class="settings-select">
-                  <option value="list">List View</option>
-                  <option value="card">Card View</option>
-                </select>
-              </div>
-            </div>
-            <div class="settings-item">
-              <div class="settings-item-label">
-                <label for="timeframe-setting">Default Time Range</label>
-                <p class="settings-item-description">
-                  Set the default time range for article filtering
-                </p>
-              </div>
-              <div class="settings-item-control">
-                <select id="timeframe-setting" class="settings-select">
-                  <option value="1day">Last 24 hours</option>
-                  <option value="7days">Last 7 days</option>
-                  <option value="30days">Last 30 days</option>
-                </select>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section class="settings-section" id="feeds-section">
-          <h2 class="settings-section-title">Feed Selection</h2>
-          <div class="settings-group">
-            <p class="settings-group-description">
-              Select which feeds you want to see. Disabled feeds will be hidden
-              from the navigation and main view.
-            </p>
-            <div class="settings-item">
-              <div class="settings-item-actions">
-                <button
-                  id="select-all-feeds"
-                  class="settings-action-button"
-                  aria-label="Select all feeds"
-                >
-                  Select All
-                </button>
-                <button
-                  id="deselect-all-feeds"
-                  class="settings-action-button"
-                  aria-label="Deselect all feeds"
-                >
-                  Deselect All
-                </button>
-              </div>
-            </div>
-            <div id="feed-checkboxes" class="feed-checkboxes">
-              <!-- Feed checkboxes will be dynamically inserted here -->
-            </div>
-          </div>
-        </section>
-
-        <section class="settings-section" id="rss-section">
-          <h2 class="settings-section-title">RSS Feeds</h2>
-          <div class="settings-group">
-            <p class="settings-group-description">
-              Subscribe to RSS feeds to get updates in your favorite RSS reader.
-            </p>
-            <div class="settings-item">
-              <div class="settings-item-label">
-                <label>All Articles</label>
-                <p class="settings-item-description">
-                  Get all articles from all feeds in one RSS feed
-                </p>
-              </div>
-              <div class="settings-item-control">
-                <a
-                  href="feed.xml"
-                  class="settings-button"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <svg
-                    width="16"
-                    height="16"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                  >
-                    <path d="M4 11a9 9 0 0 1 9 9"></path>
-                    <path d="M4 4a16 16 0 0 1 16 16"></path>
-                    <circle cx="5" cy="19" r="1"></circle>
-                  </svg>
-                  Subscribe to All
-                </a>
-              </div>
-            </div>
-            <div id="rss-feed-links" class="rss-feed-links">
-              <!-- Individual RSS feed links will be dynamically inserted here -->
             </div>
           </div>
         </section>
