@@ -5,8 +5,15 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 12 Jan 2026 20:34:33 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 12 Jan 2026 21:01:18 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Controlling who can request apps for your organization is now generally available</title>
+      <link>https://github.blog/changelog/2026-01-12-controlling-who-can-request-apps-for-your-organization-is-now-generally-available</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-01-12-controlling-who-can-request-apps-for-your-organization-is-now-generally-available</guid>
+      <pubDate>Mon, 12 Jan 2026 20:19:15 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
     <item>
       <title>Want better AI outputs? Try context engineering.</title>
       <link>https://github.blog/ai-and-ml/generative-ai/want-better-ai-outputs-try-context-engineering/</link>
@@ -467,13 +474,6 @@
       <link>https://github.blog/changelog/2025-12-18-assigning-github-copilot-to-an-issue-now-adds-you-as-an-assignee</link>
       <guid isPermaLink="true">https://github.blog/changelog/2025-12-18-assigning-github-copilot-to-an-issue-now-adds-you-as-an-assignee</guid>
       <pubDate>Thu, 18 Dec 2025 17:46:17 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>GitHub Advanced Security trials now available for more GitHub Enterprise customers</title>
-      <link>https://github.blog/changelog/2025-12-18-github-advanced-security-trials-now-available-for-more-github-enterprise-customers</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2025-12-18-github-advanced-security-trials-now-available-for-more-github-enterprise-customers</guid>
-      <pubDate>Thu, 18 Dec 2025 17:36:42 +0000</pubDate>
       <source>GitHub Changelog</source>
     </item>
     <item>
