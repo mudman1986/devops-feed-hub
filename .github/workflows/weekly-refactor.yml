@@ -77,7 +77,9 @@ jobs:
                 '- Enhance UI accessibility',
                 '- Increase test coverage',
                 '',
-                '**Rules:** Make minimal surgical changes, run all linters/tests before completing.'
+                '**Rules:**:',
+                '- Assign tasks to all available specialized agents in the repository (e.g., UI/UX Specialist, Test Runner, Code Review, etc.)',
+                '- Make minimal surgical changes, run all linters/tests before completing.'
               ].join('\n'),
               assigneeIds: [copilotBotId]
             });
