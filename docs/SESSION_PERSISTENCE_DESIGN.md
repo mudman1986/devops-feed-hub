@@ -977,7 +977,7 @@ You mentioned not wanting to manage user accounts. Here's why OAuth (Solution 1)
 - **XSS Protection**: Prevent code injection attacks
 - **CORS**: Configure properly for any backend APIs
 
-### For OAuth Solutions (Solution 1)
+### Security for OAuth Solutions (Solution 1)
 
 - Use `state` parameter to prevent CSRF attacks
 - Store tokens in `sessionStorage`, not `localStorage`
@@ -988,7 +988,7 @@ You mentioned not wanting to manage user accounts. Here's why OAuth (Solution 1)
 - Implement Content Security Policy (CSP)
 - Handle token revocation gracefully
 
-### For Backend Solutions (Solution 2)
+### Security for Backend Solutions (Solution 2)
 
 - Use bcrypt/argon2 for password hashing (min 12 rounds)
 - Implement rate limiting on API endpoints
@@ -1029,7 +1029,11 @@ If implementing any sync solution, consider migration for existing users:
 - Test network failures and recovery
 - Test data synchronization conflicts
 
+<<<<<<< HEAD
 ### Testing OAuth Solutions (Solution 1)
+=======
+### Testing for OAuth Solutions (Solution 1)
+>>>>>>> origin/main
 
 - Test GitHub OAuth flow in different browsers
 - Test Sign in with Apple flow on iOS, macOS, web
@@ -1040,7 +1044,11 @@ If implementing any sync solution, consider migration for existing users:
 - Test provider account deletion (what happens to settings)
 - Verify OAuth security (state parameter, CSRF protection)
 
+<<<<<<< HEAD
 ### Testing Backend Solutions (Solution 2)
+=======
+### Testing for Backend Solutions (Solution 2)
+>>>>>>> origin/main
 
 - Load testing for API endpoints
 - Test database connection pooling
