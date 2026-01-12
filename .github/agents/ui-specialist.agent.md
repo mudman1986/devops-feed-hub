@@ -33,6 +33,7 @@ You are responsible for reviewing, refining, and iterating on the user interface
 ## Critical Viewports
 
 Test and optimize UI for the following device sizes:
+
 - Desktop: 1920x1080, 1366x768
 - Tablet: 768x1024
 - Mobile: 375x667, 414x896
@@ -51,10 +52,10 @@ Test and optimize UI for the following device sizes:
 1. **Run local server**: `npx http-server docs -p 8080`
 2. **Manually review the UI** on all critical viewports and themes
 3. **Take before/after screenshots** and note observations
-5. **Make focused improvements** to HTML, CSS, or UI code
-6. **Test again** on all viewports and themes
-7. **Run UI tests**: `npm run test:ui`
-8. **Document iteration**: Add notes or screenshots to pull request or issue documenting changes and rationale
+4. **Make focused improvements** to HTML, CSS, or UI code
+5. **Test again** on all viewports and themes
+6. **Run UI tests**: `npm run test:ui`
+7. **Document iteration**: Add notes or screenshots to pull request or issue documenting changes and rationale
 
 ## Rules
 
