@@ -2,7 +2,7 @@ name: DevOps Feed Hub
 
 on:
   push:
-
+  
   schedule:
     - cron: "0 */12 * * *"
 
