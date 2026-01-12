@@ -400,8 +400,7 @@ function resetAllReadArticles() {
   try {
     localStorage.removeItem(READ_ARTICLES_KEY);
     initializeReadStatus();
-    // Restore original feed order when reset
-    restoreOriginalFeedOrder();
+    // Don't restore original order - reorder based on current state
     updateFeedCountsAfterReadFilter();
   } catch (e) {
     console.warn("Unable to reset read articles:", e);
@@ -523,6 +522,7 @@ function updateFeedCountsAfterReadFilter() {
     // Store feed data for reordering
     feedsData.push({
       element: section,
+      count,
       unreadCount,
       name: section.querySelector("h3")?.textContent.trim() || "",
     });
@@ -572,7 +572,7 @@ function reorderArticlesInFeed(articleList, articles) {
   });
 }
 
-// Reorder feeds: feeds with unread articles first, then feeds with all read articles
+// Reorder feeds: feeds with unread articles first, then feeds with all read articles, then empty feeds
 function reorderFeedsByUnreadStatus(feedsData) {
   if (feedsData.length === 0) return;
 
@@ -584,16 +584,19 @@ function reorderFeedsByUnreadStatus(feedsData) {
 
   const footer = parent.querySelector(".footer");
 
-  // Separate feeds into two groups based on unread articles
+  // Separate feeds into three groups based on unread articles and total count
   const feedsWithUnread = feedsData
     .filter((f) => f.unreadCount > 0)
     .sort((a, b) => a.name.localeCompare(b.name));
   const feedsAllRead = feedsData
-    .filter((f) => f.unreadCount === 0)
+    .filter((f) => f.unreadCount === 0 && (f.count || 0) > 0)
+    .sort((a, b) => a.name.localeCompare(b.name));
+  const emptyFeeds = feedsData
+    .filter((f) => (f.count || 0) === 0)
     .sort((a, b) => a.name.localeCompare(b.name));
 
-  // Combine: feeds with unread first, then all-read feeds
-  const orderedFeeds = [...feedsWithUnread, ...feedsAllRead];
+  // Combine: feeds with unread first, then all-read feeds, then empty feeds
+  const orderedFeeds = [...feedsWithUnread, ...feedsAllRead, ...emptyFeeds];
 
   // Reorder DOM elements - insert before footer to keep footer at bottom
   orderedFeeds.forEach((feedData) => {
