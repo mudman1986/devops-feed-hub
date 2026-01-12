@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-gitlab-blog.xml</link>
     <description>Articles from GitLab Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-gitlab-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 12 Jan 2026 21:07:09 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 12 Jan 2026 21:18:36 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Strengthening GitLab.com security: Mandatory multi-factor authentication</title>
