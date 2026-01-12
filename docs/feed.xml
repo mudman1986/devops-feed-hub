@@ -5,8 +5,22 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 12 Jan 2026 12:25:45 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 12 Jan 2026 20:17:14 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Hybrid cloud, explained: What it is, what it isn’t, and why having a plan matters in 2026</title>
+      <link>https://www.hashicorp.com/blog/hybrid-cloud-explained-what-it-is-what-it-isn-t-and-why-having-a-plan-matters</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/hybrid-cloud-explained-what-it-is-what-it-isn-t-and-why-having-a-plan-matters</guid>
+      <pubDate>Mon, 12 Jan 2026 17:00:00 +0000</pubDate>
+      <source>HashiCorp Blog</source>
+    </item>
+    <item>
+      <title>Deprecation of user to organization account transformation</title>
+      <link>https://github.blog/changelog/2026-01-12-deprecation-of-user-to-organization-account-transformation</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-01-12-deprecation-of-user-to-organization-account-transformation</guid>
+      <pubDate>Mon, 12 Jan 2026 16:26:48 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
     <item>
       <title>Light waves, rising tides, and drifting ships: Game Off 2025 winners</title>
       <link>https://github.blog/open-source/gaming/light-waves-rising-tides-and-drifting-ships-game-off-2025-winners/</link>
@@ -453,13 +467,6 @@
       <link>https://github.blog/changelog/2025-12-18-github-advanced-security-trials-now-available-for-more-github-enterprise-customers</link>
       <guid isPermaLink="true">https://github.blog/changelog/2025-12-18-github-advanced-security-trials-now-available-for-more-github-enterprise-customers</guid>
       <pubDate>Thu, 18 Dec 2025 17:36:42 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>GitHub Copilot now supports Agent Skills</title>
-      <link>https://github.blog/changelog/2025-12-18-github-copilot-now-supports-agent-skills</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2025-12-18-github-copilot-now-supports-agent-skills</guid>
-      <pubDate>Thu, 18 Dec 2025 17:26:18 +0000</pubDate>
       <source>GitHub Changelog</source>
     </item>
     <item>
