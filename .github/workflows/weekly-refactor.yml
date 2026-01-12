@@ -1,47 +1,85 @@
 name: Weekly Refactor
 
 on:
+  push:
   schedule:
     - cron: "0 9 * * 1"
   workflow_dispatch:
 
 permissions:
-  issues: write
   contents: read
+  issues: write
 
 jobs:
   create-refactor-issue:
     runs-on: ubuntu-latest
     steps:
-      - name: Create refactor issue
+      - name: Create Copilot-assigned refactor issue via GraphQL
         uses: actions/github-script@v8
         with:
+          github-token: ${{ secrets.COPILOT_ASSIGN_PAT }}
           script: |
-            const issueBody = [
-              'Review the codebase and make improvements:',
-              '',
-              '- Fix failing tests (superlinter, ci, ui tests)',
-              '- Refactor duplicate code',
-              '- Address security vulnerabilities',
-              '- Improve code maintainability and performance',
-              '- Enhance UI accessibility',
-              '- Increase test coverage',
-              '',
-              '**Rules:** Make minimal surgical changes, run all linters/tests before completing.'
-            ].join('\n');
-            const issue = await github.rest.issues.create({
+            // Step 1: Get repo ID and Copilot bot ID
+            const repoInfo = await github.graphql(`
+              query($owner: String!, $repo: String!) {
+                repository(owner: $owner, name: $repo) {
+                  id
+                  suggestedActors(capabilities: [CAN_BE_ASSIGNED], first: 100) {
+                    nodes { login __typename ... on Bot { id } ... on User { id } }
+                  }
+                }
+              }
+            `, {
               owner: context.repo.owner,
               repo: context.repo.repo,
-              title: \`Weekly Refactor - \${new Date().toISOString().split('T')[0]}\`,
-              body: issueBody,
-              labels: ['refactor', 'automated', 'copilot']
             });
 
-            console.log(\`Created issue #\${issue.data.number}\`);
+            const repoId = repoInfo.repository.id;
+            const copilotBot = repoInfo.repository.suggestedActors.nodes.find(
+              n => n.login === "copilot-swe-agent" && n.__typename === "Bot"
+            );
+            if (!copilotBot) {
+              console.log("Actors found:");
+              repoInfo.repository.suggestedActors.nodes.forEach(n => console.log(JSON.stringify(n)));
+              throw new Error("Copilot bot agent not found in suggestedActors");
+            }
+            const copilotBotId = copilotBot.id;
 
-            await github.rest.issues.createComment({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: issue.data.number,
-              body: '@copilot please handle this refactor task'
+            // Step 2: Create and assign issue to Copilot
+            const res = await github.graphql(`
+              mutation($repositoryId: ID!, $title: String!, $body: String!, $assigneeIds: [ID!]) {
+                createIssue(
+                  input: {
+                    repositoryId: $repositoryId,
+                    title: $title,
+                    body: $body,
+                    assigneeIds: $assigneeIds
+                  }
+                ) {
+                  issue {
+                    id
+                    url
+                    title
+                    assignees(first: 10) { nodes { login } }
+                  }
+                }
+              }
+            `, {
+              repositoryId: repoId,
+              title: `Weekly Refactor - ${new Date().toISOString().split('T')[0]}`,
+              body: [
+                'Review the codebase and make improvements:',
+                '',
+                '- Fix failing tests (superlinter, ci, ui tests)',
+                '- Refactor duplicate code',
+                '- Address security vulnerabilities',
+                '- Improve code maintainability and performance',
+                '- Enhance UI accessibility',
+                '- Increase test coverage',
+                '',
+                '**Rules:** Make minimal surgical changes, run all linters/tests before completing.'
+              ].join('\n'),
+              assigneeIds: [copilotBotId]
             });
+
+            console.log(`Created Copilot-assigned issue: ${res.createIssue.issue.url}`);
