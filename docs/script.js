@@ -3,39 +3,14 @@
 // Mark as Read constants
 const READ_ARTICLES_KEY = "readArticles";
 
-// List of valid experimental themes
-const VALID_EXPERIMENTAL_THEMES = [
-  "midnight-blue", "midnight-blue-light", "forest-green", "forest-green-light",
-  "purple-haze", "purple-haze-light", "sunset-orange", "sunset-orange-light",
-  "ocean-deep", "ocean-deep-light", "rose-gold", "rose-gold-light",
-  "arctic-blue", "pastel-dream", "high-contrast-dark", "high-contrast-light",
-  "monochrome", "solarized-dark", "solarized-light", "dracula", "dracula-light",
-  "minimalist", "terminal", "magazine", "glassmorphism", "retro", "futuristic",
-  "newspaper", "compact", "sidebar-first", "vertical-cards",
-  "horizontal-scroll", "masonry-grid", "split-screen", "giant-text",
-  "tiny-text", "floating-panels", "center-stage", "bottom-heavy",
-  "diagonal-split", "circular-nav", "hero-featured", "grid-cards",
-  "sidebar-magazine", "top-strip", "list-dense", "timeline-vertical",
-  "carousel-featured",
-];
-
 // Theme toggle functionality
 const themeToggle = document.getElementById("theme-toggle");
 const htmlElement = document.documentElement;
 
-// Check for experimental theme first, then fall back to standard theme
+// Get saved theme preference or default to dark
 let savedTheme = "dark";
 try {
-  const experimentalTheme = localStorage.getItem("experimentalTheme");
-  if (experimentalTheme && VALID_EXPERIMENTAL_THEMES.includes(experimentalTheme)) {
-    savedTheme = experimentalTheme;
-  } else {
-    if (experimentalTheme) {
-      console.warn(`Invalid experimental theme: ${experimentalTheme}. Using default.`);
-      localStorage.removeItem("experimentalTheme");
-    }
-    savedTheme = localStorage.getItem("theme") || "dark";
-  }
+  savedTheme = localStorage.getItem("theme") || "dark";
 } catch (e) {
   // localStorage might be unavailable (privacy mode, quota exceeded, etc.)
   console.warn("localStorage unavailable, using default theme:", e);
@@ -52,8 +27,6 @@ themeToggle.addEventListener("click", () => {
 
   try {
     localStorage.setItem("theme", newTheme);
-    // Clear experimental theme when toggling standard theme
-    localStorage.removeItem("experimentalTheme");
   } catch (e) {
     // localStorage might be unavailable, theme will reset on reload
     console.warn("Unable to save theme preference:", e);
@@ -400,7 +373,8 @@ function resetAllReadArticles() {
   try {
     localStorage.removeItem(READ_ARTICLES_KEY);
     initializeReadStatus();
-    // Don't restore original order - reorder based on current state
+    // Restore original feed order when reset
+    restoreOriginalFeedOrder();
     updateFeedCountsAfterReadFilter();
   } catch (e) {
     console.warn("Unable to reset read articles:", e);
@@ -522,7 +496,6 @@ function updateFeedCountsAfterReadFilter() {
     // Store feed data for reordering
     feedsData.push({
       element: section,
-      count,
       unreadCount,
       name: section.querySelector("h3")?.textContent.trim() || "",
     });
@@ -572,7 +545,7 @@ function reorderArticlesInFeed(articleList, articles) {
   });
 }
 
-// Reorder feeds: feeds with unread articles first, then feeds with all read articles, then empty feeds
+// Reorder feeds: feeds with unread articles first, then feeds with all read articles
 function reorderFeedsByUnreadStatus(feedsData) {
   if (feedsData.length === 0) return;
 
@@ -584,19 +557,16 @@ function reorderFeedsByUnreadStatus(feedsData) {
 
   const footer = parent.querySelector(".footer");
 
-  // Separate feeds into three groups based on unread articles and total count
+  // Separate feeds into two groups based on unread articles
   const feedsWithUnread = feedsData
     .filter((f) => f.unreadCount > 0)
     .sort((a, b) => a.name.localeCompare(b.name));
   const feedsAllRead = feedsData
-    .filter((f) => f.unreadCount === 0 && (f.count || 0) > 0)
-    .sort((a, b) => a.name.localeCompare(b.name));
-  const emptyFeeds = feedsData
-    .filter((f) => (f.count || 0) === 0)
+    .filter((f) => f.unreadCount === 0)
     .sort((a, b) => a.name.localeCompare(b.name));
 
-  // Combine: feeds with unread first, then all-read feeds, then empty feeds
-  const orderedFeeds = [...feedsWithUnread, ...feedsAllRead, ...emptyFeeds];
+  // Combine: feeds with unread first, then all-read feeds
+  const orderedFeeds = [...feedsWithUnread, ...feedsAllRead];
 
   // Reorder DOM elements - insert before footer to keep footer at bottom
   orderedFeeds.forEach((feedData) => {
