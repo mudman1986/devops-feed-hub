@@ -5,8 +5,20 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-hashicorp-blog.xml</link>
     <description>Articles from HashiCorp Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-hashicorp-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 13 Jan 2026 00:53:23 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 13 Jan 2026 12:25:02 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>The risks of cybersecurity tool sprawl: Why consolidation is a strategic priority</title>
+      <link>https://www.hashicorp.com/blog/the-risks-of-cybersecurity-tool-sprawl-and-why-we-need-consolidation</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/the-risks-of-cybersecurity-tool-sprawl-and-why-we-need-consolidation</guid>
+      <pubDate>Mon, 12 Jan 2026 23:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>How to start consolidating your cybersecurity tools</title>
+      <link>https://www.hashicorp.com/blog/how-to-start-consolidating-your-cybersecurity-tools</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/how-to-start-consolidating-your-cybersecurity-tools</guid>
+      <pubDate>Mon, 12 Jan 2026 23:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Hybrid cloud, explained: What it is, what it isn’t, and why having a plan matters in 2026</title>
       <link>https://www.hashicorp.com/blog/hybrid-cloud-explained-what-it-is-what-it-isn-t-and-why-having-a-plan-matters</link>
