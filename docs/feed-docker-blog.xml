@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-docker-blog.xml</link>
     <description>Articles from Docker Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-docker-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 13 Jan 2026 12:25:02 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 13 Jan 2026 19:49:15 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Security Is a Developer Experience Problem, Rooted in Our Foundations</title>
@@ -54,12 +54,6 @@
       <link>https://www.docker.com/blog/docker-model-runner-universal-blue/</link>
       <guid isPermaLink="true">https://www.docker.com/blog/docker-model-runner-universal-blue/</guid>
       <pubDate>Tue, 16 Dec 2025 12:24:50 +0000</pubDate>
-    </item>
-    <item>
-      <title>Private MCP Catalogs and the Path to Composable Enterprise AI</title>
-      <link>https://www.docker.com/blog/private-mcp-catalogs-oci-composable-enterprise-ai/</link>
-      <guid isPermaLink="true">https://www.docker.com/blog/private-mcp-catalogs-oci-composable-enterprise-ai/</guid>
-      <pubDate>Sun, 14 Dec 2025 14:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

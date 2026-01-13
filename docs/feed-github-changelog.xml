@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml</link>
     <description>Articles from GitHub Changelog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 13 Jan 2026 12:25:02 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 13 Jan 2026 19:49:15 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>New fine-grained permission for artifact metadata is now generally available</title>
+      <link>https://github.blog/changelog/2026-01-13-new-fine-grained-permission-for-artifact-metadata-is-now-generally-available</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-01-13-new-fine-grained-permission-for-artifact-metadata-is-now-generally-available</guid>
+      <pubDate>Tue, 13 Jan 2026 13:30:02 +0000</pubDate>
+    </item>
     <item>
       <title>Selectively showing "act on your behalf" warning for GitHub Apps is in public preview</title>
       <link>https://github.blog/changelog/2026-01-12-selectively-showing-act-on-your-behalf-warning-for-github-apps-is-in-public-preview</link>
@@ -60,12 +66,6 @@
       <link>https://github.blog/changelog/2025-12-19-copilot-memory-early-access-for-pro-and-pro</link>
       <guid isPermaLink="true">https://github.blog/changelog/2025-12-19-copilot-memory-early-access-for-pro-and-pro</guid>
       <pubDate>Fri, 19 Dec 2025 17:05:54 +0000</pubDate>
-    </item>
-    <item>
-      <title>CodeQL 2.23.7 and 2.23.8 add security queries for Go and Rust</title>
-      <link>https://github.blog/changelog/2025-12-18-codeql-2-23-7-and-2-23-8-add-security-queries-for-go-and-rust</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2025-12-18-codeql-2-23-7-and-2-23-8-add-security-queries-for-go-and-rust</guid>
-      <pubDate>Thu, 18 Dec 2025 23:03:15 +0000</pubDate>
     </item>
   </channel>
 </rss>

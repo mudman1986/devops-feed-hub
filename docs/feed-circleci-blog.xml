@@ -5,8 +5,32 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-circleci-blog.xml</link>
     <description>Articles from CircleCI Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-circleci-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 13 Jan 2026 12:25:02 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 13 Jan 2026 19:49:15 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Deploy a serverless Python API to Scaleway Functions using CircleCI</title>
+      <link>https://circleci.com/blog/deploy-a-serverless-python-api-to-scaleway-functions-using-circleci/</link>
+      <guid isPermaLink="true">https://circleci.com/blog/deploy-a-serverless-python-api-to-scaleway-functions-using-circleci/</guid>
+      <pubDate>Thu, 08 Jan 2026 16:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Finetuning Gemma 3 on private data with Unsloth and CircleCI</title>
+      <link>https://circleci.com/blog/finetuning-gemma-3-on-private-data-with-unsloth/</link>
+      <guid isPermaLink="true">https://circleci.com/blog/finetuning-gemma-3-on-private-data-with-unsloth/</guid>
+      <pubDate>Wed, 07 Jan 2026 16:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Multi-environment DNS automation on Cloudflare using CircleCI and Terraform</title>
+      <link>https://circleci.com/blog/multi-environment-dns-automation-on-cloudflare/</link>
+      <guid isPermaLink="true">https://circleci.com/blog/multi-environment-dns-automation-on-cloudflare/</guid>
+      <pubDate>Tue, 06 Jan 2026 16:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Automating LLM application deployment with BentoML and CircleCI</title>
+      <link>https://circleci.com/blog/automating-llm-application-deployment-with-bentoml-and-circleci/</link>
+      <guid isPermaLink="true">https://circleci.com/blog/automating-llm-application-deployment-with-bentoml-and-circleci/</guid>
+      <pubDate>Mon, 05 Jan 2026 16:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Sign OCI containers &amp; other artifacts using Sigstore Cosign &amp; CircleCI OIDC tokens</title>
       <link>https://circleci.com/blog/sign-oci-containers-and-other-artifacts-using-sigstore-cosign/</link>
