@@ -316,10 +316,10 @@
             <div class="settings-item">
               <div class="settings-item-label">
                 <label for="experimental-theme-setting"
-                  >Experimental Theme</label
+                  >Experimental Color Theme</label
                 >
                 <p class="settings-item-description">
-                  Try out new color schemes and completely redesigned layouts
+                  Try out new color schemes
                 </p>
               </div>
               <div class="settings-item-control">
@@ -362,69 +362,47 @@
                     <option value="solarized-light">Solarized (Light)</option>
                     <option value="dracula-light">Dracula (Light)</option>
                   </optgroup>
-                  <optgroup label="Layout Redesigns - Styling">
+                  <optgroup label="Themed Styles">
                     <option value="minimalist">
                       Minimalist - Clean & Simple
                     </option>
                     <option value="terminal">
                       Terminal - Monospace Command-Line
                     </option>
-                    <option value="magazine">
-                      Magazine - Multi-Column Editorial
-                    </option>
-                    <option value="glassmorphism">
-                      Glassmorphism - Frosted Glass
-                    </option>
                     <option value="retro">Retro - 80s/90s Inspired</option>
                     <option value="futuristic">Futuristic - Sci-Fi Neon</option>
-                    <option value="newspaper">Newspaper - Classic Print</option>
                     <option value="compact">Compact - Dense Information</option>
                   </optgroup>
-                  <optgroup label="Layout Redesigns - Radical Structure">
-                    <option value="sidebar-first">
-                      Sidebar First - Dominant Left Panel
-                    </option>
-                    <option value="vertical-cards">
-                      Vertical Cards - Huge Stacked Cards
-                    </option>
+                </select>
+              </div>
+            </div>
+            <div class="settings-item">
+              <div class="settings-item-label">
+                <label for="experimental-viewmode-setting"
+                  >Experimental View Mode</label
+                >
+                <p class="settings-item-description">
+                  Try out alternative layout arrangements
+                </p>
+              </div>
+              <div class="settings-item-control">
+                <select
+                  id="experimental-viewmode-setting"
+                  class="settings-select"
+                >
+                  <option value="">None (Use Standard View)</option>
+                  <optgroup label="Alternative Layouts">
                     <option value="horizontal-scroll">
                       Horizontal Scroll - Side-to-Side
                     </option>
                     <option value="masonry-grid">
                       Masonry Grid - Pinterest Style
                     </option>
-                    <option value="split-screen">
-                      Split Screen - 50/50 Division
-                    </option>
-                    <option value="giant-text">
-                      Giant Text - Enormous Typography
-                    </option>
-                    <option value="tiny-text">Tiny Text - Ultra Compact</option>
                     <option value="floating-panels">
                       Floating Panels - Tilted Cards
                     </option>
                     <option value="center-stage">
                       Center Stage - Single Column Centered
-                    </option>
-                    <option value="bottom-heavy">
-                      Bottom Heavy - Sidebar at Bottom
-                    </option>
-                    <option value="diagonal-split">
-                      Diagonal Split - Angled Division
-                    </option>
-                    <option value="circular-nav">
-                      Circular Nav - Round Articles
-                    </option>
-                  </optgroup>
-                  <optgroup label="News Site Inspired">
-                    <option value="hero-featured">
-                      Hero Featured - NYT/WashPost Style
-                    </option>
-                    <option value="grid-cards">
-                      Grid Cards - BBC/Bloomberg Style
-                    </option>
-                    <option value="sidebar-magazine">
-                      Sidebar Magazine - The Hill Style
                     </option>
                     <option value="top-strip">
                       Top Strip - Drudge Report Style
@@ -434,9 +412,6 @@
                     </option>
                     <option value="timeline-vertical">
                       Timeline Vertical - Medium/Substack Style
-                    </option>
-                    <option value="carousel-featured">
-                      Carousel Featured - Auto-Rotating Stories
                     </option>
                   </optgroup>
                 </select>
@@ -529,31 +504,16 @@
           "dracula-light",
           "minimalist",
           "terminal",
-          "magazine",
-          "glassmorphism",
           "retro",
           "futuristic",
-          "newspaper",
           "compact",
-          "sidebar-first",
-          "vertical-cards",
           "horizontal-scroll",
           "masonry-grid",
-          "split-screen",
-          "giant-text",
-          "tiny-text",
           "floating-panels",
           "center-stage",
-          "bottom-heavy",
-          "diagonal-split",
-          "circular-nav",
-          "hero-featured",
-          "grid-cards",
-          "sidebar-magazine",
           "top-strip",
           "list-dense",
           "timeline-vertical",
-          "carousel-featured",
         ];
 
         // Helper function to apply theme
@@ -590,15 +550,36 @@
             const experimentalThemeSelect = document.getElementById(
               "experimental-theme-setting",
             );
-            if (experimentalThemeSelect)
-              experimentalThemeSelect.value = experimentalTheme;
+            const experimentalViewmodeSelect = document.getElementById(
+              "experimental-viewmode-setting",
+            );
 
-            // Apply experimental theme if set and valid
-            if (
-              experimentalTheme &&
-              VALID_EXPERIMENTAL_THEMES.includes(experimentalTheme)
-            ) {
-              applyTheme(experimentalTheme);
+            // Determine if the stored value is a theme or viewmode
+            if (experimentalTheme) {
+              const viewModeThemes = [
+                "horizontal-scroll",
+                "masonry-grid",
+                "floating-panels",
+                "center-stage",
+                "top-strip",
+                "list-dense",
+                "timeline-vertical",
+              ];
+
+              if (viewModeThemes.includes(experimentalTheme)) {
+                if (experimentalViewmodeSelect) {
+                  experimentalViewmodeSelect.value = experimentalTheme;
+                }
+              } else {
+                if (experimentalThemeSelect) {
+                  experimentalThemeSelect.value = experimentalTheme;
+                }
+              }
+
+              // Apply experimental theme if set and valid
+              if (VALID_EXPERIMENTAL_THEMES.includes(experimentalTheme)) {
+                applyTheme(experimentalTheme);
+              }
             }
           } catch (e) {
             console.warn("Unable to load experimental theme setting:", e);
@@ -637,7 +618,12 @@
                 const experimentalThemeSelect = document.getElementById(
                   "experimental-theme-setting",
                 );
+                const experimentalViewmodeSelect = document.getElementById(
+                  "experimental-viewmode-setting",
+                );
                 if (experimentalThemeSelect) experimentalThemeSelect.value = "";
+                if (experimentalViewmodeSelect)
+                  experimentalViewmodeSelect.value = "";
                 applyTheme(theme);
               } catch (err) {
                 console.warn("Unable to save theme:", err);
@@ -661,6 +647,11 @@
                       experimentalTheme,
                     );
                     applyTheme(experimentalTheme);
+                    // Clear viewmode dropdown when theme is selected
+                    const viewmodeSelect = document.getElementById(
+                      "experimental-viewmode-setting",
+                    );
+                    if (viewmodeSelect) viewmodeSelect.value = "";
                   } else {
                     console.warn(
                       `Invalid experimental theme: ${experimentalTheme}`,
@@ -674,6 +665,46 @@
                 }
               } catch (err) {
                 console.warn("Unable to save experimental theme:", err);
+              }
+            });
+          }
+
+          // Experimental viewmode setting
+          const experimentalViewmodeSelect = document.getElementById(
+            "experimental-viewmode-setting",
+          );
+          if (experimentalViewmodeSelect) {
+            experimentalViewmodeSelect.addEventListener("change", (e) => {
+              const experimentalViewmode = e.target.value;
+              try {
+                if (experimentalViewmode) {
+                  // Save experimental viewmode if valid
+                  if (
+                    VALID_EXPERIMENTAL_THEMES.includes(experimentalViewmode)
+                  ) {
+                    localStorage.setItem(
+                      "experimentalTheme",
+                      experimentalViewmode,
+                    );
+                    applyTheme(experimentalViewmode);
+                    // Clear theme dropdown when viewmode is selected
+                    const themeSelect = document.getElementById(
+                      "experimental-theme-setting",
+                    );
+                    if (themeSelect) themeSelect.value = "";
+                  } else {
+                    console.warn(
+                      `Invalid experimental viewmode: ${experimentalViewmode}`,
+                    );
+                  }
+                } else {
+                  // Clear experimental viewmode
+                  localStorage.removeItem("experimentalTheme");
+                  const theme = localStorage.getItem("theme") || "dark";
+                  applyTheme(theme);
+                }
+              } catch (err) {
+                console.warn("Unable to save experimental viewmode:", err);
               }
             });
           }
