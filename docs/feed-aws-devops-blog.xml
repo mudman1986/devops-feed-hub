@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-aws-devops-blog.xml</link>
     <description>Articles from AWS DevOps Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-aws-devops-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 14 Jan 2026 12:23:53 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Jan 2026 19:59:38 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Automating AWS SDK for Java v1 to v2 Upgrades with AWS Transform</title>

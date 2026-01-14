@@ -5,8 +5,43 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 14 Jan 2026 12:23:53 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Jan 2026 19:59:38 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>GPT-5.2-Codex is now generally available in GitHub Copilot</title>
+      <link>https://github.blog/changelog/2026-01-14-gpt-5-2-codex-is-now-generally-available-in-github-copilot</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-01-14-gpt-5-2-codex-is-now-generally-available-in-github-copilot</guid>
+      <pubDate>Wed, 14 Jan 2026 17:04:31 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Microsoft named a Leader in IDC MarketScape for Unified AI Governance Platforms</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/01/14/microsoft-named-a-leader-in-idc-marketscape-for-unified-ai-governance-platforms/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/14/microsoft-named-a-leader-in-idc-marketscape-for-unified-ai-governance-platforms/</guid>
+      <pubDate>Wed, 14 Jan 2026 17:00:00 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>Issue #257 - IaCConf, Terraform Secrets Protection, AI DevOps Agents, Pulumi's Multi-IaC Platform, Future of Open Source CDKTF, Terraform Қазақша (Kazakh)</title>
+      <link>https://www.weekly.tf/p/issue-257-iacconf-terraform-secrets-protection-ai-devops-agents-pulumi-s-multi-iac-platform-future-o</link>
+      <guid isPermaLink="true">https://www.weekly.tf/p/issue-257-iacconf-terraform-secrets-protection-ai-devops-agents-pulumi-s-multi-iac-platform-future-o</guid>
+      <pubDate>Wed, 14 Jan 2026 16:00:15 +0000</pubDate>
+      <source>Terraform weekly</source>
+    </item>
+    <item>
+      <title>Inside RedVDS: How a single virtual desktop provider fueled worldwide cybercriminal operations</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/01/14/inside-redvds-how-a-single-virtual-desktop-provider-fueled-worldwide-cybercriminal-operations/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/14/inside-redvds-how-a-single-virtual-desktop-provider-fueled-worldwide-cybercriminal-operations/</guid>
+      <pubDate>Wed, 14 Jan 2026 15:03:31 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>Organization custom properties now generally available</title>
+      <link>https://github.blog/changelog/2026-01-13-organization-custom-properties-now-generally-available</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-01-13-organization-custom-properties-now-generally-available</guid>
+      <pubDate>Tue, 13 Jan 2026 20:48:28 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
     <item>
       <title>Upcoming deprecation of select GitHub Copilot models from Claude, Google, and OpenAI</title>
       <link>https://github.blog/changelog/2026-01-13-upcoming-deprecation-of-select-github-copilot-models-from-claude-and-openai</link>
@@ -435,13 +470,6 @@
       <source>HashiCorp Blog</source>
     </item>
     <item>
-      <title>Control who can request apps for your organization now in public preview</title>
-      <link>https://github.blog/changelog/2025-12-22-control-who-can-request-apps-for-your-organization</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2025-12-22-control-who-can-request-apps-for-your-organization</guid>
-      <pubDate>Mon, 22 Dec 2025 15:02:08 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>The New Test Run Hub is Going Generally Available!</title>
       <link>https://devblogs.microsoft.com/devops/the-new-test-run-hub-is-going-generally-available/</link>
       <guid isPermaLink="true">https://devblogs.microsoft.com/devops/the-new-test-run-hub-is-going-generally-available/</guid>
@@ -468,13 +496,6 @@
       <guid isPermaLink="true">https://www.docker.com/blog/2025-recap-the-year-software-development-changed-shape/</guid>
       <pubDate>Sat, 20 Dec 2025 13:45:00 +0000</pubDate>
       <source>Docker Blog</source>
-    </item>
-    <item>
-      <title>You can now require reviews before closing Dependabot alerts with delegated alert dismissal</title>
-      <link>https://github.blog/changelog/2025-12-19-you-can-now-require-reviews-before-closing-dependabot-alerts-with-delegated-alert-dismissal</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2025-12-19-you-can-now-require-reviews-before-closing-dependabot-alerts-with-delegated-alert-dismissal</guid>
-      <pubDate>Fri, 19 Dec 2025 20:15:36 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>Kubernetes 1.35: In-Place Pod Resize Graduates to Stable</title>
@@ -678,20 +699,6 @@
       <guid isPermaLink="true">https://circleci.com/blog/roi-of-autonomous-validation/</guid>
       <pubDate>Tue, 16 Dec 2025 11:50:00 +0000</pubDate>
       <source>CircleCI Blog</source>
-    </item>
-    <item>
-      <title>Defending against the CVE-2025-55182 (React2Shell) vulnerability in React Server Components</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2025/12/15/defending-against-the-cve-2025-55182-react2shell-vulnerability-in-react-server-components/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2025/12/15/defending-against-the-cve-2025-55182-react2shell-vulnerability-in-react-server-components/</guid>
-      <pubDate>Mon, 15 Dec 2025 19:35:00 +0000</pubDate>
-      <source>Microsoft Security</source>
-    </item>
-    <item>
-      <title>Microsoft named an overall leader in KuppingerCole Leadership Compass for Generative AI Defense</title>
-      <link>https://techcommunity.microsoft.com/blog/microsoft-security-blog/microsoft-named-an-overall-leader-in-kuppingercole-leadership-compass-for-genera/4478093</link>
-      <guid isPermaLink="true">https://techcommunity.microsoft.com/blog/microsoft-security-blog/microsoft-named-an-overall-leader-in-kuppingercole-leadership-compass-for-genera/4478093</guid>
-      <pubDate>Mon, 15 Dec 2025 18:05:00 +0000</pubDate>
-      <source>Microsoft Security</source>
     </item>
   </channel>
 </rss>

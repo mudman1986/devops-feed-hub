@@ -5,8 +5,20 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml</link>
     <description>Articles from Microsoft Security</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 14 Jan 2026 12:23:53 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Jan 2026 19:59:38 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Microsoft named a Leader in IDC MarketScape for Unified AI Governance Platforms</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/01/14/microsoft-named-a-leader-in-idc-marketscape-for-unified-ai-governance-platforms/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/14/microsoft-named-a-leader-in-idc-marketscape-for-unified-ai-governance-platforms/</guid>
+      <pubDate>Wed, 14 Jan 2026 17:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Inside RedVDS: How a single virtual desktop provider fueled worldwide cybercriminal operations</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/01/14/inside-redvds-how-a-single-virtual-desktop-provider-fueled-worldwide-cybercriminal-operations/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/14/inside-redvds-how-a-single-virtual-desktop-provider-fueled-worldwide-cybercriminal-operations/</guid>
+      <pubDate>Wed, 14 Jan 2026 15:03:31 +0000</pubDate>
+    </item>
     <item>
       <title>How Microsoft builds privacy and security to work hand-in-hand</title>
       <link>https://www.microsoft.com/en-us/security/blog/2026/01/13/how-microsoft-builds-privacy-and-security-to-work-hand-in-hand/</link>
@@ -42,18 +54,6 @@
       <link>https://www.microsoft.com/en-us/security/blog/2025/12/17/access-fabric-a-modern-approach-to-identity-and-network-access/</link>
       <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2025/12/17/access-fabric-a-modern-approach-to-identity-and-network-access/</guid>
       <pubDate>Wed, 17 Dec 2025 17:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Defending against the CVE-2025-55182 (React2Shell) vulnerability in React Server Components</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2025/12/15/defending-against-the-cve-2025-55182-react2shell-vulnerability-in-react-server-components/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2025/12/15/defending-against-the-cve-2025-55182-react2shell-vulnerability-in-react-server-components/</guid>
-      <pubDate>Mon, 15 Dec 2025 19:35:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Microsoft named an overall leader in KuppingerCole Leadership Compass for Generative AI Defense</title>
-      <link>https://techcommunity.microsoft.com/blog/microsoft-security-blog/microsoft-named-an-overall-leader-in-kuppingercole-leadership-compass-for-genera/4478093</link>
-      <guid isPermaLink="true">https://techcommunity.microsoft.com/blog/microsoft-security-blog/microsoft-named-an-overall-leader-in-kuppingercole-leadership-compass-for-genera/4478093</guid>
-      <pubDate>Mon, 15 Dec 2025 18:05:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

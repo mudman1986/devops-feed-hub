@@ -1029,7 +1029,7 @@ If implementing any sync solution, consider migration for existing users:
 - Test network failures and recovery
 - Test data synchronization conflicts
 
-### Testing for OAuth Solutions (Solution 1)
+### Testing OAuth Solutions (Solution 1)
 
 - Test GitHub OAuth flow in different browsers
 - Test Sign in with Apple flow on iOS, macOS, web
@@ -1040,7 +1040,7 @@ If implementing any sync solution, consider migration for existing users:
 - Test provider account deletion (what happens to settings)
 - Verify OAuth security (state parameter, CSRF protection)
 
-### Testing for Backend Solutions (Solution 2)
+### Testing Backend Solutions (Solution 2)
 
 - Load testing for API endpoints
 - Test database connection pooling

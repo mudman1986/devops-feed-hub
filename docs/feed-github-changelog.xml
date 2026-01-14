@@ -5,8 +5,20 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml</link>
     <description>Articles from GitHub Changelog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 14 Jan 2026 12:23:53 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Jan 2026 19:59:38 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>GPT-5.2-Codex is now generally available in GitHub Copilot</title>
+      <link>https://github.blog/changelog/2026-01-14-gpt-5-2-codex-is-now-generally-available-in-github-copilot</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-01-14-gpt-5-2-codex-is-now-generally-available-in-github-copilot</guid>
+      <pubDate>Wed, 14 Jan 2026 17:04:31 +0000</pubDate>
+    </item>
+    <item>
+      <title>Organization custom properties now generally available</title>
+      <link>https://github.blog/changelog/2026-01-13-organization-custom-properties-now-generally-available</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-01-13-organization-custom-properties-now-generally-available</guid>
+      <pubDate>Tue, 13 Jan 2026 20:48:28 +0000</pubDate>
+    </item>
     <item>
       <title>Upcoming deprecation of select GitHub Copilot models from Claude, Google, and OpenAI</title>
       <link>https://github.blog/changelog/2026-01-13-upcoming-deprecation-of-select-github-copilot-models-from-claude-and-openai</link>
@@ -54,18 +66,6 @@
       <link>https://github.blog/changelog/2025-12-22-improved-performance-for-github-actions-workflows-page</link>
       <guid isPermaLink="true">https://github.blog/changelog/2025-12-22-improved-performance-for-github-actions-workflows-page</guid>
       <pubDate>Mon, 22 Dec 2025 21:40:47 +0000</pubDate>
-    </item>
-    <item>
-      <title>Control who can request apps for your organization now in public preview</title>
-      <link>https://github.blog/changelog/2025-12-22-control-who-can-request-apps-for-your-organization</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2025-12-22-control-who-can-request-apps-for-your-organization</guid>
-      <pubDate>Mon, 22 Dec 2025 15:02:08 +0000</pubDate>
-    </item>
-    <item>
-      <title>You can now require reviews before closing Dependabot alerts with delegated alert dismissal</title>
-      <link>https://github.blog/changelog/2025-12-19-you-can-now-require-reviews-before-closing-dependabot-alerts-with-delegated-alert-dismissal</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2025-12-19-you-can-now-require-reviews-before-closing-dependabot-alerts-with-delegated-alert-dismissal</guid>
-      <pubDate>Fri, 19 Dec 2025 20:15:36 +0000</pubDate>
     </item>
   </channel>
 </rss>
