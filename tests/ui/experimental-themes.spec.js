@@ -55,31 +55,34 @@ test.describe("Experimental Themes", () => {
       );
       await expect(experimentalThemeSelect).toBeVisible();
 
-      // Check for optgroups
+      // Check for optgroups in theme selector
       const colorVariationsDark = page.locator(
         '#experimental-theme-setting optgroup[label="Color Variations - Dark"]',
       );
       const colorVariationsLight = page.locator(
         '#experimental-theme-setting optgroup[label="Color Variations - Light"]',
       );
-      const layoutRedesignsStyling = page.locator(
-        '#experimental-theme-setting optgroup[label="Layout Redesigns - Styling"]',
-      );
-      const layoutRedesignsRadical = page.locator(
-        '#experimental-theme-setting optgroup[label="Layout Redesigns - Radical Structure"]',
-      );
-      const newsSiteInspired = page.locator(
-        '#experimental-theme-setting optgroup[label="News Site Inspired"]',
+      const themedStyles = page.locator(
+        '#experimental-theme-setting optgroup[label="Themed Styles"]',
       );
 
       await expect(colorVariationsDark).toBeAttached();
       await expect(colorVariationsLight).toBeAttached();
-      await expect(layoutRedesignsStyling).toBeAttached();
-      await expect(layoutRedesignsRadical).toBeAttached();
-      await expect(newsSiteInspired).toBeAttached();
+      await expect(themedStyles).toBeAttached();
+
+      // Check viewmode selector
+      const experimentalViewmodeSelect = page.locator(
+        "#experimental-viewmode-setting",
+      );
+      await expect(experimentalViewmodeSelect).toBeVisible();
+
+      const alternativeLayouts = page.locator(
+        '#experimental-viewmode-setting optgroup[label="Alternative Layouts"]',
+      );
+      await expect(alternativeLayouts).toBeAttached();
     });
 
-    test("should have at least 48 experimental themes available (including light variants)", async ({
+    test("should have at least 22 experimental themes available (including light variants)", async ({
       page,
     }) => {
       await page.goto("/settings.html");
@@ -90,9 +93,9 @@ test.describe("Experimental Themes", () => {
       const options = experimentalThemeSelect.locator("option");
 
       // Count options (excluding the "None" option)
-      // 40 original themes + 8 new light variants = 48 + 1 "None" option
+      // 22 experimental themes + 1 "None" option = 23
       const count = await options.count();
-      expect(count).toBeGreaterThanOrEqual(49);
+      expect(count).toBeGreaterThanOrEqual(23);
     });
   });
 
@@ -104,7 +107,7 @@ test.describe("Experimental Themes", () => {
       const experimentalThemeSelect = page.locator(
         "#experimental-theme-setting",
       );
-      await experimentalThemeSelect.selectOption("midnight-blue");
+      await experimentalThemeSelect.selectOption("purple-haze");
 
       // Wait for theme to be applied
       await page.waitForTimeout(100);
@@ -113,7 +116,7 @@ test.describe("Experimental Themes", () => {
       const dataTheme = await page.evaluate(() =>
         document.documentElement.getAttribute("data-theme"),
       );
-      expect(dataTheme).toBe("midnight-blue");
+      expect(dataTheme).toBe("purple-haze");
     });
 
     test("should persist experimental theme in localStorage", async ({
@@ -140,7 +143,7 @@ test.describe("Experimental Themes", () => {
       // Set experimental theme
       await page
         .locator("#experimental-theme-setting")
-        .selectOption("glassmorphism");
+        .selectOption("minimalist");
 
       // Reload page
       await page.reload();
@@ -150,13 +153,13 @@ test.describe("Experimental Themes", () => {
       const dataTheme = await page.evaluate(() =>
         document.documentElement.getAttribute("data-theme"),
       );
-      expect(dataTheme).toBe("glassmorphism");
+      expect(dataTheme).toBe("minimalist");
 
       // Check that select still shows the experimental theme
       const selectedValue = await page
         .locator("#experimental-theme-setting")
         .inputValue();
-      expect(selectedValue).toBe("glassmorphism");
+      expect(selectedValue).toBe("minimalist");
     });
 
     test("should clear experimental theme when selecting 'None'", async ({
@@ -210,18 +213,12 @@ test.describe("Experimental Themes", () => {
 
   test.describe("Color Variation Themes", () => {
     const colorThemes = [
-      "midnight-blue",
-      "forest-green",
       "purple-haze",
-      "sunset-orange",
       "ocean-deep",
-      "rose-gold",
       "arctic-blue",
-      "pastel-dream",
       "high-contrast-dark",
       "high-contrast-light",
       "monochrome",
-      "solarized-dark",
       "dracula",
     ];
 
@@ -240,21 +237,18 @@ test.describe("Experimental Themes", () => {
     }
   });
 
-  test.describe("Layout Redesign Themes", () => {
-    const layoutThemes = [
+  test.describe("Themed Style Themes", () => {
+    const themedStyles = [
       "minimalist",
       "terminal",
-      "magazine",
-      "glassmorphism",
       "retro",
       "futuristic",
-      "newspaper",
       "compact",
     ];
 
-    for (const theme of layoutThemes.slice(0, 3)) {
+    for (const theme of themedStyles.slice(0, 3)) {
       // Test first 3 to save time
-      test(`should apply ${theme} layout theme`, async ({ page }) => {
+      test(`should apply ${theme} themed style`, async ({ page }) => {
         await page.goto("/settings.html");
 
         await page.locator("#experimental-theme-setting").selectOption(theme);
@@ -265,6 +259,7 @@ test.describe("Experimental Themes", () => {
         expect(dataTheme).toBe(theme);
       });
     }
+  });
   });
 
   test.describe("Theme Persistence Across Pages", () => {
@@ -394,21 +389,15 @@ test.describe("Theme Application Across All Pages", () => {
 
 test.describe("Light Mode Variants", () => {
   const lightThemes = [
-    "midnight-blue-light",
-    "forest-green-light",
     "purple-haze-light",
-    "sunset-orange-light",
     "ocean-deep-light",
-    "rose-gold-light",
-    "solarized-light",
     "dracula-light",
   ];
 
   test("should have light mode variants for color themes", async ({ page }) => {
     await page.goto("/settings.html");
 
-    for (const theme of lightThemes.slice(0, 3)) {
-      // Test first 3
+    for (const theme of lightThemes) {
       const option = page.locator(
         `#experimental-theme-setting option[value="${theme}"]`,
       );
@@ -421,12 +410,12 @@ test.describe("Light Mode Variants", () => {
 
     await page
       .locator("#experimental-theme-setting")
-      .selectOption("midnight-blue-light");
+      .selectOption("purple-haze-light");
 
     const dataTheme = await page.evaluate(() =>
       document.documentElement.getAttribute("data-theme"),
     );
-    expect(dataTheme).toBe("midnight-blue-light");
+    expect(dataTheme).toBe("purple-haze-light");
   });
 
   test("should persist light mode variant across pages", async ({ page }) => {
@@ -434,7 +423,7 @@ test.describe("Light Mode Variants", () => {
 
     await page
       .locator("#experimental-theme-setting")
-      .selectOption("forest-green-light");
+      .selectOption("ocean-deep-light");
 
     await page.goto("/");
     await page.waitForLoadState("load");
@@ -442,6 +431,6 @@ test.describe("Light Mode Variants", () => {
     const dataTheme = await page.evaluate(() =>
       document.documentElement.getAttribute("data-theme"),
     );
-    expect(dataTheme).toBe("forest-green-light");
+    expect(dataTheme).toBe("ocean-deep-light");
   });
 });
