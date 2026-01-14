@@ -369,7 +369,10 @@
                 </p>
               </div>
               <div class="settings-item-control">
-                <select id="experimental-viewmode-setting" class="settings-select">
+                <select
+                  id="experimental-viewmode-setting"
+                  class="settings-select"
+                >
                   <option value="">None (Use Standard View)</option>
                   <optgroup label="Alternative Layouts">
                     <option value="horizontal-scroll">
@@ -522,14 +525,19 @@
             const experimentalViewmodeSelect = document.getElementById(
               "experimental-viewmode-setting",
             );
-            
+
             // Determine if the stored value is a theme or viewmode
             if (experimentalTheme) {
               const viewModeThemes = [
-                "horizontal-scroll", "masonry-grid", "floating-panels",
-                "center-stage", "top-strip", "list-dense", "timeline-vertical"
+                "horizontal-scroll",
+                "masonry-grid",
+                "floating-panels",
+                "center-stage",
+                "top-strip",
+                "list-dense",
+                "timeline-vertical",
               ];
-              
+
               if (viewModeThemes.includes(experimentalTheme)) {
                 if (experimentalViewmodeSelect) {
                   experimentalViewmodeSelect.value = experimentalTheme;
@@ -539,7 +547,7 @@
                   experimentalThemeSelect.value = experimentalTheme;
                 }
               }
-              
+
               // Apply experimental theme if set and valid
               if (VALID_EXPERIMENTAL_THEMES.includes(experimentalTheme)) {
                 applyTheme(experimentalTheme);
@@ -586,7 +594,8 @@
                   "experimental-viewmode-setting",
                 );
                 if (experimentalThemeSelect) experimentalThemeSelect.value = "";
-                if (experimentalViewmodeSelect) experimentalViewmodeSelect.value = "";
+                if (experimentalViewmodeSelect)
+                  experimentalViewmodeSelect.value = "";
                 applyTheme(theme);
               } catch (err) {
                 console.warn("Unable to save theme:", err);
@@ -611,7 +620,9 @@
                     );
                     applyTheme(experimentalTheme);
                     // Clear viewmode dropdown when theme is selected
-                    const viewmodeSelect = document.getElementById("experimental-viewmode-setting");
+                    const viewmodeSelect = document.getElementById(
+                      "experimental-viewmode-setting",
+                    );
                     if (viewmodeSelect) viewmodeSelect.value = "";
                   } else {
                     console.warn(
@@ -640,14 +651,18 @@
               try {
                 if (experimentalViewmode) {
                   // Save experimental viewmode if valid
-                  if (VALID_EXPERIMENTAL_THEMES.includes(experimentalViewmode)) {
+                  if (
+                    VALID_EXPERIMENTAL_THEMES.includes(experimentalViewmode)
+                  ) {
                     localStorage.setItem(
                       "experimentalTheme",
                       experimentalViewmode,
                     );
                     applyTheme(experimentalViewmode);
                     // Clear theme dropdown when viewmode is selected
-                    const themeSelect = document.getElementById("experimental-theme-setting");
+                    const themeSelect = document.getElementById(
+                      "experimental-theme-setting",
+                    );
                     if (themeSelect) themeSelect.value = "";
                   } else {
                     console.warn(

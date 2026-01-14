@@ -260,7 +260,6 @@ test.describe("Experimental Themes", () => {
       });
     }
   });
-  });
 
   test.describe("Theme Persistence Across Pages", () => {
     test("should apply experimental theme on index page", async ({ page }) => {

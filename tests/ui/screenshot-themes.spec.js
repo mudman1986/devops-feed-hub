@@ -18,7 +18,7 @@ const themes = [
   { name: "retro", category: "themed" },
   { name: "futuristic", category: "themed" },
   { name: "compact", category: "themed" },
-  
+
   // Alternative layouts (viewmodes)
   { name: "horizontal-scroll", category: "viewmode" },
   { name: "masonry-grid", category: "viewmode" },
@@ -35,12 +35,16 @@ for (const theme of themes) {
   test(`screenshot: ${theme.name} (${theme.category})`, async ({ page }) => {
     // Set the theme
     await page.goto("/settings.html");
-    
+
     // Use appropriate selector based on category
     if (theme.category === "viewmode") {
-      await page.locator("#experimental-viewmode-setting").selectOption(theme.name);
+      await page
+        .locator("#experimental-viewmode-setting")
+        .selectOption(theme.name);
     } else {
-      await page.locator("#experimental-theme-setting").selectOption(theme.name);
+      await page
+        .locator("#experimental-theme-setting")
+        .selectOption(theme.name);
     }
 
     // Go to index page for screenshot
