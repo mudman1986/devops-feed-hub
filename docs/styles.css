@@ -437,7 +437,7 @@ body {
 }
 
 .sidebar-toggle {
-  display: none;
+  display: flex; /* Show on desktop and mobile */
   position: fixed;
   right: 1rem;
   bottom: 1rem;
@@ -2846,59 +2846,14 @@ h3 {
   overflow-y: auto;
 }
 
-[data-theme="horizontal-scroll"] .sidebar {
-  width: 100%;
-  height: auto;
-  border-left: none;
-  border-top: 2px solid var(--border-primary);
-}
-
-[data-theme="horizontal-scroll"] .sidebar-content {
-  display: flex;
-  flex-direction: row;
-  overflow-x: auto;
-  padding: 1rem;
-}
-
-[data-theme="horizontal-scroll"] .feed-nav {
-  flex-direction: row;
-  gap: 1rem;
-  min-width: max-content;
-}
-
-[data-theme="horizontal-scroll"] .nav-link {
-  min-width: 120px;
-}
+/* Sidebar remains on right side - no override needed */
 
 /* Masonry-Grid - Pinterest-style masonry layout */
 [data-theme="masonry-grid"] .container {
-  flex-direction: column;
-}
-
-[data-theme="masonry-grid"] .sidebar {
-  width: 100%;
-  border-left: none;
-  border-bottom: 2px solid var(--border-primary);
-  height: auto;
-}
-
-[data-theme="masonry-grid"] .sidebar-content {
-  display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  gap: 1rem;
-  padding: 1rem;
 }
 
-[data-theme="masonry-grid"] .feed-nav {
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-[data-theme="masonry-grid"] .nav-link {
-  flex: 0 0 auto;
-  min-width: 150px;
-}
+/* Sidebar remains on right side - no override needed */
 
 [data-theme="masonry-grid"] .main-content {
   padding: 2rem;
@@ -3206,21 +3161,7 @@ h3 {
   padding: 2rem;
 }
 
-[data-theme="center-stage"] .sidebar {
-  width: 100%;
-  max-width: 900px;
-  border-left: none;
-  border-top: 2px solid var(--border-primary);
-  padding: 2rem;
-}
-
-[data-theme="center-stage"] .sidebar-content {
-  text-align: center;
-}
-
-[data-theme="center-stage"] .feed-nav {
-  align-items: center;
-}
+/* Sidebar remains on right side - no override needed */
 
 [data-theme="center-stage"] .feed-section {
   text-align: center;
@@ -3641,41 +3582,7 @@ h3 {
   border-bottom: 2px solid var(--border-accent);
 }
 
-[data-theme="top-strip"] .sidebar {
-  width: 100%;
-  height: auto;
-  border-left: none;
-  border-bottom: 3px solid var(--border-primary);
-  background: var(--bg-tertiary);
-}
-
-[data-theme="top-strip"] .sidebar-content {
-  padding: 0;
-}
-
-[data-theme="top-strip"] .feed-nav {
-  flex-direction: row;
-  gap: 0;
-  overflow-x: auto;
-}
-
-[data-theme="top-strip"] .nav-link {
-  flex: 0 0 auto;
-  padding: 1.25rem 2rem;
-  border-radius: 0;
-  border-right: 1px solid var(--border-primary);
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 0.875rem;
-  letter-spacing: 0.05em;
-}
-
-[data-theme="top-strip"] .nav-link:hover,
-[data-theme="top-strip"] .nav-link.active {
-  background: var(--bg-secondary);
-  border-bottom: 3px solid var(--border-accent);
-  transform: none;
-}
+/* Sidebar remains on right side - no override needed */
 
 [data-theme="top-strip"] .main-content {
   width: 100%;
@@ -3720,32 +3627,7 @@ h3 {
   -webkit-text-fill-color: unset;
 }
 
-[data-theme="list-dense"] .sidebar {
-  width: 100%;
-  border: none;
-  background: var(--bg-tertiary);
-  padding: 0.5rem 1rem;
-}
-
-[data-theme="list-dense"] .feed-nav {
-  flex-direction: row;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-}
-
-[data-theme="list-dense"] .nav-link {
-  padding: 0.25rem 0;
-  background: transparent;
-  border: none;
-  font-size: 0.875rem;
-  text-decoration: underline;
-}
-
-[data-theme="list-dense"] .nav-link:hover {
-  background: transparent;
-  text-decoration: none;
-  transform: none;
-}
+/* Sidebar remains on right side - no override needed */
 
 [data-theme="list-dense"] .main-content {
   width: 100%;
@@ -3813,26 +3695,7 @@ h3 {
   margin: 0 auto;
 }
 
-[data-theme="timeline-vertical"] .sidebar {
-  display: none;
-}
-
-[data-theme="timeline-vertical"] .header {
-  text-align: center;
-  padding: 3rem 2rem 2rem;
-  border-bottom: 1px solid var(--border-primary);
-}
-
-[data-theme="timeline-vertical"] .header-title {
-  font-size: 3rem;
-  font-weight: 900;
-  justify-content: center;
-}
-
-[data-theme="timeline-vertical"] .main-content {
-  width: 100%;
-  padding: 0;
-}
+/* Sidebar remains on right side - no override needed */
 
 [data-theme="timeline-vertical"] .feed-section {
   background: transparent;

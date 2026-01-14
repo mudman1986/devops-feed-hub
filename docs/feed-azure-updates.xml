@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml</link>
     <description>Articles from Azure Updates</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 14 Jan 2026 20:52:14 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Jan 2026 23:03:01 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>[Launched] Generally Available: Ubuntu 24.04 support in AKS</title>
+      <link>https://azure.microsoft.com/updates?id=536550</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=536550</guid>
+      <pubDate>Wed, 14 Jan 2026 22:45:12 +0000</pubDate>
+    </item>
     <item>
       <title>[In preview] Public Preview: Azure Cosmos DB Mirroring with Private Endpoints</title>
       <link>https://azure.microsoft.com/updates?id=543086</link>

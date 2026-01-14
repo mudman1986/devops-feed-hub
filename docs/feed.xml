@@ -5,8 +5,22 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 14 Jan 2026 20:52:14 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Jan 2026 23:03:01 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>[Launched] Generally Available: Ubuntu 24.04 support in AKS</title>
+      <link>https://azure.microsoft.com/updates?id=536550</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=536550</guid>
+      <pubDate>Wed, 14 Jan 2026 22:45:12 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>GitHub Availability Report: December 2025</title>
+      <link>https://github.blog/news-insights/company-news/github-availability-report-december-2025/</link>
+      <guid isPermaLink="true">https://github.blog/news-insights/company-news/github-availability-report-december-2025/</guid>
+      <pubDate>Wed, 14 Jan 2026 22:06:49 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
     <item>
       <title>Safer Docker Hub Pulls via a Sonatype-Protected Proxy</title>
       <link>https://www.docker.com/blog/safer-docker-hub-pulls-via-a-sonatype-protected-proxy/</link>
@@ -503,13 +517,6 @@
       <guid isPermaLink="true">https://kubernetes.io/blog/2025/12/23/kubernetes-v1-35-fine-grained-supplementalgroups-control-ga/</guid>
       <pubDate>Tue, 23 Dec 2025 18:30:00 +0000</pubDate>
       <source>Kubernetes Blog</source>
-    </item>
-    <item>
-      <title>5 podcast episodes to help you build with confidence in 2026</title>
-      <link>https://github.blog/open-source/maintainers/5-podcast-episodes-to-help-you-build-with-confidence-in-2026/</link>
-      <guid isPermaLink="true">https://github.blog/open-source/maintainers/5-podcast-episodes-to-help-you-build-with-confidence-in-2026/</guid>
-      <pubDate>Tue, 23 Dec 2025 00:15:00 +0000</pubDate>
-      <source>GitHub Blog</source>
     </item>
     <item>
       <title>Jenkins 2.543 and 2.541.1: New Linux Repository Signing Keys</title>
