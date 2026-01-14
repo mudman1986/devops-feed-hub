@@ -5,8 +5,22 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 14 Jan 2026 19:59:38 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Jan 2026 20:32:53 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Safer Docker Hub Pulls via a Sonatype-Protected Proxy</title>
+      <link>https://www.docker.com/blog/safer-docker-hub-pulls-via-a-sonatype-protected-proxy/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/safer-docker-hub-pulls-via-a-sonatype-protected-proxy/</guid>
+      <pubDate>Wed, 14 Jan 2026 20:27:49 +0000</pubDate>
+      <source>Docker Blog</source>
+    </item>
+    <item>
+      <title>Community-powered security with AI: an open source framework for security research</title>
+      <link>https://github.blog/security/community-powered-security-with-ai-an-open-source-framework-for-security-research/</link>
+      <guid isPermaLink="true">https://github.blog/security/community-powered-security-with-ai-an-open-source-framework-for-security-research/</guid>
+      <pubDate>Wed, 14 Jan 2026 18:45:09 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
     <item>
       <title>GPT-5.2-Codex is now generally available in GitHub Copilot</title>
       <link>https://github.blog/changelog/2026-01-14-gpt-5-2-codex-is-now-generally-available-in-github-copilot</link>
@@ -440,13 +454,6 @@
       <guid isPermaLink="true">https://www.jenkins.io/blog/2025/12/23/repository-signing-keys-changing/</guid>
       <pubDate>Tue, 23 Dec 2025 00:00:00 +0000</pubDate>
       <source>Jenkins Blog</source>
-    </item>
-    <item>
-      <title>This year’s most influential open source projects</title>
-      <link>https://github.blog/open-source/maintainers/this-years-most-influential-open-source-projects/</link>
-      <guid isPermaLink="true">https://github.blog/open-source/maintainers/this-years-most-influential-open-source-projects/</guid>
-      <pubDate>Mon, 22 Dec 2025 23:48:52 +0000</pubDate>
-      <source>GitHub Blog</source>
     </item>
     <item>
       <title>Improved performance for GitHub Actions workflows page</title>
