@@ -5,25 +5,14 @@ const READ_ARTICLES_KEY = "readArticles";
 
 // List of valid experimental themes
 const VALID_EXPERIMENTAL_THEMES = [
-  "midnight-blue",
-  "midnight-blue-light",
-  "forest-green",
-  "forest-green-light",
   "purple-haze",
   "purple-haze-light",
-  "sunset-orange",
-  "sunset-orange-light",
   "ocean-deep",
   "ocean-deep-light",
-  "rose-gold",
-  "rose-gold-light",
   "arctic-blue",
-  "pastel-dream",
   "high-contrast-dark",
   "high-contrast-light",
   "monochrome",
-  "solarized-dark",
-  "solarized-light",
   "dracula",
   "dracula-light",
   "minimalist",
@@ -357,6 +346,11 @@ function updateStats() {
 
   // Count visible articles across all feeds
   const allArticles = document.querySelectorAll(".article-item");
+  
+  // If there are no article items on the page (e.g., summary page),
+  // don't update the Total Articles stat - it's set statically in the HTML
+  if (allArticles.length === 0) return;
+  
   const visibleArticles = Array.from(allArticles).filter(
     (a) => a.style.display !== "none",
   );

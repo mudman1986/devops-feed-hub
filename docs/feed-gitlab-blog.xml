@@ -5,8 +5,56 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-gitlab-blog.xml</link>
     <description>Articles from GitLab Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-gitlab-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 14 Jan 2026 20:32:53 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Jan 2026 20:48:13 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>AI Catalog: Discover, create, and share agents and flows</title>
+      <link>https://about.gitlab.com/blog/ai-catalog-discover-and-share-agents/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/ai-catalog-discover-and-share-agents/</guid>
+      <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Customizing GitLab Duo Agent Platform: Chat rules, prompts, and workflows</title>
+      <link>https://about.gitlab.com/blog/customizing-gitlab-duo-chat-rules-prompts-workflows/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/customizing-gitlab-duo-chat-rules-prompts-workflows/</guid>
+      <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Getting started with GitLab Duo Agentic Chat</title>
+      <link>https://about.gitlab.com/blog/getting-started-with-gitlab-duo-agentic-chat/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/getting-started-with-gitlab-duo-agentic-chat/</guid>
+      <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Get started with GitLab Duo Agent Platform: The complete guide</title>
+      <link>https://about.gitlab.com/blog/gitlab-duo-agent-platform-complete-getting-started-guide/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/gitlab-duo-agent-platform-complete-getting-started-guide/</guid>
+      <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Introduction to GitLab Duo Agent Platform</title>
+      <link>https://about.gitlab.com/blog/introduction-to-gitlab-duo-agent-platform/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/introduction-to-gitlab-duo-agent-platform/</guid>
+      <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Monitor, manage, and automate AI workflows</title>
+      <link>https://about.gitlab.com/blog/monitor-manage-automate-ai-workflows/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/monitor-manage-automate-ai-workflows/</guid>
+      <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Understanding agents: Foundational, custom, and external</title>
+      <link>https://about.gitlab.com/blog/understanding-agents-foundational-custom-external/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/understanding-agents-foundational-custom-external/</guid>
+      <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Understanding flows: Multi-agent workflows</title>
+      <link>https://about.gitlab.com/blog/understanding-flows-multi-agent-workflows/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/understanding-flows-multi-agent-workflows/</guid>
+      <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Strengthening GitLab.com security: Mandatory multi-factor authentication</title>
       <link>https://about.gitlab.com/blog/strengthening-gitlab-com-security-mandatory-multi-factor-authentication/</link>

@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 14 Jan 2026 20:32:53 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Jan 2026 20:48:13 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Safer Docker Hub Pulls via a Sonatype-Protected Proxy</title>
@@ -13,6 +13,13 @@
       <guid isPermaLink="true">https://www.docker.com/blog/safer-docker-hub-pulls-via-a-sonatype-protected-proxy/</guid>
       <pubDate>Wed, 14 Jan 2026 20:27:49 +0000</pubDate>
       <source>Docker Blog</source>
+    </item>
+    <item>
+      <title>GitHub Copilot CLI: Enhanced agents, context management, and new ways to install</title>
+      <link>https://github.blog/changelog/2026-01-14-github-copilot-cli-enhanced-agents-context-management-and-new-ways-to-install</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-01-14-github-copilot-cli-enhanced-agents-context-management-and-new-ways-to-install</guid>
+      <pubDate>Wed, 14 Jan 2026 20:21:16 +0000</pubDate>
+      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>Community-powered security with AI: an open source framework for security research</title>
@@ -48,6 +55,62 @@
       <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/14/inside-redvds-how-a-single-virtual-desktop-provider-fueled-worldwide-cybercriminal-operations/</guid>
       <pubDate>Wed, 14 Jan 2026 15:03:31 +0000</pubDate>
       <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>AI Catalog: Discover, create, and share agents and flows</title>
+      <link>https://about.gitlab.com/blog/ai-catalog-discover-and-share-agents/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/ai-catalog-discover-and-share-agents/</guid>
+      <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
+      <source>GitLab Blog</source>
+    </item>
+    <item>
+      <title>Customizing GitLab Duo Agent Platform: Chat rules, prompts, and workflows</title>
+      <link>https://about.gitlab.com/blog/customizing-gitlab-duo-chat-rules-prompts-workflows/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/customizing-gitlab-duo-chat-rules-prompts-workflows/</guid>
+      <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
+      <source>GitLab Blog</source>
+    </item>
+    <item>
+      <title>Getting started with GitLab Duo Agentic Chat</title>
+      <link>https://about.gitlab.com/blog/getting-started-with-gitlab-duo-agentic-chat/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/getting-started-with-gitlab-duo-agentic-chat/</guid>
+      <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
+      <source>GitLab Blog</source>
+    </item>
+    <item>
+      <title>Get started with GitLab Duo Agent Platform: The complete guide</title>
+      <link>https://about.gitlab.com/blog/gitlab-duo-agent-platform-complete-getting-started-guide/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/gitlab-duo-agent-platform-complete-getting-started-guide/</guid>
+      <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
+      <source>GitLab Blog</source>
+    </item>
+    <item>
+      <title>Introduction to GitLab Duo Agent Platform</title>
+      <link>https://about.gitlab.com/blog/introduction-to-gitlab-duo-agent-platform/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/introduction-to-gitlab-duo-agent-platform/</guid>
+      <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
+      <source>GitLab Blog</source>
+    </item>
+    <item>
+      <title>Monitor, manage, and automate AI workflows</title>
+      <link>https://about.gitlab.com/blog/monitor-manage-automate-ai-workflows/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/monitor-manage-automate-ai-workflows/</guid>
+      <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
+      <source>GitLab Blog</source>
+    </item>
+    <item>
+      <title>Understanding agents: Foundational, custom, and external</title>
+      <link>https://about.gitlab.com/blog/understanding-agents-foundational-custom-external/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/understanding-agents-foundational-custom-external/</guid>
+      <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
+      <source>GitLab Blog</source>
+    </item>
+    <item>
+      <title>Understanding flows: Multi-agent workflows</title>
+      <link>https://about.gitlab.com/blog/understanding-flows-multi-agent-workflows/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/understanding-flows-multi-agent-workflows/</guid>
+      <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
+      <source>GitLab Blog</source>
     </item>
     <item>
       <title>Organization custom properties now generally available</title>
@@ -454,13 +517,6 @@
       <guid isPermaLink="true">https://www.jenkins.io/blog/2025/12/23/repository-signing-keys-changing/</guid>
       <pubDate>Tue, 23 Dec 2025 00:00:00 +0000</pubDate>
       <source>Jenkins Blog</source>
-    </item>
-    <item>
-      <title>Improved performance for GitHub Actions workflows page</title>
-      <link>https://github.blog/changelog/2025-12-22-improved-performance-for-github-actions-workflows-page</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2025-12-22-improved-performance-for-github-actions-workflows-page</guid>
-      <pubDate>Mon, 22 Dec 2025 21:40:47 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>Kubernetes v1.35: Kubelet Configuration Drop-in Directory Graduates to GA</title>

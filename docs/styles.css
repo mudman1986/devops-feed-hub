@@ -56,64 +56,6 @@
 
 /* Experimental Themes */
 
-/* Midnight Blue - Deep blue dark theme */
-[data-theme="midnight-blue"] {
-  --bg-primary: #0a0e27;
-  --bg-secondary: #141b3d;
-  --bg-tertiary: #1e2952;
-  --bg-hover: #2a3868;
-  --bg-error: #2d0a0a;
-  --text-primary: #e6f0ff;
-  --text-secondary: #8ea5d9;
-  --text-link: #8ea5d9;
-  --text-error: #ff6b6b;
-  --border-primary: #1e2952;
-  --border-accent: #4a6fa5;
-  --border-success: #4ecdc4;
-  --border-error: #ff6b6b;
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 40%);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 50%);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 60%);
-  --badge-bg: #1e3a8a;
-  --badge-text: #bfdbfe;
-  --gradient-start: #1e3a8a;
-  --gradient-end: #3b82f6;
-  --accent-primary: #60a5fa;
-  --accent-success: #4ecdc4;
-  --accent-error: #ff6b6b;
-  --card-bg: rgb(20 27 61 / 70%);
-  --card-border: rgb(30 41 82 / 50%);
-}
-
-/* Forest Green - Nature-inspired dark theme */
-[data-theme="forest-green"] {
-  --bg-primary: #0d1f12;
-  --bg-secondary: #1a2f20;
-  --bg-tertiary: #2d4a36;
-  --bg-hover: #3d5f47;
-  --bg-error: #3d1a1a;
-  --text-primary: #e8f5e9;
-  --text-secondary: #a5d6a7;
-  --text-link: #a5d6a7;
-  --text-error: #ef5350;
-  --border-primary: #2d4a36;
-  --border-accent: #66bb6a;
-  --border-success: #81c784;
-  --border-error: #ef5350;
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 35%);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 45%);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 55%);
-  --badge-bg: #1b5e20;
-  --badge-text: #c8e6c9;
-  --gradient-start: #2e7d32;
-  --gradient-end: #66bb6a;
-  --accent-primary: #66bb6a;
-  --accent-success: #81c784;
-  --accent-error: #ef5350;
-  --card-bg: rgb(26 47 32 / 70%);
-  --card-border: rgb(45 74 54 / 50%);
-}
-
 /* Purple Haze - Vibrant purple theme */
 [data-theme="purple-haze"] {
   --bg-primary: #1a0b2e;
@@ -141,35 +83,6 @@
   --accent-error: #f87171;
   --card-bg: rgb(45 27 78 / 70%);
   --card-border: rgb(67 44 111 / 50%);
-}
-
-/* Sunset Orange - Warm orange/red theme */
-[data-theme="sunset-orange"] {
-  --bg-primary: #2d1810;
-  --bg-secondary: #3d2518;
-  --bg-tertiary: #5a3828;
-  --bg-hover: #744b38;
-  --bg-error: #3d0a0a;
-  --text-primary: #fff5ec;
-  --text-secondary: #fc9;
-  --text-link: #fc9;
-  --text-error: #ff6b6b;
-  --border-primary: #5a3828;
-  --border-accent: #ff8c42;
-  --border-success: #ffa94d;
-  --border-error: #ff6b6b;
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 35%);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 45%);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 55%);
-  --badge-bg: #9a3412;
-  --badge-text: #fed7aa;
-  --gradient-start: #ea580c;
-  --gradient-end: #fb923c;
-  --accent-primary: #fb923c;
-  --accent-success: #ffa94d;
-  --accent-error: #ff6b6b;
-  --card-bg: rgb(61 37 24 / 70%);
-  --card-border: rgb(90 56 40 / 50%);
 }
 
 /* Ocean Deep - Teal/cyan theme */
@@ -201,35 +114,6 @@
   --card-border: rgb(26 64 80 / 50%);
 }
 
-/* Rose Gold - Elegant pink/gold theme */
-[data-theme="rose-gold"] {
-  --bg-primary: #2d1a1f;
-  --bg-secondary: #3d2630;
-  --bg-tertiary: #5a3d47;
-  --bg-hover: #73505e;
-  --bg-error: #3d0a0a;
-  --text-primary: #ffe4e6;
-  --text-secondary: #fda4af;
-  --text-link: #fda4af;
-  --text-error: #fb7185;
-  --border-primary: #5a3d47;
-  --border-accent: #f472b6;
-  --border-success: #ec4899;
-  --border-error: #fb7185;
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 35%);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 45%);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 55%);
-  --badge-bg: #831843;
-  --badge-text: #fbcfe8;
-  --gradient-start: #db2777;
-  --gradient-end: #f472b6;
-  --accent-primary: #f472b6;
-  --accent-success: #ec4899;
-  --accent-error: #fb7185;
-  --card-bg: rgb(61 38 48 / 70%);
-  --card-border: rgb(90 61 71 / 50%);
-}
-
 /* Arctic Blue - Cool light blue theme */
 [data-theme="arctic-blue"] {
   --bg-primary: #e0f2fe;
@@ -257,35 +141,6 @@
   --accent-error: #dc2626;
   --card-bg: rgb(240 249 255 / 70%);
   --card-border: rgb(186 230 253 / 50%);
-}
-
-/* Pastel Dream - Soft pastel colors */
-[data-theme="pastel-dream"] {
-  --bg-primary: #faf5ff;
-  --bg-secondary: #fef3ff;
-  --bg-tertiary: #f3e8ff;
-  --bg-hover: #e9d5ff;
-  --bg-error: #fef2f2;
-  --text-primary: #581c87;
-  --text-secondary: #7e22ce;
-  --text-link: #7e22ce;
-  --text-error: #dc2626;
-  --border-primary: #d8b4fe;
-  --border-accent: #a855f7;
-  --border-success: #c084fc;
-  --border-error: #dc2626;
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 8%);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 15%);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 20%);
-  --badge-bg: #e9d5ff;
-  --badge-text: #581c87;
-  --gradient-start: #a855f7;
-  --gradient-end: #c084fc;
-  --accent-primary: #a855f7;
-  --accent-success: #c084fc;
-  --accent-error: #dc2626;
-  --card-bg: rgb(254 243 255 / 70%);
-  --card-border: rgb(216 180 254 / 50%);
 }
 
 /* High Contrast Dark - Maximum contrast for accessibility */
@@ -373,35 +228,6 @@
   --accent-error: #e0e0e0;
   --card-bg: rgb(45 45 45 / 70%);
   --card-border: rgb(82 82 82 / 50%);
-}
-
-/* Solarized Dark - Popular developer theme */
-[data-theme="solarized-dark"] {
-  --bg-primary: #002b36;
-  --bg-secondary: #073642;
-  --bg-tertiary: #094656;
-  --bg-hover: #0d5668;
-  --bg-error: #2d0a0a;
-  --text-primary: #fdf6e3;
-  --text-secondary: #93a1a1;
-  --text-link: #93a1a1;
-  --text-error: #dc322f;
-  --border-primary: #094656;
-  --border-accent: #268bd2;
-  --border-success: #859900;
-  --border-error: #dc322f;
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 35%);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 45%);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 55%);
-  --badge-bg: #094656;
-  --badge-text: #eee8d5;
-  --gradient-start: #268bd2;
-  --gradient-end: #2aa198;
-  --accent-primary: #268bd2;
-  --accent-success: #859900;
-  --accent-error: #dc322f;
-  --card-bg: rgb(7 54 66 / 70%);
-  --card-border: rgb(9 70 86 / 50%);
 }
 
 /* Dracula - Popular dark theme */
@@ -4145,64 +3971,6 @@ h3 {
    Each experimental theme now has a -light variant
    =================================== */
 
-/* Midnight Blue Light */
-[data-theme="midnight-blue-light"] {
-  --bg-primary: #e6f0ff;
-  --bg-secondary: #f0f7ff;
-  --bg-tertiary: #d6e8ff;
-  --bg-hover: #c2dfff;
-  --bg-error: #fff0f0;
-  --text-primary: #0a0e27;
-  --text-secondary: #1e3a8a;
-  --text-link: #1e3a8a;
-  --text-error: #c00;
-  --border-primary: #bfdbfe;
-  --border-accent: #3b82f6;
-  --border-success: #10b981;
-  --border-error: #dc2626;
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 8%);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 12%);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 16%);
-  --badge-bg: #dbeafe;
-  --badge-text: #1e3a8a;
-  --gradient-start: #3b82f6;
-  --gradient-end: #60a5fa;
-  --accent-primary: #3b82f6;
-  --accent-success: #10b981;
-  --accent-error: #dc2626;
-  --card-bg: rgb(240 247 255 / 80%);
-  --card-border: rgb(191 219 254 / 60%);
-}
-
-/* Forest Green Light */
-[data-theme="forest-green-light"] {
-  --bg-primary: #ecfdf5;
-  --bg-secondary: #f0fdf4;
-  --bg-tertiary: #d1fae5;
-  --bg-hover: #a7f3d0;
-  --bg-error: #fef2f2;
-  --text-primary: #064e3b;
-  --text-secondary: #065f46;
-  --text-link: #047857;
-  --text-error: #dc2626;
-  --border-primary: #a7f3d0;
-  --border-accent: #10b981;
-  --border-success: #059669;
-  --border-error: #dc2626;
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 8%);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 12%);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 16%);
-  --badge-bg: #d1fae5;
-  --badge-text: #065f46;
-  --gradient-start: #059669;
-  --gradient-end: #10b981;
-  --accent-primary: #10b981;
-  --accent-success: #059669;
-  --accent-error: #dc2626;
-  --card-bg: rgb(240 253 244 / 80%);
-  --card-border: rgb(167 243 208 / 60%);
-}
-
 /* Purple Haze Light */
 [data-theme="purple-haze-light"] {
   --bg-primary: #faf5ff;
@@ -4232,35 +4000,6 @@ h3 {
   --card-border: rgb(233 213 255 / 60%);
 }
 
-/* Sunset Orange Light */
-[data-theme="sunset-orange-light"] {
-  --bg-primary: #fff7ed;
-  --bg-secondary: #fffbeb;
-  --bg-tertiary: #fed7aa;
-  --bg-hover: #fdba74;
-  --bg-error: #fef2f2;
-  --text-primary: #7c2d12;
-  --text-secondary: #9a3412;
-  --text-link: #c2410c;
-  --text-error: #dc2626;
-  --border-primary: #fed7aa;
-  --border-accent: #fb923c;
-  --border-success: #f97316;
-  --border-error: #dc2626;
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 8%);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 12%);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 16%);
-  --badge-bg: #fed7aa;
-  --badge-text: #9a3412;
-  --gradient-start: #f97316;
-  --gradient-end: #fb923c;
-  --accent-primary: #fb923c;
-  --accent-success: #f97316;
-  --accent-error: #dc2626;
-  --card-bg: rgb(255 251 235 / 80%);
-  --card-border: rgb(254 215 170 / 60%);
-}
-
 /* Ocean Deep Light */
 [data-theme="ocean-deep-light"] {
   --bg-primary: #ecfeff;
@@ -4288,64 +4027,6 @@ h3 {
   --accent-error: #dc2626;
   --card-bg: rgb(240 253 250 / 80%);
   --card-border: rgb(165 243 252 / 60%);
-}
-
-/* Rose Gold Light */
-[data-theme="rose-gold-light"] {
-  --bg-primary: #fff1f2;
-  --bg-secondary: #ffe4e6;
-  --bg-tertiary: #fecdd3;
-  --bg-hover: #fda4af;
-  --bg-error: #fef2f2;
-  --text-primary: #881337;
-  --text-secondary: #9f1239;
-  --text-link: #be123c;
-  --text-error: #dc2626;
-  --border-primary: #fecdd3;
-  --border-accent: #f43f5e;
-  --border-success: #ec4899;
-  --border-error: #dc2626;
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 8%);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 12%);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 16%);
-  --badge-bg: #fecdd3;
-  --badge-text: #9f1239;
-  --gradient-start: #f43f5e;
-  --gradient-end: #fb7185;
-  --accent-primary: #f472b6;
-  --accent-success: #ec4899;
-  --accent-error: #dc2626;
-  --card-bg: rgb(255 228 230 / 80%);
-  --card-border: rgb(254 205 211 / 60%);
-}
-
-/* Solarized Light - Based on official Solarized palette */
-[data-theme="solarized-light"] {
-  --bg-primary: #fdf6e3;
-  --bg-secondary: #eee8d5;
-  --bg-tertiary: #e4ddc7;
-  --bg-hover: #d9d2bb;
-  --bg-error: #fef2f2;
-  --text-primary: #002b36;
-  --text-secondary: #586e75;
-  --text-link: #268bd2;
-  --text-error: #dc322f;
-  --border-primary: #d9d2bb;
-  --border-accent: #268bd2;
-  --border-success: #859900;
-  --border-error: #dc322f;
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 8%);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 12%);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 16%);
-  --badge-bg: #eee8d5;
-  --badge-text: #073642;
-  --gradient-start: #268bd2;
-  --gradient-end: #2aa198;
-  --accent-primary: #268bd2;
-  --accent-success: #859900;
-  --accent-error: #dc322f;
-  --card-bg: rgb(238 232 213 / 80%);
-  --card-border: rgb(217 210 187 / 60%);
 }
 
 /* Dracula Light - Inverted Dracula colors */
