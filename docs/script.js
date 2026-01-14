@@ -143,6 +143,7 @@ function applyView(view) {
 
 // Initialize sidebar state based on screen size
 function initializeSidebarState(sidebar) {
+  // On mobile, start collapsed; on desktop, start expanded
   if (window.innerWidth <= 768) {
     sidebar.classList.add("collapsed");
   } else {
@@ -150,7 +151,7 @@ function initializeSidebarState(sidebar) {
   }
 }
 
-// Sidebar toggle functionality (mobile)
+// Sidebar toggle functionality (works on both desktop and mobile)
 const sidebarToggle = document.getElementById("nav-toggle");
 const sidebar = document.getElementById("sidebar");
 
@@ -165,7 +166,7 @@ if (sidebarToggle && sidebar) {
     sidebar.classList.toggle("collapsed");
   });
 
-  // Close sidebar when clicking outside on mobile
+  // Close sidebar when clicking outside (mobile only)
   document.addEventListener("click", (e) => {
     if (window.innerWidth <= 768) {
       if (!sidebar.contains(e.target) && !sidebarToggle.contains(e.target)) {
