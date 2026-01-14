@@ -5,8 +5,22 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 13 Jan 2026 20:18:24 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 14 Jan 2026 00:59:12 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Upcoming deprecation of select GitHub Copilot models from Claude, Google, and OpenAI</title>
+      <link>https://github.blog/changelog/2026-01-13-upcoming-deprecation-of-select-github-copilot-models-from-claude-and-openai</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-01-13-upcoming-deprecation-of-select-github-copilot-models-from-claude-and-openai</guid>
+      <pubDate>Tue, 13 Jan 2026 19:29:00 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>What AI is actually good for, according to developers</title>
+      <link>https://github.blog/ai-and-ml/generative-ai/what-ai-is-actually-good-for-according-to-developers/</link>
+      <guid isPermaLink="true">https://github.blog/ai-and-ml/generative-ai/what-ai-is-actually-good-for-according-to-developers/</guid>
+      <pubDate>Tue, 13 Jan 2026 18:39:24 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
     <item>
       <title>How GEICO lowered its $300M cloud spend and decoupled security from the network</title>
       <link>https://www.hashicorp.com/blog/how-geico-lowered-its-300m-cloud-spend-and-decoupled-security-from-the-network</link>
@@ -477,13 +491,6 @@
       <source>Microsoft DevOps Blog</source>
     </item>
     <item>
-      <title>Copilot memory early access for Pro and Pro+</title>
-      <link>https://github.blog/changelog/2025-12-19-copilot-memory-early-access-for-pro-and-pro</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2025-12-19-copilot-memory-early-access-for-pro-and-pro</guid>
-      <pubDate>Fri, 19 Dec 2025 17:05:54 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>Securing the AI era starts with identity</title>
       <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/securing-the-ai-era-starts-with-identity/ba-p/4478952</link>
       <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/securing-the-ai-era-starts-with-identity/ba-p/4478952</guid>
@@ -685,13 +692,6 @@
       <guid isPermaLink="true">https://techcommunity.microsoft.com/blog/microsoft-security-blog/microsoft-named-an-overall-leader-in-kuppingercole-leadership-compass-for-genera/4478093</guid>
       <pubDate>Mon, 15 Dec 2025 18:05:00 +0000</pubDate>
       <source>Microsoft Security</source>
-    </item>
-    <item>
-      <title>Taming tool sprawl: How to boost university IT productivity</title>
-      <link>https://about.gitlab.com/blog/taming-tool-sprawl-how-to-boost-university-it-productivity/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/taming-tool-sprawl-how-to-boost-university-it-productivity/</guid>
-      <pubDate>Mon, 15 Dec 2025 00:00:00 +0000</pubDate>
-      <source>GitLab Blog</source>
     </item>
   </channel>
 </rss>
