@@ -1080,7 +1080,7 @@ h3 {
   width: 2rem;
   height: 2rem;
   background: var(--bg-tertiary);
-  border: none;
+  border: 2px solid var(--border-primary);
   border-radius: 50%;
   cursor: pointer;
   display: flex;
@@ -1095,12 +1095,13 @@ h3 {
 .read-indicator:hover {
   opacity: 100%;
   background: var(--bg-hover);
+  border-color: var(--border-accent);
   transform: scale(1.1);
 }
 
 .read-indicator.active {
   background: var(--border-success);
-  border: 2px solid var(--border-success);
+  border-color: var(--border-success);
   color: white;
   opacity: 100%;
 }
@@ -1267,8 +1268,8 @@ h3 {
   /* Square with subtle rounding instead of circle */
   border-radius: 0.25rem;
 
-  /* No border in default state */
-  border: none;
+  /* Dotted border to match list view aesthetic */
+  border: 1px dotted var(--border-primary);
 
   /* More subtle background */
   background: transparent;
@@ -1287,6 +1288,8 @@ h3 {
 [data-view="list"] .read-indicator:hover {
   opacity: 80%;
   background: var(--bg-tertiary);
+  border-color: var(--border-accent);
+  border-style: solid;
   transform: translateY(-50%) scale(1.05);
 }
 
