@@ -85,7 +85,7 @@ jobs:
 
           # For PRs, checkout the actual branch to avoid detached HEAD
           if [ -n "${{ github.event.pull_request.head.ref }}" ]; then
-            git checkout "${{ github.event.pull_request.head.ref }}"
+            git checkout -B "${{ github.event.pull_request.head.ref }}"
           fi
 
           git add -A
@@ -94,12 +94,18 @@ jobs:
 
             # Push to the appropriate branch
             if [ -n "${{ github.event.pull_request.head.ref }}" ]; then
-              # For PRs, push to the PR branch
-              git push origin \
-                "HEAD:${{ github.event.pull_request.head.ref }}"
+              # For PRs, push to the PR branch with lease for safety
+              if ! git push --force-with-lease origin \
+                "HEAD:${{ github.event.pull_request.head.ref }}"; then
+                echo "::warning::Failed to push autofix changes to PR"
+                exit 1
+              fi
             else
               # For direct pushes to main, push to current branch
-              git push origin HEAD:${GITHUB_REF#refs/heads/}
+              if ! git push origin HEAD:${GITHUB_REF#refs/heads/}; then
+                echo "::warning::Failed to push autofix changes"
+                exit 1
+              fi
             fi
           else
             echo "No autofix changes to commit"
