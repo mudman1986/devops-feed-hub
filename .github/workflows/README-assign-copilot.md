@@ -50,15 +50,16 @@ The workflow will **NOT** assign an issue if:
 ## Workflow Logic
 
 1. **Grace Period** (on issue closure): Wait 5 minutes to allow manual assignment
-2. **Determine Mode**:
+2. **Weekend Check**: If it's Saturday or Sunday and triggered by issue closure, skip assignment to preserve Monday refactor availability
+3. **Determine Mode**:
    - Manual dispatch: Use the specified mode
    - Schedule at 9 AM on Monday: Use refactor mode
-   - Schedule at 10 AM any day: Use auto mode
-   - Issue closure: Use auto mode
-3. **Check Existing Assignment**:
-   - **Refactor mode**: If Copilot has a non-refactor issue, unassign it to make room for the refactor issue
+   - Schedule at 10 AM Tue-Fri: Use auto mode
+   - Issue closure (not weekend): Use auto mode
+4. **Check Existing Assignment**:
+   - **Refactor mode**: If Copilot is busy (has any assigned issue), skip refactor creation to avoid disruption - will try again next week
    - **Auto mode**: Skip if Copilot already has an issue (unless forced)
-4. **Assign Issue**:
+5. **Assign Issue**:
    - **Refactor mode**: Create a new refactor issue with predefined tasks
    - **Auto mode**: Find and assign the next available issue by priority
 
