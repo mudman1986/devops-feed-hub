@@ -14,8 +14,6 @@ from typing import Any, Dict, Optional
 from utils import generate_feed_slug, parse_iso_timestamp, sort_articles_by_date
 
 
-
-
 def generate_markdown_summary(data: Dict[str, Any]) -> str:
     """
     Generate markdown summary from RSS feed collection data

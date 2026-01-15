@@ -44,10 +44,10 @@ def parse_iso_timestamp(iso_string: str) -> datetime:
 def get_article_sort_key(article: Dict[str, Any]) -> datetime:
     """
     Get sort key for article by publication date.
-    
+
     Args:
         article: Article dictionary with 'published' field
-    
+
     Returns:
         datetime object for sorting (datetime.min if no valid date)
     """
@@ -65,11 +65,11 @@ def sort_articles_by_date(
 ) -> List[Dict[str, Any]]:
     """
     Sort articles by publication date.
-    
+
     Args:
         articles: List of article dictionaries
         reverse: If True, sort newest first (default)
-    
+
     Returns:
         Sorted list of articles
     """

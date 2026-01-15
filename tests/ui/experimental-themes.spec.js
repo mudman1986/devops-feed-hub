@@ -16,8 +16,13 @@ test.beforeEach(async ({ page }) => {
 // Helper function to navigate to experimental themes section
 async function goToExperimentalSection(page) {
   await page.goto("/settings.html");
-  await page.waitForSelector('.settings-menu-item[data-section="experimental"]', { timeout: 10000 });
-  await page.locator('.settings-menu-item[data-section="experimental"]').click();
+  await page.waitForSelector(
+    '.settings-menu-item[data-section="experimental"]',
+    { timeout: 10000 },
+  );
+  await page
+    .locator('.settings-menu-item[data-section="experimental"]')
+    .click();
   await page.waitForTimeout(300); // Wait for section to become active
 }
 

@@ -14,8 +14,6 @@ from xml.etree import ElementTree as ET
 from utils import generate_feed_slug, parse_iso_timestamp, sort_articles_by_date
 
 
-
-
 def format_rfc822_date(iso_date_str: str) -> str:
     """
     Format ISO 8601 date string to RFC 822 format required by RSS 2.0.

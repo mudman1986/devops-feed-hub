@@ -1,18 +1,19 @@
 # UI Testing with Playwright
 
-**CRITICAL FOR WEBSITE PROJECT**: UI tests validate that the website actually works. They are the PRIMARY test suite for this project.
+**CRITICAL FOR site PROJECT**: UI tests validate that the site actually works. They are the PRIMARY test suite for this project.
 
 ## Why UI Tests Are Critical
 
-This is a **website project** - the deliverable is a functioning web page displayed in a browser. UI tests are the ONLY way to verify:
-- The website displays correctly
+This is a **site project** - the deliverable is a functioning web page displayed in a browser. UI tests are the ONLY way to verify:
+
+- The site displays correctly
 - Navigation works
 - View modes (list/card) function properly
 - Mobile responsive design works
 - Theme switching works
 - JavaScript functionality works in browser
 
-**If UI tests fail, the website is broken.** No exceptions.
+**If UI tests fail, the site is broken.** No exceptions.
 
 ## Running UI Tests
 
@@ -142,8 +143,9 @@ In workflow files, always generate test data before running tests:
 ## ⚠️ MANDATORY UI TEST POLICY
 
 **BEFORE committing ANY change that affects:**
+
 - HTML files
-- CSS files  
+- CSS files
 - JavaScript files
 - View modes (list/card)
 - Themes
@@ -151,6 +153,7 @@ In workflow files, always generate test data before running tests:
 - Responsive design
 
 **YOU MUST:**
+
 1. Generate test data: `bash .github/scripts/generate-test-data.sh`
 2. Run UI tests: `npm run test:ui`
 3. Ensure 100% pass rate
@@ -158,9 +161,10 @@ In workflow files, always generate test data before running tests:
 5. Test on multiple viewports
 
 **If UI tests fail:**
+
 - Fix the issue immediately
 - Re-run tests until they pass
 - NEVER commit with failing UI tests
 - The task is NOT complete until UI tests pass
 
-**Remember**: This is a website. If the UI tests don't pass, the website doesn't work.
+**Remember**: This is a site. If the UI tests don't pass, the site doesn't work.

@@ -2,7 +2,7 @@
 
 ## Overview
 
-**This is a website project** - The DevOps Feed Hub is a user-facing web application that displays RSS feeds. UI quality and functionality are critical to success.
+**This is a site project** - The DevOps Feed Hub is a user-facing web application that displays RSS feeds. UI quality and functionality are critical to success.
 
 This repository is maintained primarily by GitHub Copilot. Path-specific instructions exist for specialized contexts:
 
@@ -15,9 +15,10 @@ This repository is maintained primarily by GitHub Copilot. Path-specific instruc
 
 ## Critical Project Context
 
-**THIS IS A WEBSITE PROJECT** - All changes must be validated through UI tests before being considered complete. The primary deliverable is a functioning website displayed in a browser. Any change that affects:
+**THIS IS A site PROJECT** - All changes must be validated through UI tests before being considered complete. The primary deliverable is a functioning site displayed in a browser. Any change that affects:
+
 - HTML structure
-- CSS styling  
+- CSS styling
 - JavaScript functionality
 - Theme switching
 - View modes (list/card)
@@ -131,7 +132,7 @@ This repository is maintained primarily by GitHub Copilot. Path-specific instruc
 
 ### Running Tests
 
-**CRITICAL FOR WEBSITE PROJECT**: UI tests are the primary validation mechanism. They MUST pass before any work is considered complete.
+**CRITICAL FOR site PROJECT**: UI tests are the primary validation mechanism. They MUST pass before any work is considered complete.
 
 #### Test Execution Order (MANDATORY)
 
@@ -139,36 +140,38 @@ This repository is maintained primarily by GitHub Copilot. Path-specific instruc
    - **ALWAYS run FIRST after any UI change**
    - **Generate test data**: `bash .github/scripts/generate-test-data.sh`
    - **Run UI tests**: `npm run test:ui`
-   - **CRITICAL**: These tests validate the actual website functionality
-   - **Fix ALL failures immediately** - UI test failures mean the website is broken
+   - **CRITICAL**: These tests validate the actual site functionality
+   - **Fix ALL failures immediately** - UI test failures mean the site is broken
    - **Test specific files**: `npx playwright test tests/ui/view-modes.spec.js` for targeted validation
-   
+
 2. **JavaScript Unit Tests** (REQUIRED)
    - Run: `npm test`
    - All tests must pass
-   
+
 3. **Python Tests** (REQUIRED)
    - Run: `python3 -m pytest .github/actions/collect-rss-feeds/tests/ -v`
    - All tests must pass
-   
+
 4. **Shell Script Tests** (REQUIRED)
    - Run: `bats .github/scripts/test_*.bats`
    - All tests must pass
 
 #### UI Testing Requirements
 
-**BEFORE making any changes that affect the website:**
+**BEFORE making any changes that affect the site:**
+
 1. Generate test HTML: `bash .github/scripts/generate-test-data.sh`
 2. Run baseline UI tests to ensure they pass: `npm run test:ui`
 
-**AFTER making any changes that affect the website:**
+**AFTER making any changes that affect the site:**
+
 1. Regenerate test HTML: `bash .github/scripts/generate-test-data.sh`
 2. Run UI tests: `npm run test:ui`
 3. Fix ALL failures immediately
 4. Re-run until 100% pass
 5. Take screenshots to verify visual correctness
 
-**NEVER commit changes without verifying UI tests pass.** This is a website - if the UI tests fail, the website is broken.
+**NEVER commit changes without verifying UI tests pass.** This is a site - if the UI tests fail, the site is broken.
 
 ### Environment Setup
 
@@ -179,8 +182,9 @@ This repository is maintained primarily by GitHub Copilot. Path-specific instruc
 
 Before completing any task and presenting work as finished, verify **IN THIS ORDER**:
 
-### 1. UI Tests (HIGHEST PRIORITY - WEBSITE PROJECT)
-- [ ] **UI tests MUST pass FIRST** - This validates the actual website works
+### 1. UI Tests (HIGHEST PRIORITY - site PROJECT)
+
+- [ ] **UI tests MUST pass FIRST** - This validates the actual site works
   - Generate test data: `bash .github/scripts/generate-test-data.sh`
   - Run UI tests: `npm run test:ui`
   - **ALL UI tests must pass** - No exceptions
@@ -189,18 +193,21 @@ Before completing any task and presenting work as finished, verify **IN THIS ORD
   - If ANY UI test fails, fix immediately and re-run
 
 ### 2. Other Tests (All Must Pass)
+
 - [ ] **JavaScript tests pass**: `npm test`
 - [ ] **Python tests pass**: `python3 -m pytest .github/actions/collect-rss-feeds/tests/ -v`
 - [ ] **Shell script tests pass**: `bats .github/scripts/test_*.bats`
 - [ ] **MANDATORY: Run tests after every fix to verify** - Never assume a fix works
 
 ### 3. Code Quality & Security
+
 - [ ] **Super-linter passes**: Run locally and fix ALL linting errors
 - [ ] **Security scan passes**: No new vulnerabilities introduced
 - [ ] **Code quality improved**: Refactored code, eliminated duplication
 - [ ] **Tests added**: New features and bugfixes have test coverage
 
 ### 4. Specialized Agent Validation
+
 - [ ] **Bugfixes require test-driven approach**:
   - **ALWAYS assign bugs to test-runner agent first**
   - Test agent will create failing test → fix bug → verify test passes
@@ -211,6 +218,7 @@ Before completing any task and presenting work as finished, verify **IN THIS ORD
   - Address any issues found by these agents before committing
 
 ### 5. Final Validation
+
 - [ ] **UI validated on all devices**: Tested on desktop (1920x1080, 1366x768), tablet (768x1024), and mobile (375x667, 414x896)
 - [ ] **Workflows verified** (if applicable): All affected workflows execute successfully
 - [ ] **Documentation updated** (if needed): Inline comments and minimal docs
@@ -219,15 +227,16 @@ Before completing any task and presenting work as finished, verify **IN THIS ORD
 - [ ] **Code review requested**: Use code review tool before finalizing
 - [ ] **All issues resolved**: No new linting, security, or test failures
 
-## ⚠️ CRITICAL REMINDER FOR WEBSITE PROJECT
+## ⚠️ CRITICAL REMINDER FOR site PROJECT
 
 **Before marking ANY task complete:**
-1. ✅ UI tests MUST pass (this validates the website works)
+
+1. ✅ UI tests MUST pass (this validates the site works)
 2. ✅ Visual verification with screenshots (confirm it looks correct)
 3. ✅ All other tests pass
 4. ✅ Super-linter passes
 
-**If UI tests fail, the website is broken - the task is NOT complete.**
+**If UI tests fail, the site is broken - the task is NOT complete.**
 
 ## Repository Structure
 

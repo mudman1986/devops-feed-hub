@@ -4,16 +4,18 @@ applyTo: "docs/**/*.js,docs/**/*.html,docs/**/*.css"
 
 # Frontend/UI Development
 
-**CRITICAL**: This project generates a user-facing website. All UI changes must be validated with UI tests.
+**CRITICAL**: This project generates a user-facing site. All UI changes must be validated with UI tests.
 
 ## Testing Requirements (MANDATORY)
 
 ### Before Making Changes
+
 1. Generate test data: `bash .github/scripts/generate-test-data.sh`
 2. Run baseline tests: `npm run test:ui`
 3. Ensure all tests pass before starting
 
 ### After Making Changes
+
 1. Regenerate test data: `bash .github/scripts/generate-test-data.sh`
 2. Run UI tests: `npm run test:ui`
 3. Fix ALL failures immediately
@@ -21,6 +23,7 @@ applyTo: "docs/**/*.js,docs/**/*.html,docs/**/*.css"
 5. Take screenshots to verify visual correctness
 
 ### Test Coverage Requirements
+
 - Write Jest unit tests for JavaScript logic: `npm test`
 - Write Playwright UI tests in `tests/ui/` for visual/interaction changes
 - Test all device configurations (desktop, tablet, mobile)
@@ -47,10 +50,12 @@ applyTo: "docs/**/*.js,docs/**/*.html,docs/**/*.css"
 ## View Modes (CRITICAL)
 
 **List view and Card view must remain visually distinct:**
+
 - List view: Dotted borders, compact layout, no backgrounds
 - Card view: Rounded corners, backgrounds, padding
 
 **When adding styles:**
+
 - Scope card-specific styles to `[data-view="card"]`
 - Scope list-specific styles to `[data-view="list"]`
 - NEVER add global `.article-item` styles that override view-specific CSS
