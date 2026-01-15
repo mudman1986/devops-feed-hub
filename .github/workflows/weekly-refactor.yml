@@ -18,13 +18,16 @@ jobs:
         with:
           github-token: ${{ secrets.COPILOT_ASSIGN_PAT }}
           script: |
-            // Step 1: Get repo ID and Copilot bot ID
+            // Step 1: Get repo ID, Copilot bot ID, and refactor label ID
             const repoInfo = await github.graphql(`
               query($owner: String!, $repo: String!) {
                 repository(owner: $owner, name: $repo) {
                   id
                   suggestedActors(capabilities: [CAN_BE_ASSIGNED], first: 100) {
                     nodes { login __typename ... on Bot { id } ... on User { id } }
+                  }
+                  label(name: "refactor") {
+                    id
                   }
                 }
               }
@@ -43,6 +46,11 @@ jobs:
               throw new Error("Copilot bot agent not found in suggestedActors");
             }
             const copilotBotId = copilotBot.id;
+
+            if (!repoInfo.repository.label) {
+              throw new Error("refactor label not found in repository");
+            }
+            const refactorLabelId = repoInfo.repository.label.id;
 
             // Step 2: Create and assign issue to Copilot
             const res = await github.graphql(`
@@ -65,7 +73,7 @@ jobs:
               }
             `, {
               repositoryId: repoId,
-              title: `Weekly Refactor - ${new Date().toISOString().split('T')[0]}`,
+              title: `Weekly Refactor - ${new Date().toISOString()}`,
               body: [
                 'Review the codebase and make improvements:',
                 '',
@@ -84,3 +92,31 @@ jobs:
             });
 
             console.log(`Created Copilot-assigned issue: ${res.createIssue.issue.url}`);
+
+            // Step 3: Add refactor label to the issue
+            const issueId = res.createIssue.issue.id;
+            await github.graphql(`
+              mutation($issueId: ID!, $labelIds: [ID!]!) {
+                addLabelsToLabelable(
+                  input: {
+                    labelableId: $issueId,
+                    labelIds: $labelIds
+                  }
+                ) {
+                  labelable {
+                    ... on Issue {
+                      labels(first: 10) {
+                        nodes {
+                          name
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            `, {
+              issueId: issueId,
+              labelIds: [refactorLabelId]
+            });
+
+            console.log(`Added 'refactor' label to issue`);
