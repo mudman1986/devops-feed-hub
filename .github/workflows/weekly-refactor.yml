@@ -95,28 +95,33 @@ jobs:
 
             // Step 3: Add refactor label to the issue
             const issueId = res.createIssue.issue.id;
-            await github.graphql(`
-              mutation($issueId: ID!, $labelIds: [ID!]!) {
-                addLabelsToLabelable(
-                  input: {
-                    labelableId: $issueId,
-                    labelIds: $labelIds
-                  }
-                ) {
-                  labelable {
-                    ... on Issue {
-                      labels(first: 10) {
-                        nodes {
-                          name
+            try {
+              await github.graphql(`
+                mutation($issueId: ID!, $labelIds: [ID!]!) {
+                  addLabelsToLabelable(
+                    input: {
+                      labelableId: $issueId,
+                      labelIds: $labelIds
+                    }
+                  ) {
+                    labelable {
+                      ... on Issue {
+                        labels(first: 10) {
+                          nodes {
+                            name
+                          }
                         }
                       }
                     }
                   }
                 }
-              }
-            `, {
-              issueId,
-              labelIds: [refactorLabelId]
-            });
+              `, {
+                issueId,
+                labelIds: [refactorLabelId]
+              });
 
-            console.log(`Added 'refactor' label to issue`);
+              console.log(`Added 'refactor' label to issue`);
+            } catch (error) {
+              console.error(`Failed to add refactor label: ${error.message}`);
+              throw error;
+            }
