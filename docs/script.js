@@ -908,7 +908,6 @@ function ensureTouchTargets() {
       if (currentPadding === '0px' || currentPadding === '') {
         element.style.padding = '0.75rem';
       }
-      }
     }
   });
 }

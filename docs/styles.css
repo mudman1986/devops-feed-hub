@@ -3997,19 +3997,19 @@ input:focus-visible {
   outline-offset: 3px;
 }
 
-/* Improve article item accessibility and touch targets */
-.article-item {
+/* Improve article item accessibility and touch targets in card view */
+[data-view="card"] .article-item {
   min-height: 60px; /* Ensure adequate touch target */
 }
 
-/* Better touch targets on mobile for article links */
+/* Better touch targets on mobile for article links in card view */
 @media (max-width: 768px) {
-  .article-item {
+  [data-view="card"] .article-item {
     padding: 1.5rem 3rem 1.5rem 1.5rem;
     min-height: 72px;
   }
   
-  .article-title {
+  [data-view="card"] .article-title {
     font-size: 1.0625rem;
     line-height: 1.6;
   }
