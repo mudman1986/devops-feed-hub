@@ -38,6 +38,7 @@ permissions:
 
 jobs:
   # Wait job to provide grace period when issue is closed
+  # This job only runs on issue events; it will be skipped for schedule/dispatch events
   wait-grace-period:
     runs-on: ubuntu-latest
     if: github.event_name == 'issues'
@@ -48,8 +49,13 @@ jobs:
   assign-issue:
     runs-on: ubuntu-latest
     needs: [wait-grace-period]
-    # Skip the wait job if not triggered by issue closure
-    if: always() && (needs.wait-grace-period.result == 'success' || needs.wait-grace-period.result == 'skipped')
+    # Run after wait job completes (for issue events) or immediately (for schedule/dispatch)
+    # When wait-grace-period is skipped, needs.wait-grace-period.result will be 'skipped'
+    if: |
+      always() && (
+        needs.wait-grace-period.result == 'success' ||
+        needs.wait-grace-period.result == 'skipped'
+      )
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
