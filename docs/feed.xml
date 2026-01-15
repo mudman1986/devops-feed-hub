@@ -5,8 +5,22 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 15 Jan 2026 22:49:29 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 15 Jan 2026 23:03:06 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Secret scanning extended metadata to be automatically enabled for certain repositories</title>
+      <link>https://github.blog/changelog/2026-01-15-secret-scanning-extended-metadata-to-be-automatically-enabled-for-certain-repositories</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-01-15-secret-scanning-extended-metadata-to-be-automatically-enabled-for-certain-repositories</guid>
+      <pubDate>Thu, 15 Jan 2026 21:59:35 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Agentic memory for GitHub Copilot is in public preview</title>
+      <link>https://github.blog/changelog/2026-01-15-agentic-memory-for-github-copilot-is-in-public-preview</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-01-15-agentic-memory-for-github-copilot-is-in-public-preview</guid>
+      <pubDate>Thu, 15 Jan 2026 21:57:44 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
     <item>
       <title>Building an agentic memory system for GitHub Copilot</title>
       <link>https://github.blog/ai-and-ml/github-copilot/building-an-agentic-memory-system-for-github-copilot/</link>
@@ -251,20 +265,6 @@
       <guid isPermaLink="true">https://www.hashicorp.com/blog/how-to-start-consolidating-your-cybersecurity-tools</guid>
       <pubDate>Mon, 12 Jan 2026 23:00:00 +0000</pubDate>
       <source>HashiCorp Blog</source>
-    </item>
-    <item>
-      <title>Selectively showing "act on your behalf" warning for GitHub Apps is in public preview</title>
-      <link>https://github.blog/changelog/2026-01-12-selectively-showing-act-on-your-behalf-warning-for-github-apps-is-in-public-preview</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-01-12-selectively-showing-act-on-your-behalf-warning-for-github-apps-is-in-public-preview</guid>
-      <pubDate>Mon, 12 Jan 2026 22:16:06 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>Controlling who can request apps for your organization is now generally available</title>
-      <link>https://github.blog/changelog/2026-01-12-controlling-who-can-request-apps-for-your-organization-is-now-generally-available</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-01-12-controlling-who-can-request-apps-for-your-organization-is-now-generally-available</guid>
-      <pubDate>Mon, 12 Jan 2026 20:19:15 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>Want better AI outputs? Try context engineering.</title>
