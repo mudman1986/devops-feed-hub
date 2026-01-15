@@ -2,6 +2,8 @@
 
 ## Overview
 
+**This is a site project** - The DevOps Feed Hub is a user-facing web application that displays RSS feeds. UI quality and functionality are critical to success.
+
 This repository is maintained primarily by GitHub Copilot. Path-specific instructions exist for specialized contexts:
 
 - **Python RSS Action Code**: `.github/instructions/python-rss-action.instructions.md`
@@ -10,6 +12,21 @@ This repository is maintained primarily by GitHub Copilot. Path-specific instruc
 - **Frontend/UI Code**: `.github/instructions/frontend-ui.instructions.md`
 - **UI Test Files**: `.github/instructions/ui-testing.instructions.md`
 - **Code Review**: `.github/instructions/code-review.instructions.md`
+
+## Critical Project Context
+
+**THIS IS A site PROJECT** - All changes must be validated through UI tests before being considered complete. The primary deliverable is a functioning site displayed in a browser. Any change that affects:
+
+- HTML structure
+- CSS styling
+- JavaScript functionality
+- Theme switching
+- View modes (list/card)
+- Mobile responsiveness
+- Navigation
+- Accessibility features
+
+...MUST be validated with UI tests before committing.
 
 ## Core Principles
 
@@ -60,6 +77,7 @@ This repository is maintained primarily by GitHub Copilot. Path-specific instruc
   docker run --rm \
     -e RUN_LOCAL=true \
     -e VALIDATE_ALL_CODEBASE=true \
+    -e FAIL_ON_CONFLICTING_TOOLS_ENABLED= true \
     -e DEFAULT_BRANCH=main \
     -e IGNORE_GITIGNORED_FILES=true \
     -e SAVE_SUPER_LINTER_SUMMARY=true \
@@ -87,15 +105,18 @@ This repository is maintained primarily by GitHub Copilot. Path-specific instruc
     -e VALIDATE_GITHUB_ACTIONS=true \
     -e VALIDATE_GITLEAKS=true \
     -e VALIDATE_GIT_MERGE_CONFLICT_MARKERS=true \
+    -e FIX_CSS=true \
     -e FIX_PYTHON_BLACK=true \
     -e FIX_PYTHON_ISORT=true \
     -e FIX_SHELL_SHFMT=true \
+    -e FIX_MARKDOWN=true \
     -e FIX_MARKDOWN_PRETTIER=true \
     -e FIX_YAML_PRETTIER=true \
     -e FIX_JAVASCRIPT_PRETTIER=true \
     -e FIX_CSS_PRETTIER=true \
     -e FIX_HTML_PRETTIER=true \
     -e FIX_NATURAL_LANGUAGE=true \
+    -e FIX_JAVASCRIPT_ES=true \
     -v $(pwd):/tmp/lint \
     ghcr.io/super-linter/super-linter:v8.3.2
   ```
@@ -111,11 +132,46 @@ This repository is maintained primarily by GitHub Copilot. Path-specific instruc
 
 ### Running Tests
 
-- **JavaScript**: `npm test` (all tests must pass)
-- **Python**: `python3 -m pytest .github/actions/collect-rss-feeds/tests/ -v` (all tests must pass)
-- **UI Tests**: `npm run test:ui`
-  - **IMPORTANT**: UI tests require generated HTML files. Run `bash .github/scripts/generate-test-data.sh` first
-- **Shell Scripts**: `bats .github/scripts/test_*.bats`
+**CRITICAL FOR site PROJECT**: UI tests are the primary validation mechanism. They MUST pass before any work is considered complete.
+
+#### Test Execution Order (MANDATORY)
+
+1. **UI Tests** (PRIMARY - MOST IMPORTANT)
+   - **ALWAYS run FIRST after any UI change**
+   - **Generate test data**: `bash .github/scripts/generate-test-data.sh`
+   - **Run UI tests**: `npm run test:ui`
+   - **CRITICAL**: These tests validate the actual site functionality
+   - **Fix ALL failures immediately** - UI test failures mean the site is broken
+   - **Test specific files**: `npx playwright test tests/ui/view-modes.spec.js` for targeted validation
+
+2. **JavaScript Unit Tests** (REQUIRED)
+   - Run: `npm test`
+   - All tests must pass
+
+3. **Python Tests** (REQUIRED)
+   - Run: `python3 -m pytest .github/actions/collect-rss-feeds/tests/ -v`
+   - All tests must pass
+
+4. **Shell Script Tests** (REQUIRED)
+   - Run: `bats .github/scripts/test_*.bats`
+   - All tests must pass
+
+#### UI Testing Requirements
+
+**BEFORE making any changes that affect the site:**
+
+1. Generate test HTML: `bash .github/scripts/generate-test-data.sh`
+2. Run baseline UI tests to ensure they pass: `npm run test:ui`
+
+**AFTER making any changes that affect the site:**
+
+1. Regenerate test HTML: `bash .github/scripts/generate-test-data.sh`
+2. Run UI tests: `npm run test:ui`
+3. Fix ALL failures immediately
+4. Re-run until 100% pass
+5. Take screenshots to verify visual correctness
+
+**NEVER commit changes without verifying UI tests pass.** This is a site - if the UI tests fail, the site is broken.
 
 ### Environment Setup
 
@@ -124,14 +180,34 @@ This repository is maintained primarily by GitHub Copilot. Path-specific instruc
 
 ## Pre-Completion Checklist
 
-Before completing any task and presenting work as finished, verify:
+Before completing any task and presenting work as finished, verify **IN THIS ORDER**:
 
-- [ ] **All tests pass**: JavaScript, Python, UI tests, shell script tests
-  - **MANDATORY: Run tests after every fix to verify** - Never assume a fix works
-  - Run `npm test` for JavaScript tests
-  - Run `python3 -m pytest .github/actions/collect-rss-feeds/tests/ -v` for Python
-  - Run `npm run test:ui` for Playwright tests
-  - Fix failures immediately and rerun until all pass
+### 1. UI Tests (HIGHEST PRIORITY - site PROJECT)
+
+- [ ] **UI tests MUST pass FIRST** - This validates the actual site works
+  - Generate test data: `bash .github/scripts/generate-test-data.sh`
+  - Run UI tests: `npm run test:ui`
+  - **ALL UI tests must pass** - No exceptions
+  - Take screenshots to verify visual correctness
+  - Test on multiple viewports (desktop, tablet, mobile)
+  - If ANY UI test fails, fix immediately and re-run
+
+### 2. Other Tests (All Must Pass)
+
+- [ ] **JavaScript tests pass**: `npm test`
+- [ ] **Python tests pass**: `python3 -m pytest .github/actions/collect-rss-feeds/tests/ -v`
+- [ ] **Shell script tests pass**: `bats .github/scripts/test_*.bats`
+- [ ] **MANDATORY: Run tests after every fix to verify** - Never assume a fix works
+
+### 3. Code Quality & Security
+
+- [ ] **Super-linter passes**: Run locally and fix ALL linting errors
+- [ ] **Security scan passes**: No new vulnerabilities introduced
+- [ ] **Code quality improved**: Refactored code, eliminated duplication
+- [ ] **Tests added**: New features and bugfixes have test coverage
+
+### 4. Specialized Agent Validation
+
 - [ ] **Bugfixes require test-driven approach**:
   - **ALWAYS assign bugs to test-runner agent first**
   - Test agent will create failing test → fix bug → verify test passes
@@ -140,17 +216,27 @@ Before completing any task and presenting work as finished, verify:
   - Use `test-runner` agent to run all linters and tests
   - Use `ui-specialist` agent to review UI changes for responsiveness and accessibility
   - Address any issues found by these agents before committing
-- [ ] **Super-linter passes**: Run locally and fix ALL linting errors
-- [ ] **Security scan passes**: No new vulnerabilities introduced
-- [ ] **Code quality improved**: Refactored code, eliminated duplication
-- [ ] **Tests added**: New features and bugfixes have test coverage
-- [ ] **UI validated** (if applicable): Tested on desktop, tablet, and mobile
+
+### 5. Final Validation
+
+- [ ] **UI validated on all devices**: Tested on desktop (1920x1080, 1366x768), tablet (768x1024), and mobile (375x667, 414x896)
 - [ ] **Workflows verified** (if applicable): All affected workflows execute successfully
 - [ ] **Documentation updated** (if needed): Inline comments and minimal docs
 - [ ] **No secrets committed**: No hardcoded credentials or sensitive data
 - [ ] **Changes are minimal**: Smallest possible changes to achieve the goal
 - [ ] **Code review requested**: Use code review tool before finalizing
 - [ ] **All issues resolved**: No new linting, security, or test failures
+
+## ⚠️ CRITICAL REMINDER FOR site PROJECT
+
+**Before marking ANY task complete:**
+
+1. ✅ UI tests MUST pass (this validates the site works)
+2. ✅ Visual verification with screenshots (confirm it looks correct)
+3. ✅ All other tests pass
+4. ✅ Super-linter passes
+
+**If UI tests fail, the site is broken - the task is NOT complete.**
 
 ## Repository Structure
 
