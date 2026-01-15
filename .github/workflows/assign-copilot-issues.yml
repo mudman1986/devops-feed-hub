@@ -1,6 +1,10 @@
 name: Assign Issues to Copilot
 
 on:
+  # Daily schedule to ensure Copilot always has work
+  schedule:
+    - cron: "0 10 * * *" # Daily at 10 AM UTC
+
   # Trigger when an issue is closed (with delay for grace period)
   issues:
     types: [closed]
@@ -61,6 +65,10 @@ jobs:
           # Determine mode based on trigger
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             MODE="${{ inputs.mode }}"
+          elif [ "${{ github.event_name }}" = "schedule" ]; then
+            # Daily schedule always uses auto mode (will create refactor if no issues available)
+            MODE="auto"
+            echo "Scheduled run - auto mode"
           else
             # Use the closed issue number to determine mode
             # Every 5th issue (issue numbers ending in 0 or 5) triggers a refactor
@@ -385,6 +393,10 @@ jobs:
 
               if (!issueToAssign) {
                 console.log('No suitable issue found to assign to Copilot.');
+                console.log('Creating a refactor issue instead to ensure Copilot has work.');
+                
+                // If no regular issues are available, create a refactor issue
+                await createRefactorIssue();
                 return;
               }
 

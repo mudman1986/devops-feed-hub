@@ -8,7 +8,15 @@ The workflow handles both weekly refactor tasks and daily issue assignment in a 
 
 ## Triggers
 
-### 1. Issue Closure
+### 1. Daily Schedule
+
+Runs daily at 10 AM UTC to ensure Copilot always has work assigned. This acts as a "jumpstart" mechanism:
+
+- If Copilot is already assigned to an issue: Skips (no action)
+- If Copilot is not assigned and suitable issues exist: Auto-assigns the next issue by priority
+- If Copilot is not assigned and no suitable issues exist: Creates a refactor issue
+
+### 2. Issue Closure
 
 When an issue is closed, the workflow waits for 5 minutes (grace period) before automatically assigning the next issue or creating a refactor issue.
 
@@ -19,7 +27,7 @@ When an issue is closed, the workflow waits for 5 minutes (grace period) before 
 
 This ensures approximately every 5th issue triggers a refactor, maintaining a good balance between regular work and refactoring.
 
-### 2. Manual Dispatch
+### 3. Manual Dispatch
 
 The workflow can be triggered manually with the following options:
 
@@ -50,6 +58,7 @@ The workflow will **NOT** assign an issue if:
 1. **Grace Period** (on issue closure): Wait 5 minutes to allow manual assignment
 2. **Determine Mode**:
    - Manual dispatch: Use the specified mode
+   - Daily schedule: Use auto mode
    - Issue closure: Check if issue number ends in 0 or 5
      - If yes: Use refactor mode (create refactor issue)
      - If no: Use auto mode (assign next regular issue)
@@ -59,6 +68,7 @@ The workflow will **NOT** assign an issue if:
 4. **Assign Issue**:
    - **Refactor mode**: Create a new refactor issue with predefined tasks
    - **Auto mode**: Find and assign the next available issue by priority
+     - If no suitable issues exist: Create a refactor issue instead to ensure Copilot always has work
 
 ## Conflict Resolution
 
