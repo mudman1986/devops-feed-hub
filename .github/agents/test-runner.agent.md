@@ -41,6 +41,7 @@ Run these checks in order and resolve any failures:
      -e VALIDATE_ALL_CODEBASE=true \
      -e DEFAULT_BRANCH=main \
      -e IGNORE_GITIGNORED_FILES=true \
+     -e FAIL_ON_CONFLICTING_TOOLS_ENABLED=true \
      -e SAVE_SUPER_LINTER_SUMMARY=true \
      -e VALIDATE_BASH=true \
      -e VALIDATE_BASH_EXEC=true \
@@ -65,15 +66,18 @@ Run these checks in order and resolve any failures:
      -e VALIDATE_GITHUB_ACTIONS=true \
      -e VALIDATE_GITLEAKS=true \
      -e VALIDATE_GIT_MERGE_CONFLICT_MARKERS=true \
+     -e FIX_CSS=true \
      -e FIX_PYTHON_BLACK=true \
      -e FIX_PYTHON_ISORT=true \
      -e FIX_SHELL_SHFMT=true \
+     -e FIX_MARKDOWN=true \
      -e FIX_MARKDOWN_PRETTIER=true \
      -e FIX_YAML_PRETTIER=true \
      -e FIX_JAVASCRIPT_PRETTIER=true \
      -e FIX_CSS_PRETTIER=true \
      -e FIX_HTML_PRETTIER=true \
      -e FIX_NATURAL_LANGUAGE=true \
+     -e FIX_JAVASCRIPT_ES=true \
      -v $(pwd):/tmp/lint \
      ghcr.io/super-linter/super-linter:v8.3.2
    ```

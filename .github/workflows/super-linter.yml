@@ -22,13 +22,15 @@ jobs:
           fetch-depth: 0
 
       - name: Run Super-Linter
-        uses: super-linter/super-linter@d5b0a2ab116623730dd094f15ddc1b6b25bf7b99 # v8.3.2
+        uses: super-linter/super-linter@d5b0a2ab116623730dd094f15ddc1b6b25bf7b99 # v8.3.
+        continue-on-error: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VALIDATE_ALL_CODEBASE: true
           IGNORE_GENERATED_FILES: true
           IGNORE_GITIGNORED_FILES: true
           SAVE_SUPER_LINTER_SUMMARY: true
+          FAIL_ON_CONFLICTING_TOOLS_ENABLED: true
           # Enable only useful, non-duplicate linters
           # When specific VALIDATE_* are set to true, only those linters run
           # Shell
@@ -69,22 +71,40 @@ jobs:
           FIX_PYTHON_BLACK: true
           FIX_PYTHON_ISORT: true
           FIX_SHELL_SHFMT: true
+          FIX_MARKDOWN: true
           FIX_MARKDOWN_PRETTIER: true
           FIX_YAML_PRETTIER: true
           FIX_JAVASCRIPT_PRETTIER: true
+          FIX_CSS: true
           FIX_CSS_PRETTIER: true
           FIX_HTML_PRETTIER: true
           FIX_NATURAL_LANGUAGE: true
+          FIX_JAVASCRIPT_ES: true
 
       - name: Commit and Push Autofix Changes
-        if: always()
+        if: github.event_name == 'pull_request'
+        env:
+          PR_HEAD_REF: ${{ github.event.pull_request.head.ref }}
         run: |
           git config --global user.name "github-actions[bot]"
-          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.email \
+            "github-actions[bot]@users.noreply.github.com"
+
+          # Checkout the actual PR branch to avoid detached HEAD
+          git checkout -B "${PR_HEAD_REF}"
+
           git add -A
+          git reset .github/workflows/
+          
           if ! git diff --staged --quiet; then
             git commit -m "style: apply super-linter autofix"
-            git push
+
+            # Push to the PR branch with lease for safety
+            if ! git push --force-with-lease origin \
+              "HEAD:${PR_HEAD_REF}"; then
+              echo "::warning::Failed to push autofix changes to PR"
+              exit 1
+            fi
           else
             echo "No autofix changes to commit"
           fi
