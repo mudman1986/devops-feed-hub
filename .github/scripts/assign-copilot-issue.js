@@ -9,7 +9,7 @@
  *   node assign-copilot-issue.js --mode=auto --label=bug --force
  */
 
-module.exports = async ({ github, context, core }) => {
+module.exports = async ({ github, context }) => {
   // Parse command line arguments or use defaults
   const args = process.argv.slice(2);
   const mode =

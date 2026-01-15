@@ -18,14 +18,10 @@ on:
           - auto
           - refactor
       label:
-        description: "Priority label (auto mode only)"
+        description: "Priority label (auto mode only, leave empty for default priority)"
         required: false
-        type: choice
-        options:
-          - ""
-          - bug
-          - documentation
-          - enhancement
+        type: string
+        default: ""
       force:
         description: "Force assignment even if copilot has an issue"
         required: false
@@ -66,7 +62,8 @@ jobs:
             MODE="${{ inputs.mode }}"
           elif [ "${{ github.event_name }}" = "schedule" ]; then
             # Check if this is Monday (weekly refactor)
-            if [ "$(date +%u)" = "1" ] && [ "${{ github.event.schedule }}" = "0 9 * * 1" ]; then
+            # Both schedules run, but on Monday we do refactor, other days we do auto
+            if [ "$(date +%u)" = "1" ]; then
               MODE="refactor"
             else
               MODE="auto"
