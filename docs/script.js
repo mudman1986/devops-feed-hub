@@ -727,9 +727,9 @@ function initAccessibility() {
   articleItems.forEach(item => {
     const link = item.querySelector('.article-title');
     if (link) {
-      // Add keyboard event for marking as read (Ctrl+R or Cmd+R)
+      // Add keyboard event for marking as read (Ctrl+M or Cmd+M)
       item.addEventListener('keydown', function(e) {
-        if ((e.ctrlKey || e.metaKey) && e.key === 'r') {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'm') {
           e.preventDefault();
           // Toggle read status
           this.classList.toggle('read');
@@ -761,10 +761,10 @@ function announceToScreenReader(message, priority = 'polite') {
   if (liveRegion) {
     liveRegion.setAttribute('aria-live', priority);
     liveRegion.textContent = message;
-    // Clear after announcement
+    // Clear after announcement (3 seconds to allow for slower screen readers)
     setTimeout(() => {
       liveRegion.textContent = '';
-    }, 1000);
+    }, 3000);
   }
 }
 
@@ -876,23 +876,31 @@ if (document.readyState === 'loading') {
  * Ensure all interactive elements meet minimum touch target size
  */
 function ensureTouchTargets() {
+  // Cache touch device detection
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  
+  // Only run on touch devices and only once
+  if (!isTouchDevice || document.body.dataset.touchTargetsEnhanced === 'true') {
+    return;
+  }
+  
+  // Mark as enhanced to prevent re-running
+  document.body.dataset.touchTargetsEnhanced = 'true';
+  
   const interactiveElements = document.querySelectorAll(
     'button, a, input, select, [role="button"], .article-item'
   );
   
   interactiveElements.forEach(element => {
     const rect = element.getBoundingClientRect();
-    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+    const minSize = 48; // 48px for mobile devices
     
-    if (isTouchDevice) {
-      const minSize = 48; // 48px for mobile devices
-      
-      // Add padding if element is too small
-      if (rect.height < minSize || rect.width < minSize) {
-        const currentPadding = window.getComputedStyle(element).padding;
-        if (currentPadding === '0px' || currentPadding === '') {
-          element.style.padding = '0.75rem';
-        }
+    // Add padding if element is too small
+    if (rect.height < minSize || rect.width < minSize) {
+      const currentPadding = window.getComputedStyle(element).padding;
+      if (currentPadding === '0px' || currentPadding === '') {
+        element.style.padding = '0.75rem';
+      }
       }
     }
   });
