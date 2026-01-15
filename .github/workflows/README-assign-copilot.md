@@ -10,12 +10,16 @@ The workflow handles both weekly refactor tasks and daily issue assignment in a 
 
 ### 1. Scheduled Triggers
 
-- **Daily at 9 AM UTC**: Automatically assigns the next available issue to Copilot
+- **Daily at 10 AM UTC (Tuesday-Friday)**: Automatically assigns the next available issue to Copilot
 - **Weekly on Monday at 9 AM UTC**: Creates a weekly refactor issue and assigns it to Copilot
+
+**Note**: Auto-assignment is skipped on weekends (Saturday and Sunday) to ensure Copilot is available for Monday's refactor task.
 
 ### 2. Issue Closure
 
 When an issue is closed, the workflow waits for 5 minutes (grace period) before attempting to assign the next issue. This allows manual assignment if needed.
+
+**Important**: If an issue is closed on Saturday or Sunday, auto-assignment is skipped to preserve Copilot's availability for the Monday refactor task.
 
 ### 3. Manual Dispatch
 
@@ -48,9 +52,12 @@ The workflow will **NOT** assign an issue if:
 1. **Grace Period** (on issue closure): Wait 5 minutes to allow manual assignment
 2. **Determine Mode**:
    - Manual dispatch: Use the specified mode
-   - Schedule on Monday: Use refactor mode
-   - Schedule on other days or issue closure: Use auto mode
-3. **Check Existing Assignment**: Skip if Copilot already has an issue (unless forced)
+   - Schedule at 9 AM on Monday: Use refactor mode
+   - Schedule at 10 AM any day: Use auto mode
+   - Issue closure: Use auto mode
+3. **Check Existing Assignment**:
+   - **Refactor mode**: If Copilot has a non-refactor issue, unassign it to make room for the refactor issue
+   - **Auto mode**: Skip if Copilot already has an issue (unless forced)
 4. **Assign Issue**:
    - **Refactor mode**: Create a new refactor issue with predefined tasks
    - **Auto mode**: Find and assign the next available issue by priority
@@ -59,9 +66,14 @@ The workflow will **NOT** assign an issue if:
 
 The workflow prevents conflicts between weekly refactor and regular issue assignment by:
 
-1. Weekly refactor issues are labeled with `refactor`
-2. Auto mode skips issues with the `refactor` label
-3. Only one assignment happens at a time (no parallel assignments)
+1. **Weekend blackout period**: Auto-assignment is skipped on weekends (both scheduled and issue-closure triggers) to ensure Copilot is available for Monday's refactor
+2. **Scheduled separation**:
+   - Refactor runs Monday at 9 AM UTC
+   - Auto-assignment runs Tuesday-Friday at 10 AM UTC
+3. **Refactor priority**: If Copilot is busy on Monday morning, the refactor issue creation is skipped (will try again next week)
+4. **Refactor label distinction**: Weekly refactor issues are labeled with `refactor`
+5. **Auto mode skips refactor issues**: Auto mode skips issues with the `refactor` label
+6. **Sequential execution**: Only one assignment happens at a time (no parallel assignments)
 
 ## Required Secrets
 
