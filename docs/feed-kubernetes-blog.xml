@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-kubernetes-blog.xml</link>
     <description>Articles from Kubernetes Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-kubernetes-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 15 Jan 2026 10:56:25 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 15 Jan 2026 10:59:15 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Kubernetes v1.35: Restricting executables invoked by kubeconfigs via exec plugin allowList added to kuberc</title>
