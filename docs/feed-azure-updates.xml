@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml</link>
     <description>Articles from Azure Updates</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 15 Jan 2026 15:43:35 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 15 Jan 2026 15:55:07 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>[Launched] Generally Available: Ubuntu 24.04 support in AKS</title>
@@ -66,18 +66,6 @@
       <link>https://azure.microsoft.com/updates?id=541813</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=541813</guid>
       <pubDate>Wed, 17 Dec 2025 18:30:05 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Generally Available: Azure NetApp Files cross-zone-region replication (CZRR)</title>
-      <link>https://azure.microsoft.com/updates?id=537106</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=537106</guid>
-      <pubDate>Tue, 16 Dec 2025 15:45:45 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Azure NetApp Files advanced ransomware protection</title>
-      <link>https://azure.microsoft.com/updates?id=536699</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=536699</guid>
-      <pubDate>Tue, 16 Dec 2025 15:45:45 +0000</pubDate>
     </item>
   </channel>
 </rss>
