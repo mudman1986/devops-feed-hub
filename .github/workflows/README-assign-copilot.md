@@ -109,7 +109,7 @@ The grace period is set to 5 minutes in the `wait-grace-period` job. To change t
 
 ```yaml
 - name: Wait 5 minutes for manual assignment
-  run: sleep 300  # Change 300 to desired seconds
+  run: sleep 300 # Change 300 to desired seconds
 ```
 
 ## Related Files
