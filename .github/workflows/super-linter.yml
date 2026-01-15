@@ -9,7 +9,6 @@ on:
 permissions:
   contents: write
   statuses: write
-  actions: write
 
 jobs:
   super-lint:
@@ -95,6 +94,8 @@ jobs:
           git checkout -B "${PR_HEAD_REF}"
 
           git add -A
+          git reset .github/workflows/
+          
           if ! git diff --staged --quiet; then
             git commit -m "style: apply super-linter autofix"
 
