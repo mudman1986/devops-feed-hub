@@ -15,7 +15,7 @@ test.beforeEach(async ({ page }) => {
 
 // Helper function to navigate to experimental themes section
 async function goToExperimentalSection(page) {
-  await goToExperimentalSection(page);
+  await page.goto("/settings.html");
   await page.waitForSelector('.settings-menu-item[data-section="experimental"]', { timeout: 10000 });
   await page.locator('.settings-menu-item[data-section="experimental"]').click();
   await page.waitForTimeout(300); // Wait for section to become active
@@ -32,11 +32,11 @@ test.describe("Experimental Themes", () => {
     }) => {
       await goToExperimentalSection(page);
 
-      // Check for experimental themes subsection title
-      const subsectionTitle = page.locator(
-        ".settings-subsection-title:has-text('Experimental Themes')",
+      // Check for experimental themes section title
+      const sectionTitle = page.locator(
+        ".settings-section-title:has-text('Experimental Themes')",
       );
-      await expect(subsectionTitle).toBeVisible();
+      await expect(sectionTitle).toBeVisible();
     });
 
     test("should display disclaimer about work-in-progress themes", async ({
@@ -201,6 +201,12 @@ test.describe("Experimental Themes", () => {
 
       // Set experimental theme
       await page.locator("#experimental-theme-setting").selectOption("retro");
+
+      // Navigate to Appearance section
+      await page
+        .locator('.settings-menu-item[data-section="appearance"]')
+        .click();
+      await page.waitForTimeout(300);
 
       // Then select standard theme
       await page.locator("#theme-setting").selectOption("light");
