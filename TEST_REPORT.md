@@ -1,16 +1,17 @@
 # Comprehensive Test and Linter Report
+
 **Date:** 2026-01-15
 **Task:** Weekly Refactor - Validation of All Tests and Linters
 
 ## Executive Summary
 
-| Category | Status | Details |
-|----------|--------|---------|
-| **Super-linter** | ✅ PASS | All linters passing after CSS fixes |
-| **Python Tests** | ✅ PASS | 75/75 tests passing (100%) |
-| **JavaScript Tests** | ✅ PASS | 26/26 tests passing (100%) |
-| **UI Tests (Playwright)** | ⚠️  PARTIAL | ~557/580 passing (~96%), 23 experimental theme tests failing |
-| **BATS Tests** | ⚠️  PARTIAL | 3/5 passing (60%) |
+| Category                  | Status     | Details                                                      |
+| ------------------------- | ---------- | ------------------------------------------------------------ |
+| **Super-linter**          | ✅ PASS    | All linters passing after CSS fixes                          |
+| **Python Tests**          | ✅ PASS    | 75/75 tests passing (100%)                                   |
+| **JavaScript Tests**      | ✅ PASS    | 26/26 tests passing (100%)                                   |
+| **UI Tests (Playwright)** | ⚠️ PARTIAL | ~557/580 passing (~96%), 23 experimental theme tests failing |
+| **BATS Tests**            | ⚠️ PARTIAL | 3/5 passing (60%)                                            |
 
 ---
 
@@ -19,13 +20,15 @@
 ### Status: ✅ **PASSING** (All 23 linters)
 
 **Issues Found and Fixed:**
+
 - **CSS Linting Errors**: 235 stylelint errors in `docs/styles.css`
   - All related to color-function-notation and alpha-value-notation
   - **Resolution**: Fixed with `npx stylelint --fix`
 
 **All Passing Linters:**
+
 - ✅ BASH
-- ✅ BASH_EXEC  
+- ✅ BASH_EXEC
 - ✅ CSS (fixed)
 - ✅ CSS_PRETTIER
 - ✅ GITHUB_ACTIONS
@@ -49,6 +52,7 @@
 - ✅ YAML_PRETTIER
 
 **Security Scan:**
+
 - ✅ No secrets or credentials detected (Gitleaks)
 - ✅ No merge conflict markers
 - ✅ No security vulnerabilities in GitHub Actions workflows
@@ -60,11 +64,13 @@
 ### Status: ✅ **PASSING** (75/75 tests - 100%)
 
 **Test Coverage:**
-```
+
+```text
 ================================================== 75 passed in 0.29s ==================================================
 ```
 
 **Test Breakdown:**
+
 - ✅ Integration Tests: 3/3
 - ✅ Feed Ordering Tests: 8/8
 - ✅ RSS Generation Tests: 10/10
@@ -73,6 +79,7 @@
 - ✅ Multi-page Generation Tests: 1/1
 
 **Code Quality:**
+
 - Pylint Score: **10.00/10**
 - All Python files formatted with Black
 - All imports sorted with isort
@@ -85,20 +92,23 @@
 ### Status: ✅ **PASSING** (26/26 tests - 100%)
 
 **Test Coverage:**
-```
+
+```text
 Test Suites: 1 passed, 1 total
 Tests:       26 passed, 26 total
 Time:        0.821 s
 ```
 
 **Test Categories:**
+
 - ✅ Mark as Read Functionality: 9 tests
-- ✅ Timeframe Filtering: 2 tests  
+- ✅ Timeframe Filtering: 2 tests
 - ✅ Theme Toggle: 3 tests
 - ✅ Article Reordering: 2 tests
 - ✅ Feed Filtering: 10 tests
 
 **Notes:**
+
 - Console warnings in tests are expected (error handling validation)
 - All localStorage persistence tests passing
 - All DOM manipulation tests passing
@@ -107,11 +117,12 @@ Time:        0.821 s
 
 ## 4. UI Tests (Playwright)
 
-### Status: ⚠️  **PARTIAL PASS** (~557/580 tests - ~96%)
+### Status: ⚠️ **PARTIAL PASS** (~557/580 tests - ~96%)
 
 **Total Tests:** 580 tests across multiple viewports
 
 **Passing:**
+
 - ✅ Theme Toggle Tests
 - ✅ Timeframe Filtering Tests
 - ✅ Sidebar Toggle Tests (mobile/desktop)
@@ -125,13 +136,15 @@ Time:        0.821 s
 
 **Failing: 23 Experimental Theme Tests** ❌
 
-### Issues Identified:
+### Issues Identified
 
 #### Issue #1: Experimental Theme Selector Not Visible
+
 **Location:** `tests/ui/experimental-themes.spec.js`
 **Error:** `expect(locator).toBeVisible() failed` for `#experimental-theme-setting`
 
 **Affected Tests:**
+
 1. "should have at least 22 experimental themes available" (Expected >=23, Received: 16)
 2. "should have experimental theme selector with optgroups" (element hidden)
 3. "should apply experimental theme when selected" (element not visible)
@@ -139,14 +152,16 @@ Time:        0.821 s
 5. "should load experimental theme on page reload" (element not visible)
 6. "should clear experimental theme when selecting 'None'" (element not visible)
 7. "should clear experimental theme when selecting standard theme" (element not visible)
-8-23. All Color Variation, Themed Style, Theme Persistence, and Light Mode Variant tests
+   8-23. All Color Variation, Themed Style, Theme Persistence, and Light Mode Variant tests
 
 **Root Cause:**
+
 - The `#experimental-theme-setting` element exists in the HTML but appears to be hidden
 - Tests expect 23 theme options, but only 16 are available
 - Possible CSS visibility issue or incomplete theme implementation
 
 **Recommendation:**
+
 1. Verify experimental themes feature is complete and ready for testing
 2. Check if experimental-themes section should be collapsed/expanded
 3. Update test expectations to match actual implemented theme count
@@ -156,25 +171,30 @@ Time:        0.821 s
 
 ## 5. BATS Tests (Shell Scripts)
 
-### Status: ⚠️  **PARTIAL PASS** (3/5 tests - 60%)
+### Status: ⚠️ **PARTIAL PASS** (3/5 tests - 60%)
 
 **Passing Tests:** ✅
+
 1. "script exists and is executable"
 2. "script detects when there are no changes to commit"
 3. "script configures git user"
 
 **Failing Tests:** ❌
+
 4. "script validates content directory parameter"
 5. "script uses default content directory when not specified"
 
-### Issues Fixed:
+### Issues Fixed
+
 - ✅ Fixed incorrect path in test file (was looking in `../../scripts/` instead of `./`)
 
-### Issues Remaining:
+### Issues Remaining
+
 - ❌ Content directory validation tests failing
 - These tests expect specific behavior that may not be implemented in the script
 
 **Recommendation:**
+
 - Review `commit-github-pages.sh` script logic for content directory handling
 - Update tests or script to align expectations
 
@@ -182,19 +202,22 @@ Time:        0.821 s
 
 ## 6. Code Coverage Analysis
 
-### Python Coverage:
+### Python Coverage
+
 - **Status:** High coverage (pytest ran successfully)
 - All critical paths tested
 - RSS parsing, generation, and summary creation covered
 
-### JavaScript Coverage:
+### JavaScript Coverage
+
 - **Status:** Core functionality well covered
 - localStorage operations: ✅ Covered
 - DOM manipulation: ✅ Covered
 - Event handlers: ✅ Covered
 - Theme toggling: ✅ Covered
 
-### UI Coverage:
+### UI Coverage
+
 - **Status:** Extensive E2E coverage
 - 580 tests across multiple devices/viewports
 - Responsive design tested (Desktop/Tablet/Mobile)
@@ -217,22 +240,26 @@ Time:        0.821 s
 
 ## 8. Code Quality Metrics
 
-### Python:
+### Python
+
 - **Pylint Score:** 10.00/10 ⭐
 - **Black Formatting:** ✅ All files formatted
 - **Isort:** ✅ All imports sorted
 - **Flake8:** ✅ No violations
 
-### JavaScript:
+### JavaScript
+
 - **ESLint:** ✅ Passing
 - **Prettier:** ✅ All files formatted
 - **Standard:** ✅ No violations
 
-### CSS:
+### CSS
+
 - **Stylelint:** ✅ Passing (after fixes)
 - **Modern standards:** Using modern color functions and alpha notation
 
-### Shell Scripts:
+### Shell Scripts
+
 - **ShellCheck:** ✅ Passing
 - **shfmt:** ✅ All scripts formatted
 
@@ -240,18 +267,21 @@ Time:        0.821 s
 
 ## 9. Recommendations
 
-### Critical (Fix Before Merge):
+### Critical (Fix Before Merge)
+
 1. ❌ **Experimental Theme Tests:** Fix or skip the 23 failing experimental theme tests
    - Option A: Complete experimental theme implementation
    - Option B: Mark as `test.skip()` until feature is ready
    - Option C: Remove incomplete feature from settings page
 
-### High Priority:
-2. ⚠️  **BATS Tests:** Fix remaining 2 shell script tests
+### High Priority
+
+2. ⚠️ **BATS Tests:** Fix remaining 2 shell script tests
    - Review content directory validation logic
    - Align test expectations with script behavior
 
-### Nice to Have:
+### Nice to Have
+
 3. 📊 **Add Code Coverage Reports:** Generate and track coverage metrics
    - Add `npm run coverage` command
    - Set minimum coverage thresholds (suggest 80%)
@@ -262,9 +292,10 @@ Time:        0.821 s
 
 ## 10. Summary
 
-### Overall Status: ⚠️  **95% PASSING**
+### Overall Status: ⚠️ **95% PASSING**
 
 **Strengths:**
+
 - ✅ Excellent linting coverage (23 linters, all passing)
 - ✅ 100% Python test pass rate (75/75)
 - ✅ 100% JavaScript test pass rate (26/26)
@@ -272,10 +303,12 @@ Time:        0.821 s
 - ✅ High code quality (perfect Pylint score)
 
 **Issues to Address:**
+
 - ❌ 23 experimental theme UI tests failing (4% of UI tests)
 - ❌ 2 BATS shell script tests failing (40% of shell tests)
 
 **Action Items:**
+
 1. Fix or skip experimental theme tests
 2. Fix shell script content directory validation
 3. Add coverage tracking
