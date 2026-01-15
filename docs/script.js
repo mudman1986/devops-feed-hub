@@ -65,7 +65,10 @@ function getLocalStorageJSON(key, defaultValue = null) {
     const stored = localStorage.getItem(key);
     return stored ? JSON.parse(stored) : defaultValue;
   } catch (e) {
-    console.warn(`localStorage unavailable or invalid JSON for key "${key}":`, e);
+    console.warn(
+      `localStorage unavailable or invalid JSON for key "${key}":`,
+      e,
+    );
     return defaultValue;
   }
 }
@@ -110,13 +113,13 @@ function initializeDropdown(selectId, storageKey, defaultValue, onChange) {
 
   const savedValue = getLocalStorage(storageKey, defaultValue);
   select.value = savedValue;
-  
+
   select.addEventListener("change", () => {
     const value = select.value;
     setLocalStorage(storageKey, value);
     onChange(value);
   });
-  
+
   return select;
 }
 
@@ -144,11 +147,16 @@ const htmlElement = document.documentElement;
 // Check for experimental theme first, then fall back to standard theme
 let savedTheme = "dark";
 const experimentalTheme = getLocalStorage("experimentalTheme");
-if (experimentalTheme && VALID_EXPERIMENTAL_THEMES.includes(experimentalTheme)) {
+if (
+  experimentalTheme &&
+  VALID_EXPERIMENTAL_THEMES.includes(experimentalTheme)
+) {
   savedTheme = experimentalTheme;
 } else {
   if (experimentalTheme) {
-    console.warn(`Invalid experimental theme: ${experimentalTheme}. Using default.`);
+    console.warn(
+      `Invalid experimental theme: ${experimentalTheme}. Using default.`,
+    );
     try {
       localStorage.removeItem("experimentalTheme");
     } catch (e) {
@@ -167,7 +175,7 @@ themeToggle.addEventListener("click", () => {
 
   htmlElement.setAttribute("data-theme", newTheme);
   setLocalStorage("theme", newTheme);
-  
+
   // Clear experimental theme when toggling standard theme
   try {
     localStorage.removeItem("experimentalTheme");
@@ -256,7 +264,12 @@ const TIMEFRAME_HOURS = {
 };
 
 const savedTimeframe = getLocalStorage("timeframe", "1day");
-initializeDropdown("timeframe-select", "timeframe", "1day", applyTimeframeFilter);
+initializeDropdown(
+  "timeframe-select",
+  "timeframe",
+  "1day",
+  applyTimeframeFilter,
+);
 applyTimeframeFilter(savedTimeframe);
 
 function applyTimeframeFilter(timeframe) {
@@ -719,10 +732,10 @@ window.addEventListener("storage", (e) => {
  */
 function initAccessibility() {
   // Add keyboard navigation for settings menu items
-  const settingsMenuItems = document.querySelectorAll('.settings-menu-item');
-  settingsMenuItems.forEach(item => {
-    item.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter' || e.key === ' ') {
+  const settingsMenuItems = document.querySelectorAll(".settings-menu-item");
+  settingsMenuItems.forEach((item) => {
+    item.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" || e.key === " ") {
         e.preventDefault();
         this.click();
       }
@@ -730,19 +743,22 @@ function initAccessibility() {
   });
 
   // Add keyboard support for article items to mark as read
-  const articleItems = document.querySelectorAll('.article-item');
-  articleItems.forEach(item => {
-    const link = item.querySelector('.article-title');
+  const articleItems = document.querySelectorAll(".article-item");
+  articleItems.forEach((item) => {
+    const link = item.querySelector(".article-title");
     if (link) {
       // Add keyboard event for marking as read (Ctrl+M or Cmd+M)
-      item.addEventListener('keydown', function(e) {
-        if ((e.ctrlKey || e.metaKey) && e.key === 'm') {
+      item.addEventListener("keydown", function (e) {
+        if ((e.ctrlKey || e.metaKey) && e.key === "m") {
           e.preventDefault();
           // Toggle read status
-          this.classList.toggle('read');
+          this.classList.toggle("read");
           const articleUrl = link.href;
           markArticleAsRead(articleUrl);
-          announceToScreenReader('Article marked as ' + (this.classList.contains('read') ? 'read' : 'unread'));
+          announceToScreenReader(
+            "Article marked as " +
+              (this.classList.contains("read") ? "read" : "unread"),
+          );
         }
       });
     }
@@ -750,10 +766,10 @@ function initAccessibility() {
 
   // Ensure proper focus management
   enhanceFocusManagement();
-  
+
   // Add ARIA live region if not exists
   addAriaLiveRegion();
-  
+
   // Prevent flash of transitions on page load
   preventInitialTransitions();
 }
@@ -763,14 +779,14 @@ function initAccessibility() {
  * @param {string} message - Message to announce
  * @param {string} priority - 'polite' or 'assertive'
  */
-function announceToScreenReader(message, priority = 'polite') {
-  const liveRegion = document.getElementById('aria-live-region');
+function announceToScreenReader(message, priority = "polite") {
+  const liveRegion = document.getElementById("aria-live-region");
   if (liveRegion) {
-    liveRegion.setAttribute('aria-live', priority);
+    liveRegion.setAttribute("aria-live", priority);
     liveRegion.textContent = message;
     // Clear after announcement (3 seconds to allow for slower screen readers)
     setTimeout(() => {
-      liveRegion.textContent = '';
+      liveRegion.textContent = "";
     }, 3000);
   }
 }
@@ -779,12 +795,12 @@ function announceToScreenReader(message, priority = 'polite') {
  * Add ARIA live region for dynamic announcements
  */
 function addAriaLiveRegion() {
-  if (!document.getElementById('aria-live-region')) {
-    const liveRegion = document.createElement('div');
-    liveRegion.id = 'aria-live-region';
-    liveRegion.className = 'sr-only';
-    liveRegion.setAttribute('aria-live', 'polite');
-    liveRegion.setAttribute('aria-atomic', 'true');
+  if (!document.getElementById("aria-live-region")) {
+    const liveRegion = document.createElement("div");
+    liveRegion.id = "aria-live-region";
+    liveRegion.className = "sr-only";
+    liveRegion.setAttribute("aria-live", "polite");
+    liveRegion.setAttribute("aria-atomic", "true");
     document.body.appendChild(liveRegion);
   }
 }
@@ -795,17 +811,17 @@ function addAriaLiveRegion() {
 function enhanceFocusManagement() {
   // Trap focus in modal-like elements (if any)
   const modals = document.querySelectorAll('[role="dialog"]');
-  modals.forEach(modal => {
+  modals.forEach((modal) => {
     const focusableElements = modal.querySelectorAll(
-      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
     );
-    
+
     if (focusableElements.length > 0) {
       const firstElement = focusableElements[0];
       const lastElement = focusableElements[focusableElements.length - 1];
-      
-      modal.addEventListener('keydown', function(e) {
-        if (e.key === 'Tab') {
+
+      modal.addEventListener("keydown", function (e) {
+        if (e.key === "Tab") {
           if (e.shiftKey && document.activeElement === firstElement) {
             e.preventDefault();
             lastElement.focus();
@@ -823,9 +839,9 @@ function enhanceFocusManagement() {
  * Prevent flash of transitions on initial page load
  */
 function preventInitialTransitions() {
-  document.body.classList.add('preload');
+  document.body.classList.add("preload");
   setTimeout(() => {
-    document.body.classList.remove('preload');
+    document.body.classList.remove("preload");
   }, 100);
 }
 
@@ -835,18 +851,21 @@ function preventInitialTransitions() {
  * @param {string} filterName - Name of current filter
  */
 function updateArticleCountAccessible(count, filterName) {
-  announceToScreenReader(`Showing ${count} articles for ${filterName}`, 'polite');
+  announceToScreenReader(
+    `Showing ${count} articles for ${filterName}`,
+    "polite",
+  );
 }
 
 /**
  * Enhance timeframe selector with announcements
  */
 function enhanceTimeframeSelector() {
-  const timeframeSelect = document.getElementById('timeframe-select');
+  const timeframeSelect = document.getElementById("timeframe-select");
   if (timeframeSelect) {
-    timeframeSelect.addEventListener('change', function() {
+    timeframeSelect.addEventListener("change", function () {
       const selectedOption = this.options[this.selectedIndex].text;
-      announceToScreenReader(`Filter changed to ${selectedOption}`, 'polite');
+      announceToScreenReader(`Filter changed to ${selectedOption}`, "polite");
     });
   }
 }
@@ -855,18 +874,21 @@ function enhanceTimeframeSelector() {
  * Enhance view mode selector with announcements
  */
 function enhanceViewModeSelector() {
-  const viewSelect = document.getElementById('view-select');
+  const viewSelect = document.getElementById("view-select");
   if (viewSelect) {
-    viewSelect.addEventListener('change', function() {
+    viewSelect.addEventListener("change", function () {
       const selectedOption = this.options[this.selectedIndex].text;
-      announceToScreenReader(`View mode changed to ${selectedOption}`, 'polite');
+      announceToScreenReader(
+        `View mode changed to ${selectedOption}`,
+        "polite",
+      );
     });
   }
 }
 
 // Initialize accessibility features when DOM is ready
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', function() {
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", function () {
     initAccessibility();
     enhanceTimeframeSelector();
     enhanceViewModeSelector();
@@ -884,36 +906,37 @@ if (document.readyState === 'loading') {
  */
 function ensureTouchTargets() {
   // Cache touch device detection
-  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-  
+  const isTouchDevice =
+    "ontouchstart" in window || navigator.maxTouchPoints > 0;
+
   // Only run on touch devices and only once
-  if (!isTouchDevice || document.body.dataset.touchTargetsEnhanced === 'true') {
+  if (!isTouchDevice || document.body.dataset.touchTargetsEnhanced === "true") {
     return;
   }
-  
+
   // Mark as enhanced to prevent re-running
-  document.body.dataset.touchTargetsEnhanced = 'true';
-  
+  document.body.dataset.touchTargetsEnhanced = "true";
+
   const interactiveElements = document.querySelectorAll(
-    'button, a, input, select, [role="button"], .article-item'
+    'button, a, input, select, [role="button"], .article-item',
   );
-  
-  interactiveElements.forEach(element => {
+
+  interactiveElements.forEach((element) => {
     const rect = element.getBoundingClientRect();
     const minSize = 48; // 48px for mobile devices
-    
+
     // Add padding if element is too small
     if (rect.height < minSize || rect.width < minSize) {
       const currentPadding = window.getComputedStyle(element).padding;
-      if (currentPadding === '0px' || currentPadding === '') {
-        element.style.padding = '0.75rem';
+      if (currentPadding === "0px" || currentPadding === "") {
+        element.style.padding = "0.75rem";
       }
     }
   });
 }
 
 // Run touch target check after page load
-window.addEventListener('load', ensureTouchTargets);
+window.addEventListener("load", ensureTouchTargets);
 
 // ===== IMPROVED ERROR HANDLING WITH ACCESSIBILITY =====
 
@@ -922,22 +945,30 @@ window.addEventListener('load', ensureTouchTargets);
  * @param {string} message - Error message to display
  * @param {string} severity - 'error', 'warning', or 'info'
  */
-function displayAccessibleError(message, severity = 'error') {
-  const errorContainer = document.getElementById('error-container');
+function displayAccessibleError(message, severity = "error") {
+  const errorContainer = document.getElementById("error-container");
   if (errorContainer) {
-    errorContainer.setAttribute('role', severity === 'error' ? 'alert' : 'status');
-    errorContainer.setAttribute('aria-live', severity === 'error' ? 'assertive' : 'polite');
+    errorContainer.setAttribute(
+      "role",
+      severity === "error" ? "alert" : "status",
+    );
+    errorContainer.setAttribute(
+      "aria-live",
+      severity === "error" ? "assertive" : "polite",
+    );
     errorContainer.textContent = message;
-    
+
     // Auto-dismiss after 5 seconds for non-critical messages
-    if (severity !== 'error') {
+    if (severity !== "error") {
       setTimeout(() => {
-        errorContainer.textContent = '';
+        errorContainer.textContent = "";
       }, 5000);
     }
   }
-  
-  // Also announce to screen readers
-  announceToScreenReader(message, severity === 'error' ? 'assertive' : 'polite');
-}
 
+  // Also announce to screen readers
+  announceToScreenReader(
+    message,
+    severity === "error" ? "assertive" : "polite",
+  );
+}
