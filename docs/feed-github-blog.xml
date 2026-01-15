@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-blog.xml</link>
     <description>Articles from GitHub Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 15 Jan 2026 22:36:24 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 15 Jan 2026 22:37:56 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Building an agentic memory system for GitHub Copilot</title>
