@@ -78,14 +78,16 @@ jobs:
 
       - name: Commit and Push Autofix Changes
         if: always()
+        env:
+          PR_HEAD_REF: ${{ github.event.pull_request.head.ref }}
         run: |
           git config --global user.name "github-actions[bot]"
           git config --global user.email \
             "github-actions[bot]@users.noreply.github.com"
 
           # For PRs, checkout the actual branch to avoid detached HEAD
-          if [ -n "${{ github.event.pull_request.head.ref }}" ]; then
-            git checkout -B "${{ github.event.pull_request.head.ref }}"
+          if [ -n "${PR_HEAD_REF}" ]; then
+            git checkout -B "${PR_HEAD_REF}"
           fi
 
           git add -A
@@ -93,16 +95,16 @@ jobs:
             git commit -m "style: apply super-linter autofix"
 
             # Push to the appropriate branch
-            if [ -n "${{ github.event.pull_request.head.ref }}" ]; then
+            if [ -n "${PR_HEAD_REF}" ]; then
               # For PRs, push to the PR branch with lease for safety
               if ! git push --force-with-lease origin \
-                "HEAD:${{ github.event.pull_request.head.ref }}"; then
+                "HEAD:${PR_HEAD_REF}"; then
                 echo "::warning::Failed to push autofix changes to PR"
                 exit 1
               fi
             else
               # For direct pushes to main, push to current branch
-              if ! git push origin HEAD:${GITHUB_REF#refs/heads/}; then
+              if ! git push origin "HEAD:${GITHUB_REF#refs/heads/}"; then
                 echo "::warning::Failed to push autofix changes"
                 exit 1
               fi
