@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-circleci-blog.xml</link>
     <description>Articles from CircleCI Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-circleci-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 15 Jan 2026 10:59:15 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 15 Jan 2026 12:24:15 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Deploy a serverless Python API to Scaleway Functions using CircleCI</title>
@@ -36,12 +36,6 @@
       <link>https://circleci.com/blog/sign-oci-containers-and-other-artifacts-using-sigstore-cosign/</link>
       <guid isPermaLink="true">https://circleci.com/blog/sign-oci-containers-and-other-artifacts-using-sigstore-cosign/</guid>
       <pubDate>Mon, 22 Dec 2025 07:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>The ROI of autonomous validation: How to unlock $1.8M in engineering value</title>
-      <link>https://circleci.com/blog/roi-of-autonomous-validation/</link>
-      <guid isPermaLink="true">https://circleci.com/blog/roi-of-autonomous-validation/</guid>
-      <pubDate>Tue, 16 Dec 2025 11:50:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
