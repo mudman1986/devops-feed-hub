@@ -11,20 +11,7 @@ from datetime import datetime
 from typing import Any, Dict, List
 from xml.etree import ElementTree as ET
 
-from utils import generate_feed_slug
-
-
-def parse_iso_timestamp(iso_string: str) -> datetime:
-    """
-    Parse ISO 8601 timestamp string to datetime object.
-
-    Args:
-            iso_string: ISO 8601 formatted timestamp string (may end with 'Z')
-
-    Returns:
-            datetime object
-    """
-    return datetime.fromisoformat(iso_string.replace("Z", "+00:00"))
+from utils import generate_feed_slug, parse_iso_timestamp, sort_articles_by_date
 
 
 def format_rfc822_date(iso_date_str: str) -> str:
@@ -156,16 +143,7 @@ def generate_master_feed(
             all_articles.append(article_with_source)
 
     # Sort by publication date (newest first)
-    def get_sort_key(article):
-        pub_date = article.get("published", "")
-        if pub_date and pub_date != "Unknown":
-            try:
-                return parse_iso_timestamp(pub_date)
-            except (ValueError, AttributeError):
-                return datetime.min
-        return datetime.min
-
-    all_articles.sort(key=get_sort_key, reverse=True)
+    all_articles = sort_articles_by_date(all_articles)
 
     # Generate RSS feed
     return create_rss_feed(
@@ -198,16 +176,7 @@ def generate_individual_feed(
     feed_slug = generate_feed_slug(feed_name)
 
     # Sort articles by publication date (newest first)
-    def get_sort_key(article):
-        pub_date = article.get("published", "")
-        if pub_date and pub_date != "Unknown":
-            try:
-                return parse_iso_timestamp(pub_date)
-            except (ValueError, AttributeError):
-                return datetime.min
-        return datetime.min
-
-    sorted_articles = sorted(feed_data["articles"], key=get_sort_key, reverse=True)
+    sorted_articles = sort_articles_by_date(feed_data["articles"])
 
     return create_rss_feed(
         title=f"DevOps Feed Hub - {feed_name}",

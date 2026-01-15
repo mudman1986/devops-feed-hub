@@ -1,6 +1,19 @@
 # UI Testing with Playwright
 
-Instructions for running and maintaining Playwright UI tests.
+**CRITICAL FOR site PROJECT**: UI tests validate that the site actually works. They are the PRIMARY test suite for this project.
+
+## Why UI Tests Are Critical
+
+This is a **site project** - the deliverable is a functioning web page displayed in a browser. UI tests are the ONLY way to verify:
+
+- The site displays correctly
+- Navigation works
+- View modes (list/card) function properly
+- Mobile responsive design works
+- Theme switching works
+- JavaScript functionality works in browser
+
+**If UI tests fail, the site is broken.** No exceptions.
 
 ## Running UI Tests
 
@@ -126,3 +139,32 @@ In workflow files, always generate test data before running tests:
 - name: Run Playwright tests
   run: npm run test:ui
 ```
+
+## ⚠️ MANDATORY UI TEST POLICY
+
+**BEFORE committing ANY change that affects:**
+
+- HTML files
+- CSS files
+- JavaScript files
+- View modes (list/card)
+- Themes
+- Navigation
+- Responsive design
+
+**YOU MUST:**
+
+1. Generate test data: `bash .github/scripts/generate-test-data.sh`
+2. Run UI tests: `npm run test:ui`
+3. Ensure 100% pass rate
+4. Take screenshots to verify visual correctness
+5. Test on multiple viewports
+
+**If UI tests fail:**
+
+- Fix the issue immediately
+- Re-run tests until they pass
+- NEVER commit with failing UI tests
+- The task is NOT complete until UI tests pass
+
+**Remember**: This is a site. If the UI tests don't pass, the site doesn't work.

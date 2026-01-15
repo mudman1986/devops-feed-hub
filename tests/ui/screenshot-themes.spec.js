@@ -31,10 +31,23 @@ test.beforeEach(async ({ page }) => {
   await page.evaluate(() => localStorage.clear());
 });
 
+// Helper function to navigate to experimental themes section
+async function goToExperimentalSection(page) {
+  await page.goto("/settings.html");
+  await page.waitForSelector(
+    '.settings-menu-item[data-section="experimental"]',
+    { timeout: 10000 },
+  );
+  await page
+    .locator('.settings-menu-item[data-section="experimental"]')
+    .click();
+  await page.waitForTimeout(300); // Wait for section to become active
+}
+
 for (const theme of themes) {
   test(`screenshot: ${theme.name} (${theme.category})`, async ({ page }) => {
-    // Set the theme
-    await page.goto("/settings.html");
+    // Navigate to experimental section to ensure settings are visible
+    await goToExperimentalSection(page);
 
     // Use appropriate selector based on category
     if (theme.category === "viewmode") {
