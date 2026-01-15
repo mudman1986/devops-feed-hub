@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-docker-blog.xml</link>
     <description>Articles from Docker Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-docker-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 15 Jan 2026 13:49:19 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 15 Jan 2026 14:24:11 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Permission-Aware RAG: End-to-End Testing with the SpiceDB Testcontainer</title>
+      <link>https://www.docker.com/blog/rag-permission-testing-testcontainers-spicedb/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/rag-permission-testing-testcontainers-spicedb/</guid>
+      <pubDate>Thu, 15 Jan 2026 14:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>OpenCode with Docker Model Runner for Private AI Coding</title>
       <link>https://www.docker.com/blog/opencode-docker-model-runner-private-ai-coding/</link>
@@ -54,12 +60,6 @@
       <link>https://www.docker.com/blog/docker-hardened-images-for-every-developer/</link>
       <guid isPermaLink="true">https://www.docker.com/blog/docker-hardened-images-for-every-developer/</guid>
       <pubDate>Wed, 17 Dec 2025 13:55:11 +0000</pubDate>
-    </item>
-    <item>
-      <title>Develop and deploy voice AI apps using Docker</title>
-      <link>https://www.docker.com/blog/develop-deploy-voice-ai-apps/</link>
-      <guid isPermaLink="true">https://www.docker.com/blog/develop-deploy-voice-ai-apps/</guid>
-      <pubDate>Tue, 16 Dec 2025 14:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

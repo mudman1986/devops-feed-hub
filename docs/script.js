@@ -10,16 +10,23 @@ const VALID_EXPERIMENTAL_THEMES = [
   "ocean-deep",
   "ocean-deep-light",
   "arctic-blue",
+  "arctic-blue-light",
   "high-contrast-dark",
   "high-contrast-light",
   "monochrome",
+  "monochrome-light",
   "dracula",
   "dracula-light",
   "minimalist",
+  "minimalist-light",
   "terminal",
+  "terminal-light",
   "retro",
+  "retro-light",
   "futuristic",
+  "futuristic-light",
   "compact",
+  "compact-light",
   "horizontal-scroll",
   "masonry-grid",
   "floating-panels",
@@ -704,3 +711,234 @@ window.addEventListener("storage", (e) => {
     applyFeedFilter();
   }
 });
+
+// ===== ACCESSIBILITY ENHANCEMENTS =====
+
+/**
+ * Initialize accessibility features across the application
+ */
+function initAccessibility() {
+  // Add keyboard navigation for settings menu items
+  const settingsMenuItems = document.querySelectorAll('.settings-menu-item');
+  settingsMenuItems.forEach(item => {
+    item.addEventListener('keydown', function(e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        this.click();
+      }
+    });
+  });
+
+  // Add keyboard support for article items to mark as read
+  const articleItems = document.querySelectorAll('.article-item');
+  articleItems.forEach(item => {
+    const link = item.querySelector('.article-title');
+    if (link) {
+      // Add keyboard event for marking as read (Ctrl+M or Cmd+M)
+      item.addEventListener('keydown', function(e) {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'm') {
+          e.preventDefault();
+          // Toggle read status
+          this.classList.toggle('read');
+          const articleUrl = link.href;
+          markArticleAsRead(articleUrl);
+          announceToScreenReader('Article marked as ' + (this.classList.contains('read') ? 'read' : 'unread'));
+        }
+      });
+    }
+  });
+
+  // Ensure proper focus management
+  enhanceFocusManagement();
+  
+  // Add ARIA live region if not exists
+  addAriaLiveRegion();
+  
+  // Prevent flash of transitions on page load
+  preventInitialTransitions();
+}
+
+/**
+ * Announce messages to screen readers
+ * @param {string} message - Message to announce
+ * @param {string} priority - 'polite' or 'assertive'
+ */
+function announceToScreenReader(message, priority = 'polite') {
+  const liveRegion = document.getElementById('aria-live-region');
+  if (liveRegion) {
+    liveRegion.setAttribute('aria-live', priority);
+    liveRegion.textContent = message;
+    // Clear after announcement (3 seconds to allow for slower screen readers)
+    setTimeout(() => {
+      liveRegion.textContent = '';
+    }, 3000);
+  }
+}
+
+/**
+ * Add ARIA live region for dynamic announcements
+ */
+function addAriaLiveRegion() {
+  if (!document.getElementById('aria-live-region')) {
+    const liveRegion = document.createElement('div');
+    liveRegion.id = 'aria-live-region';
+    liveRegion.className = 'sr-only';
+    liveRegion.setAttribute('aria-live', 'polite');
+    liveRegion.setAttribute('aria-atomic', 'true');
+    document.body.appendChild(liveRegion);
+  }
+}
+
+/**
+ * Enhance focus management for better keyboard navigation
+ */
+function enhanceFocusManagement() {
+  // Trap focus in modal-like elements (if any)
+  const modals = document.querySelectorAll('[role="dialog"]');
+  modals.forEach(modal => {
+    const focusableElements = modal.querySelectorAll(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+    
+    if (focusableElements.length > 0) {
+      const firstElement = focusableElements[0];
+      const lastElement = focusableElements[focusableElements.length - 1];
+      
+      modal.addEventListener('keydown', function(e) {
+        if (e.key === 'Tab') {
+          if (e.shiftKey && document.activeElement === firstElement) {
+            e.preventDefault();
+            lastElement.focus();
+          } else if (!e.shiftKey && document.activeElement === lastElement) {
+            e.preventDefault();
+            firstElement.focus();
+          }
+        }
+      });
+    }
+  });
+}
+
+/**
+ * Prevent flash of transitions on initial page load
+ */
+function preventInitialTransitions() {
+  document.body.classList.add('preload');
+  setTimeout(() => {
+    document.body.classList.remove('preload');
+  }, 100);
+}
+
+/**
+ * Update article count with screen reader announcement
+ * @param {number} count - Number of visible articles
+ * @param {string} filterName - Name of current filter
+ */
+function updateArticleCountAccessible(count, filterName) {
+  announceToScreenReader(`Showing ${count} articles for ${filterName}`, 'polite');
+}
+
+/**
+ * Enhance timeframe selector with announcements
+ */
+function enhanceTimeframeSelector() {
+  const timeframeSelect = document.getElementById('timeframe-select');
+  if (timeframeSelect) {
+    timeframeSelect.addEventListener('change', function() {
+      const selectedOption = this.options[this.selectedIndex].text;
+      announceToScreenReader(`Filter changed to ${selectedOption}`, 'polite');
+    });
+  }
+}
+
+/**
+ * Enhance view mode selector with announcements
+ */
+function enhanceViewModeSelector() {
+  const viewSelect = document.getElementById('view-select');
+  if (viewSelect) {
+    viewSelect.addEventListener('change', function() {
+      const selectedOption = this.options[this.selectedIndex].text;
+      announceToScreenReader(`View mode changed to ${selectedOption}`, 'polite');
+    });
+  }
+}
+
+// Initialize accessibility features when DOM is ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', function() {
+    initAccessibility();
+    enhanceTimeframeSelector();
+    enhanceViewModeSelector();
+  });
+} else {
+  initAccessibility();
+  enhanceTimeframeSelector();
+  enhanceViewModeSelector();
+}
+
+// ===== TOUCH TARGET ENHANCEMENTS =====
+
+/**
+ * Ensure all interactive elements meet minimum touch target size
+ */
+function ensureTouchTargets() {
+  // Cache touch device detection
+  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  
+  // Only run on touch devices and only once
+  if (!isTouchDevice || document.body.dataset.touchTargetsEnhanced === 'true') {
+    return;
+  }
+  
+  // Mark as enhanced to prevent re-running
+  document.body.dataset.touchTargetsEnhanced = 'true';
+  
+  const interactiveElements = document.querySelectorAll(
+    'button, a, input, select, [role="button"], .article-item'
+  );
+  
+  interactiveElements.forEach(element => {
+    const rect = element.getBoundingClientRect();
+    const minSize = 48; // 48px for mobile devices
+    
+    // Add padding if element is too small
+    if (rect.height < minSize || rect.width < minSize) {
+      const currentPadding = window.getComputedStyle(element).padding;
+      if (currentPadding === '0px' || currentPadding === '') {
+        element.style.padding = '0.75rem';
+      }
+      }
+    }
+  });
+}
+
+// Run touch target check after page load
+window.addEventListener('load', ensureTouchTargets);
+
+// ===== IMPROVED ERROR HANDLING WITH ACCESSIBILITY =====
+
+/**
+ * Display accessible error messages
+ * @param {string} message - Error message to display
+ * @param {string} severity - 'error', 'warning', or 'info'
+ */
+function displayAccessibleError(message, severity = 'error') {
+  const errorContainer = document.getElementById('error-container');
+  if (errorContainer) {
+    errorContainer.setAttribute('role', severity === 'error' ? 'alert' : 'status');
+    errorContainer.setAttribute('aria-live', severity === 'error' ? 'assertive' : 'polite');
+    errorContainer.textContent = message;
+    
+    // Auto-dismiss after 5 seconds for non-critical messages
+    if (severity !== 'error') {
+      setTimeout(() => {
+        errorContainer.textContent = '';
+      }, 5000);
+    }
+  }
+  
+  // Also announce to screen readers
+  announceToScreenReader(message, severity === 'error' ? 'assertive' : 'polite');
+}
+
