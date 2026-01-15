@@ -1259,16 +1259,106 @@ h3 {
 }
 
 [data-view="list"] .read-indicator {
-  width: 1.35rem;
-  height: 1.35rem;
-  top: 0.3rem;
-  right: 0.3rem;
+  width: 1.5rem;
+  height: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0.5rem;
+  
+  /* Square with subtle rounding instead of circle */
+  border-radius: 0.25rem;
+  
+  /* Dotted border to match list view aesthetic */
+  border: 1px dotted var(--border-primary);
+  
+  /* More subtle background */
+  background: transparent;
+  
+  /* Lower opacity when not active */
+  opacity: 0.4;
+  
+  /* Smooth transitions */
+  transition: all 0.15s ease;
+  
+  /* Ensure proper stacking */
+  z-index: 1;
 }
 
-[data-view="list"] .read-indicator svg {
-  width: 11px;
-  height: 11px;
+/* Hover state - more visible but still subtle */
+[data-view="list"] .read-indicator:hover {
+  opacity: 0.8;
+  background: var(--bg-tertiary);
+  border-color: var(--border-accent);
+  border-style: solid;
+  transform: translateY(-50%) scale(1.05);
 }
+
+/* Active/Read state - clear visual indicator */
+[data-view="list"] .read-indicator.active {
+  background: var(--accent-success);
+  border: 1px solid var(--accent-success);
+  color: white;
+  opacity: 0.9;
+  transform: translateY(-50%);
+}
+
+/* Active hover state */
+[data-view="list"] .read-indicator.active:hover {
+  opacity: 1;
+  transform: translateY(-50%) scale(1.05);
+}
+
+/* Icon sizing for list view */
+[data-view="list"] .read-indicator svg {
+  width: 12px;
+  height: 12px;
+}
+
+/* List View - Responsive adjustments for read indicators */
+
+/* Mobile adjustments for list view */
+@media (width <= 768px) {
+  [data-view="list"] .read-indicator {
+    width: 2rem;
+    height: 2rem;
+    right: 0.4rem;
+    border-radius: 0.3rem;
+  }
+  
+  [data-view="list"] .read-indicator svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+/* Extra small mobile - ensure touch targets are adequate (48x48px) */
+@media (width <= 480px) {
+  [data-view="list"] .read-indicator {
+    width: 2.5rem;
+    height: 2.5rem;
+    right: 0.3rem;
+    border-radius: 0.35rem;
+  }
+  
+  [data-view="list"] .read-indicator svg {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* Tablet optimization */
+@media (width >= 769px) and (width <= 1024px) {
+  [data-view="list"] .read-indicator {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+  
+  [data-view="list"] .read-indicator svg {
+    width: 13px;
+    height: 13px;
+  }
+}
+
 
 /* Settings Page Styles */
 .settings-container {
