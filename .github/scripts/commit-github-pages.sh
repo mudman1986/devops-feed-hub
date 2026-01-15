@@ -34,8 +34,13 @@ if [ "$TARGET_BRANCH" = "current" ] || [ -z "$TARGET_BRANCH" ]; then
 		echo "No changes to commit" >&2
 	else
 		git commit -m "Update RSS feed GitHub Pages content [skip ci]"
-		git push
-		echo "✓ GitHub Pages content committed and pushed" >&2
+		# Push only if we have a remote configured
+		if git remote get-url origin >/dev/null 2>&1; then
+			git push
+			echo "✓ GitHub Pages content committed and pushed" >&2
+		else
+			echo "✓ GitHub Pages content committed (no remote configured)" >&2
+		fi
 	fi
 else
 	# Commit to a different branch
@@ -105,8 +110,13 @@ else
 		echo "No changes to commit" >&2
 	else
 		git commit -m "Update RSS feed GitHub Pages content [skip ci]"
-		git push origin "$TARGET_BRANCH"
-		echo "✓ GitHub Pages content committed and pushed to $TARGET_BRANCH" >&2
+		# Push only if we have a remote configured
+		if git remote get-url origin >/dev/null 2>&1; then
+			git push origin "$TARGET_BRANCH"
+			echo "✓ GitHub Pages content committed and pushed to $TARGET_BRANCH" >&2
+		else
+			echo "✓ GitHub Pages content committed to $TARGET_BRANCH (no remote configured)" >&2
+		fi
 	fi
 
 	# Switch back to original branch
