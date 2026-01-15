@@ -1,12 +1,9 @@
 name: Assign Issues to Copilot
 
 on:
-  # Daily schedule for auto-assignment (runs at 10 AM UTC Tue-Fri)
-  # Skips Saturday and Sunday to ensure Copilot is available for Monday refactor
-  schedule:
-    - cron: "0 10 * * 2-5"
-    # Weekly schedule for refactor (runs at 9 AM UTC on Monday only)
-    - cron: "0 9 * * 1"
+  # Trigger when an issue is closed (with delay for grace period)
+  issues:
+    types: [closed]
 
   # Manual trigger with options
   workflow_dispatch:
@@ -29,11 +26,6 @@ on:
         required: false
         type: boolean
         default: false
-
-  # Trigger when an issue is closed (with delay for grace period)
-  # Note: Does not trigger on Saturday/Sunday to preserve availability for Monday refactor
-  issues:
-    types: [closed]
 
 permissions:
   contents: read
@@ -65,39 +57,31 @@ jobs:
 
       - name: Determine assignment mode
         id: mode
-        env:
-          CRON_SCHEDULE: ${{ github.event.schedule }}
         run: |
           # Determine mode based on trigger
           if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
             MODE="${{ inputs.mode }}"
-          elif [ "${{ github.event_name }}" = "schedule" ]; then
-            # Weekly refactor runs at 9 AM on Monday (cron: "0 9 * * 1")
-            # Daily auto-assignment runs at 10 AM Tue-Fri (cron: "0 10 * * 2-5")
-            # Check which schedule triggered based on the hour
-            CURRENT_HOUR=$(date -u +%H)
-            if [ "$CURRENT_HOUR" = "09" ]; then
+          else
+            # Use the closed issue number to determine mode
+            # Every 5th issue (issue numbers ending in 0 or 5) triggers a refactor
+            ISSUE_NUMBER="${{ github.event.issue.number }}"
+            echo "Closed issue number: $ISSUE_NUMBER"
+            
+            # Check if issue number ends in 0 or 5
+            LAST_DIGIT=$((ISSUE_NUMBER % 10))
+            if [ "$LAST_DIGIT" -eq 0 ] || [ "$LAST_DIGIT" -eq 5 ]; then
               MODE="refactor"
+              echo "Issue number ends in 0 or 5 - creating refactor issue"
             else
               MODE="auto"
+              echo "Auto-assigning next issue"
             fi
-          else
-            # Issue closed or other trigger - use auto mode
-            # But skip on Saturday/Sunday to preserve availability for Monday refactor
-            DAY_OF_WEEK=$(date -u +%u)
-            if [ "$DAY_OF_WEEK" = "6" ] || [ "$DAY_OF_WEEK" = "7" ]; then
-              echo "It's the weekend - skipping auto-assignment to preserve availability for Monday refactor"
-              echo "mode=skip" >> "$GITHUB_OUTPUT"
-              exit 0
-            fi
-            MODE="auto"
           fi
 
           echo "mode=${MODE}" >> "$GITHUB_OUTPUT"
           echo "Assignment mode: ${MODE}"
 
       - name: Assign Copilot to issue
-        if: steps.mode.outputs.mode != 'skip'
         uses: actions/github-script@v8
         with:
           github-token: ${{ secrets.COPILOT_ASSIGN_PAT }}
