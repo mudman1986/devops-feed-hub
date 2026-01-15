@@ -5,8 +5,20 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-gitlab-blog.xml</link>
     <description>Articles from GitLab Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-gitlab-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 15 Jan 2026 16:32:38 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 15 Jan 2026 21:27:35 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Announcing general availability for GitLab Duo Agent Platform</title>
+      <link>https://about.gitlab.com/blog/gitlab-duo-agent-platform-is-generally-available/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/gitlab-duo-agent-platform-is-generally-available/</guid>
+      <pubDate>Thu, 15 Jan 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Introducing GitLab Credits, usage-based pricing for GitLab Duo Agent Platform</title>
+      <link>https://about.gitlab.com/blog/introducing-gitlab-credits/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/introducing-gitlab-credits/</guid>
+      <pubDate>Thu, 15 Jan 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>AI Catalog: Discover, create, and share agents and flows</title>
       <link>https://about.gitlab.com/blog/ai-catalog-discover-and-share-agents/</link>

@@ -22,6 +22,9 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#settings-content" class="skip-to-main">Skip to main content</a>
+
     <div class="header">
       <div class="header-title">
         <svg
@@ -87,7 +90,13 @@
     <div class="settings-container">
       <nav class="settings-sidebar">
         <div class="settings-menu">
-          <div class="settings-menu-item active" data-section="appearance">
+          <div
+            class="settings-menu-item active"
+            data-section="appearance"
+            role="button"
+            tabindex="0"
+            aria-label="appearance settings"
+          >
             <svg
               width="16"
               height="16"
@@ -108,7 +117,13 @@
             </svg>
             <span>Appearance & Display</span>
           </div>
-          <div class="settings-menu-item" data-section="feeds">
+          <div
+            class="settings-menu-item"
+            data-section="feeds"
+            role="button"
+            tabindex="0"
+            aria-label="feeds settings"
+          >
             <svg
               width="16"
               height="16"
@@ -125,7 +140,13 @@
             </svg>
             <span>Feed Selection</span>
           </div>
-          <div class="settings-menu-item" data-section="rss">
+          <div
+            class="settings-menu-item"
+            data-section="rss"
+            role="button"
+            tabindex="0"
+            aria-label="rss settings"
+          >
             <svg
               width="16"
               height="16"
@@ -142,7 +163,13 @@
             </svg>
             <span>RSS Feeds</span>
           </div>
-          <div class="settings-menu-item" data-section="experimental">
+          <div
+            class="settings-menu-item"
+            data-section="experimental"
+            role="button"
+            tabindex="0"
+            aria-label="experimental settings"
+          >
             <svg
               width="16"
               height="16"
@@ -161,7 +188,7 @@
           </div>
         </div>
       </nav>
-      <main class="settings-content">
+      <main class="settings-content" id="settings-content">
         <section class="settings-section active" id="appearance-section">
           <h2 class="settings-section-title">Appearance & Display</h2>
           <div class="settings-group">
@@ -230,7 +257,7 @@
                 <button
                   id="deselect-all-feeds"
                   class="settings-action-button"
-                  aria-label="Deselect all feeds"
+                  aria-label="Deselect all feeds in the list"
                 >
                   Deselect All
                 </button>
@@ -287,8 +314,14 @@
         </section>
 
         <section class="settings-section" id="experimental-section">
-          <h2 class="settings-section-title">Experimental Themes</h2>
-          <div class="settings-group experimental-themes">
+          <h2 class="settings-section-title" id="experimental-section-title">
+            Experimental Themes
+          </h2>
+          <div
+            class="settings-group experimental-themes"
+            role="region"
+            aria-labelledby="experimental-section-title"
+          >
             <div class="experimental-disclaimer">
               <svg
                 width="18"
@@ -328,12 +361,9 @@
                   <optgroup label="Color Variations - Dark">
                     <option value="purple-haze">Purple Haze (Dark)</option>
                     <option value="ocean-deep">Ocean Deep (Dark)</option>
-                    <option value="arctic-blue">Arctic Blue (Light)</option>
+                    <option value="arctic-blue">Arctic Blue (Dark)</option>
                     <option value="high-contrast-dark">
                       High Contrast (Dark)
-                    </option>
-                    <option value="high-contrast-light">
-                      High Contrast (Light)
                     </option>
                     <option value="monochrome">Monochrome (Dark)</option>
                     <option value="dracula">Dracula (Dark)</option>
@@ -343,6 +373,13 @@
                       Purple Haze (Light)
                     </option>
                     <option value="ocean-deep-light">Ocean Deep (Light)</option>
+                    <option value="arctic-blue-light">
+                      Arctic Blue (Light)
+                    </option>
+                    <option value="high-contrast-light">
+                      High Contrast (Light)
+                    </option>
+                    <option value="monochrome-light">Monochrome (Light)</option>
                     <option value="dracula-light">Dracula (Light)</option>
                   </optgroup>
                   <optgroup label="Themed Styles">
@@ -355,6 +392,21 @@
                     <option value="retro">Retro - 80s/90s Inspired</option>
                     <option value="futuristic">Futuristic - Sci-Fi Neon</option>
                     <option value="compact">Compact - Dense Information</option>
+                    <option value="minimalist-light">
+                      Minimalist Light - Bright & Clean
+                    </option>
+                    <option value="terminal-light">
+                      Terminal Light - Light Background
+                    </option>
+                    <option value="retro-light">
+                      Retro Light - Vintage Pastel
+                    </option>
+                    <option value="futuristic-light">
+                      Futuristic Light - Bright Sci-Fi
+                    </option>
+                    <option value="compact-light">
+                      Compact Light - Dense & Bright
+                    </option>
                   </optgroup>
                 </select>
               </div>

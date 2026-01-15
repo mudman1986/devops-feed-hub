@@ -5,8 +5,20 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml</link>
     <description>Articles from GitHub Changelog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 15 Jan 2026 16:32:38 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 15 Jan 2026 21:27:35 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Hierarchy view now available in GitHub Projects</title>
+      <link>https://github.blog/changelog/2026-01-15-hierarchy-view-now-available-in-github-projects</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-01-15-hierarchy-view-now-available-in-github-projects</guid>
+      <pubDate>Thu, 15 Jan 2026 20:19:53 +0000</pubDate>
+    </item>
+    <item>
+      <title>GitHub Copilot bring your own key (BYOK) enhancements</title>
+      <link>https://github.blog/changelog/2026-01-15-github-copilot-bring-your-own-key-byok-enhancements</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-01-15-github-copilot-bring-your-own-key-byok-enhancements</guid>
+      <pubDate>Thu, 15 Jan 2026 20:01:40 +0000</pubDate>
+    </item>
     <item>
       <title>Copilot SDK in technical preview</title>
       <link>https://github.blog/changelog/2026-01-14-copilot-sdk-in-technical-preview</link>
@@ -54,18 +66,6 @@
       <link>https://github.blog/changelog/2026-01-12-controlling-who-can-request-apps-for-your-organization-is-now-generally-available</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-01-12-controlling-who-can-request-apps-for-your-organization-is-now-generally-available</guid>
       <pubDate>Mon, 12 Jan 2026 20:19:15 +0000</pubDate>
-    </item>
-    <item>
-      <title>Deprecation of user to organization account transformation</title>
-      <link>https://github.blog/changelog/2026-01-12-deprecation-of-user-to-organization-account-transformation</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-01-12-deprecation-of-user-to-organization-account-transformation</guid>
-      <pubDate>Mon, 12 Jan 2026 16:26:48 +0000</pubDate>
-    </item>
-    <item>
-      <title>Gemini 3 Flash is now available in Visual Studio, JetBrains IDEs, Xcode, and Eclipse</title>
-      <link>https://github.blog/changelog/2026-01-06-gemini-3-flash-is-now-available-in-visual-studio-jetbrains-ides-xcode-and-eclipse</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-01-06-gemini-3-flash-is-now-available-in-visual-studio-jetbrains-ides-xcode-and-eclipse</guid>
-      <pubDate>Tue, 06 Jan 2026 19:24:20 +0000</pubDate>
     </item>
   </channel>
 </rss>

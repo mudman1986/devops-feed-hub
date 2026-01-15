@@ -5,8 +5,29 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 15 Jan 2026 16:32:38 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 15 Jan 2026 21:27:35 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Hierarchy view now available in GitHub Projects</title>
+      <link>https://github.blog/changelog/2026-01-15-hierarchy-view-now-available-in-github-projects</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-01-15-hierarchy-view-now-available-in-github-projects</guid>
+      <pubDate>Thu, 15 Jan 2026 20:19:53 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>GitHub Copilot bring your own key (BYOK) enhancements</title>
+      <link>https://github.blog/changelog/2026-01-15-github-copilot-bring-your-own-key-byok-enhancements</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-01-15-github-copilot-bring-your-own-key-byok-enhancements</guid>
+      <pubDate>Thu, 15 Jan 2026 20:01:40 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>From AI agent prototype to product: Lessons from building AWS DevOps Agent</title>
+      <link>https://aws.amazon.com/blogs/devops/from-ai-agent-prototype-to-product-lessons-from-building-aws-devops-agent/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/from-ai-agent-prototype-to-product-lessons-from-building-aws-devops-agent/</guid>
+      <pubDate>Thu, 15 Jan 2026 17:03:50 +0000</pubDate>
+      <source>AWS DevOps Blog</source>
+    </item>
     <item>
       <title>Permission-Aware RAG: End-to-End Testing with the SpiceDB Testcontainer</title>
       <link>https://www.docker.com/blog/rag-permission-testing-testcontainers-spicedb/</link>
@@ -20,6 +41,20 @@
       <guid isPermaLink="true">https://www.docker.com/blog/opencode-docker-model-runner-private-ai-coding/</guid>
       <pubDate>Thu, 15 Jan 2026 13:47:17 +0000</pubDate>
       <source>Docker Blog</source>
+    </item>
+    <item>
+      <title>Announcing general availability for GitLab Duo Agent Platform</title>
+      <link>https://about.gitlab.com/blog/gitlab-duo-agent-platform-is-generally-available/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/gitlab-duo-agent-platform-is-generally-available/</guid>
+      <pubDate>Thu, 15 Jan 2026 00:00:00 +0000</pubDate>
+      <source>GitLab Blog</source>
+    </item>
+    <item>
+      <title>Introducing GitLab Credits, usage-based pricing for GitLab Duo Agent Platform</title>
+      <link>https://about.gitlab.com/blog/introducing-gitlab-credits/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/introducing-gitlab-credits/</guid>
+      <pubDate>Thu, 15 Jan 2026 00:00:00 +0000</pubDate>
+      <source>GitLab Blog</source>
     </item>
     <item>
       <title>Copilot SDK in technical preview</title>
@@ -232,13 +267,6 @@
       <source>HashiCorp Blog</source>
     </item>
     <item>
-      <title>Deprecation of user to organization account transformation</title>
-      <link>https://github.blog/changelog/2026-01-12-deprecation-of-user-to-organization-account-transformation</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-01-12-deprecation-of-user-to-organization-account-transformation</guid>
-      <pubDate>Mon, 12 Jan 2026 16:26:48 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>Light waves, rising tides, and drifting ships: Game Off 2025 winners</title>
       <link>https://github.blog/open-source/gaming/light-waves-rising-tides-and-drifting-ships-game-off-2025-winners/</link>
       <guid isPermaLink="true">https://github.blog/open-source/gaming/light-waves-rising-tides-and-drifting-ships-game-off-2025-winners/</guid>
@@ -349,13 +377,6 @@
       <guid isPermaLink="true">https://about.gitlab.com/blog/2025-owasp-top-10-whats-changed-and-why-it-matters/</guid>
       <pubDate>Wed, 07 Jan 2026 00:00:00 +0000</pubDate>
       <source>GitLab Blog</source>
-    </item>
-    <item>
-      <title>Gemini 3 Flash is now available in Visual Studio, JetBrains IDEs, Xcode, and Eclipse</title>
-      <link>https://github.blog/changelog/2026-01-06-gemini-3-flash-is-now-available-in-visual-studio-jetbrains-ides-xcode-and-eclipse</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-01-06-gemini-3-flash-is-now-available-in-visual-studio-jetbrains-ides-xcode-and-eclipse</guid>
-      <pubDate>Tue, 06 Jan 2026 19:24:20 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>Deterministic AI Testing with Session Recording in cagent</title>
