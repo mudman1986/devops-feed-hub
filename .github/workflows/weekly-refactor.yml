@@ -1,8 +1,13 @@
 name: Weekly Refactor
 
+# NOTE: This workflow is now integrated into assign-copilot-issues.yml
+# which handles both weekly refactor and daily issue assignment.
+# This standalone version is kept for manual triggers if needed.
+
 on:
-  schedule:
-    - cron: "0 9 * * 1"
+  # Disabled schedule - handled by assign-copilot-issues.yml
+  # schedule:
+  #   - cron: "0 9 * * 1"
   workflow_dispatch:
 
 permissions:
