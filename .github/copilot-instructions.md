@@ -103,6 +103,7 @@ This repository is maintained primarily by GitHub Copilot. Path-specific instruc
     -e VALIDATE_GITHUB_ACTIONS=true \
     -e VALIDATE_GITLEAKS=true \
     -e VALIDATE_GIT_MERGE_CONFLICT_MARKERS=true \
+    -e FIX_CSS=true \
     -e FIX_PYTHON_BLACK=true \
     -e FIX_PYTHON_ISORT=true \
     -e FIX_SHELL_SHFMT=true \
@@ -112,6 +113,7 @@ This repository is maintained primarily by GitHub Copilot. Path-specific instruc
     -e FIX_CSS_PRETTIER=true \
     -e FIX_HTML_PRETTIER=true \
     -e FIX_NATURAL_LANGUAGE=true \
+    -e FIX_JAVASCRIPT_ES=true \
     -v $(pwd):/tmp/lint \
     ghcr.io/super-linter/super-linter:v8.3.2
   ```
