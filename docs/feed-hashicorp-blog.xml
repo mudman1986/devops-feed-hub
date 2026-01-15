@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-hashicorp-blog.xml</link>
     <description>Articles from HashiCorp Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-hashicorp-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 15 Jan 2026 14:24:11 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 15 Jan 2026 15:09:09 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>How GEICO lowered its $300M cloud spend and decoupled security from the network</title>
@@ -72,12 +72,6 @@
       <link>https://www.hashicorp.com/blog/continuing-hcp-terraform-s-enhanced-free-tier-experience</link>
       <guid isPermaLink="true">https://www.hashicorp.com/blog/continuing-hcp-terraform-s-enhanced-free-tier-experience</guid>
       <pubDate>Wed, 17 Dec 2025 21:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Deliver secrets to Kubernetes pods without storing in etcd, using VSO</title>
-      <link>https://www.hashicorp.com/blog/deliver-secrets-to-kubernetes-pods-without-storing-in-etcd-using-vso</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/deliver-secrets-to-kubernetes-pods-without-storing-in-etcd-using-vso</guid>
-      <pubDate>Tue, 16 Dec 2025 15:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

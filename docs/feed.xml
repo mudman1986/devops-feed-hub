@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 15 Jan 2026 14:24:11 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 15 Jan 2026 15:09:09 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Permission-Aware RAG: End-to-End Testing with the SpiceDB Testcontainer</title>
@@ -748,13 +748,6 @@
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=536699</guid>
       <pubDate>Tue, 16 Dec 2025 15:45:45 +0000</pubDate>
       <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>Deliver secrets to Kubernetes pods without storing in etcd, using VSO</title>
-      <link>https://www.hashicorp.com/blog/deliver-secrets-to-kubernetes-pods-without-storing-in-etcd-using-vso</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/deliver-secrets-to-kubernetes-pods-without-storing-in-etcd-using-vso</guid>
-      <pubDate>Tue, 16 Dec 2025 15:00:00 +0000</pubDate>
-      <source>HashiCorp Blog</source>
     </item>
   </channel>
 </rss>

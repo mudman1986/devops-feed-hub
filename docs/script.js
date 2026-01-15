@@ -10,23 +10,16 @@ const VALID_EXPERIMENTAL_THEMES = [
   "ocean-deep",
   "ocean-deep-light",
   "arctic-blue",
-  "arctic-blue-light",
   "high-contrast-dark",
   "high-contrast-light",
   "monochrome",
-  "monochrome-light",
   "dracula",
   "dracula-light",
   "minimalist",
-  "minimalist-light",
   "terminal",
-  "terminal-light",
   "retro",
-  "retro-light",
   "futuristic",
-  "futuristic-light",
   "compact",
-  "compact-light",
   "horizontal-scroll",
   "masonry-grid",
   "floating-panels",
@@ -36,126 +29,31 @@ const VALID_EXPERIMENTAL_THEMES = [
   "timeline-vertical",
 ];
 
-// ===== SHARED UTILITY FUNCTIONS =====
-
-/**
- * Safely get item from localStorage with error handling
- * @param {string} key - localStorage key
- * @param {*} defaultValue - default value if key not found or error occurs
- * @returns {*} - stored value or default
- */
-function getLocalStorage(key, defaultValue = null) {
-  try {
-    const stored = localStorage.getItem(key);
-    return stored !== null ? stored : defaultValue;
-  } catch (e) {
-    console.warn(`localStorage unavailable for key "${key}":`, e);
-    return defaultValue;
-  }
-}
-
-/**
- * Safely get JSON from localStorage with error handling
- * @param {string} key - localStorage key
- * @param {*} defaultValue - default value if key not found or error occurs
- * @returns {*} - parsed JSON value or default
- */
-function getLocalStorageJSON(key, defaultValue = null) {
-  try {
-    const stored = localStorage.getItem(key);
-    return stored ? JSON.parse(stored) : defaultValue;
-  } catch (e) {
-    console.warn(`localStorage unavailable or invalid JSON for key "${key}":`, e);
-    return defaultValue;
-  }
-}
-
-/**
- * Safely set item in localStorage with error handling
- * @param {string} key - localStorage key
- * @param {string} value - value to store
- */
-function setLocalStorage(key, value) {
-  try {
-    localStorage.setItem(key, value);
-  } catch (e) {
-    console.warn(`Unable to save to localStorage for key "${key}":`, e);
-  }
-}
-
-/**
- * Safely set JSON in localStorage with error handling
- * @param {string} key - localStorage key
- * @param {*} value - value to JSON stringify and store
- */
-function setLocalStorageJSON(key, value) {
-  try {
-    localStorage.setItem(key, JSON.stringify(value));
-  } catch (e) {
-    console.warn(`Unable to save to localStorage for key "${key}":`, e);
-  }
-}
-
-/**
- * Initialize a dropdown with saved value from localStorage
- * @param {string} selectId - ID of select element
- * @param {string} storageKey - localStorage key
- * @param {string} defaultValue - default value if not in storage
- * @param {function} onChange - callback when value changes
- * @returns {HTMLElement|null} - select element or null
- */
-function initializeDropdown(selectId, storageKey, defaultValue, onChange) {
-  const select = document.getElementById(selectId);
-  if (!select) return null;
-
-  const savedValue = getLocalStorage(storageKey, defaultValue);
-  select.value = savedValue;
-  
-  select.addEventListener("change", () => {
-    const value = select.value;
-    setLocalStorage(storageKey, value);
-    onChange(value);
-  });
-  
-  return select;
-}
-
-/**
- * Sort and reorder DOM elements based on data array
- * @param {Array} dataArray - array of objects with 'element' property
- * @param {HTMLElement} parent - parent container element
- * @param {HTMLElement|null} beforeElement - insert before this element (e.g., footer)
- */
-function reorderDOMElements(dataArray, parent, beforeElement = null) {
-  dataArray.forEach((data) => {
-    if (beforeElement) {
-      parent.insertBefore(data.element, beforeElement);
-    } else {
-      parent.appendChild(data.element);
-    }
-  });
-}
-
-// ===== THEME TOGGLE FUNCTIONALITY =====
-
+// Theme toggle functionality
 const themeToggle = document.getElementById("theme-toggle");
 const htmlElement = document.documentElement;
 
 // Check for experimental theme first, then fall back to standard theme
 let savedTheme = "dark";
-const experimentalTheme = getLocalStorage("experimentalTheme");
-if (experimentalTheme && VALID_EXPERIMENTAL_THEMES.includes(experimentalTheme)) {
-  savedTheme = experimentalTheme;
-} else {
-  if (experimentalTheme) {
-    console.warn(`Invalid experimental theme: ${experimentalTheme}. Using default.`);
-    try {
+try {
+  const experimentalTheme = localStorage.getItem("experimentalTheme");
+  if (
+    experimentalTheme &&
+    VALID_EXPERIMENTAL_THEMES.includes(experimentalTheme)
+  ) {
+    savedTheme = experimentalTheme;
+  } else {
+    if (experimentalTheme) {
+      console.warn(
+        `Invalid experimental theme: ${experimentalTheme}. Using default.`,
+      );
       localStorage.removeItem("experimentalTheme");
-    } catch (e) {
-      console.warn("Unable to remove invalid theme:", e);
     }
+    savedTheme = localStorage.getItem("theme") || "dark";
   }
-  savedTheme = getLocalStorage("theme", "dark");
+} catch (e) {
+  // localStorage might be unavailable (privacy mode, quota exceeded, etc.)
+  console.warn("localStorage unavailable, using default theme:", e);
 }
 
 htmlElement.setAttribute("data-theme", savedTheme);
@@ -166,13 +64,14 @@ themeToggle.addEventListener("click", () => {
   const newTheme = currentTheme === "light" ? "dark" : "light";
 
   htmlElement.setAttribute("data-theme", newTheme);
-  setLocalStorage("theme", newTheme);
-  
-  // Clear experimental theme when toggling standard theme
+
   try {
+    localStorage.setItem("theme", newTheme);
+    // Clear experimental theme when toggling standard theme
     localStorage.removeItem("experimentalTheme");
   } catch (e) {
-    console.warn("Unable to remove experimental theme:", e);
+    // localStorage might be unavailable, theme will reset on reload
+    console.warn("Unable to save theme preference:", e);
   }
 
   updateThemeButton(newTheme);
@@ -199,11 +98,38 @@ function updateThemeButton(theme) {
   }
 }
 
-// ===== VIEW SELECTOR FUNCTIONALITY =====
+// View selector functionality (list/card)
+const viewSelect = document.getElementById("view-select");
 
-const savedView = getLocalStorage("view", "list");
-initializeDropdown("view-select", "view", "list", applyView);
-applyView(savedView);
+// Get saved view preference or default to list
+let savedView = "list";
+try {
+  savedView = localStorage.getItem("view") || "list";
+} catch (e) {
+  // localStorage might be unavailable (privacy mode, quota exceeded, etc.)
+  console.warn("localStorage unavailable, using default view:", e);
+}
+
+// Set dropdown value and apply view
+if (viewSelect) {
+  viewSelect.value = savedView;
+  applyView(savedView);
+
+  // Add change listener to dropdown
+  viewSelect.addEventListener("change", () => {
+    const view = viewSelect.value;
+
+    // Save preference
+    try {
+      localStorage.setItem("view", view);
+    } catch (e) {
+      console.warn("Unable to save view preference:", e);
+    }
+
+    // Apply view
+    applyView(view);
+  });
+}
 
 function applyView(view) {
   // List is now the default, card needs the attribute
@@ -215,8 +141,7 @@ function applyView(view) {
   }
 }
 
-// ===== SIDEBAR FUNCTIONALITY =====
-
+// Initialize sidebar state based on screen size
 function initializeSidebarState(sidebar) {
   // On mobile, start collapsed; on desktop, start expanded
   if (window.innerWidth <= 768) {
@@ -226,11 +151,15 @@ function initializeSidebarState(sidebar) {
   }
 }
 
+// Sidebar toggle functionality (works on both desktop and mobile)
 const sidebarToggle = document.getElementById("nav-toggle");
 const sidebar = document.getElementById("sidebar");
 
 if (sidebarToggle && sidebar) {
+  // Set initial state
   initializeSidebarState(sidebar);
+
+  // Handle window resize
   window.addEventListener("resize", () => initializeSidebarState(sidebar));
 
   sidebarToggle.addEventListener("click", () => {
@@ -247,17 +176,45 @@ if (sidebarToggle && sidebar) {
   });
 }
 
-// ===== TIMEFRAME FILTERING =====
-
+// Timeframe filtering configuration
+// Maps timeframe keys to hours for date filtering
 const TIMEFRAME_HOURS = {
   "1day": 24,
   "7days": 168,
   "30days": 720,
 };
 
-const savedTimeframe = getLocalStorage("timeframe", "1day");
-initializeDropdown("timeframe-select", "timeframe", "1day", applyTimeframeFilter);
-applyTimeframeFilter(savedTimeframe);
+// Timeframe filtering functionality with dropdown
+const timeframeSelect = document.getElementById("timeframe-select");
+
+// Get saved timeframe preference or default to 1 day
+let savedTimeframe = "1day";
+try {
+  savedTimeframe = localStorage.getItem("timeframe") || "1day";
+} catch (e) {
+  console.warn("localStorage unavailable, using default timeframe:", e);
+}
+
+// Set dropdown value and apply filter
+if (timeframeSelect) {
+  timeframeSelect.value = savedTimeframe;
+  applyTimeframeFilter(savedTimeframe);
+
+  // Add change listener to dropdown
+  timeframeSelect.addEventListener("change", () => {
+    const timeframe = timeframeSelect.value;
+
+    // Save preference
+    try {
+      localStorage.setItem("timeframe", timeframe);
+    } catch (e) {
+      console.warn("Unable to save timeframe preference:", e);
+    }
+
+    // Apply filter
+    applyTimeframeFilter(timeframe);
+  });
+}
 
 function applyTimeframeFilter(timeframe) {
   const hours = TIMEFRAME_HOURS[timeframe] || 24;
@@ -270,6 +227,7 @@ function applyTimeframeFilter(timeframe) {
     const publishedISO = article.getAttribute("data-published");
     if (publishedISO) {
       try {
+        // Parse the ISO timestamp from data-published attribute
         const publishDate = new Date(publishedISO);
         if (!Number.isNaN(publishDate.getTime())) {
           if (publishDate >= cutoffTime) {
@@ -280,29 +238,23 @@ function applyTimeframeFilter(timeframe) {
             article.style.display = "none";
           }
         } else {
+          // If date parsing fails, show the article
           article.removeAttribute("data-hidden-by-timeframe");
           article.style.display = "";
         }
       } catch {
+        // If there's an error parsing the date, show the article anyway
         article.removeAttribute("data-hidden-by-timeframe");
         article.style.display = "";
       }
     } else {
+      // Show articles without dates
       article.removeAttribute("data-hidden-by-timeframe");
       article.style.display = "";
     }
   });
 
-  // Update feed counts and reorder
-  updateFeedCounts();
-  updateMetadataDisplay();
-  updateStats();
-}
-
-/**
- * Update feed counts and reorder feeds
- */
-function updateFeedCounts() {
+  // Update feed counts and show/hide feed sections
   const feedSections = document.querySelectorAll(".feed-section");
   const feedsData = [];
 
@@ -334,13 +286,16 @@ function updateFeedCounts() {
       } else {
         noArticlesMsg.style.display = "";
       }
+      // In list view, the CSS will hide the entire section
     } else {
       if (articleList) articleList.style.display = "";
+      // Remove the no-articles message completely so CSS doesn't hide the section
       if (noArticlesMsg) {
         noArticlesMsg.remove();
       }
     }
 
+    // Store feed data for reordering
     feedsData.push({
       element: section,
       count,
@@ -348,11 +303,12 @@ function updateFeedCounts() {
     });
   });
 
-  // Reorder feeds
+  // Reorder feeds: feeds with articles first, then empty feeds (both groups alphabetically)
   if (feedSections.length > 0 && feedSections[0].parentNode) {
     const parent = feedSections[0].parentNode;
     const footer = parent.querySelector(".footer");
 
+    // Separate feeds into two groups
     const feedsWithArticles = feedsData
       .filter((f) => f.count > 0)
       .sort((a, b) => a.name.localeCompare(b.name));
@@ -360,26 +316,47 @@ function updateFeedCounts() {
       .filter((f) => f.count === 0)
       .sort((a, b) => a.name.localeCompare(b.name));
 
+    // Combine: feeds with articles first, then empty feeds
     const orderedFeeds = [...feedsWithArticles, ...emptyFeeds];
-    reorderDOMElements(orderedFeeds, parent, footer);
+
+    // Reorder DOM elements - insert before footer to keep footer at bottom
+    orderedFeeds.forEach((feedData) => {
+      if (footer) {
+        parent.insertBefore(feedData.element, footer);
+      } else {
+        parent.appendChild(feedData.element);
+      }
+    });
   }
+
+  // Update metadata display
+  updateMetadataDisplay();
+
+  // Update stats if on main page
+  updateStats();
 }
 
 function updateMetadataDisplay() {
-  // Kept for compatibility with generated HTML pages
+  // Kept for compatibility with generated HTML pages that may reference this function
+  // Metadata display functionality has been moved to CSS (display: none)
 }
 
 function updateStats() {
   const statCards = document.querySelectorAll(".stat-card");
   if (statCards.length === 0) return;
 
+  // Count visible articles across all feeds
   const allArticles = document.querySelectorAll(".article-item");
+
+  // If there are no article items on the page (e.g., summary page),
+  // don't update the Total Articles stat - it's set statically in the HTML
   if (allArticles.length === 0) return;
 
   const visibleArticles = Array.from(allArticles).filter(
     (a) => a.style.display !== "none",
   );
 
+  // Update total articles stat if it exists
   statCards.forEach((card) => {
     const label = card.querySelector(".stat-label");
     if (label && label.textContent === "Total Articles") {
@@ -391,44 +368,66 @@ function updateStats() {
   });
 }
 
-// ===== MARK AS READ FUNCTIONALITY =====
+// Mark as Read functionality - constants defined at top of file
 
+// Store original feed order for restoration when read status is reset
+
+// Get read articles from localStorage
 function getReadArticles() {
-  return getLocalStorageJSON(READ_ARTICLES_KEY, []);
+  try {
+    const stored = localStorage.getItem(READ_ARTICLES_KEY);
+    return stored ? JSON.parse(stored) : [];
+  } catch (e) {
+    console.warn("Unable to load read articles:", e);
+    return [];
+  }
 }
 
+// Save read articles to localStorage
 function saveReadArticles(readArticles) {
-  setLocalStorageJSON(READ_ARTICLES_KEY, readArticles);
+  try {
+    localStorage.setItem(READ_ARTICLES_KEY, JSON.stringify(readArticles));
+  } catch (e) {
+    console.warn("Unable to save read articles:", e);
+  }
 }
 
+// Check if an article is read
 function isArticleRead(articleUrl) {
   const readArticles = getReadArticles();
   return readArticles.includes(articleUrl);
 }
 
+// Toggle read status of an article
 function toggleArticleRead(articleUrl) {
   let readArticles = getReadArticles();
 
   if (readArticles.includes(articleUrl)) {
+    // Remove from read list
     readArticles = readArticles.filter((url) => url !== articleUrl);
   } else {
+    // Add to read list
     readArticles.push(articleUrl);
   }
 
   saveReadArticles(readArticles);
+  // Return true if article is now read, false if unread
   return readArticles.includes(articleUrl);
 }
 
+// Reset all read articles
 function resetAllReadArticles() {
   try {
     localStorage.removeItem(READ_ARTICLES_KEY);
     initializeReadStatus();
+    // Don't restore original order - reorder based on current state
     updateFeedCountsAfterReadFilter();
   } catch (e) {
     console.warn("Unable to reset read articles:", e);
   }
 }
 
+// Initialize read status for all articles
 function initializeReadStatus() {
   const articles = document.querySelectorAll(".article-item");
 
@@ -439,11 +438,13 @@ function initializeReadStatus() {
     const articleUrl = link.getAttribute("href");
     if (!articleUrl) return;
 
+    // Remove existing read indicator if present
     const existingIndicator = article.querySelector(".read-indicator");
     if (existingIndicator) {
       existingIndicator.remove();
     }
 
+    // Create read indicator (checkmark icon)
     const indicator = document.createElement("button");
     indicator.className = "read-indicator";
     indicator.setAttribute("aria-label", "Mark as read/unread");
@@ -451,6 +452,7 @@ function initializeReadStatus() {
       <polyline points="20 6 9 17 4 12"></polyline>
     </svg>`;
 
+    // Add click handler
     indicator.addEventListener("click", (e) => {
       e.preventDefault();
       e.stopPropagation();
@@ -459,11 +461,15 @@ function initializeReadStatus() {
       updateFeedCountsAfterReadFilter();
     });
 
+    // Insert indicator at the beginning of the article
     article.insertBefore(indicator, article.firstChild);
+
+    // Update initial state
     updateArticleReadState(article, articleUrl);
   });
 }
 
+// Update the visual state of an article based on read status
 function updateArticleReadState(article, articleUrl) {
   const indicator = article.querySelector(".read-indicator");
   const isRead = isArticleRead(articleUrl);
@@ -477,6 +483,7 @@ function updateArticleReadState(article, articleUrl) {
   }
 }
 
+// Update feed counts after read status changes
 function updateFeedCountsAfterReadFilter() {
   const feedSections = document.querySelectorAll(".feed-section");
   const feedsData = [];
@@ -490,6 +497,7 @@ function updateFeedCountsAfterReadFilter() {
       (a) => a.style.display !== "none",
     );
 
+    // Count unread articles (not just visible)
     const unreadArticles = Array.from(articles).filter((article) => {
       const link = article.querySelector(".article-title");
       if (!link) return false;
@@ -503,14 +511,17 @@ function updateFeedCountsAfterReadFilter() {
     const count = visibleArticles.length;
     const unreadCount = unreadArticles.length;
 
+    // Reorder articles within this feed: unread first, then read
     reorderArticlesInFeed(articleList, articles);
 
+    // Update count badge
     const countBadge = section.querySelector(".feed-count");
     if (countBadge) {
       const plural = count !== 1 ? "s" : "";
       countBadge.textContent = `${count} article${plural}`;
     }
 
+    // Update no articles message
     const noArticlesMsg = section.querySelector(".no-articles");
 
     if (count === 0) {
@@ -528,6 +539,7 @@ function updateFeedCountsAfterReadFilter() {
       if (noArticlesMsg) noArticlesMsg.style.display = "none";
     }
 
+    // Store feed data for reordering
     feedsData.push({
       element: section,
       count,
@@ -536,13 +548,18 @@ function updateFeedCountsAfterReadFilter() {
     });
   });
 
+  // Reorder feeds based on unread count
   reorderFeedsByUnreadStatus(feedsData);
+
+  // Update stats
   updateStats();
 }
 
+// Reorder articles within a feed: unread articles first, then read articles
 function reorderArticlesInFeed(articleList, articles) {
   if (!articleList || articles.length === 0) return;
 
+  // Separate articles into unread and read
   const articleData = Array.from(articles).map((article) => {
     const link = article.querySelector(".article-title");
     const articleUrl = link ? link.getAttribute("href") : null;
@@ -558,6 +575,7 @@ function reorderArticlesInFeed(articleList, articles) {
     };
   });
 
+  // Separate into two groups and sort by date (newest first)
   const unreadArticles = articleData
     .filter((a) => !a.isRead)
     .sort((a, b) => b.publishDate - a.publishDate);
@@ -565,12 +583,16 @@ function reorderArticlesInFeed(articleList, articles) {
     .filter((a) => a.isRead)
     .sort((a, b) => b.publishDate - a.publishDate);
 
+  // Combine: unread articles first, then read articles
   const orderedArticles = [...unreadArticles, ...readArticles];
+
+  // Reorder DOM elements within the article list
   orderedArticles.forEach((articleData) => {
     articleList.appendChild(articleData.element);
   });
 }
 
+// Reorder feeds: feeds with unread articles first, then feeds with all read articles, then empty feeds
 function reorderFeedsByUnreadStatus(feedsData) {
   if (feedsData.length === 0) return;
 
@@ -582,6 +604,7 @@ function reorderFeedsByUnreadStatus(feedsData) {
 
   const footer = parent.querySelector(".footer");
 
+  // Separate feeds into three groups based on unread articles and total count
   const feedsWithUnread = feedsData
     .filter((f) => f.unreadCount > 0)
     .sort((a, b) => a.name.localeCompare(b.name));
@@ -592,13 +615,25 @@ function reorderFeedsByUnreadStatus(feedsData) {
     .filter((f) => (f.count || 0) === 0)
     .sort((a, b) => a.name.localeCompare(b.name));
 
+  // Combine: feeds with unread first, then all-read feeds, then empty feeds
   const orderedFeeds = [...feedsWithUnread, ...feedsAllRead, ...emptyFeeds];
-  reorderDOMElements(orderedFeeds, parent, footer);
+
+  // Reorder DOM elements - insert before footer to keep footer at bottom
+  orderedFeeds.forEach((feedData) => {
+    if (footer) {
+      parent.insertBefore(feedData.element, footer);
+    } else {
+      parent.appendChild(feedData.element);
+    }
+  });
 }
 
+// Store and restore original feed order
 function setupMarkAsReadControls() {
+  // Set up Clear All Read button
   const resetButton = document.getElementById("reset-read-button");
   if (resetButton) {
+    // Remove any existing listeners to avoid duplicates
     const newButton = resetButton.cloneNode(true);
     resetButton.parentNode.replaceChild(newButton, resetButton);
 
@@ -610,6 +645,7 @@ function setupMarkAsReadControls() {
         e.stopImmediatePropagation();
 
         try {
+          // Use window.confirm explicitly
           const confirmed = window.confirm(
             "Are you sure you want to clear all read articles? This will mark all articles as unread and restore the original feed order.",
           );
@@ -619,6 +655,7 @@ function setupMarkAsReadControls() {
           }
         } catch (error) {
           console.error("Error in reset button handler:", error);
+          // Fallback: just reset without confirmation if confirm fails
           resetAllReadArticles();
         }
 
@@ -629,14 +666,18 @@ function setupMarkAsReadControls() {
   }
 }
 
+// Initialize mark as read feature
 function initializeMarkAsReadFeature() {
+  // Capture original feed order before any modifications
   initializeReadStatus();
   updateFeedCountsAfterReadFilter();
   setupMarkAsReadControls();
 }
 
+// Initialize mark as read feature when page loads
 document.addEventListener("DOMContentLoaded", initializeMarkAsReadFeature);
 
+// Also initialize if DOMContentLoaded has already fired
 if (
   document.readyState === "complete" ||
   document.readyState === "interactive"
@@ -644,26 +685,35 @@ if (
   setTimeout(initializeMarkAsReadFeature, 0);
 }
 
-// ===== FEED FILTERING =====
-
+// Feed filtering based on enabled feeds setting
 function getEnabledFeeds() {
-  return getLocalStorageJSON("enabledFeeds", null);
+  try {
+    const stored = localStorage.getItem("enabledFeeds");
+    return stored ? JSON.parse(stored) : null;
+  } catch (e) {
+    console.warn("Unable to load enabled feeds:", e);
+    return null;
+  }
 }
 
 function applyFeedFilter() {
   const enabledFeeds = getEnabledFeeds();
 
+  // If no filter is set, show all feeds
   if (!enabledFeeds || enabledFeeds.length === 0) {
     return;
   }
 
+  // Filter navigation links
   const navLinks = document.querySelectorAll(".nav-link");
   navLinks.forEach((link) => {
     const linkText = link.textContent.trim();
+    // Don't filter "All Feeds" and "Summary" links
     if (linkText === "All Feeds" || linkText === "Summary") {
       return;
     }
 
+    // Hide if not in enabled feeds
     if (!enabledFeeds.includes(linkText)) {
       link.style.display = "none";
     } else {
@@ -671,16 +721,19 @@ function applyFeedFilter() {
     }
   });
 
+  // Filter feed sections
   const feedSections = document.querySelectorAll(".feed-section");
   feedSections.forEach((section) => {
     const heading = section.querySelector("h3");
     if (!heading) return;
 
+    // Extract feed name from heading (remove count badge)
     const feedNameElement = heading.childNodes[0];
     const feedName = feedNameElement
       ? feedNameElement.textContent.trim()
       : heading.textContent.trim();
 
+    // Hide if not in enabled feeds
     if (!enabledFeeds.includes(feedName)) {
       section.style.display = "none";
       section.setAttribute("data-hidden-by-filter", "true");
@@ -690,15 +743,19 @@ function applyFeedFilter() {
     }
   });
 
+  // Update stats after filtering
   updateStats();
 }
 
+// Initialize feed filtering when page loads
 function initializeFeedFilter() {
   applyFeedFilter();
 }
 
+// Add to initialization
 document.addEventListener("DOMContentLoaded", initializeFeedFilter);
 
+// Also initialize if DOMContentLoaded has already fired
 if (
   document.readyState === "complete" ||
   document.readyState === "interactive"
@@ -706,239 +763,9 @@ if (
   setTimeout(initializeFeedFilter, 0);
 }
 
+// Listen for storage changes (when settings are updated in another tab)
 window.addEventListener("storage", (e) => {
   if (e.key === "enabledFeeds") {
     applyFeedFilter();
   }
 });
-
-// ===== ACCESSIBILITY ENHANCEMENTS =====
-
-/**
- * Initialize accessibility features across the application
- */
-function initAccessibility() {
-  // Add keyboard navigation for settings menu items
-  const settingsMenuItems = document.querySelectorAll('.settings-menu-item');
-  settingsMenuItems.forEach(item => {
-    item.addEventListener('keydown', function(e) {
-      if (e.key === 'Enter' || e.key === ' ') {
-        e.preventDefault();
-        this.click();
-      }
-    });
-  });
-
-  // Add keyboard support for article items to mark as read
-  const articleItems = document.querySelectorAll('.article-item');
-  articleItems.forEach(item => {
-    const link = item.querySelector('.article-title');
-    if (link) {
-      // Add keyboard event for marking as read (Ctrl+M or Cmd+M)
-      item.addEventListener('keydown', function(e) {
-        if ((e.ctrlKey || e.metaKey) && e.key === 'm') {
-          e.preventDefault();
-          // Toggle read status
-          this.classList.toggle('read');
-          const articleUrl = link.href;
-          markArticleAsRead(articleUrl);
-          announceToScreenReader('Article marked as ' + (this.classList.contains('read') ? 'read' : 'unread'));
-        }
-      });
-    }
-  });
-
-  // Ensure proper focus management
-  enhanceFocusManagement();
-  
-  // Add ARIA live region if not exists
-  addAriaLiveRegion();
-  
-  // Prevent flash of transitions on page load
-  preventInitialTransitions();
-}
-
-/**
- * Announce messages to screen readers
- * @param {string} message - Message to announce
- * @param {string} priority - 'polite' or 'assertive'
- */
-function announceToScreenReader(message, priority = 'polite') {
-  const liveRegion = document.getElementById('aria-live-region');
-  if (liveRegion) {
-    liveRegion.setAttribute('aria-live', priority);
-    liveRegion.textContent = message;
-    // Clear after announcement (3 seconds to allow for slower screen readers)
-    setTimeout(() => {
-      liveRegion.textContent = '';
-    }, 3000);
-  }
-}
-
-/**
- * Add ARIA live region for dynamic announcements
- */
-function addAriaLiveRegion() {
-  if (!document.getElementById('aria-live-region')) {
-    const liveRegion = document.createElement('div');
-    liveRegion.id = 'aria-live-region';
-    liveRegion.className = 'sr-only';
-    liveRegion.setAttribute('aria-live', 'polite');
-    liveRegion.setAttribute('aria-atomic', 'true');
-    document.body.appendChild(liveRegion);
-  }
-}
-
-/**
- * Enhance focus management for better keyboard navigation
- */
-function enhanceFocusManagement() {
-  // Trap focus in modal-like elements (if any)
-  const modals = document.querySelectorAll('[role="dialog"]');
-  modals.forEach(modal => {
-    const focusableElements = modal.querySelectorAll(
-      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
-    );
-    
-    if (focusableElements.length > 0) {
-      const firstElement = focusableElements[0];
-      const lastElement = focusableElements[focusableElements.length - 1];
-      
-      modal.addEventListener('keydown', function(e) {
-        if (e.key === 'Tab') {
-          if (e.shiftKey && document.activeElement === firstElement) {
-            e.preventDefault();
-            lastElement.focus();
-          } else if (!e.shiftKey && document.activeElement === lastElement) {
-            e.preventDefault();
-            firstElement.focus();
-          }
-        }
-      });
-    }
-  });
-}
-
-/**
- * Prevent flash of transitions on initial page load
- */
-function preventInitialTransitions() {
-  document.body.classList.add('preload');
-  setTimeout(() => {
-    document.body.classList.remove('preload');
-  }, 100);
-}
-
-/**
- * Update article count with screen reader announcement
- * @param {number} count - Number of visible articles
- * @param {string} filterName - Name of current filter
- */
-function updateArticleCountAccessible(count, filterName) {
-  announceToScreenReader(`Showing ${count} articles for ${filterName}`, 'polite');
-}
-
-/**
- * Enhance timeframe selector with announcements
- */
-function enhanceTimeframeSelector() {
-  const timeframeSelect = document.getElementById('timeframe-select');
-  if (timeframeSelect) {
-    timeframeSelect.addEventListener('change', function() {
-      const selectedOption = this.options[this.selectedIndex].text;
-      announceToScreenReader(`Filter changed to ${selectedOption}`, 'polite');
-    });
-  }
-}
-
-/**
- * Enhance view mode selector with announcements
- */
-function enhanceViewModeSelector() {
-  const viewSelect = document.getElementById('view-select');
-  if (viewSelect) {
-    viewSelect.addEventListener('change', function() {
-      const selectedOption = this.options[this.selectedIndex].text;
-      announceToScreenReader(`View mode changed to ${selectedOption}`, 'polite');
-    });
-  }
-}
-
-// Initialize accessibility features when DOM is ready
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', function() {
-    initAccessibility();
-    enhanceTimeframeSelector();
-    enhanceViewModeSelector();
-  });
-} else {
-  initAccessibility();
-  enhanceTimeframeSelector();
-  enhanceViewModeSelector();
-}
-
-// ===== TOUCH TARGET ENHANCEMENTS =====
-
-/**
- * Ensure all interactive elements meet minimum touch target size
- */
-function ensureTouchTargets() {
-  // Cache touch device detection
-  const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-  
-  // Only run on touch devices and only once
-  if (!isTouchDevice || document.body.dataset.touchTargetsEnhanced === 'true') {
-    return;
-  }
-  
-  // Mark as enhanced to prevent re-running
-  document.body.dataset.touchTargetsEnhanced = 'true';
-  
-  const interactiveElements = document.querySelectorAll(
-    'button, a, input, select, [role="button"], .article-item'
-  );
-  
-  interactiveElements.forEach(element => {
-    const rect = element.getBoundingClientRect();
-    const minSize = 48; // 48px for mobile devices
-    
-    // Add padding if element is too small
-    if (rect.height < minSize || rect.width < minSize) {
-      const currentPadding = window.getComputedStyle(element).padding;
-      if (currentPadding === '0px' || currentPadding === '') {
-        element.style.padding = '0.75rem';
-      }
-      }
-    }
-  });
-}
-
-// Run touch target check after page load
-window.addEventListener('load', ensureTouchTargets);
-
-// ===== IMPROVED ERROR HANDLING WITH ACCESSIBILITY =====
-
-/**
- * Display accessible error messages
- * @param {string} message - Error message to display
- * @param {string} severity - 'error', 'warning', or 'info'
- */
-function displayAccessibleError(message, severity = 'error') {
-  const errorContainer = document.getElementById('error-container');
-  if (errorContainer) {
-    errorContainer.setAttribute('role', severity === 'error' ? 'alert' : 'status');
-    errorContainer.setAttribute('aria-live', severity === 'error' ? 'assertive' : 'polite');
-    errorContainer.textContent = message;
-    
-    // Auto-dismiss after 5 seconds for non-critical messages
-    if (severity !== 'error') {
-      setTimeout(() => {
-        errorContainer.textContent = '';
-      }, 5000);
-    }
-  }
-  
-  // Also announce to screen readers
-  announceToScreenReader(message, severity === 'error' ? 'assertive' : 'polite');
-}
-
