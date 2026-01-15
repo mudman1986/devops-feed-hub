@@ -5,21 +5,21 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 14 Jan 2026 23:03:01 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 15 Jan 2026 00:55:39 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Copilot SDK in technical preview</title>
+      <link>https://github.blog/changelog/2026-01-14-copilot-sdk-in-technical-preview</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-01-14-copilot-sdk-in-technical-preview</guid>
+      <pubDate>Wed, 14 Jan 2026 23:00:28 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
     <item>
       <title>[Launched] Generally Available: Ubuntu 24.04 support in AKS</title>
       <link>https://azure.microsoft.com/updates?id=536550</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=536550</guid>
       <pubDate>Wed, 14 Jan 2026 22:45:12 +0000</pubDate>
       <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>GitHub Availability Report: December 2025</title>
-      <link>https://github.blog/news-insights/company-news/github-availability-report-december-2025/</link>
-      <guid isPermaLink="true">https://github.blog/news-insights/company-news/github-availability-report-december-2025/</guid>
-      <pubDate>Wed, 14 Jan 2026 22:06:49 +0000</pubDate>
-      <source>GitHub Blog</source>
     </item>
     <item>
       <title>Safer Docker Hub Pulls via a Sonatype-Protected Proxy</title>
@@ -34,13 +34,6 @@
       <guid isPermaLink="true">https://github.blog/changelog/2026-01-14-github-copilot-cli-enhanced-agents-context-management-and-new-ways-to-install</guid>
       <pubDate>Wed, 14 Jan 2026 20:21:16 +0000</pubDate>
       <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>Community-powered security with AI: an open source framework for security research</title>
-      <link>https://github.blog/security/community-powered-security-with-ai-an-open-source-framework-for-security-research/</link>
-      <guid isPermaLink="true">https://github.blog/security/community-powered-security-with-ai-an-open-source-framework-for-security-research/</guid>
-      <pubDate>Wed, 14 Jan 2026 18:45:09 +0000</pubDate>
-      <source>GitHub Blog</source>
     </item>
     <item>
       <title>GPT-5.2-Codex is now generally available in GitHub Copilot</title>
@@ -414,13 +407,6 @@
       <source>Kubernetes Blog</source>
     </item>
     <item>
-      <title>Reduced pricing for GitHub-hosted runners usage</title>
-      <link>https://github.blog/changelog/2026-01-01-reduced-pricing-for-github-hosted-runners-usage</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-01-01-reduced-pricing-for-github-hosted-runners-usage</guid>
-      <pubDate>Thu, 01 Jan 2026 17:00:03 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>[Launched] Generally Available: Cloud-native apps on Kubernetes pricing calculator scenario</title>
       <link>https://azure.microsoft.com/updates?id=536560</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=536560</guid>
@@ -519,11 +505,25 @@
       <source>Kubernetes Blog</source>
     </item>
     <item>
+      <title>5 podcast episodes to help you build with confidence in 2026</title>
+      <link>https://github.blog/open-source/maintainers/5-podcast-episodes-to-help-you-build-with-confidence-in-2026/</link>
+      <guid isPermaLink="true">https://github.blog/open-source/maintainers/5-podcast-episodes-to-help-you-build-with-confidence-in-2026/</guid>
+      <pubDate>Tue, 23 Dec 2025 00:15:00 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
+    <item>
       <title>Jenkins 2.543 and 2.541.1: New Linux Repository Signing Keys</title>
       <link>https://www.jenkins.io/blog/2025/12/23/repository-signing-keys-changing/</link>
       <guid isPermaLink="true">https://www.jenkins.io/blog/2025/12/23/repository-signing-keys-changing/</guid>
       <pubDate>Tue, 23 Dec 2025 00:00:00 +0000</pubDate>
       <source>Jenkins Blog</source>
+    </item>
+    <item>
+      <title>This year’s most influential open source projects</title>
+      <link>https://github.blog/open-source/maintainers/this-years-most-influential-open-source-projects/</link>
+      <guid isPermaLink="true">https://github.blog/open-source/maintainers/this-years-most-influential-open-source-projects/</guid>
+      <pubDate>Mon, 22 Dec 2025 23:48:52 +0000</pubDate>
+      <source>GitHub Blog</source>
     </item>
     <item>
       <title>Kubernetes v1.35: Kubelet Configuration Drop-in Directory Graduates to GA</title>

@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml</link>
     <description>Articles from GitHub Changelog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 14 Jan 2026 23:03:01 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 15 Jan 2026 00:55:39 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Copilot SDK in technical preview</title>
+      <link>https://github.blog/changelog/2026-01-14-copilot-sdk-in-technical-preview</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-01-14-copilot-sdk-in-technical-preview</guid>
+      <pubDate>Wed, 14 Jan 2026 23:00:28 +0000</pubDate>
+    </item>
     <item>
       <title>GitHub Copilot CLI: Enhanced agents, context management, and new ways to install</title>
       <link>https://github.blog/changelog/2026-01-14-github-copilot-cli-enhanced-agents-context-management-and-new-ways-to-install</link>
@@ -60,12 +66,6 @@
       <link>https://github.blog/changelog/2026-01-06-gemini-3-flash-is-now-available-in-visual-studio-jetbrains-ides-xcode-and-eclipse</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-01-06-gemini-3-flash-is-now-available-in-visual-studio-jetbrains-ides-xcode-and-eclipse</guid>
       <pubDate>Tue, 06 Jan 2026 19:24:20 +0000</pubDate>
-    </item>
-    <item>
-      <title>Reduced pricing for GitHub-hosted runners usage</title>
-      <link>https://github.blog/changelog/2026-01-01-reduced-pricing-for-github-hosted-runners-usage</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-01-01-reduced-pricing-for-github-hosted-runners-usage</guid>
-      <pubDate>Thu, 01 Jan 2026 17:00:03 +0000</pubDate>
     </item>
   </channel>
 </rss>
