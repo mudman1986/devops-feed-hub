@@ -1258,8 +1258,8 @@ h3 {
 }
 
 [data-view="list"] .read-indicator {
-  width: 1.25rem;
-  height: 1.25rem;
+  width: 0.875rem;
+  height: 0.875rem;
   top: 50%;
   transform: translateY(-50%);
   right: 0.5rem;
@@ -1307,8 +1307,8 @@ h3 {
 
 /* Icon sizing for list view */
 [data-view="list"] .read-indicator svg {
-  width: 12px;
-  height: 12px;
+  width: 10px;
+  height: 10px;
 }
 
 /* List View - Responsive adjustments for read indicators */
@@ -1316,8 +1316,8 @@ h3 {
 /* Mobile adjustments for list view */
 @media (width <= 768px) {
   [data-view="list"] .read-indicator {
-    width: 1.75rem;
-    height: 1.75rem;
+    width: 1.5rem;
+    height: 1.5rem;
     right: 0.4rem;
     border-radius: 50%;
   }
@@ -1331,8 +1331,8 @@ h3 {
 /* Extra small mobile - ensure touch targets are adequate (48x48px) */
 @media (width <= 480px) {
   [data-view="list"] .read-indicator {
-    width: 2.25rem;
-    height: 2.25rem;
+    width: 2rem;
+    height: 2rem;
     right: 0.3rem;
     border-radius: 50%;
   }
@@ -1346,13 +1346,13 @@ h3 {
 /* Tablet optimization */
 @media (width >= 769px) and (width <= 1024px) {
   [data-view="list"] .read-indicator {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.125rem;
+    height: 1.125rem;
   }
 
   [data-view="list"] .read-indicator svg {
-    width: 13px;
-    height: 13px;
+    width: 11px;
+    height: 11px;
   }
 }
 
