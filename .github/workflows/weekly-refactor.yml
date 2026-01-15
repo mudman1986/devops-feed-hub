@@ -48,7 +48,7 @@ jobs:
             const copilotBotId = copilotBot.id;
 
             if (!repoInfo.repository.label) {
-              throw new Error("refactor label not found in repository");
+              throw new Error("Refactor label not found in repository.");
             }
             const refactorLabelId = repoInfo.repository.label.id;
 
@@ -123,6 +123,6 @@ jobs:
               console.log(`Added 'refactor' label to issue`);
             } catch (error) {
               console.error(`Failed to add refactor label: ${error.message}`);
-              console.error('Issue was created successfully but label could not be added');
+              console.error("Issue was created successfully but label could not be added.");
               // Don't throw - issue was created successfully
             }
