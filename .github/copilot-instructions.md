@@ -76,6 +76,7 @@ This repository is maintained primarily by GitHub Copilot. Path-specific instruc
   docker run --rm \
     -e RUN_LOCAL=true \
     -e VALIDATE_ALL_CODEBASE=true \
+    -e FAIL_ON_CONFLICTING_TOOLS_ENABLED= true \
     -e DEFAULT_BRANCH=main \
     -e IGNORE_GITIGNORED_FILES=true \
     -e SAVE_SUPER_LINTER_SUMMARY=true \
@@ -107,6 +108,7 @@ This repository is maintained primarily by GitHub Copilot. Path-specific instruc
     -e FIX_PYTHON_BLACK=true \
     -e FIX_PYTHON_ISORT=true \
     -e FIX_SHELL_SHFMT=true \
+    -e FIX_MARKDOWN=true \
     -e FIX_MARKDOWN_PRETTIER=true \
     -e FIX_YAML_PRETTIER=true \
     -e FIX_JAVASCRIPT_PRETTIER=true \

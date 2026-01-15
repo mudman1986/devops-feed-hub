@@ -41,6 +41,7 @@ Run these checks in order and resolve any failures:
      -e VALIDATE_ALL_CODEBASE=true \
      -e DEFAULT_BRANCH=main \
      -e IGNORE_GITIGNORED_FILES=true \
+     -e FAIL_ON_CONFLICTING_TOOLS_ENABLED=true \
      -e SAVE_SUPER_LINTER_SUMMARY=true \
      -e VALIDATE_BASH=true \
      -e VALIDATE_BASH_EXEC=true \
@@ -69,6 +70,7 @@ Run these checks in order and resolve any failures:
      -e FIX_PYTHON_BLACK=true \
      -e FIX_PYTHON_ISORT=true \
      -e FIX_SHELL_SHFMT=true \
+     -e FIX_MARKDOWN=true \
      -e FIX_MARKDOWN_PRETTIER=true \
      -e FIX_YAML_PRETTIER=true \
      -e FIX_JAVASCRIPT_PRETTIER=true \
