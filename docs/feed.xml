@@ -5,8 +5,15 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 15 Jan 2026 12:24:15 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 15 Jan 2026 13:49:19 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>OpenCode with Docker Model Runner for Private AI Coding</title>
+      <link>https://www.docker.com/blog/opencode-docker-model-runner-private-ai-coding/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/opencode-docker-model-runner-private-ai-coding/</guid>
+      <pubDate>Thu, 15 Jan 2026 13:47:17 +0000</pubDate>
+      <source>Docker Blog</source>
+    </item>
     <item>
       <title>Copilot SDK in technical preview</title>
       <link>https://github.blog/changelog/2026-01-14-copilot-sdk-in-technical-preview</link>
@@ -747,20 +754,6 @@
       <link>https://www.docker.com/blog/develop-deploy-voice-ai-apps/</link>
       <guid isPermaLink="true">https://www.docker.com/blog/develop-deploy-voice-ai-apps/</guid>
       <pubDate>Tue, 16 Dec 2025 14:00:00 +0000</pubDate>
-      <source>Docker Blog</source>
-    </item>
-    <item>
-      <title>Azure Boards integration with GitHub Copilot</title>
-      <link>https://devblogs.microsoft.com/devops/github-copilot-for-azure-boards/</link>
-      <guid isPermaLink="true">https://devblogs.microsoft.com/devops/github-copilot-for-azure-boards/</guid>
-      <pubDate>Tue, 16 Dec 2025 13:17:08 +0000</pubDate>
-      <source>Microsoft DevOps Blog</source>
-    </item>
-    <item>
-      <title>Docker Model Runner now included with the Universal Blue family</title>
-      <link>https://www.docker.com/blog/docker-model-runner-universal-blue/</link>
-      <guid isPermaLink="true">https://www.docker.com/blog/docker-model-runner-universal-blue/</guid>
-      <pubDate>Tue, 16 Dec 2025 12:24:50 +0000</pubDate>
       <source>Docker Blog</source>
     </item>
   </channel>

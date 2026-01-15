@@ -1803,7 +1803,7 @@ h3 {
   background: linear-gradient(
     to bottom,
     transparent 50%,
-    rgba(0, 255, 0, 0.02) 50%
+    rgb(0 255 0 / 2%) 50%
   );
   background-size: 100% 4px;
   pointer-events: none;
@@ -1828,22 +1828,22 @@ h3 {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(18, 16, 16, 0.1);
+  background: rgb(18 16 16 / 10%);
   pointer-events: none;
   z-index: 9998;
   animation: flicker 0.15s infinite;
-  opacity: 0;
+  opacity: 0%;
 }
 
 @keyframes flicker {
   0% {
-    opacity: 0.03;
+    opacity: 3%;
   }
   50% {
-    opacity: 0;
+    opacity: 0%;
   }
   100% {
-    opacity: 0.03;
+    opacity: 3%;
   }
 }
 
@@ -1853,26 +1853,26 @@ h3 {
   --bg-tertiary: #262626;
   --bg-hover: #1f1f1f;
   --bg-error: #2d0a0a;
-  --text-primary: #33ff33;
-  --text-secondary: #00cc00;
-  --text-link: #33ff33;
-  --text-error: #ff3333;
-  --border-primary: #00ff00;
-  --border-accent: #33ff33;
-  --border-success: #00ff00;
-  --border-error: #ff3333;
-  --shadow-sm: 0 0 10px rgba(0, 255, 0, 0.3);
-  --shadow-md: 0 0 20px rgba(0, 255, 0, 0.4);
-  --shadow-lg: 0 0 30px rgba(0, 255, 0, 0.5);
-  --badge-bg: #00ff00;
+  --text-primary: #3f3;
+  --text-secondary: #0c0;
+  --text-link: #3f3;
+  --text-error: #f33;
+  --border-primary: #0f0;
+  --border-accent: #3f3;
+  --border-success: #0f0;
+  --border-error: #f33;
+  --shadow-sm: 0 0 10px rgb(0 255 0 / 30%);
+  --shadow-md: 0 0 20px rgb(0 255 0 / 40%);
+  --shadow-lg: 0 0 30px rgb(0 255 0 / 50%);
+  --badge-bg: #0f0;
   --badge-text: #000;
-  --gradient-start: #33ff33;
-  --gradient-end: #00cc00;
-  --accent-primary: #33ff33;
-  --accent-success: #00ff00;
-  --accent-error: #ff3333;
-  --card-bg: rgba(26, 26, 26, 0.95);
-  --card-border: rgba(0, 255, 0, 0.4);
+  --gradient-start: #3f3;
+  --gradient-end: #0c0;
+  --accent-primary: #3f3;
+  --accent-success: #0f0;
+  --accent-error: #f33;
+  --card-bg: rgb(26 26 26 / 95%);
+  --card-border: rgb(0 255 0 / 40%);
 }
 
 [data-theme="terminal"] .header-title {
@@ -1882,42 +1882,42 @@ h3 {
   color: var(--text-primary);
   font-family: "Courier New", "Consolas", monospace;
   text-shadow:
-    0 0 8px rgba(0, 255, 0, 0.8),
-    0 0 15px rgba(0, 255, 0, 0.5);
+    0 0 8px rgb(0 255 0 / 80%),
+    0 0 15px rgb(0 255 0 / 50%);
   animation: terminal-glow 2s ease-in-out infinite alternate;
 }
 
 @keyframes terminal-glow {
   from {
     text-shadow:
-      0 0 8px rgba(0, 255, 0, 0.8),
-      0 0 15px rgba(0, 255, 0, 0.5);
+      0 0 8px rgb(0 255 0 / 80%),
+      0 0 15px rgb(0 255 0 / 50%);
   }
   to {
     text-shadow:
-      0 0 12px rgba(0, 255, 0, 1),
-      0 0 20px rgba(0, 255, 0, 0.7);
+      0 0 12px rgb(0 255 0 / 100%),
+      0 0 20px rgb(0 255 0 / 70%);
   }
 }
 
 [data-theme="terminal"] .header-title::before {
   content: "$ ";
-  color: #00ff00;
-  text-shadow: 0 0 8px rgba(0, 255, 0, 0.9);
+  color: #0f0;
+  text-shadow: 0 0 8px rgb(0 255 0 / 90%);
 }
 
 [data-theme="terminal"] .feed-section {
-  border: 1px solid #00ff00;
+  border: 1px solid #0f0;
   border-radius: 0;
   background-color: #0c0c0c;
   box-shadow:
-    0 0 20px rgba(0, 255, 0, 0.15),
-    inset 0 0 40px rgba(0, 255, 0, 0.03);
+    0 0 20px rgb(0 255 0 / 15%),
+    inset 0 0 40px rgb(0 255 0 / 3%);
 }
 
 [data-theme="terminal"] h2 {
   color: var(--text-primary);
-  text-shadow: 0 0 8px rgba(0, 255, 0, 0.8);
+  text-shadow: 0 0 8px rgb(0 255 0 / 80%);
   font-family: "Courier New", "Consolas", monospace;
 }
 
@@ -1926,59 +1926,59 @@ h3 {
   width: auto;
   height: auto;
   background: none;
-  color: #00ff00;
-  text-shadow: 0 0 8px rgba(0, 255, 0, 0.9);
+  color: #0f0;
+  text-shadow: 0 0 8px rgb(0 255 0 / 90%);
 }
 
 [data-theme="terminal"] .article-item {
-  border-left: 2px solid #00ff00;
+  border-left: 2px solid #0f0;
   border-radius: 0;
   background-color: transparent;
   font-family: "Courier New", "Consolas", monospace;
-  box-shadow: -4px 0 8px rgba(0, 255, 0, 0.1);
+  box-shadow: -4px 0 8px rgb(0 255 0 / 10%);
 }
 
 [data-theme="terminal"] .article-item:hover {
   background-color: #1a1a1a;
   transform: none;
   box-shadow:
-    -4px 0 12px rgba(0, 255, 0, 0.3),
-    0 0 20px rgba(0, 255, 0, 0.1);
-  border-left-color: #33ff33;
+    -4px 0 12px rgb(0 255 0 / 30%),
+    0 0 20px rgb(0 255 0 / 10%);
+  border-left-color: #3f3;
 }
 
 [data-theme="terminal"] .article-title {
   color: var(--text-primary);
-  text-shadow: 0 0 6px rgba(0, 255, 0, 0.6);
+  text-shadow: 0 0 6px rgb(0 255 0 / 60%);
   font-family: "Courier New", "Consolas", monospace;
 }
 
 [data-theme="terminal"] .article-title::before {
   content: "[ ] ";
-  color: #00cc00;
-  text-shadow: 0 0 6px rgba(0, 255, 0, 0.7);
+  color: #0c0;
+  text-shadow: 0 0 6px rgb(0 255 0 / 70%);
 }
 
 [data-theme="terminal"] .article-item.read .article-title::before {
   content: "[x] ";
-  color: #00ff00;
+  color: #0f0;
 }
 
 [data-theme="terminal"] .article-meta,
 [data-theme="terminal"] .article-description {
   font-family: "Courier New", "Consolas", monospace;
   color: var(--text-secondary);
-  text-shadow: 0 0 4px rgba(0, 255, 0, 0.4);
+  text-shadow: 0 0 4px rgb(0 255 0 / 40%);
 }
 
 [data-theme="terminal"] a {
   color: var(--text-primary);
-  text-shadow: 0 0 6px rgba(0, 255, 0, 0.6);
+  text-shadow: 0 0 6px rgb(0 255 0 / 60%);
 }
 
 [data-theme="terminal"] a:hover {
-  color: #00ff00;
-  text-shadow: 0 0 10px rgba(0, 255, 0, 0.9);
+  color: #0f0;
+  text-shadow: 0 0 10px rgb(0 255 0 / 90%);
 }
 
 /* Make all buttons and controls monospace */
@@ -1986,16 +1986,16 @@ h3 {
 [data-theme="terminal"] select,
 [data-theme="terminal"] input {
   font-family: "Courier New", "Consolas", monospace;
-  border: 1px solid #00ff00;
+  border: 1px solid #0f0;
   background: #1a1a1a;
   color: var(--text-primary);
-  text-shadow: 0 0 6px rgba(0, 255, 0, 0.6);
+  text-shadow: 0 0 6px rgb(0 255 0 / 60%);
 }
 
 [data-theme="terminal"] button:hover,
 [data-theme="terminal"] select:hover {
-  box-shadow: 0 0 15px rgba(0, 255, 0, 0.4);
-  border-color: #33ff33;
+  box-shadow: 0 0 15px rgb(0 255 0 / 40%);
+  border-color: #3f3;
 }
 
 /* Magazine - Multi-column magazine layout */
@@ -2224,8 +2224,8 @@ h3 {
   width: 100%;
   height: 100%;
   background-image:
-    linear-gradient(rgba(0, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 255, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(rgb(0 255 255 / 3%) 1px, transparent 1px),
+    linear-gradient(90deg, rgb(0 255 255 / 3%) 1px, transparent 1px);
   background-size: 50px 50px;
   pointer-events: none;
   z-index: 0;
@@ -2237,38 +2237,38 @@ h3 {
   --bg-tertiary: #1a2035;
   --bg-hover: #242d47;
   --bg-error: #2d0a0a;
-  --text-primary: #00ffff;
-  --text-secondary: #00cccc;
-  --text-link: #00ffff;
-  --text-error: #ff00ff;
-  --border-primary: #00ffff;
-  --border-accent: #ff00ff;
-  --border-success: #00ff00;
-  --border-error: #ff00ff;
-  --shadow-sm: 0 0 15px rgba(0, 255, 255, 0.4), 0 0 8px rgba(0, 255, 255, 0.3);
-  --shadow-md: 0 0 25px rgba(0, 255, 255, 0.5), 0 0 15px rgba(0, 255, 255, 0.4);
-  --shadow-lg: 0 0 35px rgba(0, 255, 255, 0.6), 0 0 20px rgba(0, 255, 255, 0.5);
-  --badge-bg: rgba(0, 255, 255, 0.25);
-  --badge-text: #00ffff;
-  --gradient-start: #00ffff;
-  --gradient-end: #ff00ff;
-  --accent-primary: #00ffff;
-  --accent-success: #00ff00;
-  --accent-error: #ff00ff;
-  --card-bg: rgba(19, 24, 46, 0.85);
-  --card-border: rgba(0, 255, 255, 0.5);
+  --text-primary: #0ff;
+  --text-secondary: #0cc;
+  --text-link: #0ff;
+  --text-error: #f0f;
+  --border-primary: #0ff;
+  --border-accent: #f0f;
+  --border-success: #0f0;
+  --border-error: #f0f;
+  --shadow-sm: 0 0 15px rgb(0 255 255 / 40%), 0 0 8px rgb(0 255 255 / 30%);
+  --shadow-md: 0 0 25px rgb(0 255 255 / 50%), 0 0 15px rgb(0 255 255 / 40%);
+  --shadow-lg: 0 0 35px rgb(0 255 255 / 60%), 0 0 20px rgb(0 255 255 / 50%);
+  --badge-bg: rgb(0 255 255 / 25%);
+  --badge-text: #0ff;
+  --gradient-start: #0ff;
+  --gradient-end: #f0f;
+  --accent-primary: #0ff;
+  --accent-success: #0f0;
+  --accent-error: #f0f;
+  --card-bg: rgb(19 24 46 / 85%);
+  --card-border: rgb(0 255 255 / 50%);
 }
 
 [data-theme="futuristic"] .header {
-  border-bottom: 2px solid #00ffff;
+  border-bottom: 2px solid #0ff;
   box-shadow:
-    0 0 25px rgba(0, 255, 255, 0.4),
-    0 4px 15px rgba(0, 255, 255, 0.3);
+    0 0 25px rgb(0 255 255 / 40%),
+    0 4px 15px rgb(0 255 255 / 30%);
   position: relative;
   background: linear-gradient(
     to bottom,
-    rgba(19, 24, 46, 0.9),
-    rgba(10, 14, 39, 0.8)
+    rgb(19 24 46 / 90%),
+    rgb(10 14 39 / 80%)
   );
 }
 
@@ -2282,9 +2282,9 @@ h3 {
   background: linear-gradient(
     90deg,
     transparent,
-    #00ffff 20%,
-    #ff00ff 50%,
-    #00ffff 80%,
+    #0ff 20%,
+    #f0f 50%,
+    #0ff 80%,
     transparent
   );
   background-size: 200% 100%;
@@ -2304,12 +2304,12 @@ h3 {
 /* Pulsing neon glow on header title */
 [data-theme="futuristic"] .header-title {
   text-shadow:
-    0 0 10px rgba(0, 255, 255, 1),
-    0 0 20px rgba(0, 255, 255, 0.8),
-    0 0 30px rgba(0, 255, 255, 0.6),
-    0 0 40px rgba(0, 255, 255, 0.4);
+    0 0 10px rgb(0 255 255 / 100%),
+    0 0 20px rgb(0 255 255 / 80%),
+    0 0 30px rgb(0 255 255 / 60%),
+    0 0 40px rgb(0 255 255 / 40%);
   animation: neon-pulse 2s ease-in-out infinite alternate;
-  color: #00ffff;
+  color: #0ff;
   font-weight: 700;
   letter-spacing: 0.1em;
 }
@@ -2317,27 +2317,27 @@ h3 {
 @keyframes neon-pulse {
   from {
     text-shadow:
-      0 0 10px rgba(0, 255, 255, 1),
-      0 0 20px rgba(0, 255, 255, 0.8),
-      0 0 30px rgba(0, 255, 255, 0.6),
-      0 0 40px rgba(0, 255, 255, 0.4);
+      0 0 10px rgb(0 255 255 / 100%),
+      0 0 20px rgb(0 255 255 / 80%),
+      0 0 30px rgb(0 255 255 / 60%),
+      0 0 40px rgb(0 255 255 / 40%);
   }
   to {
     text-shadow:
-      0 0 15px rgba(0, 255, 255, 1),
-      0 0 30px rgba(0, 255, 255, 0.9),
-      0 0 45px rgba(0, 255, 255, 0.7),
-      0 0 60px rgba(0, 255, 255, 0.5);
+      0 0 15px rgb(0 255 255 / 100%),
+      0 0 30px rgb(0 255 255 / 90%),
+      0 0 45px rgb(0 255 255 / 70%),
+      0 0 60px rgb(0 255 255 / 50%);
   }
 }
 
 [data-theme="futuristic"] .feed-section {
-  border: 1px solid #00ffff;
+  border: 1px solid #0ff;
   box-shadow:
-    0 0 25px rgba(0, 255, 255, 0.3),
-    inset 0 0 30px rgba(0, 255, 255, 0.05);
+    0 0 25px rgb(0 255 255 / 30%),
+    inset 0 0 30px rgb(0 255 255 / 5%);
   position: relative;
-  background: rgba(19, 24, 46, 0.6);
+  background: rgb(19 24 46 / 60%);
   backdrop-filter: blur(10px);
 }
 
@@ -2350,14 +2350,14 @@ h3 {
   bottom: -2px;
   background: linear-gradient(
     135deg,
-    rgba(0, 255, 255, 0.4),
-    rgba(255, 0, 255, 0.4),
-    rgba(0, 255, 255, 0.4)
+    rgb(0 255 255 / 40%),
+    rgb(255 0 255 / 40%),
+    rgb(0 255 255 / 40%)
   );
   background-size: 200% 200%;
   border-radius: inherit;
   z-index: -1;
-  opacity: 0.3;
+  opacity: 30%;
   filter: blur(12px);
   animation: gradient-shift 6s ease infinite;
 }
@@ -2373,11 +2373,11 @@ h3 {
 }
 
 [data-theme="futuristic"] .article-item {
-  border-left: 3px solid #00ffff;
+  border-left: 3px solid #0ff;
   background: linear-gradient(
     90deg,
-    rgba(0, 255, 255, 0.12),
-    rgba(0, 255, 255, 0.04),
+    rgb(0 255 255 / 12%),
+    rgb(0 255 255 / 4%),
     transparent
   );
   position: relative;
@@ -2391,9 +2391,9 @@ h3 {
   top: 0;
   bottom: 0;
   width: 3px;
-  background: linear-gradient(180deg, #00ffff, #ff00ff, #00ffff);
+  background: linear-gradient(180deg, #0ff, #f0f, #0ff);
   background-size: 100% 200%;
-  box-shadow: 0 0 15px rgba(0, 255, 255, 0.8);
+  box-shadow: 0 0 15px rgb(0 255 255 / 80%);
   animation: border-flow 3s linear infinite;
 }
 
@@ -2408,12 +2408,12 @@ h3 {
 
 [data-theme="futuristic"] .article-item:hover {
   box-shadow:
-    0 0 30px rgba(0, 255, 255, 0.4),
-    inset 0 0 20px rgba(0, 255, 255, 0.1);
+    0 0 30px rgb(0 255 255 / 40%),
+    inset 0 0 20px rgb(0 255 255 / 10%);
   background: linear-gradient(
     90deg,
-    rgba(0, 255, 255, 0.2),
-    rgba(0, 255, 255, 0.08),
+    rgb(0 255 255 / 20%),
+    rgb(0 255 255 / 8%),
     transparent
   );
   border-left-width: 4px;
@@ -2421,59 +2421,59 @@ h3 {
 
 [data-theme="futuristic"] .article-item:hover::before {
   box-shadow:
-    0 0 20px rgba(0, 255, 255, 1),
-    0 0 30px rgba(255, 0, 255, 0.5);
+    0 0 20px rgb(0 255 255 / 100%),
+    0 0 30px rgb(255 0 255 / 50%);
 }
 
 [data-theme="futuristic"] h2 {
   text-shadow:
-    0 0 10px rgba(0, 255, 255, 0.9),
-    0 0 20px rgba(0, 255, 255, 0.6),
-    0 0 30px rgba(0, 255, 255, 0.4);
+    0 0 10px rgb(0 255 255 / 90%),
+    0 0 20px rgb(0 255 255 / 60%),
+    0 0 30px rgb(0 255 255 / 40%);
   text-transform: uppercase;
   letter-spacing: 0.2em;
-  color: #00ffff;
+  color: #0ff;
   font-weight: 700;
 }
 
 [data-theme="futuristic"] .article-title {
   color: var(--text-primary);
-  text-shadow: 0 0 8px rgba(0, 255, 255, 0.7);
+  text-shadow: 0 0 8px rgb(0 255 255 / 70%);
   font-weight: 600;
 }
 
 [data-theme="futuristic"] .article-title:hover {
   text-shadow:
-    0 0 12px rgba(0, 255, 255, 0.9),
-    0 0 20px rgba(0, 255, 255, 0.6);
+    0 0 12px rgb(0 255 255 / 90%),
+    0 0 20px rgb(0 255 255 / 60%);
 }
 
 [data-theme="futuristic"] .article-meta {
   color: var(--text-secondary);
-  text-shadow: 0 0 6px rgba(0, 255, 255, 0.5);
+  text-shadow: 0 0 6px rgb(0 255 255 / 50%);
 }
 
 [data-theme="futuristic"] a {
   color: var(--text-primary);
-  text-shadow: 0 0 8px rgba(0, 255, 255, 0.7);
+  text-shadow: 0 0 8px rgb(0 255 255 / 70%);
   transition: all 0.3s ease;
 }
 
 [data-theme="futuristic"] a:hover {
   text-shadow:
-    0 0 15px rgba(0, 255, 255, 1),
-    0 0 25px rgba(255, 0, 255, 0.6);
-  color: #00ffff;
+    0 0 15px rgb(0 255 255 / 100%),
+    0 0 25px rgb(255 0 255 / 60%);
+  color: #0ff;
 }
 
 /* Enhanced button styles */
 [data-theme="futuristic"] button,
 [data-theme="futuristic"] select {
-  border: 1px solid #00ffff;
-  background: rgba(19, 24, 46, 0.8);
+  border: 1px solid #0ff;
+  background: rgb(19 24 46 / 80%);
   color: var(--text-primary);
-  text-shadow: 0 0 8px rgba(0, 255, 255, 0.7);
-  box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+  text-shadow: 0 0 8px rgb(0 255 255 / 70%);
+  box-shadow: 0 0 10px rgb(0 255 255 / 30%);
   transition: all 0.3s ease;
   font-weight: 600;
   letter-spacing: 0.05em;
@@ -2482,19 +2482,19 @@ h3 {
 [data-theme="futuristic"] button:hover,
 [data-theme="futuristic"] select:hover {
   box-shadow:
-    0 0 20px rgba(0, 255, 255, 0.6),
-    inset 0 0 10px rgba(0, 255, 255, 0.2);
-  border-color: #ff00ff;
-  background: rgba(19, 24, 46, 0.95);
+    0 0 20px rgb(0 255 255 / 60%),
+    inset 0 0 10px rgb(0 255 255 / 20%);
+  border-color: #f0f;
+  background: rgb(19 24 46 / 95%);
 }
 
 /* Badge enhancements */
 [data-theme="futuristic"] .badge {
   background: var(--badge-bg);
   color: var(--badge-text);
-  border: 1px solid rgba(0, 255, 255, 0.5);
-  box-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
-  text-shadow: 0 0 6px rgba(0, 255, 255, 0.8);
+  border: 1px solid rgb(0 255 255 / 50%);
+  box-shadow: 0 0 10px rgb(0 255 255 / 40%);
+  text-shadow: 0 0 6px rgb(0 255 255 / 80%);
 }
 
 /* Newspaper - Classic newspaper layout */
