@@ -1,6 +1,6 @@
 /**
  * Tests for assign-copilot.js
- * 
+ *
  * Validates the logic for auto-assigning GitHub issues to Copilot bot,
  * including checks for existing assignments, sub-issues detection,
  * and issue filtering based on labels and state.
