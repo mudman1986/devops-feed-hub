@@ -1080,7 +1080,7 @@ h3 {
   width: 2rem;
   height: 2rem;
   background: var(--bg-tertiary);
-  border: none;
+  border: 2px solid var(--border-primary);
   border-radius: 50%;
   cursor: pointer;
   display: flex;
@@ -1095,12 +1095,13 @@ h3 {
 .read-indicator:hover {
   opacity: 100%;
   background: var(--bg-hover);
+  border-color: var(--border-accent);
   transform: scale(1.1);
 }
 
 .read-indicator.active {
   background: var(--border-success);
-  border: 2px solid var(--border-success);
+  border-color: var(--border-success);
   color: white;
   opacity: 100%;
 }
@@ -1258,17 +1259,17 @@ h3 {
 }
 
 [data-view="list"] .read-indicator {
-  width: 1.25rem;
-  height: 1.25rem;
+  width: 1.5rem;
+  height: 1.5rem;
   top: 50%;
   transform: translateY(-50%);
   right: 0.5rem;
 
-  /* Circle for consistency */
-  border-radius: 50%;
+  /* Square with subtle rounding instead of circle */
+  border-radius: 0.25rem;
 
-  /* No border in default state */
-  border: none;
+  /* Dotted border to match list view aesthetic */
+  border: 1px dotted var(--border-primary);
 
   /* More subtle background */
   background: transparent;
@@ -1287,30 +1288,30 @@ h3 {
 [data-view="list"] .read-indicator:hover {
   opacity: 80%;
   background: var(--bg-tertiary);
-  transform: translateY(-50%);
+  border-color: var(--border-accent);
+  border-style: solid;
+  transform: translateY(-50%) scale(1.05);
 }
 
 /* Active/Read state - clear visual indicator */
 [data-view="list"] .read-indicator.active {
   background: var(--accent-success);
-  border: none;
+  border: 1px solid var(--accent-success);
   color: white;
   opacity: 90%;
   transform: translateY(-50%);
-  padding: 0.4125rem;
-  background-clip: content-box;
 }
 
 /* Active hover state */
 [data-view="list"] .read-indicator.active:hover {
   opacity: 100%;
-  transform: translateY(-50%);
+  transform: translateY(-50%) scale(1.05);
 }
 
 /* Icon sizing for list view */
 [data-view="list"] .read-indicator svg {
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
 }
 
 /* List View - Responsive adjustments for read indicators */
@@ -1318,10 +1319,10 @@ h3 {
 /* Mobile adjustments for list view */
 @media (width <= 768px) {
   [data-view="list"] .read-indicator {
-    width: 1.75rem;
-    height: 1.75rem;
+    width: 2rem;
+    height: 2rem;
     right: 0.4rem;
-    border-radius: 50%;
+    border-radius: 0.3rem;
   }
 
   [data-view="list"] .read-indicator svg {
@@ -1333,10 +1334,10 @@ h3 {
 /* Extra small mobile - ensure touch targets are adequate (48x48px) */
 @media (width <= 480px) {
   [data-view="list"] .read-indicator {
-    width: 2rem;
-    height: 2rem;
+    width: 2.5rem;
+    height: 2.5rem;
     right: 0.3rem;
-    border-radius: 50%;
+    border-radius: 0.35rem;
   }
 
   [data-view="list"] .read-indicator svg {
@@ -1348,13 +1349,13 @@ h3 {
 /* Tablet optimization */
 @media (width >= 769px) and (width <= 1024px) {
   [data-view="list"] .read-indicator {
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.75rem;
+    height: 1.75rem;
   }
 
   [data-view="list"] .read-indicator svg {
-    width: 12px;
-    height: 12px;
+    width: 13px;
+    height: 13px;
   }
 }
 
@@ -2913,7 +2914,7 @@ h3 {
 
 /* Horizontal-Scroll - Everything scrolls horizontally */
 [data-theme="horizontal-scroll"] .container {
-  flex-direction: row;
+  flex-direction: column;
   min-height: auto;
 }
 
@@ -2934,7 +2935,7 @@ h3 {
   overflow-y: auto;
 }
 
-/* Sidebar stays on right side with flex-direction: row */
+/* Sidebar remains on right side - no override needed */
 
 /* Masonry-Grid - Pinterest-style masonry layout */
 [data-theme="masonry-grid"] .container {
@@ -3222,7 +3223,8 @@ h3 {
 
 /* Center-Stage - Everything centered, single column */
 [data-theme="center-stage"] .container {
-  flex-direction: row;
+  flex-direction: column;
+  align-items: center;
 }
 
 [data-theme="center-stage"] .header {
@@ -3245,11 +3247,10 @@ h3 {
 [data-theme="center-stage"] .main-content {
   width: 100%;
   max-width: 900px;
-  margin: 0 auto;
   padding: 2rem;
 }
 
-/* Sidebar stays on right side with flex-direction: row */
+/* Sidebar remains on right side - no override needed */
 
 [data-theme="center-stage"] .feed-section {
   text-align: center;
@@ -3661,7 +3662,7 @@ h3 {
 
 /* Top-Strip - Drudge Report style with navigation strip on top */
 [data-theme="top-strip"] .container {
-  flex-direction: row;
+  flex-direction: column;
 }
 
 [data-theme="top-strip"] .header {
@@ -3670,7 +3671,7 @@ h3 {
   border-bottom: 2px solid var(--border-accent);
 }
 
-/* Sidebar stays on right side with flex-direction: row */
+/* Sidebar remains on right side - no override needed */
 
 [data-theme="top-strip"] .main-content {
   width: 100%;
@@ -3698,7 +3699,7 @@ h3 {
 [data-theme="list-dense"] .container {
   max-width: 1200px;
   margin: 0 auto;
-  flex-direction: row;
+  flex-direction: column;
 }
 
 [data-theme="list-dense"] .header {
@@ -3715,7 +3716,7 @@ h3 {
   -webkit-text-fill-color: unset;
 }
 
-/* Sidebar stays on right side with flex-direction: row */
+/* Sidebar remains on right side - no override needed */
 
 [data-theme="list-dense"] .main-content {
   width: 100%;
@@ -3778,17 +3779,12 @@ h3 {
 
 /* Timeline-Vertical - Medium/Substack style vertical timeline */
 [data-theme="timeline-vertical"] .container {
-  flex-direction: row;
-  max-width: 1200px;
+  flex-direction: column;
+  max-width: 900px;
   margin: 0 auto;
 }
 
-[data-theme="timeline-vertical"] .main-content {
-  max-width: 900px;
-  margin-right: auto;
-}
-
-/* Sidebar stays on right side with flex-direction: row */
+/* Sidebar remains on right side - no override needed */
 
 [data-theme="timeline-vertical"] .feed-section {
   background: transparent;
