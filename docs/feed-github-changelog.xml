@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml</link>
     <description>Articles from GitHub Changelog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 16 Jan 2026 21:41:59 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 16 Jan 2026 21:52:35 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Rate limiting for actions cache entries</title>
+      <link>https://github.blog/changelog/2026-01-16-rate-limiting-for-actions-cache-entries</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-01-16-rate-limiting-for-actions-cache-entries</guid>
+      <pubDate>Fri, 16 Jan 2026 21:31:29 +0000</pubDate>
+    </item>
     <item>
       <title>Secret scanning extended metadata to be automatically enabled for certain repositories</title>
       <link>https://github.blog/changelog/2026-01-15-secret-scanning-extended-metadata-to-be-automatically-enabled-for-certain-repositories</link>
@@ -60,12 +66,6 @@
       <link>https://github.blog/changelog/2026-01-13-upcoming-deprecation-of-select-github-copilot-models-from-claude-and-openai</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-01-13-upcoming-deprecation-of-select-github-copilot-models-from-claude-and-openai</guid>
       <pubDate>Tue, 13 Jan 2026 19:29:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>New fine-grained permission for artifact metadata is now generally available</title>
-      <link>https://github.blog/changelog/2026-01-13-new-fine-grained-permission-for-artifact-metadata-is-now-generally-available</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-01-13-new-fine-grained-permission-for-artifact-metadata-is-now-generally-available</guid>
-      <pubDate>Tue, 13 Jan 2026 13:30:02 +0000</pubDate>
     </item>
   </channel>
 </rss>
