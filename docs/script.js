@@ -432,15 +432,6 @@ function toggleArticleRead(articleUrl) {
   return readArticles.includes(articleUrl);
 }
 
-function markArticleAsRead(articleUrl) {
-  let readArticles = getReadArticles();
-  if (!readArticles.includes(articleUrl)) {
-    readArticles.push(articleUrl);
-    saveReadArticles(readArticles);
-  }
-  return true;
-}
-
 function resetAllReadArticles() {
   try {
     localStorage.removeItem(READ_ARTICLES_KEY);
@@ -859,7 +850,6 @@ function preventInitialTransitions() {
  * @param {number} count - Number of visible articles
  * @param {string} filterName - Name of current filter
  */
-// eslint-disable-next-line no-unused-vars
 function updateArticleCountAccessible(count, filterName) {
   announceToScreenReader(
     `Showing ${count} articles for ${filterName}`,
@@ -955,7 +945,6 @@ window.addEventListener("load", ensureTouchTargets);
  * @param {string} message - Error message to display
  * @param {string} severity - 'error', 'warning', or 'info'
  */
-// eslint-disable-next-line no-unused-vars
 function displayAccessibleError(message, severity = "error") {
   const errorContainer = document.getElementById("error-container");
   if (errorContainer) {
