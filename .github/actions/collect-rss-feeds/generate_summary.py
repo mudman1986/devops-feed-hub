@@ -7,11 +7,10 @@ Generates both markdown (for GitHub workflow summary) and HTML (for GitHub Pages
 import argparse
 import json
 import os
-from datetime import datetime
 from html import escape as html_escape
 from typing import Any, Dict, Optional
 
-from utils import generate_feed_slug, parse_iso_timestamp, sort_articles_by_date
+from utils import generate_feed_slug, parse_iso_timestamp
 
 
 def generate_markdown_summary(data: Dict[str, Any]) -> str:
