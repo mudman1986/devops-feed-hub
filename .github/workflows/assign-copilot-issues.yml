@@ -147,16 +147,22 @@ jobs:
             console.log(`Found Copilot bot: login="${copilotLogin}", id="${copilotBotId}"`);
 
             // Step 2: Check if Copilot is already assigned to an issue
-            console.log(`Querying for issues assigned to "${copilotLogin}"...`);
-            const assignedIssues = await github.graphql(`
-              query($owner: String!, $repo: String!, $assignee: String!) {
+            console.log(`Querying for all open issues to check assignees...`);
+            const allIssuesResponse = await github.graphql(`
+              query($owner: String!, $repo: String!) {
                 repository(owner: $owner, name: $repo) {
-                  issues(first: 100, states: OPEN, filterBy: { assignee: $assignee }) {
+                  issues(first: 100, states: OPEN) {
                     nodes {
                       id
                       number
                       title
                       url
+                      assignees(first: 10) {
+                        nodes {
+                          login
+                          id
+                        }
+                      }
                       labels(first: 10) {
                         nodes { name }
                       }
@@ -167,12 +173,19 @@ jobs:
             `, {
               owner: context.repo.owner,
               repo: context.repo.repo,
-              assignee: copilotLogin
             });
 
             // Step 2a: Handle existing assignments based on mode
-            // Keep the full label structure for the helper function
-            const currentIssues = assignedIssues.repository.issues.nodes;
+            // Filter issues to find those assigned to copilot
+            const allIssues = allIssuesResponse.repository.issues.nodes;
+            console.log(`Found ${allIssues.length} total open issues`);
+            
+            const currentIssues = allIssues.filter(issue => 
+              issue.assignees.nodes.some(assignee => 
+                assignee.login === copilotLogin || assignee.id === copilotBotId
+              )
+            );
+            console.log(`Found ${currentIssues.length} issue(s) assigned to copilot (login="${copilotLogin}", id="${copilotBotId}")`);
 
             if (currentIssues.length > 0) {
               console.log("Copilot is currently assigned to the following issues:");
