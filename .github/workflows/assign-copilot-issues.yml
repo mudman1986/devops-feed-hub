@@ -35,6 +35,10 @@ permissions:
   contents: read
   issues: write
 
+concurrency:
+  group: assign-copilot-issues
+  cancel-in-progress: false
+
 jobs:
   # Wait job to provide grace period when issue is closed
   # This job only runs on issue events; it will be skipped for schedule/dispatch events
