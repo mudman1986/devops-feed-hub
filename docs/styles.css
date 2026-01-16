@@ -2913,7 +2913,7 @@ h3 {
 
 /* Horizontal-Scroll - Everything scrolls horizontally */
 [data-theme="horizontal-scroll"] .container {
-  flex-direction: column;
+  flex-direction: row;
   min-height: auto;
 }
 
@@ -2934,7 +2934,7 @@ h3 {
   overflow-y: auto;
 }
 
-/* Sidebar remains on right side - no override needed */
+/* Sidebar stays on right side with flex-direction: row */
 
 /* Masonry-Grid - Pinterest-style masonry layout */
 [data-theme="masonry-grid"] .container {
@@ -3222,8 +3222,8 @@ h3 {
 
 /* Center-Stage - Everything centered, single column */
 [data-theme="center-stage"] .container {
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
+  align-items: flex-start;
 }
 
 [data-theme="center-stage"] .header {
@@ -3246,10 +3246,14 @@ h3 {
 [data-theme="center-stage"] .main-content {
   width: 100%;
   max-width: 900px;
+  margin: 0 auto;
   padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-/* Sidebar remains on right side - no override needed */
+/* Sidebar stays on right side with flex-direction: row */
 
 [data-theme="center-stage"] .feed-section {
   text-align: center;
@@ -3661,7 +3665,7 @@ h3 {
 
 /* Top-Strip - Drudge Report style with navigation strip on top */
 [data-theme="top-strip"] .container {
-  flex-direction: column;
+  flex-direction: row;
 }
 
 [data-theme="top-strip"] .header {
@@ -3670,7 +3674,7 @@ h3 {
   border-bottom: 2px solid var(--border-accent);
 }
 
-/* Sidebar remains on right side - no override needed */
+/* Sidebar stays on right side with flex-direction: row */
 
 [data-theme="top-strip"] .main-content {
   width: 100%;
@@ -3698,7 +3702,7 @@ h3 {
 [data-theme="list-dense"] .container {
   max-width: 1200px;
   margin: 0 auto;
-  flex-direction: column;
+  flex-direction: row;
 }
 
 [data-theme="list-dense"] .header {
@@ -3715,7 +3719,7 @@ h3 {
   -webkit-text-fill-color: unset;
 }
 
-/* Sidebar remains on right side - no override needed */
+/* Sidebar stays on right side with flex-direction: row */
 
 [data-theme="list-dense"] .main-content {
   width: 100%;
@@ -3778,12 +3782,16 @@ h3 {
 
 /* Timeline-Vertical - Medium/Substack style vertical timeline */
 [data-theme="timeline-vertical"] .container {
-  flex-direction: column;
-  max-width: 900px;
+  flex-direction: row;
+  max-width: 1400px;
   margin: 0 auto;
 }
 
-/* Sidebar remains on right side - no override needed */
+[data-theme="timeline-vertical"] .main-content {
+  max-width: 900px;
+}
+
+/* Sidebar stays on right side with flex-direction: row */
 
 [data-theme="timeline-vertical"] .feed-section {
   background: transparent;
