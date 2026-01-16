@@ -17,19 +17,19 @@
  * @returns {Object} - {shouldSkip: boolean, reason: string}
  */
 function shouldSkipIssue(issue) {
-	if (issue.isAssigned) {
-		return { shouldSkip: true, reason: 'already assigned' };
-	}
-	if (issue.hasSubIssues) {
-		return { shouldSkip: true, reason: 'has sub-issues' };
-	}
-	if (issue.isSubIssue) {
-		return { shouldSkip: true, reason: 'is a sub-issue' };
-	}
-	if (issue.isRefactorIssue) {
-		return { shouldSkip: true, reason: 'is a refactor issue' };
-	}
-	return { shouldSkip: false, reason: null };
+  if (issue.isAssigned) {
+    return { shouldSkip: true, reason: "already assigned" };
+  }
+  if (issue.hasSubIssues) {
+    return { shouldSkip: true, reason: "has sub-issues" };
+  }
+  if (issue.isSubIssue) {
+    return { shouldSkip: true, reason: "is a sub-issue" };
+  }
+  if (issue.isRefactorIssue) {
+    return { shouldSkip: true, reason: "is a refactor issue" };
+  }
+  return { shouldSkip: false, reason: null };
 }
 
 /**
@@ -40,40 +40,40 @@ function shouldSkipIssue(issue) {
  * @returns {Object} - {shouldAssign: boolean, reason: string}
  */
 function shouldAssignNewIssue(assignedIssues, mode, force) {
-	if (assignedIssues.length === 0) {
-		return { shouldAssign: true, reason: 'Copilot has no assigned issues' };
-	}
+  if (assignedIssues.length === 0) {
+    return { shouldAssign: true, reason: "Copilot has no assigned issues" };
+  }
 
-	if (mode === 'refactor') {
-		// Check if already working on a refactor issue
-		const hasRefactorIssue = assignedIssues.some((issue) =>
-			issue.labels.some((label) => label.name === 'refactor')
-		);
-		if (hasRefactorIssue) {
-			return {
-				shouldAssign: false,
-				reason: 'Copilot already has a refactor issue assigned'
-			};
-		}
-		// If working on non-refactor issues, skip to avoid disruption
-		return {
-			shouldAssign: false,
-			reason: 'Copilot is working on other issues, skipping refactor creation'
-		};
-	}
+  if (mode === "refactor") {
+    // Check if already working on a refactor issue
+    const hasRefactorIssue = assignedIssues.some((issue) =>
+      issue.labels.some((label) => label.name === "refactor"),
+    );
+    if (hasRefactorIssue) {
+      return {
+        shouldAssign: false,
+        reason: "Copilot already has a refactor issue assigned",
+      };
+    }
+    // If working on non-refactor issues, skip to avoid disruption
+    return {
+      shouldAssign: false,
+      reason: "Copilot is working on other issues, skipping refactor creation",
+    };
+  }
 
-	// Auto mode
-	if (force) {
-		return {
-			shouldAssign: true,
-			reason: 'Force flag is set'
-		};
-	}
+  // Auto mode
+  if (force) {
+    return {
+      shouldAssign: true,
+      reason: "Force flag is set",
+    };
+  }
 
-	return {
-		shouldAssign: false,
-		reason: 'Copilot already has assigned issues and force=false'
-	};
+  return {
+    shouldAssign: false,
+    reason: "Copilot already has assigned issues and force=false",
+  };
 }
 
 /**
@@ -82,17 +82,19 @@ function shouldAssignNewIssue(assignedIssues, mode, force) {
  * @returns {Object} - Parsed issue with boolean flags
  */
 function parseIssueData(issue) {
-	return {
-		id: issue.id,
-		number: issue.number,
-		title: issue.title,
-		url: issue.url,
-		isAssigned: issue.assignees.nodes.length > 0,
-		hasSubIssues: (issue.trackedIssues && issue.trackedIssues.totalCount > 0) || false,
-		isSubIssue: (issue.trackedInIssues && issue.trackedInIssues.totalCount > 0) || false,
-		isRefactorIssue: issue.labels.nodes.some((l) => l.name === 'refactor'),
-		labels: issue.labels.nodes
-	};
+  return {
+    id: issue.id,
+    number: issue.number,
+    title: issue.title,
+    url: issue.url,
+    isAssigned: issue.assignees.nodes.length > 0,
+    hasSubIssues:
+      (issue.trackedIssues && issue.trackedIssues.totalCount > 0) || false,
+    isSubIssue:
+      (issue.trackedInIssues && issue.trackedInIssues.totalCount > 0) || false,
+    isRefactorIssue: issue.labels.nodes.some((l) => l.name === "refactor"),
+    labels: issue.labels.nodes,
+  };
 }
 
 /**
@@ -101,20 +103,20 @@ function parseIssueData(issue) {
  * @returns {Object|null} - First assignable issue or null
  */
 function findAssignableIssue(issues) {
-	for (const issue of issues) {
-		const parsed = parseIssueData(issue);
-		const { shouldSkip, reason } = shouldSkipIssue(parsed);
+  for (const issue of issues) {
+    const parsed = parseIssueData(issue);
+    const { shouldSkip } = shouldSkipIssue(parsed);
 
-		if (!shouldSkip) {
-			return parsed;
-		}
-	}
-	return null;
+    if (!shouldSkip) {
+      return parsed;
+    }
+  }
+  return null;
 }
 
 module.exports = {
-	shouldSkipIssue,
-	shouldAssignNewIssue,
-	parseIssueData,
-	findAssignableIssue
+  shouldSkipIssue,
+  shouldAssignNewIssue,
+  parseIssueData,
+  findAssignableIssue,
 };
