@@ -5,8 +5,36 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 16 Jan 2026 12:22:51 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 16 Jan 2026 20:11:52 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>What’s new with Azure Repos?</title>
+      <link>https://devblogs.microsoft.com/devops/whats-new-with-azure-repos/</link>
+      <guid isPermaLink="true">https://devblogs.microsoft.com/devops/whats-new-with-azure-repos/</guid>
+      <pubDate>Fri, 16 Jan 2026 19:34:04 +0000</pubDate>
+      <source>Microsoft DevOps Blog</source>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: User delegation SAS for Azure Tables, Azure Files, and Azure Queues</title>
+      <link>https://azure.microsoft.com/updates?id=548987</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=548987</guid>
+      <pubDate>Fri, 16 Jan 2026 17:00:49 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>Terraform MCP server updates: Stacks support, new tools, and tips</title>
+      <link>https://www.hashicorp.com/blog/terraform-mcp-server-updates-stacks-support-new-tools-and-tips</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/terraform-mcp-server-updates-stacks-support-new-tools-and-tips</guid>
+      <pubDate>Fri, 16 Jan 2026 17:00:00 +0000</pubDate>
+      <source>HashiCorp Blog</source>
+    </item>
+    <item>
+      <title>Making (Very) Small LLMs Smarter</title>
+      <link>https://www.docker.com/blog/making-small-llms-smarter/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/making-small-llms-smarter/</guid>
+      <pubDate>Fri, 16 Jan 2026 13:47:26 +0000</pubDate>
+      <source>Docker Blog</source>
+    </item>
     <item>
       <title>Secret scanning extended metadata to be automatically enabled for certain repositories</title>
       <link>https://github.blog/changelog/2026-01-15-secret-scanning-extended-metadata-to-be-automatically-enabled-for-certain-repositories</link>
@@ -692,62 +720,6 @@
       <guid isPermaLink="true">https://www.hashicorp.com/blog/continuing-hcp-terraform-s-enhanced-free-tier-experience</guid>
       <pubDate>Wed, 17 Dec 2025 21:00:00 +0000</pubDate>
       <source>HashiCorp Blog</source>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Service Bus SDK type bindings in Azure Functions for Node.js</title>
-      <link>https://azure.microsoft.com/updates?id=541427</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=541427</guid>
-      <pubDate>Wed, 17 Dec 2025 18:45:01 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[Launched] Generally Avaailable: Azure SQL updates for early December 2025</title>
-      <link>https://azure.microsoft.com/updates?id=541818</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=541818</guid>
-      <pubDate>Wed, 17 Dec 2025 18:30:05 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Use Azure SRE Agent with Azure Cosmos DB</title>
-      <link>https://azure.microsoft.com/updates?id=541813</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=541813</guid>
-      <pubDate>Wed, 17 Dec 2025 18:30:05 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>Kubernetes v1.35: Timbernetes (The World Tree Release)</title>
-      <link>https://kubernetes.io/blog/2025/12/17/kubernetes-v1-35-release/</link>
-      <guid isPermaLink="true">https://kubernetes.io/blog/2025/12/17/kubernetes-v1-35-release/</guid>
-      <pubDate>Wed, 17 Dec 2025 18:30:00 +0000</pubDate>
-      <source>Kubernetes Blog</source>
-    </item>
-    <item>
-      <title>Access Fabric: A modern approach to identity and network access</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2025/12/17/access-fabric-a-modern-approach-to-identity-and-network-access/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2025/12/17/access-fabric-a-modern-approach-to-identity-and-network-access/</guid>
-      <pubDate>Wed, 17 Dec 2025 17:00:00 +0000</pubDate>
-      <source>Microsoft Security</source>
-    </item>
-    <item>
-      <title>Issue #256 - AWS Credits, Shift Left at Scale: Enterprise IaC, GitHub Repo Automation, CDK for Terraform (bye), and AWS IAM Security</title>
-      <link>https://www.weekly.tf/p/issue-256-aws-credits-shift-left-at-scale-enterprise-iac-github-repo-automation-cdk-for-terraform-by</link>
-      <guid isPermaLink="true">https://www.weekly.tf/p/issue-256-aws-credits-shift-left-at-scale-enterprise-iac-github-repo-automation-cdk-for-terraform-by</guid>
-      <pubDate>Wed, 17 Dec 2025 16:00:34 +0000</pubDate>
-      <source>Terraform weekly</source>
-    </item>
-    <item>
-      <title>Surfing the AI Wave: Manage, Govern, and Protect AI Agents with Microsoft Entra Agent ID</title>
-      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/surfing-the-ai-wave-manage-govern-and-protect-ai-agents-with/ba-p/2464407</link>
-      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/surfing-the-ai-wave-manage-govern-and-protect-ai-agents-with/ba-p/2464407</guid>
-      <pubDate>Wed, 17 Dec 2025 16:00:00 +0000</pubDate>
-      <source>Microsoft Entra Blog</source>
-    </item>
-    <item>
-      <title>A Safer Container Ecosystem with Docker: Free Docker Hardened Images</title>
-      <link>https://www.docker.com/blog/docker-hardened-images-for-every-developer/</link>
-      <guid isPermaLink="true">https://www.docker.com/blog/docker-hardened-images-for-every-developer/</guid>
-      <pubDate>Wed, 17 Dec 2025 13:55:11 +0000</pubDate>
-      <source>Docker Blog</source>
     </item>
   </channel>
 </rss>

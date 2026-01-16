@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-docker-blog.xml</link>
     <description>Articles from Docker Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-docker-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 16 Jan 2026 12:22:51 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 16 Jan 2026 20:11:52 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Making (Very) Small LLMs Smarter</title>
+      <link>https://www.docker.com/blog/making-small-llms-smarter/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/making-small-llms-smarter/</guid>
+      <pubDate>Fri, 16 Jan 2026 13:47:26 +0000</pubDate>
+    </item>
     <item>
       <title>Permission-Aware RAG: End-to-End Testing with the SpiceDB Testcontainer</title>
       <link>https://www.docker.com/blog/rag-permission-testing-testcontainers-spicedb/</link>
@@ -54,12 +60,6 @@
       <link>https://www.docker.com/blog/docker-hardened-images-security-independently-validated-by-srlabs/</link>
       <guid isPermaLink="true">https://www.docker.com/blog/docker-hardened-images-security-independently-validated-by-srlabs/</guid>
       <pubDate>Fri, 19 Dec 2025 13:50:24 +0000</pubDate>
-    </item>
-    <item>
-      <title>A Safer Container Ecosystem with Docker: Free Docker Hardened Images</title>
-      <link>https://www.docker.com/blog/docker-hardened-images-for-every-developer/</link>
-      <guid isPermaLink="true">https://www.docker.com/blog/docker-hardened-images-for-every-developer/</guid>
-      <pubDate>Wed, 17 Dec 2025 13:55:11 +0000</pubDate>
     </item>
   </channel>
 </rss>

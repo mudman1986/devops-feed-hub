@@ -5,19 +5,13 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-terraform-weekly.xml</link>
     <description>Articles from Terraform weekly</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-terraform-weekly.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 16 Jan 2026 12:22:51 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 16 Jan 2026 20:11:52 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Issue #257 - IaCConf, Terraform Secrets Protection, AI DevOps Agents, Pulumi's Multi-IaC Platform, Future of Open Source CDKTF, Terraform Қазақша (Kazakh)</title>
       <link>https://www.weekly.tf/p/issue-257-iacconf-terraform-secrets-protection-ai-devops-agents-pulumi-s-multi-iac-platform-future-o</link>
       <guid isPermaLink="true">https://www.weekly.tf/p/issue-257-iacconf-terraform-secrets-protection-ai-devops-agents-pulumi-s-multi-iac-platform-future-o</guid>
       <pubDate>Wed, 14 Jan 2026 16:00:15 +0000</pubDate>
-    </item>
-    <item>
-      <title>Issue #256 - AWS Credits, Shift Left at Scale: Enterprise IaC, GitHub Repo Automation, CDK for Terraform (bye), and AWS IAM Security</title>
-      <link>https://www.weekly.tf/p/issue-256-aws-credits-shift-left-at-scale-enterprise-iac-github-repo-automation-cdk-for-terraform-by</link>
-      <guid isPermaLink="true">https://www.weekly.tf/p/issue-256-aws-credits-shift-left-at-scale-enterprise-iac-github-repo-automation-cdk-for-terraform-by</guid>
-      <pubDate>Wed, 17 Dec 2025 16:00:34 +0000</pubDate>
     </item>
   </channel>
 </rss>

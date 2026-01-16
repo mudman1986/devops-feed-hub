@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-kubernetes-blog.xml</link>
     <description>Articles from Kubernetes Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-kubernetes-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 16 Jan 2026 12:22:51 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 16 Jan 2026 20:11:52 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Kubernetes v1.35: Restricting executables invoked by kubeconfigs via exec plugin allowList added to kuberc</title>
@@ -84,12 +84,6 @@
       <link>https://kubernetes.io/blog/2025/12/18/kubernetes-v1-35-job-managedby-for-jobs-goes-ga/</link>
       <guid isPermaLink="true">https://kubernetes.io/blog/2025/12/18/kubernetes-v1-35-job-managedby-for-jobs-goes-ga/</guid>
       <pubDate>Thu, 18 Dec 2025 18:30:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Kubernetes v1.35: Timbernetes (The World Tree Release)</title>
-      <link>https://kubernetes.io/blog/2025/12/17/kubernetes-v1-35-release/</link>
-      <guid isPermaLink="true">https://kubernetes.io/blog/2025/12/17/kubernetes-v1-35-release/</guid>
-      <pubDate>Wed, 17 Dec 2025 18:30:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

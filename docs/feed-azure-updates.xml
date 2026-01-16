@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml</link>
     <description>Articles from Azure Updates</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 16 Jan 2026 12:22:51 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 16 Jan 2026 20:11:52 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>[In preview] Public Preview: User delegation SAS for Azure Tables, Azure Files, and Azure Queues</title>
+      <link>https://azure.microsoft.com/updates?id=548987</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=548987</guid>
+      <pubDate>Fri, 16 Jan 2026 17:00:49 +0000</pubDate>
+    </item>
     <item>
       <title>[Launched] Generally Available: Ubuntu 24.04 support in AKS</title>
       <link>https://azure.microsoft.com/updates?id=536550</link>
@@ -48,24 +54,6 @@
       <link>https://azure.microsoft.com/updates?id=542813</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=542813</guid>
       <pubDate>Thu, 18 Dec 2025 18:45:03 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Service Bus SDK type bindings in Azure Functions for Node.js</title>
-      <link>https://azure.microsoft.com/updates?id=541427</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=541427</guid>
-      <pubDate>Wed, 17 Dec 2025 18:45:01 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Launched] Generally Avaailable: Azure SQL updates for early December 2025</title>
-      <link>https://azure.microsoft.com/updates?id=541818</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=541818</guid>
-      <pubDate>Wed, 17 Dec 2025 18:30:05 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Use Azure SRE Agent with Azure Cosmos DB</title>
-      <link>https://azure.microsoft.com/updates?id=541813</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=541813</guid>
-      <pubDate>Wed, 17 Dec 2025 18:30:05 +0000</pubDate>
     </item>
   </channel>
 </rss>
