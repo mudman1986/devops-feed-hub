@@ -106,10 +106,6 @@ gh workflow run assign-copilot-issues.yml -f mode=auto -f label=bug
 gh workflow run assign-copilot-issues.yml -f mode=auto -f force=true
 ```
 
-## Migration from weekly-refactor.yml
-
-The `weekly-refactor.yml` workflow has been integrated into `assign-copilot-issues.yml`. The old workflow is kept for backward compatibility but its schedule trigger is disabled. All functionality is now handled by the unified workflow.
-
 ## Troubleshooting
 
 ### Issue: Copilot is not being assigned
@@ -134,5 +130,3 @@ The grace period is set to 5 minutes in the `wait-grace-period` job. To change t
 ## Related Files
 
 - `.github/workflows/assign-copilot-issues.yml` - Main workflow file
-- `.github/scripts/assign-copilot-issue.js` - Helper script (for potential future use)
-- `.github/workflows/weekly-refactor.yml` - Legacy workflow (schedule disabled)
