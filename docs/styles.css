@@ -3696,8 +3696,6 @@ h3 {
 }
 
 [data-theme="list-dense"] .container {
-  max-width: 1200px;
-  margin: 0 auto;
   flex-direction: row;
 }
 
@@ -3718,7 +3716,9 @@ h3 {
 /* Sidebar stays on right side with flex-direction: row */
 
 [data-theme="list-dense"] .main-content {
-  width: 100%;
+  flex: 1;
+  max-width: 1200px;
+  margin: 0 auto;
   padding: 1rem;
   background: var(--bg-secondary);
 }
@@ -3779,13 +3779,12 @@ h3 {
 /* Timeline-Vertical - Medium/Substack style vertical timeline */
 [data-theme="timeline-vertical"] .container {
   flex-direction: row;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
 [data-theme="timeline-vertical"] .main-content {
+  flex: 1;
   max-width: 900px;
-  margin-right: auto;
+  margin: 0 auto;
 }
 
 /* Sidebar stays on right side with flex-direction: row */
