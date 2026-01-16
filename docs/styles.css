@@ -1080,7 +1080,7 @@ h3 {
   width: 2rem;
   height: 2rem;
   background: var(--bg-tertiary);
-  border: none;
+  border: 2px solid var(--border-primary);
   border-radius: 50%;
   cursor: pointer;
   display: flex;
@@ -1095,12 +1095,13 @@ h3 {
 .read-indicator:hover {
   opacity: 100%;
   background: var(--bg-hover);
+  border-color: var(--border-accent);
   transform: scale(1.1);
 }
 
 .read-indicator.active {
   background: var(--border-success);
-  border: 2px solid var(--border-success);
+  border-color: var(--border-success);
   color: white;
   opacity: 100%;
 }
@@ -1258,17 +1259,17 @@ h3 {
 }
 
 [data-view="list"] .read-indicator {
-  width: 0.625rem;
-  height: 0.625rem;
+  width: 1.5rem;
+  height: 1.5rem;
   top: 50%;
   transform: translateY(-50%);
   right: 0.5rem;
 
-  /* Circle for consistency */
-  border-radius: 50%;
+  /* Square with subtle rounding instead of circle */
+  border-radius: 0.25rem;
 
-  /* No border in default state */
-  border: none;
+  /* Dotted border to match list view aesthetic */
+  border: 1px dotted var(--border-primary);
 
   /* More subtle background */
   background: transparent;
@@ -1287,6 +1288,8 @@ h3 {
 [data-view="list"] .read-indicator:hover {
   opacity: 80%;
   background: var(--bg-tertiary);
+  border-color: var(--border-accent);
+  border-style: solid;
   transform: translateY(-50%) scale(1.05);
 }
 
@@ -1307,8 +1310,8 @@ h3 {
 
 /* Icon sizing for list view */
 [data-view="list"] .read-indicator svg {
-  width: 8px;
-  height: 8px;
+  width: 12px;
+  height: 12px;
 }
 
 /* List View - Responsive adjustments for read indicators */
@@ -1316,25 +1319,25 @@ h3 {
 /* Mobile adjustments for list view */
 @media (width <= 768px) {
   [data-view="list"] .read-indicator {
-    width: 1.25rem;
-    height: 1.25rem;
+    width: 2rem;
+    height: 2rem;
     right: 0.4rem;
-    border-radius: 50%;
+    border-radius: 0.3rem;
   }
 
   [data-view="list"] .read-indicator svg {
-    width: 12px;
-    height: 12px;
+    width: 14px;
+    height: 14px;
   }
 }
 
 /* Extra small mobile - ensure touch targets are adequate (48x48px) */
 @media (width <= 480px) {
   [data-view="list"] .read-indicator {
-    width: 1.75rem;
-    height: 1.75rem;
+    width: 2.5rem;
+    height: 2.5rem;
     right: 0.3rem;
-    border-radius: 50%;
+    border-radius: 0.35rem;
   }
 
   [data-view="list"] .read-indicator svg {
@@ -1346,13 +1349,13 @@ h3 {
 /* Tablet optimization */
 @media (width >= 769px) and (width <= 1024px) {
   [data-view="list"] .read-indicator {
-    width: 0.75rem;
-    height: 0.75rem;
+    width: 1.75rem;
+    height: 1.75rem;
   }
 
   [data-view="list"] .read-indicator svg {
-    width: 9px;
-    height: 9px;
+    width: 13px;
+    height: 13px;
   }
 }
 
