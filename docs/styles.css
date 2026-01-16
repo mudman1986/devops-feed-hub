@@ -1287,7 +1287,7 @@ h3 {
 [data-view="list"] .read-indicator:hover {
   opacity: 80%;
   background: var(--bg-tertiary);
-  transform: translateY(-50%) scale(1.05);
+  transform: translateY(-50%);
 }
 
 /* Active/Read state - clear visual indicator */
@@ -1302,7 +1302,7 @@ h3 {
 /* Active hover state */
 [data-view="list"] .read-indicator.active:hover {
   opacity: 100%;
-  transform: translateY(-50%) scale(1.05);
+  transform: translateY(-50%);
 }
 
 /* Icon sizing for list view */
