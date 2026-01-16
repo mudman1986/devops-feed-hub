@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-hashicorp-blog.xml</link>
     <description>Articles from HashiCorp Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-hashicorp-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 16 Jan 2026 20:34:52 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 16 Jan 2026 20:51:26 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Terraform MCP server updates: Stacks support, new tools, and tips</title>
