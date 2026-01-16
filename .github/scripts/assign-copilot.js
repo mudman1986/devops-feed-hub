@@ -89,9 +89,9 @@ function parseIssueData(issue) {
     url: issue.url,
     isAssigned: issue.assignees.nodes.length > 0,
     hasSubIssues:
-      (issue.trackedIssues && issue.trackedIssues.totalCount > 0) || false,
+      !!(issue.trackedIssues && issue.trackedIssues.totalCount > 0),
     isSubIssue:
-      (issue.trackedInIssues && issue.trackedInIssues.totalCount > 0) || false,
+      !!(issue.trackedInIssues && issue.trackedInIssues.totalCount > 0),
     isRefactorIssue: issue.labels.nodes.some((l) => l.name === "refactor"),
     labels: issue.labels.nodes,
   };

@@ -155,14 +155,12 @@ jobs:
             });
 
             // Step 2a: Handle existing assignments based on mode
-            const currentIssues = assignedIssues.repository.issues.nodes.map(issue => ({
-              number: issue.number,
-              labels: issue.labels.nodes
-            }));
+            // Keep the full label structure for the helper function
+            const currentIssues = assignedIssues.repository.issues.nodes;
 
             if (currentIssues.length > 0) {
               console.log("Copilot is currently assigned to the following issues:");
-              assignedIssues.repository.issues.nodes.forEach(issue => {
+              currentIssues.forEach(issue => {
                 const labels = issue.labels.nodes.map(l => l.name).join(', ');
                 console.log(`  - #${issue.number}: ${issue.title} (labels: ${labels})`);
               });
