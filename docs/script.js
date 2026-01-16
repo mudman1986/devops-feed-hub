@@ -354,10 +354,17 @@ function updateFeedCounts() {
       }
     }
 
+    // Extract feed name without count badge text
+    const heading = section.querySelector("h3");
+    const feedNameElement = heading?.childNodes[0];
+    const feedName = feedNameElement
+      ? feedNameElement.textContent.trim()
+      : heading?.textContent.trim() || "";
+
     feedsData.push({
       element: section,
       count,
-      name: section.querySelector("h3")?.textContent.trim() || "",
+      name: feedName,
     });
   });
 
@@ -550,11 +557,18 @@ function updateFeedCountsAfterReadFilter() {
       if (noArticlesMsg) noArticlesMsg.style.display = "none";
     }
 
+    // Extract feed name without count badge text
+    const heading = section.querySelector("h3");
+    const feedNameElement = heading?.childNodes[0];
+    const feedName = feedNameElement
+      ? feedNameElement.textContent.trim()
+      : heading?.textContent.trim() || "";
+
     feedsData.push({
       element: section,
       count,
       unreadCount,
-      name: section.querySelector("h3")?.textContent.trim() || "",
+      name: feedName,
     });
   });
 
