@@ -389,3 +389,97 @@ describe("Bug reproduction tests", () => {
     );
   });
 });
+
+describe("normalizeIssueLabels", () => {
+  const { normalizeIssueLabels } = require("./assign-copilot.js");
+
+  test("should handle GraphQL structure with labels.nodes", () => {
+    const issue = {
+      labels: {
+        nodes: [{ name: "bug" }, { name: "refactor" }],
+      },
+    };
+    const normalized = normalizeIssueLabels(issue);
+    expect(normalized).toEqual([{ name: "bug" }, { name: "refactor" }]);
+  });
+
+  test("should handle flattened array structure", () => {
+    const issue = {
+      labels: [{ name: "bug" }, { name: "enhancement" }],
+    };
+    const normalized = normalizeIssueLabels(issue);
+    expect(normalized).toEqual([{ name: "bug" }, { name: "enhancement" }]);
+  });
+
+  test("should handle missing labels", () => {
+    const issue = {};
+    const normalized = normalizeIssueLabels(issue);
+    expect(normalized).toEqual([]);
+  });
+
+  test("should handle empty labels.nodes", () => {
+    const issue = {
+      labels: {
+        nodes: [],
+      },
+    };
+    const normalized = normalizeIssueLabels(issue);
+    expect(normalized).toEqual([]);
+  });
+
+  test("should handle empty labels array", () => {
+    const issue = {
+      labels: [],
+    };
+    const normalized = normalizeIssueLabels(issue);
+    expect(normalized).toEqual([]);
+  });
+});
+
+describe("shouldAssignNewIssue with GraphQL structure", () => {
+  test("should handle GraphQL structure for refactor detection", () => {
+    const assignedIssues = [
+      {
+        labels: {
+          nodes: [{ name: "refactor" }],
+        },
+      },
+    ];
+    const result = shouldAssignNewIssue(assignedIssues, "refactor", false);
+    expect(result.shouldAssign).toBe(false);
+    expect(result.reason).toBe("Copilot already has a refactor issue assigned");
+  });
+
+  test("should handle GraphQL structure for non-refactor issues", () => {
+    const assignedIssues = [
+      {
+        labels: {
+          nodes: [{ name: "bug" }],
+        },
+      },
+    ];
+    const result = shouldAssignNewIssue(assignedIssues, "refactor", false);
+    expect(result.shouldAssign).toBe(false);
+    expect(result.reason).toBe(
+      "Copilot is working on other issues, skipping refactor creation",
+    );
+  });
+
+  test("should handle mixed label structures", () => {
+    const assignedIssues = [
+      {
+        labels: {
+          nodes: [{ name: "bug" }],
+        },
+      },
+      {
+        labels: [{ name: "enhancement" }],
+      },
+    ];
+    const result = shouldAssignNewIssue(assignedIssues, "auto", false);
+    expect(result.shouldAssign).toBe(false);
+    expect(result.reason).toBe(
+      "Copilot already has assigned issues and force=false",
+    );
+  });
+});
