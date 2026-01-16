@@ -29,6 +29,24 @@ function shouldSkipIssue(issue) {
 }
 
 /**
+ * Normalize labels from GraphQL response or flattened structure
+ * @param {Object} issue - Issue with potentially different label structures
+ * @returns {Array} - Array of label objects with normalized structure
+ */
+function normalizeIssueLabels(issue) {
+  // Handle GraphQL structure: { labels: { nodes: [...] } }
+  if (issue.labels && issue.labels.nodes) {
+    return issue.labels.nodes;
+  }
+  // Handle flattened structure: { labels: [...] }
+  if (Array.isArray(issue.labels)) {
+    return issue.labels;
+  }
+  // No labels
+  return [];
+}
+
+/**
  * Check if Copilot should be assigned a new issue
  * @param {Array} assignedIssues - Array of issues currently assigned to Copilot
  * @param {string} mode - Assignment mode ('auto' or 'refactor')
@@ -42,9 +60,10 @@ function shouldAssignNewIssue(assignedIssues, mode, force) {
 
   if (mode === "refactor") {
     // Check if already working on a refactor issue
-    const hasRefactorIssue = assignedIssues.some((issue) =>
-      issue.labels.some((label) => label.name === "refactor"),
-    );
+    const hasRefactorIssue = assignedIssues.some((issue) => {
+      const labels = normalizeIssueLabels(issue);
+      return labels.some((label) => label.name === "refactor");
+    });
     if (hasRefactorIssue) {
       return {
         shouldAssign: false,
@@ -115,4 +134,5 @@ module.exports = {
   shouldAssignNewIssue,
   parseIssueData,
   findAssignableIssue,
+  normalizeIssueLabels,
 };

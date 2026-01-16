@@ -312,6 +312,9 @@ jobs:
                           trackedIssues(first: 1) {
                             totalCount
                           }
+                          trackedInIssues(first: 1) {
+                            totalCount
+                          }
                         }
                       }
                     }
@@ -362,6 +365,9 @@ jobs:
                             nodes { name }
                           }
                           trackedIssues(first: 1) {
+                            totalCount
+                          }
+                          trackedInIssues(first: 1) {
                             totalCount
                           }
                         }
