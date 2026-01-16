@@ -20,7 +20,9 @@ test.describe("Feed Ordering - Comprehensive Empty Feed Tests", () => {
       const h3Element = await section.locator("h3");
       const feedName = await h3Element.evaluate((el) => {
         const firstChild = el.childNodes[0];
-        return firstChild ? firstChild.textContent.trim() : el.textContent.trim();
+        return firstChild
+          ? firstChild.textContent.trim()
+          : el.textContent.trim();
       });
       feedNames.push(feedName);
     }
@@ -40,7 +42,9 @@ test.describe("Feed Ordering - Comprehensive Empty Feed Tests", () => {
   }) => {
     // Mark all articles as read
     await page.evaluate(() => {
-      const articles = document.querySelectorAll(".article-item .article-title");
+      const articles = document.querySelectorAll(
+        ".article-item .article-title",
+      );
       const readArticles = [];
       articles.forEach((article) => {
         const url = article.getAttribute("href");
@@ -62,7 +66,9 @@ test.describe("Feed Ordering - Comprehensive Empty Feed Tests", () => {
       const h3Element = await section.locator("h3");
       const feedName = await h3Element.evaluate((el) => {
         const firstChild = el.childNodes[0];
-        return firstChild ? firstChild.textContent.trim() : el.textContent.trim();
+        return firstChild
+          ? firstChild.textContent.trim()
+          : el.textContent.trim();
       });
       feedNames.push(feedName);
     }
@@ -88,7 +94,9 @@ test.describe("Feed Ordering - Comprehensive Empty Feed Tests", () => {
   }) => {
     // Mark some articles as read
     await page.evaluate(() => {
-      const articles = document.querySelectorAll(".article-item .article-title");
+      const articles = document.querySelectorAll(
+        ".article-item .article-title",
+      );
       const readArticles = [];
       for (let i = 0; i < Math.min(5, articles.length); i++) {
         const url = articles[i].getAttribute("href");
@@ -115,7 +123,9 @@ test.describe("Feed Ordering - Comprehensive Empty Feed Tests", () => {
       const h3Element = await section.locator("h3");
       const feedName = await h3Element.evaluate((el) => {
         const firstChild = el.childNodes[0];
-        return firstChild ? firstChild.textContent.trim() : el.textContent.trim();
+        return firstChild
+          ? firstChild.textContent.trim()
+          : el.textContent.trim();
       });
       feedNames.push(feedName);
     }
@@ -152,7 +162,9 @@ test.describe("Feed Ordering - Comprehensive Empty Feed Tests", () => {
 
           // The wrong way should include the count badge text
           if (wrongName.includes("articles")) {
-            console.log(`✓ Feed name extraction: "${feedName}" vs wrong "${wrongName}"`);
+            console.log(
+              `✓ Feed name extraction: "${feedName}" vs wrong "${wrongName}"`,
+            );
           }
         }
       });
@@ -181,7 +193,9 @@ test.describe("Feed Ordering - Comprehensive Empty Feed Tests", () => {
       const h3Element = await section.locator("h3");
       const feedName = await h3Element.evaluate((el) => {
         const firstChild = el.childNodes[0];
-        return firstChild ? firstChild.textContent.trim() : el.textContent.trim();
+        return firstChild
+          ? firstChild.textContent.trim()
+          : el.textContent.trim();
       });
       feedNames.push(feedName);
     }
@@ -209,7 +223,9 @@ test.describe("Feed Ordering - Comprehensive Empty Feed Tests", () => {
         const h3Element = await section.locator("h3");
         const feedName = await h3Element.evaluate((el) => {
           const firstChild = el.childNodes[0];
-          return firstChild ? firstChild.textContent.trim() : el.textContent.trim();
+          return firstChild
+            ? firstChild.textContent.trim()
+            : el.textContent.trim();
         });
         emptyFeeds.push(feedName);
       }
@@ -238,7 +254,9 @@ test.describe("Feed Ordering - Comprehensive Empty Feed Tests", () => {
         const h3Element = await section.locator("h3");
         const feedName = await h3Element.evaluate((el) => {
           const firstChild = el.childNodes[0];
-          return firstChild ? firstChild.textContent.trim() : el.textContent.trim();
+          return firstChild
+            ? firstChild.textContent.trim()
+            : el.textContent.trim();
         });
         nonEmptyFeeds.push(feedName);
       }
