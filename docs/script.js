@@ -130,13 +130,24 @@ function initializeDropdown(selectId, storageKey, defaultValue, onChange) {
  * @param {HTMLElement|null} beforeElement - insert before this element (e.g., footer)
  */
 function reorderDOMElements(dataArray, parent, beforeElement = null) {
-  dataArray.forEach((data) => {
-    if (beforeElement) {
-      parent.insertBefore(data.element, beforeElement);
-    } else {
-      parent.appendChild(data.element);
+  // Detach all elements first to avoid issues with insertBefore moving elements
+  const elements = dataArray.map((data) => data.element);
+  elements.forEach((element) => {
+    if (element.parentNode) {
+      element.parentNode.removeChild(element);
     }
   });
+
+  // Now insert them in the correct order
+  if (beforeElement) {
+    elements.forEach((element) => {
+      parent.insertBefore(element, beforeElement);
+    });
+  } else {
+    elements.forEach((element) => {
+      parent.appendChild(element);
+    });
+  }
 }
 
 // ===== THEME TOGGLE FUNCTIONALITY =====
