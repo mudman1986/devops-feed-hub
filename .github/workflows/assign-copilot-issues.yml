@@ -30,10 +30,19 @@ on:
         required: false
         type: boolean
         default: false
+      dry_run:
+        description: "Dry run mode - log what would be done without making changes"
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: read
   issues: write
+
+concurrency:
+  group: assign-copilot-issues
+  cancel-in-progress: false
 
 jobs:
   # Wait job to provide grace period when issue is closed
@@ -97,8 +106,9 @@ jobs:
             const mode = '${{ steps.mode.outputs.mode }}';
             const labelOverride = '${{ inputs.label }}' || null;
             const force = '${{ inputs.force }}' === 'true';
+            const dryRun = '${{ inputs.dry_run }}' === 'true';
 
-            console.log(`Running in ${mode} mode, force=${force}, labelOverride=${labelOverride}`);
+            console.log(`Running in ${mode} mode, force=${force}, labelOverride=${labelOverride}, dryRun=${dryRun}`);
 
             // Load helper functions
             const fs = require('fs');
@@ -133,15 +143,26 @@ jobs:
             const copilotBotId = copilotBot.id;
 
             // Step 2: Check if Copilot is already assigned to an issue
-            const assignedIssues = await github.graphql(`
+            const copilotLogin = copilotBot.login;
+            console.log(`Found Copilot bot: login="${copilotLogin}", id="${copilotBotId}"`);
+
+            // Step 2: Check if Copilot is already assigned to an issue
+            console.log(`Querying for all open issues to check assignees...`);
+            const allIssuesResponse = await github.graphql(`
               query($owner: String!, $repo: String!) {
                 repository(owner: $owner, name: $repo) {
-                  issues(first: 100, states: OPEN, filterBy: { assignee: "copilot-swe-agent" }) {
+                  issues(first: 100, states: OPEN) {
                     nodes {
                       id
                       number
                       title
                       url
+                      assignees(first: 10) {
+                        nodes {
+                          login
+                          id
+                        }
+                      }
                       labels(first: 10) {
                         nodes { name }
                       }
@@ -155,8 +176,16 @@ jobs:
             });
 
             // Step 2a: Handle existing assignments based on mode
-            // Keep the full label structure for the helper function
-            const currentIssues = assignedIssues.repository.issues.nodes;
+            // Filter issues to find those assigned to copilot
+            const allIssues = allIssuesResponse.repository.issues.nodes;
+            console.log(`Found ${allIssues.length} total open issues`);
+            
+            const currentIssues = allIssues.filter(issue => 
+              issue.assignees.nodes.some(assignee => 
+                assignee.login === copilotLogin || assignee.id === copilotBotId
+              )
+            );
+            console.log(`Found ${currentIssues.length} issue(s) assigned to copilot (login="${copilotLogin}", id="${copilotBotId}")`);
 
             if (currentIssues.length > 0) {
               console.log("Copilot is currently assigned to the following issues:");
@@ -206,6 +235,12 @@ jobs:
               const refactorLabelId = labelInfo.repository.label.id;
 
               // Create and assign issue to Copilot
+              if (dryRun) {
+                console.log(`[DRY RUN] Would create refactor issue with title: Weekly Refactor - ${new Date().toISOString()}`);
+                console.log(`[DRY RUN] Would assign to Copilot bot (ID: ${copilotBotId})`);
+                return;
+              }
+
               const res = await github.graphql(`
                 mutation($repositoryId: ID!, $title: String!, $body: String!, $assigneeIds: [ID!]) {
                   createIssue(
@@ -312,6 +347,9 @@ jobs:
                           trackedIssues(first: 1) {
                             totalCount
                           }
+                          trackedInIssues(first: 1) {
+                            totalCount
+                          }
                         }
                       }
                     }
@@ -364,6 +402,9 @@ jobs:
                           trackedIssues(first: 1) {
                             totalCount
                           }
+                          trackedInIssues(first: 1) {
+                            totalCount
+                          }
                         }
                       }
                     }
@@ -395,6 +436,13 @@ jobs:
               }
 
               // Assign the issue to Copilot
+              if (dryRun) {
+                console.log(`[DRY RUN] Would assign issue #${issueToAssign.number} to Copilot (ID: ${copilotBotId})`);
+                console.log(`[DRY RUN] Issue title: ${issueToAssign.title}`);
+                console.log(`[DRY RUN] Issue URL: ${issueToAssign.url}`);
+                return;
+              }
+
               console.log(`Assigning issue #${issueToAssign.number} to Copilot...`);
               
               await github.graphql(`
