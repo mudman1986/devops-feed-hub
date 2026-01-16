@@ -19,12 +19,19 @@
     "playwright": "^1.57.0"
   },
   "jest": {
-    "testEnvironment": "jsdom",
-    "testMatch": [
-      "**/docs/**/*.test.js"
-    ],
-    "collectCoverageFrom": [
-      "docs/script.js"
+    "projects": [
+      {
+        "displayName": "browser",
+        "testEnvironment": "jsdom",
+        "testMatch": ["**/docs/**/*.test.js"],
+        "collectCoverageFrom": ["docs/script.js"]
+      },
+      {
+        "displayName": "node",
+        "testEnvironment": "node",
+        "testMatch": ["**/.github/scripts/**/*.test.js"],
+        "collectCoverageFrom": [".github/scripts/assign-copilot.js"]
+      }
     ]
   },
   "standard": {
