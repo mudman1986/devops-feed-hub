@@ -100,6 +100,12 @@ jobs:
 
             console.log(`Running in ${mode} mode, force=${force}, labelOverride=${labelOverride}`);
 
+            // Load helper functions
+            const fs = require('fs');
+            const path = require('path');
+            const helpersPath = path.join(process.env.GITHUB_WORKSPACE, '.github/scripts/assign-copilot.js');
+            const helpers = require(helpersPath);
+
             // Step 1: Get repo ID, Copilot bot ID
             const repoInfo = await github.graphql(`
               query($owner: String!, $repo: String!) {
@@ -149,31 +155,24 @@ jobs:
             });
 
             // Step 2a: Handle existing assignments based on mode
-            if (assignedIssues.repository.issues.nodes.length > 0) {
+            const currentIssues = assignedIssues.repository.issues.nodes.map(issue => ({
+              number: issue.number,
+              labels: issue.labels.nodes
+            }));
+
+            if (currentIssues.length > 0) {
               console.log("Copilot is currently assigned to the following issues:");
               assignedIssues.repository.issues.nodes.forEach(issue => {
                 const labels = issue.labels.nodes.map(l => l.name).join(', ');
                 console.log(`  - #${issue.number}: ${issue.title} (labels: ${labels})`);
               });
 
-              if (mode === 'refactor') {
-                // In refactor mode, check if already working on a refactor issue
-                const hasRefactorIssue = assignedIssues.repository.issues.nodes.some(
-                  issue => issue.labels.nodes.some(l => l.name === 'refactor')
-                );
-                if (hasRefactorIssue) {
-                  console.log("Copilot already has a refactor issue assigned. Skipping creation.");
-                  return;
-                }
-                // If Copilot is working on a non-refactor issue, skip to avoid disruption
-                console.log("Copilot is currently working on other issues. Skipping refactor creation to avoid disruption.");
-                console.log("The refactor will be created next week when Copilot is available.");
-                return;
-              } else if (!force) {
-                // In auto mode, skip if already assigned (unless force is true)
-                console.log("Auto mode: Skipping assignment (Copilot already has work). Use force=true to override.");
+              const { shouldAssign, reason } = helpers.shouldAssignNewIssue(currentIssues, mode, force);
+              if (!shouldAssign) {
+                console.log(`Skipping assignment: ${reason}`);
                 return;
               }
+              console.log(`Proceeding with assignment: ${reason}`);
             }
 
             // Step 3: Handle different modes
@@ -315,6 +314,9 @@ jobs:
                           trackedIssues(first: 1) {
                             totalCount
                           }
+                          trackedInIssues(first: 1) {
+                            totalCount
+                          }
                         }
                       }
                     }
@@ -325,25 +327,24 @@ jobs:
                   label: label
                 });
 
-                // Find first unassigned issue without sub-issues and without refactor label
-                for (const issue of issues.repository.issues.nodes) {
-                  const hasSubIssues = issue.trackedIssues.totalCount > 0;
-                  const isRefactorIssue = issue.labels.nodes.some(l => l.name === 'refactor');
-                  const isAssigned = issue.assignees.nodes.length > 0;
-
-                  console.log(`  Issue #${issue.number}: ${issue.title}`);
-                  console.log(`    - Assigned: ${isAssigned}, SubIssues: ${hasSubIssues}, Refactor: ${isRefactorIssue}`);
-
-                  if (!isAssigned && !hasSubIssues && !isRefactorIssue) {
-                    issueToAssign = issue;
-                    break;
-                  }
-                }
-
-                if (issueToAssign) {
-                  console.log(`Found issue to assign: #${issueToAssign.number}`);
+                // Find first assignable issue using helper function
+                const assignable = helpers.findAssignableIssue(issues.repository.issues.nodes);
+                if (assignable) {
+                  issueToAssign = assignable;
+                  console.log(`Found issue to assign: ${context.repo.owner}/${context.repo.repo}#${issueToAssign.number}`);
                   break;
                 }
+                
+                // Log skipped issues for debugging
+                issues.repository.issues.nodes.forEach(issue => {
+                  const parsed = helpers.parseIssueData(issue);
+                  const { shouldSkip, reason } = helpers.shouldSkipIssue(parsed);
+                  console.log(`  Issue ${context.repo.owner}/${context.repo.repo}#${issue.number}: ${issue.title}`);
+                  console.log(`    - Assigned: ${parsed.isAssigned}, HasSubIssues: ${parsed.hasSubIssues}, IsSubIssue: ${parsed.isSubIssue}, Refactor: ${parsed.isRefactorIssue}`);
+                  if (shouldSkip) {
+                    console.log(`    - Skipped: ${reason}`);
+                  }
+                });
               }
 
               // If no issue with priority labels, try other open issues
@@ -368,6 +369,9 @@ jobs:
                           trackedIssues(first: 1) {
                             totalCount
                           }
+                          trackedInIssues(first: 1) {
+                            totalCount
+                          }
                         }
                       }
                     }
@@ -377,17 +381,15 @@ jobs:
                   repo: context.repo.repo,
                 });
 
-                for (const issue of allIssues.repository.issues.nodes) {
-                  const hasSubIssues = issue.trackedIssues.totalCount > 0;
-                  const isRefactorIssue = issue.labels.nodes.some(l => l.name === 'refactor');
-                  const isAssigned = issue.assignees.nodes.length > 0;
+                // Filter out priority-labeled issues (already checked)
+                const nonPriorityIssues = allIssues.repository.issues.nodes.filter(issue => {
                   const hasPriorityLabel = issue.labels.nodes.some(l => labelPriority.includes(l.name));
+                  return !hasPriorityLabel;
+                });
 
-                  // Skip issues already checked or priority issues (already checked above)
-                  if (!isAssigned && !hasSubIssues && !isRefactorIssue && !hasPriorityLabel) {
-                    issueToAssign = issue;
-                    break;
-                  }
+                issueToAssign = helpers.findAssignableIssue(nonPriorityIssues);
+                if (issueToAssign) {
+                  console.log(`Found issue to assign: ${context.repo.owner}/${context.repo.repo}#${issueToAssign.number}`);
                 }
               }
 
