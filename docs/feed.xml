@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 16 Jan 2026 20:51:26 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 16 Jan 2026 21:08:25 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>What’s new with Azure Repos?</title>
@@ -713,13 +713,6 @@
       <guid isPermaLink="true">https://about.gitlab.com/blog/gitlab-18-7-advancing-ai-automation/</guid>
       <pubDate>Thu, 18 Dec 2025 00:00:00 +0000</pubDate>
       <source>GitLab Blog</source>
-    </item>
-    <item>
-      <title>Continuing HCP Terraform’s enhanced free tier experience</title>
-      <link>https://www.hashicorp.com/blog/continuing-hcp-terraform-s-enhanced-free-tier-experience</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/continuing-hcp-terraform-s-enhanced-free-tier-experience</guid>
-      <pubDate>Wed, 17 Dec 2025 21:00:00 +0000</pubDate>
-      <source>HashiCorp Blog</source>
     </item>
   </channel>
 </rss>
