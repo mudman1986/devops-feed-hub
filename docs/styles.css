@@ -3223,7 +3223,6 @@ h3 {
 /* Center-Stage - Everything centered, single column */
 [data-theme="center-stage"] .container {
   flex-direction: row;
-  align-items: flex-start;
 }
 
 [data-theme="center-stage"] .header {
@@ -3248,9 +3247,6 @@ h3 {
   max-width: 900px;
   margin: 0 auto;
   padding: 2rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 
 /* Sidebar stays on right side with flex-direction: row */
@@ -3783,12 +3779,13 @@ h3 {
 /* Timeline-Vertical - Medium/Substack style vertical timeline */
 [data-theme="timeline-vertical"] .container {
   flex-direction: row;
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 
 [data-theme="timeline-vertical"] .main-content {
   max-width: 900px;
+  margin-right: auto;
 }
 
 /* Sidebar stays on right side with flex-direction: row */
