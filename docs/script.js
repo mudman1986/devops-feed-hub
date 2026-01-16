@@ -331,6 +331,11 @@ function updateFeedCounts() {
   const feedsData = [];
 
   feedSections.forEach((section) => {
+    // Skip feeds that are hidden by the feed filter
+    if (section.hasAttribute("data-hidden-by-filter")) {
+      return;
+    }
+
     const articles = section.querySelectorAll(".article-item");
     const visibleArticles = Array.from(articles).filter(
       (a) => a.style.display !== "none",
@@ -522,6 +527,11 @@ function updateFeedCountsAfterReadFilter() {
   const feedsData = [];
 
   feedSections.forEach((section) => {
+    // Skip feeds that are hidden by the feed filter
+    if (section.hasAttribute("data-hidden-by-filter")) {
+      return;
+    }
+
     const articleList = section.querySelector(".article-list");
     if (!articleList) return;
 
