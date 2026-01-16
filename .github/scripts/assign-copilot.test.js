@@ -30,7 +30,6 @@ describe("shouldSkipIssue", () => {
     const issue = {
       isAssigned: false,
       hasSubIssues: true,
-      isSubIssue: false,
       isRefactorIssue: false,
     };
     const result = shouldSkipIssue(issue);
@@ -38,23 +37,22 @@ describe("shouldSkipIssue", () => {
     expect(result.reason).toBe("has sub-issues");
   });
 
-  test("should skip issues that are sub-issues themselves", () => {
+  test("should not skip issues that are sub-issues themselves", () => {
+    // Sub-issues (issues tracked by parent issues) CAN be assigned
     const issue = {
       isAssigned: false,
       hasSubIssues: false,
-      isSubIssue: true,
       isRefactorIssue: false,
     };
     const result = shouldSkipIssue(issue);
-    expect(result.shouldSkip).toBe(true);
-    expect(result.reason).toBe("is a sub-issue");
+    expect(result.shouldSkip).toBe(false);
+    expect(result.reason).toBeNull();
   });
 
   test("should skip refactor issues", () => {
     const issue = {
       isAssigned: false,
       hasSubIssues: false,
-      isSubIssue: false,
       isRefactorIssue: true,
     };
     const result = shouldSkipIssue(issue);
@@ -66,7 +64,6 @@ describe("shouldSkipIssue", () => {
     const issue = {
       isAssigned: false,
       hasSubIssues: false,
-      isSubIssue: false,
       isRefactorIssue: false,
     };
     const result = shouldSkipIssue(issue);
@@ -79,7 +76,6 @@ describe("shouldSkipIssue", () => {
     const issue = {
       isAssigned: true,
       hasSubIssues: true,
-      isSubIssue: true,
       isRefactorIssue: true,
     };
     const result = shouldSkipIssue(issue);
@@ -296,7 +292,8 @@ describe("findAssignableIssue", () => {
     expect(result.number).toBe(102);
   });
 
-  test("should skip issues that are sub-issues themselves", () => {
+  test("should not skip issues that are sub-issues themselves", () => {
+    // Sub-issues CAN be assigned - only parent issues with sub-issues are skipped
     const issues = [
       {
         id: "issue-1",
@@ -311,7 +308,7 @@ describe("findAssignableIssue", () => {
       {
         id: "issue-2",
         number: 104,
-        title: "Valid Issue",
+        title: "Another Valid Issue",
         url: "https://github.com/test/repo/issues/104",
         assignees: { nodes: [] },
         trackedIssues: { totalCount: 0 },
@@ -321,7 +318,8 @@ describe("findAssignableIssue", () => {
     ];
     const result = findAssignableIssue(issues);
     expect(result).not.toBeNull();
-    expect(result.number).toBe(104);
+    // Should return the first issue (103) which is a sub-issue but still assignable
+    expect(result.number).toBe(103);
   });
 
   test("should return null when all issues are skipped", () => {
