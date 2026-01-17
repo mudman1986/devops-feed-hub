@@ -381,6 +381,42 @@ jobs:
                   console.log(`    #${issue.number}: "${issue.title}" - trackedIssues: ${trackedCount}, trackedInIssues: ${trackedInCount}, assignees: ${issue.assignees.nodes.length}`);
                 });
 
+                // WORKAROUND: GraphQL trackedIssues returns 0 even for issues with sub-issues
+                // Use REST API to check for sub-issues via timeline events
+                console.log(`  Checking for sub-issues via REST API...`);
+                for (const issue of issues.repository.issues.nodes) {
+                  try {
+                    // Get issue events to find connected issues (sub-issues)
+                    const { data: events } = await github.rest.issues.listEvents({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      issue_number: issue.number,
+                      per_page: 100
+                    });
+                    
+                    // Check for 'connected' events which indicate sub-issues
+                    const hasConnectedIssues = events.some(event => 
+                      event.event === 'connected' || 
+                      event.event === 'cross-referenced'
+                    );
+                    
+                    // Also check the issue body for tasklist items which indicate sub-issues
+                    const bodyHasTasklist = issue.body && (
+                      issue.body.includes('- [ ]') || 
+                      issue.body.includes('- [x]') ||
+                      issue.body.includes('- [X]')
+                    );
+                    
+                    if (hasConnectedIssues || bodyHasTasklist) {
+                      console.log(`    #${issue.number}: Found sub-issues via REST API`);
+                      // Inject the sub-issue data into the issue object
+                      issue.trackedIssues = { totalCount: 1 };
+                    }
+                  } catch (error) {
+                    console.log(`    #${issue.number}: Could not check REST API: ${error.message}`);
+                  }
+                }
+
                 // Find first assignable issue using simplified helper function
                 const assignable = helpers.findAssignableIssue(
                   issues.repository.issues.nodes,
@@ -444,6 +480,37 @@ jobs:
                   const hasPriorityLabel = issue.labels.nodes.some(l => labelPriority.includes(l.name));
                   return !hasPriorityLabel;
                 });
+
+                // WORKAROUND: Check for sub-issues via REST API for non-priority issues too
+                console.log(`  Checking ${nonPriorityIssues.length} non-priority issues for sub-issues via REST API...`);
+                for (const issue of nonPriorityIssues) {
+                  try {
+                    const { data: events } = await github.rest.issues.listEvents({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      issue_number: issue.number,
+                      per_page: 100
+                    });
+                    
+                    const hasConnectedIssues = events.some(event => 
+                      event.event === 'connected' || 
+                      event.event === 'cross-referenced'
+                    );
+                    
+                    const bodyHasTasklist = issue.body && (
+                      issue.body.includes('- [ ]') || 
+                      issue.body.includes('- [x]') ||
+                      issue.body.includes('- [X]')
+                    );
+                    
+                    if (hasConnectedIssues || bodyHasTasklist) {
+                      console.log(`    #${issue.number}: Found sub-issues via REST API`);
+                      issue.trackedIssues = { totalCount: 1 };
+                    }
+                  } catch (error) {
+                    console.log(`    #${issue.number}: Could not check REST API: ${error.message}`);
+                  }
+                }
 
                 issueToAssign = helpers.findAssignableIssue(
                   nonPriorityIssues,
