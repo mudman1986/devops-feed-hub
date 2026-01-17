@@ -62,18 +62,26 @@ test.describe("Feed Filter Navigation Tests", () => {
       });
     });
 
-    // Order should be preserved (feeds are alphabetically sorted within their groups)
-    // Even after hiding/showing feeds
+    // Order should be preserved after hiding/showing feeds
+    // Feeds are grouped: (1) feeds with articles, (2) empty feeds
+    // Within each group, they're sorted alphabetically
     const awsIndex = finalOrder.indexOf("AWS DevOps Blog");
     const atlassianIndex = finalOrder.indexOf("Atlassian DevOps");
     const dockerIndex = finalOrder.indexOf("Docker Blog");
     const githubIndex = finalOrder.indexOf("GitHub Blog");
+    const opensourceIndex = finalOrder.indexOf("Opensource.com");
 
-    // All feeds should be in alphabetical order within their group
-    // In this test data, all feeds have same status (same article counts), so they're sorted alphabetically
-    expect(atlassianIndex).toBeLessThan(awsIndex); // A comes before AWS
-    expect(dockerIndex).toBeGreaterThan(awsIndex); // Docker comes after AWS
-    expect(githubIndex).toBeGreaterThan(dockerIndex); // GitHub comes after Docker
+    // Feeds with articles should come before empty feeds
+    expect(awsIndex).toBeLessThan(atlassianIndex); // AWS (has articles) before Atlassian (empty)
+    expect(dockerIndex).toBeLessThan(atlassianIndex); // Docker (has articles) before Atlassian (empty)
+    expect(githubIndex).toBeLessThan(atlassianIndex); // GitHub (has articles) before Atlassian (empty)
+
+    // Within the non-empty group, feeds should be in alphabetical order
+    expect(awsIndex).toBeLessThan(dockerIndex); // AWS before Docker
+    expect(dockerIndex).toBeLessThan(githubIndex); // Docker before GitHub
+
+    // Within the empty group, feeds should be in alphabetical order
+    expect(atlassianIndex).toBeLessThan(opensourceIndex); // Atlassian before Opensource
   });
 
   test("Empty feeds stay at bottom after filter changes", async ({ page }) => {
