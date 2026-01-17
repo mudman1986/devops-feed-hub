@@ -129,10 +129,79 @@ function findAssignableIssue(issues) {
   return null;
 }
 
+/**
+ * Check if an issue has sub-issues using REST API
+ * @param {Object} github - GitHub REST API client (octokit)
+ * @param {string} owner - Repository owner
+ * @param {string} repo - Repository name
+ * @param {number} issueNumber - Issue number to check
+ * @returns {Promise<boolean>} - True if issue has sub-issues
+ */
+async function hasSubIssuesViaREST(github, owner, repo, issueNumber) {
+  try {
+    const response = await github.rest.issues.listSubIssues({
+      owner,
+      repo,
+      issue_number: issueNumber,
+      per_page: 1, // Only need to check if any exist
+    });
+    return response.data.length > 0;
+  } catch (error) {
+    // If endpoint doesn't exist or fails, fall back to assuming no sub-issues
+    // This can happen if the REST API endpoint is not available
+    console.log(
+      `Warning: Could not check sub-issues for #${issueNumber}: ${error.message}`,
+    );
+    return false;
+  }
+}
+
+/**
+ * Find the first assignable issue from a list, with REST API sub-issue verification
+ * @param {Array} issues - Array of issue objects from GraphQL
+ * @param {Object} github - GitHub REST API client (octokit)
+ * @param {string} owner - Repository owner
+ * @param {string} repo - Repository name
+ * @returns {Promise<Object|null>} - First assignable issue or null
+ */
+async function findAssignableIssueWithRESTCheck(issues, github, owner, repo) {
+  for (const issue of issues) {
+    const parsed = parseIssueData(issue);
+
+    // First, check using GraphQL data
+    let { shouldSkip, reason } = shouldSkipIssue(parsed);
+
+    // If GraphQL says no sub-issues, double-check with REST API
+    // This is needed because GraphQL trackedIssues can be unreliable
+    if (!shouldSkip && !parsed.hasSubIssues) {
+      const hasSubIssues = await hasSubIssuesViaREST(
+        github,
+        owner,
+        repo,
+        parsed.number,
+      );
+      if (hasSubIssues) {
+        console.log(
+          `  Issue #${parsed.number}: GraphQL reported no sub-issues, but REST API found sub-issues. Skipping.`,
+        );
+        shouldSkip = true;
+        reason = "has sub-issues (detected via REST API)";
+      }
+    }
+
+    if (!shouldSkip) {
+      return parsed;
+    }
+  }
+  return null;
+}
+
 module.exports = {
   shouldSkipIssue,
   shouldAssignNewIssue,
   parseIssueData,
   findAssignableIssue,
+  findAssignableIssueWithRESTCheck,
+  hasSubIssuesViaREST,
   normalizeIssueLabels,
 };
