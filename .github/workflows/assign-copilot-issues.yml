@@ -373,6 +373,14 @@ jobs:
                   label: label
                 });
 
+                // Log ALL issues with their trackedIssues data for debugging
+                console.log(`  Found ${issues.repository.issues.nodes.length} issues with label "${label}":`);
+                issues.repository.issues.nodes.forEach(issue => {
+                  const trackedCount = issue.trackedIssues ? issue.trackedIssues.totalCount : 'undefined';
+                  const trackedInCount = issue.trackedInIssues ? issue.trackedInIssues.totalCount : 'undefined';
+                  console.log(`    #${issue.number}: "${issue.title}" - trackedIssues: ${trackedCount}, trackedInIssues: ${trackedInCount}, assignees: ${issue.assignees.nodes.length}`);
+                });
+
                 // Find first assignable issue using simplified helper function
                 const assignable = helpers.findAssignableIssue(
                   issues.repository.issues.nodes,
@@ -384,7 +392,7 @@ jobs:
                   break;
                 }
                 
-                // Log skipped issues for debugging
+                // Log detailed analysis of why issues were skipped
                 issues.repository.issues.nodes.forEach(issue => {
                   const parsed = helpers.parseIssueData(issue);
                   const { shouldSkip, reason } = helpers.shouldSkipIssue(parsed, allowParentIssues);
