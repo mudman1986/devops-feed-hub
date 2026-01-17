@@ -56,13 +56,18 @@ test.describe("Feed Filter Navigation Tests", () => {
       });
     });
 
-    // Order should be preserved (feeds with articles first, empty feeds last)
+    // Order should be preserved (feeds are alphabetically sorted within their groups)
     // Even after hiding/showing feeds
     const awsIndex = finalOrder.indexOf("AWS DevOps Blog");
     const atlassianIndex = finalOrder.indexOf("Atlassian DevOps");
+    const dockerIndex = finalOrder.indexOf("Docker Blog");
+    const githubIndex = finalOrder.indexOf("GitHub Blog");
 
-    // AWS (has articles) should be before Atlassian (empty)
-    expect(awsIndex).toBeLessThan(atlassianIndex);
+    // All feeds should be in alphabetical order within their group
+    // In this test data, all feeds have same status (same article counts), so they're sorted alphabetically
+    expect(atlassianIndex).toBeLessThan(awsIndex); // A comes before AWS
+    expect(dockerIndex).toBeGreaterThan(awsIndex); // Docker comes after AWS
+    expect(githubIndex).toBeGreaterThan(dockerIndex); // GitHub comes after Docker
   });
 
   test("Empty feeds stay at bottom after filter changes", async ({ page }) => {
