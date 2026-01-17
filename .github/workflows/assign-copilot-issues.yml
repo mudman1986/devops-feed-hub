@@ -321,7 +321,7 @@ jobs:
              */
             async function assignNextIssue(labelOverride) {
               // Define label priority
-              const labelPriority = labelOverride ? [labelOverride] : ['bug', 'documentation', 'enhancement'];
+              const labelPriority = labelOverride ? [labelOverride] : ['bug', 'documentation', 'refactor', 'enhancement'];
 
               let issueToAssign = null;
 
@@ -360,8 +360,13 @@ jobs:
                   label: label
                 });
 
-                // Find first assignable issue using helper function
-                const assignable = helpers.findAssignableIssue(issues.repository.issues.nodes);
+                // Find first assignable issue using helper function with REST API check
+                const assignable = await helpers.findAssignableIssueWithRESTCheck(
+                  issues.repository.issues.nodes,
+                  github,
+                  context.repo.owner,
+                  context.repo.repo
+                );
                 if (assignable) {
                   issueToAssign = assignable;
                   console.log(`Found issue to assign: ${context.repo.owner}/${context.repo.repo}#${issueToAssign.number}`);
@@ -420,7 +425,12 @@ jobs:
                   return !hasPriorityLabel;
                 });
 
-                issueToAssign = helpers.findAssignableIssue(nonPriorityIssues);
+                issueToAssign = await helpers.findAssignableIssueWithRESTCheck(
+                  nonPriorityIssues,
+                  github,
+                  context.repo.owner,
+                  context.repo.repo
+                );
                 if (issueToAssign) {
                   console.log(`Found issue to assign: ${context.repo.owner}/${context.repo.repo}#${issueToAssign.number}`);
                 }

@@ -19,7 +19,6 @@ describe("shouldSkipIssue", () => {
       isAssigned: true,
       hasSubIssues: false,
       isSubIssue: false,
-      isRefactorIssue: false,
     };
     const result = shouldSkipIssue(issue);
     expect(result.shouldSkip).toBe(true);
@@ -30,7 +29,6 @@ describe("shouldSkipIssue", () => {
     const issue = {
       isAssigned: false,
       hasSubIssues: true,
-      isRefactorIssue: false,
     };
     const result = shouldSkipIssue(issue);
     expect(result.shouldSkip).toBe(true);
@@ -42,29 +40,26 @@ describe("shouldSkipIssue", () => {
     const issue = {
       isAssigned: false,
       hasSubIssues: false,
-      isRefactorIssue: false,
     };
     const result = shouldSkipIssue(issue);
     expect(result.shouldSkip).toBe(false);
     expect(result.reason).toBeNull();
   });
 
-  test("should skip refactor issues", () => {
-    const issue = {
-      isAssigned: false,
-      hasSubIssues: false,
-      isRefactorIssue: true,
-    };
-    const result = shouldSkipIssue(issue);
-    expect(result.shouldSkip).toBe(true);
-    expect(result.reason).toBe("is a refactor issue");
-  });
-
   test("should not skip valid unassigned issues", () => {
     const issue = {
       isAssigned: false,
       hasSubIssues: false,
-      isRefactorIssue: false,
+    };
+    const result = shouldSkipIssue(issue);
+    expect(result.shouldSkip).toBe(false);
+    expect(result.reason).toBeNull();
+  });
+
+  test("should not skip refactor issues", () => {
+    const issue = {
+      isAssigned: false,
+      hasSubIssues: false,
     };
     const result = shouldSkipIssue(issue);
     expect(result.shouldSkip).toBe(false);
@@ -76,7 +71,6 @@ describe("shouldSkipIssue", () => {
     const issue = {
       isAssigned: true,
       hasSubIssues: true,
-      isRefactorIssue: true,
     };
     const result = shouldSkipIssue(issue);
     expect(result.shouldSkip).toBe(true);
@@ -388,6 +382,66 @@ describe("Bug reproduction tests", () => {
       "Copilot already has assigned issues and force=false",
     );
   });
+
+  test("Bug #3: GraphQL trackedIssues returns 0 but REST API shows sub-issues exist", async () => {
+    // Issue 79 has sub-issues but GraphQL trackedIssues.totalCount is 0
+    const issue79 = {
+      id: "issue-79",
+      number: 79,
+      title: "Bugs",
+      url: "https://github.com/mudman1986/devops-feed-hub/issues/79",
+      assignees: { nodes: [] },
+      trackedIssues: { totalCount: 0 }, // GraphQL reports 0
+      trackedInIssues: { totalCount: 0 },
+      labels: { nodes: [{ name: "bug" }] },
+    };
+
+    // Mock GitHub REST API
+    const mockGithub = {
+      request: jest.fn().mockResolvedValue({
+        data: [
+          { number: 80, title: "Sub-issue 1" },
+          { number: 81, title: "Sub-issue 2" },
+          { number: 82, title: "Sub-issue 3" },
+          { number: 103, title: "Sub-issue 4" },
+        ],
+      }),
+    };
+
+    const {
+      hasSubIssuesViaREST,
+      findAssignableIssueWithRESTCheck,
+    } = require("./assign-copilot.js");
+
+    // Test hasSubIssuesViaREST
+    const hasSubIssues = await hasSubIssuesViaREST(
+      mockGithub,
+      "mudman1986",
+      "devops-feed-hub",
+      79,
+    );
+    expect(hasSubIssues).toBe(true);
+
+    // Test findAssignableIssueWithRESTCheck
+    const result = await findAssignableIssueWithRESTCheck(
+      [issue79],
+      mockGithub,
+      "mudman1986",
+      "devops-feed-hub",
+    );
+    expect(result).toBeNull(); // Should skip issue 79 even though GraphQL says totalCount: 0
+
+    // Verify the REST API was called
+    expect(mockGithub.request).toHaveBeenCalledWith(
+      "GET /repos/{owner}/{repo}/issues/{issue_number}/sub-issues",
+      {
+        owner: "mudman1986",
+        repo: "devops-feed-hub",
+        issue_number: 79,
+        per_page: 1,
+      },
+    );
+  });
 });
 
 describe("normalizeIssueLabels", () => {
@@ -481,5 +535,197 @@ describe("shouldAssignNewIssue with GraphQL structure", () => {
     expect(result.reason).toBe(
       "Copilot already has assigned issues and force=false",
     );
+  });
+});
+
+describe("hasSubIssuesViaREST", () => {
+  const { hasSubIssuesViaREST } = require("./assign-copilot.js");
+
+  test("should return true when issue has sub-issues", async () => {
+    const mockGithub = {
+      request: jest.fn().mockResolvedValue({
+        data: [{ number: 80 }],
+      }),
+    };
+
+    const result = await hasSubIssuesViaREST(mockGithub, "owner", "repo", 79);
+    expect(result).toBe(true);
+    expect(mockGithub.request).toHaveBeenCalledWith(
+      "GET /repos/{owner}/{repo}/issues/{issue_number}/sub-issues",
+      {
+        owner: "owner",
+        repo: "repo",
+        issue_number: 79,
+        per_page: 1,
+      },
+    );
+  });
+
+  test("should return false when issue has no sub-issues", async () => {
+    const mockGithub = {
+      request: jest.fn().mockResolvedValue({
+        data: [],
+      }),
+    };
+
+    const result = await hasSubIssuesViaREST(mockGithub, "owner", "repo", 100);
+    expect(result).toBe(false);
+  });
+
+  test("should return false when REST API call fails", async () => {
+    const mockGithub = {
+      request: jest.fn().mockRejectedValue(new Error("API endpoint not found")),
+    };
+
+    // Suppress console.log for this test
+    const consoleSpy = jest.spyOn(console, "log").mockImplementation();
+
+    const result = await hasSubIssuesViaREST(mockGithub, "owner", "repo", 100);
+    expect(result).toBe(false);
+
+    consoleSpy.mockRestore();
+  });
+});
+
+describe("findAssignableIssueWithRESTCheck", () => {
+  const { findAssignableIssueWithRESTCheck } = require("./assign-copilot.js");
+
+  test("should return issue when it has no sub-issues (GraphQL and REST agree)", async () => {
+    const issue = {
+      id: "issue-1",
+      number: 100,
+      title: "Valid Issue",
+      url: "https://github.com/test/repo/issues/100",
+      assignees: { nodes: [] },
+      trackedIssues: { totalCount: 0 },
+      trackedInIssues: { totalCount: 0 },
+      labels: { nodes: [{ name: "bug" }] },
+    };
+
+    const mockGithub = {
+      request: jest.fn().mockResolvedValue({ data: [] }),
+    };
+
+    const result = await findAssignableIssueWithRESTCheck(
+      [issue],
+      mockGithub,
+      "test",
+      "repo",
+    );
+
+    expect(result).not.toBeNull();
+    expect(result.number).toBe(100);
+  });
+
+  test("should skip issue when GraphQL says no sub-issues but REST API finds them", async () => {
+    const issue = {
+      id: "issue-79",
+      number: 79,
+      title: "Bugs",
+      url: "https://github.com/test/repo/issues/79",
+      assignees: { nodes: [] },
+      trackedIssues: { totalCount: 0 }, // GraphQL says 0
+      trackedInIssues: { totalCount: 0 },
+      labels: { nodes: [{ name: "bug" }] },
+    };
+
+    const mockGithub = {
+      request: jest.fn().mockResolvedValue({
+        data: [{ number: 80 }, { number: 81 }, { number: 82 }, { number: 103 }],
+      }),
+    };
+
+    // Suppress console.log for this test
+    const consoleSpy = jest.spyOn(console, "log").mockImplementation();
+
+    const result = await findAssignableIssueWithRESTCheck(
+      [issue],
+      mockGithub,
+      "test",
+      "repo",
+    );
+
+    expect(result).toBeNull();
+    expect(mockGithub.request).toHaveBeenCalled();
+
+    consoleSpy.mockRestore();
+  });
+
+  test("should skip issue when GraphQL already detected sub-issues", async () => {
+    const issue = {
+      id: "issue-79",
+      number: 79,
+      title: "Bugs",
+      url: "https://github.com/test/repo/issues/79",
+      assignees: { nodes: [] },
+      trackedIssues: { totalCount: 4 }, // GraphQL correctly reports 4
+      trackedInIssues: { totalCount: 0 },
+      labels: { nodes: [{ name: "bug" }] },
+    };
+
+    const mockGithub = {
+      request: jest.fn().mockResolvedValue({ data: [] }),
+    };
+
+    const result = await findAssignableIssueWithRESTCheck(
+      [issue],
+      mockGithub,
+      "test",
+      "repo",
+    );
+
+    expect(result).toBeNull();
+    // REST API should NOT be called since GraphQL already detected sub-issues
+    expect(mockGithub.request).not.toHaveBeenCalled();
+  });
+
+  test("should find first assignable issue after skipping ones with sub-issues", async () => {
+    const issues = [
+      {
+        id: "issue-79",
+        number: 79,
+        title: "Has Sub-issues",
+        url: "https://github.com/test/repo/issues/79",
+        assignees: { nodes: [] },
+        trackedIssues: { totalCount: 0 },
+        trackedInIssues: { totalCount: 0 },
+        labels: { nodes: [{ name: "bug" }] },
+      },
+      {
+        id: "issue-100",
+        number: 100,
+        title: "Valid Issue",
+        url: "https://github.com/test/repo/issues/100",
+        assignees: { nodes: [] },
+        trackedIssues: { totalCount: 0 },
+        trackedInIssues: { totalCount: 0 },
+        labels: { nodes: [{ name: "bug" }] },
+      },
+    ];
+
+    const mockGithub = {
+      request: jest.fn().mockImplementation((endpoint, { issue_number }) => {
+        if (issue_number === 79) {
+          return Promise.resolve({ data: [{ number: 80 }] });
+        }
+        return Promise.resolve({ data: [] });
+      }),
+    };
+
+    // Suppress console.log for this test
+    const consoleSpy = jest.spyOn(console, "log").mockImplementation();
+
+    const result = await findAssignableIssueWithRESTCheck(
+      issues,
+      mockGithub,
+      "test",
+      "repo",
+    );
+
+    expect(result).not.toBeNull();
+    expect(result.number).toBe(100); // Should skip 79 and return 100
+    expect(mockGithub.request).toHaveBeenCalledTimes(2);
+
+    consoleSpy.mockRestore();
   });
 });
