@@ -342,6 +342,18 @@ function updateFeedCounts() {
     );
     const count = visibleArticles.length;
 
+    // Calculate unread count (articles that are visible and not marked as read)
+    const unreadArticles = Array.from(articles).filter((article) => {
+      const link = article.querySelector(".article-title");
+      if (!link) return false;
+      const articleUrl = link.getAttribute("href");
+      return (
+        !isArticleRead(articleUrl) &&
+        !article.hasAttribute("data-hidden-by-timeframe")
+      );
+    });
+    const unreadCount = unreadArticles.length;
+
     // Update count badge
     const countBadge = section.querySelector(".feed-count");
     if (countBadge) {
@@ -380,23 +392,27 @@ function updateFeedCounts() {
     feedsData.push({
       element: section,
       count,
+      unreadCount,
       name: feedName,
     });
   });
 
-  // Reorder feeds
+  // Reorder feeds using same three-tier logic as updateFeedCountsAfterReadFilter
   if (feedSections.length > 0 && feedSections[0].parentNode) {
     const parent = feedSections[0].parentNode;
     const footer = parent.querySelector(".footer");
 
-    const feedsWithArticles = feedsData
-      .filter((f) => f.count > 0)
+    const feedsWithUnread = feedsData
+      .filter((f) => f.unreadCount > 0)
+      .sort((a, b) => a.name.localeCompare(b.name));
+    const feedsAllRead = feedsData
+      .filter((f) => f.unreadCount === 0 && (f.count || 0) > 0)
       .sort((a, b) => a.name.localeCompare(b.name));
     const emptyFeeds = feedsData
-      .filter((f) => f.count === 0)
+      .filter((f) => (f.count || 0) === 0)
       .sort((a, b) => a.name.localeCompare(b.name));
 
-    const orderedFeeds = [...feedsWithArticles, ...emptyFeeds];
+    const orderedFeeds = [...feedsWithUnread, ...feedsAllRead, ...emptyFeeds];
     reorderDOMElements(orderedFeeds, parent, footer);
   }
 }
