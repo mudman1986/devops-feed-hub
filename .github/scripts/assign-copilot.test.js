@@ -1050,3 +1050,146 @@ describe("Bug fix validation - Issue #79", () => {
     consoleSpy.mockRestore();
   });
 });
+
+describe("hasSubIssuesViaREST - 404 handling", () => {
+  const { hasSubIssuesViaREST } = require("./assign-copilot.js");
+
+  test("should return false when REST API returns 404 (no sub-issues)", async () => {
+    const mockGithub = {
+      request: jest.fn().mockRejectedValue({ status: 404, message: "Not Found" }),
+    };
+
+    // Suppress console.log for this test
+    const consoleSpy = jest.spyOn(console, "log").mockImplementation();
+
+    const result = await hasSubIssuesViaREST(mockGithub, "owner", "repo", 100, "Issue body");
+    expect(result).toBe(false); // 404 means no sub-issues, issue is assignable
+    expect(mockGithub.request).toHaveBeenCalled();
+
+    consoleSpy.mockRestore();
+  });
+
+  test("should use body fallback when REST API returns non-404 error", async () => {
+    const mockGithub = {
+      request: jest.fn().mockRejectedValue({ status: 500, message: "Internal Server Error" }),
+    };
+
+    const body = `
+- [ ] Fix #80
+- [x] Implement #81
+    `;
+
+    // Suppress console.log for this test
+    const consoleSpy = jest.spyOn(console, "log").mockImplementation();
+
+    const result = await hasSubIssuesViaREST(mockGithub, "owner", "repo", 79, body);
+    expect(result).toBe(true); // Has sub-issues based on body parsing
+    expect(mockGithub.request).toHaveBeenCalled();
+
+    consoleSpy.mockRestore();
+  });
+});
+
+describe("Bug fix validation - Issue #79 with 404", () => {
+  const {
+    hasSubIssuesViaREST,
+    findAssignableIssueWithRESTCheck,
+  } = require("./assign-copilot.js");
+
+  test("Issue without sub-issues should be assignable when REST API returns 404", async () => {
+    const issue79 = {
+      id: "issue-79",
+      number: 79,
+      title: "Bugs",
+      url: "https://github.com/mudman1986/devops-feed-hub/issues/79",
+      body: "This issue has no tasklist items",
+      assignees: { nodes: [] },
+      trackedIssues: { totalCount: 0 }, // GraphQL reports 0
+      trackedInIssues: { totalCount: 0 },
+      labels: { nodes: [{ name: "bug" }] },
+    };
+
+    // Mock REST API that returns 404 (no sub-issues)
+    const mockGithub = {
+      request: jest.fn().mockRejectedValue({ status: 404, message: "Not Found" }),
+    };
+
+    // Suppress console.log for this test
+    const consoleSpy = jest.spyOn(console, "log").mockImplementation();
+
+    // Test hasSubIssuesViaREST
+    const hasSubIssues = await hasSubIssuesViaREST(
+      mockGithub,
+      "mudman1986",
+      "devops-feed-hub",
+      79,
+      issue79.body,
+    );
+    expect(hasSubIssues).toBe(false); // 404 means no sub-issues
+
+    // Test findAssignableIssueWithRESTCheck
+    const result = await findAssignableIssueWithRESTCheck(
+      [issue79],
+      mockGithub,
+      "mudman1986",
+      "devops-feed-hub",
+    );
+    expect(result).not.toBeNull(); // Should be assignable
+    expect(result.number).toBe(79);
+
+    consoleSpy.mockRestore();
+  });
+
+  test("Issue with tasklist items should be skipped even when REST API returns 404", async () => {
+    const issue79 = {
+      id: "issue-79",
+      number: 79,
+      title: "Bugs",
+      url: "https://github.com/mudman1986/devops-feed-hub/issues/79",
+      body: `
+# Bugs
+
+- [ ] Bug 1 #80
+- [ ] Bug 2 #81
+- [ ] Bug 3 #82
+- [ ] Bug 4 #103
+      `,
+      assignees: { nodes: [] },
+      trackedIssues: { totalCount: 0 },
+      trackedInIssues: { totalCount: 0 },
+      labels: { nodes: [{ name: "bug" }] },
+    };
+
+    // Mock REST API that returns 404 (API says no sub-issues, but body has tasklists)
+    const mockGithub = {
+      request: jest.fn().mockRejectedValue({ status: 404, message: "Not Found" }),
+    };
+
+    // Suppress console.log for this test
+    const consoleSpy = jest.spyOn(console, "log").mockImplementation();
+
+    // Test hasSubIssuesViaREST - should return false for 404
+    const hasSubIssues = await hasSubIssuesViaREST(
+      mockGithub,
+      "mudman1986",
+      "devops-feed-hub",
+      79,
+      issue79.body,
+    );
+    expect(hasSubIssues).toBe(false); // 404 means no sub-issues in REST API
+
+    // Test findAssignableIssueWithRESTCheck - should still assign the issue
+    const result = await findAssignableIssueWithRESTCheck(
+      [issue79],
+      mockGithub,
+      "mudman1986",
+      "devops-feed-hub",
+    );
+    // Since REST API returns 404 (no sub-issues), issue should be assignable
+    // even though it has tasklist items (REST API is authoritative)
+    expect(result).not.toBeNull();
+    expect(result.number).toBe(79);
+
+    consoleSpy.mockRestore();
+  });
+});
