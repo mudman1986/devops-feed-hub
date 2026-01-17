@@ -137,6 +137,7 @@ async function hasSubIssuesViaREST(github, owner, repo, issueNumber) {
   try {
     // Use the REST API endpoint directly since Octokit may not have this method yet
     // GitHub introduced /repos/{owner}/{repo}/issues/{issue_number}/sub-issues in Dec 2024
+    // Requires X-GitHub-Api-Version header for versioned endpoint
     const response = await github.request(
       "GET /repos/{owner}/{repo}/issues/{issue_number}/sub-issues",
       {
@@ -144,12 +145,15 @@ async function hasSubIssuesViaREST(github, owner, repo, issueNumber) {
         repo,
         issue_number: issueNumber,
         per_page: 1, // Only need to check if any exist
+        headers: {
+          "X-GitHub-Api-Version": "2022-11-28",
+        },
       },
     );
     return response.data && response.data.length > 0;
   } catch (error) {
-    // If endpoint doesn't exist or fails, err on the side of caution and skip the issue
-    // This prevents assigning issues when we cannot verify they have no sub-issues
+    // If endpoint fails (e.g., repository not enrolled in preview, permissions issue),
+    // err on the side of caution and skip the issue to prevent incorrect assignments
     console.log(
       `Warning: Could not check sub-issues for #${issueNumber}: ${error.message}`,
     );

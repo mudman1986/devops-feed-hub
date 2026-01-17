@@ -439,6 +439,9 @@ describe("Bug reproduction tests", () => {
         repo: "devops-feed-hub",
         issue_number: 79,
         per_page: 1,
+        headers: {
+          "X-GitHub-Api-Version": "2022-11-28",
+        },
       },
     );
   });
@@ -495,6 +498,9 @@ describe("Bug reproduction tests", () => {
         repo: "devops-feed-hub",
         issue_number: 79,
         per_page: 1,
+        headers: {
+          "X-GitHub-Api-Version": "2022-11-28",
+        },
       },
     );
 
@@ -615,6 +621,9 @@ describe("hasSubIssuesViaREST", () => {
         repo: "repo",
         issue_number: 79,
         per_page: 1,
+        headers: {
+          "X-GitHub-Api-Version": "2022-11-28",
+        },
       },
     );
   });
