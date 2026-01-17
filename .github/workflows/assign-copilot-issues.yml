@@ -337,6 +337,7 @@ jobs:
                           id
                           number
                           title
+                          body
                           url
                           assignees(first: 10) {
                             nodes { login }
@@ -398,6 +399,7 @@ jobs:
                           number
                           title
                           url
+                          body
                           assignees(first: 10) {
                             nodes { login }
                           }
