@@ -796,3 +796,257 @@ describe("findAssignableIssueWithRESTCheck", () => {
     consoleSpy.mockRestore();
   });
 });
+
+describe("parseTasklistIssues", () => {
+  const { parseTasklistIssues } = require("./assign-copilot.js");
+
+  test("should parse issue numbers from tasklist items", () => {
+    const body = `
+Some description
+
+- [ ] Fix #80
+- [x] Implement #81
+- [ ] Review #82
+- [ ] Address #103
+    `;
+    const issues = parseTasklistIssues(body);
+    expect(issues).toEqual([80, 81, 82, 103]);
+  });
+
+  test("should handle empty body", () => {
+    const issues = parseTasklistIssues("");
+    expect(issues).toEqual([]);
+  });
+
+  test("should handle null body", () => {
+    const issues = parseTasklistIssues(null);
+    expect(issues).toEqual([]);
+  });
+
+  test("should handle body without tasklist items", () => {
+    const body = "This is just a regular issue description without tasklists.";
+    const issues = parseTasklistIssues(body);
+    expect(issues).toEqual([]);
+  });
+
+  test("should handle tasklist items without issue references", () => {
+    const body = `
+- [ ] Do something
+- [x] Do something else
+    `;
+    const issues = parseTasklistIssues(body);
+    expect(issues).toEqual([]);
+  });
+
+  test("should handle mixed tasklist and non-tasklist items", () => {
+    const body = `
+# Sub-issues
+
+- [ ] Bug fix #100
+- Regular bullet point
+- [x] Feature #101
+* Not a tasklist
+- [ ] Another task #102
+    `;
+    const issues = parseTasklistIssues(body);
+    expect(issues).toEqual([100, 101, 102]);
+  });
+
+  test("should handle uppercase X in checkbox", () => {
+    const body = `
+- [X] Completed #200
+- [x] Also completed #201
+    `;
+    const issues = parseTasklistIssues(body);
+    expect(issues).toEqual([200, 201]);
+  });
+});
+
+describe("hasSubIssuesInBody", () => {
+  const { hasSubIssuesInBody } = require("./assign-copilot.js");
+
+  test("should return true when body has tasklist with issue references", () => {
+    const body = `
+- [ ] Fix #80
+- [x] Implement #81
+    `;
+    expect(hasSubIssuesInBody(body)).toBe(true);
+  });
+
+  test("should return false when body has no tasklist items", () => {
+    const body = "Regular issue description";
+    expect(hasSubIssuesInBody(body)).toBe(false);
+  });
+
+  test("should return false when body has tasklist but no issue references", () => {
+    const body = `
+- [ ] Do something
+- [x] Do something else
+    `;
+    expect(hasSubIssuesInBody(body)).toBe(false);
+  });
+
+  test("should return false for empty body", () => {
+    expect(hasSubIssuesInBody("")).toBe(false);
+  });
+});
+
+describe("hasSubIssuesViaREST with body fallback", () => {
+  const { hasSubIssuesViaREST } = require("./assign-copilot.js");
+
+  test("should use REST API when available", async () => {
+    const mockGithub = {
+      request: jest.fn().mockResolvedValue({
+        data: [{ number: 80 }],
+      }),
+    };
+
+    const body = "Issue with no tasklist";
+    const result = await hasSubIssuesViaREST(mockGithub, "owner", "repo", 79, body);
+    expect(result).toBe(true);
+    expect(mockGithub.request).toHaveBeenCalled();
+  });
+
+  test("should fall back to body parsing when REST API fails", async () => {
+    const mockGithub = {
+      request: jest.fn().mockRejectedValue(new Error("Not Found")),
+    };
+
+    const body = `
+- [ ] Fix #80
+- [x] Implement #81
+    `;
+
+    // Suppress console.log for this test
+    const consoleSpy = jest.spyOn(console, "log").mockImplementation();
+
+    const result = await hasSubIssuesViaREST(mockGithub, "owner", "repo", 79, body);
+    expect(result).toBe(true); // Has sub-issues based on body parsing
+    expect(mockGithub.request).toHaveBeenCalled();
+
+    consoleSpy.mockRestore();
+  });
+
+  test("should return false when REST API fails and body has no tasklists", async () => {
+    const mockGithub = {
+      request: jest.fn().mockRejectedValue(new Error("Not Found")),
+    };
+
+    const body = "Regular issue without tasklists";
+
+    // Suppress console.log for this test
+    const consoleSpy = jest.spyOn(console, "log").mockImplementation();
+
+    const result = await hasSubIssuesViaREST(mockGithub, "owner", "repo", 79, body);
+    expect(result).toBe(false); // No sub-issues based on body parsing
+    expect(mockGithub.request).toHaveBeenCalled();
+
+    consoleSpy.mockRestore();
+  });
+
+  test("should return true (safety measure) when REST API fails and no body provided", async () => {
+    const mockGithub = {
+      request: jest.fn().mockRejectedValue(new Error("Not Found")),
+    };
+
+    // Suppress console.log for this test
+    const consoleSpy = jest.spyOn(console, "log").mockImplementation();
+
+    const result = await hasSubIssuesViaREST(mockGithub, "owner", "repo", 79, null);
+    expect(result).toBe(true); // Safety measure - skip when we can't verify
+    expect(mockGithub.request).toHaveBeenCalled();
+
+    consoleSpy.mockRestore();
+  });
+});
+
+describe("Bug fix validation - Issue #79", () => {
+  const {
+    hasSubIssuesViaREST,
+    findAssignableIssueWithRESTCheck,
+  } = require("./assign-copilot.js");
+
+  test("Issue #79 with tasklist sub-issues should be detected when REST API fails", async () => {
+    const issue79 = {
+      id: "issue-79",
+      number: 79,
+      title: "Bugs",
+      url: "https://github.com/mudman1986/devops-feed-hub/issues/79",
+      body: `
+# Bugs
+
+- [ ] Bug 1 #80
+- [ ] Bug 2 #81
+- [ ] Bug 3 #82
+- [ ] Bug 4 #103
+      `,
+      assignees: { nodes: [] },
+      trackedIssues: { totalCount: 0 }, // GraphQL reports 0
+      trackedInIssues: { totalCount: 0 },
+      labels: { nodes: [{ name: "bug" }] },
+    };
+
+    // Mock REST API that fails (like in the real scenario)
+    const mockGithub = {
+      request: jest.fn().mockRejectedValue(new Error("Not Found")),
+    };
+
+    // Suppress console.log for this test
+    const consoleSpy = jest.spyOn(console, "log").mockImplementation();
+
+    // Test hasSubIssuesViaREST with body fallback
+    const hasSubIssues = await hasSubIssuesViaREST(
+      mockGithub,
+      "mudman1986",
+      "devops-feed-hub",
+      79,
+      issue79.body,
+    );
+    expect(hasSubIssues).toBe(true); // Should detect sub-issues from body
+
+    // Test findAssignableIssueWithRESTCheck
+    const result = await findAssignableIssueWithRESTCheck(
+      [issue79],
+      mockGithub,
+      "mudman1986",
+      "devops-feed-hub",
+    );
+    expect(result).toBeNull(); // Should skip issue 79
+
+    consoleSpy.mockRestore();
+  });
+
+  test("Issue without sub-issues should be assignable even when REST API fails", async () => {
+    const issue100 = {
+      id: "issue-100",
+      number: 100,
+      title: "Simple Bug",
+      url: "https://github.com/mudman1986/devops-feed-hub/issues/100",
+      body: "This is a simple bug without any sub-issues",
+      assignees: { nodes: [] },
+      trackedIssues: { totalCount: 0 },
+      trackedInIssues: { totalCount: 0 },
+      labels: { nodes: [{ name: "bug" }] },
+    };
+
+    // Mock REST API that fails
+    const mockGithub = {
+      request: jest.fn().mockRejectedValue(new Error("Not Found")),
+    };
+
+    // Suppress console.log for this test
+    const consoleSpy = jest.spyOn(console, "log").mockImplementation();
+
+    // Test findAssignableIssueWithRESTCheck
+    const result = await findAssignableIssueWithRESTCheck(
+      [issue100],
+      mockGithub,
+      "mudman1986",
+      "devops-feed-hub",
+    );
+    expect(result).not.toBeNull();
+    expect(result.number).toBe(100);
+
+    consoleSpy.mockRestore();
+  });
+});

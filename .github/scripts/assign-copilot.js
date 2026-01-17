@@ -98,6 +98,7 @@ function parseIssueData(issue) {
     number: issue.number,
     title: issue.title,
     url: issue.url,
+    body: issue.body || "",
     isAssigned: issue.assignees.nodes.length > 0,
     hasSubIssues: !!(issue.trackedIssues && issue.trackedIssues.totalCount > 0),
     isSubIssue: !!(
@@ -126,14 +127,51 @@ function findAssignableIssue(issues) {
 }
 
 /**
+ * Parse issue body for tasklist items that reference other issues
+ * @param {string} body - Issue body text
+ * @returns {Array<number>} - Array of issue numbers referenced in tasklists
+ */
+function parseTasklistIssues(body) {
+  if (!body) {
+    return [];
+  }
+
+  // Match task list items: - [ ] #123 or - [x] #123
+  // Also match: - [ ] Fixes #123, - [ ] See #123, etc.
+  const tasklistPattern = /^[\s]*-[\s]*\[[ xX]\][\s]*.*?#(\d+)/gm;
+  const matches = body.matchAll(tasklistPattern);
+  const issueNumbers = [];
+
+  for (const match of matches) {
+    const issueNum = parseInt(match[1], 10);
+    if (!isNaN(issueNum)) {
+      issueNumbers.push(issueNum);
+    }
+  }
+
+  return issueNumbers;
+}
+
+/**
+ * Check if an issue has sub-issues by parsing issue body for tasklists
+ * @param {string} body - Issue body text
+ * @returns {boolean} - True if issue has tasklist items with issue references
+ */
+function hasSubIssuesInBody(body) {
+  const tasklistIssues = parseTasklistIssues(body);
+  return tasklistIssues.length > 0;
+}
+
+/**
  * Check if an issue has sub-issues using REST API
  * @param {Object} github - GitHub Octokit client
  * @param {string} owner - Repository owner
  * @param {string} repo - Repository name
  * @param {number} issueNumber - Issue number to check
+ * @param {string} body - Issue body (optional, for fallback)
  * @returns {Promise<boolean>} - True if issue has sub-issues
  */
-async function hasSubIssuesViaREST(github, owner, repo, issueNumber) {
+async function hasSubIssuesViaREST(github, owner, repo, issueNumber, body) {
   try {
     // Use the REST API endpoint directly since Octokit may not have this method yet
     // GitHub introduced /repos/{owner}/{repo}/issues/{issue_number}/sub-issues in Dec 2024
@@ -152,11 +190,28 @@ async function hasSubIssuesViaREST(github, owner, repo, issueNumber) {
     );
     return response.data && response.data.length > 0;
   } catch (error) {
-    // If endpoint fails (e.g., repository not enrolled in preview, permissions issue),
-    // err on the side of caution and skip the issue to prevent incorrect assignments
+    // If REST API endpoint fails, fall back to parsing issue body
     console.log(
-      `Warning: Could not check sub-issues for #${issueNumber}: ${error.message}`,
+      `Warning: Could not check sub-issues via REST API for ${owner}/${repo}#${issueNumber}: ${error.message}`,
     );
+    
+    // Fallback: Parse issue body for tasklist items
+    if (body) {
+      const hasSubIssues = hasSubIssuesInBody(body);
+      if (hasSubIssues) {
+        const tasklistIssues = parseTasklistIssues(body);
+        console.log(
+          `  Issue #${issueNumber}: Found ${tasklistIssues.length} tasklist item(s) referencing issue(s). Treating as parent issue with sub-issues.`,
+        );
+      } else {
+        console.log(
+          `  Issue #${issueNumber}: No tasklist items found in body. Treating as assignable.`,
+        );
+      }
+      return hasSubIssues;
+    }
+    
+    // If no body available, err on the side of caution
     console.log(
       `  Skipping issue #${issueNumber} as a safety measure - cannot verify sub-issue status`,
     );
@@ -187,12 +242,10 @@ async function findAssignableIssueWithRESTCheck(issues, github, owner, repo) {
         owner,
         repo,
         parsed.number,
+        parsed.body,
       );
       if (hasSubIssues) {
-        console.log(
-          `  Issue #${parsed.number}: GraphQL reported no sub-issues, but REST API found sub-issues. Skipping.`,
-        );
-        // Skip this issue - it has sub-issues detected via REST API
+        // Skip this issue - it has sub-issues detected via REST API or body parsing
         continue;
       }
     }
@@ -212,4 +265,6 @@ module.exports = {
   findAssignableIssueWithRESTCheck,
   hasSubIssuesViaREST,
   normalizeIssueLabels,
+  parseTasklistIssues,
+  hasSubIssuesInBody,
 };
