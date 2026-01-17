@@ -9,16 +9,6 @@ test.beforeEach(async ({ page }) => {
 
 test.describe("Feed Filter Navigation Tests", () => {
   test("Feeds hidden by filter should not be reordered", async ({ page }) => {
-    // Get initial feed order
-    const initialOrder = await page.evaluate(() => {
-      const sections = document.querySelectorAll(".feed-section");
-      return Array.from(sections).map((section) => {
-        const h3 = section.querySelector("h3");
-        const firstChild = h3?.childNodes[0];
-        return firstChild ? firstChild.textContent.trim() : "";
-      });
-    });
-
     // Disable some feeds via localStorage (simulating feed filter)
     await page.evaluate(() => {
       // Enable only 3 feeds, disable the rest

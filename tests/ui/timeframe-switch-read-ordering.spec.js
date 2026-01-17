@@ -65,7 +65,7 @@ test.describe("Feed Ordering Across Timeframe Changes with Read Articles", () =>
     expect(timeframe7day).toBe("7days");
 
     // Step 2: Verify the feed moved below feeds with unread articles
-    const orderIn7Days = await page.evaluate((targetFeed) => {
+    const orderIn7Days = await page.evaluate(() => {
       const sections = document.querySelectorAll(".feed-section");
       const feedOrder = [];
 
@@ -99,7 +99,7 @@ test.describe("Feed Ordering Across Timeframe Changes with Read Articles", () =>
       });
 
       return feedOrder;
-    }, feedToMarkRead);
+    });
 
     console.log("Feed order in 7-day timeframe:", orderIn7Days);
 
@@ -130,7 +130,7 @@ test.describe("Feed Ordering Across Timeframe Changes with Read Articles", () =>
     expect(timeframe1day).toBe("1day");
 
     // Step 4: Verify the feed is STILL below feeds with unread articles
-    const orderIn1Day = await page.evaluate((targetFeed) => {
+    const orderIn1Day = await page.evaluate(() => {
       const sections = document.querySelectorAll(".feed-section");
       const feedOrder = [];
 
@@ -164,7 +164,7 @@ test.describe("Feed Ordering Across Timeframe Changes with Read Articles", () =>
       });
 
       return feedOrder;
-    }, feedToMarkRead);
+    });
 
     console.log("Feed order in 1-day timeframe:", orderIn1Day);
 
