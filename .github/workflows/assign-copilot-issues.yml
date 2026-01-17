@@ -114,7 +114,13 @@ jobs:
             const dryRun = '${{ inputs.dry_run }}' === 'true';
             const allowParentIssues = '${{ inputs.allow_parent_issues }}' === 'true';
 
-            console.log(`Running in ${mode} mode, force=${force}, labelOverride=${labelOverride}, dryRun=${dryRun}, allowParentIssues=${allowParentIssues}`);
+            console.log(
+              `Running in ${mode} mode, ` +
+              `force=${force}, ` +
+              `labelOverride=${labelOverride}, ` +
+              `dryRun=${dryRun}, ` +
+              `allowParentIssues=${allowParentIssues}`
+            );
 
             // Load helper functions
             const fs = require('fs');

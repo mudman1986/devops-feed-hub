@@ -12,7 +12,7 @@
  * @param {Object} issue - Issue object from parseIssueData
  * @param {boolean} issue.isAssigned - Whether issue already has assignees
  * @param {boolean} issue.hasSubIssues - Whether issue has any sub-issues (open or closed)
- * @param {boolean} allowParentIssues - Whether to allow assigning issues with sub-issues
+ * @param {boolean} [allowParentIssues=false] - Whether to allow assigning issues with sub-issues (default: false)
  * @returns {Object} - {shouldSkip: boolean, reason: string}
  */
 function shouldSkipIssue(issue, allowParentIssues = false) {
