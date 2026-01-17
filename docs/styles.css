@@ -941,8 +941,6 @@ h3 {
     padding: 1rem;
     flex-wrap: wrap;
     position: relative;
-    align-items: center;
-    min-height: 60px;
   }
 
   .header-title {
@@ -950,9 +948,6 @@ h3 {
     flex: 1;
     min-width: 0;
     padding-right: 3.5rem;
-    display: flex;
-    align-items: center;
-    align-self: center;
   }
 
   .header-controls {
@@ -990,20 +985,12 @@ h3 {
     position: absolute;
     top: 1rem;
     right: 1rem;
-    padding: 0 !important;
+    padding: 0.75rem;
     width: 2.75rem;
     height: 2.75rem;
-    min-width: 2.75rem;
-    min-height: 2.75rem;
-    max-width: 2.75rem;
-    max-height: 2.75rem;
-    aspect-ratio: 1/1;
     border-radius: 50%;
     box-shadow: var(--shadow-lg);
     justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-    overflow: hidden;
   }
 
   #theme-text {
@@ -1012,15 +999,6 @@ h3 {
 
   .theme-toggle svg {
     margin: 0;
-    width: 20px;
-    height: 20px;
-    flex-shrink: 0;
-  }
-
-  .settings-button svg {
-    width: 20px;
-    height: 20px;
-    flex-shrink: 0;
   }
 
   .container {
@@ -1784,20 +1762,13 @@ h3 {
     position: absolute;
     top: 1rem;
     right: 4.5rem;
-    padding: 0 !important;
+    padding: 0.75rem;
     width: 2.75rem;
     height: 2.75rem;
-    min-width: 2.75rem;
-    min-height: 2.75rem;
-    max-width: 2.75rem;
-    max-height: 2.75rem;
-    aspect-ratio: 1/1;
     border-radius: 50%;
     box-shadow: var(--shadow-lg);
     justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-    overflow: hidden;
+    order: 0;
   }
 
   /* Make settings back button more compact on mobile */
