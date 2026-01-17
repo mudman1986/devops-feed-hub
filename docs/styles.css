@@ -948,6 +948,8 @@ h3 {
     flex: 1;
     min-width: 0;
     padding-right: 3.5rem;
+    display: flex;
+    align-items: center;
   }
 
   .header-controls {
@@ -985,12 +987,13 @@ h3 {
     position: absolute;
     top: 1rem;
     right: 1rem;
-    padding: 0.75rem;
+    padding: 0;
     width: 2.75rem;
     height: 2.75rem;
     border-radius: 50%;
     box-shadow: var(--shadow-lg);
     justify-content: center;
+    flex-shrink: 0;
   }
 
   #theme-text {
@@ -999,6 +1002,13 @@ h3 {
 
   .theme-toggle svg {
     margin: 0;
+    width: 20px;
+    height: 20px;
+  }
+
+  .settings-button svg {
+    width: 20px;
+    height: 20px;
   }
 
   .container {
@@ -1762,13 +1772,13 @@ h3 {
     position: absolute;
     top: 1rem;
     right: 4.5rem;
-    padding: 0.75rem;
+    padding: 0;
     width: 2.75rem;
     height: 2.75rem;
     border-radius: 50%;
     box-shadow: var(--shadow-lg);
     justify-content: center;
-    order: 0;
+    flex-shrink: 0;
   }
 
   /* Make settings back button more compact on mobile */
