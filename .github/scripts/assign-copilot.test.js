@@ -1078,7 +1078,7 @@ describe("Bug fix validation - Issue #79", () => {
 describe("hasSubIssuesViaREST - 404 handling", () => {
   const { hasSubIssuesViaREST } = require("./assign-copilot.js");
 
-  test("should return false when REST API returns 404 (no sub-issues)", async () => {
+  test("should fall back to body parsing when REST API returns 404 and body has no tasklists", async () => {
     const mockGithub = {
       request: jest
         .fn()
@@ -1095,13 +1095,13 @@ describe("hasSubIssuesViaREST - 404 handling", () => {
       100,
       "Issue body",
     );
-    expect(result).toBe(false); // 404 means no sub-issues, issue is assignable
+    expect(result).toBe(false); // Body has no tasklists, issue is assignable
     expect(mockGithub.request).toHaveBeenCalled();
 
     consoleSpy.mockRestore();
   });
 
-  test("should use body fallback when REST API returns non-404 error", async () => {
+  test("should use body fallback when REST API returns any error", async () => {
     const mockGithub = {
       request: jest
         .fn()
@@ -1167,7 +1167,7 @@ describe("Bug fix validation - Issue #79 with 404", () => {
       79,
       issue79.body,
     );
-    expect(hasSubIssues).toBe(false); // 404 means no sub-issues
+    expect(hasSubIssues).toBe(false); // Body has no tasklists, no sub-issues
 
     // Test findAssignableIssueWithRESTCheck
     const result = await findAssignableIssueWithRESTCheck(
@@ -1212,7 +1212,7 @@ describe("Bug fix validation - Issue #79 with 404", () => {
     // Suppress console.log for this test
     const consoleSpy = jest.spyOn(console, "log").mockImplementation();
 
-    // Test hasSubIssuesViaREST - should return false for 404
+    // Test hasSubIssuesViaREST - should check body and return true
     const hasSubIssues = await hasSubIssuesViaREST(
       mockGithub,
       "mudman1986",
@@ -1220,19 +1220,18 @@ describe("Bug fix validation - Issue #79 with 404", () => {
       79,
       issue79.body,
     );
-    expect(hasSubIssues).toBe(false); // 404 means no sub-issues in REST API
+    expect(hasSubIssues).toBe(true); // Body has tasklists, so has sub-issues
 
-    // Test findAssignableIssueWithRESTCheck - should still assign the issue
+    // Test findAssignableIssueWithRESTCheck - should skip the issue
     const result = await findAssignableIssueWithRESTCheck(
       [issue79],
       mockGithub,
       "mudman1986",
       "devops-feed-hub",
     );
-    // Since REST API returns 404 (no sub-issues), issue should be assignable
-    // even though it has tasklist items (REST API is authoritative)
-    expect(result).not.toBeNull();
-    expect(result.number).toBe(79);
+    // Since body has tasklist items, issue should be skipped
+    // to avoid assigning parent issues with sub-issues
+    expect(result).toBeNull(); // Should be skipped
 
     consoleSpy.mockRestore();
   });

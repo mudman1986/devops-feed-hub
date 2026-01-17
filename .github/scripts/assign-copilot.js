@@ -190,15 +190,9 @@ async function hasSubIssuesViaREST(github, owner, repo, issueNumber, body) {
     );
     return response.data && response.data.length > 0;
   } catch (error) {
-    // 404 Not Found means the issue doesn't have sub-issues (not an error)
-    if (error.status === 404) {
-      console.log(
-        `  Issue #${issueNumber}: REST API returned 404 - no sub-issues found. Treating as assignable.`,
-      );
-      return false; // No sub-issues, issue is assignable
-    }
+    // REST API failed - fall back to parsing issue body
+    // This handles 404 (endpoint not found/not supported) and other errors
 
-    // Other errors (permissions, network, etc.) - fall back to parsing issue body
     console.log(
       `Warning: Could not check sub-issues via REST API for ${owner}/${repo}#${issueNumber}: ${error.message}`,
     );
