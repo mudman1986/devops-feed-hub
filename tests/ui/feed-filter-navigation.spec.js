@@ -18,8 +18,8 @@ test.describe("Feed Filter Navigation Tests", () => {
 
     // Reload page to apply filter
     await page.reload();
-    await page.waitForSelector(".feed-section", { timeout: 10000 });
-    await page.waitForTimeout(1000);
+    await page.waitForLoadState("networkidle");
+    await page.waitForTimeout(1500);
 
     // Check that disabled feeds are hidden
     const hiddenFeeds = await page.evaluate(() => {
@@ -43,8 +43,8 @@ test.describe("Feed Filter Navigation Tests", () => {
 
     // Reload page
     await page.reload();
-    await page.waitForSelector(".feed-section", { timeout: 10000 });
-    await page.waitForTimeout(1000);
+    await page.waitForLoadState("networkidle");
+    await page.waitForTimeout(1500);
 
     // Get final order - should match initial order
     const finalOrder = await page.evaluate(() => {
@@ -119,8 +119,8 @@ test.describe("Feed Filter Navigation Tests", () => {
     });
 
     await page.reload();
-    await page.waitForSelector(".feed-section", { timeout: 10000 });
-    await page.waitForTimeout(1000);
+    await page.waitForLoadState("networkidle");
+    await page.waitForTimeout(1500);
 
     // Trigger a reordering by changing timeframe
     await page.selectOption("#timeframe-select", "7days");
