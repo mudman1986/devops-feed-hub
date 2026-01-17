@@ -130,13 +130,24 @@ function initializeDropdown(selectId, storageKey, defaultValue, onChange) {
  * @param {HTMLElement|null} beforeElement - insert before this element (e.g., footer)
  */
 function reorderDOMElements(dataArray, parent, beforeElement = null) {
-  dataArray.forEach((data) => {
-    if (beforeElement) {
-      parent.insertBefore(data.element, beforeElement);
-    } else {
-      parent.appendChild(data.element);
+  // Detach all elements first to avoid issues with insertBefore moving elements
+  const elements = dataArray.map((data) => data.element);
+  elements.forEach((element) => {
+    if (element.parentNode) {
+      element.parentNode.removeChild(element);
     }
   });
+
+  // Now insert them in the correct order
+  if (beforeElement) {
+    elements.forEach((element) => {
+      parent.insertBefore(element, beforeElement);
+    });
+  } else {
+    elements.forEach((element) => {
+      parent.appendChild(element);
+    });
+  }
 }
 
 // ===== THEME TOGGLE FUNCTIONALITY =====
@@ -320,6 +331,11 @@ function updateFeedCounts() {
   const feedsData = [];
 
   feedSections.forEach((section) => {
+    // Skip feeds that are hidden by the feed filter
+    if (section.hasAttribute("data-hidden-by-filter")) {
+      return;
+    }
+
     const articles = section.querySelectorAll(".article-item");
     const visibleArticles = Array.from(articles).filter(
       (a) => a.style.display !== "none",
@@ -354,10 +370,17 @@ function updateFeedCounts() {
       }
     }
 
+    // Extract feed name without count badge text
+    const heading = section.querySelector("h3");
+    const feedNameElement = heading?.childNodes[0];
+    const feedName = feedNameElement
+      ? feedNameElement.textContent.trim()
+      : heading?.textContent.trim() || "";
+
     feedsData.push({
       element: section,
       count,
-      name: section.querySelector("h3")?.textContent.trim() || "",
+      name: feedName,
     });
   });
 
@@ -504,6 +527,11 @@ function updateFeedCountsAfterReadFilter() {
   const feedsData = [];
 
   feedSections.forEach((section) => {
+    // Skip feeds that are hidden by the feed filter
+    if (section.hasAttribute("data-hidden-by-filter")) {
+      return;
+    }
+
     const articleList = section.querySelector(".article-list");
     if (!articleList) return;
 
@@ -550,11 +578,18 @@ function updateFeedCountsAfterReadFilter() {
       if (noArticlesMsg) noArticlesMsg.style.display = "none";
     }
 
+    // Extract feed name without count badge text
+    const heading = section.querySelector("h3");
+    const feedNameElement = heading?.childNodes[0];
+    const feedName = feedNameElement
+      ? feedNameElement.textContent.trim()
+      : heading?.textContent.trim() || "";
+
     feedsData.push({
       element: section,
       count,
       unreadCount,
-      name: section.querySelector("h3")?.textContent.trim() || "",
+      name: feedName,
     });
   });
 
