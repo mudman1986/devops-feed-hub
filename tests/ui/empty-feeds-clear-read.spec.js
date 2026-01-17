@@ -1,6 +1,12 @@
 import { expect, test } from "@playwright/test";
 
 test.beforeEach(async ({ page }) => {
+  // Mock Date.now() to return a fixed timestamp for consistent timeframe filtering
+  await page.addInitScript(() => {
+    const fakeNow = new Date("2026-01-11T00:00:00Z").getTime();
+    Date.now = () => fakeNow;
+  });
+
   await page.goto("/");
   await page.waitForLoadState("load");
   await page.evaluate(() => localStorage.clear());
