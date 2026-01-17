@@ -16,7 +16,9 @@ test.describe("Empty Feeds with No Articles Across All Timeframes", () => {
 
     // Mark some articles as read first
     await page.evaluate(() => {
-      const articles = document.querySelectorAll(".article-item .article-title");
+      const articles = document.querySelectorAll(
+        ".article-item .article-title",
+      );
       const readArticles = [];
       for (let i = 0; i < Math.min(5, articles.length); i++) {
         const url = articles[i].getAttribute("href");
@@ -39,7 +41,8 @@ test.describe("Empty Feeds with No Articles Across All Timeframes", () => {
         const h3 = section.querySelector("h3");
         const firstChild = h3?.childNodes[0];
         const name = firstChild ? firstChild.textContent.trim() : "";
-        const countText = section.querySelector(".feed-count")?.textContent || "";
+        const countText =
+          section.querySelector(".feed-count")?.textContent || "";
         const count = parseInt(countText.match(/(\d+)/)?.[1] || "0");
         return { name, count };
       });
@@ -59,7 +62,8 @@ test.describe("Empty Feeds with No Articles Across All Timeframes", () => {
         const h3 = section.querySelector("h3");
         const firstChild = h3?.childNodes[0];
         const name = firstChild ? firstChild.textContent.trim() : "";
-        const countText = section.querySelector(".feed-count")?.textContent || "";
+        const countText =
+          section.querySelector(".feed-count")?.textContent || "";
         const count = parseInt(countText.match(/(\d+)/)?.[1] || "0");
         const hasArticleList = section.querySelector(".article-list") !== null;
         return { name, count, hasArticleList };
@@ -69,7 +73,9 @@ test.describe("Empty Feeds with No Articles Across All Timeframes", () => {
     console.log("Order after clear:", orderAfterClear);
 
     // Find feeds with 0 articles (no article-list element)
-    const emptyFeeds = orderAfterClear.filter((f) => f.count === 0 && !f.hasArticleList);
+    const emptyFeeds = orderAfterClear.filter(
+      (f) => f.count === 0 && !f.hasArticleList,
+    );
     const nonEmptyFeeds = orderAfterClear.filter((f) => f.count > 0);
 
     console.log("Empty feeds (no article-list):", emptyFeeds);
@@ -136,11 +142,15 @@ test.describe("Empty Feeds with No Articles Across All Timeframes", () => {
     // Verify they are positioned at the end
     if (feedsWithoutArticleList.length > 0) {
       const feedsWithArticleList = feedData.filter((f) => f.hasArticleList);
-      
+
       if (feedsWithArticleList.length > 0) {
-        const maxArticleListIndex = Math.max(...feedsWithArticleList.map((f) => f.index));
-        const minNoArticleListIndex = Math.min(...feedsWithoutArticleList.map((f) => f.index));
-        
+        const maxArticleListIndex = Math.max(
+          ...feedsWithArticleList.map((f) => f.index),
+        );
+        const minNoArticleListIndex = Math.min(
+          ...feedsWithoutArticleList.map((f) => f.index),
+        );
+
         expect(minNoArticleListIndex).toBeGreaterThan(maxArticleListIndex);
       }
     }
