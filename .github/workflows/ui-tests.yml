@@ -45,7 +45,7 @@ jobs:
           # Use static test fixture instead of live RSS data for consistent tests
           # This ensures tests always run against known data regardless of external feeds
           echo "Using static test fixture for consistent UI tests"
-          cp .github/workflows/test-fixtures/rss-test-data.json rss-feeds-output.json
+          cp .github/workflows/test-fixtures/ui-test-data.json rss-feeds-output.json
           # Generate multi-page HTML (main index + individual feed pages)
           python3 .github/actions/collect-rss-feeds/generate_summary.py \
             --input rss-feeds-output.json \
