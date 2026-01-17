@@ -941,6 +941,8 @@ h3 {
     padding: 1rem;
     flex-wrap: wrap;
     position: relative;
+    align-items: center;
+    min-height: 60px;
   }
 
   .header-title {
@@ -948,6 +950,9 @@ h3 {
     flex: 1;
     min-width: 0;
     padding-right: 3.5rem;
+    display: flex;
+    align-items: center;
+    align-self: center;
   }
 
   .header-controls {
@@ -985,12 +990,20 @@ h3 {
     position: absolute;
     top: 1rem;
     right: 1rem;
-    padding: 0.75rem;
-    width: 2.75rem;
-    height: 2.75rem;
+    padding: 0 !important;
+    width: 2.75rem !important;
+    height: 2.75rem !important;
+    min-width: 2.75rem !important;
+    min-height: 2.75rem !important;
+    max-width: 2.75rem !important;
+    max-height: 2.75rem !important;
+    aspect-ratio: 1/1 !important;
     border-radius: 50%;
     box-shadow: var(--shadow-lg);
     justify-content: center;
+    align-items: center;
+    flex-shrink: 0;
+    overflow: hidden;
   }
 
   #theme-text {
@@ -999,6 +1012,15 @@ h3 {
 
   .theme-toggle svg {
     margin: 0;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  .settings-button svg {
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
   }
 
   .container {
@@ -1762,13 +1784,20 @@ h3 {
     position: absolute;
     top: 1rem;
     right: 4.5rem;
-    padding: 0.75rem;
-    width: 2.75rem;
-    height: 2.75rem;
+    padding: 0 !important;
+    width: 2.75rem !important;
+    height: 2.75rem !important;
+    min-width: 2.75rem !important;
+    min-height: 2.75rem !important;
+    max-width: 2.75rem !important;
+    max-height: 2.75rem !important;
+    aspect-ratio: 1/1 !important;
     border-radius: 50%;
     box-shadow: var(--shadow-lg);
     justify-content: center;
-    order: 0;
+    align-items: center;
+    flex-shrink: 0;
+    overflow: hidden;
   }
 
   /* Make settings back button more compact on mobile */
