@@ -49,8 +49,12 @@ console.log("  - trackedIssues(first: 1).totalCount");
 console.log("  - trackedInIssues(first: 1).totalCount");
 console.log();
 
-console.log("HOWEVER, GitHub MCP search_issues tool uses REST API, not GraphQL!");
-console.log("REST API does NOT include trackedIssues or trackedInIssues fields.");
+console.log(
+  "HOWEVER, GitHub MCP search_issues tool uses REST API, not GraphQL!",
+);
+console.log(
+  "REST API does NOT include trackedIssues or trackedInIssues fields.",
+);
 console.log();
 
 console.log("TO PROVE THE FIX WORKS:");

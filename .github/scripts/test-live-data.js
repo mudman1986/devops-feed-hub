@@ -150,7 +150,9 @@ console.log(`  Title: ${issue80.title}`);
 console.log(`  Is sub-issue: ${parsed80.isSubIssue}`);
 console.log(`  Has sub-issues: ${parsed80.hasSubIssues}`);
 console.log(`  Should skip: ${result80.shouldSkip}`);
-console.log(`  Reason: ${result80.reason || "None - sub-issues can be assigned"}`);
+console.log(
+  `  Reason: ${result80.reason || "None - sub-issues can be assigned"}`,
+);
 console.log(
   `  ✅ PASS: Issue #80 is correctly ${result80.shouldSkip ? "SKIPPED" : "ASSIGNABLE"}`,
 );
@@ -163,11 +165,11 @@ const bugIssues = liveIssues.filter((issue) =>
   issue.labels.nodes.some((l) => l.name === "bug"),
 );
 console.log(`  Total bug issues: ${bugIssues.length}`);
-console.log(
-  `  Issues: ${bugIssues.map((i) => "#" + i.number).join(", ")}`,
-);
+console.log(`  Issues: ${bugIssues.map((i) => "#" + i.number).join(", ")}`);
 const assignable = helpers.findAssignableIssue(bugIssues, false);
-console.log(`  Selected issue: ${assignable ? "#" + assignable.number : "null"}`);
+console.log(
+  `  Selected issue: ${assignable ? "#" + assignable.number : "null"}`,
+);
 console.log(
   `  Expected: null (all bug issues are either assigned or have sub-issues)`,
 );
@@ -180,7 +182,9 @@ console.log();
 console.log("Test 7: findAssignableIssue with all open issues");
 console.log("-".repeat(80));
 const assignableAll = helpers.findAssignableIssue(liveIssues, false);
-console.log(`  Selected issue: ${assignableAll ? "#" + assignableAll.number : "null"}`);
+console.log(
+  `  Selected issue: ${assignableAll ? "#" + assignableAll.number : "null"}`,
+);
 console.log(
   `  Expected: #114 (skips #79, #73, #115; #80 is also assignable but #114 comes first)`,
 );
@@ -193,7 +197,9 @@ console.log();
 console.log("Test 8: Issue #79 with allowParentIssues=true");
 console.log("-".repeat(80));
 const result79Override = helpers.shouldSkipIssue(parsed79, true);
-console.log(`  Should skip (allowParentIssues=true): ${result79Override.shouldSkip}`);
+console.log(
+  `  Should skip (allowParentIssues=true): ${result79Override.shouldSkip}`,
+);
 console.log(
   `  Reason: ${result79Override.reason || "None - parent issues allowed"}`,
 );

@@ -74,18 +74,18 @@ console.log("Parsed data:", JSON.stringify(parsed79, null, 2));
 
 const result79_noallow = helpers.shouldSkipIssue(parsed79, false);
 console.log(
-  `\nWith allowParentIssues=false: shouldSkip=${result79_noallow.shouldSkip}, reason="${result79_noallow.reason}"`
+  `\nWith allowParentIssues=false: shouldSkip=${result79_noallow.shouldSkip}, reason="${result79_noallow.reason}"`,
 );
 console.log(
-  `✅ EXPECTED: shouldSkip=true, reason="has sub-issues" - ${result79_noallow.shouldSkip === true && result79_noallow.reason === "has sub-issues" ? "PASS" : "FAIL"}`
+  `✅ EXPECTED: shouldSkip=true, reason="has sub-issues" - ${result79_noallow.shouldSkip === true && result79_noallow.reason === "has sub-issues" ? "PASS" : "FAIL"}`,
 );
 
 const result79_allow = helpers.shouldSkipIssue(parsed79, true);
 console.log(
-  `\nWith allowParentIssues=true: shouldSkip=${result79_allow.shouldSkip}, reason="${result79_allow.reason}"`
+  `\nWith allowParentIssues=true: shouldSkip=${result79_allow.shouldSkip}, reason="${result79_allow.reason}"`,
 );
 console.log(
-  `✅ EXPECTED: shouldSkip=false - ${result79_allow.shouldSkip === false ? "PASS" : "FAIL"}`
+  `✅ EXPECTED: shouldSkip=false - ${result79_allow.shouldSkip === false ? "PASS" : "FAIL"}`,
 );
 
 console.log("\n\nTest 2: Issue #114 with no sub-issues");
@@ -95,10 +95,10 @@ console.log("Parsed data:", JSON.stringify(parsed114, null, 2));
 
 const result114 = helpers.shouldSkipIssue(parsed114, false);
 console.log(
-  `\nWith allowParentIssues=false: shouldSkip=${result114.shouldSkip}, reason="${result114.reason}"`
+  `\nWith allowParentIssues=false: shouldSkip=${result114.shouldSkip}, reason="${result114.reason}"`,
 );
 console.log(
-  `✅ EXPECTED: shouldSkip=false - ${result114.shouldSkip === false ? "PASS" : "FAIL"}`
+  `✅ EXPECTED: shouldSkip=false - ${result114.shouldSkip === false ? "PASS" : "FAIL"}`,
 );
 
 console.log("\n\nTest 3: Issue #115 already assigned");
@@ -108,41 +108,51 @@ console.log("Parsed data:", JSON.stringify(parsed115, null, 2));
 
 const result115 = helpers.shouldSkipIssue(parsed115, false);
 console.log(
-  `\nWith allowParentIssues=false: shouldSkip=${result115.shouldSkip}, reason="${result115.reason}"`
+  `\nWith allowParentIssues=false: shouldSkip=${result115.shouldSkip}, reason="${result115.reason}"`,
 );
 console.log(
-  `✅ EXPECTED: shouldSkip=true, reason="already assigned" - ${result115.shouldSkip === true && result115.reason === "already assigned" ? "PASS" : "FAIL"}`
+  `✅ EXPECTED: shouldSkip=true, reason="already assigned" - ${result115.shouldSkip === true && result115.reason === "already assigned" ? "PASS" : "FAIL"}`,
 );
 
 console.log("\n\nTest 4: findAssignableIssue with mixed list");
 console.log("=============================================");
-const mixedIssues = [issue79WithSubIssues, issue115Assigned, issue114NoSubIssues];
+const mixedIssues = [
+  issue79WithSubIssues,
+  issue115Assigned,
+  issue114NoSubIssues,
+];
 
 const assignable = helpers.findAssignableIssue(mixedIssues, false);
 console.log(
-  `Found assignable issue: #${assignable ? assignable.number : "none"} - ${assignable ? assignable.title : "N/A"}`
+  `Found assignable issue: #${assignable ? assignable.number : "none"} - ${assignable ? assignable.title : "N/A"}`,
 );
 console.log(
-  `✅ EXPECTED: #114 - ${assignable && assignable.number === 114 ? "PASS" : "FAIL"}`
+  `✅ EXPECTED: #114 - ${assignable && assignable.number === 114 ? "PASS" : "FAIL"}`,
 );
 
 const assignableWithParents = helpers.findAssignableIssue(mixedIssues, true);
 console.log(
-  `\nWith allowParentIssues=true: #${assignableWithParents ? assignableWithParents.number : "none"}`
+  `\nWith allowParentIssues=true: #${assignableWithParents ? assignableWithParents.number : "none"}`,
 );
 console.log(
-  `✅ EXPECTED: #79 (first unassigned) - ${assignableWithParents && assignableWithParents.number === 79 ? "PASS" : "FAIL"}`
+  `✅ EXPECTED: #79 (first unassigned) - ${assignableWithParents && assignableWithParents.number === 79 ? "PASS" : "FAIL"}`,
 );
 
 console.log("\n\n=== SUMMARY ===");
 console.log("Documentation URLs:");
-console.log("- trackedIssues API: https://gist.github.com/chanakyabhardwajj/e389f9ed061471a2b6975aa1109b1f40");
+console.log(
+  "- trackedIssues API: https://gist.github.com/chanakyabhardwajj/e389f9ed061471a2b6975aa1109b1f40",
+);
 console.log("- GitHub GraphQL Docs: https://docs.github.com/en/graphql");
-console.log("- GraphQL Queries: https://docs.github.com/en/graphql/reference/queries");
+console.log(
+  "- GraphQL Queries: https://docs.github.com/en/graphql/reference/queries",
+);
 console.log("\nFeature Flag (if needed):");
 console.log("- Header: GraphQL-Features: tracked_issues_graphql_access");
 console.log("\nSolution:");
-console.log("✅ Use trackedIssues.totalCount from GraphQL (single source of truth)");
+console.log(
+  "✅ Use trackedIssues.totalCount from GraphQL (single source of truth)",
+);
 console.log("✅ Skip issues with ANY sub-issues (open or closed) by default");
 console.log("✅ Allow override with allowParentIssues=true parameter");
 console.log("✅ Removed 216 lines of unreliable REST/body-parsing code");

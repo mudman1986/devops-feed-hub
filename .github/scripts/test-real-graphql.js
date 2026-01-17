@@ -64,7 +64,7 @@ async function testRealGraphQL() {
         owner,
         repo,
         issueNumber,
-      }
+      },
     );
 
     const issue = result.repository.issue;
@@ -80,8 +80,8 @@ async function testRealGraphQL() {
           trackedInIssues: issue.trackedInIssues,
         },
         null,
-        2
-      )
+        2,
+      ),
     );
 
     // Parse using the actual script function
@@ -99,7 +99,7 @@ async function testRealGraphQL() {
     // Check if it would be skipped
     const { shouldSkip, reason } = helpers.shouldSkipIssue(
       parsed,
-      false // allowParentIssues = false
+      false, // allowParentIssues = false
     );
     console.log(`\nWould be skipped: ${shouldSkip}`);
     if (shouldSkip) {
@@ -151,13 +151,15 @@ async function testRealGraphQL() {
     tests.forEach((test) => {
       const status = test.pass ? "✅ PASS" : "❌ FAIL";
       console.log(
-        `${status}: ${test.name} (actual: ${JSON.stringify(test.actual)}, expected: ${JSON.stringify(test.expected)})`
+        `${status}: ${test.name} (actual: ${JSON.stringify(test.actual)}, expected: ${JSON.stringify(test.expected)})`,
       );
       if (!test.pass) allPassed = false;
     });
 
     if (allPassed) {
-      console.log("\n🎉 ALL TESTS PASSED - Script correctly detects sub-issues!");
+      console.log(
+        "\n🎉 ALL TESTS PASSED - Script correctly detects sub-issues!",
+      );
       process.exit(0);
     } else {
       console.log("\n❌ SOME TESTS FAILED - Sub-issue detection is broken!");
