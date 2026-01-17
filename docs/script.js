@@ -533,7 +533,7 @@ function updateFeedCountsAfterReadFilter() {
     }
 
     const articleList = section.querySelector(".article-list");
-    
+
     // Handle feeds with no article list (empty feeds with 0 articles across all timeframes)
     if (!articleList) {
       const heading = section.querySelector("h3");
