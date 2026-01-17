@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sat, 17 Jan 2026 19:58:03 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 17 Jan 2026 20:26:48 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>How tech leaders can turn AI hype into real team productivity</title>
@@ -664,13 +664,6 @@
       <guid isPermaLink="true">https://www.docker.com/blog/docker-hardened-images-security-independently-validated-by-srlabs/</guid>
       <pubDate>Fri, 19 Dec 2025 13:50:24 +0000</pubDate>
       <source>Docker Blog</source>
-    </item>
-    <item>
-      <title>Terraform adds native monorepo support, Stack component configurations, and more</title>
-      <link>https://www.hashicorp.com/blog/terraform-adds-native-monorepo-support-stack-component-configurations-and-more</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/terraform-adds-native-monorepo-support-stack-component-configurations-and-more</guid>
-      <pubDate>Thu, 18 Dec 2025 20:00:00 +0000</pubDate>
-      <source>HashiCorp Blog</source>
     </item>
   </channel>
 </rss>
