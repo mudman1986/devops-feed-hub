@@ -19,7 +19,6 @@ describe("shouldSkipIssue", () => {
       isAssigned: true,
       hasSubIssues: false,
       isSubIssue: false,
-      isRefactorIssue: false,
     };
     const result = shouldSkipIssue(issue);
     expect(result.shouldSkip).toBe(true);
@@ -30,7 +29,6 @@ describe("shouldSkipIssue", () => {
     const issue = {
       isAssigned: false,
       hasSubIssues: true,
-      isRefactorIssue: false,
     };
     const result = shouldSkipIssue(issue);
     expect(result.shouldSkip).toBe(true);
@@ -42,29 +40,26 @@ describe("shouldSkipIssue", () => {
     const issue = {
       isAssigned: false,
       hasSubIssues: false,
-      isRefactorIssue: false,
     };
     const result = shouldSkipIssue(issue);
     expect(result.shouldSkip).toBe(false);
     expect(result.reason).toBeNull();
   });
 
-  test("should skip refactor issues", () => {
-    const issue = {
-      isAssigned: false,
-      hasSubIssues: false,
-      isRefactorIssue: true,
-    };
-    const result = shouldSkipIssue(issue);
-    expect(result.shouldSkip).toBe(true);
-    expect(result.reason).toBe("is a refactor issue");
-  });
-
   test("should not skip valid unassigned issues", () => {
     const issue = {
       isAssigned: false,
       hasSubIssues: false,
-      isRefactorIssue: false,
+    };
+    const result = shouldSkipIssue(issue);
+    expect(result.shouldSkip).toBe(false);
+    expect(result.reason).toBeNull();
+  });
+
+  test("should not skip refactor issues", () => {
+    const issue = {
+      isAssigned: false,
+      hasSubIssues: false,
     };
     const result = shouldSkipIssue(issue);
     expect(result.shouldSkip).toBe(false);
@@ -76,7 +71,6 @@ describe("shouldSkipIssue", () => {
     const issue = {
       isAssigned: true,
       hasSubIssues: true,
-      isRefactorIssue: true,
     };
     const result = shouldSkipIssue(issue);
     expect(result.shouldSkip).toBe(true);
@@ -580,9 +574,7 @@ describe("hasSubIssuesViaREST", () => {
 
   test("should return false when REST API call fails", async () => {
     const mockGithub = {
-      request: jest
-        .fn()
-        .mockRejectedValue(new Error("API endpoint not found")),
+      request: jest.fn().mockRejectedValue(new Error("API endpoint not found")),
     };
 
     // Suppress console.log for this test

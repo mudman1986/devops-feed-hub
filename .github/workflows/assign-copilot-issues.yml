@@ -321,7 +321,7 @@ jobs:
              */
             async function assignNextIssue(labelOverride) {
               // Define label priority
-              const labelPriority = labelOverride ? [labelOverride] : ['bug', 'documentation', 'enhancement'];
+              const labelPriority = labelOverride ? [labelOverride] : ['bug', 'documentation', 'refactor', 'enhancement'];
 
               let issueToAssign = null;
 

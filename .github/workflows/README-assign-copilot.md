@@ -41,8 +41,9 @@ Issues are assigned based on the following priority order:
 
 1. **bug** - Highest priority
 2. **documentation** - Second priority
-3. **enhancement** - Third priority
-4. **Other labels** - Issues without the above labels are considered last
+3. **refactor** - Third priority
+4. **enhancement** - Fourth priority
+5. **Other labels** - Issues without the above labels are considered last
 
 ## Assignment Rules
 
@@ -52,8 +53,6 @@ The workflow will **NOT** assign an issue if:
 - The issue has sub-issues (tracked issues)
   - **Note**: The workflow uses both GitHub's GraphQL API (`trackedIssues`) and REST API (`/repos/{owner}/{repo}/issues/{issue_number}/sub-issues`) to detect sub-issues. This dual-check ensures reliable detection even when GraphQL reports inconsistent results.
 - The issue is already assigned to someone else
-
-**Note**: The workflow also skips issues labeled with `refactor` in auto mode. This is defensive programming to prevent accidentally reassigning workflow-created refactor issues if they become unassigned. In practice, this check is redundant because the "Copilot already assigned" check prevents this scenario.
 
 ## Workflow Logic
 
@@ -78,9 +77,8 @@ The workflow prevents conflicts between refactor and regular issue assignment us
 
 1. **Issue number-based scheduling**: Refactor issues are created when a closed issue number ends in 0 or 5 (approximately every 5 issues)
 2. **No disruption**: If Copilot is busy when it's time for a refactor, the refactor creation is skipped - it will be attempted again at the next qualifying issue number
-3. **Refactor label distinction**: Refactor issues are labeled with `refactor`
-4. **Auto mode skips refactor issues**: Auto mode skips issues with the `refactor` label to prevent circular assignment
-5. **Sequential execution**: Only one assignment happens at a time (no parallel assignments)
+3. **Refactor label distinction**: Refactor issues are labeled with `refactor` and are assigned with third priority (after bug and documentation)
+4. **Sequential execution**: Only one assignment happens at a time (no parallel assignments)
 
 This approach ensures a healthy mix of regular work and refactoring without complex scheduling or disrupting ongoing work.
 

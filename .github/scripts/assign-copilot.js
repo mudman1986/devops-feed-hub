@@ -12,7 +12,6 @@
  * @param {Object} issue - Issue object from GitHub GraphQL API
  * @param {boolean} issue.isAssigned - Whether issue already has assignees
  * @param {boolean} issue.hasSubIssues - Whether issue has tracked sub-issues
- * @param {boolean} issue.isRefactorIssue - Whether issue has refactor label
  * @returns {Object} - {shouldSkip: boolean, reason: string}
  */
 function shouldSkipIssue(issue) {
@@ -21,9 +20,6 @@ function shouldSkipIssue(issue) {
   }
   if (issue.hasSubIssues) {
     return { shouldSkip: true, reason: "has sub-issues" };
-  }
-  if (issue.isRefactorIssue) {
-    return { shouldSkip: true, reason: "is a refactor issue" };
   }
   return { shouldSkip: false, reason: null };
 }
