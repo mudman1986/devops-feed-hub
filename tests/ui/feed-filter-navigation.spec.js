@@ -95,7 +95,8 @@ test.describe("Feed Filter Navigation Tests", () => {
           const h3 = section.querySelector("h3");
           const firstChild = h3?.childNodes[0];
           const name = firstChild ? firstChild.textContent.trim() : "";
-          const countText = section.querySelector(".feed-count")?.textContent || "";
+          const countText =
+            section.querySelector(".feed-count")?.textContent || "";
           const count = parseInt(countText.match(/(\d+)/)?.[1] || "0");
 
           feedData.push({ name, count, index });
