@@ -386,7 +386,7 @@ jobs:
                 console.log(`  Checking for sub-issues via REST API timeline...`);
                 for (const issue of issues.repository.issues.nodes) {
                   try {
-                    // Get timeline to find child issues (sub-issues reference parent with "parent_issue" in timeline)
+                    // Get timeline to find child issues (sub-issues reference parent)
                     const { data: timeline } = await github.rest.issues.listEventsForTimeline({
                       owner: context.repo.owner,
                       repo: context.repo.repo,
@@ -396,15 +396,18 @@ jobs:
                     
                     console.log(`    #${issue.number}: Checking ${timeline.length} timeline events`);
                     
-                    // Look for cross-references from other issues that indicate this is a parent
-                    // Sub-issues will cross-reference the parent issue
-                    const crossRefs = timeline.filter(event => 
+                    // Look for cross-references from OTHER issues (potential sub-issues)
+                    // Filter to only count references FROM other issues TO this issue
+                    // Heuristic: sub-issues typically have higher numbers (created later)
+                    const incomingRefs = timeline.filter(event => 
                       event.event === 'cross-referenced' && 
                       event.source && 
-                      event.source.issue
+                      event.source.issue &&
+                      event.source.issue.number !== issue.number && // Not self-reference
+                      event.source.issue.number > issue.number // Sub-issues created after parent
                     );
                     
-                    console.log(`    #${issue.number}: Found ${crossRefs.length} cross-references`);
+                    console.log(`    #${issue.number}: Found ${incomingRefs.length} incoming cross-references from higher-numbered issues`);
                     
                     // Also check the issue body for tasklist items which indicate sub-issues
                     const bodyHasTasklist = issue.body && (
@@ -413,9 +416,9 @@ jobs:
                       issue.body.includes('- [X]')
                     );
                     
-                    if (crossRefs.length > 0) {
-                      console.log(`    #${issue.number}: Has ${crossRefs.length} cross-referenced issues - marking as parent`);
-                      issue.trackedIssues = { totalCount: crossRefs.length };
+                    if (incomingRefs.length > 0) {
+                      console.log(`    #${issue.number}: Has ${incomingRefs.length} potential sub-issues - marking as parent`);
+                      issue.trackedIssues = { totalCount: incomingRefs.length };
                     } else if (bodyHasTasklist) {
                       console.log(`    #${issue.number}: Has tasklist in body - marking as parent`);
                       issue.trackedIssues = { totalCount: 1 };
@@ -504,13 +507,16 @@ jobs:
                     
                     console.log(`    #${issue.number}: Checking ${timeline.length} timeline events`);
                     
-                    const crossRefs = timeline.filter(event => 
+                    // Filter to only count incoming references from higher-numbered issues (potential sub-issues)
+                    const incomingRefs = timeline.filter(event => 
                       event.event === 'cross-referenced' && 
                       event.source && 
-                      event.source.issue
+                      event.source.issue &&
+                      event.source.issue.number !== issue.number &&
+                      event.source.issue.number > issue.number
                     );
                     
-                    console.log(`    #${issue.number}: Found ${crossRefs.length} cross-references`);
+                    console.log(`    #${issue.number}: Found ${incomingRefs.length} incoming cross-references from higher-numbered issues`);
                     
                     const bodyHasTasklist = issue.body && (
                       issue.body.includes('- [ ]') || 
@@ -518,9 +524,9 @@ jobs:
                       issue.body.includes('- [X]')
                     );
                     
-                    if (crossRefs.length > 0) {
-                      console.log(`    #${issue.number}: Has ${crossRefs.length} cross-referenced issues - marking as parent`);
-                      issue.trackedIssues = { totalCount: crossRefs.length };
+                    if (incomingRefs.length > 0) {
+                      console.log(`    #${issue.number}: Has ${incomingRefs.length} potential sub-issues - marking as parent`);
+                      issue.trackedIssues = { totalCount: incomingRefs.length };
                     } else if (bodyHasTasklist) {
                       console.log(`    #${issue.number}: Has tasklist in body - marking as parent`);
                       issue.trackedIssues = { totalCount: 1 };
