@@ -179,7 +179,7 @@ jobs:
             // Filter issues to find those assigned to copilot
             const allIssues = allIssuesResponse.repository.issues.nodes;
             console.log(`Found ${allIssues.length} total open issues`);
-            
+
             const currentIssues = allIssues.filter(issue => 
               issue.assignees.nodes.some(assignee => 
                 assignee.login === copilotLogin || assignee.id === copilotBotId
