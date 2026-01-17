@@ -9,16 +9,17 @@
 
 /**
  * Check if an issue should be skipped for assignment
- * @param {Object} issue - Issue object from GitHub GraphQL API
+ * @param {Object} issue - Issue object from parseIssueData
  * @param {boolean} issue.isAssigned - Whether issue already has assignees
- * @param {boolean} issue.hasSubIssues - Whether issue has tracked sub-issues
+ * @param {boolean} issue.hasSubIssues - Whether issue has any sub-issues (open or closed)
+ * @param {boolean} allowParentIssues - Whether to allow assigning issues with sub-issues
  * @returns {Object} - {shouldSkip: boolean, reason: string}
  */
-function shouldSkipIssue(issue) {
+function shouldSkipIssue(issue, allowParentIssues = false) {
   if (issue.isAssigned) {
     return { shouldSkip: true, reason: "already assigned" };
   }
-  if (issue.hasSubIssues) {
+  if (issue.hasSubIssues && !allowParentIssues) {
     return { shouldSkip: true, reason: "has sub-issues" };
   }
   return { shouldSkip: false, reason: null };
@@ -100,6 +101,7 @@ function parseIssueData(issue) {
     url: issue.url,
     body: issue.body || "",
     isAssigned: issue.assignees.nodes.length > 0,
+    // Check for ANY sub-issues (open or closed) - parent issues should not be assigned
     hasSubIssues: !!(issue.trackedIssues && issue.trackedIssues.totalCount > 0),
     isSubIssue: !!(
       issue.trackedInIssues && issue.trackedInIssues.totalCount > 0
@@ -111,13 +113,14 @@ function parseIssueData(issue) {
 
 /**
  * Find the first assignable issue from a list
- * @param {Array} issues - Array of issue objects
+ * @param {Array} issues - Array of issue objects from GraphQL
+ * @param {boolean} allowParentIssues - Whether to allow assigning issues with sub-issues (open or closed)
  * @returns {Object|null} - First assignable issue or null
  */
-function findAssignableIssue(issues) {
+function findAssignableIssue(issues, allowParentIssues = false) {
   for (const issue of issues) {
     const parsed = parseIssueData(issue);
-    const { shouldSkip } = shouldSkipIssue(parsed);
+    const { shouldSkip } = shouldSkipIssue(parsed, allowParentIssues);
 
     if (!shouldSkip) {
       return parsed;
@@ -127,6 +130,7 @@ function findAssignableIssue(issues) {
 }
 
 /**
+ * @deprecated This function is no longer used. Use GraphQL trackedIssues totalCount instead.
  * Parse issue body for tasklist items that reference other issues
  * @param {string} body - Issue body text
  * @returns {Array<number>} - Array of issue numbers referenced in tasklists
@@ -153,6 +157,7 @@ function parseTasklistIssues(body) {
 }
 
 /**
+ * @deprecated This function is no longer used. Use GraphQL trackedIssues totalCount instead.
  * Check if an issue has sub-issues by parsing issue body for tasklists
  * @param {string} body - Issue body text
  * @returns {boolean} - True if issue has tasklist items with issue references
@@ -163,6 +168,7 @@ function hasSubIssuesInBody(body) {
 }
 
 /**
+ * @deprecated This function is no longer used. Use GraphQL trackedIssues totalCount instead.
  * Check if an issue has sub-issues using REST API
  * @param {Object} github - GitHub Octokit client
  * @param {string} owner - Repository owner
@@ -222,6 +228,7 @@ async function hasSubIssuesViaREST(github, owner, repo, issueNumber, body) {
 }
 
 /**
+ * @deprecated This function is no longer used. Use findAssignableIssue with allowParentIssues parameter instead.
  * Find the first assignable issue from a list, with REST API sub-issue verification
  * @param {Array} issues - Array of issue objects from GraphQL
  * @param {Object} github - GitHub REST API client (octokit)

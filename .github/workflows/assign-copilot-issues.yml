@@ -35,6 +35,11 @@ on:
         required: false
         type: boolean
         default: false
+      allow_parent_issues:
+        description: "Allow assigning issues that have sub-issues (open or closed)"
+        required: false
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -107,8 +112,9 @@ jobs:
             const labelOverride = '${{ inputs.label }}' || null;
             const force = '${{ inputs.force }}' === 'true';
             const dryRun = '${{ inputs.dry_run }}' === 'true';
+            const allowParentIssues = '${{ inputs.allow_parent_issues }}' === 'true';
 
-            console.log(`Running in ${mode} mode, force=${force}, labelOverride=${labelOverride}, dryRun=${dryRun}`);
+            console.log(`Running in ${mode} mode, force=${force}, labelOverride=${labelOverride}, dryRun=${dryRun}, allowParentIssues=${allowParentIssues}`);
 
             // Load helper functions
             const fs = require('fs');
@@ -361,12 +367,10 @@ jobs:
                   label: label
                 });
 
-                // Find first assignable issue using helper function with REST API check
-                const assignable = await helpers.findAssignableIssueWithRESTCheck(
+                // Find first assignable issue using simplified helper function
+                const assignable = helpers.findAssignableIssue(
                   issues.repository.issues.nodes,
-                  github,
-                  context.repo.owner,
-                  context.repo.repo
+                  allowParentIssues
                 );
                 if (assignable) {
                   issueToAssign = assignable;
@@ -377,7 +381,7 @@ jobs:
                 // Log skipped issues for debugging
                 issues.repository.issues.nodes.forEach(issue => {
                   const parsed = helpers.parseIssueData(issue);
-                  const { shouldSkip, reason } = helpers.shouldSkipIssue(parsed);
+                  const { shouldSkip, reason } = helpers.shouldSkipIssue(parsed, allowParentIssues);
                   console.log(`  Issue ${context.repo.owner}/${context.repo.repo}#${issue.number}: ${issue.title}`);
                   console.log(`    - Assigned: ${parsed.isAssigned}, HasSubIssues: ${parsed.hasSubIssues}, IsSubIssue: ${parsed.isSubIssue}, Refactor: ${parsed.isRefactorIssue}`);
                   if (shouldSkip) {
@@ -427,11 +431,9 @@ jobs:
                   return !hasPriorityLabel;
                 });
 
-                issueToAssign = await helpers.findAssignableIssueWithRESTCheck(
+                issueToAssign = helpers.findAssignableIssue(
                   nonPriorityIssues,
-                  github,
-                  context.repo.owner,
-                  context.repo.repo
+                  allowParentIssues
                 );
                 if (issueToAssign) {
                   console.log(`Found issue to assign: ${context.repo.owner}/${context.repo.repo}#${issueToAssign.number}`);
