@@ -902,7 +902,13 @@ describe("hasSubIssuesViaREST with body fallback", () => {
     };
 
     const body = "Issue with no tasklist";
-    const result = await hasSubIssuesViaREST(mockGithub, "owner", "repo", 79, body);
+    const result = await hasSubIssuesViaREST(
+      mockGithub,
+      "owner",
+      "repo",
+      79,
+      body,
+    );
     expect(result).toBe(true);
     expect(mockGithub.request).toHaveBeenCalled();
   });
@@ -920,7 +926,13 @@ describe("hasSubIssuesViaREST with body fallback", () => {
     // Suppress console.log for this test
     const consoleSpy = jest.spyOn(console, "log").mockImplementation();
 
-    const result = await hasSubIssuesViaREST(mockGithub, "owner", "repo", 79, body);
+    const result = await hasSubIssuesViaREST(
+      mockGithub,
+      "owner",
+      "repo",
+      79,
+      body,
+    );
     expect(result).toBe(true); // Has sub-issues based on body parsing
     expect(mockGithub.request).toHaveBeenCalled();
 
@@ -937,7 +949,13 @@ describe("hasSubIssuesViaREST with body fallback", () => {
     // Suppress console.log for this test
     const consoleSpy = jest.spyOn(console, "log").mockImplementation();
 
-    const result = await hasSubIssuesViaREST(mockGithub, "owner", "repo", 79, body);
+    const result = await hasSubIssuesViaREST(
+      mockGithub,
+      "owner",
+      "repo",
+      79,
+      body,
+    );
     expect(result).toBe(false); // No sub-issues based on body parsing
     expect(mockGithub.request).toHaveBeenCalled();
 
@@ -952,7 +970,13 @@ describe("hasSubIssuesViaREST with body fallback", () => {
     // Suppress console.log for this test
     const consoleSpy = jest.spyOn(console, "log").mockImplementation();
 
-    const result = await hasSubIssuesViaREST(mockGithub, "owner", "repo", 79, null);
+    const result = await hasSubIssuesViaREST(
+      mockGithub,
+      "owner",
+      "repo",
+      79,
+      null,
+    );
     expect(result).toBe(true); // Safety measure - skip when we can't verify
     expect(mockGithub.request).toHaveBeenCalled();
 
@@ -1056,13 +1080,21 @@ describe("hasSubIssuesViaREST - 404 handling", () => {
 
   test("should return false when REST API returns 404 (no sub-issues)", async () => {
     const mockGithub = {
-      request: jest.fn().mockRejectedValue({ status: 404, message: "Not Found" }),
+      request: jest
+        .fn()
+        .mockRejectedValue({ status: 404, message: "Not Found" }),
     };
 
     // Suppress console.log for this test
     const consoleSpy = jest.spyOn(console, "log").mockImplementation();
 
-    const result = await hasSubIssuesViaREST(mockGithub, "owner", "repo", 100, "Issue body");
+    const result = await hasSubIssuesViaREST(
+      mockGithub,
+      "owner",
+      "repo",
+      100,
+      "Issue body",
+    );
     expect(result).toBe(false); // 404 means no sub-issues, issue is assignable
     expect(mockGithub.request).toHaveBeenCalled();
 
@@ -1071,7 +1103,9 @@ describe("hasSubIssuesViaREST - 404 handling", () => {
 
   test("should use body fallback when REST API returns non-404 error", async () => {
     const mockGithub = {
-      request: jest.fn().mockRejectedValue({ status: 500, message: "Internal Server Error" }),
+      request: jest
+        .fn()
+        .mockRejectedValue({ status: 500, message: "Internal Server Error" }),
     };
 
     const body = `
@@ -1082,7 +1116,13 @@ describe("hasSubIssuesViaREST - 404 handling", () => {
     // Suppress console.log for this test
     const consoleSpy = jest.spyOn(console, "log").mockImplementation();
 
-    const result = await hasSubIssuesViaREST(mockGithub, "owner", "repo", 79, body);
+    const result = await hasSubIssuesViaREST(
+      mockGithub,
+      "owner",
+      "repo",
+      79,
+      body,
+    );
     expect(result).toBe(true); // Has sub-issues based on body parsing
     expect(mockGithub.request).toHaveBeenCalled();
 
@@ -1111,7 +1151,9 @@ describe("Bug fix validation - Issue #79 with 404", () => {
 
     // Mock REST API that returns 404 (no sub-issues)
     const mockGithub = {
-      request: jest.fn().mockRejectedValue({ status: 404, message: "Not Found" }),
+      request: jest
+        .fn()
+        .mockRejectedValue({ status: 404, message: "Not Found" }),
     };
 
     // Suppress console.log for this test
@@ -1162,7 +1204,9 @@ describe("Bug fix validation - Issue #79 with 404", () => {
 
     // Mock REST API that returns 404 (API says no sub-issues, but body has tasklists)
     const mockGithub = {
-      request: jest.fn().mockRejectedValue({ status: 404, message: "Not Found" }),
+      request: jest
+        .fn()
+        .mockRejectedValue({ status: 404, message: "Not Found" }),
     };
 
     // Suppress console.log for this test

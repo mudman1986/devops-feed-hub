@@ -197,12 +197,12 @@ async function hasSubIssuesViaREST(github, owner, repo, issueNumber, body) {
       );
       return false; // No sub-issues, issue is assignable
     }
-    
+
     // Other errors (permissions, network, etc.) - fall back to parsing issue body
     console.log(
       `Warning: Could not check sub-issues via REST API for ${owner}/${repo}#${issueNumber}: ${error.message}`,
     );
-    
+
     // Fallback: Parse issue body for tasklist items
     if (body) {
       const hasSubIssues = hasSubIssuesInBody(body);
@@ -218,7 +218,7 @@ async function hasSubIssuesViaREST(github, owner, repo, issueNumber, body) {
       }
       return hasSubIssues;
     }
-    
+
     // If no body available, err on the side of caution
     console.log(
       `  Skipping issue #${issueNumber} as a safety measure - cannot verify sub-issue status`,
