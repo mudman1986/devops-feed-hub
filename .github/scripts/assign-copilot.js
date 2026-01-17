@@ -148,12 +148,15 @@ async function hasSubIssuesViaREST(github, owner, repo, issueNumber) {
     );
     return response.data && response.data.length > 0;
   } catch (error) {
-    // If endpoint doesn't exist or fails, fall back to assuming no sub-issues
-    // This can happen if the REST API endpoint is not available or access is denied
+    // If endpoint doesn't exist or fails, err on the side of caution and skip the issue
+    // This prevents assigning issues when we cannot verify they have no sub-issues
     console.log(
       `Warning: Could not check sub-issues for #${issueNumber}: ${error.message}`,
     );
-    return false;
+    console.log(
+      `  Skipping issue #${issueNumber} as a safety measure - cannot verify sub-issue status`,
+    );
+    return true; // Treat as "has sub-issues" to skip assignment
   }
 }
 

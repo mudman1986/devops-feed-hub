@@ -442,6 +442,64 @@ describe("Bug reproduction tests", () => {
       },
     );
   });
+
+  test("Bug #4: GraphQL trackedIssues returns 0 and REST API fails with Not Found", async () => {
+    // Issue 79 has sub-issues but GraphQL reports 0 and REST API fails
+    const issue79 = {
+      id: "issue-79",
+      number: 79,
+      title: "Bugs",
+      url: "https://github.com/mudman1986/devops-feed-hub/issues/79",
+      assignees: { nodes: [] },
+      trackedIssues: { totalCount: 0 }, // GraphQL reports 0
+      trackedInIssues: { totalCount: 0 },
+      labels: { nodes: [{ name: "bug" }] },
+    };
+
+    // Mock GitHub REST API that fails (like in the real scenario)
+    const mockGithub = {
+      request: jest.fn().mockRejectedValue(new Error("Not Found")),
+    };
+
+    const {
+      hasSubIssuesViaREST,
+      findAssignableIssueWithRESTCheck,
+    } = require("./assign-copilot.js");
+
+    // Suppress console.log for this test
+    const consoleSpy = jest.spyOn(console, "log").mockImplementation();
+
+    // Test hasSubIssuesViaREST - should return true (skip issue as safety measure)
+    const hasSubIssues = await hasSubIssuesViaREST(
+      mockGithub,
+      "mudman1986",
+      "devops-feed-hub",
+      79,
+    );
+    expect(hasSubIssues).toBe(true); // Changed: now returns true when API fails
+
+    // Test findAssignableIssueWithRESTCheck
+    const result = await findAssignableIssueWithRESTCheck(
+      [issue79],
+      mockGithub,
+      "mudman1986",
+      "devops-feed-hub",
+    );
+    expect(result).toBeNull(); // Should skip issue 79 when we can't verify
+
+    // Verify the REST API was called
+    expect(mockGithub.request).toHaveBeenCalledWith(
+      "GET /repos/{owner}/{repo}/issues/{issue_number}/sub-issues",
+      {
+        owner: "mudman1986",
+        repo: "devops-feed-hub",
+        issue_number: 79,
+        per_page: 1,
+      },
+    );
+
+    consoleSpy.mockRestore();
+  });
 });
 
 describe("normalizeIssueLabels", () => {
@@ -572,7 +630,7 @@ describe("hasSubIssuesViaREST", () => {
     expect(result).toBe(false);
   });
 
-  test("should return false when REST API call fails", async () => {
+  test("should return true when REST API call fails (safety measure)", async () => {
     const mockGithub = {
       request: jest.fn().mockRejectedValue(new Error("API endpoint not found")),
     };
@@ -581,7 +639,7 @@ describe("hasSubIssuesViaREST", () => {
     const consoleSpy = jest.spyOn(console, "log").mockImplementation();
 
     const result = await hasSubIssuesViaREST(mockGithub, "owner", "repo", 100);
-    expect(result).toBe(false);
+    expect(result).toBe(true); // Changed to true - skip issue when we can't verify
 
     consoleSpy.mockRestore();
   });
