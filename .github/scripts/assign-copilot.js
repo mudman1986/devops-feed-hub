@@ -12,7 +12,6 @@
  * @param {Object} issue - Issue object from GitHub GraphQL API
  * @param {boolean} issue.isAssigned - Whether issue already has assignees
  * @param {boolean} issue.hasSubIssues - Whether issue has tracked sub-issues
- * @param {boolean} issue.isRefactorIssue - Whether issue has refactor label
  * @returns {Object} - {shouldSkip: boolean, reason: string}
  */
 function shouldSkipIssue(issue) {
@@ -21,9 +20,6 @@ function shouldSkipIssue(issue) {
   }
   if (issue.hasSubIssues) {
     return { shouldSkip: true, reason: "has sub-issues" };
-  }
-  if (issue.isRefactorIssue) {
-    return { shouldSkip: true, reason: "is a refactor issue" };
   }
   return { shouldSkip: false, reason: null };
 }
@@ -129,10 +125,84 @@ function findAssignableIssue(issues) {
   return null;
 }
 
+/**
+ * Check if an issue has sub-issues using REST API
+ * @param {Object} github - GitHub Octokit client
+ * @param {string} owner - Repository owner
+ * @param {string} repo - Repository name
+ * @param {number} issueNumber - Issue number to check
+ * @returns {Promise<boolean>} - True if issue has sub-issues
+ */
+async function hasSubIssuesViaREST(github, owner, repo, issueNumber) {
+  try {
+    // Use the REST API endpoint directly since Octokit may not have this method yet
+    // GitHub introduced /repos/{owner}/{repo}/issues/{issue_number}/sub-issues in Dec 2024
+    const response = await github.request(
+      "GET /repos/{owner}/{repo}/issues/{issue_number}/sub-issues",
+      {
+        owner,
+        repo,
+        issue_number: issueNumber,
+        per_page: 1, // Only need to check if any exist
+      },
+    );
+    return response.data && response.data.length > 0;
+  } catch (error) {
+    // If endpoint doesn't exist or fails, fall back to assuming no sub-issues
+    // This can happen if the REST API endpoint is not available or access is denied
+    console.log(
+      `Warning: Could not check sub-issues for #${issueNumber}: ${error.message}`,
+    );
+    return false;
+  }
+}
+
+/**
+ * Find the first assignable issue from a list, with REST API sub-issue verification
+ * @param {Array} issues - Array of issue objects from GraphQL
+ * @param {Object} github - GitHub REST API client (octokit)
+ * @param {string} owner - Repository owner
+ * @param {string} repo - Repository name
+ * @returns {Promise<Object|null>} - First assignable issue or null
+ */
+async function findAssignableIssueWithRESTCheck(issues, github, owner, repo) {
+  for (const issue of issues) {
+    const parsed = parseIssueData(issue);
+
+    // First, check using GraphQL data
+    const { shouldSkip } = shouldSkipIssue(parsed);
+
+    // If GraphQL says no sub-issues, double-check with REST API
+    // This is needed because GraphQL trackedIssues can be unreliable
+    if (!shouldSkip && !parsed.hasSubIssues) {
+      const hasSubIssues = await hasSubIssuesViaREST(
+        github,
+        owner,
+        repo,
+        parsed.number,
+      );
+      if (hasSubIssues) {
+        console.log(
+          `  Issue #${parsed.number}: GraphQL reported no sub-issues, but REST API found sub-issues. Skipping.`,
+        );
+        // Skip this issue - it has sub-issues detected via REST API
+        continue;
+      }
+    }
+
+    if (!shouldSkip) {
+      return parsed;
+    }
+  }
+  return null;
+}
+
 module.exports = {
   shouldSkipIssue,
   shouldAssignNewIssue,
   parseIssueData,
   findAssignableIssue,
+  findAssignableIssueWithRESTCheck,
+  hasSubIssuesViaREST,
   normalizeIssueLabels,
 };
