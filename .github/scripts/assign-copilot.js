@@ -169,7 +169,7 @@ async function findAssignableIssueWithRESTCheck(issues, github, owner, repo) {
     const parsed = parseIssueData(issue);
 
     // First, check using GraphQL data
-    let { shouldSkip, reason } = shouldSkipIssue(parsed);
+    const { shouldSkip } = shouldSkipIssue(parsed);
 
     // If GraphQL says no sub-issues, double-check with REST API
     // This is needed because GraphQL trackedIssues can be unreliable
@@ -184,8 +184,8 @@ async function findAssignableIssueWithRESTCheck(issues, github, owner, repo) {
         console.log(
           `  Issue #${parsed.number}: GraphQL reported no sub-issues, but REST API found sub-issues. Skipping.`,
         );
-        shouldSkip = true;
-        reason = "has sub-issues (detected via REST API)";
+        // Skip this issue - it has sub-issues detected via REST API
+        continue;
       }
     }
 

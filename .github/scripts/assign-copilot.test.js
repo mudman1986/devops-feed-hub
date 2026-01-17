@@ -768,4 +768,3 @@ describe("findAssignableIssueWithRESTCheck", () => {
     consoleSpy.mockRestore();
   });
 });
-
