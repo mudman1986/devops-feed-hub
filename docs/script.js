@@ -533,7 +533,24 @@ function updateFeedCountsAfterReadFilter() {
     }
 
     const articleList = section.querySelector(".article-list");
-    if (!articleList) return;
+    
+    // Handle feeds with no article list (empty feeds with 0 articles across all timeframes)
+    if (!articleList) {
+      const heading = section.querySelector("h3");
+      const feedNameElement = heading?.childNodes[0];
+      const feedName = feedNameElement
+        ? feedNameElement.textContent.trim()
+        : heading?.textContent.trim() || "";
+
+      // Empty feed with no articles at all
+      feedsData.push({
+        element: section,
+        count: 0,
+        unreadCount: 0,
+        name: feedName,
+      });
+      return;
+    }
 
     const articles = section.querySelectorAll(".article-item");
     const visibleArticles = Array.from(articles).filter(
