@@ -50,7 +50,7 @@ The workflow will **NOT** assign an issue if:
 
 - Copilot is already assigned to another open issue (unless `force` is enabled)
 - The issue has sub-issues (tracked issues)
-  - **Note**: The workflow uses both GitHub's GraphQL API (`trackedIssues`) and REST API (`/sub_issues`) to detect sub-issues. This dual-check ensures reliable detection even when GraphQL reports inconsistent results.
+  - **Note**: The workflow uses both GitHub's GraphQL API (`trackedIssues`) and REST API (`/repos/{owner}/{repo}/issues/{issue_number}/sub-issues`) to detect sub-issues. This dual-check ensures reliable detection even when GraphQL reports inconsistent results.
 - The issue is already assigned to someone else
 
 **Note**: The workflow also skips issues labeled with `refactor` in auto mode. This is defensive programming to prevent accidentally reassigning workflow-created refactor issues if they become unassigned. In practice, this check is redundant because the "Copilot already assigned" check prevents this scenario.
