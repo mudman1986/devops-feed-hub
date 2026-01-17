@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml</link>
     <description>Articles from Microsoft Security</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sat, 17 Jan 2026 15:46:55 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 17 Jan 2026 18:36:52 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Microsoft named a Leader in IDC MarketScape for Unified AI Governance Platforms</title>
@@ -42,12 +42,6 @@
       <link>https://www.microsoft.com/en-us/security/blog/2026/01/06/introducing-the-microsoft-defender-experts-suite-elevate-your-security-with-expert-led-services/</link>
       <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/06/introducing-the-microsoft-defender-experts-suite-elevate-your-security-with-expert-led-services/</guid>
       <pubDate>Tue, 06 Jan 2026 17:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>New Microsoft e-book: 3 reasons point solutions are holding you back</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2025/12/18/new-microsoft-e-book-3-reasons-point-solutions-are-holding-you-back/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2025/12/18/new-microsoft-e-book-3-reasons-point-solutions-are-holding-you-back/</guid>
-      <pubDate>Thu, 18 Dec 2025 17:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

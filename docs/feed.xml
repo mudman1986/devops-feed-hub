@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sat, 17 Jan 2026 15:46:55 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 17 Jan 2026 18:36:52 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>How tech leaders can turn AI hype into real team productivity</title>
@@ -685,20 +685,6 @@
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=542813</guid>
       <pubDate>Thu, 18 Dec 2025 18:45:03 +0000</pubDate>
       <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>Kubernetes v1.35: Job Managed By Goes GA</title>
-      <link>https://kubernetes.io/blog/2025/12/18/kubernetes-v1-35-job-managedby-for-jobs-goes-ga/</link>
-      <guid isPermaLink="true">https://kubernetes.io/blog/2025/12/18/kubernetes-v1-35-job-managedby-for-jobs-goes-ga/</guid>
-      <pubDate>Thu, 18 Dec 2025 18:30:00 +0000</pubDate>
-      <source>Kubernetes Blog</source>
-    </item>
-    <item>
-      <title>New Microsoft e-book: 3 reasons point solutions are holding you back</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2025/12/18/new-microsoft-e-book-3-reasons-point-solutions-are-holding-you-back/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2025/12/18/new-microsoft-e-book-3-reasons-point-solutions-are-holding-you-back/</guid>
-      <pubDate>Thu, 18 Dec 2025 17:00:00 +0000</pubDate>
-      <source>Microsoft Security</source>
     </item>
   </channel>
 </rss>
