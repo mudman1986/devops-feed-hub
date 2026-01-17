@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml</link>
     <description>Articles from Azure Updates</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sat, 17 Jan 2026 18:36:52 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 17 Jan 2026 18:58:07 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>[In preview] Public Preview: User delegation SAS for Azure Tables, Azure Files, and Azure Queues</title>
@@ -48,12 +48,6 @@
       <link>https://azure.microsoft.com/updates?id=513892</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=513892</guid>
       <pubDate>Mon, 29 Dec 2025 17:30:40 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Azure Blob-to-Blob migration made simple with Azure Storage Mover</title>
-      <link>https://azure.microsoft.com/updates?id=542813</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=542813</guid>
-      <pubDate>Thu, 18 Dec 2025 18:45:03 +0000</pubDate>
     </item>
   </channel>
 </rss>
