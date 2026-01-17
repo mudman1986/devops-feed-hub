@@ -5,8 +5,15 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 16 Jan 2026 23:38:25 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 17 Jan 2026 00:55:16 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>How tech leaders can turn AI hype into real team productivity</title>
+      <link>https://www.atlassian.com/blog/devops/how-tech-leaders-can-turn-ai-hype-into-real-team-productivity</link>
+      <guid isPermaLink="true">https://www.atlassian.com/blog/devops/how-tech-leaders-can-turn-ai-hype-into-real-team-productivity</guid>
+      <pubDate>Fri, 16 Jan 2026 23:42:26 +0000</pubDate>
+      <source>Atlassian DevOps</source>
+    </item>
     <item>
       <title>Rate limiting for actions cache entries</title>
       <link>https://github.blog/changelog/2026-01-16-rate-limiting-for-actions-cache-entries</link>
@@ -699,13 +706,6 @@
       <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/how-kaltura-accelerates-ci-cd-using-aws-codebuild-hosted-runners/</guid>
       <pubDate>Thu, 18 Dec 2025 14:54:45 +0000</pubDate>
       <source>AWS DevOps Blog</source>
-    </item>
-    <item>
-      <title>GitLab 18.7: Advancing AI automation, governance, and developer experience</title>
-      <link>https://about.gitlab.com/blog/gitlab-18-7-advancing-ai-automation/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/gitlab-18-7-advancing-ai-automation/</guid>
-      <pubDate>Thu, 18 Dec 2025 00:00:00 +0000</pubDate>
-      <source>GitLab Blog</source>
     </item>
   </channel>
 </rss>
