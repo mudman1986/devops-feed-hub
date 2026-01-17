@@ -404,18 +404,14 @@ describe("Bug reproduction tests", () => {
 
     // Mock GitHub REST API
     const mockGithub = {
-      rest: {
-        issues: {
-          listSubIssues: jest.fn().mockResolvedValue({
-            data: [
-              { number: 80, title: "Sub-issue 1" },
-              { number: 81, title: "Sub-issue 2" },
-              { number: 82, title: "Sub-issue 3" },
-              { number: 103, title: "Sub-issue 4" },
-            ],
-          }),
-        },
-      },
+      request: jest.fn().mockResolvedValue({
+        data: [
+          { number: 80, title: "Sub-issue 1" },
+          { number: 81, title: "Sub-issue 2" },
+          { number: 82, title: "Sub-issue 3" },
+          { number: 103, title: "Sub-issue 4" },
+        ],
+      }),
     };
 
     const {
@@ -442,12 +438,15 @@ describe("Bug reproduction tests", () => {
     expect(result).toBeNull(); // Should skip issue 79 even though GraphQL says totalCount: 0
 
     // Verify the REST API was called
-    expect(mockGithub.rest.issues.listSubIssues).toHaveBeenCalledWith({
-      owner: "mudman1986",
-      repo: "devops-feed-hub",
-      issue_number: 79,
-      per_page: 1,
-    });
+    expect(mockGithub.request).toHaveBeenCalledWith(
+      "GET /repos/{owner}/{repo}/issues/{issue_number}/sub-issues",
+      {
+        owner: "mudman1986",
+        repo: "devops-feed-hub",
+        issue_number: 79,
+        per_page: 1,
+      },
+    );
   });
 });
 
@@ -550,34 +549,29 @@ describe("hasSubIssuesViaREST", () => {
 
   test("should return true when issue has sub-issues", async () => {
     const mockGithub = {
-      rest: {
-        issues: {
-          listSubIssues: jest.fn().mockResolvedValue({
-            data: [{ number: 80 }],
-          }),
-        },
-      },
+      request: jest.fn().mockResolvedValue({
+        data: [{ number: 80 }],
+      }),
     };
 
     const result = await hasSubIssuesViaREST(mockGithub, "owner", "repo", 79);
     expect(result).toBe(true);
-    expect(mockGithub.rest.issues.listSubIssues).toHaveBeenCalledWith({
-      owner: "owner",
-      repo: "repo",
-      issue_number: 79,
-      per_page: 1,
-    });
+    expect(mockGithub.request).toHaveBeenCalledWith(
+      "GET /repos/{owner}/{repo}/issues/{issue_number}/sub-issues",
+      {
+        owner: "owner",
+        repo: "repo",
+        issue_number: 79,
+        per_page: 1,
+      },
+    );
   });
 
   test("should return false when issue has no sub-issues", async () => {
     const mockGithub = {
-      rest: {
-        issues: {
-          listSubIssues: jest.fn().mockResolvedValue({
-            data: [],
-          }),
-        },
-      },
+      request: jest.fn().mockResolvedValue({
+        data: [],
+      }),
     };
 
     const result = await hasSubIssuesViaREST(mockGithub, "owner", "repo", 100);
@@ -586,13 +580,9 @@ describe("hasSubIssuesViaREST", () => {
 
   test("should return false when REST API call fails", async () => {
     const mockGithub = {
-      rest: {
-        issues: {
-          listSubIssues: jest
-            .fn()
-            .mockRejectedValue(new Error("API endpoint not found")),
-        },
-      },
+      request: jest
+        .fn()
+        .mockRejectedValue(new Error("API endpoint not found")),
     };
 
     // Suppress console.log for this test
@@ -621,11 +611,7 @@ describe("findAssignableIssueWithRESTCheck", () => {
     };
 
     const mockGithub = {
-      rest: {
-        issues: {
-          listSubIssues: jest.fn().mockResolvedValue({ data: [] }),
-        },
-      },
+      request: jest.fn().mockResolvedValue({ data: [] }),
     };
 
     const result = await findAssignableIssueWithRESTCheck(
@@ -652,18 +638,9 @@ describe("findAssignableIssueWithRESTCheck", () => {
     };
 
     const mockGithub = {
-      rest: {
-        issues: {
-          listSubIssues: jest.fn().mockResolvedValue({
-            data: [
-              { number: 80 },
-              { number: 81 },
-              { number: 82 },
-              { number: 103 },
-            ],
-          }),
-        },
-      },
+      request: jest.fn().mockResolvedValue({
+        data: [{ number: 80 }, { number: 81 }, { number: 82 }, { number: 103 }],
+      }),
     };
 
     // Suppress console.log for this test
@@ -677,7 +654,7 @@ describe("findAssignableIssueWithRESTCheck", () => {
     );
 
     expect(result).toBeNull();
-    expect(mockGithub.rest.issues.listSubIssues).toHaveBeenCalled();
+    expect(mockGithub.request).toHaveBeenCalled();
 
     consoleSpy.mockRestore();
   });
@@ -695,11 +672,7 @@ describe("findAssignableIssueWithRESTCheck", () => {
     };
 
     const mockGithub = {
-      rest: {
-        issues: {
-          listSubIssues: jest.fn().mockResolvedValue({ data: [] }),
-        },
-      },
+      request: jest.fn().mockResolvedValue({ data: [] }),
     };
 
     const result = await findAssignableIssueWithRESTCheck(
@@ -711,7 +684,7 @@ describe("findAssignableIssueWithRESTCheck", () => {
 
     expect(result).toBeNull();
     // REST API should NOT be called since GraphQL already detected sub-issues
-    expect(mockGithub.rest.issues.listSubIssues).not.toHaveBeenCalled();
+    expect(mockGithub.request).not.toHaveBeenCalled();
   });
 
   test("should find first assignable issue after skipping ones with sub-issues", async () => {
@@ -739,16 +712,12 @@ describe("findAssignableIssueWithRESTCheck", () => {
     ];
 
     const mockGithub = {
-      rest: {
-        issues: {
-          listSubIssues: jest.fn().mockImplementation(({ issue_number }) => {
-            if (issue_number === 79) {
-              return Promise.resolve({ data: [{ number: 80 }] });
-            }
-            return Promise.resolve({ data: [] });
-          }),
-        },
-      },
+      request: jest.fn().mockImplementation((endpoint, { issue_number }) => {
+        if (issue_number === 79) {
+          return Promise.resolve({ data: [{ number: 80 }] });
+        }
+        return Promise.resolve({ data: [] });
+      }),
     };
 
     // Suppress console.log for this test
@@ -763,7 +732,7 @@ describe("findAssignableIssueWithRESTCheck", () => {
 
     expect(result).not.toBeNull();
     expect(result.number).toBe(100); // Should skip 79 and return 100
-    expect(mockGithub.rest.issues.listSubIssues).toHaveBeenCalledTimes(2);
+    expect(mockGithub.request).toHaveBeenCalledTimes(2);
 
     consoleSpy.mockRestore();
   });

@@ -131,7 +131,7 @@ function findAssignableIssue(issues) {
 
 /**
  * Check if an issue has sub-issues using REST API
- * @param {Object} github - GitHub REST API client (octokit)
+ * @param {Object} github - GitHub Octokit client
  * @param {string} owner - Repository owner
  * @param {string} repo - Repository name
  * @param {number} issueNumber - Issue number to check
@@ -139,16 +139,21 @@ function findAssignableIssue(issues) {
  */
 async function hasSubIssuesViaREST(github, owner, repo, issueNumber) {
   try {
-    const response = await github.rest.issues.listSubIssues({
-      owner,
-      repo,
-      issue_number: issueNumber,
-      per_page: 1, // Only need to check if any exist
-    });
-    return response.data.length > 0;
+    // Use the REST API endpoint directly since Octokit may not have this method yet
+    // GitHub introduced /repos/{owner}/{repo}/issues/{issue_number}/sub-issues in Dec 2024
+    const response = await github.request(
+      "GET /repos/{owner}/{repo}/issues/{issue_number}/sub-issues",
+      {
+        owner,
+        repo,
+        issue_number: issueNumber,
+        per_page: 1, // Only need to check if any exist
+      },
+    );
+    return response.data && response.data.length > 0;
   } catch (error) {
     // If endpoint doesn't exist or fails, fall back to assuming no sub-issues
-    // This can happen if the REST API endpoint is not available
+    // This can happen if the REST API endpoint is not available or access is denied
     console.log(
       `Warning: Could not check sub-issues for #${issueNumber}: ${error.message}`,
     );
