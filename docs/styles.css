@@ -941,6 +941,7 @@ h3 {
     padding: 1rem;
     flex-wrap: wrap;
     position: relative;
+    align-items: center;
   }
 
   .header-title {
@@ -990,9 +991,13 @@ h3 {
     padding: 0;
     width: 2.75rem;
     height: 2.75rem;
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+    aspect-ratio: 1/1;
     border-radius: 50%;
     box-shadow: var(--shadow-lg);
     justify-content: center;
+    align-items: center;
     flex-shrink: 0;
   }
 
@@ -1775,9 +1780,13 @@ h3 {
     padding: 0;
     width: 2.75rem;
     height: 2.75rem;
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+    aspect-ratio: 1/1;
     border-radius: 50%;
     box-shadow: var(--shadow-lg);
     justify-content: center;
+    align-items: center;
     flex-shrink: 0;
   }
 
