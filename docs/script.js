@@ -130,13 +130,24 @@ function initializeDropdown(selectId, storageKey, defaultValue, onChange) {
  * @param {HTMLElement|null} beforeElement - insert before this element (e.g., footer)
  */
 function reorderDOMElements(dataArray, parent, beforeElement = null) {
-  dataArray.forEach((data) => {
-    if (beforeElement) {
-      parent.insertBefore(data.element, beforeElement);
-    } else {
-      parent.appendChild(data.element);
+  // Detach all elements first to avoid issues with insertBefore moving elements
+  const elements = dataArray.map((data) => data.element);
+  elements.forEach((element) => {
+    if (element.parentNode) {
+      element.parentNode.removeChild(element);
     }
   });
+
+  // Now insert them in the correct order
+  if (beforeElement) {
+    elements.forEach((element) => {
+      parent.insertBefore(element, beforeElement);
+    });
+  } else {
+    elements.forEach((element) => {
+      parent.appendChild(element);
+    });
+  }
 }
 
 // ===== THEME TOGGLE FUNCTIONALITY =====
@@ -320,11 +331,28 @@ function updateFeedCounts() {
   const feedsData = [];
 
   feedSections.forEach((section) => {
+    // Skip feeds that are hidden by the feed filter
+    if (section.hasAttribute("data-hidden-by-filter")) {
+      return;
+    }
+
     const articles = section.querySelectorAll(".article-item");
     const visibleArticles = Array.from(articles).filter(
       (a) => a.style.display !== "none",
     );
     const count = visibleArticles.length;
+
+    // Calculate unread count (articles that are visible and not marked as read)
+    const unreadArticles = Array.from(articles).filter((article) => {
+      const link = article.querySelector(".article-title");
+      if (!link) return false;
+      const articleUrl = link.getAttribute("href");
+      return (
+        !isArticleRead(articleUrl) &&
+        !article.hasAttribute("data-hidden-by-timeframe")
+      );
+    });
+    const unreadCount = unreadArticles.length;
 
     // Update count badge
     const countBadge = section.querySelector(".feed-count");
@@ -354,26 +382,37 @@ function updateFeedCounts() {
       }
     }
 
+    // Extract feed name without count badge text
+    const heading = section.querySelector("h3");
+    const feedNameElement = heading?.childNodes[0];
+    const feedName = feedNameElement
+      ? feedNameElement.textContent.trim()
+      : heading?.textContent.trim() || "";
+
     feedsData.push({
       element: section,
       count,
-      name: section.querySelector("h3")?.textContent.trim() || "",
+      unreadCount,
+      name: feedName,
     });
   });
 
-  // Reorder feeds
+  // Reorder feeds using same three-tier logic as updateFeedCountsAfterReadFilter
   if (feedSections.length > 0 && feedSections[0].parentNode) {
     const parent = feedSections[0].parentNode;
     const footer = parent.querySelector(".footer");
 
-    const feedsWithArticles = feedsData
-      .filter((f) => f.count > 0)
+    const feedsWithUnread = feedsData
+      .filter((f) => f.unreadCount > 0)
+      .sort((a, b) => a.name.localeCompare(b.name));
+    const feedsAllRead = feedsData
+      .filter((f) => f.unreadCount === 0 && (f.count || 0) > 0)
       .sort((a, b) => a.name.localeCompare(b.name));
     const emptyFeeds = feedsData
-      .filter((f) => f.count === 0)
+      .filter((f) => (f.count || 0) === 0)
       .sort((a, b) => a.name.localeCompare(b.name));
 
-    const orderedFeeds = [...feedsWithArticles, ...emptyFeeds];
+    const orderedFeeds = [...feedsWithUnread, ...feedsAllRead, ...emptyFeeds];
     reorderDOMElements(orderedFeeds, parent, footer);
   }
 }
@@ -504,8 +543,30 @@ function updateFeedCountsAfterReadFilter() {
   const feedsData = [];
 
   feedSections.forEach((section) => {
+    // Skip feeds that are hidden by the feed filter
+    if (section.hasAttribute("data-hidden-by-filter")) {
+      return;
+    }
+
     const articleList = section.querySelector(".article-list");
-    if (!articleList) return;
+
+    // Handle feeds with no article list (empty feeds with 0 articles across all timeframes)
+    if (!articleList) {
+      const heading = section.querySelector("h3");
+      const feedNameElement = heading?.childNodes[0];
+      const feedName = feedNameElement
+        ? feedNameElement.textContent.trim()
+        : heading?.textContent.trim() || "";
+
+      // Empty feed with no articles at all
+      feedsData.push({
+        element: section,
+        count: 0,
+        unreadCount: 0,
+        name: feedName,
+      });
+      return;
+    }
 
     const articles = section.querySelectorAll(".article-item");
     const visibleArticles = Array.from(articles).filter(
@@ -550,11 +611,18 @@ function updateFeedCountsAfterReadFilter() {
       if (noArticlesMsg) noArticlesMsg.style.display = "none";
     }
 
+    // Extract feed name without count badge text
+    const heading = section.querySelector("h3");
+    const feedNameElement = heading?.childNodes[0];
+    const feedName = feedNameElement
+      ? feedNameElement.textContent.trim()
+      : heading?.textContent.trim() || "";
+
     feedsData.push({
       element: section,
       count,
       unreadCount,
-      name: section.querySelector("h3")?.textContent.trim() || "",
+      name: feedName,
     });
   });
 

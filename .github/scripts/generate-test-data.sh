@@ -6,7 +6,7 @@ set -euo pipefail
 
 OUTPUT_DIR="${1:-docs}"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
-TEST_DATA="${SCRIPT_DIR}/../workflows/test-fixtures/rss-test-data.json"
+TEST_DATA="${SCRIPT_DIR}/../workflows/test-fixtures/rss-consolidated-test-data.json"
 
 echo "Generating test HTML files for UI tests..." >&2
 

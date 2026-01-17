@@ -1,0 +1,180 @@
+{
+  "metadata": {
+    "collected_at": "2026-01-16T23:00:00Z",
+    "since": "2026-01-15T23:00:00Z",
+    "hours": 24
+  },
+  "summary": {
+    "total_feeds": 6,
+    "successful_feeds": 6,
+    "failed_feeds": 0,
+    "total_articles": 10
+  },
+  "feeds": {
+    "Atlassian DevOps": {
+      "url": "https://www.atlassian.com/blog/devops/feed",
+      "count": 0,
+      "articles": []
+    },
+    "AWS DevOps Blog": {
+      "url": "https://aws.amazon.com/blogs/devops/feed/",
+      "count": 3,
+      "articles": [
+        {
+          "title": "AWS Article 1",
+          "link": "https://example.com/aws1",
+          "published": "2026-01-16T11:00:00Z",
+          "summary": "AWS article 1"
+        },
+        {
+          "title": "AWS Article 2",
+          "link": "https://example.com/aws2",
+          "published": "2026-01-16T10:00:00Z",
+          "summary": "AWS article 2"
+        },
+        {
+          "title": "AWS Article 3",
+          "link": "https://example.com/aws3",
+          "published": "2026-01-16T09:00:00Z",
+          "summary": "AWS article 3"
+        }
+      ]
+    },
+    "Docker Blog": {
+      "url": "https://www.docker.com/blog/feed/",
+      "count": 4,
+      "articles": [
+        {
+          "title": "Docker Article 1",
+          "link": "https://example.com/docker1",
+          "published": "2026-01-16T08:00:00Z",
+          "summary": "Docker article 1"
+        },
+        {
+          "title": "Docker Article 2",
+          "link": "https://example.com/docker2",
+          "published": "2026-01-16T07:00:00Z",
+          "summary": "Docker article 2"
+        },
+        {
+          "title": "Docker Article 3",
+          "link": "https://example.com/docker3",
+          "published": "2026-01-16T06:00:00Z",
+          "summary": "Docker article 3"
+        },
+        {
+          "title": "Docker Article 4",
+          "link": "https://example.com/docker4",
+          "published": "2026-01-16T05:00:00Z",
+          "summary": "Docker article 4"
+        }
+      ]
+    },
+    "GitHub Blog": {
+      "url": "https://github.com/blog/all.atom",
+      "count": 3,
+      "articles": [
+        {
+          "title": "GitHub Article 1",
+          "link": "https://example.com/gh1",
+          "published": "2026-01-16T04:00:00Z",
+          "summary": "GitHub article 1"
+        },
+        {
+          "title": "GitHub Article 2",
+          "link": "https://example.com/gh2",
+          "published": "2026-01-16T03:00:00Z",
+          "summary": "GitHub article 2"
+        },
+        {
+          "title": "GitHub Article 3",
+          "link": "https://example.com/gh3",
+          "published": "2026-01-16T02:00:00Z",
+          "summary": "GitHub article 3"
+        }
+      ]
+    },
+    "Opensource.com": {
+      "url": "https://opensource.com/feed",
+      "count": 0,
+      "articles": []
+    },
+    "Terraform weekly": {
+      "url": "https://rss.beehiiv.com/feeds/4FnlUFPRgf.xml",
+      "count": 0,
+      "articles": []
+    }
+  },
+  "articles": [
+    {
+      "title": "AWS Article 1",
+      "link": "https://example.com/aws1",
+      "published": "2026-01-16T11:00:00Z",
+      "summary": "AWS article 1",
+      "feed": "AWS DevOps Blog"
+    },
+    {
+      "title": "AWS Article 2",
+      "link": "https://example.com/aws2",
+      "published": "2026-01-16T10:00:00Z",
+      "summary": "AWS article 2",
+      "feed": "AWS DevOps Blog"
+    },
+    {
+      "title": "AWS Article 3",
+      "link": "https://example.com/aws3",
+      "published": "2026-01-16T09:00:00Z",
+      "summary": "AWS article 3",
+      "feed": "AWS DevOps Blog"
+    },
+    {
+      "title": "Docker Article 1",
+      "link": "https://example.com/docker1",
+      "published": "2026-01-16T08:00:00Z",
+      "summary": "Docker article 1",
+      "feed": "Docker Blog"
+    },
+    {
+      "title": "Docker Article 2",
+      "link": "https://example.com/docker2",
+      "published": "2026-01-16T07:00:00Z",
+      "summary": "Docker article 2",
+      "feed": "Docker Blog"
+    },
+    {
+      "title": "Docker Article 3",
+      "link": "https://example.com/docker3",
+      "published": "2026-01-16T06:00:00Z",
+      "summary": "Docker article 3",
+      "feed": "Docker Blog"
+    },
+    {
+      "title": "Docker Article 4",
+      "link": "https://example.com/docker4",
+      "published": "2026-01-16T05:00:00Z",
+      "summary": "Docker article 4",
+      "feed": "Docker Blog"
+    },
+    {
+      "title": "GitHub Article 1",
+      "link": "https://example.com/gh1",
+      "published": "2026-01-16T04:00:00Z",
+      "summary": "GitHub article 1",
+      "feed": "GitHub Blog"
+    },
+    {
+      "title": "GitHub Article 2",
+      "link": "https://example.com/gh2",
+      "published": "2026-01-16T03:00:00Z",
+      "summary": "GitHub article 2",
+      "feed": "GitHub Blog"
+    },
+    {
+      "title": "GitHub Article 3",
+      "link": "https://example.com/gh3",
+      "published": "2026-01-16T02:00:00Z",
+      "summary": "GitHub article 3",
+      "feed": "GitHub Blog"
+    }
+  ]
+}
