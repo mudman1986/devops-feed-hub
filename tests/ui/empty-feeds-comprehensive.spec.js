@@ -30,10 +30,10 @@ test.describe("Feed Ordering - Comprehensive Empty Feed Tests", () => {
     // Expected order: 6 feeds with articles (alphabetically), then 3 empty feeds (alphabetically)
     // Feeds with articles: AWS DevOps Blog, Docker Blog, GitHub Blog, Test Feed A, Test Feed B, Test Feed C
     // Empty feeds: Atlassian DevOps, Opensource.com, Terraform weekly
-    
+
     const feedsWithArticles = feedNames.slice(0, 6);
     const emptyFeeds = feedNames.slice(6, 9);
-    
+
     // Verify feeds with articles are sorted alphabetically
     expect(feedsWithArticles).toEqual([
       "AWS DevOps Blog",
@@ -43,7 +43,7 @@ test.describe("Feed Ordering - Comprehensive Empty Feed Tests", () => {
       "Test Feed B",
       "Test Feed C",
     ]);
-    
+
     // Verify empty feeds are sorted alphabetically
     expect(emptyFeeds).toEqual([
       "Atlassian DevOps",
@@ -92,7 +92,7 @@ test.describe("Feed Ordering - Comprehensive Empty Feed Tests", () => {
     // All 6 feeds with articles (all read) come first, then 3 empty feeds
     const feedsWithArticles = feedNames.slice(0, 6);
     const emptyFeeds = feedNames.slice(6, 9);
-    
+
     // Verify all feeds with articles come before empty feeds
     expect(feedsWithArticles).toEqual([
       "AWS DevOps Blog",
@@ -102,7 +102,7 @@ test.describe("Feed Ordering - Comprehensive Empty Feed Tests", () => {
       "Test Feed B",
       "Test Feed C",
     ]);
-    
+
     expect(emptyFeeds).toEqual([
       "Atlassian DevOps",
       "Opensource.com",
@@ -154,7 +154,7 @@ test.describe("Feed Ordering - Comprehensive Empty Feed Tests", () => {
     // After reset, should return to original order: 6 with articles, then 3 empty
     const feedsWithArticles = feedNames.slice(0, 6);
     const emptyFeeds = feedNames.slice(6, 9);
-    
+
     expect(feedsWithArticles).toEqual([
       "AWS DevOps Blog",
       "Docker Blog",
@@ -163,7 +163,7 @@ test.describe("Feed Ordering - Comprehensive Empty Feed Tests", () => {
       "Test Feed B",
       "Test Feed C",
     ]);
-    
+
     expect(emptyFeeds).toEqual([
       "Atlassian DevOps",
       "Opensource.com",
