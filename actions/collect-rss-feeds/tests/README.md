@@ -27,10 +27,13 @@ python3 -m pytest tests/ -v --cov=. --cov-report=html
 ## Test Files
 
 ### test_collect_feeds.py
+
 Tests for the core RSS feed collection logic.
 
 ### test_parse_rss_feed.py
+
 Tests for RSS/Atom feed parsing functionality including:
+
 - Date filtering
 - Error handling
 - Network issues
@@ -46,6 +49,6 @@ pip install pytest pytest-cov feedparser
 
 ## Note
 
-Tests for HTML/RSS generation (`test_generate_summary.py`, `test_generate_rss.py`, `test_feed_ordering.py`) 
-have been moved to `.github/workflows/scripts/rss-processing/tests/` since those scripts are 
+Tests for HTML/RSS generation (`test_generate_summary.py`, `test_generate_rss.py`, `test_feed_ordering.py`)
+have been moved to `.github/workflows/scripts/rss-processing/tests/` since those scripts are
 workflow-specific and not part of the portable action.

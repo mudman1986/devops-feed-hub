@@ -16,6 +16,7 @@ actions/collect-rss-feeds/
 ```
 
 **The Problem:**
+
 - Workflows called `generate_summary.py` and `generate_rss.py` **directly** (not through the action)
 - These scripts lived inside the action directory
 - When the action is extracted, workflows would lose access to these scripts → **breakage**
@@ -23,6 +24,7 @@ actions/collect-rss-feeds/
 ### Why This Happened
 
 The action was originally designed to be all-in-one, but evolved to have:
+
 1. **Action functionality**: Collect feeds, output JSON
 2. **Workflow functionality**: Generate HTML pages, generate RSS feeds
 
@@ -33,6 +35,7 @@ This mixed responsibility created a dependency that would break on extraction.
 ### Clear Separation of Concerns
 
 **Action** (portable, will be extracted):
+
 ```
 actions/collect-rss-feeds/
 ├── action.yml
@@ -43,7 +46,8 @@ actions/collect-rss-feeds/
     └── test_parse_rss_feed.py
 ```
 
-**Workflow Scripts** (stays in this repo):
+**Workflow Scripts** (stays in this repository):
+
 ```
 .github/workflows/scripts/rss-processing/
 ├── generate_summary.py           # Full: HTML + markdown generation
@@ -61,6 +65,7 @@ actions/collect-rss-feeds/
 ### 1. Moved RSS Processing Scripts
 
 **Moved to** `.github/workflows/scripts/rss-processing/`:
+
 - `generate_summary.py` (full version with HTML generation)
 - `generate_rss.py` (RSS feed generation)
 - `utils.py` (shared utilities)
@@ -70,6 +75,7 @@ actions/collect-rss-feeds/
 ### 2. Created Lightweight Action Alternative
 
 **Created** `actions/collect-rss-feeds/generate_markdown_summary.py`:
+
 - Minimal script for GitHub workflow summaries only
 - No HTML generation (not needed by action)
 - No external dependencies beyond action requirements
@@ -77,27 +83,32 @@ actions/collect-rss-feeds/
 ### 3. Updated All References
 
 **Workflows updated**:
+
 - `rss-github-page.yml` → Now calls `.github/workflows/scripts/rss-processing/generate_summary.py`
 - `ui-tests.yml` → Now calls `.github/workflows/scripts/rss-processing/generate_summary.py`
 
 **Action updated**:
+
 - `action.yml` → Now calls `generate_markdown_summary.py` (local to action)
 
 **Tests updated**:
+
 - `ci-tests.yml` → Now runs tests from both locations
 
 ### 4. Updated Documentation
 
 **Created**:
+
 - `FOLDER_STRUCTURE.md` - Comprehensive structure documentation
 - `.github/workflows/scripts/rss-processing/README.md` - RSS processing scripts guide
-- Updated all existing READMEs to reflect new structure
+- Updated all existing readmes to reflect new structure
 
 ## Benefits
 
 ### ✅ Future-Proof for Extraction
 
 When extracting the action:
+
 - **Action moves**: Entire `actions/collect-rss-feeds/` directory
 - **Workflows work**: They use scripts in `.github/workflows/scripts/rss-processing/`
 - **No breakage**: Clean separation means no dependencies to break
@@ -110,7 +121,7 @@ When extracting the action:
 ### ✅ Maintainability
 
 - Each component has clear ownership
-- Tests are co-located with code
+- Tests are colocateed with code
 - Documentation explains intent and design
 
 ### ✅ All Tests Pass
@@ -122,6 +133,7 @@ When extracting the action:
 ## File Inventory
 
 ### Removed from Action
+
 - ❌ `generate_summary.py` (moved to workflow scripts)
 - ❌ `generate_rss.py` (moved to workflow scripts)
 - ❌ `utils.py` (moved to workflow scripts)
@@ -131,9 +143,11 @@ When extracting the action:
 - ❌ `tests/test_feed_ordering.py` (moved)
 
 ### Added to Action
+
 - ✅ `generate_markdown_summary.py` (new, lightweight)
 
 ### Added to Workflow Scripts
+
 - ✅ `.github/workflows/scripts/rss-processing/generate_summary.py`
 - ✅ `.github/workflows/scripts/rss-processing/generate_rss.py`
 - ✅ `.github/workflows/scripts/rss-processing/utils.py`
@@ -142,6 +156,7 @@ When extracting the action:
 - ✅ `.github/workflows/scripts/rss-processing/README.md`
 
 ### Updated
+
 - ✏️ `actions/collect-rss-feeds/action.yml`
 - ✏️ `actions/collect-rss-feeds/README.md`
 - ✏️ `actions/collect-rss-feeds/tests/test_collect_feeds.py`
@@ -155,8 +170,8 @@ When extracting the action:
 
 When ready to extract the action to a separate repository:
 
-1. **Create new repo** (e.g., `username/rss-feed-collector-action`)
-2. **Copy** `actions/collect-rss-feeds/` → new repo root
+1. **Create new repository** (e.g., `username/rss-feed-collector-action`)
+2. **Copy** `actions/collect-rss-feeds/` → new repository root
 3. **Update workflow** to use external action:
    ```yaml
    - uses: username/rss-feed-collector-action@v1
@@ -166,6 +181,7 @@ When ready to extract the action to a separate repository:
 ## Testing
 
 All changes verified:
+
 ```bash
 # Action tests
 python3 -m pytest actions/collect-rss-feeds/tests/ -v
@@ -183,6 +199,7 @@ python3 -m pytest actions/ .github/ -v
 ## Conclusion
 
 The refactoring successfully:
+
 - ✅ Identified and fixed the extraction blocker
 - ✅ Created clear separation between action and workflow logic
 - ✅ Maintained all functionality (100% tests passing)

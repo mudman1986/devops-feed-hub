@@ -9,7 +9,7 @@ Reusable GitHub Actions composite action for collecting RSS/Atom feeds using `fe
 - Formatted GitHub workflow summary
 - Configurable time window for article collection
 - Graceful error handling for unavailable feeds
-- Self-contained and portable (ready for extraction to separate repo)
+- Self-contained and portable (ready for extraction to separate repository)
 
 ## Usage
 
@@ -86,11 +86,11 @@ Reusable GitHub Actions composite action for collecting RSS/Atom feeds using `fe
 
 - `action.yml` - Action definition
 - `collect_feeds.py` - Core RSS feed collection logic
-- `generate_markdown_summary.py` - Generates GitHub workflow markdown summaries
+- `generate_markdown_summary.py` - Generates GitHub workflow Markdown summaries
 - `tests/` - Unit tests for action components
 
 ## Note on HTML/RSS Generation
 
-This action focuses on **collecting** RSS feed data. HTML page generation and RSS feed 
+This action focuses on **collecting** RSS feed data. HTML page generation and RSS feed
 generation are handled by separate workflow scripts (see `.github/workflows/scripts/rss-processing/`)
 to keep the action lightweight and portable for extraction to a separate repository.

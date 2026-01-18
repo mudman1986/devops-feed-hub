@@ -7,6 +7,7 @@ This guide explains how to extract the `collect-rss-feeds` action to a separate 
 ## Why Extract?
 
 The action is designed to be **portable** and **reusable**. Extracting it to a separate repository allows:
+
 - Other projects to use the action
 - Independent versioning and releases
 - Focused maintenance and updates
@@ -17,6 +18,7 @@ The action is designed to be **portable** and **reusable**. Extracting it to a s
 The folder structure has been optimized for extraction:
 
 **Action (portable)**:
+
 ```
 actions/collect-rss-feeds/
 ├── action.yml                    # Action definition
@@ -29,7 +31,8 @@ actions/collect-rss-feeds/
     └── test_parse_rss_feed.py
 ```
 
-**Workflow Scripts (stays in this repo)**:
+**Workflow Scripts (stays in this repository)**:
+
 ```
 .github/workflows/scripts/rss-processing/
 ├── generate_summary.py           # HTML page generation
@@ -48,6 +51,7 @@ actions/collect-rss-feeds/
 ### 1. Create New Repository
 
 Create a new repository for the action:
+
 ```bash
 # Example: username/rss-feed-collector-action
 gh repo create username/rss-feed-collector-action --public
@@ -55,7 +59,8 @@ gh repo create username/rss-feed-collector-action --public
 
 ### 2. Copy Action Files
 
-Copy the entire action directory to the new repo root:
+Copy the entire action directory to the new repository root:
+
 ```bash
 # In the new repo
 cp -r /path/to/devops-feed-hub/actions/collect-rss-feeds/* .
@@ -63,11 +68,12 @@ cp -r /path/to/devops-feed-hub/actions/collect-rss-feeds/* .
 
 ### 3. Add Required Files
 
-Add standard repo files to the new action repo:
+Add standard repository files to the new action repository:
 
-**LICENSE** - Copy from parent repo or choose appropriate license
+**LICENSE** - Copy from parent repository or choose appropriate license
 
-**README.md** - Expand the action README with:
+**README.md** - Expand the action readme with:
+
 - Detailed usage examples
 - Configuration options
 - Contributing guidelines
@@ -76,6 +82,7 @@ Add standard repo files to the new action repo:
 **CHANGELOG.md** - Track version changes
 
 **.gitignore** - Python-specific ignores:
+
 ```gitignore
 __pycache__/
 *.py[cod]
@@ -86,6 +93,7 @@ htmlcov/
 ```
 
 **GitHub Actions Workflow** - Add CI for the action:
+
 ```yaml
 # .github/workflows/test.yml
 name: Test Action
@@ -97,16 +105,17 @@ jobs:
       - uses: actions/checkout@v6
       - uses: actions/setup-python@v6
         with:
-          python-version: '3.x'
+          python-version: "3.x"
       - run: pip install feedparser pytest pytest-cov
       - run: pytest tests/ -v --cov
 ```
 
-### 4. Update Parent Repo Workflow
+### 4. Update Parent repository Workflow
 
-In the devops-feed-hub repo, update workflow to use external action:
+In the devops-feed-hub repository, update workflow to use external action:
 
 **Before** (local action):
+
 ```yaml
 - name: Collect RSS Feeds
   uses: ./actions/collect-rss-feeds
@@ -117,6 +126,7 @@ In the devops-feed-hub repo, update workflow to use external action:
 ```
 
 **After** (external action):
+
 ```yaml
 - name: Collect RSS Feeds
   uses: username/rss-feed-collector-action@v1
@@ -129,6 +139,7 @@ In the devops-feed-hub repo, update workflow to use external action:
 ### 5. Remove Local Action
 
 After verifying the external action works:
+
 ```bash
 # In devops-feed-hub repo
 rm -rf actions/collect-rss-feeds
@@ -139,6 +150,7 @@ rmdir actions/  # If empty
 ### 6. Update Documentation
 
 Update docs in devops-feed-hub:
+
 - Remove references to local action
 - Update FOLDER_STRUCTURE.md
 - Update TESTING.md
@@ -147,6 +159,7 @@ Update docs in devops-feed-hub:
 ## Verification Checklist
 
 Before extraction:
+
 - [ ] All action tests pass locally
 - [ ] Action works in workflows
 - [ ] Documentation is complete
@@ -154,8 +167,9 @@ Before extraction:
 - [ ] No hardcoded paths specific to devops-feed-hub
 
 After extraction:
-- [ ] New repo has all required files
-- [ ] CI passes in new repo
+
+- [ ] New repository has all required files
+- [ ] CI passes in new repository
 - [ ] Action can be used from external repos
 - [ ] Workflows in devops-feed-hub still work
 - [ ] Documentation is updated in both repos
@@ -165,6 +179,7 @@ After extraction:
 ### Initial Release (v1.0.0)
 
 First release of the extracted action:
+
 - Stable, tested functionality
 - Complete documentation
 - Semantic versioning
@@ -172,7 +187,8 @@ First release of the extracted action:
 ### Future Releases
 
 Follow semantic versioning:
-- **Patch** (v1.0.1): Bug fixes, no breaking changes
+
+- **Patch** (v1.0.1): bugfixes, no breaking changes
 - **Minor** (v1.1.0): New features, backward compatible
 - **Major** (v2.0.0): Breaking changes
 
@@ -189,12 +205,14 @@ Follow semantic versioning:
 If others are using the local action:
 
 **Option 1: Gradual Migration**
+
 ```yaml
 # Keep old usage temporarily, add warning in docs
-uses: ./actions/collect-rss-feeds  # Deprecated, use username/rss-feed-collector-action@v1
+uses: ./actions/collect-rss-feeds # Deprecated, use username/rss-feed-collector-action@v1
 ```
 
 **Option 2: Immediate Migration**
+
 ```yaml
 # Update all at once
 uses: username/rss-feed-collector-action@v1
@@ -203,22 +221,25 @@ uses: username/rss-feed-collector-action@v1
 ## Benefits of Extraction
 
 ### For Action Users
+
 ✅ Semantic versioning (pin to specific versions)  
-✅ Independent updates (not tied to parent repo releases)  
+✅ Independent updates (not tied to parent repository releases)  
 ✅ Focused issue tracking  
-✅ Clear action-specific documentation  
+✅ Clear action-specific documentation
 
 ### For devops-feed-hub
-✅ Cleaner repo structure  
+
+✅ Cleaner repository structure  
 ✅ Workflow scripts stay project-specific  
 ✅ No breaking changes (workflows use external action)  
-✅ Easier to maintain  
+✅ Easier to maintain
 
 ### For Maintainers
+
 ✅ Separate release cycles  
 ✅ Action-focused PRs and issues  
 ✅ Better community contributions  
-✅ Clear ownership boundaries  
+✅ Clear ownership boundaries
 
 ## Support After Extraction
 
@@ -235,7 +256,7 @@ A: No. Workflows will be updated to use the external action, but functionality r
 A: They stay in devops-feed-hub. The action only collects feeds; presentation is project-specific.
 
 **Q: Can I still customize the action for devops-feed-hub?**  
-A: Yes. Fork the action repo and reference your fork, or contribute improvements upstream.
+A: Yes. Fork the action repository and reference your fork, or contribute improvements upstream.
 
 **Q: How do I test changes before extraction?**  
 A: Test locally with the current structure. The separation is already in place.
@@ -245,7 +266,7 @@ A: Test locally with the current structure. The separation is already in place.
 1. Ensure all tests pass: `python3 -m pytest actions/collect-rss-feeds/tests/ -v`
 2. Review action documentation: `actions/collect-rss-feeds/README.md`
 3. Verify no project-specific dependencies in action code
-4. Create new repo when ready
+4. Create new repository when ready
 5. Follow extraction steps above
 6. Test thoroughly before removing local action
 

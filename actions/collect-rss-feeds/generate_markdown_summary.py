@@ -91,9 +91,7 @@ def main():
     parser.add_argument(
         "--input", required=True, help="Input JSON file from RSS feed collection"
     )
-    parser.add_argument(
-        "--output", required=True, help="Output markdown file path"
-    )
+    parser.add_argument("--output", required=True, help="Output markdown file path")
 
     args = parser.parse_args()
 
