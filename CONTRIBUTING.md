@@ -121,7 +121,7 @@ docker run --rm \
 
 We welcome various types of contributions:
 
-- **Bug fixes** - Fix issues in the codebase
+- **Bugfixes** - Fix issues in the codebase
 - **New features** - Add functionality to the feed aggregator
 - **Documentation** - Improve or add documentation
 - **UI improvements** - Enhance the user interface
@@ -154,7 +154,7 @@ To add a new RSS feed source:
 - **Keep functions focused** - one function, one responsibility
 - **Add comments** for complex logic
 - **Follow existing patterns** in the codebase
-- **Write tests** for new features and bug fixes
+- **Write tests** for new features and bugfixes
 
 ### Language-Specific Guidelines
 
@@ -192,7 +192,7 @@ To add a new RSS feed source:
 
 **All contributions must include tests.** This is mandatory for:
 
-- Bug fixes: Add a test that reproduces the bug
+- Bugfixes: Add a test that reproduces the bug
 - New features: Add tests for all new functionality
 - UI changes: Add or update Playwright UI tests
 
@@ -217,7 +217,7 @@ To add a new RSS feed source:
 1. ✅ **Run all tests** - ensure 100% pass rate
 2. ✅ **Run super-linter** - fix all linting errors
 3. ✅ **Update documentation** - if needed
-4. ✅ **Add tests** - for new features or bug fixes
+4. ✅ **Add tests** - for new features or bugfixes
 5. ✅ **Verify UI** - test on desktop, tablet, and mobile (for UI changes)
 
 ### Submitting a Pull Request
