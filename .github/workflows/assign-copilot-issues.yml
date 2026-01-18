@@ -117,7 +117,7 @@ jobs:
             // For workflow_dispatch, the default is set in the input definition
             const skipLabelsRaw = '${{ inputs.skip_labels }}';
             const skipLabelsInput = skipLabelsRaw || 'no-ai,refining';
-            
+
             // Get refactor threshold (default: 4)
             const refactorThresholdRaw = '${{ inputs.refactor_threshold }}';
             const refactorThreshold = refactorThresholdRaw ? parseInt(refactorThresholdRaw, 10) : 4;

@@ -76,7 +76,7 @@ The workflow will **NOT** assign an issue if:
    - **Refactor mode**: If Copilot is busy (has any assigned issue), skip to avoid disruption
    - **Auto mode**: Skip if Copilot already has an issue (unless forced)
 4. **Assign Issue or Create Refactor**:
-   - **Refactor mode**: 
+   - **Refactor mode**:
      - First, search for existing open issues with `refactor` label
      - If available refactor issue exists: Assign it to Copilot
      - If no available refactor issues exist: Create a new refactor issue
