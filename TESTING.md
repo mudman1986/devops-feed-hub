@@ -16,15 +16,15 @@ Tests: Mark as Read, Theme toggle, Timeframe filtering
 
 #### Python (pytest)
 
-- **Location**: `.github/actions/collect-rss-feeds/tests/`
-- **Run**: `python3 -m pytest .github/actions/collect-rss-feeds/tests/ -v`
+- **Location**: `actions/collect-rss-feeds/tests/` and `.github/workflows/scripts/rss-processing/tests/`
+- **Run**: `python3 -m pytest actions/collect-rss-feeds/tests/ .github/workflows/scripts/rss-processing/tests/ -v`
 
-Tests: RSS parsing, HTML generation, feed ordering, configuration validation
+Tests: RSS parsing, HTML generation, RSS feed generation, feed ordering, configuration validation
 
 #### Shell Scripts (BATS)
 
-- **Location**: `.github/scripts/test_commit_github_pages.bats`
-- **Run**: `bats .github/scripts/test_commit_github_pages.bats`
+- **Location**: `scripts/test/test_commit_github_pages.bats`
+- **Run**: `bats scripts/test/test_commit_github_pages.bats`
 
 ## UI Tests (Playwright)
 
@@ -38,7 +38,7 @@ Use the provided script with existing test fixtures:
 
 ```bash
 # Generate test HTML files from test fixtures
-bash .github/scripts/generate-test-data.sh
+bash scripts/test/generate-test-data.sh
 
 # Run UI tests
 npm run test:ui
@@ -52,7 +52,7 @@ If you need to generate test data manually:
 
 ```bash
 # Generate HTML pages from existing test fixtures
-python3 .github/actions/collect-rss-feeds/generate_summary.py \
+python3 .github/workflows/scripts/rss-processing/generate_summary.py \
   --input .github/workflows/test-fixtures/rss-test-data.json \
   --output-dir docs
 
@@ -91,7 +91,7 @@ For automated testing in CI/CD, add this before running UI tests:
 
 ```yaml
 - name: Generate test data for UI tests
-  run: bash .github/scripts/generate-test-data.sh
+  run: bash scripts/test/generate-test-data.sh
 
 - name: Run UI tests
   run: npm run test:ui
@@ -103,7 +103,7 @@ For automated testing in CI/CD, add this before running UI tests:
 **Solution**: Generate HTML files first:
 
 ```bash
-bash .github/scripts/generate-test-data.sh
+bash scripts/test/generate-test-data.sh
 ```
 
 **Problem**: Tests timeout waiting for elements  

@@ -44,19 +44,19 @@ Fixes #(issue number)
 
 ### For Python Changes
 
-- [ ] ✅ Python tests pass (`python3 -m pytest .github/actions/collect-rss-feeds/tests/ -v`)
+- [ ] ✅ Python tests pass (`python3 -m pytest actions/collect-rss-feeds/tests/ .github/workflows/scripts/rss-processing/tests/ -v`)
 - [ ] ✅ Type hints added for function parameters and return values
 - [ ] ✅ Docstrings added for functions and classes
 
 ### For Shell Script Changes
 
-- [ ] ✅ Shell script tests pass (`bats .github/scripts/test_*.bats`)
+- [ ] ✅ Shell script tests pass (`bats scripts/test/test_*.bats`)
 - [ ] ✅ Scripts use tabs for indentation
 - [ ] ✅ All variables are properly quoted
 
 ### For UI Changes (CRITICAL)
 
-- [ ] ✅ Test data generated (`bash .github/scripts/generate-test-data.sh`)
+- [ ] ✅ Test data generated (`bash scripts/test/generate-test-data.sh`)
 - [ ] ✅ UI tests pass (`npm run test:ui`)
 - [ ] ✅ Tested on desktop (1920x1080, 1366x768)
 - [ ] ✅ Tested on tablet (768x1024)

@@ -1,5 +1,5 @@
 ---
-applyTo: ".github/scripts/**/*.sh"
+applyTo: "{.github/workflows/scripts/**/*.sh,scripts/**/*.sh}"
 ---
 
 # Shell Script Development
@@ -13,9 +13,9 @@ applyTo: ".github/scripts/**/*.sh"
 
 ## Testing
 
-- Write BATS tests in `.github/scripts/test_*.bats`
+- Write BATS tests in `scripts/test/test_*.bats`
 - Test error conditions and edge cases
-- Run: `bats .github/scripts/test_*.bats`
+- Run: `bats scripts/test/test_*.bats`
 
 ## Best Practices
 
