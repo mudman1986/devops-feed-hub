@@ -40,6 +40,11 @@ on:
         required: false
         type: boolean
         default: false
+      skip_labels:
+        description: "Comma-separated list of labels to skip (e.g., 'no-ai,refining')"
+        required: false
+        type: string
+        default: "no-ai,refining"
 
 permissions:
   contents: read
@@ -113,13 +118,24 @@ jobs:
             const force = '${{ inputs.force }}' === 'true';
             const dryRun = '${{ inputs.dry_run }}' === 'true';
             const allowParentIssues = '${{ inputs.allow_parent_issues }}' === 'true';
+            // Use default labels when not provided (for schedule/issues triggers)
+            // For workflow_dispatch, the default is set in the input definition
+            const skipLabelsRaw = '${{ inputs.skip_labels }}';
+            const skipLabelsInput = skipLabelsRaw || 'no-ai,refining';
+
+            // Parse skip labels from comma-separated string
+            const skipLabels = skipLabelsInput
+              .split(',')
+              .map(label => label.trim())
+              .filter(label => label.length > 0);
 
             console.log(
               `Running in ${mode} mode, ` +
               `force=${force}, ` +
               `labelOverride=${labelOverride}, ` +
               `dryRun=${dryRun}, ` +
-              `allowParentIssues=${allowParentIssues}`
+              `allowParentIssues=${allowParentIssues}, ` +
+              `skipLabels=${JSON.stringify(skipLabels)}`
             );
 
             // Load helper functions
@@ -427,7 +443,8 @@ jobs:
                 // Find first assignable issue using simplified helper function
                 const assignable = helpers.findAssignableIssue(
                   issues.repository.issues.nodes,
-                  allowParentIssues
+                  allowParentIssues,
+                  skipLabels
                 );
                 if (assignable) {
                   issueToAssign = assignable;
@@ -438,7 +455,7 @@ jobs:
                 // Log detailed analysis of why issues were skipped
                 issues.repository.issues.nodes.forEach(issue => {
                   const parsed = helpers.parseIssueData(issue);
-                  const { shouldSkip, reason } = helpers.shouldSkipIssue(parsed, allowParentIssues);
+                  const { shouldSkip, reason } = helpers.shouldSkipIssue(parsed, allowParentIssues, skipLabels);
                   console.log(`  Issue ${context.repo.owner}/${context.repo.repo}#${issue.number}: ${issue.title}`);
                   console.log(`    - Assigned: ${parsed.isAssigned}, HasSubIssues: ${parsed.hasSubIssues}, IsSubIssue: ${parsed.isSubIssue}, Refactor: ${parsed.isRefactorIssue}`);
                   if (shouldSkip) {
@@ -515,7 +532,8 @@ jobs:
 
                 issueToAssign = helpers.findAssignableIssue(
                   nonPriorityIssues,
-                  allowParentIssues
+                  allowParentIssues,
+                  skipLabels
                 );
                 if (issueToAssign) {
                   console.log(`Found issue to assign: ${context.repo.owner}/${context.repo.repo}#${issueToAssign.number}`);
