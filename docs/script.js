@@ -328,7 +328,7 @@ function applyTimeframeFilter(timeframe) {
  */
 // Helper function to extract feed name from section heading
 function extractFeedName(section) {
-  const heading = section.querySelector("h3");
+  const heading = section.querySelector("h2");
   const feedNameElement = heading?.childNodes[0];
   return feedNameElement
     ? feedNameElement.textContent.trim()
@@ -747,7 +747,7 @@ function applyFeedFilter() {
 
   const feedSections = document.querySelectorAll(".feed-section");
   feedSections.forEach((section) => {
-    const heading = section.querySelector("h3");
+    const heading = section.querySelector("h2");
     if (!heading) return;
 
     const feedNameElement = heading.childNodes[0];
