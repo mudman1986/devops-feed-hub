@@ -326,6 +326,62 @@ function applyTimeframeFilter(timeframe) {
 /**
  * Update feed counts and reorder feeds
  */
+// Helper function to extract feed name from section heading
+function extractFeedName(section) {
+  const heading = section.querySelector("h2");
+  const feedNameElement = heading?.childNodes[0];
+  return feedNameElement
+    ? feedNameElement.textContent.trim()
+    : heading?.textContent.trim() || "";
+}
+
+// Helper function to update count badge
+function updateCountBadge(section, count) {
+  const countBadge = section.querySelector(".feed-count");
+  if (countBadge) {
+    const plural = count !== 1 ? "s" : "";
+    countBadge.textContent = `${count} article${plural}`;
+  }
+}
+
+// Helper function to update "no articles" message
+function updateNoArticlesMessage(section, count, messageText = "No new articles in this time period") {
+  const noArticlesMsg = section.querySelector(".no-articles");
+  const articleList = section.querySelector(".article-list");
+
+  if (count === 0) {
+    if (articleList) articleList.style.display = "none";
+    if (!noArticlesMsg) {
+      const msg = document.createElement("div");
+      msg.className = "no-articles";
+      msg.textContent = messageText;
+      section.appendChild(msg);
+    } else {
+      noArticlesMsg.style.display = "";
+    }
+  } else {
+    if (articleList) articleList.style.display = "";
+    if (noArticlesMsg) {
+      noArticlesMsg.remove();
+    }
+  }
+}
+
+// Helper function to order feeds by unread status
+function orderFeedsByUnreadStatus(feedsData) {
+  const feedsWithUnread = feedsData
+    .filter((f) => f.unreadCount > 0)
+    .sort((a, b) => a.name.localeCompare(b.name));
+  const feedsAllRead = feedsData
+    .filter((f) => f.unreadCount === 0 && (f.count || 0) > 0)
+    .sort((a, b) => a.name.localeCompare(b.name));
+  const emptyFeeds = feedsData
+    .filter((f) => (f.count || 0) === 0)
+    .sort((a, b) => a.name.localeCompare(b.name));
+
+  return [...feedsWithUnread, ...feedsAllRead, ...emptyFeeds];
+}
+
 function updateFeedCounts() {
   const feedSections = document.querySelectorAll(".feed-section");
   const feedsData = [];
@@ -354,72 +410,27 @@ function updateFeedCounts() {
     });
     const unreadCount = unreadArticles.length;
 
-    // Update count badge
-    const countBadge = section.querySelector(".feed-count");
-    if (countBadge) {
-      const plural = count !== 1 ? "s" : "";
-      countBadge.textContent = `${count} article${plural}`;
-    }
-
-    // Show "no articles" message if no visible articles
-    const noArticlesMsg = section.querySelector(".no-articles");
-    const articleList = section.querySelector(".article-list");
-
-    if (count === 0) {
-      if (articleList) articleList.style.display = "none";
-      if (!noArticlesMsg) {
-        const msg = document.createElement("div");
-        msg.className = "no-articles";
-        msg.textContent = "No new articles in this time period";
-        section.appendChild(msg);
-      } else {
-        noArticlesMsg.style.display = "";
-      }
-    } else {
-      if (articleList) articleList.style.display = "";
-      if (noArticlesMsg) {
-        noArticlesMsg.remove();
-      }
-    }
-
-    // Extract feed name without count badge text
-    const heading = section.querySelector("h3");
-    const feedNameElement = heading?.childNodes[0];
-    const feedName = feedNameElement
-      ? feedNameElement.textContent.trim()
-      : heading?.textContent.trim() || "";
+    updateCountBadge(section, count);
+    updateNoArticlesMessage(section, count);
 
     feedsData.push({
       element: section,
       count,
       unreadCount,
-      name: feedName,
+      name: extractFeedName(section),
     });
   });
 
-  // Reorder feeds using same three-tier logic as updateFeedCountsAfterReadFilter
+  // Reorder feeds by unread status
   if (feedSections.length > 0 && feedSections[0].parentNode) {
     const parent = feedSections[0].parentNode;
     const footer = parent.querySelector(".footer");
-
-    const feedsWithUnread = feedsData
-      .filter((f) => f.unreadCount > 0)
-      .sort((a, b) => a.name.localeCompare(b.name));
-    const feedsAllRead = feedsData
-      .filter((f) => f.unreadCount === 0 && (f.count || 0) > 0)
-      .sort((a, b) => a.name.localeCompare(b.name));
-    const emptyFeeds = feedsData
-      .filter((f) => (f.count || 0) === 0)
-      .sort((a, b) => a.name.localeCompare(b.name));
-
-    const orderedFeeds = [...feedsWithUnread, ...feedsAllRead, ...emptyFeeds];
+    const orderedFeeds = orderFeedsByUnreadStatus(feedsData);
     reorderDOMElements(orderedFeeds, parent, footer);
   }
 }
 
-function updateMetadataDisplay() {
-  // Kept for compatibility with generated HTML pages
-}
+
 
 function updateStats() {
   const statCards = document.querySelectorAll(".stat-card");
@@ -552,18 +563,12 @@ function updateFeedCountsAfterReadFilter() {
 
     // Handle feeds with no article list (empty feeds with 0 articles across all timeframes)
     if (!articleList) {
-      const heading = section.querySelector("h3");
-      const feedNameElement = heading?.childNodes[0];
-      const feedName = feedNameElement
-        ? feedNameElement.textContent.trim()
-        : heading?.textContent.trim() || "";
-
       // Empty feed with no articles at all
       feedsData.push({
         element: section,
         count: 0,
         unreadCount: 0,
-        name: feedName,
+        name: extractFeedName(section),
       });
       return;
     }
@@ -587,17 +592,14 @@ function updateFeedCountsAfterReadFilter() {
     const unreadCount = unreadArticles.length;
 
     reorderArticlesInFeed(articleList, articles);
-
-    const countBadge = section.querySelector(".feed-count");
-    if (countBadge) {
-      const plural = count !== 1 ? "s" : "";
-      countBadge.textContent = `${count} article${plural}`;
-    }
-
+    updateCountBadge(section, count);
+    
+    // Use different message text for this context
     const noArticlesMsg = section.querySelector(".no-articles");
+    const articleListElement = section.querySelector(".article-list");
 
     if (count === 0) {
-      if (articleList) articleList.style.display = "none";
+      if (articleListElement) articleListElement.style.display = "none";
       if (!noArticlesMsg) {
         const msg = document.createElement("div");
         msg.className = "no-articles";
@@ -607,22 +609,15 @@ function updateFeedCountsAfterReadFilter() {
         noArticlesMsg.style.display = "";
       }
     } else {
-      if (articleList) articleList.style.display = "";
+      if (articleListElement) articleListElement.style.display = "";
       if (noArticlesMsg) noArticlesMsg.style.display = "none";
     }
-
-    // Extract feed name without count badge text
-    const heading = section.querySelector("h3");
-    const feedNameElement = heading?.childNodes[0];
-    const feedName = feedNameElement
-      ? feedNameElement.textContent.trim()
-      : heading?.textContent.trim() || "";
 
     feedsData.push({
       element: section,
       count,
       unreadCount,
-      name: feedName,
+      name: extractFeedName(section),
     });
   });
 
@@ -671,18 +666,7 @@ function reorderFeedsByUnreadStatus(feedsData) {
   if (!parent) return;
 
   const footer = parent.querySelector(".footer");
-
-  const feedsWithUnread = feedsData
-    .filter((f) => f.unreadCount > 0)
-    .sort((a, b) => a.name.localeCompare(b.name));
-  const feedsAllRead = feedsData
-    .filter((f) => f.unreadCount === 0 && (f.count || 0) > 0)
-    .sort((a, b) => a.name.localeCompare(b.name));
-  const emptyFeeds = feedsData
-    .filter((f) => (f.count || 0) === 0)
-    .sort((a, b) => a.name.localeCompare(b.name));
-
-  const orderedFeeds = [...feedsWithUnread, ...feedsAllRead, ...emptyFeeds];
+  const orderedFeeds = orderFeedsByUnreadStatus(feedsData);
   reorderDOMElements(orderedFeeds, parent, footer);
 }
 
@@ -763,7 +747,7 @@ function applyFeedFilter() {
 
   const feedSections = document.querySelectorAll(".feed-section");
   feedSections.forEach((section) => {
-    const heading = section.querySelector("h3");
+    const heading = section.querySelector("h2");
     if (!heading) return;
 
     const feedNameElement = heading.childNodes[0];

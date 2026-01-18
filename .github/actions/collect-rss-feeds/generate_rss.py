@@ -13,6 +13,18 @@ from xml.etree import ElementTree as ET
 
 from utils import generate_feed_slug, parse_iso_timestamp, sort_articles_by_date
 
+# Default base URL - can be overridden via environment variable or CLI argument
+DEFAULT_BASE_URL = os.getenv(
+    "FEED_HUB_BASE_URL",
+    os.getenv("GITHUB_REPOSITORY", "mudman1986/devops-feed-hub").split("/")[0]
+    + ".github.io/"
+    + os.getenv("GITHUB_REPOSITORY", "mudman1986/devops-feed-hub").split("/")[1],
+).rstrip("/")
+
+# Ensure it has https:// prefix
+if not DEFAULT_BASE_URL.startswith("http"):
+    DEFAULT_BASE_URL = f"https://{DEFAULT_BASE_URL}"
+
 
 def format_rfc822_date(iso_date_str: str) -> str:
     """
@@ -121,18 +133,21 @@ def create_rss_feed(
 
 
 def generate_master_feed(
-    data: Dict[str, Any], base_url: str = "https://mudman1986.github.io/devops-feed-hub"
+    data: Dict[str, Any], base_url: str = None
 ) -> str:
     """
     Generate master RSS feed with all articles from all feeds.
 
     Args:
             data: RSS feed collection data dictionary
-            base_url: Base URL for the feed hub
+            base_url: Base URL for the feed hub (defaults to DEFAULT_BASE_URL)
 
     Returns:
             RSS 2.0 XML string
     """
+    if base_url is None:
+        base_url = DEFAULT_BASE_URL
+    
     # Collect all articles from all feeds
     all_articles = []
     for feed_name, feed_data in data["feeds"].items():
@@ -159,7 +174,7 @@ def generate_individual_feed(
     feed_name: str,
     feed_data: Dict[str, Any],
     collected_at: str,
-    base_url: str = "https://mudman1986.github.io/devops-feed-hub",
+    base_url: str = None,
 ) -> str:
     """
     Generate RSS feed for a single source feed.
@@ -168,11 +183,14 @@ def generate_individual_feed(
             feed_name: Name of the feed
             feed_data: Feed data dictionary with articles
             collected_at: ISO 8601 timestamp of when feed was collected
-            base_url: Base URL for the feed hub
+            base_url: Base URL for the feed hub (defaults to DEFAULT_BASE_URL)
 
     Returns:
             RSS 2.0 XML string
     """
+    if base_url is None:
+        base_url = DEFAULT_BASE_URL
+    
     feed_slug = generate_feed_slug(feed_name)
 
     # Sort articles by publication date (newest first)
@@ -244,8 +262,8 @@ def main():
     )
     parser.add_argument(
         "--base-url",
-        default="https://mudman1986.github.io/devops-feed-hub",
-        help="Base URL for the feed hub",
+        default=DEFAULT_BASE_URL,
+        help=f"Base URL for the feed hub (default: {DEFAULT_BASE_URL})",
     )
 
     args = parser.parse_args()
