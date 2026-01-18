@@ -47,7 +47,7 @@ jobs:
           echo "Using static test fixture for consistent UI tests"
           cp .github/workflows/test-fixtures/ui-test-data.json rss-feeds-output.json
           # Generate multi-page HTML (main index + individual feed pages)
-          python3 .github/actions/collect-rss-feeds/generate_summary.py \
+          python3 .github/workflows/scripts/rss-processing/generate_summary.py \
             --input rss-feeds-output.json \
             --output-dir docs
 

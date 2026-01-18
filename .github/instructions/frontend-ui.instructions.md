@@ -10,13 +10,13 @@ applyTo: "docs/**/*.js,docs/**/*.html,docs/**/*.css"
 
 ### Before Making Changes
 
-1. Generate test data: `bash .github/scripts/generate-test-data.sh`
+1. Generate test data: `bash scripts/test/generate-test-data.sh`
 2. Run baseline tests: `npm run test:ui`
 3. Ensure all tests pass before starting
 
 ### After Making Changes
 
-1. Regenerate test data: `bash .github/scripts/generate-test-data.sh`
+1. Regenerate test data: `bash scripts/test/generate-test-data.sh`
 2. Run UI tests: `npm run test:ui`
 3. Fix ALL failures immediately
 4. Run Jest unit tests: `npm test`
@@ -76,4 +76,4 @@ applyTo: "docs/**/*.js,docs/**/*.html,docs/**/*.css"
 2. **JavaScript syntax errors** - Validate with `node -c` before committing
 3. **Breaking mobile navigation** - Always test sidebar on mobile viewport
 4. **Skipping UI tests** - NEVER commit without running `npm run test:ui`
-5. **Not regenerating test data** - Run `bash .github/scripts/generate-test-data.sh` after HTML changes
+5. **Not regenerating test data** - Run `bash scripts/test/generate-test-data.sh` after HTML changes

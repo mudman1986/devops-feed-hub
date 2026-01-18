@@ -1,5 +1,5 @@
 ---
-applyTo: ".github/actions/**/*.py"
+applyTo: "actions/**/*.py"
 ---
 
 # RSS Feed Action Python Development
@@ -13,10 +13,10 @@ applyTo: ".github/actions/**/*.py"
 
 ## Testing
 
-- Add unit tests for new functions in `.github/actions/collect-rss-feeds/tests/`
+- Add unit tests for new functions in `actions/collect-rss-feeds/tests/`
 - Test edge cases: empty feeds, malformed XML, network errors
 - Mock external HTTP requests
-- Run: `python3 -m pytest .github/actions/collect-rss-feeds/tests/ -v`
+- Run: `python3 -m pytest actions/collect-rss-feeds/tests/ -v`
 
 ## Output
 

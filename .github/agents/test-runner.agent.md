@@ -33,7 +33,7 @@ Run these checks in order and resolve any failures:
 
 1. **JavaScript tests**: `npm test`
    - **Expected time**: ~2 seconds
-2. **Python tests**: `python3 -m pytest .github/actions/collect-rss-feeds/tests/ -v`
+2. **Python tests**: `python3 -m pytest actions/collect-rss-feeds/tests/ -v`
    - **Expected time**: ~5 seconds
 3. **UI tests** - Run each test file individually for faster feedback:
    - **Test files location**: `tests/ui/*.spec.js`
@@ -43,7 +43,7 @@ Run these checks in order and resolve any failures:
    - **Full test suite**: `npm run test:ui` takes ~4-5 minutes (622+ tests across 5 viewports)
    - **Note**: Run each test file separately to get faster feedback on failures
    - To see all test files: `ls tests/ui/*.spec.js`
-4. **BATS tests**: `bats .github/scripts/test_*.bats`
+4. **BATS tests**: `bats scripts/test/test_*.bats`
    - **Expected time**: ~2 seconds
 5. **Super-linter** (if Docker available):
    ```bash
