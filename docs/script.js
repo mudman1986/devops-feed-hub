@@ -319,7 +319,6 @@ function applyTimeframeFilter(timeframe) {
 
   // Update feed counts and reorder
   updateFeedCounts();
-  updateMetadataDisplay();
   updateStats();
 }
 

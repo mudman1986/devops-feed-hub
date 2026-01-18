@@ -39,12 +39,24 @@ The `generate-test-data.sh` script:
 
 ### Running Tests
 
-```bash
-# Full UI test suite
-npm run test:ui
+**RECOMMENDED: Run tests in separate groups for faster feedback**
 
-# Specific test file
+```bash
+# Run each test file individually to get faster feedback on failures
+npx playwright test tests/ui/functionality.spec.js
+npx playwright test tests/ui/view-modes.spec.js
 npx playwright test tests/ui/settings.spec.js
+npx playwright test tests/ui/layout.spec.js
+npx playwright test tests/ui/feed-ordering-bugs.spec.js
+npx playwright test tests/ui/feed-filter-navigation.spec.js
+npx playwright test tests/ui/timeframe-switch-read-ordering.spec.js
+npx playwright test tests/ui/empty-feeds-clear-read.spec.js
+npx playwright test tests/ui/empty-feeds-comprehensive.spec.js
+npx playwright test tests/ui/experimental-themes.spec.js
+npx playwright test tests/ui/screenshot-themes.spec.js
+
+# Full UI test suite (slower, use only for final validation)
+npm run test:ui
 
 # Single test by line number
 npx playwright test tests/ui/functionality.spec.js:12
@@ -165,6 +177,8 @@ In workflow files, always generate test data before running tests:
 - Fix the issue immediately
 - Re-run tests until they pass
 - NEVER commit with failing UI tests
+- **NEVER stop working if there are failed tests** - PRs with failing tests will not be merged
 - The task is NOT complete until UI tests pass
+- Continue working until 100% of tests pass
 
 **Remember**: This is a site. If the UI tests don't pass, the site doesn't work.

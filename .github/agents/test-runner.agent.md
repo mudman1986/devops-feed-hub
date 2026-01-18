@@ -33,7 +33,19 @@ Run these checks in order and resolve any failures:
 
 1. **JavaScript tests**: `npm test`
 2. **Python tests**: `python3 -m pytest .github/actions/collect-rss-feeds/tests/ -v`
-3. **UI tests**: `npm run test:ui`
+3. **UI tests** - Run in separate groups for faster feedback:
+   - `npx playwright test tests/ui/functionality.spec.js`
+   - `npx playwright test tests/ui/view-modes.spec.js`
+   - `npx playwright test tests/ui/settings.spec.js`
+   - `npx playwright test tests/ui/layout.spec.js`
+   - `npx playwright test tests/ui/feed-ordering-bugs.spec.js`
+   - `npx playwright test tests/ui/feed-filter-navigation.spec.js`
+   - `npx playwright test tests/ui/timeframe-switch-read-ordering.spec.js`
+   - `npx playwright test tests/ui/empty-feeds-clear-read.spec.js`
+   - `npx playwright test tests/ui/empty-feeds-comprehensive.spec.js`
+   - `npx playwright test tests/ui/experimental-themes.spec.js`
+   - `npx playwright test tests/ui/screenshot-themes.spec.js`
+   - **Note**: Run each test file separately to get faster feedback on failures
 4. **Super-linter** (if Docker available):
    ```bash
    docker run --rm \
@@ -93,7 +105,9 @@ Run these checks in order and resolve any failures:
 
 ## Rules
 
+- **CRITICAL: Never stop working if there are failed tests** - PRs with failing tests cannot and will not be merged
 - Never skip tests or linters; all must pass before merging
 - Maintain or raise code coverage with every change
 - Report and document test improvements in each PR
 - Treat linter and test failures as blockers
+- All test failures must be fixed before the work is considered complete
