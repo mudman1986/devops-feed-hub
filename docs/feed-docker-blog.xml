@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-docker-blog.xml</link>
     <description>Articles from Docker Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-docker-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sun, 18 Jan 2026 13:36:49 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 18 Jan 2026 14:00:35 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Making (Very) Small LLMs Smarter</title>
@@ -48,18 +48,6 @@
       <link>https://www.docker.com/blog/2025-recap-the-year-software-development-changed-shape/</link>
       <guid isPermaLink="true">https://www.docker.com/blog/2025-recap-the-year-software-development-changed-shape/</guid>
       <pubDate>Sat, 20 Dec 2025 13:45:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>From the Captain’s Chair: Igor Aleksandrov</title>
-      <link>https://www.docker.com/blog/from-the-captains-chair-igor-aleksandrov/</link>
-      <guid isPermaLink="true">https://www.docker.com/blog/from-the-captains-chair-igor-aleksandrov/</guid>
-      <pubDate>Fri, 19 Dec 2025 14:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Docker Hardened Images: Security Independently Validated by SRLabs</title>
-      <link>https://www.docker.com/blog/docker-hardened-images-security-independently-validated-by-srlabs/</link>
-      <guid isPermaLink="true">https://www.docker.com/blog/docker-hardened-images-security-independently-validated-by-srlabs/</guid>
-      <pubDate>Fri, 19 Dec 2025 13:50:24 +0000</pubDate>
     </item>
   </channel>
 </rss>

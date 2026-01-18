@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sun, 18 Jan 2026 13:36:49 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 18 Jan 2026 14:00:35 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>How tech leaders can turn AI hype into real team productivity</title>
@@ -650,20 +650,6 @@
       <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/securing-the-ai-era-starts-with-identity/ba-p/4478952</guid>
       <pubDate>Fri, 19 Dec 2025 16:00:00 +0000</pubDate>
       <source>Microsoft Entra Blog</source>
-    </item>
-    <item>
-      <title>From the Captain’s Chair: Igor Aleksandrov</title>
-      <link>https://www.docker.com/blog/from-the-captains-chair-igor-aleksandrov/</link>
-      <guid isPermaLink="true">https://www.docker.com/blog/from-the-captains-chair-igor-aleksandrov/</guid>
-      <pubDate>Fri, 19 Dec 2025 14:00:00 +0000</pubDate>
-      <source>Docker Blog</source>
-    </item>
-    <item>
-      <title>Docker Hardened Images: Security Independently Validated by SRLabs</title>
-      <link>https://www.docker.com/blog/docker-hardened-images-security-independently-validated-by-srlabs/</link>
-      <guid isPermaLink="true">https://www.docker.com/blog/docker-hardened-images-security-independently-validated-by-srlabs/</guid>
-      <pubDate>Fri, 19 Dec 2025 13:50:24 +0000</pubDate>
-      <source>Docker Blog</source>
     </item>
   </channel>
 </rss>
