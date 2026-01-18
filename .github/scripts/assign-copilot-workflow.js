@@ -279,7 +279,7 @@ module.exports = async ({
         } else {
           issue.trackedIssues = { totalCount: 0 };
         }
-      } catch (error) {
+      } catch {
         issue.trackedIssues = { totalCount: 0 };
       }
     }
@@ -691,7 +691,7 @@ module.exports = async ({
 
           const totalSubIssues = subIssuesResponse.data.length;
           issue.trackedIssues = { totalCount: totalSubIssues };
-        } catch (error) {
+        } catch {
           issue.trackedIssues = { totalCount: 0 };
         }
       }
