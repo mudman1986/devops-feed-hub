@@ -132,9 +132,7 @@ def create_rss_feed(
     return '<?xml version="1.0" encoding="UTF-8"?>\n' + xml_str
 
 
-def generate_master_feed(
-    data: Dict[str, Any], base_url: str = None
-) -> str:
+def generate_master_feed(data: Dict[str, Any], base_url: str = None) -> str:
     """
     Generate master RSS feed with all articles from all feeds.
 
@@ -147,7 +145,7 @@ def generate_master_feed(
     """
     if base_url is None:
         base_url = DEFAULT_BASE_URL
-    
+
     # Collect all articles from all feeds
     all_articles = []
     for feed_name, feed_data in data["feeds"].items():
@@ -190,7 +188,7 @@ def generate_individual_feed(
     """
     if base_url is None:
         base_url = DEFAULT_BASE_URL
-    
+
     feed_slug = generate_feed_slug(feed_name)
 
     # Sort articles by publication date (newest first)

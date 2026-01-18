@@ -345,7 +345,11 @@ function updateCountBadge(section, count) {
 }
 
 // Helper function to update "no articles" message
-function updateNoArticlesMessage(section, count, messageText = "No new articles in this time period") {
+function updateNoArticlesMessage(
+  section,
+  count,
+  messageText = "No new articles in this time period",
+) {
   const noArticlesMsg = section.querySelector(".no-articles");
   const articleList = section.querySelector(".article-list");
 
@@ -429,8 +433,6 @@ function updateFeedCounts() {
     reorderDOMElements(orderedFeeds, parent, footer);
   }
 }
-
-
 
 function updateStats() {
   const statCards = document.querySelectorAll(".stat-card");
@@ -593,7 +595,7 @@ function updateFeedCountsAfterReadFilter() {
 
     reorderArticlesInFeed(articleList, articles);
     updateCountBadge(section, count);
-    
+
     // Use different message text for this context
     const noArticlesMsg = section.querySelector(".no-articles");
     const articleListElement = section.querySelector(".article-list");
