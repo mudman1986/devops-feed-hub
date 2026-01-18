@@ -40,5 +40,5 @@ To customize the feeds being collected, edit:
 The HTML styling can be customized by modifying the generation logic in:
 
 ```text
-.github/actions/collect-rss-feeds/generate_summary.py
+.github/workflows/scripts/rss-processing/generate_summary.py
 ```
