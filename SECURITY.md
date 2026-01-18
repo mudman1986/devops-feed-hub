@@ -29,7 +29,7 @@ We aim to respond to all security reports within 72 hours. After the initial rep
 
 - Always run the latest version for the latest security fixes.
 - Never share sensitive data (API keys, passwords) in issues or PRs.
-- Do not commit secret credentials to the repository. We use [GitHub's secret scanning](https://docs.github.com/en/code-security/secret-scanning) to monitor for exposed secrets.
+- Do not commit secret credentials to the repository.
 - Regularly audit dependencies and apply updates.
 
 Thank you for helping keep DevOps Feed Hub and its users safe!
