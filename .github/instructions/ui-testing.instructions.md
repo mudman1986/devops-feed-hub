@@ -23,7 +23,7 @@ This is a **site project** - the deliverable is a functioning web page displayed
 
 ```bash
 # Generate test HTML from existing test fixtures
-bash .github/scripts/generate-test-data.sh
+bash scripts/test/generate-test-data.sh
 
 # Then run UI tests
 npm run test:ui
@@ -90,7 +90,7 @@ This file contains:
 ### Error: "data-theme is null"
 
 **Cause**: Missing `index.html`  
-**Fix**: Run `bash .github/scripts/generate-test-data.sh`
+**Fix**: Run `bash scripts/test/generate-test-data.sh`
 
 ### Error: "`http://localhost:8080` is already used"
 
@@ -151,7 +151,7 @@ In workflow files, always generate test data before running tests:
 
 ```yaml
 - name: Generate test HTML for UI tests
-  run: bash .github/scripts/generate-test-data.sh
+  run: bash scripts/test/generate-test-data.sh
 
 - name: Run Playwright tests
   run: npm run test:ui
@@ -171,7 +171,7 @@ In workflow files, always generate test data before running tests:
 
 **YOU MUST:**
 
-1. Generate test data: `bash .github/scripts/generate-test-data.sh`
+1. Generate test data: `bash scripts/test/generate-test-data.sh`
 2. Run UI tests: `npm run test:ui`
 3. Ensure 100% pass rate
 4. Take screenshots to verify visual correctness

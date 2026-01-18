@@ -26,7 +26,7 @@ jobs:
 
       - name: Collect RSS Feeds
         id: collect
-        uses: ./.github/actions/collect-rss-feeds
+        uses: ./actions/collect-rss-feeds
         with:
           hours: "720"
           config-path: ".github/rss-feeds.json"
@@ -51,14 +51,14 @@ jobs:
           mkdir -p docs
 
           # Generate multi-page HTML (main index + individual feed pages)
-          python3 .github/actions/collect-rss-feeds/generate_summary.py \
+          python3 actions/collect-rss-feeds/generate_summary.py \
             --input rss-feeds-output.json \
             --output-dir docs
 
           echo "✓ GitHub Pages content generated (multi-page)"
 
           # Generate RSS feeds (master + individual feeds)
-          python3 .github/actions/collect-rss-feeds/generate_rss.py \
+          python3 actions/collect-rss-feeds/generate_rss.py \
             --input rss-feeds-output.json \
             --output-dir docs
 
@@ -80,4 +80,4 @@ jobs:
           if [ -n "$TARGET_BRANCH_INPUT" ]; then
             TARGET_BRANCH="$TARGET_BRANCH_INPUT"
           fi
-          bash .github/scripts/commit-github-pages.sh "docs" "$TARGET_BRANCH"
+          bash .github/workflows/scripts/commit-github-pages.sh "docs" "$TARGET_BRANCH"

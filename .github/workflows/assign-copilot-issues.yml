@@ -136,7 +136,7 @@ jobs:
 
             // Load and execute the main workflow logic
             const path = require('path');
-            const workflowPath = path.join(process.env.GITHUB_WORKSPACE, '.github/scripts/assign-copilot-workflow.js');
+            const workflowPath = path.join(process.env.GITHUB_WORKSPACE, '.github/workflows/scripts/assign-copilot-workflow.js');
             const executeWorkflow = require(workflowPath);
 
             await executeWorkflow({
