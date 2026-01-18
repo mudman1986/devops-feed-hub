@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-kubernetes-blog.xml</link>
     <description>Articles from Kubernetes Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-kubernetes-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sun, 18 Jan 2026 15:16:04 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 18 Jan 2026 19:49:55 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Kubernetes v1.35: Restricting executables invoked by kubeconfigs via exec plugin allowList added to kuberc</title>
@@ -72,12 +72,6 @@
       <link>https://kubernetes.io/blog/2025/12/21/preventing-etcd-zombies/</link>
       <guid isPermaLink="true">https://kubernetes.io/blog/2025/12/21/preventing-etcd-zombies/</guid>
       <pubDate>Sun, 21 Dec 2025 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Kubernetes 1.35: In-Place Pod Resize Graduates to Stable</title>
-      <link>https://kubernetes.io/blog/2025/12/19/kubernetes-v1-35-in-place-pod-resize-ga/</link>
-      <guid isPermaLink="true">https://kubernetes.io/blog/2025/12/19/kubernetes-v1-35-in-place-pod-resize-ga/</guid>
-      <pubDate>Fri, 19 Dec 2025 18:30:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

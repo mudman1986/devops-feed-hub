@@ -5,13 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-microsoft-entra-blog.xml</link>
     <description>Articles from Microsoft Entra Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-microsoft-entra-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sun, 18 Jan 2026 15:16:04 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 18 Jan 2026 19:49:55 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
-    <item>
-      <title>Securing the AI era starts with identity</title>
-      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/securing-the-ai-era-starts-with-identity/ba-p/4478952</link>
-      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/securing-the-ai-era-starts-with-identity/ba-p/4478952</guid>
-      <pubDate>Fri, 19 Dec 2025 16:00:00 +0000</pubDate>
-    </item>
   </channel>
 </rss>

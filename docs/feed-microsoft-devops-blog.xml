@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-microsoft-devops-blog.xml</link>
     <description>Articles from Microsoft DevOps Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-microsoft-devops-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sun, 18 Jan 2026 15:16:04 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 18 Jan 2026 19:49:55 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>What’s new with Azure Repos?</title>
@@ -18,12 +18,6 @@
       <link>https://devblogs.microsoft.com/devops/the-new-test-run-hub-is-going-generally-available/</link>
       <guid isPermaLink="true">https://devblogs.microsoft.com/devops/the-new-test-run-hub-is-going-generally-available/</guid>
       <pubDate>Mon, 22 Dec 2025 13:06:01 +0000</pubDate>
-    </item>
-    <item>
-      <title>Work item linking for Advanced Security alerts now available</title>
-      <link>https://devblogs.microsoft.com/devops/work-item-linking-for-advanced-security-alerts-now-available/</link>
-      <guid isPermaLink="true">https://devblogs.microsoft.com/devops/work-item-linking-for-advanced-security-alerts-now-available/</guid>
-      <pubDate>Fri, 19 Dec 2025 18:24:14 +0000</pubDate>
     </item>
   </channel>
 </rss>

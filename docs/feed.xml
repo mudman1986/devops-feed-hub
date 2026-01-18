@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sun, 18 Jan 2026 15:16:04 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 18 Jan 2026 19:49:55 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>How tech leaders can turn AI hype into real team productivity</title>
@@ -629,27 +629,6 @@
       <guid isPermaLink="true">https://www.docker.com/blog/2025-recap-the-year-software-development-changed-shape/</guid>
       <pubDate>Sat, 20 Dec 2025 13:45:00 +0000</pubDate>
       <source>Docker Blog</source>
-    </item>
-    <item>
-      <title>Kubernetes 1.35: In-Place Pod Resize Graduates to Stable</title>
-      <link>https://kubernetes.io/blog/2025/12/19/kubernetes-v1-35-in-place-pod-resize-ga/</link>
-      <guid isPermaLink="true">https://kubernetes.io/blog/2025/12/19/kubernetes-v1-35-in-place-pod-resize-ga/</guid>
-      <pubDate>Fri, 19 Dec 2025 18:30:00 +0000</pubDate>
-      <source>Kubernetes Blog</source>
-    </item>
-    <item>
-      <title>Work item linking for Advanced Security alerts now available</title>
-      <link>https://devblogs.microsoft.com/devops/work-item-linking-for-advanced-security-alerts-now-available/</link>
-      <guid isPermaLink="true">https://devblogs.microsoft.com/devops/work-item-linking-for-advanced-security-alerts-now-available/</guid>
-      <pubDate>Fri, 19 Dec 2025 18:24:14 +0000</pubDate>
-      <source>Microsoft DevOps Blog</source>
-    </item>
-    <item>
-      <title>Securing the AI era starts with identity</title>
-      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/securing-the-ai-era-starts-with-identity/ba-p/4478952</link>
-      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/securing-the-ai-era-starts-with-identity/ba-p/4478952</guid>
-      <pubDate>Fri, 19 Dec 2025 16:00:00 +0000</pubDate>
-      <source>Microsoft Entra Blog</source>
     </item>
   </channel>
 </rss>
