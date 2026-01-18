@@ -77,6 +77,83 @@ describe("shouldSkipIssue", () => {
     expect(result.shouldSkip).toBe(true);
     expect(result.reason).toBe("already assigned");
   });
+
+  test("should skip issues with skip labels", () => {
+    const issue = {
+      isAssigned: false,
+      hasSubIssues: false,
+      labels: [{ name: "bug" }, { name: "no-ai" }],
+    };
+    const result = shouldSkipIssue(issue, false, ["no-ai", "refining"]);
+    expect(result.shouldSkip).toBe(true);
+    expect(result.reason).toBe("has skip label: no-ai");
+  });
+
+  test("should skip issues with refining label", () => {
+    const issue = {
+      isAssigned: false,
+      hasSubIssues: false,
+      labels: [{ name: "enhancement" }, { name: "refining" }],
+    };
+    const result = shouldSkipIssue(issue, false, ["no-ai", "refining"]);
+    expect(result.shouldSkip).toBe(true);
+    expect(result.reason).toBe("has skip label: refining");
+  });
+
+  test("should not skip issues without skip labels", () => {
+    const issue = {
+      isAssigned: false,
+      hasSubIssues: false,
+      labels: [{ name: "bug" }, { name: "enhancement" }],
+    };
+    const result = shouldSkipIssue(issue, false, ["no-ai", "refining"]);
+    expect(result.shouldSkip).toBe(false);
+    expect(result.reason).toBeNull();
+  });
+
+  test("should not skip when skip labels array is empty", () => {
+    const issue = {
+      isAssigned: false,
+      hasSubIssues: false,
+      labels: [{ name: "no-ai" }],
+    };
+    const result = shouldSkipIssue(issue, false, []);
+    expect(result.shouldSkip).toBe(false);
+    expect(result.reason).toBeNull();
+  });
+
+  test("should handle issues with no labels when skip labels provided", () => {
+    const issue = {
+      isAssigned: false,
+      hasSubIssues: false,
+      labels: [],
+    };
+    const result = shouldSkipIssue(issue, false, ["no-ai", "refining"]);
+    expect(result.shouldSkip).toBe(false);
+    expect(result.reason).toBeNull();
+  });
+
+  test("should prioritize assigned check over skip labels", () => {
+    const issue = {
+      isAssigned: true,
+      hasSubIssues: false,
+      labels: [{ name: "no-ai" }],
+    };
+    const result = shouldSkipIssue(issue, false, ["no-ai"]);
+    expect(result.shouldSkip).toBe(true);
+    expect(result.reason).toBe("already assigned");
+  });
+
+  test("should prioritize sub-issues check over skip labels", () => {
+    const issue = {
+      isAssigned: false,
+      hasSubIssues: true,
+      labels: [{ name: "no-ai" }],
+    };
+    const result = shouldSkipIssue(issue, false, ["no-ai"]);
+    expect(result.shouldSkip).toBe(true);
+    expect(result.reason).toBe("has sub-issues");
+  });
 });
 
 describe("shouldAssignNewIssue", () => {
@@ -360,6 +437,107 @@ describe("findAssignableIssue", () => {
     ];
     const result = findAssignableIssue(issues, false);
     expect(result).toBeNull();
+  });
+
+  test("should skip issues with skip labels", () => {
+    const issues = [
+      {
+        id: "issue-1",
+        number: 100,
+        title: "No-AI Issue",
+        url: "https://github.com/test/repo/issues/100",
+        assignees: { nodes: [] },
+        trackedIssues: { totalCount: 0 },
+        trackedInIssues: { totalCount: 0 },
+        labels: { nodes: [{ name: "bug" }, { name: "no-ai" }] },
+      },
+      {
+        id: "issue-2",
+        number: 101,
+        title: "Valid Issue",
+        url: "https://github.com/test/repo/issues/101",
+        assignees: { nodes: [] },
+        trackedIssues: { totalCount: 0 },
+        trackedInIssues: { totalCount: 0 },
+        labels: { nodes: [{ name: "bug" }] },
+      },
+    ];
+    const result = findAssignableIssue(issues, false, ["no-ai", "refining"]);
+    expect(result).not.toBeNull();
+    expect(result.number).toBe(101);
+  });
+
+  test("should skip issues with refining label", () => {
+    const issues = [
+      {
+        id: "issue-1",
+        number: 100,
+        title: "Refining Issue",
+        url: "https://github.com/test/repo/issues/100",
+        assignees: { nodes: [] },
+        trackedIssues: { totalCount: 0 },
+        trackedInIssues: { totalCount: 0 },
+        labels: { nodes: [{ name: "enhancement" }, { name: "refining" }] },
+      },
+      {
+        id: "issue-2",
+        number: 101,
+        title: "Valid Issue",
+        url: "https://github.com/test/repo/issues/101",
+        assignees: { nodes: [] },
+        trackedIssues: { totalCount: 0 },
+        trackedInIssues: { totalCount: 0 },
+        labels: { nodes: [{ name: "enhancement" }] },
+      },
+    ];
+    const result = findAssignableIssue(issues, false, ["no-ai", "refining"]);
+    expect(result).not.toBeNull();
+    expect(result.number).toBe(101);
+  });
+
+  test("should return null when all issues have skip labels", () => {
+    const issues = [
+      {
+        id: "issue-1",
+        number: 100,
+        title: "No-AI Issue",
+        url: "https://github.com/test/repo/issues/100",
+        assignees: { nodes: [] },
+        trackedIssues: { totalCount: 0 },
+        trackedInIssues: { totalCount: 0 },
+        labels: { nodes: [{ name: "no-ai" }] },
+      },
+      {
+        id: "issue-2",
+        number: 101,
+        title: "Refining Issue",
+        url: "https://github.com/test/repo/issues/101",
+        assignees: { nodes: [] },
+        trackedIssues: { totalCount: 0 },
+        trackedInIssues: { totalCount: 0 },
+        labels: { nodes: [{ name: "refining" }] },
+      },
+    ];
+    const result = findAssignableIssue(issues, false, ["no-ai", "refining"]);
+    expect(result).toBeNull();
+  });
+
+  test("should not skip when skip labels array is empty", () => {
+    const issues = [
+      {
+        id: "issue-1",
+        number: 100,
+        title: "Issue with no-ai label",
+        url: "https://github.com/test/repo/issues/100",
+        assignees: { nodes: [] },
+        trackedIssues: { totalCount: 0 },
+        trackedInIssues: { totalCount: 0 },
+        labels: { nodes: [{ name: "no-ai" }] },
+      },
+    ];
+    const result = findAssignableIssue(issues, false, []);
+    expect(result).not.toBeNull();
+    expect(result.number).toBe(100);
   });
 });
 

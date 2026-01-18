@@ -13,14 +13,28 @@
  * @param {boolean} issue.isAssigned - Whether issue already has assignees
  * @param {boolean} issue.hasSubIssues - Whether issue has any sub-issues (open or closed)
  * @param {boolean} [allowParentIssues=false] - Whether to allow assigning issues with sub-issues (default: false)
+ * @param {Array<string>} [skipLabels=[]] - Array of label names to skip (default: empty array)
  * @returns {Object} - {shouldSkip: boolean, reason: string}
  */
-function shouldSkipIssue(issue, allowParentIssues = false) {
+function shouldSkipIssue(issue, allowParentIssues = false, skipLabels = []) {
   if (issue.isAssigned) {
     return { shouldSkip: true, reason: "already assigned" };
   }
   if (issue.hasSubIssues && !allowParentIssues) {
     return { shouldSkip: true, reason: "has sub-issues" };
+  }
+  // Check if issue has any of the skip labels
+  if (skipLabels.length > 0 && issue.labels) {
+    const issueLabels = issue.labels.map((l) => l.name);
+    const matchedLabel = skipLabels.find((skipLabel) =>
+      issueLabels.includes(skipLabel),
+    );
+    if (matchedLabel) {
+      return {
+        shouldSkip: true,
+        reason: `has skip label: ${matchedLabel}`,
+      };
+    }
   }
   return { shouldSkip: false, reason: null };
 }
@@ -115,12 +129,21 @@ function parseIssueData(issue) {
  * Find the first assignable issue from a list
  * @param {Array} issues - Array of issue objects from GraphQL
  * @param {boolean} allowParentIssues - Whether to allow assigning issues with sub-issues (open or closed)
+ * @param {Array<string>} [skipLabels=[]] - Array of label names to skip (default: empty array)
  * @returns {Object|null} - First assignable issue or null
  */
-function findAssignableIssue(issues, allowParentIssues = false) {
+function findAssignableIssue(
+  issues,
+  allowParentIssues = false,
+  skipLabels = [],
+) {
   for (const issue of issues) {
     const parsed = parseIssueData(issue);
-    const { shouldSkip } = shouldSkipIssue(parsed, allowParentIssues);
+    const { shouldSkip } = shouldSkipIssue(
+      parsed,
+      allowParentIssues,
+      skipLabels,
+    );
 
     if (!shouldSkip) {
       return parsed;
