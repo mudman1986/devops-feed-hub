@@ -44,8 +44,8 @@ test.describe("Empty Feeds with No Articles Across All Timeframes", () => {
     const orderBeforeClear = await page.evaluate(() => {
       const sections = document.querySelectorAll(".feed-section");
       return Array.from(sections).map((section) => {
-        const h3 = section.querySelector("h3");
-        const firstChild = h3?.childNodes[0];
+        const h2 = section.querySelector("h2");
+        const firstChild = h2?.childNodes[0];
         const name = firstChild ? firstChild.textContent.trim() : "";
         const countText =
           section.querySelector(".feed-count")?.textContent || "";
@@ -65,8 +65,8 @@ test.describe("Empty Feeds with No Articles Across All Timeframes", () => {
     const orderAfterClear = await page.evaluate(() => {
       const sections = document.querySelectorAll(".feed-section");
       return Array.from(sections).map((section) => {
-        const h3 = section.querySelector("h3");
-        const firstChild = h3?.childNodes[0];
+        const h2 = section.querySelector("h2");
+        const firstChild = h2?.childNodes[0];
         const name = firstChild ? firstChild.textContent.trim() : "";
         const countText =
           section.querySelector(".feed-count")?.textContent || "";
@@ -126,8 +126,8 @@ test.describe("Empty Feeds with No Articles Across All Timeframes", () => {
     const feedData = await page.evaluate(() => {
       const sections = document.querySelectorAll(".feed-section");
       return Array.from(sections).map((section, index) => {
-        const h3 = section.querySelector("h3");
-        const firstChild = h3?.childNodes[0];
+        const h2 = section.querySelector("h2");
+        const firstChild = h2?.childNodes[0];
         const name = firstChild ? firstChild.textContent.trim() : "";
         const hasArticleList = section.querySelector(".article-list") !== null;
         const hasNoArticlesMsg = section.querySelector(".no-articles") !== null;

@@ -16,8 +16,8 @@ export default defineConfig({
     baseURL: "http://localhost:8080",
     trace: "on-first-retry",
     screenshot: "only-on-failure",
-    actionTimeout: 5000, // 5 seconds for individual actions
-    navigationTimeout: 5000, // 5 seconds for page navigation
+    actionTimeout: 3000, // 3 seconds for individual actions (reduced from 5s for faster feedback)
+    navigationTimeout: 3000, // 3 seconds for page navigation (reduced from 5s for faster feedback)
   },
 
   projects: [
@@ -68,6 +68,6 @@ export default defineConfig({
     command: "npx http-server docs -p 8080 --silent",
     port: 8080,
     reuseExistingServer: !process.env.CI,
-    timeout: 30000, // 30 seconds to start server (reasonable for CI)
+    timeout: 10000, // 10 seconds to start server (reduced from 30s for faster feedback)
   },
 });

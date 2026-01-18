@@ -33,7 +33,7 @@ test.describe("Feed Filter Navigation Tests", () => {
       return Array.from(sections)
         .filter((s) => s.hasAttribute("data-hidden-by-filter"))
         .map((s) => {
-          const h3 = s.querySelector("h3");
+          const h3 = s.querySelector("h2");
           const firstChild = h3?.childNodes[0];
           return firstChild ? firstChild.textContent.trim() : "";
         });
@@ -56,7 +56,7 @@ test.describe("Feed Filter Navigation Tests", () => {
     const finalOrder = await page.evaluate(() => {
       const sections = document.querySelectorAll(".feed-section");
       return Array.from(sections).map((section) => {
-        const h3 = section.querySelector("h3");
+        const h3 = section.querySelector("h2");
         const firstChild = h3?.childNodes[0];
         return firstChild ? firstChild.textContent.trim() : "";
       });
@@ -101,7 +101,7 @@ test.describe("Feed Filter Navigation Tests", () => {
         const feedData = [];
 
         sections.forEach((section, index) => {
-          const h3 = section.querySelector("h3");
+          const h3 = section.querySelector("h2");
           const firstChild = h3?.childNodes[0];
           const name = firstChild ? firstChild.textContent.trim() : "";
           const countText =
@@ -162,7 +162,7 @@ test.describe("Feed Filter Navigation Tests", () => {
       return Array.from(sections)
         .filter((s) => !s.hasAttribute("data-hidden-by-filter"))
         .map((s) => {
-          const h3 = s.querySelector("h3");
+          const h3 = s.querySelector("h2");
           const firstChild = h3?.childNodes[0];
           return firstChild ? firstChild.textContent.trim() : "";
         });
