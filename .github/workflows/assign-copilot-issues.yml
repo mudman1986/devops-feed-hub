@@ -382,51 +382,28 @@ jobs:
                 });
 
                 // WORKAROUND: GraphQL trackedIssues returns 0 even for issues with sub-issues
-                // Use REST API timeline to check for sub-issues
-                console.log(`  Checking for sub-issues via REST API timeline...`);
+                // Check issue body for tasklist items with issue references (actual sub-issues)
+                console.log(`  Checking for sub-issues in issue bodies...`);
                 for (const issue of issues.repository.issues.nodes) {
                   try {
-                    // Get timeline to find child issues (sub-issues reference parent)
-                    const { data: timeline } = await github.rest.issues.listEventsForTimeline({
-                      owner: context.repo.owner,
-                      repo: context.repo.repo,
-                      issue_number: issue.number,
-                      per_page: 100
-                    });
+                    if (!issue.body) {
+                      console.log(`    #${issue.number}: No body content - no sub-issues`);
+                      continue;
+                    }
                     
-                    console.log(`    #${issue.number}: Checking ${timeline.length} timeline events`);
+                    // Look for tasklist items that reference issues: - [ ] #123 or - [x] #456
+                    // This is the definitive way to identify sub-issues
+                    const tasklistPattern = /^[\s]*-\s+\[([ xX])\]\s+.*#\d+/gm;
+                    const tasklistMatches = issue.body.match(tasklistPattern);
                     
-                    // Look for cross-references from OTHER issues (potential sub-issues)
-                    // Filter to only count references FROM other issues TO this issue
-                    // Heuristic: sub-issues typically have higher numbers (created later)
-                    const incomingRefs = timeline.filter(event => 
-                      event.event === 'cross-referenced' && 
-                      event.source && 
-                      event.source.issue &&
-                      event.source.issue.number !== issue.number && // Not self-reference
-                      event.source.issue.number > issue.number // Sub-issues created after parent
-                    );
-                    
-                    console.log(`    #${issue.number}: Found ${incomingRefs.length} incoming cross-references from higher-numbered issues`);
-                    
-                    // Also check the issue body for tasklist items which indicate sub-issues
-                    const bodyHasTasklist = issue.body && (
-                      issue.body.includes('- [ ]') || 
-                      issue.body.includes('- [x]') ||
-                      issue.body.includes('- [X]')
-                    );
-                    
-                    if (incomingRefs.length > 0) {
-                      console.log(`    #${issue.number}: Has ${incomingRefs.length} potential sub-issues - marking as parent`);
-                      issue.trackedIssues = { totalCount: incomingRefs.length };
-                    } else if (bodyHasTasklist) {
-                      console.log(`    #${issue.number}: Has tasklist in body - marking as parent`);
-                      issue.trackedIssues = { totalCount: 1 };
+                    if (tasklistMatches && tasklistMatches.length > 0) {
+                      console.log(`    #${issue.number}: Found ${tasklistMatches.length} tasklist items with issue references - marking as parent`);
+                      issue.trackedIssues = { totalCount: tasklistMatches.length };
                     } else {
-                      console.log(`    #${issue.number}: No sub-issues detected`);
+                      console.log(`    #${issue.number}: No tasklist items with issue references found`);
                     }
                   } catch (error) {
-                    console.log(`    #${issue.number}: Error checking REST API: ${error.message}`);
+                    console.log(`    #${issue.number}: Error checking body: ${error.message}`);
                   }
                 }
 
@@ -494,47 +471,27 @@ jobs:
                   return !hasPriorityLabel;
                 });
 
-                // WORKAROUND: Check for sub-issues via REST API for non-priority issues too
-                console.log(`  Checking ${nonPriorityIssues.length} non-priority issues for sub-issues via REST API timeline...`);
+                // WORKAROUND: Check for sub-issues in non-priority issue bodies too
+                console.log(`  Checking ${nonPriorityIssues.length} non-priority issues for sub-issues in bodies...`);
                 for (const issue of nonPriorityIssues) {
                   try {
-                    const { data: timeline } = await github.rest.issues.listEventsForTimeline({
-                      owner: context.repo.owner,
-                      repo: context.repo.repo,
-                      issue_number: issue.number,
-                      per_page: 100
-                    });
+                    if (!issue.body) {
+                      console.log(`    #${issue.number}: No body content - no sub-issues`);
+                      continue;
+                    }
                     
-                    console.log(`    #${issue.number}: Checking ${timeline.length} timeline events`);
+                    // Look for tasklist items that reference issues
+                    const tasklistPattern = /^[\s]*-\s+\[([ xX])\]\s+.*#\d+/gm;
+                    const tasklistMatches = issue.body.match(tasklistPattern);
                     
-                    // Filter to only count incoming references from higher-numbered issues (potential sub-issues)
-                    const incomingRefs = timeline.filter(event => 
-                      event.event === 'cross-referenced' && 
-                      event.source && 
-                      event.source.issue &&
-                      event.source.issue.number !== issue.number &&
-                      event.source.issue.number > issue.number
-                    );
-                    
-                    console.log(`    #${issue.number}: Found ${incomingRefs.length} incoming cross-references from higher-numbered issues`);
-                    
-                    const bodyHasTasklist = issue.body && (
-                      issue.body.includes('- [ ]') || 
-                      issue.body.includes('- [x]') ||
-                      issue.body.includes('- [X]')
-                    );
-                    
-                    if (incomingRefs.length > 0) {
-                      console.log(`    #${issue.number}: Has ${incomingRefs.length} potential sub-issues - marking as parent`);
-                      issue.trackedIssues = { totalCount: incomingRefs.length };
-                    } else if (bodyHasTasklist) {
-                      console.log(`    #${issue.number}: Has tasklist in body - marking as parent`);
-                      issue.trackedIssues = { totalCount: 1 };
+                    if (tasklistMatches && tasklistMatches.length > 0) {
+                      console.log(`    #${issue.number}: Found ${tasklistMatches.length} tasklist items with issue references - marking as parent`);
+                      issue.trackedIssues = { totalCount: tasklistMatches.length };
                     } else {
-                      console.log(`    #${issue.number}: No sub-issues detected`);
+                      console.log(`    #${issue.number}: No tasklist items with issue references found`);
                     }
                   } catch (error) {
-                    console.log(`    #${issue.number}: Error checking REST API: ${error.message}`);
+                    console.log(`    #${issue.number}: Error checking body: ${error.message}`);
                   }
                 }
 
