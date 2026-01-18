@@ -32,21 +32,20 @@ You ensure all linters, tests, and code coverage standards are met before code i
 Run these checks in order and resolve any failures:
 
 1. **JavaScript tests**: `npm test`
+   - **Expected time**: ~2 seconds
 2. **Python tests**: `python3 -m pytest .github/actions/collect-rss-feeds/tests/ -v`
-3. **UI tests** - Run in separate groups for faster feedback:
-   - `npx playwright test tests/ui/functionality.spec.js`
-   - `npx playwright test tests/ui/view-modes.spec.js`
-   - `npx playwright test tests/ui/settings.spec.js`
-   - `npx playwright test tests/ui/layout.spec.js`
-   - `npx playwright test tests/ui/feed-ordering-bugs.spec.js`
-   - `npx playwright test tests/ui/feed-filter-navigation.spec.js`
-   - `npx playwright test tests/ui/timeframe-switch-read-ordering.spec.js`
-   - `npx playwright test tests/ui/empty-feeds-clear-read.spec.js`
-   - `npx playwright test tests/ui/empty-feeds-comprehensive.spec.js`
-   - `npx playwright test tests/ui/experimental-themes.spec.js`
-   - `npx playwright test tests/ui/screenshot-themes.spec.js`
+   - **Expected time**: ~5 seconds
+3. **UI tests** - Run each test file individually for faster feedback:
+   - **Test files location**: `tests/ui/*.spec.js`
+   - Run individual files: `npx playwright test tests/ui/<filename>.spec.js`
+   - Example: `npx playwright test tests/ui/functionality.spec.js`
+   - **Expected time per file**: 20-60 seconds (varies by number of tests and viewports)
+   - **Full test suite**: `npm run test:ui` takes ~4-5 minutes (622+ tests across 5 viewports)
    - **Note**: Run each test file separately to get faster feedback on failures
-4. **Super-linter** (if Docker available):
+   - To see all test files: `ls tests/ui/*.spec.js`
+4. **BATS tests**: `bats .github/scripts/test_*.bats`
+   - **Expected time**: ~2 seconds
+5. **Super-linter** (if Docker available):
    ```bash
    docker run --rm \
      -e RUN_LOCAL=true \

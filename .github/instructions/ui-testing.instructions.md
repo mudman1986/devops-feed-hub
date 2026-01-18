@@ -29,6 +29,13 @@ bash .github/scripts/generate-test-data.sh
 npm run test:ui
 ```
 
+### Expected Test Run Times
+
+- **Individual test file**: 20-60 seconds (varies by number of tests)
+- **Full test suite** (`npm run test:ui`): ~4-5 minutes (622+ tests across 5 viewports)
+- **Test data generation**: ~1 second
+- Plan accordingly when running tests - the full suite takes several minutes
+
 ### What the Script Does
 
 The `generate-test-data.sh` script:
@@ -39,21 +46,19 @@ The `generate-test-data.sh` script:
 
 ### Running Tests
 
-**RECOMMENDED: Run tests in separate groups for faster feedback**
+**RECOMMENDED: Run tests in separate files for faster feedback**
 
 ```bash
-# Run each test file individually to get faster feedback on failures
+# List all UI test files
+ls tests/ui/*.spec.js
+
+# Run individual test files (replace <filename> with actual file name)
+npx playwright test tests/ui/<filename>.spec.js
+
+# Examples:
 npx playwright test tests/ui/functionality.spec.js
 npx playwright test tests/ui/view-modes.spec.js
 npx playwright test tests/ui/settings.spec.js
-npx playwright test tests/ui/layout.spec.js
-npx playwright test tests/ui/feed-ordering-bugs.spec.js
-npx playwright test tests/ui/feed-filter-navigation.spec.js
-npx playwright test tests/ui/timeframe-switch-read-ordering.spec.js
-npx playwright test tests/ui/empty-feeds-clear-read.spec.js
-npx playwright test tests/ui/empty-feeds-comprehensive.spec.js
-npx playwright test tests/ui/experimental-themes.spec.js
-npx playwright test tests/ui/screenshot-themes.spec.js
 
 # Full UI test suite (slower, use only for final validation)
 npm run test:ui
