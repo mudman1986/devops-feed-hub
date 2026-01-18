@@ -22,9 +22,9 @@ test.describe("Feed Ordering - Comprehensive Empty Feed Tests", () => {
     const feedNames = [];
 
     for (const section of feedSections) {
-      // Extract feed name from h3, excluding the count badge
-      const h3Element = await section.locator("h3");
-      const feedName = await h3Element.evaluate((el) => {
+      // Extract feed name from h2, excluding the count badge
+      const h2Element = await section.locator("h2");
+      const feedName = await h2Element.evaluate((el) => {
         const firstChild = el.childNodes[0];
         return firstChild
           ? firstChild.textContent.trim()
@@ -84,8 +84,8 @@ test.describe("Feed Ordering - Comprehensive Empty Feed Tests", () => {
     const feedSections = await page.locator(".feed-section").all();
 
     for (const section of feedSections) {
-      const h3Element = await section.locator("h3");
-      const feedName = await h3Element.evaluate((el) => {
+      const h2Element = await section.locator("h2");
+      const feedName = await h2Element.evaluate((el) => {
         const firstChild = el.childNodes[0];
         return firstChild
           ? firstChild.textContent.trim()
@@ -147,8 +147,8 @@ test.describe("Feed Ordering - Comprehensive Empty Feed Tests", () => {
     const feedSections = await page.locator(".feed-section").all();
 
     for (const section of feedSections) {
-      const h3Element = await section.locator("h3");
-      const feedName = await h3Element.evaluate((el) => {
+      const h2Element = await section.locator("h2");
+      const feedName = await h2Element.evaluate((el) => {
         const firstChild = el.childNodes[0];
         return firstChild
           ? firstChild.textContent.trim()
@@ -186,7 +186,7 @@ test.describe("Feed Ordering - Comprehensive Empty Feed Tests", () => {
       const names = [];
 
       sections.forEach((section) => {
-        const heading = section.querySelector("h3");
+        const heading = section.querySelector("h2");
         if (heading) {
           // This is the CORRECT way to extract feed name (excluding count badge)
           const feedNameElement = heading.childNodes[0];
@@ -228,8 +228,8 @@ test.describe("Feed Ordering - Comprehensive Empty Feed Tests", () => {
     const feedSections = await page.locator(".feed-section").all();
 
     for (const section of feedSections) {
-      const h3Element = await section.locator("h3");
-      const feedName = await h3Element.evaluate((el) => {
+      const h2Element = await section.locator("h2");
+      const feedName = await h2Element.evaluate((el) => {
         const firstChild = el.childNodes[0];
         return firstChild
           ? firstChild.textContent.trim()
@@ -258,8 +258,8 @@ test.describe("Feed Ordering - Comprehensive Empty Feed Tests", () => {
     for (const section of feedSections) {
       const countText = await section.locator(".feed-count").textContent();
       if (countText && countText.includes("0 articles")) {
-        const h3Element = await section.locator("h3");
-        const feedName = await h3Element.evaluate((el) => {
+        const h2Element = await section.locator("h2");
+        const feedName = await h2Element.evaluate((el) => {
           const firstChild = el.childNodes[0];
           return firstChild
             ? firstChild.textContent.trim()
@@ -289,8 +289,8 @@ test.describe("Feed Ordering - Comprehensive Empty Feed Tests", () => {
       const count = match ? parseInt(match[1]) : 0;
 
       if (count > 0) {
-        const h3Element = await section.locator("h3");
-        const feedName = await h3Element.evaluate((el) => {
+        const h2Element = await section.locator("h2");
+        const feedName = await h2Element.evaluate((el) => {
           const firstChild = el.childNodes[0];
           return firstChild
             ? firstChild.textContent.trim()

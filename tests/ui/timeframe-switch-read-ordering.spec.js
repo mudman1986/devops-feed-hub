@@ -36,7 +36,7 @@ test.describe("Feed Ordering Across Timeframe Changes with Read Articles", () =>
           (a) => a.style.display !== "none",
         );
         if (visibleArticles.length > 0) {
-          const h3 = section.querySelector("h3");
+          const h3 = section.querySelector("h2");
           const firstChild = h3?.childNodes[0];
           const feedName = firstChild ? firstChild.textContent.trim() : "";
 
@@ -76,7 +76,7 @@ test.describe("Feed Ordering Across Timeframe Changes with Read Articles", () =>
       const feedOrder = [];
 
       sections.forEach((section) => {
-        const h3 = section.querySelector("h3");
+        const h3 = section.querySelector("h2");
         const firstChild = h3?.childNodes[0];
         const feedName = firstChild ? firstChild.textContent.trim() : "";
 
@@ -141,7 +141,7 @@ test.describe("Feed Ordering Across Timeframe Changes with Read Articles", () =>
       const feedOrder = [];
 
       sections.forEach((section) => {
-        const h3 = section.querySelector("h3");
+        const h3 = section.querySelector("h2");
         const firstChild = h3?.childNodes[0];
         const feedName = firstChild ? firstChild.textContent.trim() : "";
 

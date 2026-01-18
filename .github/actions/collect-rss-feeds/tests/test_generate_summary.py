@@ -591,7 +591,8 @@ class TestMultiPageGeneration(unittest.TestCase):
         nav_html = generate_feed_nav(self.sample_data["feeds"], None)
 
         # Check navigation structure
-        self.assertIn('<nav class="feed-nav">', nav_html)
+        self.assertIn('class="feed-nav"', nav_html)
+        self.assertIn('aria-label="Feed navigation"', nav_html)
         self.assertIn("</nav>", nav_html)
 
         # Check all feeds link
@@ -641,7 +642,8 @@ class TestMultiPageGeneration(unittest.TestCase):
         # But Article 3 should not appear in the main content area
 
         # Check for navigation
-        self.assertIn('<nav class="feed-nav">', result)
+        self.assertIn('class="feed-nav"', result)
+        self.assertIn('aria-label="Feed navigation"', result)
         self.assertIn('href="index.html"', result)
         self.assertIn('href="feed-test-feed-1.html"', result)
 
@@ -660,7 +662,8 @@ class TestMultiPageGeneration(unittest.TestCase):
         self.assertIn("Article 3", result)
 
         # Check for navigation
-        self.assertIn('<nav class="feed-nav">', result)
+        self.assertIn('class="feed-nav"', result)
+        self.assertIn('aria-label="Feed navigation"', result)
 
         # Check that main index link is active
         self.assertIn('class="nav-link active"', result)

@@ -112,7 +112,7 @@ else
 	# Copy generated content back from temp location
 	if [ -d "$TEMP_DIR/$CONTENT_DIR" ]; then
 		echo "Restoring generated content from temporary location" >&2
-		cp -r "$TEMP_DIR/$CONTENT_DIR"/* "$CONTENT_DIR/" 2>/dev/null || mkdir -p "$CONTENT_DIR"
+		mkdir -p "$CONTENT_DIR"
 		cp -r "$TEMP_DIR/$CONTENT_DIR"/* "$CONTENT_DIR/"
 		rm -rf "$TEMP_DIR"
 	fi
