@@ -152,10 +152,52 @@ function findAssignableIssue(
   return null;
 }
 
+/**
+ * Check if any of the last N closed issues have the refactor label
+ * @param {Array} closedIssues - Array of recently closed issues (sorted by closed_at desc)
+ * @param {number} count - Number of recent issues to check (default: 4)
+ * @returns {boolean} - True if any of the last N closed issues have refactor label
+ */
+function hasRecentRefactorIssue(closedIssues, count = 4) {
+  if (!closedIssues || closedIssues.length === 0) {
+    return false;
+  }
+
+  const recentIssues = closedIssues.slice(0, count);
+  return recentIssues.some((issue) => {
+    const labels = normalizeIssueLabels(issue);
+    return labels.some((label) => label.name === "refactor");
+  });
+}
+
+/**
+ * Find an available refactor issue (open, unassigned, with refactor label)
+ * @param {Array} issues - Array of issue objects from GraphQL
+ * @param {boolean} allowParentIssues - Whether to allow assigning issues with sub-issues
+ * @param {Array<string>} skipLabels - Array of label names to skip
+ * @returns {Object|null} - First available refactor issue or null
+ */
+function findAvailableRefactorIssue(
+  issues,
+  allowParentIssues = false,
+  skipLabels = [],
+) {
+  // Filter to only refactor-labeled issues
+  const refactorIssues = issues.filter((issue) => {
+    const labels = normalizeIssueLabels(issue);
+    return labels.some((label) => label.name === "refactor");
+  });
+
+  // Find first assignable refactor issue
+  return findAssignableIssue(refactorIssues, allowParentIssues, skipLabels);
+}
+
 module.exports = {
   shouldSkipIssue,
   shouldAssignNewIssue,
   parseIssueData,
   findAssignableIssue,
   normalizeIssueLabels,
+  hasRecentRefactorIssue,
+  findAvailableRefactorIssue,
 };
