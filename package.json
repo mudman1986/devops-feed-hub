@@ -50,5 +50,8 @@
       "test/**",
       "playwright.config.js"
     ]
+  },
+  "dependencies": {
+    "@octokit/core": "^7.0.6"
   }
 }
