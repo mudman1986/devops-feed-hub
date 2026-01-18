@@ -382,28 +382,54 @@ jobs:
                 });
 
                 // WORKAROUND: GraphQL trackedIssues returns 0 even for issues with sub-issues
-                // Check issue body for tasklist items with issue references (actual sub-issues)
-                console.log(`  Checking for sub-issues in issue bodies...`);
+                // Solution: Fetch ALL issues and check their trackedInIssues to count which issues are parents
+                console.log(`  Analyzing sub-issue relationships...`);
+                
+                // First, fetch ALL open issues to analyze relationships
+                const allOpenIssues = await github.graphql(`
+                  query($owner: String!, $repo: String!) {
+                    repository(owner: $owner, name: $repo) {
+                      issues(first: 100, states: OPEN) {
+                        nodes {
+                          number
+                          trackedInIssues(first: 10) {
+                            nodes {
+                              number
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                `, {
+                  owner: context.repo.owner,
+                  repo: context.repo.repo,
+                });
+                
+                // Build a map of parent issues and their sub-issue counts
+                const parentIssueCounts = {};
+                for (const issue of allOpenIssues.repository.issues.nodes) {
+                  if (issue.trackedInIssues && issue.trackedInIssues.nodes.length > 0) {
+                    // This issue is a sub-issue of the issues in trackedInIssues
+                    for (const parentIssue of issue.trackedInIssues.nodes) {
+                      if (!parentIssueCounts[parentIssue.number]) {
+                        parentIssueCounts[parentIssue.number] = 0;
+                      }
+                      parentIssueCounts[parentIssue.number]++;
+                    }
+                  }
+                }
+                
+                console.log(`  Found ${Object.keys(parentIssueCounts).length} issues with sub-issues:`, parentIssueCounts);
+                
+                // Update the issues with correct sub-issue counts
                 for (const issue of issues.repository.issues.nodes) {
-                  try {
-                    if (!issue.body) {
-                      console.log(`    #${issue.number}: No body content - no sub-issues`);
-                      continue;
-                    }
-                    
-                    // Look for tasklist items that reference issues: - [ ] #123 or - [x] #456
-                    // This is the definitive way to identify sub-issues
-                    const tasklistPattern = /^[\s]*-\s+\[([ xX])\]\s+.*#\d+/gm;
-                    const tasklistMatches = issue.body.match(tasklistPattern);
-                    
-                    if (tasklistMatches && tasklistMatches.length > 0) {
-                      console.log(`    #${issue.number}: Found ${tasklistMatches.length} tasklist items with issue references - marking as parent`);
-                      issue.trackedIssues = { totalCount: tasklistMatches.length };
-                    } else {
-                      console.log(`    #${issue.number}: No tasklist items with issue references found`);
-                    }
-                  } catch (error) {
-                    console.log(`    #${issue.number}: Error checking body: ${error.message}`);
+                  const subIssueCount = parentIssueCounts[issue.number] || 0;
+                  if (subIssueCount > 0) {
+                    console.log(`    #${issue.number}: Has ${subIssueCount} open sub-issues - marking as parent`);
+                    issue.trackedIssues = { totalCount: subIssueCount };
+                  } else {
+                    console.log(`    #${issue.number}: No open sub-issues detected`);
                   }
                 }
 
@@ -471,27 +497,13 @@ jobs:
                   return !hasPriorityLabel;
                 });
 
-                // WORKAROUND: Check for sub-issues in non-priority issue bodies too
-                console.log(`  Checking ${nonPriorityIssues.length} non-priority issues for sub-issues in bodies...`);
+                // Apply the same parent issue detection logic
+                console.log(`  Applying sub-issue relationship analysis to ${nonPriorityIssues.length} non-priority issues...`);
                 for (const issue of nonPriorityIssues) {
-                  try {
-                    if (!issue.body) {
-                      console.log(`    #${issue.number}: No body content - no sub-issues`);
-                      continue;
-                    }
-                    
-                    // Look for tasklist items that reference issues
-                    const tasklistPattern = /^[\s]*-\s+\[([ xX])\]\s+.*#\d+/gm;
-                    const tasklistMatches = issue.body.match(tasklistPattern);
-                    
-                    if (tasklistMatches && tasklistMatches.length > 0) {
-                      console.log(`    #${issue.number}: Found ${tasklistMatches.length} tasklist items with issue references - marking as parent`);
-                      issue.trackedIssues = { totalCount: tasklistMatches.length };
-                    } else {
-                      console.log(`    #${issue.number}: No tasklist items with issue references found`);
-                    }
-                  } catch (error) {
-                    console.log(`    #${issue.number}: Error checking body: ${error.message}`);
+                  const subIssueCount = parentIssueCounts[issue.number] || 0;
+                  if (subIssueCount > 0) {
+                    console.log(`    #${issue.number}: Has ${subIssueCount} open sub-issues - marking as parent`);
+                    issue.trackedIssues = { totalCount: subIssueCount };
                   }
                 }
 
