@@ -244,7 +244,9 @@ module.exports = async ({
     );
 
     const refactorIssues = refactorIssuesResponse.repository.issues.nodes;
-    console.log(`Found ${refactorIssues.length} open issues with refactor label`);
+    console.log(
+      `Found ${refactorIssues.length} open issues with refactor label`,
+    );
 
     if (refactorIssues.length > 0) {
       console.log("  Refactor issues:");
@@ -375,7 +377,9 @@ module.exports = async ({
       console.log(
         `[DRY RUN] Would create refactor issue with title: Refactor - ${new Date().toISOString()}`,
       );
-      console.log(`[DRY RUN] Would assign to Copilot bot (ID: ${copilotBotId})`);
+      console.log(
+        `[DRY RUN] Would assign to Copilot bot (ID: ${copilotBotId})`,
+      );
       return;
     }
 
