@@ -45,12 +45,14 @@ class TestCollectFeedsIntegration(unittest.TestCase):
         script_path = os.path.join(os.path.dirname(__file__), "..", "collect_feeds.py")
         self.assertTrue(os.path.exists(script_path), "collect_feeds.py should exist")
 
-    def test_generate_summary_script_exists(self):
-        """Test that generate_summary.py script exists"""
+    def test_generate_markdown_summary_script_exists(self):
+        """Test that generate_markdown_summary.py script exists"""
         script_path = os.path.join(
-            os.path.dirname(__file__), "..", "generate_summary.py"
+            os.path.dirname(__file__), "..", "generate_markdown_summary.py"
         )
-        self.assertTrue(os.path.exists(script_path), "generate_summary.py should exist")
+        self.assertTrue(
+            os.path.exists(script_path), "generate_markdown_summary.py should exist"
+        )
 
 
 if __name__ == "__main__":

@@ -29,9 +29,16 @@ jobs:
 
       - name: Run Python tests with coverage
         run: |
+          # Run action tests
           python3 -m pytest actions/collect-rss-feeds/tests/ -v \
             --cov=actions/collect-rss-feeds \
-            --cov-report=html \
+            --cov-report=html:htmlcov/action \
+            --cov-report=term
+          
+          # Run workflow script tests
+          python3 -m pytest .github/workflows/scripts/rss-processing/tests/ -v \
+            --cov=.github/workflows/scripts/rss-processing \
+            --cov-report=html:htmlcov/workflow-scripts \
             --cov-report=term
 
       - name: Upload Python coverage report

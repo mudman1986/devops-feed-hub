@@ -51,14 +51,14 @@ jobs:
           mkdir -p docs
 
           # Generate multi-page HTML (main index + individual feed pages)
-          python3 actions/collect-rss-feeds/generate_summary.py \
+          python3 .github/workflows/scripts/rss-processing/generate_summary.py \
             --input rss-feeds-output.json \
             --output-dir docs
 
           echo "✓ GitHub Pages content generated (multi-page)"
 
           # Generate RSS feeds (master + individual feeds)
-          python3 actions/collect-rss-feeds/generate_rss.py \
+          python3 .github/workflows/scripts/rss-processing/generate_rss.py \
             --input rss-feeds-output.json \
             --output-dir docs
 

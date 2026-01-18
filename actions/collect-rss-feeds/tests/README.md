@@ -1,40 +1,36 @@
-# Tests for DevOps Feed Hub Action
+# Tests for RSS Feed Collector Action
 
-This directory contains unit tests for the DevOps Feed Hub RSS feed collection action.
+Unit tests for the RSS feed collector action components.
 
 ## Running Tests
 
-To run all tests:
+Run all tests from the action directory:
 
 ```bash
-cd .github/actions/collect-rss-feeds/tests
-python3 -m unittest discover -v
+cd actions/collect-rss-feeds
+python3 -m pytest tests/ -v
 ```
 
-To run a specific test file:
+Run specific test file:
 
 ```bash
-python3 -m unittest test_generate_summary
-python3 -m unittest test_collect_feeds
+python3 -m pytest tests/test_collect_feeds.py -v
+python3 -m pytest tests/test_parse_rss_feed.py -v
 ```
 
-## Test Coverage
+Run with coverage:
 
-### test_generate_summary.py
+```bash
+python3 -m pytest tests/ -v --cov=. --cov-report=html
+```
 
-Tests for the `generate_summary.py` module:
-
-- Markdown summary generation
-- HTML page generation
-- Content formatting
-- Edge cases (empty feeds, long titles, etc.)
-- File I/O operations
+## Test Files
 
 ### test_collect_feeds.py
+Tests for the core RSS feed collection logic.
 
-Tests for the `collect_feeds.py` module:
-
-- RSS feed parsing
+### test_parse_rss_feed.py
+Tests for RSS/Atom feed parsing functionality including:
 - Date filtering
 - Error handling
 - Network issues
@@ -42,13 +38,14 @@ Tests for the `collect_feeds.py` module:
 
 ## Dependencies
 
-Tests require the same dependencies as the main scripts:
-
-- feedparser
-- Python 3.11+
-
 Install test dependencies:
 
 ```bash
-pip install feedparser
+pip install pytest pytest-cov feedparser
 ```
+
+## Note
+
+Tests for HTML/RSS generation (`test_generate_summary.py`, `test_generate_rss.py`, `test_feed_ordering.py`) 
+have been moved to `.github/workflows/scripts/rss-processing/tests/` since those scripts are 
+workflow-specific and not part of the portable action.

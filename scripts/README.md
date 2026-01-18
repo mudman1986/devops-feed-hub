@@ -9,10 +9,12 @@ This directory contains utility scripts organized by purpose.
 Test utilities and helpers used during development and CI/CD.
 
 **Scripts**:
+
 - `generate-test-data.sh` - Generates HTML test fixtures for UI tests
 - `test_commit_github_pages.bats` - BATS tests for the GitHub Pages commit script
 
 **Usage**:
+
 ```bash
 # Generate test data for UI tests
 bash scripts/test/generate-test-data.sh

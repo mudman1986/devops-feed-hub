@@ -17,7 +17,7 @@ if [ ! -f "$TEST_DATA" ]; then
 fi
 
 # Generate HTML files using existing test fixture
-python3 actions/collect-rss-feeds/generate_summary.py \
+python3 .github/workflows/scripts/rss-processing/generate_summary.py \
 	--input "$TEST_DATA" \
 	--output-dir "$OUTPUT_DIR"
 

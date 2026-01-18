@@ -75,9 +75,9 @@ runs:
       shell: bash
       run: |
         # Generate markdown summary for GitHub workflow
-        python3 "$GITHUB_ACTION_PATH/generate_summary.py" \
+        python3 "$GITHUB_ACTION_PATH/generate_markdown_summary.py" \
           --input "$OUTPUT_PATH" \
-          --markdown /tmp/summary.md
+          --output /tmp/summary.md
 
         # Append markdown summary to GitHub Step Summary
         cat /tmp/summary.md >> $GITHUB_STEP_SUMMARY
