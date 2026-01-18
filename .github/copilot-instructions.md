@@ -58,7 +58,7 @@ This repository is maintained primarily by GitHub Copilot. Path-specific instruc
 - Update existing tests when modifying functionality
 - **CRITICAL: All tests must pass before committing** - PRs with failing tests will not be merged
 - **Never stop working if there are failed tests** - continue until all tests pass
-- Do NOT commit unnecessary status reports, markdown files for tracking, or temporary documentation to the repository
+- Do NOT commit unnecessary status reports, Markdown files for tracking, or temporary documentation to the repository
 
 ## Agent Integration Requirement
 
