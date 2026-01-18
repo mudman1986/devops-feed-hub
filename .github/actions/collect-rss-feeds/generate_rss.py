@@ -8,7 +8,7 @@ import argparse
 import json
 import os
 from datetime import datetime
-from typing import Any, Dict, List
+from typing import Any, Dict, List, Optional
 from xml.etree import ElementTree as ET
 
 from utils import generate_feed_slug, parse_iso_timestamp, sort_articles_by_date
@@ -132,7 +132,7 @@ def create_rss_feed(
     return '<?xml version="1.0" encoding="UTF-8"?>\n' + xml_str
 
 
-def generate_master_feed(data: Dict[str, Any], base_url: str = None) -> str:
+def generate_master_feed(data: Dict[str, Any], base_url: Optional[str] = None) -> str:
     """
     Generate master RSS feed with all articles from all feeds.
 
@@ -172,7 +172,7 @@ def generate_individual_feed(
     feed_name: str,
     feed_data: Dict[str, Any],
     collected_at: str,
-    base_url: str = None,
+    base_url: Optional[str] = None,
 ) -> str:
     """
     Generate RSS feed for a single source feed.
