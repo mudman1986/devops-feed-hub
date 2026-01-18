@@ -105,7 +105,7 @@ This approach ensures a healthy mix of regular work and refactoring without comp
 
 ## Usage Examples
 
-### Manually Trigger Weekly Refactor
+### Manually Trigger Refactor
 
 ```bash
 gh workflow run assign-copilot-issues.yml -f mode=refactor
