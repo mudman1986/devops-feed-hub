@@ -34,6 +34,8 @@ The workflow can be triggered manually with the following options:
 - **mode**: Choose between `auto` (assign next issue) or `refactor` (create refactor issue)
 - **label**: Override the default priority and only search for issues with a specific label
 - **force**: Force assignment even if Copilot is already assigned to an issue
+- **dry_run**: Log what would be done without making actual changes (default: false)
+- **allow_parent_issues**: Allow assigning issues that have sub-issues (default: false)
 
 ## Issue Priority
 
@@ -50,8 +52,10 @@ Issues are assigned based on the following priority order:
 The workflow will **NOT** assign an issue if:
 
 - Copilot is already assigned to another open issue (unless `force` is enabled)
-- The issue has sub-issues (tracked issues)
-  - **Note**: The workflow uses both GitHub's GraphQL API (`trackedIssues`) and REST API (`/repos/{owner}/{repo}/issues/{issue_number}/sub-issues`) to detect sub-issues. This dual-check ensures reliable detection even when GraphQL reports inconsistent results.
+- The issue has sub-issues (open or closed), unless `allow_parent_issues` is enabled
+  - **Implementation**: Uses GitHub's GraphQL API `trackedIssues.totalCount` to detect any sub-issues
+  - **Rationale**: Parent issues should typically be broken down into smaller tasks (sub-issues) which are more appropriate for assignment
+  - **Override**: Set `allow_parent_issues=true` to assign parent issues
 - The issue is already assigned to someone else
 
 ## Workflow Logic
@@ -104,6 +108,22 @@ gh workflow run assign-copilot-issues.yml -f mode=auto -f label=bug
 
 ```bash
 gh workflow run assign-copilot-issues.yml -f mode=auto -f force=true
+```
+
+### Dry Run Mode
+
+Test the workflow without making actual changes:
+
+```bash
+gh workflow run assign-copilot-issues.yml -f mode=auto -f dry_run=true
+```
+
+### Allow Assigning Parent Issues
+
+Assign issues even if they have sub-issues:
+
+```bash
+gh workflow run assign-copilot-issues.yml -f mode=auto -f allow_parent_issues=true
 ```
 
 ## Troubleshooting
