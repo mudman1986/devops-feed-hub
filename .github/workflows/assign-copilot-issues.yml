@@ -119,7 +119,7 @@ jobs:
             const dryRun = '${{ inputs.dry_run }}' === 'true';
             const allowParentIssues = '${{ inputs.allow_parent_issues }}' === 'true';
             const skipLabelsInput = '${{ inputs.skip_labels }}' || 'no-ai,refining';
-            
+
             // Parse skip labels from comma-separated string
             const skipLabels = skipLabelsInput
               .split(',')
