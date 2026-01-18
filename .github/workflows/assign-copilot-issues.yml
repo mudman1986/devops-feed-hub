@@ -89,20 +89,10 @@ jobs:
             MODE="auto"
             echo "Scheduled run - auto mode"
           else
-            # Use the closed issue number to determine mode
-            # Every 5th issue (issue numbers ending in 0 or 5) triggers a refactor
-            ISSUE_NUMBER="${{ github.event.issue.number }}"
-            echo "Closed issue number: $ISSUE_NUMBER"
-            
-            # Check if issue number ends in 0 or 5
-            LAST_DIGIT=$((ISSUE_NUMBER % 10))
-            if [ "$LAST_DIGIT" -eq 0 ] || [ "$LAST_DIGIT" -eq 5 ]; then
-              MODE="refactor"
-              echo "Issue number ends in 0 or 5 - creating refactor issue"
-            else
-              MODE="auto"
-              echo "Auto-assigning next issue"
-            fi
+            # Check last 4 closed issues to determine if we should create a refactor issue
+            # If none of the last 4 closed issues have the refactor label, create one (1 in 5 ratio)
+            echo "Checking last 4 closed issues for refactor label..."
+            MODE="auto"  # Default to auto mode
           fi
 
           echo "mode=${MODE}" >> "$GITHUB_OUTPUT"
@@ -143,6 +133,54 @@ jobs:
             const path = require('path');
             const helpersPath = path.join(process.env.GITHUB_WORKSPACE, '.github/scripts/assign-copilot.js');
             const helpers = require(helpersPath);
+
+            // Step 0: Determine mode based on recent closed issues (for issue close events)
+            let effectiveMode = mode;
+            if (context.eventName === 'issues' && mode === 'auto') {
+              console.log('Checking last 4 closed issues to determine if refactor is needed...');
+              
+              // Get last 5 closed issues (including the one just closed)
+              const closedIssuesResponse = await github.graphql(`
+                query($owner: String!, $repo: String!) {
+                  repository(owner: $owner, name: $repo) {
+                    issues(first: 5, states: CLOSED, orderBy: {field: UPDATED_AT, direction: DESC}) {
+                      nodes {
+                        number
+                        title
+                        closedAt
+                        labels(first: 10) {
+                          nodes { name }
+                        }
+                      }
+                    }
+                  }
+                }
+              `, {
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+              });
+
+              const closedIssues = closedIssuesResponse.repository.issues.nodes;
+              console.log(`Found ${closedIssues.length} recently closed issues`);
+              
+              closedIssues.forEach(issue => {
+                const labels = issue.labels.nodes.map(l => l.name).join(', ');
+                console.log(`  - #${issue.number}: ${issue.title} (labels: ${labels})`);
+              });
+
+              // Check if any of the last 4 closed issues have refactor label
+              const hasRefactor = helpers.hasRecentRefactorIssue(closedIssues, 4);
+              
+              if (!hasRefactor) {
+                console.log('None of the last 4 closed issues have refactor label - switching to refactor mode');
+                effectiveMode = 'refactor';
+              } else {
+                console.log('At least one of the last 4 closed issues has refactor label - staying in auto mode');
+              }
+            }
+
+            console.log(`Effective mode: ${effectiveMode}`);
+
 
             // Step 1: Get repo ID, Copilot bot ID
             const repoInfo = await github.graphql(`
@@ -222,7 +260,7 @@ jobs:
                 console.log(`  - #${issue.number}: ${issue.title} (labels: ${labels})`);
               });
 
-              const { shouldAssign, reason } = helpers.shouldAssignNewIssue(currentIssues, mode, force);
+              const { shouldAssign, reason } = helpers.shouldAssignNewIssue(currentIssues, effectiveMode, force);
               if (!shouldAssign) {
                 console.log(`Skipping assignment: ${reason}`);
                 return;
@@ -231,16 +269,143 @@ jobs:
             }
 
             // Step 3: Handle different modes
-            if (mode === 'refactor') {
-              await createRefactorIssue();
-            } else if (mode === 'auto') {
+            if (effectiveMode === 'refactor') {
+              await handleRefactorMode();
+            } else if (effectiveMode === 'auto') {
               await assignNextIssue(labelOverride);
             } else {
-              throw new Error(`Unknown mode: ${mode}`);
+              throw new Error(`Unknown mode: ${effectiveMode}`);
             }
 
             /**
-             * Create a weekly refactor issue
+             * Handle refactor mode: assign existing refactor issue or create new one
+             */
+            async function handleRefactorMode() {
+              console.log('Refactor mode: checking for available refactor issues...');
+              
+              // Get all open issues with detailed info including trackedIssues
+              const refactorIssuesResponse = await github.graphql(`
+                query($owner: String!, $repo: String!) {
+                  repository(owner: $owner, name: $repo) {
+                    issues(first: 100, states: OPEN, labels: ["refactor"], orderBy: {field: CREATED_AT, direction: ASC}) {
+                      nodes {
+                        id
+                        number
+                        title
+                        body
+                        url
+                        assignees(first: 10) {
+                          nodes { login }
+                        }
+                        labels(first: 10) {
+                          nodes { name }
+                        }
+                        trackedIssues(first: 1) {
+                          totalCount
+                        }
+                        trackedInIssues(first: 10) {
+                          nodes {
+                            number
+                            title
+                          }
+                          totalCount
+                        }
+                      }
+                    }
+                  }
+                }
+              `, {
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+              });
+
+              const refactorIssues = refactorIssuesResponse.repository.issues.nodes;
+              console.log(`Found ${refactorIssues.length} open issues with refactor label`);
+
+              if (refactorIssues.length > 0) {
+                console.log('  Refactor issues:');
+                refactorIssues.forEach(issue => {
+                  console.log(`    #${issue.number}: ${issue.title} (assigned: ${issue.assignees.nodes.length > 0})`);
+                });
+              }
+
+              // Check for sub-issues via REST API
+              for (const issue of refactorIssues) {
+                try {
+                  const subIssuesResponse = await github.request('GET /repos/{owner}/{repo}/issues/{issue_number}/sub_issues', {
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    issue_number: issue.number,
+                    per_page: 100,
+                    headers: {
+                      'X-GitHub-Api-Version': '2022-11-28'
+                    }
+                  });
+                  
+                  const totalSubIssues = subIssuesResponse.data.length;
+                  if (totalSubIssues > 0) {
+                    issue.trackedIssues = { totalCount: totalSubIssues };
+                  } else {
+                    issue.trackedIssues = { totalCount: 0 };
+                  }
+                } catch (error) {
+                  issue.trackedIssues = { totalCount: 0 };
+                }
+              }
+
+              // Try to find an assignable refactor issue
+              const availableRefactorIssue = helpers.findAvailableRefactorIssue(
+                refactorIssues,
+                allowParentIssues,
+                skipLabels
+              );
+
+              if (availableRefactorIssue) {
+                console.log(`Found available refactor issue #${availableRefactorIssue.number}: ${availableRefactorIssue.title}`);
+                
+                // Assign the existing refactor issue to Copilot
+                if (dryRun) {
+                  console.log(`[DRY RUN] Would assign refactor issue #${availableRefactorIssue.number} to Copilot (ID: ${copilotBotId})`);
+                  console.log(`[DRY RUN] Issue URL: ${availableRefactorIssue.url}`);
+                  return;
+                }
+
+                console.log(`Assigning refactor issue #${availableRefactorIssue.number} to Copilot...`);
+                
+                await github.graphql(`
+                  mutation($issueId: ID!, $assigneeIds: [ID!]!) {
+                    addAssigneesToAssignable(
+                      input: {
+                        assignableId: $issueId,
+                        assigneeIds: $assigneeIds
+                      }
+                    ) {
+                      assignable {
+                        ... on Issue {
+                          assignees(first: 10) {
+                            nodes { login }
+                          }
+                        }
+                      }
+                    }
+                  }
+                `, {
+                  issueId: availableRefactorIssue.id,
+                  assigneeIds: [copilotBotId]
+                });
+
+                console.log(`✓ Successfully assigned refactor issue #${availableRefactorIssue.number} to Copilot`);
+                console.log(`  Title: ${availableRefactorIssue.title}`);
+                console.log(`  URL: ${availableRefactorIssue.url}`);
+                return;
+              }
+
+              console.log('No available refactor issues found - creating a new one');
+              await createRefactorIssue();
+            }
+
+            /**
+             * Create a refactor issue
              */
             async function createRefactorIssue() {
               // Get refactor label ID
@@ -264,7 +429,7 @@ jobs:
 
               // Create and assign issue to Copilot
               if (dryRun) {
-                console.log(`[DRY RUN] Would create refactor issue with title: Weekly Refactor - ${new Date().toISOString()}`);
+                console.log(`[DRY RUN] Would create refactor issue with title: Refactor - ${new Date().toISOString()}`);
                 console.log(`[DRY RUN] Would assign to Copilot bot (ID: ${copilotBotId})`);
                 return;
               }
@@ -289,7 +454,7 @@ jobs:
                 }
               `, {
                 repositoryId: repoId,
-                title: `Weekly Refactor - ${new Date().toISOString()}`,
+                title: `Refactor - ${new Date().toISOString()}`,
                 body: [
                   'Review the codebase and make improvements:',
                   '',
@@ -542,10 +707,10 @@ jobs:
 
               if (!issueToAssign) {
                 console.log('No suitable issue found to assign to Copilot.');
-                console.log('Creating a refactor issue instead to ensure Copilot has work.');
+                console.log('Creating or assigning a refactor issue instead to ensure Copilot has work.');
                 
-                // If no regular issues are available, create a refactor issue
-                await createRefactorIssue();
+                // If no regular issues are available, handle refactor mode
+                await handleRefactorMode();
                 return;
               }
 

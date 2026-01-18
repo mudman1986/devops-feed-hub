@@ -20,12 +20,15 @@ Runs daily at 10 AM UTC to ensure Copilot always has work assigned. This acts as
 
 When an issue is closed, the workflow waits for 5 minutes (grace period) before automatically assigning the next issue or creating a refactor issue.
 
-**Refactor Scheduling**: The workflow uses the closed issue number to determine whether to create a refactor issue or assign a regular issue:
+**Refactor Scheduling**: The workflow checks the labels of recently closed issues to maintain a 1-in-5 ratio of refactor work:
 
-- If the issue number ends in **0 or 5** (e.g., #10, #15, #20, #25, #30): Creates a refactor issue
+- Checks the last **4 closed issues**
+- If **none** of those 4 issues have the `refactor` label: Triggers refactor mode
 - Otherwise: Auto-assigns the next available regular issue
 
-This ensures approximately every 5th issue triggers a refactor, maintaining a good balance between regular work and refactoring.
+This ensures approximately 1 out of every 5 issues closed will trigger refactor work, maintaining a healthy balance between regular development and code maintenance.
+
+**Note**: The `refactor` label must exist in your repository for this workflow to function properly.
 
 ### 3. Manual Dispatch
 
@@ -64,27 +67,35 @@ The workflow will **NOT** assign an issue if:
 2. **Determine Mode**:
    - Manual dispatch: Use the specified mode
    - Daily schedule: Use auto mode
-   - Issue closure: Check if issue number ends in 0 or 5
-     - If yes: Use refactor mode (create refactor issue)
-     - If no: Use auto mode (assign next regular issue)
+   - Issue closure: Check the last 4 closed issues
+     - If none have the `refactor` label: Use refactor mode
+     - Otherwise: Use auto mode (assign next regular issue)
 3. **Check Existing Assignment**:
-   - **Refactor mode**: If Copilot is busy (has any assigned issue), skip refactor creation to avoid disruption - will try with the next qualifying issue number
+   - **Refactor mode**: If Copilot is busy (has any assigned issue), skip to avoid disruption
    - **Auto mode**: Skip if Copilot already has an issue (unless forced)
-4. **Assign Issue**:
-   - **Refactor mode**: Create a new refactor issue with predefined tasks
+4. **Assign Issue or Create Refactor**:
+   - **Refactor mode**: 
+     - First, search for existing open issues with `refactor` label
+     - If available refactor issue exists: Assign it to Copilot
+     - If no available refactor issues exist: Create a new refactor issue
    - **Auto mode**: Find and assign the next available issue by priority
-     - If no suitable issues exist: Create a refactor issue instead to ensure Copilot always has work
+     - If no suitable issues exist: Fall back to refactor mode (assign existing or create new)
 
 ## Conflict Resolution
 
-The workflow prevents conflicts between refactor and regular issue assignment using a simple, elegant approach:
+The workflow prevents conflicts between refactor and regular issue assignment using a label-based approach:
 
-1. **Issue number-based scheduling**: Refactor issues are created when a closed issue number ends in 0 or 5 (approximately every 5 issues)
-2. **No disruption**: If Copilot is busy when it's time for a refactor, the refactor creation is skipped - it will be attempted again at the next qualifying issue number
-3. **Refactor label distinction**: Refactor issues are labeled with `refactor` and are assigned with third priority (after bug and documentation)
-4. **Sequential execution**: Only one assignment happens at a time (no parallel assignments)
+1. **Label-based scheduling**: Refactor work is triggered when the last 4 closed issues don't have a `refactor` label (approximately 1 in 5)
+2. **Reuse before create**: When refactor mode is triggered, the workflow first tries to assign existing open refactor issues before creating new ones
+3. **No disruption**: If Copilot is busy when refactor mode is triggered, the refactor is skipped - it will be attempted again when the next qualifying condition occurs
+4. **Refactor label distinction**: All refactor issues are labeled with `refactor` and assigned with third priority (after bug and documentation)
+5. **Sequential execution**: Only one assignment happens at a time (no parallel assignments)
 
 This approach ensures a healthy mix of regular work and refactoring without complex scheduling or disrupting ongoing work.
+
+## Requirements
+
+- **Refactor Label**: The `refactor` label must exist in your repository for the workflow to function properly. The workflow will error if this label is missing when refactor mode is triggered.
 
 ## Required Secrets
 
