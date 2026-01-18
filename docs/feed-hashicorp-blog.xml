@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-hashicorp-blog.xml</link>
     <description>Articles from HashiCorp Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-hashicorp-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sun, 18 Jan 2026 09:29:07 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 18 Jan 2026 09:50:45 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>How GEICO lowered its $300M cloud spend and decoupled security from the network</title>
