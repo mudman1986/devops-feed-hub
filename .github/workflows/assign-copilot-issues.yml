@@ -360,7 +360,11 @@ jobs:
                           trackedIssues(first: 1) {
                             totalCount
                           }
-                          trackedInIssues(first: 1) {
+                          trackedInIssues(first: 10) {
+                            nodes {
+                              number
+                              title
+                            }
                             totalCount
                           }
                         }
@@ -381,38 +385,32 @@ jobs:
                   console.log(`    #${issue.number}: "${issue.title}" - trackedIssues: ${trackedCount}, trackedInIssues: ${trackedInCount}, assignees: ${issue.assignees.nodes.length}`);
                 });
 
-                // WORKAROUND: GraphQL trackedIssues AND trackedInIssues both return 0 in GitHub Actions
-                // Solution: Use REST API /repos/{owner}/{repo}/issues/{issue_number}/sub-issues endpoint
-                console.log(`  Checking for sub-issues via REST API...`);
+                // WORKAROUND: GraphQL trackedIssues returns 0 even when sub-issues exist
+                // Solution: Analyze trackedInIssues across all issues to build parent-child map
+                // By expanding trackedInIssues.nodes, GraphQL properly resolves relationships
+                console.log(`  Analyzing sub-issue relationships...`);
                 
-                // Check each issue for sub-issues using REST API
+                // Build map of parent issue numbers to count of their open sub-issues
+                const parentIssueCounts = {};
                 for (const issue of issues.repository.issues.nodes) {
-                  try {
-                    // Use the REST API sub-issues endpoint: GET /repos/{owner}/{repo}/issues/{issue_number}/sub-issues
-                    const subIssuesResponse = await github.request('GET /repos/{owner}/{repo}/issues/{issue_number}/sub-issues', {
-                      owner: context.repo.owner,
-                      repo: context.repo.repo,
-                      issue_number: issue.number,
-                      per_page: 100,
-                      headers: {
-                        'X-GitHub-Api-Version': '2022-11-28'
-                      }
-                    });
-                    
-                    const totalSubIssues = subIssuesResponse.data.length;
-                    const openSubIssues = subIssuesResponse.data.filter(subIssue => subIssue.state === 'open');
-                    
-                    if (totalSubIssues > 0) {
-                      console.log(`    #${issue.number}: Has ${totalSubIssues} sub-issues (${openSubIssues.length} open, ${totalSubIssues - openSubIssues.length} closed)`);
-                      issue.trackedIssues = { totalCount: totalSubIssues };
-                    } else {
-                      console.log(`    #${issue.number}: No sub-issues`);
-                      issue.trackedIssues = { totalCount: 0 };
+                  if (issue.trackedInIssues && issue.trackedInIssues.nodes && issue.trackedInIssues.nodes.length > 0) {
+                    // This issue IS a sub-issue - increment count for each parent
+                    for (const parent of issue.trackedInIssues.nodes) {
+                      parentIssueCounts[parent.number] = (parentIssueCounts[parent.number] || 0) + 1;
                     }
-                  } catch (error) {
-                    // API call failed (might be 404 if no sub-issues), treat as no sub-issues
-                    console.log(`    #${issue.number}: Could not check sub-issues (${error.message}) - treating as no sub-issues`);
-                    issue.trackedIssues = { totalCount: 0 };
+                  }
+                }
+                
+                if (Object.keys(parentIssueCounts).length > 0) {
+                  console.log(`  Found parent issues with open sub-issues:`, parentIssueCounts);
+                }
+                
+                // Inject sub-issue counts into each issue's trackedIssues field
+                for (const issue of issues.repository.issues.nodes) {
+                  const subIssueCount = parentIssueCounts[issue.number] || 0;
+                  issue.trackedIssues = { totalCount: subIssueCount };
+                  if (subIssueCount > 0) {
+                    console.log(`    #${issue.number}: Has ${subIssueCount} open sub-issue(s)`);
                   }
                 }
 
@@ -462,7 +460,11 @@ jobs:
                           trackedIssues(first: 1) {
                             totalCount
                           }
-                          trackedInIssues(first: 1) {
+                          trackedInIssues(first: 10) {
+                            nodes {
+                              number
+                              title
+                            }
                             totalCount
                           }
                         }
@@ -480,34 +482,22 @@ jobs:
                   return !hasPriorityLabel;
                 });
 
-                // Apply the same REST API sub-issue detection
-                console.log(`  Checking sub-issues for ${nonPriorityIssues.length} non-priority issues via REST API...`);
-                for (const issue of nonPriorityIssues) {
-                  try {
-                    const subIssuesResponse = await github.request('GET /repos/{owner}/{repo}/issues/{issue_number}/sub-issues', {
-                      owner: context.repo.owner,
-                      repo: context.repo.repo,
-                      issue_number: issue.number,
-                      per_page: 100,
-                      headers: {
-                        'X-GitHub-Api-Version': '2022-11-28'
-                      }
-                    });
-                    
-                    const totalSubIssues = subIssuesResponse.data.length;
-                    const openSubIssues = subIssuesResponse.data.filter(subIssue => subIssue.state === 'open');
-                    
-                    if (totalSubIssues > 0) {
-                      console.log(`    #${issue.number}: Has ${totalSubIssues} sub-issues (${openSubIssues.length} open, ${totalSubIssues - openSubIssues.length} closed)`);
-                      issue.trackedIssues = { totalCount: totalSubIssues };
-                    } else {
-                      console.log(`    #${issue.number}: No sub-issues`);
-                      issue.trackedIssues = { totalCount: 0 };
+                // Apply the same GraphQL-based sub-issue detection
+                console.log(`  Analyzing sub-issue relationships for ${nonPriorityIssues.length} non-priority issues...`);
+                const parentIssueCounts = {};
+                for (const issue of allIssues.repository.issues.nodes) {
+                  if (issue.trackedInIssues && issue.trackedInIssues.nodes && issue.trackedInIssues.nodes.length > 0) {
+                    // This issue IS a sub-issue - increment count for each parent
+                    for (const parent of issue.trackedInIssues.nodes) {
+                      parentIssueCounts[parent.number] = (parentIssueCounts[parent.number] || 0) + 1;
                     }
-                  } catch (error) {
-                    // API might not support sub_issues endpoint, treat as no sub-issues
-                    console.log(`    #${issue.number}: Could not check sub-issues (${error.message}) - treating as no sub-issues`);
                   }
+                }
+                
+                // Inject sub-issue counts
+                for (const issue of nonPriorityIssues) {
+                  const subIssueCount = parentIssueCounts[issue.number] || 0;
+                  issue.trackedIssues = { totalCount: subIssueCount };
                 }
 
                 issueToAssign = helpers.findAssignableIssue(
