@@ -29,6 +29,13 @@ bash .github/scripts/generate-test-data.sh
 npm run test:ui
 ```
 
+### Expected Test Run Times
+
+- **Individual test file**: 20-60 seconds (varies by number of tests)
+- **Full test suite** (`npm run test:ui`): ~4-5 minutes (622+ tests across 5 viewports)
+- **Test data generation**: ~1 second
+- Plan accordingly when running tests - the full suite takes several minutes
+
 ### What the Script Does
 
 The `generate-test-data.sh` script:
@@ -39,12 +46,22 @@ The `generate-test-data.sh` script:
 
 ### Running Tests
 
-```bash
-# Full UI test suite
-npm run test:ui
+**RECOMMENDED: Run tests in separate files for faster feedback**
 
-# Specific test file
+```bash
+# List all UI test files
+ls tests/ui/*.spec.js
+
+# Run individual test files (replace <filename> with actual file name)
+npx playwright test tests/ui/<filename>.spec.js
+
+# Examples:
+npx playwright test tests/ui/functionality.spec.js
+npx playwright test tests/ui/view-modes.spec.js
 npx playwright test tests/ui/settings.spec.js
+
+# Full UI test suite (slower, use only for final validation)
+npm run test:ui
 
 # Single test by line number
 npx playwright test tests/ui/functionality.spec.js:12
@@ -165,6 +182,8 @@ In workflow files, always generate test data before running tests:
 - Fix the issue immediately
 - Re-run tests until they pass
 - NEVER commit with failing UI tests
+- **NEVER stop working if there are failed tests** - PRs with failing tests will not be merged
 - The task is NOT complete until UI tests pass
+- Continue working until 100% of tests pass
 
 **Remember**: This is a site. If the UI tests don't pass, the site doesn't work.

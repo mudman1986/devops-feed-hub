@@ -57,6 +57,16 @@ Thumbs.db
 
 # Super-linter output
 super-linter-output/
+super-linter.log
+
+# Status reports and temporary tracking files (should not be committed)
+*REPORT*.md
+*STATUS*.md
+*SUMMARY*.md
+*TODO*.md
+*NOTES*.md
+*PLAN*.md
+TEST_*.md
 
 # Backup files
 *.backup
