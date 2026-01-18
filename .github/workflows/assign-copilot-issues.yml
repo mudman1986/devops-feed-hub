@@ -381,55 +381,36 @@ jobs:
                   console.log(`    #${issue.number}: "${issue.title}" - trackedIssues: ${trackedCount}, trackedInIssues: ${trackedInCount}, assignees: ${issue.assignees.nodes.length}`);
                 });
 
-                // WORKAROUND: GraphQL trackedIssues returns 0 even for issues with sub-issues
-                // Solution: Fetch ALL issues and check their trackedInIssues to count which issues are parents
-                console.log(`  Analyzing sub-issue relationships...`);
+                // WORKAROUND: GraphQL trackedIssues AND trackedInIssues both return 0 in GitHub Actions
+                // Solution: Use REST API to check for sub-issues using official sub_issues endpoint
+                console.log(`  Checking for sub-issues via REST API...`);
                 
-                // First, fetch ALL open issues to analyze relationships
-                const allOpenIssues = await github.graphql(`
-                  query($owner: String!, $repo: String!) {
-                    repository(owner: $owner, name: $repo) {
-                      issues(first: 100, states: OPEN) {
-                        nodes {
-                          number
-                          trackedInIssues(first: 10) {
-                            nodes {
-                              number
-                            }
-                          }
-                        }
-                      }
-                    }
-                  }
-                `, {
-                  owner: context.repo.owner,
-                  repo: context.repo.repo,
-                });
-                
-                // Build a map of parent issues and their sub-issue counts
-                const parentIssueCounts = {};
-                for (const issue of allOpenIssues.repository.issues.nodes) {
-                  if (issue.trackedInIssues && issue.trackedInIssues.nodes.length > 0) {
-                    // This issue is a sub-issue of the issues in trackedInIssues
-                    for (const parentIssue of issue.trackedInIssues.nodes) {
-                      if (!parentIssueCounts[parentIssue.number]) {
-                        parentIssueCounts[parentIssue.number] = 0;
-                      }
-                      parentIssueCounts[parentIssue.number]++;
-                    }
-                  }
-                }
-                
-                console.log(`  Found ${Object.keys(parentIssueCounts).length} issues with sub-issues:`, parentIssueCounts);
-                
-                // Update the issues with correct sub-issue counts
+                // Check each issue for sub-issues using REST API
                 for (const issue of issues.repository.issues.nodes) {
-                  const subIssueCount = parentIssueCounts[issue.number] || 0;
-                  if (subIssueCount > 0) {
-                    console.log(`    #${issue.number}: Has ${subIssueCount} open sub-issues - marking as parent`);
-                    issue.trackedIssues = { totalCount: subIssueCount };
-                  } else {
-                    console.log(`    #${issue.number}: No open sub-issues detected`);
+                  try {
+                    // Use the official sub_issues REST API endpoint
+                    const subIssuesResponse = await github.rest.issues.listSubIssues({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      issue_number: issue.number,
+                      per_page: 100
+                    });
+                    
+                    const openSubIssues = subIssuesResponse.data.filter(subIssue => subIssue.state === 'open');
+                    
+                    if (openSubIssues.length > 0) {
+                      console.log(`    #${issue.number}: Has ${openSubIssues.length} open sub-issues`);
+                      issue.trackedIssues = { totalCount: openSubIssues.length };
+                    } else if (subIssuesResponse.data.length > 0) {
+                      // Has sub-issues but all closed
+                      console.log(`    #${issue.number}: Has ${subIssuesResponse.data.length} sub-issues (all closed)`);
+                      issue.trackedIssues = { totalCount: subIssuesResponse.data.length };
+                    } else {
+                      console.log(`    #${issue.number}: No sub-issues`);
+                    }
+                  } catch (error) {
+                    // API might not support sub_issues endpoint, fall back to assuming no sub-issues
+                    console.log(`    #${issue.number}: Could not check sub-issues (${error.message}) - treating as no sub-issues`);
                   }
                 }
 
@@ -497,13 +478,29 @@ jobs:
                   return !hasPriorityLabel;
                 });
 
-                // Apply the same parent issue detection logic
-                console.log(`  Applying sub-issue relationship analysis to ${nonPriorityIssues.length} non-priority issues...`);
+                // Apply the same REST API sub-issue detection
+                console.log(`  Checking sub-issues for ${nonPriorityIssues.length} non-priority issues via REST API...`);
                 for (const issue of nonPriorityIssues) {
-                  const subIssueCount = parentIssueCounts[issue.number] || 0;
-                  if (subIssueCount > 0) {
-                    console.log(`    #${issue.number}: Has ${subIssueCount} open sub-issues - marking as parent`);
-                    issue.trackedIssues = { totalCount: subIssueCount };
+                  try {
+                    const subIssuesResponse = await github.rest.issues.listSubIssues({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      issue_number: issue.number,
+                      per_page: 100
+                    });
+                    
+                    const openSubIssues = subIssuesResponse.data.filter(subIssue => subIssue.state === 'open');
+                    
+                    if (openSubIssues.length > 0) {
+                      console.log(`    #${issue.number}: Has ${openSubIssues.length} open sub-issues`);
+                      issue.trackedIssues = { totalCount: openSubIssues.length };
+                    } else if (subIssuesResponse.data.length > 0) {
+                      console.log(`    #${issue.number}: Has ${subIssuesResponse.data.length} sub-issues (all closed)`);
+                      issue.trackedIssues = { totalCount: subIssuesResponse.data.length };
+                    }
+                  } catch (error) {
+                    // API might not support sub_issues endpoint, treat as no sub-issues
+                    console.log(`    #${issue.number}: Could not check sub-issues (${error.message}) - treating as no sub-issues`);
                   }
                 }
 
