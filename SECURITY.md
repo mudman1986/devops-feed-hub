@@ -4,10 +4,10 @@
 
 We take security seriously and aim to promptly address any vulnerabilities. The table below indicates which versions of **DevOps Feed Hub** are currently supported with security updates:
 
-| Version    | Supported          |
-| ---------- | ----------------- |
-| main (latest) | ✅                |
-| previous releases | 🚫           |
+| Version           | Supported |
+| ----------------- | --------- |
+| main (latest)     | ✅        |
+| previous releases | 🚫        |
 
 Only the latest version (main branch) is supported. Please update to the latest version to ensure you receive security fixes.
 
@@ -16,7 +16,7 @@ Only the latest version (main branch) is supported. Please update to the latest 
 If you discover a security vulnerability in this project:
 
 1. **Do NOT open a public issue.**
-2. Please email the maintainers at: **plantjes_fee40@icloud.com**.
+2. Please email the maintainers at: **<plantjes_fee40@icloud.com>**.
 3. Include as much detail as possible so we can quickly address the issue:
    - The version used
    - Reproduction steps
