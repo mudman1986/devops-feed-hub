@@ -20,13 +20,13 @@ Runs daily at 10 AM UTC to ensure Copilot always has work assigned. This acts as
 
 When an issue is closed, the workflow waits for 5 minutes (grace period) before automatically assigning the next issue or creating a refactor issue.
 
-**Refactor Scheduling**: The workflow checks the labels of recently closed issues to maintain a 1-in-5 ratio of refactor work:
+**Refactor Scheduling**: The workflow checks the labels of recently closed issues to maintain a configurable ratio of refactor work:
 
-- Checks the last **4 closed issues**
-- If **none** of those 4 issues have the `refactor` label: Triggers refactor mode
+- Checks the last **N closed issues** (configurable via `refactor_threshold` input, default: 4)
+- If **none** of those N issues have the `refactor` label: Triggers refactor mode
 - Otherwise: Auto-assigns the next available regular issue
 
-This ensures approximately 1 out of every 5 issues closed will trigger refactor work, maintaining a healthy balance between regular development and code maintenance.
+With the default threshold of 4, this ensures approximately 1 out of every 5 issues closed will trigger refactor work (1 in 5 ratio), maintaining a healthy balance between regular development and code maintenance. You can adjust this ratio by changing the `refactor_threshold` parameter when manually triggering the workflow.
 
 **Note**: The `refactor` label must exist in your repository for this workflow to function properly.
 
@@ -39,6 +39,8 @@ The workflow can be triggered manually with the following options:
 - **force**: Force assignment even if Copilot is already assigned to an issue
 - **dry_run**: Log what would be done without making actual changes (default: false)
 - **allow_parent_issues**: Allow assigning issues that have sub-issues (default: false)
+- **skip_labels**: Comma-separated list of labels to skip (default: "no-ai,refining")
+- **refactor_threshold**: Number of closed issues to check for refactor label (default: 4, means 1 in 5 ratio)
 
 ## Issue Priority
 
@@ -67,7 +69,7 @@ The workflow will **NOT** assign an issue if:
 2. **Determine Mode**:
    - Manual dispatch: Use the specified mode
    - Daily schedule: Use auto mode
-   - Issue closure: Check the last 4 closed issues
+   - Issue closure: Check the last N closed issues (N = `refactor_threshold`, default: 4)
      - If none have the `refactor` label: Use refactor mode
      - Otherwise: Use auto mode (assign next regular issue)
 3. **Check Existing Assignment**:
@@ -85,7 +87,7 @@ The workflow will **NOT** assign an issue if:
 
 The workflow prevents conflicts between refactor and regular issue assignment using a label-based approach:
 
-1. **Label-based scheduling**: Refactor work is triggered when the last 4 closed issues don't have a `refactor` label (approximately 1 in 5)
+1. **Label-based scheduling**: Refactor work is triggered when the last N closed issues don't have a `refactor` label (N is configurable via `refactor_threshold`, default: 4 for approximately 1 in 5 ratio)
 2. **Reuse before create**: When refactor mode is triggered, the workflow first tries to assign existing open refactor issues before creating new ones
 3. **No disruption**: If Copilot is busy when refactor mode is triggered, the refactor is skipped - it will be attempted again when the next qualifying condition occurs
 4. **Refactor label distinction**: All refactor issues are labeled with `refactor` and assigned with third priority (after bug and documentation)
@@ -135,6 +137,18 @@ Assign issues even if they have sub-issues:
 
 ```bash
 gh workflow run assign-copilot-issues.yml -f mode=auto -f allow_parent_issues=true
+```
+
+### Customize Refactor Threshold
+
+Change the refactor ratio by adjusting how many closed issues are checked (default: 4 for 1-in-5 ratio):
+
+```bash
+# Check last 9 closed issues (1-in-10 ratio)
+gh workflow run assign-copilot-issues.yml -f refactor_threshold=9
+
+# Check last 2 closed issues (1-in-3 ratio, more frequent refactors)
+gh workflow run assign-copilot-issues.yml -f refactor_threshold=2
 ```
 
 ## Troubleshooting

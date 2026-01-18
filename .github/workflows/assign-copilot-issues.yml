@@ -45,6 +45,11 @@ on:
         required: false
         type: string
         default: "no-ai,refining"
+      refactor_threshold:
+        description: "Number of closed issues to check for refactor label (default: 4, means 1 in 5 ratio)"
+        required: false
+        type: number
+        default: 4
 
 permissions:
   contents: read
@@ -112,6 +117,10 @@ jobs:
             // For workflow_dispatch, the default is set in the input definition
             const skipLabelsRaw = '${{ inputs.skip_labels }}';
             const skipLabelsInput = skipLabelsRaw || 'no-ai,refining';
+            
+            // Get refactor threshold (default: 4)
+            const refactorThresholdRaw = '${{ inputs.refactor_threshold }}';
+            const refactorThreshold = refactorThresholdRaw ? parseInt(refactorThresholdRaw, 10) : 4;
 
             // Parse skip labels from comma-separated string
             const skipLabels = skipLabelsInput
@@ -125,6 +134,7 @@ jobs:
               `labelOverride=${labelOverride}, ` +
               `dryRun=${dryRun}, ` +
               `allowParentIssues=${allowParentIssues}, ` +
+              `refactorThreshold=${refactorThreshold}, ` +
               `skipLabels=${JSON.stringify(skipLabels)}`
             );
 
@@ -137,13 +147,14 @@ jobs:
             // Step 0: Determine mode based on recent closed issues (for issue close events)
             let effectiveMode = mode;
             if (context.eventName === 'issues' && mode === 'auto') {
-              console.log('Checking last 4 closed issues to determine if refactor is needed...');
+              console.log(`Checking last ${refactorThreshold} closed issues to determine if refactor is needed...`);
               
-              // Get last 5 closed issues (including the one just closed)
+              // Get last N+1 closed issues (including the one just closed)
+              const fetchCount = refactorThreshold + 1;
               const closedIssuesResponse = await github.graphql(`
-                query($owner: String!, $repo: String!) {
+                query($owner: String!, $repo: String!, $fetchCount: Int!) {
                   repository(owner: $owner, name: $repo) {
-                    issues(first: 5, states: CLOSED, orderBy: {field: UPDATED_AT, direction: DESC}) {
+                    issues(first: $fetchCount, states: CLOSED, orderBy: {field: UPDATED_AT, direction: DESC}) {
                       nodes {
                         number
                         title
@@ -158,6 +169,7 @@ jobs:
               `, {
                 owner: context.repo.owner,
                 repo: context.repo.repo,
+                fetchCount: fetchCount,
               });
 
               const closedIssues = closedIssuesResponse.repository.issues.nodes;
@@ -168,14 +180,14 @@ jobs:
                 console.log(`  - #${issue.number}: ${issue.title} (labels: ${labels})`);
               });
 
-              // Check if any of the last 4 closed issues have refactor label
-              const hasRefactor = helpers.hasRecentRefactorIssue(closedIssues, 4);
+              // Check if any of the last N closed issues have refactor label
+              const hasRefactor = helpers.hasRecentRefactorIssue(closedIssues, refactorThreshold);
               
               if (!hasRefactor) {
-                console.log('None of the last 4 closed issues have refactor label - switching to refactor mode');
+                console.log(`None of the last ${refactorThreshold} closed issues have refactor label - switching to refactor mode`);
                 effectiveMode = 'refactor';
               } else {
-                console.log('At least one of the last 4 closed issues has refactor label - staying in auto mode');
+                console.log(`At least one of the last ${refactorThreshold} closed issues has refactor label - staying in auto mode`);
               }
             }
 
