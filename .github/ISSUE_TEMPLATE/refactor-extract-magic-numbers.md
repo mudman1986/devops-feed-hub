@@ -1,9 +1,9 @@
 ---
-name: 'Refactor: Extract magic numbers to constants'
+name: "Refactor: Extract magic numbers to constants"
 about: Extract hardcoded magic numbers into named constants for better maintainability
-title: 'Refactor: Extract magic numbers to constants'
+title: "Refactor: Extract magic numbers to constants"
 labels: refactor
-assignees: ''
+assignees: ""
 ---
 
 ## Description
@@ -35,17 +35,17 @@ Extract hardcoded magic numbers throughout the codebase into named constants for
 const BREAKPOINTS = {
   MOBILE: 768,
   TABLET: 1024,
-  DESKTOP: 1200
+  DESKTOP: 1200,
 };
 
 const TIMEOUTS = {
   SCREEN_READER_ANNOUNCEMENT: 3000,
-  ERROR_MESSAGE_DISMISS: 5000
+  ERROR_MESSAGE_DISMISS: 5000,
 };
 
 const ACCESSIBILITY = {
   MIN_TOUCH_TARGET_SIZE: 48,
-  MIN_FOCUS_OUTLINE_WIDTH: 2
+  MIN_FOCUS_OUTLINE_WIDTH: 2,
 };
 ```
 

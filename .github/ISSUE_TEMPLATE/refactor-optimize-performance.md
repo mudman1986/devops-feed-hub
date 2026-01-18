@@ -1,9 +1,9 @@
 ---
-name: 'Refactor: Optimize DOM queries and performance'
+name: "Refactor: Optimize DOM queries and performance"
 about: Reduce excessive DOM queries and improve performance
-title: 'Refactor: Optimize DOM queries and performance'
+title: "Refactor: Optimize DOM queries and performance"
 labels: refactor
-assignees: ''
+assignees: ""
 ---
 
 ## Description
@@ -29,7 +29,7 @@ class FeedSectionManager {
       countBadge: sectionElement.querySelector(".feed-count"),
       noArticlesMsg: sectionElement.querySelector(".no-articles"),
       articleList: sectionElement.querySelector(".article-list"),
-      heading: sectionElement.querySelector("h2")
+      heading: sectionElement.querySelector("h2"),
     };
   }
   // ... methods
@@ -52,12 +52,16 @@ function debounce(func, wait) {
 }
 
 // Usage
-window.addEventListener("resize", debounce(() => initializeSidebarState(sidebar), 150));
+window.addEventListener(
+  "resize",
+  debounce(() => initializeSidebarState(sidebar), 150),
+);
 ```
 
 ### 3. Optimize CSS Transitions
 
 Replace `transition: all` with specific properties in:
+
 - Line 330 (theme-toggle)
 - Line 656 (article-item)
 - Line 1415 (settings-menu-item)

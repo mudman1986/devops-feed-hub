@@ -1,9 +1,9 @@
 ---
-name: 'UX: Add user feedback and error states'
+name: "UX: Add user feedback and error states"
 about: Improve user experience with loading states, confirmation feedback, and error handling
-title: 'UX: Add user feedback and error states'
+title: "UX: Add user feedback and error states"
 labels: refactor, enhancement
-assignees: ''
+assignees: ""
 ---
 
 ## Description
@@ -13,18 +13,23 @@ Improve user experience by adding loading states, confirmation feedback, and err
 ## Missing Features
 
 ### 1. Loading States
+
 Add visual feedback for:
+
 - Theme changes
 - Settings save operations
 - Clear all read articles
 
 ### 2. Settings Confirmation
+
 Show brief success message when settings are saved (toast notification or inline message).
 
 ### 3. "Opens in New Tab" Indicators
+
 Add visual and screen reader indication that article links open in new tabs.
 
 ### 4. Error States for Failed Feeds
+
 - Show failed feed count in UI
 - Provide "Retry" button
 - Display last successful fetch time
@@ -38,7 +43,7 @@ class LoadingState {
     element.setAttribute("aria-busy", "true");
     element.classList.add("loading");
   }
-  
+
   static hide(element) {
     element.setAttribute("aria-busy", "false");
     element.classList.remove("loading");

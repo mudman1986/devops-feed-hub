@@ -1,9 +1,9 @@
 ---
-name: 'Refactor: Add visual design fallbacks'
+name: "Refactor: Add visual design fallbacks"
 about: Add fallback styles for browsers that don't support advanced CSS features
-title: 'Refactor: Add visual design fallbacks'
+title: "Refactor: Add visual design fallbacks"
 labels: refactor
-assignees: ''
+assignees: ""
 ---
 
 ## Description
@@ -26,7 +26,11 @@ Add fallback styles for browsers that don't support advanced CSS features.
 /* Gradient text with fallback */
 .header-title {
   color: var(--text-primary); /* Fallback */
-  background: linear-gradient(135deg, var(--gradient-start), var(--gradient-end));
+  background: linear-gradient(
+    135deg,
+    var(--gradient-start),
+    var(--gradient-end)
+  );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
