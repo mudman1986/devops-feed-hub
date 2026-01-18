@@ -13,7 +13,7 @@ test.describe("Feed Ordering - Empty Feeds", () => {
     const feedData = [];
 
     for (const section of feedSections) {
-      const feedName = await section.locator("h3").textContent();
+      const feedName = await section.locator("h2").textContent();
       const countText = await section.locator(".feed-count").textContent();
       const match = countText.match(/(\d+)/);
       const articleCount = match ? parseInt(match[1]) : 0;
@@ -62,7 +62,7 @@ test.describe("Feed Ordering - Empty Feeds", () => {
     const feedData = [];
 
     for (const section of feedSections) {
-      const feedName = await section.locator("h3").textContent();
+      const feedName = await section.locator("h2").textContent();
       const countText = await section.locator(".feed-count").textContent();
       const match = countText.match(/(\d+)/);
       const articleCount = match ? parseInt(match[1]) : 0;

@@ -104,7 +104,7 @@ def generate_feed_nav(
     # HTML-escape the JSON content to prevent XSS when embedded in script tag
     escaped_feed_list_json = html_escape(feed_list_json)
 
-    nav_html = '<nav class="feed-nav">\n'
+    nav_html = '<nav class="feed-nav" aria-label="Feed navigation">\n'
     nav_html += '  <script type="application/json" '
     nav_html += f'id="feed-list-data">{escaped_feed_list_json}</script>\n'
     nav_html += '  <a href="index.html" class="nav-link'
@@ -208,11 +208,11 @@ def generate_feed_articles_content(feeds_to_display: Dict[str, Any]) -> str:
         article_plural = "s" if article_count != 1 else ""
         content += f"""
         <div class="feed-section">
-            <h3>{escaped_feed_name}
+            <h2>{escaped_feed_name}
                 <span class="feed-count">
                     {article_count} article{article_plural}
                 </span>
-            </h3>
+            </h2>
 """
         if feed_data["articles"]:
             content += """
