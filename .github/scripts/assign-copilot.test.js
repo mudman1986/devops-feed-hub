@@ -12,6 +12,8 @@ const {
   parseIssueData,
   findAssignableIssue,
   normalizeIssueLabels,
+  hasRecentRefactorIssue,
+  findAvailableRefactorIssue,
 } = require("./assign-copilot.js");
 
 describe("shouldSkipIssue", () => {
@@ -582,6 +584,259 @@ describe("normalizeIssueLabels", () => {
     };
     const normalized = normalizeIssueLabels(issue);
     expect(normalized).toEqual([]);
+  });
+});
+
+describe("hasRecentRefactorIssue", () => {
+  test("should return true if any of the last N issues have refactor label", () => {
+    const issues = [
+      { labels: { nodes: [{ name: "bug" }] } },
+      { labels: { nodes: [{ name: "refactor" }] } },
+      { labels: { nodes: [{ name: "enhancement" }] } },
+      { labels: { nodes: [{ name: "documentation" }] } },
+    ];
+    const result = hasRecentRefactorIssue(issues, 4);
+    expect(result).toBe(true);
+  });
+
+  test("should return false if none of the last N issues have refactor label", () => {
+    const issues = [
+      { labels: { nodes: [{ name: "bug" }] } },
+      { labels: { nodes: [{ name: "enhancement" }] } },
+      { labels: { nodes: [{ name: "documentation" }] } },
+      { labels: { nodes: [{ name: "bug" }] } },
+    ];
+    const result = hasRecentRefactorIssue(issues, 4);
+    expect(result).toBe(false);
+  });
+
+  test("should only check the first N issues", () => {
+    const issues = [
+      { labels: { nodes: [{ name: "bug" }] } },
+      { labels: { nodes: [{ name: "enhancement" }] } },
+      { labels: { nodes: [{ name: "documentation" }] } },
+      { labels: { nodes: [{ name: "bug" }] } },
+      { labels: { nodes: [{ name: "refactor" }] } }, // 5th issue - should not be checked
+    ];
+    const result = hasRecentRefactorIssue(issues, 4);
+    expect(result).toBe(false);
+  });
+
+  test("should handle empty issues array", () => {
+    const result = hasRecentRefactorIssue([], 4);
+    expect(result).toBe(false);
+  });
+
+  test("should handle null/undefined issues", () => {
+    expect(hasRecentRefactorIssue(null, 4)).toBe(false);
+    expect(hasRecentRefactorIssue(undefined, 4)).toBe(false);
+  });
+
+  test("should handle fewer issues than count", () => {
+    const issues = [
+      { labels: { nodes: [{ name: "bug" }] } },
+      { labels: { nodes: [{ name: "refactor" }] } },
+    ];
+    const result = hasRecentRefactorIssue(issues, 4);
+    expect(result).toBe(true);
+  });
+
+  test("should handle flattened label structure", () => {
+    const issues = [
+      { labels: [{ name: "bug" }] },
+      { labels: [{ name: "refactor" }] },
+      { labels: [{ name: "enhancement" }] },
+    ];
+    const result = hasRecentRefactorIssue(issues, 3);
+    expect(result).toBe(true);
+  });
+
+  test("should default to checking 4 issues", () => {
+    const issues = [
+      { labels: { nodes: [{ name: "bug" }] } },
+      { labels: { nodes: [{ name: "enhancement" }] } },
+      { labels: { nodes: [{ name: "documentation" }] } },
+      { labels: { nodes: [{ name: "bug" }] } },
+      { labels: { nodes: [{ name: "refactor" }] } }, // 5th issue
+    ];
+    const result = hasRecentRefactorIssue(issues); // No count parameter
+    expect(result).toBe(false); // Should only check first 4
+  });
+});
+
+describe("findAvailableRefactorIssue", () => {
+  test("should find first unassigned refactor issue", () => {
+    const issues = [
+      {
+        id: "issue-1",
+        number: 100,
+        title: "Refactor Issue",
+        url: "https://github.com/test/repo/issues/100",
+        assignees: { nodes: [] },
+        trackedIssues: { totalCount: 0 },
+        trackedInIssues: { totalCount: 0 },
+        labels: { nodes: [{ name: "refactor" }] },
+      },
+      {
+        id: "issue-2",
+        number: 101,
+        title: "Bug Issue",
+        url: "https://github.com/test/repo/issues/101",
+        assignees: { nodes: [] },
+        trackedIssues: { totalCount: 0 },
+        trackedInIssues: { totalCount: 0 },
+        labels: { nodes: [{ name: "bug" }] },
+      },
+    ];
+    const result = findAvailableRefactorIssue(issues);
+    expect(result).not.toBeNull();
+    expect(result.number).toBe(100);
+  });
+
+  test("should return null if no refactor issues exist", () => {
+    const issues = [
+      {
+        id: "issue-1",
+        number: 101,
+        title: "Bug Issue",
+        url: "https://github.com/test/repo/issues/101",
+        assignees: { nodes: [] },
+        trackedIssues: { totalCount: 0 },
+        trackedInIssues: { totalCount: 0 },
+        labels: { nodes: [{ name: "bug" }] },
+      },
+    ];
+    const result = findAvailableRefactorIssue(issues);
+    expect(result).toBeNull();
+  });
+
+  test("should skip assigned refactor issues", () => {
+    const issues = [
+      {
+        id: "issue-1",
+        number: 100,
+        title: "Assigned Refactor",
+        url: "https://github.com/test/repo/issues/100",
+        assignees: { nodes: [{ login: "user" }] },
+        trackedIssues: { totalCount: 0 },
+        trackedInIssues: { totalCount: 0 },
+        labels: { nodes: [{ name: "refactor" }] },
+      },
+      {
+        id: "issue-2",
+        number: 101,
+        title: "Available Refactor",
+        url: "https://github.com/test/repo/issues/101",
+        assignees: { nodes: [] },
+        trackedIssues: { totalCount: 0 },
+        trackedInIssues: { totalCount: 0 },
+        labels: { nodes: [{ name: "refactor" }] },
+      },
+    ];
+    const result = findAvailableRefactorIssue(issues);
+    expect(result).not.toBeNull();
+    expect(result.number).toBe(101);
+  });
+
+  test("should skip refactor issues with sub-issues by default", () => {
+    const issues = [
+      {
+        id: "issue-1",
+        number: 100,
+        title: "Refactor with Sub-issues",
+        url: "https://github.com/test/repo/issues/100",
+        assignees: { nodes: [] },
+        trackedIssues: { totalCount: 3 },
+        trackedInIssues: { totalCount: 0 },
+        labels: { nodes: [{ name: "refactor" }] },
+      },
+      {
+        id: "issue-2",
+        number: 101,
+        title: "Available Refactor",
+        url: "https://github.com/test/repo/issues/101",
+        assignees: { nodes: [] },
+        trackedIssues: { totalCount: 0 },
+        trackedInIssues: { totalCount: 0 },
+        labels: { nodes: [{ name: "refactor" }] },
+      },
+    ];
+    const result = findAvailableRefactorIssue(issues, false);
+    expect(result).not.toBeNull();
+    expect(result.number).toBe(101);
+  });
+
+  test("should allow refactor issues with sub-issues when allowParentIssues=true", () => {
+    const issues = [
+      {
+        id: "issue-1",
+        number: 100,
+        title: "Refactor with Sub-issues",
+        url: "https://github.com/test/repo/issues/100",
+        assignees: { nodes: [] },
+        trackedIssues: { totalCount: 3 },
+        trackedInIssues: { totalCount: 0 },
+        labels: { nodes: [{ name: "refactor" }] },
+      },
+    ];
+    const result = findAvailableRefactorIssue(issues, true);
+    expect(result).not.toBeNull();
+    expect(result.number).toBe(100);
+  });
+
+  test("should skip refactor issues with skip labels", () => {
+    const issues = [
+      {
+        id: "issue-1",
+        number: 100,
+        title: "Refactor with no-ai",
+        url: "https://github.com/test/repo/issues/100",
+        assignees: { nodes: [] },
+        trackedIssues: { totalCount: 0 },
+        trackedInIssues: { totalCount: 0 },
+        labels: { nodes: [{ name: "refactor" }, { name: "no-ai" }] },
+      },
+      {
+        id: "issue-2",
+        number: 101,
+        title: "Available Refactor",
+        url: "https://github.com/test/repo/issues/101",
+        assignees: { nodes: [] },
+        trackedIssues: { totalCount: 0 },
+        trackedInIssues: { totalCount: 0 },
+        labels: { nodes: [{ name: "refactor" }] },
+      },
+    ];
+    const result = findAvailableRefactorIssue(issues, false, ["no-ai"]);
+    expect(result).not.toBeNull();
+    expect(result.number).toBe(101);
+  });
+
+  test("should return null when all refactor issues are unavailable", () => {
+    const issues = [
+      {
+        id: "issue-1",
+        number: 100,
+        title: "Assigned Refactor",
+        url: "https://github.com/test/repo/issues/100",
+        assignees: { nodes: [{ login: "user" }] },
+        trackedIssues: { totalCount: 0 },
+        trackedInIssues: { totalCount: 0 },
+        labels: { nodes: [{ name: "refactor" }] },
+      },
+      {
+        id: "issue-2",
+        number: 101,
+        title: "Refactor with Sub-issues",
+        url: "https://github.com/test/repo/issues/101",
+        assignees: { nodes: [] },
+        trackedIssues: { totalCount: 2 },
+        trackedInIssues: { totalCount: 0 },
+        labels: { nodes: [{ name: "refactor" }] },
+      },
+    ];
+    const result = findAvailableRefactorIssue(issues, false);
+    expect(result).toBeNull();
   });
 });
 
