@@ -67,7 +67,7 @@ test.describe("Desktop Layout Tests", () => {
     const firstSection = feedSections.first();
     await expect(firstSection).toBeVisible();
 
-    const feedTitle = firstSection.locator("h3");
+    const feedTitle = firstSection.locator("h2");
     await expect(feedTitle).toBeVisible();
 
     const feedCount = firstSection.locator(".feed-count");

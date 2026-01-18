@@ -56,7 +56,9 @@ This repository is maintained primarily by GitHub Copilot. Path-specific instruc
 - **MANDATORY: Add tests for all new features and bugfixes**
 - Test edge cases, error conditions, and critical paths
 - Update existing tests when modifying functionality
-- All tests must pass before committing
+- **CRITICAL: All tests must pass before committing** - PRs with failing tests will not be merged
+- **Never stop working if there are failed tests** - continue until all tests pass
+- **Do NOT commit status reports or progress tracking files** - No markdown files documenting your work progress, test results, or planning. Useful documentation (README updates, component docs) is fine and should be committed.
 
 ## Agent Integration Requirement
 
