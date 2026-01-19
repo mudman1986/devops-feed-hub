@@ -595,3 +595,97 @@ describe("Magic Number Constants", () => {
     });
   });
 });
+
+// Debounce Utility Tests
+describe("Debounce Utility", () => {
+  beforeEach(() => {
+    jest.useFakeTimers();
+  });
+
+  afterEach(() => {
+    jest.runOnlyPendingTimers();
+    jest.useRealTimers();
+  });
+
+  // Define debounce function for testing
+  function debounce(func, wait) {
+    let timeout;
+    return function executedFunction(...args) {
+      const later = () => {
+        clearTimeout(timeout);
+        func(...args);
+      };
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+    };
+  }
+
+  test("should call function after wait time", () => {
+    const mockFn = jest.fn();
+    const debouncedFn = debounce(mockFn, 150);
+
+    debouncedFn();
+    expect(mockFn).not.toHaveBeenCalled();
+
+    jest.advanceTimersByTime(150);
+    expect(mockFn).toHaveBeenCalledTimes(1);
+  });
+
+  test("should not call function if called again before wait time", () => {
+    const mockFn = jest.fn();
+    const debouncedFn = debounce(mockFn, 150);
+
+    debouncedFn();
+    jest.advanceTimersByTime(100);
+    debouncedFn();
+    jest.advanceTimersByTime(100);
+
+    expect(mockFn).not.toHaveBeenCalled();
+
+    jest.advanceTimersByTime(50);
+    expect(mockFn).toHaveBeenCalledTimes(1);
+  });
+
+  test("should pass arguments to debounced function", () => {
+    const mockFn = jest.fn();
+    const debouncedFn = debounce(mockFn, 150);
+
+    debouncedFn("arg1", "arg2");
+    jest.advanceTimersByTime(150);
+
+    expect(mockFn).toHaveBeenCalledWith("arg1", "arg2");
+  });
+
+  test("should use latest arguments when called multiple times", () => {
+    const mockFn = jest.fn();
+    const debouncedFn = debounce(mockFn, 150);
+
+    debouncedFn("first");
+    jest.advanceTimersByTime(100);
+    debouncedFn("second");
+    jest.advanceTimersByTime(150);
+
+    expect(mockFn).toHaveBeenCalledTimes(1);
+    expect(mockFn).toHaveBeenCalledWith("second");
+  });
+
+  test("should work with resize event simulation", () => {
+    const mockHandler = jest.fn();
+    const debouncedHandler = debounce(mockHandler, 150);
+
+    // Simulate rapid resize events
+    for (let i = 0; i < 10; i++) {
+      debouncedHandler();
+      jest.advanceTimersByTime(50);
+    }
+
+    // Should not have been called yet
+    expect(mockHandler).not.toHaveBeenCalled();
+
+    // Wait for debounce delay
+    jest.advanceTimersByTime(150);
+
+    // Should have been called only once
+    expect(mockHandler).toHaveBeenCalledTimes(1);
+  });
+});
