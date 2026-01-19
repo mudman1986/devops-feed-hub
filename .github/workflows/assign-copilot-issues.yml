@@ -80,11 +80,8 @@ jobs:
         needs.wait-grace-period.result == 'skipped'
       )
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v6
-
       - name: Assign Copilot to issue
-        uses: ./actions/auto-assign-copilot
+        uses: mudman1986/auto-assign-copilot@v1
         with:
           github-token: ${{ secrets.COPILOT_ASSIGN_PAT }}
           mode: ${{ inputs.mode || 'auto' }}
