@@ -298,7 +298,9 @@ body {
 .header-title {
   font-size: 1.5rem;
   font-weight: 700;
-  color: var(--text-primary); /* Fallback for browsers without background-clip: text support */
+  color: var(
+    --text-primary
+  ); /* Fallback for browsers without background-clip: text support */
   background: linear-gradient(
     135deg,
     var(--gradient-start),
@@ -810,7 +812,7 @@ h3 {
   .feed-breakdown,
   .experimental-themes {
     background-color: var(--bg-secondary);
-    opacity: 0.95;
+    opacity: 95%;
   }
 }
 
@@ -2297,7 +2299,7 @@ h3 {
   [data-theme="glassmorphism"] .article-item,
   [data-theme="glassmorphism"] .article-item:hover {
     background-color: var(--bg-secondary);
-    opacity: 0.95;
+    opacity: 95%;
   }
 }
 
@@ -3452,7 +3454,7 @@ h3 {
 @supports not (backdrop-filter: blur(10px)) {
   [data-theme="diagonal-split"] .feed-section {
     background-color: var(--bg-secondary);
-    opacity: 0.95;
+    opacity: 95%;
   }
 }
 
