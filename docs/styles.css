@@ -298,6 +298,9 @@ body {
 .header-title {
   font-size: 1.5rem;
   font-weight: 700;
+  color: var(
+    --text-primary
+  ); /* Fallback for browsers without background-clip: text support */
   background: linear-gradient(
     135deg,
     var(--gradient-start),
@@ -800,6 +803,17 @@ h3 {
     0 4px 6px -1px rgb(0 0 0 / 5%),
     0 2px 4px -1px rgb(0 0 0 / 3%);
   margin-bottom: 2rem;
+}
+
+/* Backdrop filter fallbacks for browsers without support */
+@supports not (backdrop-filter: blur(10px)) {
+  .stat-card,
+  .failed-feeds,
+  .feed-breakdown,
+  .experimental-themes {
+    background-color: var(--bg-secondary);
+    opacity: 95%;
+  }
 }
 
 .feed-breakdown-item {
@@ -2277,6 +2291,18 @@ h3 {
   transform: translateY(-2px);
 }
 
+/* Glassmorphism fallback for browsers without backdrop-filter support */
+@supports not (backdrop-filter: blur(10px)) {
+  [data-theme="glassmorphism"] .header,
+  [data-theme="glassmorphism"] .feed-section,
+  [data-theme="glassmorphism"] .sidebar,
+  [data-theme="glassmorphism"] .article-item,
+  [data-theme="glassmorphism"] .article-item:hover {
+    background-color: var(--bg-secondary);
+    opacity: 95%;
+  }
+}
+
 /* Retro - 80s/90s inspired design */
 [data-theme="retro"] body {
   font-family: "Comic Sans MS", "Chalkboard SE", "Comic Neue", cursive;
@@ -2491,6 +2517,13 @@ h3 {
   position: relative;
   background: rgb(19 24 46 / 60%);
   backdrop-filter: blur(10px);
+}
+
+/* Futuristic theme fallback for browsers without backdrop-filter support */
+@supports not (backdrop-filter: blur(10px)) {
+  [data-theme="futuristic"] .feed-section {
+    background: rgb(19 24 46 / 95%);
+  }
 }
 
 [data-theme="futuristic"] .feed-section::before {
@@ -3415,6 +3448,14 @@ h3 {
 [data-theme="diagonal-split"] .feed-section {
   background: var(--card-bg);
   backdrop-filter: blur(10px);
+}
+
+/* Diagonal-split theme fallback for browsers without backdrop-filter support */
+@supports not (backdrop-filter: blur(10px)) {
+  [data-theme="diagonal-split"] .feed-section {
+    background-color: var(--bg-secondary);
+    opacity: 95%;
+  }
 }
 
 [data-theme="diagonal-split"] .article-item {
