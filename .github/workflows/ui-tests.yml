@@ -79,8 +79,8 @@ jobs:
 
             # Extract overall stats using jq if available, otherwise use grep/sed
             if command -v jq &> /dev/null; then
-              # Use jq for better JSON parsing
-              total=$(jq -r '.suites[].suites[].specs | length' test-results.json 2>/dev/null | awk '{sum+=$1} END {print sum}')
+              # Use jq for better JSON parsing - count total specs across all suites
+              total=$(jq -r '[.suites[]?.suites[]?.specs[]?] | length' test-results.json 2>/dev/null)
               echo "- **Total Tests in Shard**: ${total:-0}" >> $GITHUB_STEP_SUMMARY
             fi
 
@@ -88,7 +88,7 @@ jobs:
             echo "" >> $GITHUB_STEP_SUMMARY
             echo "### Test Files Executed" >> $GITHUB_STEP_SUMMARY
             if command -v jq &> /dev/null; then
-              jq -r '.suites[].suites[].file' test-results.json 2>/dev/null | sort -u | sed 's|.*/tests/ui/||' | sed 's/^/- /' >> $GITHUB_STEP_SUMMARY || echo "- Unable to extract test files" >> $GITHUB_STEP_SUMMARY
+              jq -r '.suites[]?.suites[]?.file // empty' test-results.json 2>/dev/null | sort -u | sed 's|.*/tests/ui/||' | sed 's/^/- /' >> $GITHUB_STEP_SUMMARY || echo "- Unable to extract test files" >> $GITHUB_STEP_SUMMARY
             else
               grep -o '"file":"[^"]*"' test-results.json 2>/dev/null | cut -d'"' -f4 | sed 's|.*/tests/ui/||' | sort -u | sed 's/^/- /' >> $GITHUB_STEP_SUMMARY || echo "- Unable to extract test files" >> $GITHUB_STEP_SUMMARY
             fi
@@ -153,15 +153,16 @@ jobs:
                 # List test files in this shard
                 if command -v jq &> /dev/null; then
                   echo "### Test Files" >> $GITHUB_STEP_SUMMARY
-                  jq -r '.suites[].suites[].file' "$shard_dir/test-results.json" 2>/dev/null | \
+                  jq -r '.suites[]?.suites[]?.file // empty' "$shard_dir/test-results.json" 2>/dev/null | \
                     sort -u | \
                     sed 's|.*/tests/ui/||' | \
                     sed 's/^/- /' >> $GITHUB_STEP_SUMMARY || echo "- Unable to parse test results" >> $GITHUB_STEP_SUMMARY
 
-                  # Count tests
-                  total=$(jq -r '.suites[].suites[].specs | length' "$shard_dir/test-results.json" 2>/dev/null | awk '{sum+=$1} END {print sum}')
-                  passed=$(jq -r '.suites[].suites[].specs[].tests[].results[] | select(.status=="passed") | .status' "$shard_dir/test-results.json" 2>/dev/null | wc -l)
-                  failed=$(jq -r '.suites[].suites[].specs[].tests[].results[] | select(.status=="failed") | .status' "$shard_dir/test-results.json" 2>/dev/null | wc -l)
+                  # Count tests - get all stats in one jq call for efficiency
+                  total=$(jq -r '[.suites[]?.suites[]?.specs[]?] | length' "$shard_dir/test-results.json" 2>/dev/null)
+                  stats=$(jq -r '.suites[]?.suites[]?.specs[]?.tests[]?.results[]? | .status' "$shard_dir/test-results.json" 2>/dev/null | sort | uniq -c)
+                  passed=$(echo "$stats" | grep -w "passed" | awk '{print $1}' || echo "0")
+                  failed=$(echo "$stats" | grep -w "failed" | awk '{print $1}' || echo "0")
 
                   echo "" >> $GITHUB_STEP_SUMMARY
                   echo "**Stats**: ${total:-0} tests, ${passed:-0} passed, ${failed:-0} failed" >> $GITHUB_STEP_SUMMARY
