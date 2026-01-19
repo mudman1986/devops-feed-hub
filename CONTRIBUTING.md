@@ -23,7 +23,6 @@ DevOps Feed Hub is a static RSS feed aggregator that uses GitHub Actions to auto
 
 ### Repository Structure
 
-- `.github/actions/` - Custom GitHub Actions (Python-based RSS collector)
 - `.github/workflows/` - GitHub Actions workflow definitions
 - `.github/scripts/` - Shell scripts used by workflows
 - `docs/` - GitHub Pages content (HTML, CSS, JavaScript)
@@ -34,7 +33,7 @@ DevOps Feed Hub is a static RSS feed aggregator that uses GitHub Actions to auto
 ### Prerequisites
 
 - **Node.js** (v18 or higher) - for JavaScript dependencies and testing
-- **Python 3.x** - for RSS feed collection action
+- **Python 3.x** - for workflow scripts
 - **Bash** - for shell scripts
 - **Git** - for version control
 
@@ -84,7 +83,7 @@ DevOps Feed Hub is a static RSS feed aggregator that uses GitHub Actions to auto
 3. **Run Python unit tests**:
 
    ```bash
-   python3 -m pytest .github/actions/collect-rss-feeds/tests/ -v
+   python3 -m pytest .github/workflows/scripts/rss-processing/tests/ -v
    ```
 
 4. **Run UI tests**:

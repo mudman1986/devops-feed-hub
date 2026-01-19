@@ -16,8 +16,8 @@ Tests: Mark as Read, Theme toggle, Timeframe filtering
 
 #### Python (pytest)
 
-- **Location**: `actions/collect-rss-feeds/tests/` and `.github/workflows/scripts/rss-processing/tests/`
-- **Run**: `python3 -m pytest actions/collect-rss-feeds/tests/ .github/workflows/scripts/rss-processing/tests/ -v`
+- **Location**: `.github/workflows/scripts/rss-processing/tests/`
+- **Run**: `python3 -m pytest .github/workflows/scripts/rss-processing/tests/ -v`
 
 Tests: RSS parsing, HTML generation, RSS feed generation, feed ordering, configuration validation
 
