@@ -22,6 +22,7 @@ coverage/
 # Playwright
 playwright-report/
 test-results/
+test-results.json
 
 # RSS feed outputs (temporary files from testing)
 rss-output.json
