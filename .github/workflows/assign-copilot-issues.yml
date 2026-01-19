@@ -81,7 +81,7 @@ jobs:
       )
     steps:
       - name: Assign Copilot to issue
-        uses: mudman1986/auto-assign-copilot@main
+        uses: mudman1986/auto-assign-copilot@copilot/fix-dry-run-mode-issue
         with:
           github-token: ${{ secrets.COPILOT_ASSIGN_PAT }}
           mode: ${{ inputs.mode || 'auto' }}
