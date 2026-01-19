@@ -60,24 +60,24 @@ jobs:
 
 ## Inputs
 
-| Input                  | Description                                                                                         | Required | Default           |
-| ---------------------- | --------------------------------------------------------------------------------------------------- | -------- | ----------------- |
-| `github-token`         | GitHub token with `issues:write` permission                                                         | Yes      | N/A               |
-| `mode`                 | Assignment mode: `auto` or `refactor`                                                               | No       | `auto`            |
-| `label-override`       | Priority label to filter by (auto mode only)                                                        | No       | `""`              |
-| `force`                | Force assignment even if Copilot already has an issue                                               | No       | `false`           |
-| `dry-run`              | Log what would be done without making changes                                                       | No       | `false`           |
-| `allow-parent-issues`  | Allow assigning issues that have sub-issues                                                         | No       | `false`           |
-| `skip-labels`          | Comma-separated list of labels to skip                                                              | No       | `no-ai,refining`  |
-| `refactor-threshold`   | Number of closed issues to check for refactor label (1 in N+1 ratio)                                | No       | `4`               |
+| Input                 | Description                                                          | Required | Default          |
+| --------------------- | -------------------------------------------------------------------- | -------- | ---------------- |
+| `github-token`        | GitHub token with `issues:write` permission                          | Yes      | N/A              |
+| `mode`                | Assignment mode: `auto` or `refactor`                                | No       | `auto`           |
+| `label-override`      | Priority label to filter by (auto mode only)                         | No       | `""`             |
+| `force`               | Force assignment even if Copilot already has an issue                | No       | `false`          |
+| `dry-run`             | Log what would be done without making changes                        | No       | `false`          |
+| `allow-parent-issues` | Allow assigning issues that have sub-issues                          | No       | `false`          |
+| `skip-labels`         | Comma-separated list of labels to skip                               | No       | `no-ai,refining` |
+| `refactor-threshold`  | Number of closed issues to check for refactor label (1 in N+1 ratio) | No       | `4`              |
 
 ## Outputs
 
-| Output                  | Description                                                  |
-| ----------------------- | ------------------------------------------------------------ |
-| `assigned-issue-number` | Number of the issue assigned to Copilot (empty if none)      |
-| `assigned-issue-url`    | URL of the issue assigned to Copilot (empty if none)         |
-| `assignment-mode`       | The effective mode used for assignment (auto or refactor)    |
+| Output                  | Description                                               |
+| ----------------------- | --------------------------------------------------------- |
+| `assigned-issue-number` | Number of the issue assigned to Copilot (empty if none)   |
+| `assigned-issue-url`    | URL of the issue assigned to Copilot (empty if none)      |
+| `assignment-mode`       | The effective mode used for assignment (auto or refactor) |
 
 ## Assignment Logic
 
@@ -105,6 +105,7 @@ jobs:
 ### Refactor Ratio
 
 When an issue is closed, the action checks the last N closed issues (where N = `refactor-threshold`):
+
 - If none have the `refactor` label, switches to refactor mode
 - This ensures a 1 in N+1 ratio of refactor issues (default: 1 in 5)
 

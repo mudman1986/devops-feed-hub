@@ -38,7 +38,7 @@ This creates the `dist/index.js` file that the action needs to run.
 
 ### 3. Commit the Action
 
-**Important**: You must commit the `dist/` directory even though it's typically in `.gitignore` for the main repo.
+**Important**: You must commit the `dist/` directory even though it's typically in `.gitignore` for the main repository.
 
 ```bash
 # Add the action files

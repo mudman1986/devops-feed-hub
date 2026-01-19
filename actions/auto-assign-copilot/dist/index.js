@@ -3053,7 +3053,7 @@ function tryGetExecutablePath(filePath, extensions) {
         }
         catch (err) {
             if (err.code !== 'ENOENT') {
-                // eslint-disable-next-line no-console
+                 
                 console.log(`Unexpected error attempting to determine if executable file exists '${filePath}': ${err}`);
             }
         }
@@ -3081,7 +3081,7 @@ function tryGetExecutablePath(filePath, extensions) {
             }
             catch (err) {
                 if (err.code !== 'ENOENT') {
-                    // eslint-disable-next-line no-console
+                     
                     console.log(`Unexpected error attempting to determine if executable file exists '${filePath}': ${err}`);
                 }
             }
@@ -3099,7 +3099,7 @@ function tryGetExecutablePath(filePath, extensions) {
                         }
                     }
                     catch (err) {
-                        // eslint-disable-next-line no-console
+                         
                         console.log(`Unexpected error attempting to determine the actual case of the file '${filePath}': ${err}`);
                     }
                     return filePath;
@@ -11155,7 +11155,7 @@ async function lazyllhttp () {
 
   return await WebAssembly.instantiate(mod, {
     env: {
-      /* eslint-disable camelcase */
+       
 
       wasm_on_url: (p, at, len) => {
         /* istanbul ignore next */
@@ -11194,7 +11194,7 @@ async function lazyllhttp () {
         return currentParser.onMessageComplete() || 0
       }
 
-      /* eslint-enable camelcase */
+       
     }
   })
 }
@@ -17161,14 +17161,14 @@ class File extends Blob {
     let t = options.type
     let d
 
-    // eslint-disable-next-line no-labels
+     
     substep: {
       if (t) {
         t = parseMIMEType(t)
 
         if (t === 'failure') {
           t = ''
-          // eslint-disable-next-line no-labels
+           
           break substep
         }
 
@@ -22531,7 +22531,7 @@ function determineRequestsReferrer (request) {
       // 3. Return referrerOrigin.
       return referrerOrigin
     }
-    case 'strict-origin': // eslint-disable-line
+    case 'strict-origin':  
       /**
          * 1. If referrerURL is a potentially trustworthy URL and
          * request’s current URL is not a potentially trustworthy URL,
@@ -29051,7 +29051,7 @@ function fireEvent (e, target, eventConstructor = Event, eventInitDict) {
   // 2. Let event be the result of creating an event given eventConstructor,
   //    in the relevant realm of target.
   // 3. Initialize event’s type attribute to e.
-  const event = new eventConstructor(e, eventInitDict) // eslint-disable-line new-cap
+  const event = new eventConstructor(e, eventInitDict)  
 
   // 4. Initialize any other IDL attributes of event as described in the
   //    invocation of this algorithm.
@@ -31391,7 +31391,7 @@ const StreamSearch = __nccwpck_require__(4136)
 
 const B_DCRLF = Buffer.from('\r\n\r\n')
 const RE_CRLF = /\r\n/g
-const RE_HDR = /^([^:]+):[ \t]?([\x00-\xFF]+)?$/ // eslint-disable-line no-control-regex
+const RE_HDR = /^([^:]+):[ \t]?([\x00-\xFF]+)?$/  
 
 function HeaderParser (cfg) {
   EventEmitter.call(this)
@@ -31453,7 +31453,7 @@ HeaderParser.prototype._parseHeader = function () {
   const len = lines.length
   let m, h
 
-  for (var i = 0; i < len; ++i) { // eslint-disable-line no-var
+  for (var i = 0; i < len; ++i) {  
     if (lines[i].length === 0) { continue }
     if (lines[i][0] === '\t' || lines[i][0] === ' ') {
       // folded header content
@@ -31573,7 +31573,7 @@ function SBMH (needle) {
 
   // Populate occurrence table with analysis of the needle,
   // ignoring last letter.
-  for (var i = 0; i < needleLength - 1; ++i) { // eslint-disable-line no-var
+  for (var i = 0; i < needleLength - 1; ++i) {  
     this._occ[needle[i]] = needleLength - 1 - i
   }
 }
@@ -31731,7 +31731,7 @@ SBMH.prototype._sbmh_lookup_char = function (data, pos) {
 }
 
 SBMH.prototype._sbmh_memcmp = function (data, pos, len) {
-  for (var i = 0; i < len; ++i) { // eslint-disable-line no-var
+  for (var i = 0; i < len; ++i) {  
     if (this._sbmh_lookup_char(data, pos + i) !== this._needle[i]) { return false }
   }
   return true
@@ -32172,7 +32172,7 @@ function UrlEncoded (boy, cfg) {
   this.fieldsLimit = getLimit(limits, 'fields', Infinity)
 
   let charset
-  for (var i = 0, len = parsedConType.length; i < len; ++i) { // eslint-disable-line no-var
+  for (var i = 0, len = parsedConType.length; i < len; ++i) {  
     if (Array.isArray(parsedConType[i]) &&
         RE_CHARSET.test(parsedConType[i][0])) {
       charset = parsedConType[i][1].toLowerCase()
@@ -32417,7 +32417,7 @@ module.exports = Decoder
 
 module.exports = function basename (path) {
   if (typeof path !== 'string') { return '' }
-  for (var i = path.length - 1; i >= 0; --i) { // eslint-disable-line no-var
+  for (var i = path.length - 1; i >= 0; --i) {  
     switch (path.charCodeAt(i)) {
       case 0x2F: // '/'
       case 0x5C: // '\'
@@ -32581,7 +32581,7 @@ module.exports = function getLimit (limits, name, defaultLimit) {
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 "use strict";
-/* eslint-disable object-property-newline */
+ 
 
 
 const decodeText = __nccwpck_require__(2747)
@@ -32707,7 +32707,7 @@ function parseParams (str) {
   let tmp = ''
   const len = str.length
 
-  for (var i = 0; i < len; ++i) { // eslint-disable-line no-var
+  for (var i = 0; i < len; ++i) {  
     const char = str[i]
     if (char === '\\' && inquote) {
       if (escaping) { escaping = false } else {
