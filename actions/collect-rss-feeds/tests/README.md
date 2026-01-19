@@ -25,7 +25,7 @@ Tests for the `collect_feeds.py` module:
 
 - Configuration file validation
 - Script existence checks
-- Integration with markdown summary generation
+- Integration with Markdown summary generation
 
 ### test_parse_rss_feed.py
 
