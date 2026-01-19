@@ -4,56 +4,56 @@
 const BREAKPOINTS = {
   MOBILE: 768,
   TABLET: 1024,
-  DESKTOP: 1200,
-};
+  DESKTOP: 1200
+}
 
 // Timeout constants (in milliseconds)
 const TIMEOUTS = {
   SCREEN_READER_ANNOUNCEMENT: 3000,
-  ERROR_MESSAGE_DISMISS: 5000,
-};
+  ERROR_MESSAGE_DISMISS: 5000
+}
 
 // Accessibility constants
 const ACCESSIBILITY = {
   MIN_TOUCH_TARGET_SIZE: 48,
-  MIN_FOCUS_OUTLINE_WIDTH: 2,
-};
+  MIN_FOCUS_OUTLINE_WIDTH: 2
+}
 
 // Mark as Read constants
-const READ_ARTICLES_KEY = "readArticles";
+const READ_ARTICLES_KEY = 'readArticles'
 
 // List of valid experimental themes
 const VALID_EXPERIMENTAL_THEMES = [
-  "purple-haze",
-  "purple-haze-light",
-  "ocean-deep",
-  "ocean-deep-light",
-  "arctic-blue",
-  "arctic-blue-light",
-  "high-contrast-dark",
-  "high-contrast-light",
-  "monochrome",
-  "monochrome-light",
-  "dracula",
-  "dracula-light",
-  "minimalist",
-  "minimalist-light",
-  "terminal",
-  "terminal-light",
-  "retro",
-  "retro-light",
-  "futuristic",
-  "futuristic-light",
-  "compact",
-  "compact-light",
-  "horizontal-scroll",
-  "masonry-grid",
-  "floating-panels",
-  "center-stage",
-  "top-strip",
-  "list-dense",
-  "timeline-vertical",
-];
+  'purple-haze',
+  'purple-haze-light',
+  'ocean-deep',
+  'ocean-deep-light',
+  'arctic-blue',
+  'arctic-blue-light',
+  'high-contrast-dark',
+  'high-contrast-light',
+  'monochrome',
+  'monochrome-light',
+  'dracula',
+  'dracula-light',
+  'minimalist',
+  'minimalist-light',
+  'terminal',
+  'terminal-light',
+  'retro',
+  'retro-light',
+  'futuristic',
+  'futuristic-light',
+  'compact',
+  'compact-light',
+  'horizontal-scroll',
+  'masonry-grid',
+  'floating-panels',
+  'center-stage',
+  'top-strip',
+  'list-dense',
+  'timeline-vertical'
+]
 
 // ===== SHARED UTILITY FUNCTIONS =====
 
@@ -63,13 +63,13 @@ const VALID_EXPERIMENTAL_THEMES = [
  * @param {*} defaultValue - default value if key not found or error occurs
  * @returns {*} - stored value or default
  */
-function getLocalStorage(key, defaultValue = null) {
+function getLocalStorage (key, defaultValue = null) {
   try {
-    const stored = localStorage.getItem(key);
-    return stored !== null ? stored : defaultValue;
+    const stored = localStorage.getItem(key)
+    return stored !== null ? stored : defaultValue
   } catch (e) {
-    console.warn(`localStorage unavailable for key "${key}":`, e);
-    return defaultValue;
+    console.warn(`localStorage unavailable for key "${key}":`, e)
+    return defaultValue
   }
 }
 
@@ -79,16 +79,16 @@ function getLocalStorage(key, defaultValue = null) {
  * @param {*} defaultValue - default value if key not found or error occurs
  * @returns {*} - parsed JSON value or default
  */
-function getLocalStorageJSON(key, defaultValue = null) {
+function getLocalStorageJSON (key, defaultValue = null) {
   try {
-    const stored = localStorage.getItem(key);
-    return stored ? JSON.parse(stored) : defaultValue;
+    const stored = localStorage.getItem(key)
+    return stored ? JSON.parse(stored) : defaultValue
   } catch (e) {
     console.warn(
       `localStorage unavailable or invalid JSON for key "${key}":`,
-      e,
-    );
-    return defaultValue;
+      e
+    )
+    return defaultValue
   }
 }
 
@@ -97,11 +97,11 @@ function getLocalStorageJSON(key, defaultValue = null) {
  * @param {string} key - localStorage key
  * @param {string} value - value to store
  */
-function setLocalStorage(key, value) {
+function setLocalStorage (key, value) {
   try {
-    localStorage.setItem(key, value);
+    localStorage.setItem(key, value)
   } catch (e) {
-    console.warn(`Unable to save to localStorage for key "${key}":`, e);
+    console.warn(`Unable to save to localStorage for key "${key}":`, e)
   }
 }
 
@@ -110,11 +110,11 @@ function setLocalStorage(key, value) {
  * @param {string} key - localStorage key
  * @param {*} value - value to JSON stringify and store
  */
-function setLocalStorageJSON(key, value) {
+function setLocalStorageJSON (key, value) {
   try {
-    localStorage.setItem(key, JSON.stringify(value));
+    localStorage.setItem(key, JSON.stringify(value))
   } catch (e) {
-    console.warn(`Unable to save to localStorage for key "${key}":`, e);
+    console.warn(`Unable to save to localStorage for key "${key}":`, e)
   }
 }
 
@@ -126,20 +126,20 @@ function setLocalStorageJSON(key, value) {
  * @param {function} onChange - callback when value changes
  * @returns {HTMLElement|null} - select element or null
  */
-function initializeDropdown(selectId, storageKey, defaultValue, onChange) {
-  const select = document.getElementById(selectId);
-  if (!select) return null;
+function initializeDropdown (selectId, storageKey, defaultValue, onChange) {
+  const select = document.getElementById(selectId)
+  if (!select) return null
 
-  const savedValue = getLocalStorage(storageKey, defaultValue);
-  select.value = savedValue;
+  const savedValue = getLocalStorage(storageKey, defaultValue)
+  select.value = savedValue
 
-  select.addEventListener("change", () => {
-    const value = select.value;
-    setLocalStorage(storageKey, value);
-    onChange(value);
-  });
+  select.addEventListener('change', () => {
+    const value = select.value
+    setLocalStorage(storageKey, value)
+    onChange(value)
+  })
 
-  return select;
+  return select
 }
 
 /**
@@ -148,24 +148,24 @@ function initializeDropdown(selectId, storageKey, defaultValue, onChange) {
  * @param {HTMLElement} parent - parent container element
  * @param {HTMLElement|null} beforeElement - insert before this element (e.g., footer)
  */
-function reorderDOMElements(dataArray, parent, beforeElement = null) {
+function reorderDOMElements (dataArray, parent, beforeElement = null) {
   // Detach all elements first to avoid issues with insertBefore moving elements
-  const elements = dataArray.map((data) => data.element);
+  const elements = dataArray.map((data) => data.element)
   elements.forEach((element) => {
     if (element.parentNode) {
-      element.parentNode.removeChild(element);
+      element.parentNode.removeChild(element)
     }
-  });
+  })
 
   // Now insert them in the correct order
   if (beforeElement) {
     elements.forEach((element) => {
-      parent.insertBefore(element, beforeElement);
-    });
+      parent.insertBefore(element, beforeElement)
+    })
   } else {
     elements.forEach((element) => {
-      parent.appendChild(element);
-    });
+      parent.appendChild(element)
+    })
   }
 }
 
@@ -175,494 +175,456 @@ function reorderDOMElements(dataArray, parent, beforeElement = null) {
  * @param {number} wait - Wait time in milliseconds
  * @returns {Function} - Debounced function
  */
-function debounce(func, wait) {
-  let timeout;
-  return function executedFunction(...args) {
+function debounce (func, wait) {
+  let timeout
+  return function executedFunction (...args) {
     const later = () => {
-      clearTimeout(timeout);
-      func(...args);
-    };
-    clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-  };
+      clearTimeout(timeout)
+      func(...args)
+    }
+    clearTimeout(timeout)
+    timeout = setTimeout(later, wait)
+  }
 }
-
-// ===== DOM CACHE =====
-// Cache frequently accessed DOM elements to reduce querySelector calls
-const DOMCache = {
-  _cache: {},
-
-  /**
-   * Get element from cache or query and cache it
-   * @param {string} key - Cache key
-   * @param {Function} queryFn - Function that returns the element
-   * @returns {HTMLElement|null} - Cached element
-   */
-  get(key, queryFn) {
-    if (!this._cache[key]) {
-      this._cache[key] = queryFn();
-    }
-    return this._cache[key];
-  },
-
-  /**
-   * Clear cache for a specific key or all cache
-   * @param {string} [key] - Optional key to clear, clears all if not provided
-   */
-  clear(key) {
-    if (key) {
-      delete this._cache[key];
-    } else {
-      this._cache = {};
-    }
-  },
-
-  /**
-   * Invalidate cache when DOM changes significantly
-   */
-  invalidate() {
-    this._cache = {};
-  },
-};
 
 // ===== THEME TOGGLE FUNCTIONALITY =====
 
-const themeToggle = document.getElementById("theme-toggle");
-const htmlElement = document.documentElement;
+const themeToggle = document.getElementById('theme-toggle')
+const htmlElement = document.documentElement
 
 // Check for experimental theme first, then fall back to standard theme
-let savedTheme = "dark";
-const experimentalTheme = getLocalStorage("experimentalTheme");
+let savedTheme = 'dark'
+const experimentalTheme = getLocalStorage('experimentalTheme')
 if (
   experimentalTheme &&
   VALID_EXPERIMENTAL_THEMES.includes(experimentalTheme)
 ) {
-  savedTheme = experimentalTheme;
+  savedTheme = experimentalTheme
 } else {
   if (experimentalTheme) {
     console.warn(
-      `Invalid experimental theme: ${experimentalTheme}. Using default.`,
-    );
+      `Invalid experimental theme: ${experimentalTheme}. Using default.`
+    )
     try {
-      localStorage.removeItem("experimentalTheme");
+      localStorage.removeItem('experimentalTheme')
     } catch (e) {
-      console.warn("Unable to remove invalid theme:", e);
+      console.warn('Unable to remove invalid theme:', e)
     }
   }
-  savedTheme = getLocalStorage("theme", "dark");
+  savedTheme = getLocalStorage('theme', 'dark')
 }
 
-htmlElement.setAttribute("data-theme", savedTheme);
-updateThemeButton(savedTheme);
+htmlElement.setAttribute('data-theme', savedTheme)
+updateThemeButton(savedTheme)
 
-themeToggle.addEventListener("click", () => {
-  const currentTheme = htmlElement.getAttribute("data-theme");
-  const newTheme = currentTheme === "light" ? "dark" : "light";
+themeToggle.addEventListener('click', () => {
+  const currentTheme = htmlElement.getAttribute('data-theme')
+  const newTheme = currentTheme === 'light' ? 'dark' : 'light'
 
-  htmlElement.setAttribute("data-theme", newTheme);
-  setLocalStorage("theme", newTheme);
+  htmlElement.setAttribute('data-theme', newTheme)
+  setLocalStorage('theme', newTheme)
 
   // Clear experimental theme when toggling standard theme
   try {
-    localStorage.removeItem("experimentalTheme");
+    localStorage.removeItem('experimentalTheme')
   } catch (e) {
-    console.warn("Unable to remove experimental theme:", e);
+    console.warn('Unable to remove experimental theme:', e)
   }
 
-  updateThemeButton(newTheme);
-});
+  updateThemeButton(newTheme)
+})
 
-function updateThemeButton(theme) {
-  const iconSVG = document.getElementById("theme-icon");
-  const themeText = document.getElementById("theme-text");
+function updateThemeButton (theme) {
+  const iconSVG = document.getElementById('theme-icon')
+  const themeText = document.getElementById('theme-text')
 
-  if (theme === "dark") {
+  if (theme === 'dark') {
     // Sun icon for light mode
     iconSVG.innerHTML =
-      '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+      '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>'
     if (themeText) {
-      themeText.textContent = "Light Mode";
+      themeText.textContent = 'Light Mode'
     }
   } else {
     // Moon icon for dark mode
     iconSVG.innerHTML =
-      '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+      '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>'
     if (themeText) {
-      themeText.textContent = "Dark Mode";
+      themeText.textContent = 'Dark Mode'
     }
   }
 }
 
 // ===== VIEW SELECTOR FUNCTIONALITY =====
 
-const savedView = getLocalStorage("view", "list");
-initializeDropdown("view-select", "view", "list", applyView);
-applyView(savedView);
+const savedView = getLocalStorage('view', 'list')
+initializeDropdown('view-select', 'view', 'list', applyView)
+applyView(savedView)
 
-function applyView(view) {
+function applyView (view) {
   // List is now the default, card needs the attribute
-  if (view === "card") {
-    htmlElement.setAttribute("data-view", "card");
+  if (view === 'card') {
+    htmlElement.setAttribute('data-view', 'card')
   } else {
     // For list view, set data-view="list" to apply list styles
-    htmlElement.setAttribute("data-view", "list");
+    htmlElement.setAttribute('data-view', 'list')
   }
 }
 
 // ===== SIDEBAR FUNCTIONALITY =====
 
-function initializeSidebarState(sidebar) {
+function initializeSidebarState (sidebar) {
   // On mobile, start collapsed; on desktop, start expanded
   if (window.innerWidth <= BREAKPOINTS.MOBILE) {
-    sidebar.classList.add("collapsed");
+    sidebar.classList.add('collapsed')
   } else {
-    sidebar.classList.remove("collapsed");
+    sidebar.classList.remove('collapsed')
   }
 }
 
-const sidebarToggle = document.getElementById("nav-toggle");
-const sidebar = document.getElementById("sidebar");
+const sidebarToggle = document.getElementById('nav-toggle')
+const sidebar = document.getElementById('sidebar')
 
 if (sidebarToggle && sidebar) {
-  initializeSidebarState(sidebar);
+  initializeSidebarState(sidebar)
   // Debounce resize event to improve performance (150ms delay)
   window.addEventListener(
-    "resize",
-    debounce(() => initializeSidebarState(sidebar), 150),
-  );
+    'resize',
+    debounce(() => initializeSidebarState(sidebar), 150)
+  )
 
-  sidebarToggle.addEventListener("click", () => {
-    sidebar.classList.toggle("collapsed");
-  });
+  sidebarToggle.addEventListener('click', () => {
+    sidebar.classList.toggle('collapsed')
+  })
 
   // Close sidebar when clicking outside (mobile only)
-  document.addEventListener("click", (e) => {
+  document.addEventListener('click', (e) => {
     if (window.innerWidth <= BREAKPOINTS.MOBILE) {
       if (!sidebar.contains(e.target) && !sidebarToggle.contains(e.target)) {
-        sidebar.classList.add("collapsed");
+        sidebar.classList.add('collapsed')
       }
     }
-  });
+  })
 }
 
 // ===== TIMEFRAME FILTERING =====
 
 const TIMEFRAME_HOURS = {
-  "1day": 24,
-  "7days": 168,
-  "30days": 720,
-};
+  '1day': 24,
+  '7days': 168,
+  '30days': 720
+}
 
-const savedTimeframe = getLocalStorage("timeframe", "1day");
+const savedTimeframe = getLocalStorage('timeframe', '1day')
 initializeDropdown(
-  "timeframe-select",
-  "timeframe",
-  "1day",
-  applyTimeframeFilter,
-);
-applyTimeframeFilter(savedTimeframe);
+  'timeframe-select',
+  'timeframe',
+  '1day',
+  applyTimeframeFilter
+)
+applyTimeframeFilter(savedTimeframe)
 
-function applyTimeframeFilter(timeframe) {
-  const hours = TIMEFRAME_HOURS[timeframe] || 24;
-  const cutoffTime = new Date(Date.now() - hours * 60 * 60 * 1000);
+function applyTimeframeFilter (timeframe) {
+  const hours = TIMEFRAME_HOURS[timeframe] || 24
+  const cutoffTime = new Date(Date.now() - hours * 60 * 60 * 1000)
 
   // Filter articles by timeframe
-  const allArticles = document.querySelectorAll(".article-item");
+  const allArticles = document.querySelectorAll('.article-item')
 
   allArticles.forEach((article) => {
-    const publishedISO = article.getAttribute("data-published");
+    const publishedISO = article.getAttribute('data-published')
     if (publishedISO) {
       try {
-        const publishDate = new Date(publishedISO);
+        const publishDate = new Date(publishedISO)
         if (!Number.isNaN(publishDate.getTime())) {
           if (publishDate >= cutoffTime) {
-            article.removeAttribute("data-hidden-by-timeframe");
-            article.style.display = "";
+            article.removeAttribute('data-hidden-by-timeframe')
+            article.style.display = ''
           } else {
-            article.setAttribute("data-hidden-by-timeframe", "true");
-            article.style.display = "none";
+            article.setAttribute('data-hidden-by-timeframe', 'true')
+            article.style.display = 'none'
           }
         } else {
-          article.removeAttribute("data-hidden-by-timeframe");
-          article.style.display = "";
+          article.removeAttribute('data-hidden-by-timeframe')
+          article.style.display = ''
         }
       } catch {
-        article.removeAttribute("data-hidden-by-timeframe");
-        article.style.display = "";
+        article.removeAttribute('data-hidden-by-timeframe')
+        article.style.display = ''
       }
     } else {
-      article.removeAttribute("data-hidden-by-timeframe");
-      article.style.display = "";
+      article.removeAttribute('data-hidden-by-timeframe')
+      article.style.display = ''
     }
-  });
+  })
 
   // Update feed counts and reorder
-  updateFeedCounts();
-  updateStats();
+  updateFeedCounts()
+  updateStats()
 }
 
 /**
  * Update feed counts and reorder feeds
  */
 // Helper to cache section elements
-function getSectionElements(section) {
+function getSectionElements (section) {
   // Use a WeakMap to cache elements per section
   if (!getSectionElements.cache) {
-    getSectionElements.cache = new WeakMap();
+    getSectionElements.cache = new WeakMap()
   }
 
   if (!getSectionElements.cache.has(section)) {
     getSectionElements.cache.set(section, {
-      heading: section.querySelector("h2"),
-      countBadge: section.querySelector(".feed-count"),
-      articleList: section.querySelector(".article-list"),
+      heading: section.querySelector('h2'),
+      countBadge: section.querySelector('.feed-count'),
+      articleList: section.querySelector('.article-list')
       // noArticlesMsg is dynamic, query each time
-    });
+    })
   }
 
-  return getSectionElements.cache.get(section);
+  return getSectionElements.cache.get(section)
 }
 
 // Helper function to extract feed name from section heading
-function extractFeedName(section) {
-  const cached = getSectionElements(section);
-  const heading = cached.heading;
-  const feedNameElement = heading?.childNodes[0];
+function extractFeedName (section) {
+  const cached = getSectionElements(section)
+  const heading = cached.heading
+  const feedNameElement = heading?.childNodes[0]
   return feedNameElement
     ? feedNameElement.textContent.trim()
-    : heading?.textContent.trim() || "";
+    : heading?.textContent.trim() || ''
 }
 
 // Helper function to update count badge
-function updateCountBadge(section, count) {
-  const cached = getSectionElements(section);
-  const countBadge = cached.countBadge;
+function updateCountBadge (section, count) {
+  const cached = getSectionElements(section)
+  const countBadge = cached.countBadge
   if (countBadge) {
-    const plural = count !== 1 ? "s" : "";
-    countBadge.textContent = `${count} article${plural}`;
+    const plural = count !== 1 ? 's' : ''
+    countBadge.textContent = `${count} article${plural}`
   }
 }
 
 // Helper function to update "no articles" message
-function updateNoArticlesMessage(
+function updateNoArticlesMessage (
   section,
   count,
-  messageText = "No new articles in this time period",
+  messageText = 'No new articles in this time period'
 ) {
-  const cached = getSectionElements(section);
-  const noArticlesMsg = section.querySelector(".no-articles"); // Query fresh as it's dynamic
-  const articleList = cached.articleList;
+  const cached = getSectionElements(section)
+  const noArticlesMsg = section.querySelector('.no-articles') // Query fresh as it's dynamic
+  const articleList = cached.articleList
 
   if (count === 0) {
-    if (articleList) articleList.style.display = "none";
+    if (articleList) articleList.style.display = 'none'
     if (!noArticlesMsg) {
-      const msg = document.createElement("div");
-      msg.className = "no-articles";
-      msg.textContent = messageText;
-      section.appendChild(msg);
+      const msg = document.createElement('div')
+      msg.className = 'no-articles'
+      msg.textContent = messageText
+      section.appendChild(msg)
     } else {
-      noArticlesMsg.style.display = "";
+      noArticlesMsg.style.display = ''
     }
   } else {
-    if (articleList) articleList.style.display = "";
+    if (articleList) articleList.style.display = ''
     if (noArticlesMsg) {
-      noArticlesMsg.remove();
+      noArticlesMsg.remove()
     }
   }
 }
 
 // Helper function to order feeds by unread status
-function orderFeedsByUnreadStatus(feedsData) {
+function orderFeedsByUnreadStatus (feedsData) {
   const feedsWithUnread = feedsData
     .filter((f) => f.unreadCount > 0)
-    .sort((a, b) => a.name.localeCompare(b.name));
+    .sort((a, b) => a.name.localeCompare(b.name))
   const feedsAllRead = feedsData
     .filter((f) => f.unreadCount === 0 && (f.count || 0) > 0)
-    .sort((a, b) => a.name.localeCompare(b.name));
+    .sort((a, b) => a.name.localeCompare(b.name))
   const emptyFeeds = feedsData
     .filter((f) => (f.count || 0) === 0)
-    .sort((a, b) => a.name.localeCompare(b.name));
+    .sort((a, b) => a.name.localeCompare(b.name))
 
-  return [...feedsWithUnread, ...feedsAllRead, ...emptyFeeds];
+  return [...feedsWithUnread, ...feedsAllRead, ...emptyFeeds]
 }
 
-function updateFeedCounts() {
-  const feedSections = document.querySelectorAll(".feed-section");
-  const feedsData = [];
+function updateFeedCounts () {
+  const feedSections = document.querySelectorAll('.feed-section')
+  const feedsData = []
 
   feedSections.forEach((section) => {
     // Skip feeds that are hidden by the feed filter
-    if (section.hasAttribute("data-hidden-by-filter")) {
-      return;
+    if (section.hasAttribute('data-hidden-by-filter')) {
+      return
     }
 
-    const articles = section.querySelectorAll(".article-item");
+    const articles = section.querySelectorAll('.article-item')
     const visibleArticles = Array.from(articles).filter(
-      (a) => a.style.display !== "none",
-    );
-    const count = visibleArticles.length;
+      (a) => a.style.display !== 'none'
+    )
+    const count = visibleArticles.length
 
     // Calculate unread count (articles that are visible and not marked as read)
     const unreadArticles = Array.from(articles).filter((article) => {
-      const link = article.querySelector(".article-title");
-      if (!link) return false;
-      const articleUrl = link.getAttribute("href");
+      const link = article.querySelector('.article-title')
+      if (!link) return false
+      const articleUrl = link.getAttribute('href')
       return (
         !isArticleRead(articleUrl) &&
-        !article.hasAttribute("data-hidden-by-timeframe")
-      );
-    });
-    const unreadCount = unreadArticles.length;
+        !article.hasAttribute('data-hidden-by-timeframe')
+      )
+    })
+    const unreadCount = unreadArticles.length
 
-    updateCountBadge(section, count);
-    updateNoArticlesMessage(section, count);
+    updateCountBadge(section, count)
+    updateNoArticlesMessage(section, count)
 
     feedsData.push({
       element: section,
       count,
       unreadCount,
-      name: extractFeedName(section),
-    });
-  });
+      name: extractFeedName(section)
+    })
+  })
 
   // Reorder feeds by unread status
   if (feedSections.length > 0 && feedSections[0].parentNode) {
-    const parent = feedSections[0].parentNode;
-    const footer = parent.querySelector(".footer");
-    const orderedFeeds = orderFeedsByUnreadStatus(feedsData);
-    reorderDOMElements(orderedFeeds, parent, footer);
+    const parent = feedSections[0].parentNode
+    const footer = parent.querySelector('.footer')
+    const orderedFeeds = orderFeedsByUnreadStatus(feedsData)
+    reorderDOMElements(orderedFeeds, parent, footer)
   }
 }
 
-function updateStats() {
-  const statCards = document.querySelectorAll(".stat-card");
-  if (statCards.length === 0) return;
+function updateStats () {
+  const statCards = document.querySelectorAll('.stat-card')
+  if (statCards.length === 0) return
 
-  const allArticles = document.querySelectorAll(".article-item");
-  if (allArticles.length === 0) return;
+  const allArticles = document.querySelectorAll('.article-item')
+  if (allArticles.length === 0) return
 
   const visibleArticles = Array.from(allArticles).filter(
-    (a) => a.style.display !== "none",
-  );
+    (a) => a.style.display !== 'none'
+  )
 
   statCards.forEach((card) => {
-    const label = card.querySelector(".stat-label");
-    if (label && label.textContent === "Total Articles") {
-      const value = card.querySelector(".stat-value");
+    const label = card.querySelector('.stat-label')
+    if (label && label.textContent === 'Total Articles') {
+      const value = card.querySelector('.stat-value')
       if (value) {
-        value.textContent = visibleArticles.length;
+        value.textContent = visibleArticles.length
       }
     }
-  });
+  })
 }
 
 // ===== MARK AS READ FUNCTIONALITY =====
 
-function getReadArticles() {
-  return getLocalStorageJSON(READ_ARTICLES_KEY, []);
+function getReadArticles () {
+  return getLocalStorageJSON(READ_ARTICLES_KEY, [])
 }
 
-function saveReadArticles(readArticles) {
-  setLocalStorageJSON(READ_ARTICLES_KEY, readArticles);
+function saveReadArticles (readArticles) {
+  setLocalStorageJSON(READ_ARTICLES_KEY, readArticles)
 }
 
-function isArticleRead(articleUrl) {
-  const readArticles = getReadArticles();
-  return readArticles.includes(articleUrl);
+function isArticleRead (articleUrl) {
+  const readArticles = getReadArticles()
+  return readArticles.includes(articleUrl)
 }
 
-function toggleArticleRead(articleUrl) {
-  let readArticles = getReadArticles();
+function toggleArticleRead (articleUrl) {
+  let readArticles = getReadArticles()
 
   if (readArticles.includes(articleUrl)) {
-    readArticles = readArticles.filter((url) => url !== articleUrl);
+    readArticles = readArticles.filter((url) => url !== articleUrl)
   } else {
-    readArticles.push(articleUrl);
+    readArticles.push(articleUrl)
   }
 
-  saveReadArticles(readArticles);
-  return readArticles.includes(articleUrl);
+  saveReadArticles(readArticles)
+  return readArticles.includes(articleUrl)
 }
 
-function markArticleAsRead(articleUrl) {
-  let readArticles = getReadArticles();
+function markArticleAsRead (articleUrl) {
+  const readArticles = getReadArticles()
   if (!readArticles.includes(articleUrl)) {
-    readArticles.push(articleUrl);
-    saveReadArticles(readArticles);
+    readArticles.push(articleUrl)
+    saveReadArticles(readArticles)
   }
-  return true;
+  return true
 }
 
-function resetAllReadArticles() {
+function resetAllReadArticles () {
   try {
-    localStorage.removeItem(READ_ARTICLES_KEY);
-    initializeReadStatus();
-    updateFeedCountsAfterReadFilter();
+    localStorage.removeItem(READ_ARTICLES_KEY)
+    initializeReadStatus()
+    updateFeedCountsAfterReadFilter()
   } catch (e) {
-    console.warn("Unable to reset read articles:", e);
+    console.warn('Unable to reset read articles:', e)
   }
 }
 
-function initializeReadStatus() {
-  const articles = document.querySelectorAll(".article-item");
+function initializeReadStatus () {
+  const articles = document.querySelectorAll('.article-item')
 
   articles.forEach((article) => {
-    const link = article.querySelector(".article-title");
-    if (!link) return;
+    const link = article.querySelector('.article-title')
+    if (!link) return
 
-    const articleUrl = link.getAttribute("href");
-    if (!articleUrl) return;
+    const articleUrl = link.getAttribute('href')
+    if (!articleUrl) return
 
-    const existingIndicator = article.querySelector(".read-indicator");
+    const existingIndicator = article.querySelector('.read-indicator')
     if (existingIndicator) {
-      existingIndicator.remove();
+      existingIndicator.remove()
     }
 
-    const indicator = document.createElement("button");
-    indicator.className = "read-indicator";
-    indicator.setAttribute("aria-label", "Mark as read/unread");
+    const indicator = document.createElement('button')
+    indicator.className = 'read-indicator'
+    indicator.setAttribute('aria-label', 'Mark as read/unread')
     indicator.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <polyline points="20 6 9 17 4 12"></polyline>
-    </svg>`;
+    </svg>`
 
-    indicator.addEventListener("click", (e) => {
-      e.preventDefault();
-      e.stopPropagation();
-      toggleArticleRead(articleUrl);
-      updateArticleReadState(article, articleUrl);
-      updateFeedCountsAfterReadFilter();
-    });
+    indicator.addEventListener('click', (e) => {
+      e.preventDefault()
+      e.stopPropagation()
+      toggleArticleRead(articleUrl)
+      updateArticleReadState(article, articleUrl)
+      updateFeedCountsAfterReadFilter()
+    })
 
-    article.insertBefore(indicator, article.firstChild);
-    updateArticleReadState(article, articleUrl);
-  });
+    article.insertBefore(indicator, article.firstChild)
+    updateArticleReadState(article, articleUrl)
+  })
 }
 
-function updateArticleReadState(article, articleUrl) {
-  const indicator = article.querySelector(".read-indicator");
-  const isRead = isArticleRead(articleUrl);
+function updateArticleReadState (article, articleUrl) {
+  const indicator = article.querySelector('.read-indicator')
+  const isRead = isArticleRead(articleUrl)
 
   if (isRead) {
-    article.classList.add("read");
-    if (indicator) indicator.classList.add("active");
+    article.classList.add('read')
+    if (indicator) indicator.classList.add('active')
   } else {
-    article.classList.remove("read");
-    if (indicator) indicator.classList.remove("active");
+    article.classList.remove('read')
+    if (indicator) indicator.classList.remove('active')
   }
 }
 
-function updateFeedCountsAfterReadFilter() {
-  const feedSections = document.querySelectorAll(".feed-section");
-  const feedsData = [];
+function updateFeedCountsAfterReadFilter () {
+  const feedSections = document.querySelectorAll('.feed-section')
+  const feedsData = []
 
   feedSections.forEach((section) => {
     // Skip feeds that are hidden by the feed filter
-    if (section.hasAttribute("data-hidden-by-filter")) {
-      return;
+    if (section.hasAttribute('data-hidden-by-filter')) {
+      return
     }
 
-    const cached = getSectionElements(section);
-    const articleList = cached.articleList;
+    const cached = getSectionElements(section)
+    const articleList = cached.articleList
 
     // Handle feeds with no article list (empty feeds with 0 articles across all timeframes)
     if (!articleList) {
@@ -671,271 +633,271 @@ function updateFeedCountsAfterReadFilter() {
         element: section,
         count: 0,
         unreadCount: 0,
-        name: extractFeedName(section),
-      });
-      return;
+        name: extractFeedName(section)
+      })
+      return
     }
 
-    const articles = section.querySelectorAll(".article-item");
+    const articles = section.querySelectorAll('.article-item')
     const visibleArticles = Array.from(articles).filter(
-      (a) => a.style.display !== "none",
-    );
+      (a) => a.style.display !== 'none'
+    )
 
     const unreadArticles = Array.from(articles).filter((article) => {
-      const link = article.querySelector(".article-title");
-      if (!link) return false;
-      const articleUrl = link.getAttribute("href");
+      const link = article.querySelector('.article-title')
+      if (!link) return false
+      const articleUrl = link.getAttribute('href')
       return (
         !isArticleRead(articleUrl) &&
-        !article.hasAttribute("data-hidden-by-timeframe")
-      );
-    });
+        !article.hasAttribute('data-hidden-by-timeframe')
+      )
+    })
 
-    const count = visibleArticles.length;
-    const unreadCount = unreadArticles.length;
+    const count = visibleArticles.length
+    const unreadCount = unreadArticles.length
 
-    reorderArticlesInFeed(articleList, articles);
-    updateCountBadge(section, count);
+    reorderArticlesInFeed(articleList, articles)
+    updateCountBadge(section, count)
 
     // Use different message text for this context
-    const noArticlesMsg = section.querySelector(".no-articles");
+    const noArticlesMsg = section.querySelector('.no-articles')
 
     if (count === 0) {
-      if (articleList) articleList.style.display = "none";
+      if (articleList) articleList.style.display = 'none'
       if (!noArticlesMsg) {
-        const msg = document.createElement("div");
-        msg.className = "no-articles";
-        msg.textContent = "No articles to display";
-        section.appendChild(msg);
+        const msg = document.createElement('div')
+        msg.className = 'no-articles'
+        msg.textContent = 'No articles to display'
+        section.appendChild(msg)
       } else {
-        noArticlesMsg.style.display = "";
+        noArticlesMsg.style.display = ''
       }
     } else {
-      if (articleList) articleList.style.display = "";
-      if (noArticlesMsg) noArticlesMsg.style.display = "none";
+      if (articleList) articleList.style.display = ''
+      if (noArticlesMsg) noArticlesMsg.style.display = 'none'
     }
 
     feedsData.push({
       element: section,
       count,
       unreadCount,
-      name: extractFeedName(section),
-    });
-  });
+      name: extractFeedName(section)
+    })
+  })
 
-  reorderFeedsByUnreadStatus(feedsData);
-  updateStats();
+  reorderFeedsByUnreadStatus(feedsData)
+  updateStats()
 }
 
-function reorderArticlesInFeed(articleList, articles) {
-  if (!articleList || articles.length === 0) return;
+function reorderArticlesInFeed (articleList, articles) {
+  if (!articleList || articles.length === 0) return
 
   const articleData = Array.from(articles).map((article) => {
-    const link = article.querySelector(".article-title");
-    const articleUrl = link ? link.getAttribute("href") : null;
-    const isRead = articleUrl ? isArticleRead(articleUrl) : false;
-    const publishedISO = article.getAttribute("data-published");
-    const publishDate = publishedISO ? new Date(publishedISO) : new Date(0);
+    const link = article.querySelector('.article-title')
+    const articleUrl = link ? link.getAttribute('href') : null
+    const isRead = articleUrl ? isArticleRead(articleUrl) : false
+    const publishedISO = article.getAttribute('data-published')
+    const publishDate = publishedISO ? new Date(publishedISO) : new Date(0)
 
     return {
       element: article,
       isRead,
       articleUrl,
-      publishDate,
-    };
-  });
+      publishDate
+    }
+  })
 
   const unreadArticles = articleData
     .filter((a) => !a.isRead)
-    .sort((a, b) => b.publishDate - a.publishDate);
+    .sort((a, b) => b.publishDate - a.publishDate)
   const readArticles = articleData
     .filter((a) => a.isRead)
-    .sort((a, b) => b.publishDate - a.publishDate);
+    .sort((a, b) => b.publishDate - a.publishDate)
 
-  const orderedArticles = [...unreadArticles, ...readArticles];
+  const orderedArticles = [...unreadArticles, ...readArticles]
   orderedArticles.forEach((articleData) => {
-    articleList.appendChild(articleData.element);
-  });
+    articleList.appendChild(articleData.element)
+  })
 }
 
-function reorderFeedsByUnreadStatus(feedsData) {
-  if (feedsData.length === 0) return;
+function reorderFeedsByUnreadStatus (feedsData) {
+  if (feedsData.length === 0) return
 
-  const feedSections = document.querySelectorAll(".feed-section");
-  if (feedSections.length === 0) return;
+  const feedSections = document.querySelectorAll('.feed-section')
+  if (feedSections.length === 0) return
 
-  const parent = feedSections[0].parentNode;
-  if (!parent) return;
+  const parent = feedSections[0].parentNode
+  if (!parent) return
 
-  const footer = parent.querySelector(".footer");
-  const orderedFeeds = orderFeedsByUnreadStatus(feedsData);
-  reorderDOMElements(orderedFeeds, parent, footer);
+  const footer = parent.querySelector('.footer')
+  const orderedFeeds = orderFeedsByUnreadStatus(feedsData)
+  reorderDOMElements(orderedFeeds, parent, footer)
 }
 
-function setupMarkAsReadControls() {
-  const resetButton = document.getElementById("reset-read-button");
+function setupMarkAsReadControls () {
+  const resetButton = document.getElementById('reset-read-button')
   if (resetButton) {
-    const newButton = resetButton.cloneNode(true);
-    resetButton.parentNode.replaceChild(newButton, resetButton);
+    const newButton = resetButton.cloneNode(true)
+    resetButton.parentNode.replaceChild(newButton, resetButton)
 
     newButton.addEventListener(
-      "click",
-      function handleResetClick(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        e.stopImmediatePropagation();
+      'click',
+      function handleResetClick (e) {
+        e.preventDefault()
+        e.stopPropagation()
+        e.stopImmediatePropagation()
 
         try {
           const confirmed = window.confirm(
-            "Are you sure you want to clear all read articles? This will mark all articles as unread and restore the original feed order.",
-          );
+            'Are you sure you want to clear all read articles? This will mark all articles as unread and restore the original feed order.'
+          )
 
           if (confirmed === true) {
-            resetAllReadArticles();
+            resetAllReadArticles()
           }
         } catch (error) {
-          console.error("Error in reset button handler:", error);
-          resetAllReadArticles();
+          console.error('Error in reset button handler:', error)
+          resetAllReadArticles()
         }
 
-        return false;
+        return false
       },
-      { passive: false, capture: true },
-    );
+      { passive: false, capture: true }
+    )
   }
 }
 
-function initializeMarkAsReadFeature() {
-  initializeReadStatus();
-  updateFeedCountsAfterReadFilter();
-  setupMarkAsReadControls();
+function initializeMarkAsReadFeature () {
+  initializeReadStatus()
+  updateFeedCountsAfterReadFilter()
+  setupMarkAsReadControls()
 }
 
-document.addEventListener("DOMContentLoaded", initializeMarkAsReadFeature);
+document.addEventListener('DOMContentLoaded', initializeMarkAsReadFeature)
 
 if (
-  document.readyState === "complete" ||
-  document.readyState === "interactive"
+  document.readyState === 'complete' ||
+  document.readyState === 'interactive'
 ) {
-  setTimeout(initializeMarkAsReadFeature, 0);
+  setTimeout(initializeMarkAsReadFeature, 0)
 }
 
 // ===== FEED FILTERING =====
 
-function getEnabledFeeds() {
-  return getLocalStorageJSON("enabledFeeds", null);
+function getEnabledFeeds () {
+  return getLocalStorageJSON('enabledFeeds', null)
 }
 
-function applyFeedFilter() {
-  const enabledFeeds = getEnabledFeeds();
+function applyFeedFilter () {
+  const enabledFeeds = getEnabledFeeds()
 
   if (!enabledFeeds || enabledFeeds.length === 0) {
-    return;
+    return
   }
 
-  const navLinks = document.querySelectorAll(".nav-link");
+  const navLinks = document.querySelectorAll('.nav-link')
   navLinks.forEach((link) => {
-    const linkText = link.textContent.trim();
-    if (linkText === "All Feeds" || linkText === "Summary") {
-      return;
+    const linkText = link.textContent.trim()
+    if (linkText === 'All Feeds' || linkText === 'Summary') {
+      return
     }
 
     if (!enabledFeeds.includes(linkText)) {
-      link.style.display = "none";
+      link.style.display = 'none'
     } else {
-      link.style.display = "";
+      link.style.display = ''
     }
-  });
+  })
 
-  const feedSections = document.querySelectorAll(".feed-section");
+  const feedSections = document.querySelectorAll('.feed-section')
   feedSections.forEach((section) => {
-    const cached = getSectionElements(section);
-    const heading = cached.heading;
-    if (!heading) return;
+    const cached = getSectionElements(section)
+    const heading = cached.heading
+    if (!heading) return
 
-    const feedNameElement = heading.childNodes[0];
+    const feedNameElement = heading.childNodes[0]
     const feedName = feedNameElement
       ? feedNameElement.textContent.trim()
-      : heading.textContent.trim();
+      : heading.textContent.trim()
 
     if (!enabledFeeds.includes(feedName)) {
-      section.style.display = "none";
-      section.setAttribute("data-hidden-by-filter", "true");
+      section.style.display = 'none'
+      section.setAttribute('data-hidden-by-filter', 'true')
     } else {
-      section.style.display = "";
-      section.removeAttribute("data-hidden-by-filter");
+      section.style.display = ''
+      section.removeAttribute('data-hidden-by-filter')
     }
-  });
+  })
 
-  updateStats();
+  updateStats()
 }
 
-function initializeFeedFilter() {
-  applyFeedFilter();
+function initializeFeedFilter () {
+  applyFeedFilter()
 }
 
-document.addEventListener("DOMContentLoaded", initializeFeedFilter);
+document.addEventListener('DOMContentLoaded', initializeFeedFilter)
 
 if (
-  document.readyState === "complete" ||
-  document.readyState === "interactive"
+  document.readyState === 'complete' ||
+  document.readyState === 'interactive'
 ) {
-  setTimeout(initializeFeedFilter, 0);
+  setTimeout(initializeFeedFilter, 0)
 }
 
-window.addEventListener("storage", (e) => {
-  if (e.key === "enabledFeeds") {
-    applyFeedFilter();
+window.addEventListener('storage', (e) => {
+  if (e.key === 'enabledFeeds') {
+    applyFeedFilter()
   }
-});
+})
 
 // ===== ACCESSIBILITY ENHANCEMENTS =====
 
 /**
  * Initialize accessibility features across the application
  */
-function initAccessibility() {
+function initAccessibility () {
   // Add keyboard navigation for settings menu items
-  const settingsMenuItems = document.querySelectorAll(".settings-menu-item");
+  const settingsMenuItems = document.querySelectorAll('.settings-menu-item')
   settingsMenuItems.forEach((item) => {
-    item.addEventListener("keydown", function (e) {
-      if (e.key === "Enter" || e.key === " ") {
-        e.preventDefault();
-        this.click();
+    item.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault()
+        this.click()
       }
-    });
-  });
+    })
+  })
 
   // Add keyboard support for article items to mark as read
-  const articleItems = document.querySelectorAll(".article-item");
+  const articleItems = document.querySelectorAll('.article-item')
   articleItems.forEach((item) => {
-    const link = item.querySelector(".article-title");
+    const link = item.querySelector('.article-title')
     if (link) {
       // Add keyboard event for marking as read (Ctrl+M or Cmd+M)
-      item.addEventListener("keydown", function (e) {
-        if ((e.ctrlKey || e.metaKey) && e.key === "m") {
-          e.preventDefault();
+      item.addEventListener('keydown', function (e) {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'm') {
+          e.preventDefault()
           // Toggle read status
-          this.classList.toggle("read");
-          const articleUrl = link.href;
-          markArticleAsRead(articleUrl);
+          this.classList.toggle('read')
+          const articleUrl = link.href
+          markArticleAsRead(articleUrl)
           announceToScreenReader(
-            "Article marked as " +
-              (this.classList.contains("read") ? "read" : "unread"),
-          );
+            'Article marked as ' +
+              (this.classList.contains('read') ? 'read' : 'unread')
+          )
         }
-      });
+      })
     }
-  });
+  })
 
   // Ensure proper focus management
-  enhanceFocusManagement();
+  enhanceFocusManagement()
 
   // Add ARIA live region if not exists
-  addAriaLiveRegion();
+  addAriaLiveRegion()
 
   // Prevent flash of transitions on page load
-  preventInitialTransitions();
+  preventInitialTransitions()
 }
 
 /**
@@ -943,70 +905,70 @@ function initAccessibility() {
  * @param {string} message - Message to announce
  * @param {string} priority - 'polite' or 'assertive'
  */
-function announceToScreenReader(message, priority = "polite") {
-  const liveRegion = document.getElementById("aria-live-region");
+function announceToScreenReader (message, priority = 'polite') {
+  const liveRegion = document.getElementById('aria-live-region')
   if (liveRegion) {
-    liveRegion.setAttribute("aria-live", priority);
-    liveRegion.textContent = message;
+    liveRegion.setAttribute('aria-live', priority)
+    liveRegion.textContent = message
     // Clear after announcement (3 seconds to allow for slower screen readers)
     setTimeout(() => {
-      liveRegion.textContent = "";
-    }, TIMEOUTS.SCREEN_READER_ANNOUNCEMENT);
+      liveRegion.textContent = ''
+    }, TIMEOUTS.SCREEN_READER_ANNOUNCEMENT)
   }
 }
 
 /**
  * Add ARIA live region for dynamic announcements
  */
-function addAriaLiveRegion() {
-  if (!document.getElementById("aria-live-region")) {
-    const liveRegion = document.createElement("div");
-    liveRegion.id = "aria-live-region";
-    liveRegion.className = "sr-only";
-    liveRegion.setAttribute("aria-live", "polite");
-    liveRegion.setAttribute("aria-atomic", "true");
-    document.body.appendChild(liveRegion);
+function addAriaLiveRegion () {
+  if (!document.getElementById('aria-live-region')) {
+    const liveRegion = document.createElement('div')
+    liveRegion.id = 'aria-live-region'
+    liveRegion.className = 'sr-only'
+    liveRegion.setAttribute('aria-live', 'polite')
+    liveRegion.setAttribute('aria-atomic', 'true')
+    document.body.appendChild(liveRegion)
   }
 }
 
 /**
  * Enhance focus management for better keyboard navigation
  */
-function enhanceFocusManagement() {
+function enhanceFocusManagement () {
   // Trap focus in modal-like elements (if any)
-  const modals = document.querySelectorAll('[role="dialog"]');
+  const modals = document.querySelectorAll('[role="dialog"]')
   modals.forEach((modal) => {
     const focusableElements = modal.querySelectorAll(
-      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])',
-    );
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    )
 
     if (focusableElements.length > 0) {
-      const firstElement = focusableElements[0];
-      const lastElement = focusableElements[focusableElements.length - 1];
+      const firstElement = focusableElements[0]
+      const lastElement = focusableElements[focusableElements.length - 1]
 
-      modal.addEventListener("keydown", function (e) {
-        if (e.key === "Tab") {
+      modal.addEventListener('keydown', function (e) {
+        if (e.key === 'Tab') {
           if (e.shiftKey && document.activeElement === firstElement) {
-            e.preventDefault();
-            lastElement.focus();
+            e.preventDefault()
+            lastElement.focus()
           } else if (!e.shiftKey && document.activeElement === lastElement) {
-            e.preventDefault();
-            firstElement.focus();
+            e.preventDefault()
+            firstElement.focus()
           }
         }
-      });
+      })
     }
-  });
+  })
 }
 
 /**
  * Prevent flash of transitions on initial page load
  */
-function preventInitialTransitions() {
-  document.body.classList.add("preload");
+function preventInitialTransitions () {
+  document.body.classList.add('preload')
   setTimeout(() => {
-    document.body.classList.remove("preload");
-  }, 100);
+    document.body.classList.remove('preload')
+  }, 100)
 }
 
 /**
@@ -1015,53 +977,53 @@ function preventInitialTransitions() {
  * @param {string} filterName - Name of current filter
  */
 // eslint-disable-next-line no-unused-vars
-function updateArticleCountAccessible(count, filterName) {
+function updateArticleCountAccessible (count, filterName) {
   announceToScreenReader(
     `Showing ${count} articles for ${filterName}`,
-    "polite",
-  );
+    'polite'
+  )
 }
 
 /**
  * Enhance timeframe selector with announcements
  */
-function enhanceTimeframeSelector() {
-  const timeframeSelect = document.getElementById("timeframe-select");
+function enhanceTimeframeSelector () {
+  const timeframeSelect = document.getElementById('timeframe-select')
   if (timeframeSelect) {
-    timeframeSelect.addEventListener("change", function () {
-      const selectedOption = this.options[this.selectedIndex].text;
-      announceToScreenReader(`Filter changed to ${selectedOption}`, "polite");
-    });
+    timeframeSelect.addEventListener('change', function () {
+      const selectedOption = this.options[this.selectedIndex].text
+      announceToScreenReader(`Filter changed to ${selectedOption}`, 'polite')
+    })
   }
 }
 
 /**
  * Enhance view mode selector with announcements
  */
-function enhanceViewModeSelector() {
-  const viewSelect = document.getElementById("view-select");
+function enhanceViewModeSelector () {
+  const viewSelect = document.getElementById('view-select')
   if (viewSelect) {
-    viewSelect.addEventListener("change", function () {
-      const selectedOption = this.options[this.selectedIndex].text;
+    viewSelect.addEventListener('change', function () {
+      const selectedOption = this.options[this.selectedIndex].text
       announceToScreenReader(
         `View mode changed to ${selectedOption}`,
-        "polite",
-      );
-    });
+        'polite'
+      )
+    })
   }
 }
 
 // Initialize accessibility features when DOM is ready
-if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", function () {
-    initAccessibility();
-    enhanceTimeframeSelector();
-    enhanceViewModeSelector();
-  });
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', function () {
+    initAccessibility()
+    enhanceTimeframeSelector()
+    enhanceViewModeSelector()
+  })
 } else {
-  initAccessibility();
-  enhanceTimeframeSelector();
-  enhanceViewModeSelector();
+  initAccessibility()
+  enhanceTimeframeSelector()
+  enhanceViewModeSelector()
 }
 
 // ===== TOUCH TARGET ENHANCEMENTS =====
@@ -1069,39 +1031,39 @@ if (document.readyState === "loading") {
 /**
  * Ensure all interactive elements meet minimum touch target size
  */
-function ensureTouchTargets() {
+function ensureTouchTargets () {
   // Cache touch device detection
   const isTouchDevice =
-    "ontouchstart" in window || navigator.maxTouchPoints > 0;
+    'ontouchstart' in window || navigator.maxTouchPoints > 0
 
   // Only run on touch devices and only once
-  if (!isTouchDevice || document.body.dataset.touchTargetsEnhanced === "true") {
-    return;
+  if (!isTouchDevice || document.body.dataset.touchTargetsEnhanced === 'true') {
+    return
   }
 
   // Mark as enhanced to prevent re-running
-  document.body.dataset.touchTargetsEnhanced = "true";
+  document.body.dataset.touchTargetsEnhanced = 'true'
 
   const interactiveElements = document.querySelectorAll(
-    'button, a, input, select, [role="button"], .article-item',
-  );
+    'button, a, input, select, [role="button"], .article-item'
+  )
 
   interactiveElements.forEach((element) => {
-    const rect = element.getBoundingClientRect();
-    const minSize = ACCESSIBILITY.MIN_TOUCH_TARGET_SIZE;
+    const rect = element.getBoundingClientRect()
+    const minSize = ACCESSIBILITY.MIN_TOUCH_TARGET_SIZE
 
     // Add padding if element is too small
     if (rect.height < minSize || rect.width < minSize) {
-      const currentPadding = window.getComputedStyle(element).padding;
-      if (currentPadding === "0px" || currentPadding === "") {
-        element.style.padding = "0.75rem";
+      const currentPadding = window.getComputedStyle(element).padding
+      if (currentPadding === '0px' || currentPadding === '') {
+        element.style.padding = '0.75rem'
       }
     }
-  });
+  })
 }
 
 // Run touch target check after page load
-window.addEventListener("load", ensureTouchTargets);
+window.addEventListener('load', ensureTouchTargets)
 
 // ===== IMPROVED ERROR HANDLING WITH ACCESSIBILITY =====
 
@@ -1111,30 +1073,30 @@ window.addEventListener("load", ensureTouchTargets);
  * @param {string} severity - 'error', 'warning', or 'info'
  */
 // eslint-disable-next-line no-unused-vars
-function displayAccessibleError(message, severity = "error") {
-  const errorContainer = document.getElementById("error-container");
+function displayAccessibleError (message, severity = 'error') {
+  const errorContainer = document.getElementById('error-container')
   if (errorContainer) {
     errorContainer.setAttribute(
-      "role",
-      severity === "error" ? "alert" : "status",
-    );
+      'role',
+      severity === 'error' ? 'alert' : 'status'
+    )
     errorContainer.setAttribute(
-      "aria-live",
-      severity === "error" ? "assertive" : "polite",
-    );
-    errorContainer.textContent = message;
+      'aria-live',
+      severity === 'error' ? 'assertive' : 'polite'
+    )
+    errorContainer.textContent = message
 
     // Auto-dismiss after 5 seconds for non-critical messages
-    if (severity !== "error") {
+    if (severity !== 'error') {
       setTimeout(() => {
-        errorContainer.textContent = "";
-      }, TIMEOUTS.ERROR_MESSAGE_DISMISS);
+        errorContainer.textContent = ''
+      }, TIMEOUTS.ERROR_MESSAGE_DISMISS)
     }
   }
 
   // Also announce to screen readers
   announceToScreenReader(
     message,
-    severity === "error" ? "assertive" : "polite",
-  );
+    severity === 'error' ? 'assertive' : 'polite'
+  )
 }
