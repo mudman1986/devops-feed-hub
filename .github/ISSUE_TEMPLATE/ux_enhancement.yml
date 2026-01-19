@@ -1,0 +1,134 @@
+name: 🎨 UX Enhancement
+description: Suggest improvements to user experience or interface design
+title: "[UX]: "
+labels: ["refining", "ux"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for helping improve the user experience! Please describe your UX enhancement suggestion.
+
+  - type: textarea
+    id: current-experience
+    attributes:
+      label: Current User Experience
+      description: Describe the current user experience or interface.
+      placeholder: Currently, users experience...
+    validations:
+      required: true
+
+  - type: textarea
+    id: proposed-enhancement
+    attributes:
+      label: Proposed Enhancement
+      description: Describe how you'd like to improve the user experience.
+      placeholder: I suggest improving the UX by...
+    validations:
+      required: true
+
+  - type: textarea
+    id: user-benefit
+    attributes:
+      label: User Benefit
+      description: How will this enhancement benefit users?
+      placeholder: Users will benefit from...
+    validations:
+      required: true
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area of Improvement
+      description: Which area does this enhancement affect?
+      options:
+        - Navigation
+        - Visual Design
+        - Responsiveness
+        - Accessibility
+        - Performance
+        - Interaction/Behavior
+        - Content Display
+        - Settings/Configuration
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: device-type
+    attributes:
+      label: Device Type
+      description: Which device types are affected?
+      multiple: true
+      options:
+        - Desktop
+        - Tablet
+        - Mobile
+        - All devices
+    validations:
+      required: true
+
+  - type: textarea
+    id: screenshots-mockups
+    attributes:
+      label: Screenshots/Mockups
+      description: If applicable, add screenshots or mockups to illustrate your suggestion.
+      placeholder: Paste or drag images here...
+    validations:
+      required: false
+
+  - type: dropdown
+    id: accessibility
+    attributes:
+      label: Accessibility Impact
+      description: Does this enhancement improve accessibility?
+      options:
+        - Yes - Improves accessibility
+        - No - Does not affect accessibility
+        - Unknown
+    validations:
+      required: false
+
+  - type: textarea
+    id: design-considerations
+    attributes:
+      label: Design Considerations
+      description: Any specific design principles or guidelines to consider?
+      placeholder: |
+        - Should work in both light and dark themes
+        - Must maintain mobile responsiveness
+        - Should follow existing design patterns
+    validations:
+      required: false
+
+  - type: textarea
+    id: implementation-notes
+    attributes:
+      label: Implementation Notes
+      description: Any technical considerations for implementing this enhancement?
+      placeholder: May require changes to CSS, JavaScript, HTML structure, etc.
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Add any other context, examples, or references here.
+      placeholder: Links to design inspiration, similar implementations, etc.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Pre-submission Checklist
+      description: Before submitting, please verify the following
+      options:
+        - label: I have searched existing issues to ensure this enhancement has not already been suggested
+          required: true
+        - label: I have considered accessibility implications
+          required: true
+        - label: I have read the [Contributing Guidelines](../CONTRIBUTING.md)
+          required: true
+        - label: I have read the [Code of Conduct](../CODE_OF_CONDUCT.md)
+          required: true
