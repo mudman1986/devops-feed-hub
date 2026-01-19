@@ -327,7 +327,11 @@ body {
   cursor: pointer;
   font-size: 0.875rem;
   font-weight: 500;
-  transition: all 0.2s ease;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -367,7 +371,9 @@ body {
   width: 280px;
   background-color: var(--bg-secondary);
   border-left: 1px solid var(--border-primary);
-  transition: all 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    width 0.3s ease;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -414,7 +420,9 @@ body {
   cursor: pointer;
   font-size: 0.875rem;
   font-weight: 500;
-  transition: all 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease;
   appearance: none;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236b7280' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
   background-repeat: no-repeat;
@@ -634,7 +642,7 @@ h3 {
   border-radius: 1rem;
   border: 1px solid var(--border-primary);
   box-shadow: var(--shadow-sm);
-  transition: all 0.3s ease;
+  transition: box-shadow 0.3s ease;
 }
 
 .feed-section:hover {
@@ -653,7 +661,11 @@ h3 {
   background-color: var(--bg-tertiary);
   border-radius: 0.75rem;
   border: 1px solid transparent;
-  transition: all 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .article-item:hover {
@@ -861,7 +873,11 @@ h3 {
   text-decoration: none;
   border-radius: 0.5rem;
   border: 1px solid transparent;
-  transition: all 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
   font-size: 0.9375rem;
   font-weight: 500;
   text-align: left;
@@ -1412,7 +1428,11 @@ h3 {
   border-radius: 0.5rem;
   border: 1px solid transparent;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
   font-size: 0.9375rem;
   font-weight: 500;
 }
