@@ -10,7 +10,14 @@ export default defineConfig({
   forbidOnly: !!process.env.CI,
   retries: process.env.CI ? 1 : 0,
   workers: process.env.CI ? 2 : undefined,
-  reporter: "html",
+  reporter: process.env.CI
+    ? [
+        ["list"],
+        ["html"],
+        ["github"],
+        ["json", { outputFile: "test-results.json" }],
+      ]
+    : "html",
   timeout: 10000, // 10 seconds per test (static site, should be fast)
   use: {
     baseURL: "http://localhost:8080",
