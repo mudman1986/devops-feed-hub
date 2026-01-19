@@ -31,6 +31,34 @@ module.exports = async ({
   // Track assigned issue for return value
   let assignedIssue = null;
 
+  /**
+   * Fetch sub-issues for an issue using the REST API
+   * @param {number} issueNumber - The issue number to check
+   * @returns {Promise<number>} - Total count of sub-issues
+   */
+  async function getSubIssuesCount(issueNumber) {
+    try {
+      const subIssuesResponse = await github.request(
+        "GET /repos/{owner}/{repo}/issues/{issue_number}/sub_issues",
+        {
+          owner: context.repo.owner,
+          repo: context.repo.repo,
+          issue_number: issueNumber,
+          per_page: 100,
+          headers: {
+            "X-GitHub-Api-Version": "2022-11-28",
+          },
+        },
+      );
+      return subIssuesResponse.data.length;
+    } catch (error) {
+      console.log(
+        `  Warning: Could not check sub-issues for issue #${issueNumber}: ${error.message}`,
+      );
+      return 0;
+    }
+  }
+
   // Step 0: Determine mode based on recent closed issues (for issue close events)
   let effectiveMode = mode;
   if (context.eventName === "issues" && mode === "auto") {
@@ -265,29 +293,8 @@ module.exports = async ({
 
     // Check for sub-issues via REST API
     for (const issue of refactorIssues) {
-      try {
-        const subIssuesResponse = await github.request(
-          "GET /repos/{owner}/{repo}/issues/{issue_number}/sub_issues",
-          {
-            owner: context.repo.owner,
-            repo: context.repo.repo,
-            issue_number: issue.number,
-            per_page: 100,
-            headers: {
-              "X-GitHub-Api-Version": "2022-11-28",
-            },
-          },
-        );
-
-        const totalSubIssues = subIssuesResponse.data.length;
-        if (totalSubIssues > 0) {
-          issue.trackedIssues = { totalCount: totalSubIssues };
-        } else {
-          issue.trackedIssues = { totalCount: 0 };
-        }
-      } catch {
-        issue.trackedIssues = { totalCount: 0 };
-      }
+      const totalSubIssues = await getSubIssuesCount(issue.number);
+      issue.trackedIssues = { totalCount: totalSubIssues };
     }
 
     // Try to find an assignable refactor issue
@@ -402,6 +409,7 @@ module.exports = async ({
           ) {
             issue {
               id
+              number
               url
               title
               assignees(first: 10) { nodes { login } }
@@ -478,7 +486,7 @@ module.exports = async ({
     // Return the created issue
     return {
       id: res.createIssue.issue.id,
-      number: parseInt(res.createIssue.issue.url.split("/").pop(), 10),
+      number: res.createIssue.issue.number,
       title: res.createIssue.issue.title,
       url: res.createIssue.issue.url,
     };
@@ -689,25 +697,8 @@ module.exports = async ({
         `  Checking sub-issues for ${nonPriorityIssues.length} non-priority issues via REST API...`,
       );
       for (const issue of nonPriorityIssues) {
-        try {
-          const subIssuesResponse = await github.request(
-            "GET /repos/{owner}/{repo}/issues/{issue_number}/sub_issues",
-            {
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              issue_number: issue.number,
-              per_page: 100,
-              headers: {
-                "X-GitHub-Api-Version": "2022-11-28",
-              },
-            },
-          );
-
-          const totalSubIssues = subIssuesResponse.data.length;
-          issue.trackedIssues = { totalCount: totalSubIssues };
-        } catch {
-          issue.trackedIssues = { totalCount: 0 };
-        }
+        const totalSubIssues = await getSubIssuesCount(issue.number);
+        issue.trackedIssues = { totalCount: totalSubIssues };
       }
 
       issueToAssign = helpers.findAssignableIssue(
