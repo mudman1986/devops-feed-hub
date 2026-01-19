@@ -26,7 +26,7 @@ jobs:
 
       - name: Collect RSS Feeds
         id: collect
-        uses: ./actions/collect-rss-feeds
+        uses: mudman1986/rss-feed-collector-action@main
         with:
           hours: "720"
           config-path: ".github/rss-feeds.json"

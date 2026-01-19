@@ -33,7 +33,7 @@ Run these checks in order and resolve any failures:
 
 1. **JavaScript tests**: `npm test`
    - **Expected time**: ~2 seconds
-2. **Python tests**: `python3 -m pytest actions/collect-rss-feeds/tests/ -v`
+2. **Python tests**: `python3 -m pytest .github/workflows/scripts/rss-processing/tests/ -v`
    - **Expected time**: ~5 seconds
 3. **UI tests** - Run each test file individually for faster feedback:
    - **Test files location**: `tests/ui/*.spec.js`

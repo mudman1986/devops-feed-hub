@@ -6,7 +6,6 @@
 
 This repository is maintained primarily by GitHub Copilot. Path-specific instructions exist for specialized contexts:
 
-- **Python RSS Action Code**: `.github/instructions/python-rss-action.instructions.md`
 - **Workflow YAML Files**: `.github/instructions/workflows.instructions.md`
 - **Shell Scripts**: `.github/instructions/shell-scripts.instructions.md`
 - **Frontend/UI Code**: `.github/instructions/frontend-ui.instructions.md`
@@ -151,7 +150,7 @@ This repository is maintained primarily by GitHub Copilot. Path-specific instruc
    - All tests must pass
 
 3. **Python Tests** (REQUIRED)
-   - Run: `python3 -m pytest actions/collect-rss-feeds/tests/ -v`
+   - Run: `python3 -m pytest .github/workflows/scripts/rss-processing/tests/ -v`
    - All tests must pass
 
 4. **Shell Script Tests** (REQUIRED)
@@ -197,7 +196,7 @@ Before completing any task and presenting work as finished, verify **IN THIS ORD
 ### 2. Other Tests (All Must Pass)
 
 - [ ] **JavaScript tests pass**: `npm test`
-- [ ] **Python tests pass**: `python3 -m pytest actions/collect-rss-feeds/tests/ -v`
+- [ ] **Python tests pass**: `python3 -m pytest .github/workflows/scripts/rss-processing/tests/ -v`
 - [ ] **Shell script tests pass**: `bats scripts/test/test_*.bats`
 - [ ] **MANDATORY: Run tests after every fix to verify** - Never assume a fix works
 

@@ -44,7 +44,7 @@ Fixes #(issue number)
 
 ### For Python Changes
 
-- [ ] ✅ Python tests pass (`python3 -m pytest .github/actions/collect-rss-feeds/tests/ -v`)
+- [ ] ✅ Python tests pass (`python3 -m pytest .github/workflows/scripts/rss-processing/tests/ -v`)
 - [ ] ✅ Type hints added for function parameters and return values
 - [ ] ✅ Docstrings added for functions and classes
 
