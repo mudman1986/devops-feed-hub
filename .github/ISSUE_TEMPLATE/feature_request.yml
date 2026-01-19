@@ -1,0 +1,94 @@
+name: ✨ Feature Request
+description: Suggest a new feature or enhancement for DevOps Feed Hub
+title: "[Feature]: "
+labels: ["refining", "enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for suggesting a new feature! We appreciate your ideas for improving DevOps Feed Hub.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem Statement
+      description: Is your feature request related to a problem? Please describe.
+      placeholder: I'm frustrated when...
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: Describe the solution you'd like to see.
+      placeholder: I would like to see...
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives Considered
+      description: Describe any alternative solutions or features you've considered.
+      placeholder: I've also considered...
+    validations:
+      required: false
+
+  - type: dropdown
+    id: component
+    attributes:
+      label: Component
+      description: Which component would this feature affect?
+      options:
+        - RSS Feed Collection
+        - UI/Frontend
+        - GitHub Actions Workflow
+        - Documentation
+        - Shell Scripts
+        - Other
+    validations:
+      required: true
+
+  - type: dropdown
+    id: priority
+    attributes:
+      label: Priority
+      description: How important is this feature to you?
+      options:
+        - Low - Nice to have
+        - Medium - Would improve my experience
+        - High - Critical for my use case
+    validations:
+      required: true
+
+  - type: textarea
+    id: use-case
+    attributes:
+      label: Use Case
+      description: Describe how you would use this feature.
+      placeholder: I would use this feature to...
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional-context
+    attributes:
+      label: Additional Context
+      description: Add any other context, mockups, or examples about the feature request here.
+      placeholder: Screenshots, links to similar implementations, etc.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: checklist
+    attributes:
+      label: Pre-submission Checklist
+      description: Before submitting, please verify the following
+      options:
+        - label: I have searched existing issues to ensure this feature has not already been requested
+          required: true
+        - label: I have read the [Contributing Guidelines](../CONTRIBUTING.md)
+          required: true
+        - label: I have read the [Code of Conduct](../CODE_OF_CONDUCT.md)
+          required: true
