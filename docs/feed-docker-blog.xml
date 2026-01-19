@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-docker-blog.xml</link>
     <description>Articles from Docker Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-docker-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 19 Jan 2026 13:09:40 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 19 Jan 2026 13:46:18 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Making (Very) Small LLMs Smarter</title>
@@ -42,12 +42,6 @@
       <link>https://www.docker.com/blog/deterministic-ai-testing-with-session-recording-in-cagent/</link>
       <guid isPermaLink="true">https://www.docker.com/blog/deterministic-ai-testing-with-session-recording-in-cagent/</guid>
       <pubDate>Tue, 06 Jan 2026 19:16:04 +0000</pubDate>
-    </item>
-    <item>
-      <title>2025 Recap: The Year Software Development Changed Shape</title>
-      <link>https://www.docker.com/blog/2025-recap-the-year-software-development-changed-shape/</link>
-      <guid isPermaLink="true">https://www.docker.com/blog/2025-recap-the-year-software-development-changed-shape/</guid>
-      <pubDate>Sat, 20 Dec 2025 13:45:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

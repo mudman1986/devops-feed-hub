@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 19 Jan 2026 13:09:40 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 19 Jan 2026 13:46:18 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>How tech leaders can turn AI hype into real team productivity</title>
@@ -622,13 +622,6 @@
       <guid isPermaLink="true">https://kubernetes.io/blog/2025/12/21/preventing-etcd-zombies/</guid>
       <pubDate>Sun, 21 Dec 2025 00:00:00 +0000</pubDate>
       <source>Kubernetes Blog</source>
-    </item>
-    <item>
-      <title>2025 Recap: The Year Software Development Changed Shape</title>
-      <link>https://www.docker.com/blog/2025-recap-the-year-software-development-changed-shape/</link>
-      <guid isPermaLink="true">https://www.docker.com/blog/2025-recap-the-year-software-development-changed-shape/</guid>
-      <pubDate>Sat, 20 Dec 2025 13:45:00 +0000</pubDate>
-      <source>Docker Blog</source>
     </item>
   </channel>
 </rss>
