@@ -266,7 +266,11 @@ class LoadingState {
  * @param {string} type - Toast type: 'success', 'error', 'info' (default: 'success')
  * @param {number} duration - Duration in ms (default: 3000)
  */
-function showToast(message, type = "success", duration = TIMEOUTS.TOAST_DURATION) {
+function showToast(
+  message,
+  type = "success",
+  duration = TIMEOUTS.TOAST_DURATION,
+) {
   // Create toast container if it doesn't exist
   let container = document.getElementById("toast-container");
   if (!container) {
@@ -374,7 +378,9 @@ themeToggle.addEventListener("click", async () => {
   LoadingState.show(themeToggle, `Switching to ${newTheme} mode`);
 
   // Simulate brief delay for visual feedback
-  await new Promise((resolve) => setTimeout(resolve, TIMEOUTS.LOADING_MIN_DURATION));
+  await new Promise((resolve) =>
+    setTimeout(resolve, TIMEOUTS.LOADING_MIN_DURATION),
+  );
 
   htmlElement.setAttribute("data-theme", newTheme);
   setLocalStorage("theme", newTheme);
@@ -1308,13 +1314,25 @@ function initializeExternalLinkIndicators() {
     icon.setAttribute("stroke-linejoin", "round");
 
     // External link icon path
-    const path1 = document.createElementNS("http://www.w3.org/2000/svg", "path");
-    path1.setAttribute("d", "M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6");
+    const path1 = document.createElementNS(
+      "http://www.w3.org/2000/svg",
+      "path",
+    );
+    path1.setAttribute(
+      "d",
+      "M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6",
+    );
 
-    const path2 = document.createElementNS("http://www.w3.org/2000/svg", "polyline");
+    const path2 = document.createElementNS(
+      "http://www.w3.org/2000/svg",
+      "polyline",
+    );
     path2.setAttribute("points", "15 3 21 3 21 9");
 
-    const path3 = document.createElementNS("http://www.w3.org/2000/svg", "line");
+    const path3 = document.createElementNS(
+      "http://www.w3.org/2000/svg",
+      "line",
+    );
     path3.setAttribute("x1", "10");
     path3.setAttribute("y1", "14");
     path3.setAttribute("x2", "21");
@@ -1332,7 +1350,10 @@ function initializeExternalLinkIndicators() {
 
 // Initialize external link indicators on page load
 if (document.readyState === "loading") {
-  document.addEventListener("DOMContentLoaded", initializeExternalLinkIndicators);
+  document.addEventListener(
+    "DOMContentLoaded",
+    initializeExternalLinkIndicators,
+  );
 } else {
   initializeExternalLinkIndicators();
 }
