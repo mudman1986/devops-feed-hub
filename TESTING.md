@@ -97,6 +97,31 @@ For automated testing in CI/CD, add this before running UI tests:
   run: npm run test:ui
 ```
 
+#### CI Test Workflow Log Visibility
+
+The UI test workflow uses test sharding to parallelize execution across 10 shards. To improve troubleshooting:
+
+**Features**:
+
+- **GitHub Reporter**: Adds GitHub annotations for failed tests directly in the PR
+- **List Reporter**: Shows detailed test progress in CI logs with test names
+- **JSON Reporter**: Generates machine-readable results for summaries
+- **Per-Shard Summaries**: Each shard job creates a summary showing:
+  - Which test files were executed in that shard
+  - Total test count for the shard
+  - Pass/fail statistics
+- **Consolidated Summary**: A final summary job shows results across all shards
+
+**Finding Failures**:
+
+1. Check the "Test Summary" job at the bottom of the workflow run for an overview
+2. Look at individual shard job summaries to find which shard contains the failing test
+3. Open the specific shard's logs to see detailed output for the failing test
+4. GitHub annotations will point you directly to the failing test in the PR
+
+**Test File Organization by Shard**:
+Each shard processes a subset of test files. The summary shows exactly which files are in each shard, making it easy to identify where a specific test is running.
+
 ### Troubleshooting
 
 **Problem**: Tests fail with "data-theme is null" or "element not found"  

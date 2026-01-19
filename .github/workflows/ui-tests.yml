@@ -1,3 +1,4 @@
+---
 name: UI Tests
 
 on:
@@ -42,11 +43,14 @@ jobs:
 
       - name: Generate HTML files for testing
         run: |
-          # Use static test fixture instead of live RSS data for consistent tests
-          # This ensures tests always run against known data regardless of external feeds
+          # Use static test fixture instead of live RSS data for
+          # consistent tests. This ensures tests always run against
+          # known data regardless of external feeds
           echo "Using static test fixture for consistent UI tests"
-          cp .github/workflows/test-fixtures/ui-test-data.json rss-feeds-output.json
-          # Generate multi-page HTML (main index + individual feed pages)
+          cp .github/workflows/test-fixtures/ui-test-data.json \
+            rss-feeds-output.json
+          # Generate multi-page HTML (main index + individual
+          # feed pages)
           python3 .github/workflows/scripts/rss-processing/generate_summary.py \
             --input rss-feeds-output.json \
             --output-dir docs
@@ -56,13 +60,63 @@ jobs:
 
           # Show article count for debugging
           echo "Article counts:"
-          grep -h "feed-count" docs/index.html || echo "No count found"
+          grep -h "feed-count" docs/index.html || \
+            echo "No count found"
 
-      - name: Run Playwright tests
-        run: npx playwright test --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
+      - name: >-
+          Run Playwright tests
+          (Shard ${{ matrix.shardIndex }}/${{ matrix.shardTotal }})
+        run: |
+          echo "::group::Running Playwright tests for shard \
+            ${{ matrix.shardIndex }}"
+          echo "Test execution started at $(date)"
+          npx playwright test \
+            --shard=${{ matrix.shardIndex }}/${{ matrix.shardTotal }}
+          echo "::endgroup::"
         timeout-minutes: 5
         env:
           CI: true
+
+      - name: Generate test summary
+        if: always()
+        run: |
+          {
+            echo "## UI Test Results - Shard \
+              ${{ matrix.shardIndex }}/${{ matrix.shardTotal }}"
+            echo ""
+
+            if [ -f test-results.json ]; then
+              echo "### Test Summary"
+
+              # Extract overall stats using jq if available,
+              # otherwise use grep/sed
+              if command -v jq &> /dev/null; then
+                # Use jq for better JSON parsing - count total specs
+                # across all suites
+                total=$(jq -r \
+                  '[.suites[]?.suites[]?.specs[]?] | length' \
+                  test-results.json 2>/dev/null)
+                echo "- **Total Tests in Shard**: ${total:-0}"
+              fi
+
+              # List test files that were executed in this shard
+              echo ""
+              echo "### Test Files Executed"
+              if command -v jq &> /dev/null; then
+                jq -r '.suites[]?.suites[]?.file // empty' \
+                  test-results.json 2>/dev/null | sort -u | \
+                  sed 's|.*/tests/ui/||' | sed 's/^/- /' || \
+                  echo "- Unable to extract test files"
+              else
+                grep -o '"file":"[^"]*"' test-results.json \
+                  2>/dev/null | cut -d'"' -f4 | \
+                  sed 's|.*/tests/ui/||' | sort -u | sed 's/^/- /' || \
+                  echo "- Unable to extract test files"
+              fi
+            else
+              echo "⚠️ Test results file not found"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Upload test results
         if: always()
@@ -72,6 +126,14 @@ jobs:
           path: playwright-report/
           retention-days: 3
 
+      - name: Upload test result JSON
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: test-results-json-${{ matrix.shardIndex }}
+          path: test-results.json
+          retention-days: 3
+
       - name: Upload test screenshots
         if: failure()
         uses: actions/upload-artifact@v6
@@ -79,3 +141,88 @@ jobs:
           name: playwright-screenshots-${{ matrix.shardIndex }}
           path: test-results/
           retention-days: 3
+
+  # Consolidated summary job that shows all test results across all shards
+  test-summary:
+    name: Test Summary
+    runs-on: ubuntu-latest
+    needs: ui-tests
+    if: always()
+    permissions:
+      contents: read
+
+    steps:
+      - name: Download all test result JSONs
+        uses: actions/download-artifact@v6
+        with:
+          pattern: test-results-json-*
+          path: all-test-results
+
+      - name: Generate consolidated test summary
+        run: |
+          {
+            echo "# UI Test Results Summary"
+            echo ""
+            echo "This summary shows which test files were executed \
+              in each shard."
+            echo ""
+
+            # Process each shard's results
+            for shard_dir in all-test-results/test-results-json-*; do
+              if [ -d "$shard_dir" ]; then
+                shard_num=$(basename "$shard_dir" | \
+                  sed 's/test-results-json-//')
+                echo "## Shard $shard_num"
+
+                if [ -f "$shard_dir/test-results.json" ]; then
+                  # List test files in this shard
+                  if command -v jq &> /dev/null; then
+                    echo "### Test Files"
+                    jq -r '.suites[]?.suites[]?.file // empty' \
+                      "$shard_dir/test-results.json" 2>/dev/null | \
+                      sort -u | \
+                      sed 's|.*/tests/ui/||' | \
+                      sed 's/^/- /' || \
+                      echo "- Unable to parse test results"
+
+                    # Count tests - get all stats in one jq call for
+                    # efficiency
+                    total=$(jq -r \
+                      '[.suites[]?.suites[]?.specs[]?] | length' \
+                      "$shard_dir/test-results.json" 2>/dev/null)
+                    stats=$(jq -r \
+                      '.suites[]?.suites[]?.specs[]?.tests[]?.results[]? \
+                      | .status' \
+                      "$shard_dir/test-results.json" 2>/dev/null | \
+                      sort | uniq -c)
+                    passed=$(echo "$stats" | grep -w "passed" | \
+                      awk '{print $1}' || echo "0")
+                    failed=$(echo "$stats" | grep -w "failed" | \
+                      awk '{print $1}' || echo "0")
+
+                    echo ""
+                    echo "**Stats**: ${total:-0} tests, \
+                      ${passed:-0} passed, ${failed:-0} failed"
+                  else
+                    # Fallback without jq
+                    echo "### Test Files"
+                    grep -o '"file":"[^"]*"' \
+                      "$shard_dir/test-results.json" 2>/dev/null | \
+                      cut -d'"' -f4 | \
+                      sed 's|.*/tests/ui/||' | \
+                      sort -u | \
+                      sed 's/^/- /' || \
+                      echo "- Unable to parse test results"
+                  fi
+                else
+                  echo "⚠️ No test results found for this shard"
+                fi
+
+                echo ""
+              fi
+            done
+
+            echo "---"
+            echo "💡 **Tip**: Check individual shard job logs to see \
+              detailed test output"
+          } >> "$GITHUB_STEP_SUMMARY"
