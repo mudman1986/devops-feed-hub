@@ -4591,10 +4591,17 @@ html {
   height: 12px;
   margin-left: 0.25rem;
   vertical-align: middle;
-  opacity: 60%;
+  opacity: 75%;
   transition: opacity 0.2s ease;
 }
 
 a:hover .external-link-icon {
   opacity: 100%;
+}
+
+@media (max-width: 768px) {
+  .external-link-icon {
+    width: 14px;
+    height: 14px;
+  }
 }
