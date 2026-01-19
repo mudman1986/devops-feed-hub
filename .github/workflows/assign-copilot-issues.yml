@@ -83,70 +83,14 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v6
 
-      - name: Determine assignment mode
-        id: mode
-        run: |
-          # Determine mode based on trigger
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            MODE="${{ inputs.mode }}"
-          elif [ "${{ github.event_name }}" = "schedule" ]; then
-            # Daily schedule always uses auto mode (will create refactor if no issues available)
-            MODE="auto"
-            echo "Scheduled run - auto mode"
-          else
-            # Check last 4 closed issues to determine if we should create a refactor issue
-            # If none of the last 4 closed issues have the refactor label, create one (1 in 5 ratio)
-            echo "Checking last 4 closed issues for refactor label..."
-            MODE="auto"  # Default to auto mode
-          fi
-
-          echo "mode=${MODE}" >> "$GITHUB_OUTPUT"
-          echo "Assignment mode: ${MODE}"
-
       - name: Assign Copilot to issue
-        uses: actions/github-script@v8
+        uses: ./actions/auto-assign-copilot
         with:
           github-token: ${{ secrets.COPILOT_ASSIGN_PAT }}
-          script: |
-            const mode = '${{ steps.mode.outputs.mode }}';
-            const labelOverride = '${{ inputs.label }}' || null;
-            const force = '${{ inputs.force }}' === 'true';
-            const dryRun = '${{ inputs.dry_run }}' === 'true';
-            const allowParentIssues = '${{ inputs.allow_parent_issues }}' === 'true';
-            const skipLabelsRaw = '${{ inputs.skip_labels }}';
-            const skipLabelsInput = skipLabelsRaw || 'no-ai,refining';
-            const refactorThresholdRaw = '${{ inputs.refactor_threshold }}';
-            const refactorThreshold = refactorThresholdRaw ? parseInt(refactorThresholdRaw, 10) : 4;
-
-            // Parse skip labels from comma-separated string
-            const skipLabels = skipLabelsInput
-              .split(',')
-              .map(label => label.trim())
-              .filter(label => label.length > 0);
-
-            console.log(
-              `Running in ${mode} mode, ` +
-              `force=${force}, ` +
-              `labelOverride=${labelOverride}, ` +
-              `dryRun=${dryRun}, ` +
-              `allowParentIssues=${allowParentIssues}, ` +
-              `refactorThreshold=${refactorThreshold}, ` +
-              `skipLabels=${JSON.stringify(skipLabels)}`
-            );
-
-            // Load and execute the main workflow logic
-            const path = require('path');
-            const workflowPath = path.join(process.env.GITHUB_WORKSPACE, '.github/workflows/scripts/assign-copilot-workflow.js');
-            const executeWorkflow = require(workflowPath);
-
-            await executeWorkflow({
-              github,
-              context,
-              mode,
-              labelOverride,
-              force,
-              dryRun,
-              allowParentIssues,
-              skipLabels,
-              refactorThreshold,
-            });
+          mode: ${{ inputs.mode || 'auto' }}
+          label-override: ${{ inputs.label || '' }}
+          force: ${{ inputs.force || 'false' }}
+          dry-run: ${{ inputs.dry_run || 'false' }}
+          allow-parent-issues: ${{ inputs.allow_parent_issues || 'false' }}
+          skip-labels: ${{ inputs.skip_labels || 'no-ai,refining' }}
+          refactor-threshold: ${{ inputs.refactor_threshold || '4' }}
