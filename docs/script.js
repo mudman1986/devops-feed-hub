@@ -169,6 +169,24 @@ function reorderDOMElements(dataArray, parent, beforeElement = null) {
   }
 }
 
+/**
+ * Debounce function to limit how often a function can be called
+ * @param {Function} func - Function to debounce
+ * @param {number} wait - Wait time in milliseconds
+ * @returns {Function} - Debounced function
+ */
+function debounce(func, wait) {
+  let timeout;
+  return function executedFunction(...args) {
+    const later = () => {
+      clearTimeout(timeout);
+      func(...args);
+    };
+    clearTimeout(timeout);
+    timeout = setTimeout(later, wait);
+  };
+}
+
 // ===== THEME TOGGLE FUNCTIONALITY =====
 
 const themeToggle = document.getElementById("theme-toggle");
@@ -269,7 +287,11 @@ const sidebar = document.getElementById("sidebar");
 
 if (sidebarToggle && sidebar) {
   initializeSidebarState(sidebar);
-  window.addEventListener("resize", () => initializeSidebarState(sidebar));
+  // Debounce resize event to improve performance (150ms delay)
+  window.addEventListener(
+    "resize",
+    debounce(() => initializeSidebarState(sidebar), 150),
+  );
 
   sidebarToggle.addEventListener("click", () => {
     sidebar.classList.toggle("collapsed");
@@ -344,9 +366,29 @@ function applyTimeframeFilter(timeframe) {
 /**
  * Update feed counts and reorder feeds
  */
+// Helper to cache section elements
+function getSectionElements(section) {
+  // Use a WeakMap to cache elements per section
+  if (!getSectionElements.cache) {
+    getSectionElements.cache = new WeakMap();
+  }
+
+  if (!getSectionElements.cache.has(section)) {
+    getSectionElements.cache.set(section, {
+      heading: section.querySelector("h2"),
+      countBadge: section.querySelector(".feed-count"),
+      articleList: section.querySelector(".article-list"),
+      // noArticlesMsg is dynamic, query each time
+    });
+  }
+
+  return getSectionElements.cache.get(section);
+}
+
 // Helper function to extract feed name from section heading
 function extractFeedName(section) {
-  const heading = section.querySelector("h2");
+  const cached = getSectionElements(section);
+  const heading = cached.heading;
   const feedNameElement = heading?.childNodes[0];
   return feedNameElement
     ? feedNameElement.textContent.trim()
@@ -355,7 +397,8 @@ function extractFeedName(section) {
 
 // Helper function to update count badge
 function updateCountBadge(section, count) {
-  const countBadge = section.querySelector(".feed-count");
+  const cached = getSectionElements(section);
+  const countBadge = cached.countBadge;
   if (countBadge) {
     const plural = count !== 1 ? "s" : "";
     countBadge.textContent = `${count} article${plural}`;
@@ -368,8 +411,9 @@ function updateNoArticlesMessage(
   count,
   messageText = "No new articles in this time period",
 ) {
-  const noArticlesMsg = section.querySelector(".no-articles");
-  const articleList = section.querySelector(".article-list");
+  const cached = getSectionElements(section);
+  const noArticlesMsg = section.querySelector(".no-articles"); // Query fresh as it's dynamic
+  const articleList = cached.articleList;
 
   if (count === 0) {
     if (articleList) articleList.style.display = "none";
@@ -503,7 +547,7 @@ function toggleArticleRead(articleUrl) {
 }
 
 function markArticleAsRead(articleUrl) {
-  let readArticles = getReadArticles();
+  const readArticles = getReadArticles();
   if (!readArticles.includes(articleUrl)) {
     readArticles.push(articleUrl);
     saveReadArticles(readArticles);
@@ -579,7 +623,8 @@ function updateFeedCountsAfterReadFilter() {
       return;
     }
 
-    const articleList = section.querySelector(".article-list");
+    const cached = getSectionElements(section);
+    const articleList = cached.articleList;
 
     // Handle feeds with no article list (empty feeds with 0 articles across all timeframes)
     if (!articleList) {
@@ -616,10 +661,9 @@ function updateFeedCountsAfterReadFilter() {
 
     // Use different message text for this context
     const noArticlesMsg = section.querySelector(".no-articles");
-    const articleListElement = section.querySelector(".article-list");
 
     if (count === 0) {
-      if (articleListElement) articleListElement.style.display = "none";
+      if (articleList) articleList.style.display = "none";
       if (!noArticlesMsg) {
         const msg = document.createElement("div");
         msg.className = "no-articles";
@@ -629,7 +673,7 @@ function updateFeedCountsAfterReadFilter() {
         noArticlesMsg.style.display = "";
       }
     } else {
-      if (articleListElement) articleListElement.style.display = "";
+      if (articleList) articleList.style.display = "";
       if (noArticlesMsg) noArticlesMsg.style.display = "none";
     }
 
@@ -767,7 +811,8 @@ function applyFeedFilter() {
 
   const feedSections = document.querySelectorAll(".feed-section");
   feedSections.forEach((section) => {
-    const heading = section.querySelector("h2");
+    const cached = getSectionElements(section);
+    const heading = cached.heading;
     if (!heading) return;
 
     const feedNameElement = heading.childNodes[0];
