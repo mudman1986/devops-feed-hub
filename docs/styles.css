@@ -553,7 +553,9 @@ h3 {
   box-shadow:
     0 4px 6px -1px rgb(0 0 0 / 5%),
     0 2px 4px -1px rgb(0 0 0 / 3%);
-  transition: all 0.3s ease;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
   display: flex;
@@ -602,7 +604,7 @@ h3 {
   height: 3rem;
   background: var(--bg-tertiary);
   border-radius: 0.75rem;
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .stat-card.success .stat-icon {
@@ -735,7 +737,9 @@ h3 {
   background-color: var(--bg-secondary);
   border-radius: 0.5rem;
   border-left: 3px solid var(--accent-error);
-  transition: all 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .failed-feed-item:hover {
@@ -1088,7 +1092,11 @@ h3 {
   cursor: pointer;
   font-size: 0.875rem;
   font-weight: 500;
-  transition: all 0.2s ease;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -1124,7 +1132,10 @@ h3 {
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.2s ease;
+  transition:
+    opacity 0.2s ease,
+    background 0.2s ease,
+    transform 0.2s ease;
   color: var(--text-secondary);
   opacity: 50%;
   z-index: 1;
@@ -1152,7 +1163,11 @@ h3 {
   cursor: pointer;
   font-size: 0.875rem;
   font-weight: 500;
-  transition: all 0.2s ease;
+  transition:
+    background 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
   display: flex;
   align-items: center;
   gap: 0.5rem;
