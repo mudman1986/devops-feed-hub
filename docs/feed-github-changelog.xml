@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml</link>
     <description>Articles from GitHub Changelog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 19 Jan 2026 09:36:54 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 19 Jan 2026 12:01:59 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>GitHub Copilot now supports OpenCode</title>
