@@ -633,9 +633,15 @@
           // Theme setting
           const themeSelect = document.getElementById("theme-setting");
           if (themeSelect) {
-            themeSelect.addEventListener("change", (e) => {
+            themeSelect.addEventListener("change", async (e) => {
               const theme = e.target.value;
+              LoadingState.show(themeSelect, "Applying theme");
               try {
+                // Brief delay for visual feedback
+                await new Promise((resolve) =>
+                  setTimeout(resolve, TIMEOUTS.LOADING_MIN_DURATION),
+                );
+
                 localStorage.setItem("theme", theme);
                 // Clear experimental theme when standard theme is selected
                 localStorage.removeItem("experimentalTheme");
@@ -649,8 +655,16 @@
                 if (experimentalViewmodeSelect)
                   experimentalViewmodeSelect.value = "";
                 applyTheme(theme);
+
+                LoadingState.hide(themeSelect);
+                showToast(
+                  `Theme changed to ${theme === "dark" ? "Dark" : "Light"} mode`,
+                  "success",
+                );
               } catch (err) {
                 console.warn("Unable to save theme:", err);
+                LoadingState.hide(themeSelect);
+                showToast("Failed to save theme setting", "error");
               }
             });
           }
@@ -660,9 +674,15 @@
             "experimental-theme-setting",
           );
           if (experimentalThemeSelect) {
-            experimentalThemeSelect.addEventListener("change", (e) => {
+            experimentalThemeSelect.addEventListener("change", async (e) => {
               const experimentalTheme = e.target.value;
+              LoadingState.show(experimentalThemeSelect, "Applying theme");
               try {
+                // Brief delay for visual feedback
+                await new Promise((resolve) =>
+                  setTimeout(resolve, TIMEOUTS.LOADING_MIN_DURATION),
+                );
+
                 if (experimentalTheme) {
                   // Save experimental theme if valid
                   if (VALID_EXPERIMENTAL_THEMES.includes(experimentalTheme)) {
@@ -676,19 +696,32 @@
                       "experimental-viewmode-setting",
                     );
                     if (viewmodeSelect) viewmodeSelect.value = "";
+
+                    LoadingState.hide(experimentalThemeSelect);
+                    showToast(
+                      `Experimental theme applied: ${experimentalTheme}`,
+                      "success",
+                    );
                   } else {
                     console.warn(
                       `Invalid experimental theme: ${experimentalTheme}`,
                     );
+                    LoadingState.hide(experimentalThemeSelect);
+                    showToast("Invalid experimental theme", "error");
                   }
                 } else {
                   // Clear experimental theme and revert to standard theme
                   localStorage.removeItem("experimentalTheme");
                   const theme = localStorage.getItem("theme") || "dark";
                   applyTheme(theme);
+
+                  LoadingState.hide(experimentalThemeSelect);
+                  showToast("Experimental theme cleared", "info");
                 }
               } catch (err) {
                 console.warn("Unable to save experimental theme:", err);
+                LoadingState.hide(experimentalThemeSelect);
+                showToast("Failed to save experimental theme", "error");
               }
             });
           }
@@ -736,12 +769,23 @@
           // View setting
           const viewSelect = document.getElementById("view-setting");
           if (viewSelect) {
-            viewSelect.addEventListener("change", (e) => {
+            viewSelect.addEventListener("change", async (e) => {
               const view = e.target.value;
+              LoadingState.show(viewSelect, "Updating view mode");
               try {
+                await new Promise((resolve) =>
+                  setTimeout(resolve, TIMEOUTS.LOADING_MIN_DURATION),
+                );
                 localStorage.setItem("view", view);
+                LoadingState.hide(viewSelect);
+                showToast(
+                  `View mode changed to ${view === "card" ? "Card" : "List"} view`,
+                  "success",
+                );
               } catch (err) {
                 console.warn("Unable to save view:", err);
+                LoadingState.hide(viewSelect);
+                showToast("Failed to save view mode", "error");
               }
             });
           }
@@ -749,12 +793,28 @@
           // Timeframe setting
           const timeframeSelect = document.getElementById("timeframe-setting");
           if (timeframeSelect) {
-            timeframeSelect.addEventListener("change", (e) => {
+            timeframeSelect.addEventListener("change", async (e) => {
               const timeframe = e.target.value;
+              LoadingState.show(timeframeSelect, "Updating time range");
               try {
+                await new Promise((resolve) =>
+                  setTimeout(resolve, TIMEOUTS.LOADING_MIN_DURATION),
+                );
                 localStorage.setItem("timeframe", timeframe);
+                LoadingState.hide(timeframeSelect);
+                const timeframeLabels = {
+                  "1day": "Last 24 hours",
+                  "7days": "Last 7 days",
+                  "30days": "Last 30 days",
+                };
+                showToast(
+                  `Time range updated to ${timeframeLabels[timeframe] || timeframe}`,
+                  "success",
+                );
               } catch (err) {
                 console.warn("Unable to save timeframe:", err);
+                LoadingState.hide(timeframeSelect);
+                showToast("Failed to save time range", "error");
               }
             });
           }
@@ -997,8 +1057,13 @@
 
           try {
             localStorage.setItem("enabledFeeds", JSON.stringify(enabledFeeds));
+            showToast(
+              `Feed selection saved (${enabledFeeds.length} feeds enabled)`,
+              "success",
+            );
           } catch (e) {
             console.warn("Unable to save feed settings:", e);
+            showToast("Failed to save feed selection", "error");
           }
         }
 
