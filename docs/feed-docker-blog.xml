@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-docker-blog.xml</link>
     <description>Articles from Docker Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-docker-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 19 Jan 2026 18:10:09 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 19 Jan 2026 19:40:34 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Making (Very) Small LLMs Smarter</title>
