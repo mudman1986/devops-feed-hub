@@ -4506,24 +4506,24 @@ html {
 @keyframes toast-slide-in {
   from {
     transform: translateX(120%);
-    opacity: 0%;
+    opacity: 0;
   }
 
   to {
     transform: translateX(0);
-    opacity: 100%;
+    opacity: 1;
   }
 }
 
 @keyframes toast-slide-out {
   from {
     transform: translateX(0);
-    opacity: 100%;
+    opacity: 1;
   }
 
   to {
     transform: translateX(120%);
-    opacity: 0%;
+    opacity: 0;
   }
 }
 
@@ -4591,12 +4591,12 @@ html {
   height: 12px;
   margin-left: 0.25rem;
   vertical-align: middle;
-  opacity: 75%;
+  opacity: 0.75;
   transition: opacity 0.2s ease;
 }
 
 a:hover .external-link-icon {
-  opacity: 100%;
+  opacity: 1;
 }
 
 @media (max-width: 768px) {
