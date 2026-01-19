@@ -80,48 +80,43 @@ jobs:
       - name: Generate test summary
         if: always()
         run: |
-          echo "## UI Test Results - Shard \
-            ${{ matrix.shardIndex }}/${{ matrix.shardTotal }}" \
-            >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
+          {
+            echo "## UI Test Results - Shard \
+              ${{ matrix.shardIndex }}/${{ matrix.shardTotal }}"
+            echo ""
 
-          if [ -f test-results.json ]; then
-            echo "### Test Summary" >> $GITHUB_STEP_SUMMARY
+            if [ -f test-results.json ]; then
+              echo "### Test Summary"
 
-            # Extract overall stats using jq if available,
-            # otherwise use grep/sed
-            if command -v jq &> /dev/null; then
-              # Use jq for better JSON parsing - count total specs
-              # across all suites
-              total=$(jq -r \
-                '[.suites[]?.suites[]?.specs[]?] | length' \
-                test-results.json 2>/dev/null)
-              echo "- **Total Tests in Shard**: ${total:-0}" \
-                >> $GITHUB_STEP_SUMMARY
-            fi
+              # Extract overall stats using jq if available,
+              # otherwise use grep/sed
+              if command -v jq &> /dev/null; then
+                # Use jq for better JSON parsing - count total specs
+                # across all suites
+                total=$(jq -r \
+                  '[.suites[]?.suites[]?.specs[]?] | length' \
+                  test-results.json 2>/dev/null)
+                echo "- **Total Tests in Shard**: ${total:-0}"
+              fi
 
-            # List test files that were executed in this shard
-            echo "" >> $GITHUB_STEP_SUMMARY
-            echo "### Test Files Executed" >> $GITHUB_STEP_SUMMARY
-            if command -v jq &> /dev/null; then
-              jq -r '.suites[]?.suites[]?.file // empty' \
-                test-results.json 2>/dev/null | sort -u | \
-                sed 's|.*/tests/ui/||' | sed 's/^/- /' \
-                >> $GITHUB_STEP_SUMMARY || \
-                echo "- Unable to extract test files" \
-                >> $GITHUB_STEP_SUMMARY
+              # List test files that were executed in this shard
+              echo ""
+              echo "### Test Files Executed"
+              if command -v jq &> /dev/null; then
+                jq -r '.suites[]?.suites[]?.file // empty' \
+                  test-results.json 2>/dev/null | sort -u | \
+                  sed 's|.*/tests/ui/||' | sed 's/^/- /' || \
+                  echo "- Unable to extract test files"
+              else
+                grep -o '"file":"[^"]*"' test-results.json \
+                  2>/dev/null | cut -d'"' -f4 | \
+                  sed 's|.*/tests/ui/||' | sort -u | sed 's/^/- /' || \
+                  echo "- Unable to extract test files"
+              fi
             else
-              grep -o '"file":"[^"]*"' test-results.json \
-                2>/dev/null | cut -d'"' -f4 | \
-                sed 's|.*/tests/ui/||' | sort -u | sed 's/^/- /' \
-                >> $GITHUB_STEP_SUMMARY || \
-                echo "- Unable to extract test files" \
-                >> $GITHUB_STEP_SUMMARY
+              echo "⚠️ Test results file not found"
             fi
-          else
-            echo "⚠️ Test results file not found" \
-              >> $GITHUB_STEP_SUMMARY
-          fi
+          } >> "$GITHUB_STEP_SUMMARY"
 
       - name: Upload test results
         if: always()
@@ -165,71 +160,69 @@ jobs:
 
       - name: Generate consolidated test summary
         run: |
-          echo "# UI Test Results Summary" >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
-          echo "This summary shows which test files were executed \
-            in each shard." >> $GITHUB_STEP_SUMMARY
-          echo "" >> $GITHUB_STEP_SUMMARY
+          {
+            echo "# UI Test Results Summary"
+            echo ""
+            echo "This summary shows which test files were executed \
+              in each shard."
+            echo ""
 
-          # Process each shard's results
-          for shard_dir in all-test-results/test-results-json-*; do
-            if [ -d "$shard_dir" ]; then
-              shard_num=$(basename "$shard_dir" | \
-                sed 's/test-results-json-//')
-              echo "## Shard $shard_num" >> $GITHUB_STEP_SUMMARY
+            # Process each shard's results
+            for shard_dir in all-test-results/test-results-json-*; do
+              if [ -d "$shard_dir" ]; then
+                shard_num=$(basename "$shard_dir" | \
+                  sed 's/test-results-json-//')
+                echo "## Shard $shard_num"
 
-              if [ -f "$shard_dir/test-results.json" ]; then
-                # List test files in this shard
-                if command -v jq &> /dev/null; then
-                  echo "### Test Files" >> $GITHUB_STEP_SUMMARY
-                  jq -r '.suites[]?.suites[]?.file // empty' \
-                    "$shard_dir/test-results.json" 2>/dev/null | \
-                    sort -u | \
-                    sed 's|.*/tests/ui/||' | \
-                    sed 's/^/- /' >> $GITHUB_STEP_SUMMARY || \
-                    echo "- Unable to parse test results" \
-                    >> $GITHUB_STEP_SUMMARY
+                if [ -f "$shard_dir/test-results.json" ]; then
+                  # List test files in this shard
+                  if command -v jq &> /dev/null; then
+                    echo "### Test Files"
+                    jq -r '.suites[]?.suites[]?.file // empty' \
+                      "$shard_dir/test-results.json" 2>/dev/null | \
+                      sort -u | \
+                      sed 's|.*/tests/ui/||' | \
+                      sed 's/^/- /' || \
+                      echo "- Unable to parse test results"
 
-                  # Count tests - get all stats in one jq call for
-                  # efficiency
-                  total=$(jq -r \
-                    '[.suites[]?.suites[]?.specs[]?] | length' \
-                    "$shard_dir/test-results.json" 2>/dev/null)
-                  stats=$(jq -r \
-                    '.suites[]?.suites[]?.specs[]?.tests[]?.results[]? \
-                    | .status' \
-                    "$shard_dir/test-results.json" 2>/dev/null | \
-                    sort | uniq -c)
-                  passed=$(echo "$stats" | grep -w "passed" | \
-                    awk '{print $1}' || echo "0")
-                  failed=$(echo "$stats" | grep -w "failed" | \
-                    awk '{print $1}' || echo "0")
+                    # Count tests - get all stats in one jq call for
+                    # efficiency
+                    total=$(jq -r \
+                      '[.suites[]?.suites[]?.specs[]?] | length' \
+                      "$shard_dir/test-results.json" 2>/dev/null)
+                    stats=$(jq -r \
+                      '.suites[]?.suites[]?.specs[]?.tests[]?.results[]? \
+                      | .status' \
+                      "$shard_dir/test-results.json" 2>/dev/null | \
+                      sort | uniq -c)
+                    passed=$(echo "$stats" | grep -w "passed" | \
+                      awk '{print $1}' || echo "0")
+                    failed=$(echo "$stats" | grep -w "failed" | \
+                      awk '{print $1}' || echo "0")
 
-                  echo "" >> $GITHUB_STEP_SUMMARY
-                  echo "**Stats**: ${total:-0} tests, \
-                    ${passed:-0} passed, ${failed:-0} failed" \
-                    >> $GITHUB_STEP_SUMMARY
+                    echo ""
+                    echo "**Stats**: ${total:-0} tests, \
+                      ${passed:-0} passed, ${failed:-0} failed"
+                  else
+                    # Fallback without jq
+                    echo "### Test Files"
+                    grep -o '"file":"[^"]*"' \
+                      "$shard_dir/test-results.json" 2>/dev/null | \
+                      cut -d'"' -f4 | \
+                      sed 's|.*/tests/ui/||' | \
+                      sort -u | \
+                      sed 's/^/- /' || \
+                      echo "- Unable to parse test results"
+                  fi
                 else
-                  # Fallback without jq
-                  echo "### Test Files" >> $GITHUB_STEP_SUMMARY
-                  grep -o '"file":"[^"]*"' \
-                    "$shard_dir/test-results.json" 2>/dev/null | \
-                    cut -d'"' -f4 | \
-                    sed 's|.*/tests/ui/||' | \
-                    sort -u | \
-                    sed 's/^/- /' >> $GITHUB_STEP_SUMMARY || \
-                    echo "- Unable to parse test results" \
-                    >> $GITHUB_STEP_SUMMARY
+                  echo "⚠️ No test results found for this shard"
                 fi
-              else
-                echo "⚠️ No test results found for this shard" \
-                  >> $GITHUB_STEP_SUMMARY
+
+                echo ""
               fi
+            done
 
-              echo "" >> $GITHUB_STEP_SUMMARY
-            fi
-          done
-
-          echo "---" >> $GITHUB_STEP_SUMMARY
-          echo "💡 **Tip**: Check individual shard job logs to see \
-            detailed test output" >> $GITHUB_STEP_SUMMARY
+            echo "---"
+            echo "💡 **Tip**: Check individual shard job logs to see \
+              detailed test output"
+          } >> "$GITHUB_STEP_SUMMARY"
