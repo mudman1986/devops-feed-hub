@@ -1,5 +1,24 @@
 /* eslint-env browser */
 
+// Breakpoint constants (in pixels)
+const BREAKPOINTS = {
+  MOBILE: 768,
+  TABLET: 1024,
+  DESKTOP: 1200,
+};
+
+// Timeout constants (in milliseconds)
+const TIMEOUTS = {
+  SCREEN_READER_ANNOUNCEMENT: 3000,
+  ERROR_MESSAGE_DISMISS: 5000,
+};
+
+// Accessibility constants
+const ACCESSIBILITY = {
+  MIN_TOUCH_TARGET_SIZE: 48,
+  MIN_FOCUS_OUTLINE_WIDTH: 2,
+};
+
 // Mark as Read constants
 const READ_ARTICLES_KEY = "readArticles";
 
@@ -238,7 +257,7 @@ function applyView(view) {
 
 function initializeSidebarState(sidebar) {
   // On mobile, start collapsed; on desktop, start expanded
-  if (window.innerWidth <= 768) {
+  if (window.innerWidth <= BREAKPOINTS.MOBILE) {
     sidebar.classList.add("collapsed");
   } else {
     sidebar.classList.remove("collapsed");
@@ -258,7 +277,7 @@ if (sidebarToggle && sidebar) {
 
   // Close sidebar when clicking outside (mobile only)
   document.addEventListener("click", (e) => {
-    if (window.innerWidth <= 768) {
+    if (window.innerWidth <= BREAKPOINTS.MOBILE) {
       if (!sidebar.contains(e.target) && !sidebarToggle.contains(e.target)) {
         sidebar.classList.add("collapsed");
       }
@@ -849,7 +868,7 @@ function announceToScreenReader(message, priority = "polite") {
     // Clear after announcement (3 seconds to allow for slower screen readers)
     setTimeout(() => {
       liveRegion.textContent = "";
-    }, 3000);
+    }, TIMEOUTS.SCREEN_READER_ANNOUNCEMENT);
   }
 }
 
@@ -986,7 +1005,7 @@ function ensureTouchTargets() {
 
   interactiveElements.forEach((element) => {
     const rect = element.getBoundingClientRect();
-    const minSize = 48; // 48px for mobile devices
+    const minSize = ACCESSIBILITY.MIN_TOUCH_TARGET_SIZE;
 
     // Add padding if element is too small
     if (rect.height < minSize || rect.width < minSize) {
@@ -1026,7 +1045,7 @@ function displayAccessibleError(message, severity = "error") {
     if (severity !== "error") {
       setTimeout(() => {
         errorContainer.textContent = "";
-      }, 5000);
+      }, TIMEOUTS.ERROR_MESSAGE_DISMISS);
     }
   }
 
