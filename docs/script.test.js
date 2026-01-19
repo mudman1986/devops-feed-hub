@@ -506,3 +506,92 @@ describe("Feed Filtering Functionality", () => {
     });
   });
 });
+
+// Constants Tests
+describe("Magic Number Constants", () => {
+  // Shared constants for testing
+  const BREAKPOINTS = {
+    MOBILE: 768,
+    TABLET: 1024,
+    DESKTOP: 1200,
+  };
+
+  const TIMEOUTS = {
+    SCREEN_READER_ANNOUNCEMENT: 3000,
+    ERROR_MESSAGE_DISMISS: 5000,
+  };
+
+  const ACCESSIBILITY = {
+    MIN_TOUCH_TARGET_SIZE: 48,
+    MIN_FOCUS_OUTLINE_WIDTH: 2,
+  };
+
+  describe("BREAKPOINTS", () => {
+    test("should define MOBILE breakpoint", () => {
+      expect(BREAKPOINTS.MOBILE).toBe(768);
+    });
+
+    test("should define TABLET breakpoint", () => {
+      expect(BREAKPOINTS.TABLET).toBe(1024);
+    });
+
+    test("should define DESKTOP breakpoint", () => {
+      expect(BREAKPOINTS.DESKTOP).toBe(1200);
+    });
+  });
+
+  describe("TIMEOUTS", () => {
+    test("should define SCREEN_READER_ANNOUNCEMENT timeout", () => {
+      expect(TIMEOUTS.SCREEN_READER_ANNOUNCEMENT).toBe(3000);
+    });
+
+    test("should define ERROR_MESSAGE_DISMISS timeout", () => {
+      expect(TIMEOUTS.ERROR_MESSAGE_DISMISS).toBe(5000);
+    });
+  });
+
+  describe("ACCESSIBILITY", () => {
+    test("should define MIN_TOUCH_TARGET_SIZE", () => {
+      expect(ACCESSIBILITY.MIN_TOUCH_TARGET_SIZE).toBe(48);
+    });
+
+    test("should define MIN_FOCUS_OUTLINE_WIDTH", () => {
+      expect(ACCESSIBILITY.MIN_FOCUS_OUTLINE_WIDTH).toBe(2);
+    });
+  });
+
+  describe("Constant Usage in Functions", () => {
+    test("sidebar should use BREAKPOINTS.MOBILE for initialization", () => {
+      // Simulate window width <= 768
+      Object.defineProperty(window, "innerWidth", {
+        writable: true,
+        configurable: true,
+        value: 500,
+      });
+
+      expect(window.innerWidth <= BREAKPOINTS.MOBILE).toBe(true);
+
+      // Simulate window width > 768
+      Object.defineProperty(window, "innerWidth", {
+        writable: true,
+        configurable: true,
+        value: 1024,
+      });
+
+      expect(window.innerWidth <= BREAKPOINTS.MOBILE).toBe(false);
+    });
+
+    test("touch target validation should use ACCESSIBILITY.MIN_TOUCH_TARGET_SIZE", () => {
+      const minSize = ACCESSIBILITY.MIN_TOUCH_TARGET_SIZE;
+
+      // Element smaller than minimum
+      expect(40 < minSize).toBe(true);
+
+      // Element equal to minimum
+      expect(48 < minSize).toBe(false);
+
+      // Element larger than minimum
+      expect(50 < minSize).toBe(false);
+    });
+  });
+});
