@@ -34,10 +34,10 @@
         "displayName": "node",
         "testEnvironment": "node",
         "testMatch": [
-          "**/.github/scripts/**/*.test.js"
+          "**/.github/workflows/scripts/**/*.test.js"
         ],
         "collectCoverageFrom": [
-          ".github/scripts/assign-copilot.js"
+          ".github/workflows/scripts/assign-copilot.js"
         ]
       }
     ]

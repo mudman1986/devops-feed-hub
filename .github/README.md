@@ -40,7 +40,7 @@ View at: [https://mudman1986.github.io/devops-feed-hub/](https://mudman1986.gith
 ## 🧪 Testing
 
 - **JavaScript**: `npm test`
-- **Python**: `python3 -m pytest .github/actions/collect-rss-feeds/tests/ -v`
+- **Python**: `python3 -m pytest actions/collect-rss-feeds/tests/ -v`
 - **UI Tests**: `npm run test:ui`
 
 See [TESTING.md](../TESTING.md) for details.
