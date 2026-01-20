@@ -621,14 +621,18 @@
                   // Store experimental view mode separately
                   localStorage.setItem("experimentalViewMode", selectedView);
                   localStorage.removeItem("view");
-                  
+
                   // Apply the view mode to the page
-                  const currentTheme = document.documentElement.getAttribute("data-theme");
+                  const currentTheme =
+                    document.documentElement.getAttribute("data-theme");
                   applyTheme(currentTheme); // Re-apply current theme
-                  
+
                   // Also update the view attribute
-                  document.documentElement.setAttribute("data-view", selectedView);
-                  
+                  document.documentElement.setAttribute(
+                    "data-view",
+                    selectedView,
+                  );
+
                   showToast(
                     `Experimental view mode: ${selectedView
                       .split("-")
@@ -640,10 +644,13 @@
                   // Store standard view mode (list or card)
                   localStorage.setItem("view", selectedView);
                   localStorage.removeItem("experimentalViewMode");
-                  
+
                   // Update the view attribute
-                  document.documentElement.setAttribute("data-view", selectedView);
-                  
+                  document.documentElement.setAttribute(
+                    "data-view",
+                    selectedView,
+                  );
+
                   showToast(
                     `View mode changed to ${selectedView === "card" ? "Card" : "List"} view`,
                     "success",
@@ -964,20 +971,25 @@
           }
 
           // Initialize button state
-          const currentTheme = document.documentElement.getAttribute("data-theme");
+          const currentTheme =
+            document.documentElement.getAttribute("data-theme");
           const currentMode = getCurrentMode(currentTheme);
           updateSettingsThemeButton(currentMode);
 
           // Handle theme toggle click
           themeToggle.addEventListener("click", async () => {
-            const currentTheme = document.documentElement.getAttribute("data-theme");
+            const currentTheme =
+              document.documentElement.getAttribute("data-theme");
             const currentBaseTheme = getBaseTheme(currentTheme);
             const currentThemeMode = getCurrentMode(currentTheme);
             const newMode = currentThemeMode === "light" ? "dark" : "light";
 
             // Apply new mode to current theme
             let newTheme;
-            if (currentBaseTheme && EXPERIMENTAL_BASE_THEMES.includes(currentBaseTheme)) {
+            if (
+              currentBaseTheme &&
+              EXPERIMENTAL_BASE_THEMES.includes(currentBaseTheme)
+            ) {
               // Experimental theme: toggle between light and dark variants
               newTheme = applyModeToTheme(currentBaseTheme, newMode);
               localStorage.setItem("experimentalTheme", newTheme);
