@@ -11,8 +11,6 @@ const BREAKPOINTS = {
 const TIMEOUTS = {
   SCREEN_READER_ANNOUNCEMENT: 3000,
   ERROR_MESSAGE_DISMISS: 5000,
-  TOAST_DURATION: 3000,
-  LOADING_MIN_DURATION: 300,
 };
 
 // Accessibility constants
@@ -189,157 +187,6 @@ function debounce(func, wait) {
   };
 }
 
-// ===== LOADING STATE UTILITY =====
-
-/**
- * Loading state utility class for visual feedback
- */
-class LoadingState {
-  /**
-   * Show loading state on element
-   * @param {HTMLElement} element - Element to show loading state on
-   * @param {string} message - Optional loading message for screen readers
-   * @param {boolean} overlay - Whether to use overlay style (default: false)
-   */
-  static show(element, message = "Loading...", overlay = false) {
-    if (!element) return;
-
-    element.setAttribute("aria-busy", "true");
-    if (overlay) {
-      element.classList.add("loading-overlay");
-    } else {
-      element.classList.add("loading");
-    }
-
-    // Announce to screen readers
-    if (message) {
-      announceToScreenReader(message, "polite");
-    }
-  }
-
-  /**
-   * Hide loading state on element
-   * @param {HTMLElement} element - Element to hide loading state on
-   */
-  static hide(element) {
-    if (!element) return;
-
-    element.setAttribute("aria-busy", "false");
-    element.classList.remove("loading", "loading-overlay");
-  }
-
-  /**
-   * Execute an async function with loading state
-   * @param {HTMLElement} element - Element to show loading state on
-   * @param {Function} asyncFn - Async function to execute
-   * @param {string} message - Loading message
-   * @param {boolean} overlay - Whether to use overlay style
-   * @returns {Promise} - Result of async function
-   */
-  static async wrap(element, asyncFn, message = "Loading...", overlay = false) {
-    const startTime = Date.now();
-    LoadingState.show(element, message, overlay);
-
-    try {
-      const result = await asyncFn();
-
-      // Ensure minimum loading duration for better UX
-      const elapsed = Date.now() - startTime;
-      const remaining = TIMEOUTS.LOADING_MIN_DURATION - elapsed;
-
-      if (remaining > 0) {
-        await new Promise((resolve) => setTimeout(resolve, remaining));
-      }
-
-      return result;
-    } finally {
-      LoadingState.hide(element);
-    }
-  }
-}
-
-// ===== TOAST NOTIFICATION SYSTEM =====
-
-/**
- * Show toast notification
- * @param {string} message - Toast message
- * @param {string} type - Toast type: 'success', 'error', 'info' (default: 'success')
- * @param {number} duration - Duration in ms (default: 3000)
- */
-function showToast(
-  message,
-  type = "success",
-  duration = TIMEOUTS.TOAST_DURATION,
-) {
-  // Create toast container if it doesn't exist
-  let container = document.getElementById("toast-container");
-  if (!container) {
-    container = document.createElement("div");
-    container.id = "toast-container";
-    container.className = "toast-container";
-    container.setAttribute("aria-live", "polite");
-    container.setAttribute("aria-atomic", "true");
-    document.body.appendChild(container);
-  }
-
-  // Create toast element
-  const toast = document.createElement("div");
-  toast.className = `toast toast-${type}`;
-  toast.setAttribute("role", "status");
-
-  // Create icon
-  const icon = document.createElement("div");
-  icon.className = "toast-icon";
-  icon.setAttribute("aria-hidden", "true");
-
-  // Set icon SVG based on type
-  if (type === "success") {
-    icon.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="20 6 9 17 4 12"></polyline>
-    </svg>`;
-  } else if (type === "error") {
-    icon.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="12" cy="12" r="10"></circle>
-      <line x1="15" y1="9" x2="9" y2="15"></line>
-      <line x1="9" y1="9" x2="15" y2="15"></line>
-    </svg>`;
-  } else {
-    // info
-    icon.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="12" cy="12" r="10"></circle>
-      <line x1="12" y1="16" x2="12" y2="12"></line>
-      <line x1="12" y1="8" x2="12.01" y2="8"></line>
-    </svg>`;
-  }
-
-  // Create content
-  const content = document.createElement("div");
-  content.className = "toast-content";
-  content.textContent = message;
-
-  // Assemble toast
-  toast.appendChild(icon);
-  toast.appendChild(content);
-  container.appendChild(toast);
-
-  // Announce to screen readers
-  announceToScreenReader(message, type === "error" ? "assertive" : "polite");
-
-  // Auto-remove after duration
-  setTimeout(() => {
-    toast.classList.add("toast-exit");
-    setTimeout(() => {
-      if (toast.parentNode) {
-        toast.parentNode.removeChild(toast);
-      }
-      // Clean up container if empty
-      if (container.children.length === 0 && container.parentNode) {
-        container.parentNode.removeChild(container);
-      }
-    }, 300); // Match animation duration
-  }, duration);
-}
-
 // ===== THEME TOGGLE FUNCTIONALITY =====
 
 const themeToggle = document.getElementById("theme-toggle");
@@ -370,17 +217,9 @@ if (
 htmlElement.setAttribute("data-theme", savedTheme);
 updateThemeButton(savedTheme);
 
-themeToggle.addEventListener("click", async () => {
+themeToggle.addEventListener("click", () => {
   const currentTheme = htmlElement.getAttribute("data-theme");
   const newTheme = currentTheme === "light" ? "dark" : "light";
-
-  // Show loading state on the button
-  LoadingState.show(themeToggle, `Switching to ${newTheme} mode`);
-
-  // Simulate brief delay for visual feedback
-  await new Promise((resolve) =>
-    setTimeout(resolve, TIMEOUTS.LOADING_MIN_DURATION),
-  );
 
   htmlElement.setAttribute("data-theme", newTheme);
   setLocalStorage("theme", newTheme);
@@ -393,9 +232,6 @@ themeToggle.addEventListener("click", async () => {
   }
 
   updateThemeButton(newTheme);
-
-  // Hide loading state
-  LoadingState.hide(themeToggle);
 });
 
 function updateThemeButton(theme) {
@@ -724,12 +560,8 @@ function resetAllReadArticles() {
     localStorage.removeItem(READ_ARTICLES_KEY);
     initializeReadStatus();
     updateFeedCountsAfterReadFilter();
-    // Show success toast
-    showToast("All read articles cleared successfully", "success");
   } catch (e) {
     console.warn("Unable to reset read articles:", e);
-    // Show error toast
-    showToast("Failed to clear read articles", "error");
   }
 }
 
@@ -910,7 +742,7 @@ function setupMarkAsReadControls() {
 
     newButton.addEventListener(
       "click",
-      async function handleResetClick(e) {
+      function handleResetClick(e) {
         e.preventDefault();
         e.stopPropagation();
         e.stopImmediatePropagation();
@@ -921,22 +753,10 @@ function setupMarkAsReadControls() {
           );
 
           if (confirmed === true) {
-            // Show loading state
-            LoadingState.show(newButton, "Clearing read articles");
-
-            // Add slight delay for visual feedback
-            await new Promise((resolve) =>
-              setTimeout(resolve, TIMEOUTS.LOADING_MIN_DURATION),
-            );
-
             resetAllReadArticles();
-
-            // Hide loading state
-            LoadingState.hide(newButton);
           }
         } catch (error) {
           console.error("Error in reset button handler:", error);
-          LoadingState.hide(newButton);
           resetAllReadArticles();
         }
 
@@ -1279,81 +1099,4 @@ function displayAccessibleError(message, severity = "error") {
     message,
     severity === "error" ? "assertive" : "polite",
   );
-}
-
-// ===== EXTERNAL LINK INDICATORS =====
-
-/**
- * Add external link indicators to all article links
- */
-function initializeExternalLinkIndicators() {
-  const articleLinks = document.querySelectorAll(".article-title");
-
-  articleLinks.forEach((link) => {
-    // Skip if already has indicator
-    if (link.querySelector(".external-link-icon")) {
-      return;
-    }
-
-    // Add screen reader text
-    const srText = document.createElement("span");
-    srText.className = "sr-only";
-    srText.textContent = " (opens in new tab)";
-
-    // Add visual icon
-    const icon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-    icon.setAttribute("class", "external-link-icon");
-    icon.setAttribute("aria-hidden", "true");
-    icon.setAttribute("width", "12");
-    icon.setAttribute("height", "12");
-    icon.setAttribute("viewBox", "0 0 24 24");
-    icon.setAttribute("fill", "none");
-    icon.setAttribute("stroke", "currentColor");
-    icon.setAttribute("stroke-width", "2");
-    icon.setAttribute("stroke-linecap", "round");
-    icon.setAttribute("stroke-linejoin", "round");
-
-    // External link icon path
-    const path1 = document.createElementNS(
-      "http://www.w3.org/2000/svg",
-      "path",
-    );
-    path1.setAttribute(
-      "d",
-      "M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6",
-    );
-
-    const path2 = document.createElementNS(
-      "http://www.w3.org/2000/svg",
-      "polyline",
-    );
-    path2.setAttribute("points", "15 3 21 3 21 9");
-
-    const path3 = document.createElementNS(
-      "http://www.w3.org/2000/svg",
-      "line",
-    );
-    path3.setAttribute("x1", "10");
-    path3.setAttribute("y1", "14");
-    path3.setAttribute("x2", "21");
-    path3.setAttribute("y2", "3");
-
-    icon.appendChild(path1);
-    icon.appendChild(path2);
-    icon.appendChild(path3);
-
-    // Append to link
-    link.appendChild(srText);
-    link.appendChild(icon);
-  });
-}
-
-// Initialize external link indicators on page load
-if (document.readyState === "loading") {
-  document.addEventListener(
-    "DOMContentLoaded",
-    initializeExternalLinkIndicators,
-  );
-} else {
-  initializeExternalLinkIndicators();
 }

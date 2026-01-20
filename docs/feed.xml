@@ -5,14 +5,28 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 19 Jan 2026 22:49:29 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 20 Jan 2026 00:56:38 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Enterprise-scoped budgets that exclude cost center usage in public preview</title>
+      <link>https://github.blog/changelog/2026-01-19-enterprise-scoped-budgets-that-exclude-cost-center-usage-in-public-preview</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-01-19-enterprise-scoped-budgets-that-exclude-cost-center-usage-in-public-preview</guid>
+      <pubDate>Tue, 20 Jan 2026 00:27:17 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
     <item>
       <title>Azure Boards additional field filters (private preview)</title>
       <link>https://devblogs.microsoft.com/devops/azure-boards-additional-field-filters-private-preview/</link>
       <guid isPermaLink="true">https://devblogs.microsoft.com/devops/azure-boards-additional-field-filters-private-preview/</guid>
       <pubDate>Mon, 19 Jan 2026 20:22:53 +0000</pubDate>
       <source>Microsoft DevOps Blog</source>
+    </item>
+    <item>
+      <title>Uniform API server access using clientcmd</title>
+      <link>https://kubernetes.io/blog/2026/01/19/clientcmd-apiserver-access/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2026/01/19/clientcmd-apiserver-access/</guid>
+      <pubDate>Mon, 19 Jan 2026 18:00:00 +0000</pubDate>
+      <source>Kubernetes Blog</source>
     </item>
     <item>
       <title>How tech leaders can turn AI hype into real team productivity</title>
@@ -258,13 +272,6 @@
       <guid isPermaLink="true">https://about.gitlab.com/blog/understanding-flows-multi-agent-workflows/</guid>
       <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
       <source>GitLab Blog</source>
-    </item>
-    <item>
-      <title>Organization custom properties now generally available</title>
-      <link>https://github.blog/changelog/2026-01-13-organization-custom-properties-now-generally-available</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-01-13-organization-custom-properties-now-generally-available</guid>
-      <pubDate>Tue, 13 Jan 2026 20:48:28 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>What AI is actually good for, according to developers</title>
@@ -622,13 +629,6 @@
       <guid isPermaLink="true">https://circleci.com/blog/sign-oci-containers-and-other-artifacts-using-sigstore-cosign/</guid>
       <pubDate>Mon, 22 Dec 2025 07:00:00 +0000</pubDate>
       <source>CircleCI Blog</source>
-    </item>
-    <item>
-      <title>Avoiding Zombie Cluster Members When Upgrading to etcd v3.6</title>
-      <link>https://kubernetes.io/blog/2025/12/21/preventing-etcd-zombies/</link>
-      <guid isPermaLink="true">https://kubernetes.io/blog/2025/12/21/preventing-etcd-zombies/</guid>
-      <pubDate>Sun, 21 Dec 2025 00:00:00 +0000</pubDate>
-      <source>Kubernetes Blog</source>
     </item>
   </channel>
 </rss>
