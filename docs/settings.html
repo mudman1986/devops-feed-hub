@@ -559,27 +559,27 @@
          */
         function applyModeToTheme(baseTheme, mode) {
           if (!baseTheme) return mode;
-          
+
           // View modes don't have light/dark variants
           if (EXPERIMENTAL_VIEW_MODES.includes(baseTheme)) {
             return baseTheme;
           }
-          
+
           // Standard themes (light/dark) - these are already full theme names
           if (baseTheme === "light" || baseTheme === "dark") {
             return mode;
           }
-          
+
           // Arctic-blue is naturally light, so no suffix for light mode
           if (baseTheme === "arctic-blue") {
             return mode === "light" ? "arctic-blue" : "arctic-blue-dark";
           }
-          
+
           // For other experimental themes, append mode suffix
           if (EXPERIMENTAL_BASE_THEMES.includes(baseTheme)) {
             return mode === "light" ? `${baseTheme}-light` : baseTheme;
           }
-          
+
           return baseTheme;
         }
 
@@ -604,7 +604,8 @@
           // Load theme mode (light or dark)
           try {
             const themeMode = localStorage.getItem("themeMode") || "dark";
-            const themeModeSelect = document.getElementById("theme-mode-setting");
+            const themeModeSelect =
+              document.getElementById("theme-mode-setting");
             if (themeModeSelect) themeModeSelect.value = themeMode;
           } catch (e) {
             console.warn("Unable to load theme mode setting:", e);
@@ -612,7 +613,8 @@
 
           // Load theme (default or experimental base theme)
           try {
-            const experimentalTheme = localStorage.getItem("experimentalTheme") || "";
+            const experimentalTheme =
+              localStorage.getItem("experimentalTheme") || "";
             const baseTheme = getBaseTheme(experimentalTheme) || "default";
             const themeSelect = document.getElementById("theme-setting");
             if (themeSelect) themeSelect.value = baseTheme;
@@ -644,7 +646,7 @@
               ];
 
               const baseTheme = getBaseTheme(experimentalTheme);
-              
+
               if (viewModeThemes.includes(experimentalTheme)) {
                 if (experimentalViewmodeSelect) {
                   experimentalViewmodeSelect.value = experimentalTheme;
@@ -693,17 +695,25 @@
               LoadingState.show(themeModeSelect, "Applying mode");
               try {
                 localStorage.setItem("themeMode", mode);
-                
+
                 // Get current theme and apply the new mode to it
-                const currentTheme = document.documentElement.getAttribute("data-theme");
+                const currentTheme =
+                  document.documentElement.getAttribute("data-theme");
                 const baseTheme = getBaseTheme(currentTheme);
-                const experimentalTheme = localStorage.getItem("experimentalTheme");
-                
+                const experimentalTheme =
+                  localStorage.getItem("experimentalTheme");
+
                 let newTheme;
-                if (experimentalTheme && EXPERIMENTAL_VIEW_MODES.includes(experimentalTheme)) {
+                if (
+                  experimentalTheme &&
+                  EXPERIMENTAL_VIEW_MODES.includes(experimentalTheme)
+                ) {
                   // View modes don't change with mode
                   newTheme = experimentalTheme;
-                } else if (baseTheme && EXPERIMENTAL_BASE_THEMES.includes(baseTheme)) {
+                } else if (
+                  baseTheme &&
+                  EXPERIMENTAL_BASE_THEMES.includes(baseTheme)
+                ) {
                   // Apply mode to experimental theme
                   newTheme = applyModeToTheme(baseTheme, mode);
                   localStorage.setItem("experimentalTheme", newTheme);
@@ -712,7 +722,7 @@
                   newTheme = mode;
                   localStorage.setItem("theme", newTheme);
                 }
-                
+
                 applyTheme(newTheme);
 
                 LoadingState.hide(themeModeSelect);
@@ -736,7 +746,7 @@
               LoadingState.show(themeSelect, "Applying theme");
               try {
                 const mode = localStorage.getItem("themeMode") || "dark";
-                
+
                 // Clear experimental theme when default theme is selected
                 localStorage.removeItem("experimentalTheme");
                 const experimentalThemeSelect = document.getElementById(
@@ -748,17 +758,14 @@
                 if (experimentalThemeSelect) experimentalThemeSelect.value = "";
                 if (experimentalViewmodeSelect)
                   experimentalViewmodeSelect.value = "";
-                
+
                 // Apply mode to default theme
                 const newTheme = mode;
                 localStorage.setItem("theme", newTheme);
                 applyTheme(newTheme);
 
                 LoadingState.hide(themeSelect);
-                showToast(
-                  `Theme changed to Default`,
-                  "success",
-                );
+                showToast(`Theme changed to Default`, "success");
               } catch (err) {
                 console.warn("Unable to save theme:", err);
                 LoadingState.hide(themeSelect);
@@ -779,16 +786,18 @@
                 if (baseTheme) {
                   // Get current mode
                   const mode = localStorage.getItem("themeMode") || "dark";
-                  
+
                   // Apply mode to experimental theme
                   const fullTheme = applyModeToTheme(baseTheme, mode);
-                  
+
                   // Save experimental theme with mode applied
-                  if (VALID_EXPERIMENTAL_THEMES.includes(fullTheme) || 
-                      EXPERIMENTAL_BASE_THEMES.includes(baseTheme)) {
+                  if (
+                    VALID_EXPERIMENTAL_THEMES.includes(fullTheme) ||
+                    EXPERIMENTAL_BASE_THEMES.includes(baseTheme)
+                  ) {
                     localStorage.setItem("experimentalTheme", fullTheme);
                     applyTheme(fullTheme);
-                    
+
                     // Clear viewmode dropdown when theme is selected
                     const viewmodeSelect = document.getElementById(
                       "experimental-viewmode-setting",
@@ -801,9 +810,7 @@
                       "success",
                     );
                   } else {
-                    console.warn(
-                      `Invalid experimental theme: ${baseTheme}`,
-                    );
+                    console.warn(`Invalid experimental theme: ${baseTheme}`);
                     LoadingState.hide(experimentalThemeSelect);
                     showToast("Invalid experimental theme", "error");
                   }

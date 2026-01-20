@@ -401,14 +401,17 @@ test.describe("Theme Mode Toggle", () => {
     page,
   }) => {
     await page.goto("/settings.html");
-    await page.waitForSelector('.settings-menu-item[data-section="appearance"]', {
-      timeout: 10000,
-    });
-    
+    await page.waitForSelector(
+      '.settings-menu-item[data-section="appearance"]',
+      {
+        timeout: 10000,
+      },
+    );
+
     // Appearance section should be active by default
     const themeModeSelect = page.locator("#theme-mode-setting");
     await expect(themeModeSelect).toBeVisible();
-    
+
     // Should have dark and light options
     const darkOption = themeModeSelect.locator('option[value="dark"]');
     const lightOption = themeModeSelect.locator('option[value="light"]');
@@ -420,25 +423,29 @@ test.describe("Theme Mode Toggle", () => {
     page,
   }) => {
     await goToExperimentalSection(page);
-    
+
     // Select an experimental theme (defaults to dark mode)
-    await page.locator("#experimental-theme-setting").selectOption("purple-haze");
+    await page
+      .locator("#experimental-theme-setting")
+      .selectOption("purple-haze");
     await page.waitForTimeout(100);
-    
+
     // Verify dark mode is applied
     let dataTheme = await page.evaluate(() =>
       document.documentElement.getAttribute("data-theme"),
     );
     expect(dataTheme).toBe("purple-haze");
-    
+
     // Navigate to Appearance section
-    await page.locator('.settings-menu-item[data-section="appearance"]').click();
+    await page
+      .locator('.settings-menu-item[data-section="appearance"]')
+      .click();
     await page.waitForTimeout(300);
-    
+
     // Change mode to light
     await page.locator("#theme-mode-setting").selectOption("light");
     await page.waitForTimeout(100);
-    
+
     // Verify light mode variant is applied
     dataTheme = await page.evaluate(() =>
       document.documentElement.getAttribute("data-theme"),
@@ -448,15 +455,15 @@ test.describe("Theme Mode Toggle", () => {
 
   test("should persist theme mode across page reloads", async ({ page }) => {
     await page.goto("/settings.html");
-    
+
     // Set theme mode to light
     await page.locator("#theme-mode-setting").selectOption("light");
     await page.waitForTimeout(100);
-    
+
     // Reload page
     await page.reload();
     await page.waitForLoadState("load");
-    
+
     // Check that mode is still light
     const selectedMode = await page.locator("#theme-mode-setting").inputValue();
     expect(selectedMode).toBe("light");
@@ -467,33 +474,35 @@ test.describe("Theme Mode Toggle", () => {
   }) => {
     // Set an experimental theme first
     await goToExperimentalSection(page);
-    await page.locator("#experimental-theme-setting").selectOption("ocean-deep");
+    await page
+      .locator("#experimental-theme-setting")
+      .selectOption("ocean-deep");
     await page.waitForTimeout(100);
-    
+
     // Navigate to home page
     await page.goto("/");
     await page.waitForLoadState("load");
-    
+
     // Verify dark theme is applied
     let dataTheme = await page.evaluate(() =>
       document.documentElement.getAttribute("data-theme"),
     );
     expect(dataTheme).toBe("ocean-deep");
-    
+
     // Click theme toggle
     await page.locator("#theme-toggle").click();
     await page.waitForTimeout(300);
-    
+
     // Verify light variant is applied
     dataTheme = await page.evaluate(() =>
       document.documentElement.getAttribute("data-theme"),
     );
     expect(dataTheme).toBe("ocean-deep-light");
-    
+
     // Click theme toggle again
     await page.locator("#theme-toggle").click();
     await page.waitForTimeout(300);
-    
+
     // Verify back to dark variant
     dataTheme = await page.evaluate(() =>
       document.documentElement.getAttribute("data-theme"),
@@ -503,18 +512,22 @@ test.describe("Theme Mode Toggle", () => {
 });
 
 test.describe("Arctic Blue Theme Special Handling", () => {
-  test("should apply arctic-blue as light mode by default", async ({ page }) => {
+  test("should apply arctic-blue as light mode by default", async ({
+    page,
+  }) => {
     await goToExperimentalSection(page);
-    
+
     // Select arctic-blue theme
-    await page.locator("#experimental-theme-setting").selectOption("arctic-blue");
+    await page
+      .locator("#experimental-theme-setting")
+      .selectOption("arctic-blue");
     await page.waitForTimeout(100);
-    
+
     // Arctic-blue is naturally light, so it should be applied as-is for light mode
     const dataTheme = await page.evaluate(() =>
       document.documentElement.getAttribute("data-theme"),
     );
-    
+
     // With default dark mode, it should apply arctic-blue (which is actually light visually)
     // But the system treats it specially
     expect(["arctic-blue", "arctic-blue-dark"]).toContain(dataTheme);
