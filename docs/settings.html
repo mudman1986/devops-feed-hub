@@ -622,9 +622,6 @@
                   localStorage.setItem("experimentalViewMode", selectedView);
                   localStorage.removeItem("view");
                   
-                  // Update the view attribute
-                  document.documentElement.setAttribute("data-view", selectedView);
-                  
                   showToast(
                     `Experimental view mode: ${selectedView
                       .split("-")
@@ -637,14 +634,14 @@
                   localStorage.setItem("view", selectedView);
                   localStorage.removeItem("experimentalViewMode");
                   
-                  // Update the view attribute
-                  document.documentElement.setAttribute("data-view", selectedView);
-                  
                   showToast(
                     `View mode changed to ${selectedView === "card" ? "Card" : "List"} view`,
                     "success",
                   );
                 }
+                
+                // Update the view attribute (applies to both standard and experimental)
+                document.documentElement.setAttribute("data-view", selectedView);
 
                 LoadingState.hide(viewSelect);
               } catch (err) {
