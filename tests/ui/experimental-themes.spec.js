@@ -13,114 +13,143 @@ test.beforeEach(async ({ page }) => {
   await page.evaluate(() => localStorage.clear());
 });
 
-// Helper function to navigate to experimental themes section
-async function goToExperimentalSection(page) {
-  await page.goto("/settings.html");
-  await page.waitForSelector(
-    '.settings-menu-item[data-section="experimental"]',
-    { timeout: 10000 },
-  );
-  await page
-    .locator('.settings-menu-item[data-section="experimental"]')
-    .click();
-  await page.waitForTimeout(300); // Wait for section to become active
-}
-
 /**
  * Experimental Themes Tests
- * Tests the new experimental themes functionality including color variations and layout redesigns
+ * Tests the consolidated experimental themes functionality in main Theme and View Mode dropdowns
  */
-test.describe("Experimental Themes", () => {
-  test.describe("Settings Page - Experimental Themes Section", () => {
-    test("should display experimental themes section in settings", async ({
+test.describe("Experimental Themes - Consolidated", () => {
+  test.describe("Settings Page - Theme Dropdown", () => {
+    test("should display Theme dropdown with default and beta themes", async ({
       page,
     }) => {
-      await goToExperimentalSection(page);
+      await page.goto("/settings.html");
+      await page.waitForLoadState("load");
 
-      // Check for experimental themes section title
-      const sectionTitle = page.locator(
-        ".settings-section-title:has-text('Experimental Themes')",
+      // Check for Theme setting
+      const themeSelect = page.locator("#theme-setting");
+      await expect(themeSelect).toBeVisible();
+
+      // Check for default option
+      const defaultOption = themeSelect.locator('option[value="default"]');
+      await expect(defaultOption).toBeAttached();
+
+      // Check for some beta themes
+      const purpleHazeOption = themeSelect.locator(
+        'option[value="purple-haze"]',
       );
-      await expect(sectionTitle).toBeVisible();
+      const oceanDeepOption = themeSelect.locator('option[value="ocean-deep"]');
+      await expect(purpleHazeOption).toBeAttached();
+      await expect(oceanDeepOption).toBeAttached();
     });
 
-    test("should display disclaimer about work-in-progress themes", async ({
+    test("should have 12 theme options (1 default + 11 beta themes)", async ({
       page,
     }) => {
-      await goToExperimentalSection(page);
+      await page.goto("/settings.html");
+      await page.waitForLoadState("load");
 
-      // Check for disclaimer
-      const disclaimer = page.locator(".experimental-disclaimer");
-      await expect(disclaimer).toBeVisible();
-      await expect(disclaimer).toContainText("Work in Progress");
-      await expect(disclaimer).toContainText(
-        "may change or be removed without notice",
-      );
-    });
+      const themeSelect = page.locator("#theme-setting");
+      const options = themeSelect.locator("option");
 
-    test("should have experimental theme selector with optgroups", async ({
-      page,
-    }) => {
-      await goToExperimentalSection(page);
-
-      const experimentalThemeSelect = page.locator(
-        "#experimental-theme-setting",
-      );
-      await expect(experimentalThemeSelect).toBeVisible();
-
-      // Check for optgroups in theme selector
-      const colorVariationsDark = page.locator(
-        '#experimental-theme-setting optgroup[label="Color Variations - Dark"]',
-      );
-      const colorVariationsLight = page.locator(
-        '#experimental-theme-setting optgroup[label="Color Variations - Light"]',
-      );
-      const themedStyles = page.locator(
-        '#experimental-theme-setting optgroup[label="Themed Styles"]',
-      );
-
-      await expect(colorVariationsDark).toBeAttached();
-      await expect(colorVariationsLight).toBeAttached();
-      await expect(themedStyles).toBeAttached();
-
-      // Check viewmode selector
-      const experimentalViewmodeSelect = page.locator(
-        "#experimental-viewmode-setting",
-      );
-      await expect(experimentalViewmodeSelect).toBeVisible();
-
-      const alternativeLayouts = page.locator(
-        '#experimental-viewmode-setting optgroup[label="Alternative Layouts"]',
-      );
-      await expect(alternativeLayouts).toBeAttached();
-    });
-
-    test("should have at least 22 experimental themes available (including light variants)", async ({
-      page,
-    }) => {
-      await goToExperimentalSection(page);
-
-      const experimentalThemeSelect = page.locator(
-        "#experimental-theme-setting",
-      );
-      const options = experimentalThemeSelect.locator("option");
-
-      // Count options (excluding the "None" option)
-      // 22 experimental themes + 1 "None" option = 23
+      // Count options: 1 default + 11 beta themes = 12
       const count = await options.count();
-      expect(count).toBeGreaterThanOrEqual(23);
+      expect(count).toBe(12);
+    });
+
+    test("should display beta themes with 'Beta - ' prefix", async ({
+      page,
+    }) => {
+      await page.goto("/settings.html");
+      await page.waitForLoadState("load");
+
+      const themeSelect = page.locator("#theme-setting");
+
+      // Check that experimental themes have Beta prefix
+      const purpleHazeOption = themeSelect.locator(
+        'option[value="purple-haze"]',
+      );
+      const purpleHazeText = await purpleHazeOption.textContent();
+      expect(purpleHazeText).toContain("Beta - Purple Haze");
+
+      const oceanDeepOption = themeSelect.locator('option[value="ocean-deep"]');
+      const oceanDeepText = await oceanDeepOption.textContent();
+      expect(oceanDeepText).toContain("Beta - Ocean Deep");
+    });
+  });
+
+  test.describe("Settings Page - View Mode Dropdown", () => {
+    test("should display View Mode dropdown with standard and beta view modes", async ({
+      page,
+    }) => {
+      await page.goto("/settings.html");
+      await page.waitForLoadState("load");
+
+      // Check for View Mode setting
+      const viewSelect = page.locator("#view-setting");
+      await expect(viewSelect).toBeVisible();
+
+      // Check for standard options
+      const listOption = viewSelect.locator('option[value="list"]');
+      const cardOption = viewSelect.locator('option[value="card"]');
+      await expect(listOption).toBeAttached();
+      await expect(cardOption).toBeAttached();
+
+      // Check for some beta view modes
+      const horizontalScrollOption = viewSelect.locator(
+        'option[value="horizontal-scroll"]',
+      );
+      const masonryGridOption = viewSelect.locator(
+        'option[value="masonry-grid"]',
+      );
+      await expect(horizontalScrollOption).toBeAttached();
+      await expect(masonryGridOption).toBeAttached();
+    });
+
+    test("should have 9 view mode options (2 standard + 7 beta)", async ({
+      page,
+    }) => {
+      await page.goto("/settings.html");
+      await page.waitForLoadState("load");
+
+      const viewSelect = page.locator("#view-setting");
+      const options = viewSelect.locator("option");
+
+      // Count options: 2 standard + 7 beta = 9
+      const count = await options.count();
+      expect(count).toBe(9);
+    });
+
+    test("should display beta view modes with 'Beta - ' prefix", async ({
+      page,
+    }) => {
+      await page.goto("/settings.html");
+      await page.waitForLoadState("load");
+
+      const viewSelect = page.locator("#view-setting");
+
+      // Check that experimental view modes have Beta prefix
+      const horizontalScrollOption = viewSelect.locator(
+        'option[value="horizontal-scroll"]',
+      );
+      const horizontalScrollText = await horizontalScrollOption.textContent();
+      expect(horizontalScrollText).toContain("Beta - Horizontal Scroll");
+
+      const masonryGridOption = viewSelect.locator(
+        'option[value="masonry-grid"]',
+      );
+      const masonryGridText = await masonryGridOption.textContent();
+      expect(masonryGridText).toContain("Beta - Masonry Grid");
     });
   });
 
   test.describe("Theme Application", () => {
-    test("should apply experimental theme when selected", async ({ page }) => {
-      await goToExperimentalSection(page);
+    test("should apply beta theme when selected", async ({ page }) => {
+      await page.goto("/settings.html");
+      await page.waitForLoadState("load");
 
-      // Select an experimental theme
-      const experimentalThemeSelect = page.locator(
-        "#experimental-theme-setting",
-      );
-      await experimentalThemeSelect.selectOption("purple-haze");
+      // Select a beta theme
+      const themeSelect = page.locator("#theme-setting");
+      await themeSelect.selectOption("purple-haze");
 
       // Wait for theme to be applied
       await page.waitForTimeout(100);
@@ -132,16 +161,13 @@ test.describe("Experimental Themes", () => {
       expect(dataTheme).toBe("purple-haze");
     });
 
-    test("should persist experimental theme in localStorage", async ({
-      page,
-    }) => {
-      await goToExperimentalSection(page);
+    test("should persist beta theme in localStorage", async ({ page }) => {
+      await page.goto("/settings.html");
+      await page.waitForLoadState("load");
 
-      // Select an experimental theme
-      const experimentalThemeSelect = page.locator(
-        "#experimental-theme-setting",
-      );
-      await experimentalThemeSelect.selectOption("terminal");
+      // Select a beta theme
+      const themeSelect = page.locator("#theme-setting");
+      await themeSelect.selectOption("terminal");
 
       // Check localStorage
       const experimentalTheme = await page.evaluate(() =>
@@ -150,13 +176,12 @@ test.describe("Experimental Themes", () => {
       expect(experimentalTheme).toBe("terminal");
     });
 
-    test("should load experimental theme on page reload", async ({ page }) => {
-      await goToExperimentalSection(page);
+    test("should load beta theme on page reload", async ({ page }) => {
+      await page.goto("/settings.html");
+      await page.waitForLoadState("load");
 
-      // Set experimental theme
-      await page
-        .locator("#experimental-theme-setting")
-        .selectOption("minimalist");
+      // Set beta theme
+      await page.locator("#theme-setting").selectOption("minimalist");
 
       // Reload page
       await page.reload();
@@ -168,23 +193,22 @@ test.describe("Experimental Themes", () => {
       );
       expect(dataTheme).toBe("minimalist");
 
-      // Check that select still shows the experimental theme
-      const selectedValue = await page
-        .locator("#experimental-theme-setting")
-        .inputValue();
+      // Check that select still shows the beta theme
+      const selectedValue = await page.locator("#theme-setting").inputValue();
       expect(selectedValue).toBe("minimalist");
     });
 
-    test("should clear experimental theme when selecting 'None'", async ({
+    test("should clear beta theme when selecting 'default'", async ({
       page,
     }) => {
-      await goToExperimentalSection(page);
+      await page.goto("/settings.html");
+      await page.waitForLoadState("load");
 
-      // First set an experimental theme
-      await page.locator("#experimental-theme-setting").selectOption("retro");
+      // First set a beta theme
+      await page.locator("#theme-setting").selectOption("retro");
 
-      // Then select "None"
-      await page.locator("#experimental-theme-setting").selectOption("");
+      // Then select "default"
+      await page.locator("#theme-setting").selectOption("default");
 
       // Check localStorage
       const experimentalTheme = await page.evaluate(() =>
@@ -198,60 +222,84 @@ test.describe("Experimental Themes", () => {
       );
       expect(["dark", "light"]).toContain(dataTheme);
     });
+  });
 
-    test("should clear experimental theme when selecting standard theme", async ({
+  test.describe("View Mode Application", () => {
+    test("should apply beta view mode when selected", async ({ page }) => {
+      await page.goto("/settings.html");
+      await page.waitForLoadState("load");
+
+      // Select a beta view mode
+      const viewSelect = page.locator("#view-setting");
+      await viewSelect.selectOption("horizontal-scroll");
+
+      // Wait for view mode to be applied
+      await page.waitForTimeout(100);
+
+      // Check localStorage
+      const experimentalViewMode = await page.evaluate(() =>
+        localStorage.getItem("experimentalViewMode"),
+      );
+      expect(experimentalViewMode).toBe("horizontal-scroll");
+    });
+
+    test("should persist beta view mode in localStorage", async ({ page }) => {
+      await page.goto("/settings.html");
+      await page.waitForLoadState("load");
+
+      // Select a beta view mode
+      const viewSelect = page.locator("#view-setting");
+      await viewSelect.selectOption("masonry-grid");
+
+      // Check localStorage
+      const experimentalViewMode = await page.evaluate(() =>
+        localStorage.getItem("experimentalViewMode"),
+      );
+      expect(experimentalViewMode).toBe("masonry-grid");
+    });
+
+    test("should clear beta view mode when selecting standard view", async ({
       page,
     }) => {
-      await goToExperimentalSection(page);
+      await page.goto("/settings.html");
+      await page.waitForLoadState("load");
 
-      // Set experimental theme
-      await page.locator("#experimental-theme-setting").selectOption("retro");
+      // First set a beta view mode
+      await page.locator("#view-setting").selectOption("masonry-grid");
 
-      // Navigate to Appearance section
-      await page
-        .locator('.settings-menu-item[data-section="appearance"]')
-        .click();
-      await page.waitForTimeout(300);
+      // Then select standard view
+      await page.locator("#view-setting").selectOption("list");
 
-      // Then select standard theme
-      await page.locator("#theme-setting").selectOption("light");
-
-      // Check that experimental theme is cleared
-      const experimentalTheme = await page.evaluate(() =>
-        localStorage.getItem("experimentalTheme"),
+      // Check localStorage
+      const experimentalViewMode = await page.evaluate(() =>
+        localStorage.getItem("experimentalViewMode"),
       );
-      expect(experimentalTheme).toBeNull();
+      expect(experimentalViewMode).toBeNull();
 
-      // Check that standard theme is applied
-      const dataTheme = await page.evaluate(() =>
-        document.documentElement.getAttribute("data-theme"),
-      );
-      expect(dataTheme).toBe("light");
+      const view = await page.evaluate(() => localStorage.getItem("view"));
+      expect(view).toBe("list");
     });
   });
 
   test.describe("Color Variation Themes", () => {
     const colorThemes = [
-      "purple-haze",
-      "ocean-deep",
-      "arctic-blue",
-      "high-contrast-dark",
-      "high-contrast-light",
-      "monochrome",
-      "dracula",
+      { name: "purple-haze", expectedDark: "purple-haze" },
+      { name: "ocean-deep", expectedDark: "ocean-deep" },
+      { name: "arctic-blue", expectedDark: "arctic-blue-dark" }, // Arctic-blue special case
     ];
 
-    for (const theme of colorThemes.slice(0, 3)) {
-      // Test first 3 to save time
-      test(`should apply ${theme} color theme`, async ({ page }) => {
-        await goToExperimentalSection(page);
+    for (const { name, expectedDark } of colorThemes) {
+      test(`should apply ${name} color theme`, async ({ page }) => {
+        await page.goto("/settings.html");
+        await page.waitForLoadState("load");
 
-        await page.locator("#experimental-theme-setting").selectOption(theme);
+        await page.locator("#theme-setting").selectOption(name);
 
         const dataTheme = await page.evaluate(() =>
           document.documentElement.getAttribute("data-theme"),
         );
-        expect(dataTheme).toBe(theme);
+        // With default dark mode, should apply dark variant
+        expect(dataTheme).toBe(expectedDark);
       });
     }
   });
@@ -268,9 +316,10 @@ test.describe("Experimental Themes", () => {
     for (const theme of themedStyles.slice(0, 3)) {
       // Test first 3 to save time
       test(`should apply ${theme} themed style`, async ({ page }) => {
-        await goToExperimentalSection(page);
+        await page.goto("/settings.html");
+        await page.waitForLoadState("load");
 
-        await page.locator("#experimental-theme-setting").selectOption(theme);
+        await page.locator("#theme-setting").selectOption(theme);
 
         const dataTheme = await page.evaluate(() =>
           document.documentElement.getAttribute("data-theme"),
@@ -281,13 +330,12 @@ test.describe("Experimental Themes", () => {
   });
 
   test.describe("Theme Persistence Across Pages", () => {
-    test("should apply experimental theme on index page", async ({ page }) => {
-      await goToExperimentalSection(page);
+    test("should apply beta theme on index page", async ({ page }) => {
+      await page.goto("/settings.html");
+      await page.waitForLoadState("load");
 
-      // Set experimental theme
-      await page
-        .locator("#experimental-theme-setting")
-        .selectOption("terminal");
+      // Set beta theme
+      await page.locator("#theme-setting").selectOption("terminal");
 
       // Navigate to index
       await page.goto("/");
@@ -300,23 +348,22 @@ test.describe("Experimental Themes", () => {
       expect(dataTheme).toBe("terminal");
     });
 
-    test("should maintain experimental theme when navigating back to settings", async ({
+    test("should maintain beta theme when navigating back to settings", async ({
       page,
     }) => {
-      await goToExperimentalSection(page);
+      await page.goto("/settings.html");
+      await page.waitForLoadState("load");
 
-      // Set experimental theme
-      await page.locator("#experimental-theme-setting").selectOption("retro");
+      // Set beta theme
+      await page.locator("#theme-setting").selectOption("retro");
 
       // Navigate away and back
       await page.goto("/");
-      await goToExperimentalSection(page);
+      await page.goto("/settings.html");
       await page.waitForLoadState("load");
 
       // Check that theme is still selected
-      const selectedValue = await page
-        .locator("#experimental-theme-setting")
-        .inputValue();
+      const selectedValue = await page.locator("#theme-setting").inputValue();
       expect(selectedValue).toBe("retro");
 
       const dataTheme = await page.evaluate(() =>
@@ -330,10 +377,11 @@ test.describe("Experimental Themes", () => {
 test.describe("Theme Application Across All Pages", () => {
   const testTheme = "futuristic";
 
-  test("should apply experimental theme on index page", async ({ page }) => {
+  test("should apply beta theme on index page", async ({ page }) => {
     // Set theme via settings
-    await goToExperimentalSection(page);
-    await page.locator("#experimental-theme-setting").selectOption(testTheme);
+    await page.goto("/settings.html");
+    await page.waitForLoadState("load");
+    await page.locator("#theme-setting").selectOption(testTheme);
 
     // Navigate to index
     await page.goto("/");
@@ -345,10 +393,11 @@ test.describe("Theme Application Across All Pages", () => {
     expect(dataTheme).toBe(testTheme);
   });
 
-  test("should apply experimental theme on feed page", async ({ page }) => {
+  test("should apply beta theme on feed page", async ({ page }) => {
     // Set theme via settings
-    await goToExperimentalSection(page);
-    await page.locator("#experimental-theme-setting").selectOption(testTheme);
+    await page.goto("/settings.html");
+    await page.waitForLoadState("load");
+    await page.locator("#theme-setting").selectOption(testTheme);
 
     // Navigate to a feed page
     await page.goto("/feed-test-feed-a.html");
@@ -360,10 +409,11 @@ test.describe("Theme Application Across All Pages", () => {
     expect(dataTheme).toBe(testTheme);
   });
 
-  test("should apply experimental theme on summary page", async ({ page }) => {
+  test("should apply beta theme on summary page", async ({ page }) => {
     // Set theme via settings
-    await goToExperimentalSection(page);
-    await page.locator("#experimental-theme-setting").selectOption(testTheme);
+    await page.goto("/settings.html");
+    await page.waitForLoadState("load");
+    await page.locator("#theme-setting").selectOption(testTheme);
 
     // Navigate to summary page (if it exists)
     const response = await page.goto("/summary.html");
@@ -381,8 +431,9 @@ test.describe("Theme Application Across All Pages", () => {
     page,
   }) => {
     // Set theme
-    await goToExperimentalSection(page);
-    await page.locator("#experimental-theme-setting").selectOption(testTheme);
+    await page.goto("/settings.html");
+    await page.waitForLoadState("load");
+    await page.locator("#theme-setting").selectOption(testTheme);
 
     // Navigate through different pages
     await page.goto("/");
@@ -397,7 +448,7 @@ test.describe("Theme Application Across All Pages", () => {
     );
     expect(dataTheme).toBe(testTheme);
 
-    await goToExperimentalSection(page);
+    await page.goto("/settings.html");
     dataTheme = await page.evaluate(() =>
       document.documentElement.getAttribute("data-theme"),
     );
@@ -405,50 +456,141 @@ test.describe("Theme Application Across All Pages", () => {
   });
 });
 
-test.describe("Light Mode Variants", () => {
-  const lightThemes = [
-    "purple-haze-light",
-    "ocean-deep-light",
-    "dracula-light",
-  ];
+test.describe("Theme Mode Toggle - Home Page Only", () => {
+  test("should toggle between dark and light variants using home page theme toggle", async ({
+    page,
+  }) => {
+    // Set a beta theme first
+    await page.goto("/settings.html");
+    await page.waitForLoadState("load");
+    await page.locator("#theme-setting").selectOption("ocean-deep");
+    await page.waitForTimeout(100);
 
-  test("should have light mode variants for color themes", async ({ page }) => {
-    await goToExperimentalSection(page);
-
-    for (const theme of lightThemes) {
-      const option = page.locator(
-        `#experimental-theme-setting option[value="${theme}"]`,
-      );
-      await expect(option).toBeAttached();
-    }
-  });
-
-  test("should apply light mode variant theme", async ({ page }) => {
-    await goToExperimentalSection(page);
-
-    await page
-      .locator("#experimental-theme-setting")
-      .selectOption("purple-haze-light");
-
-    const dataTheme = await page.evaluate(() =>
-      document.documentElement.getAttribute("data-theme"),
-    );
-    expect(dataTheme).toBe("purple-haze-light");
-  });
-
-  test("should persist light mode variant across pages", async ({ page }) => {
-    await goToExperimentalSection(page);
-
-    await page
-      .locator("#experimental-theme-setting")
-      .selectOption("ocean-deep-light");
-
+    // Navigate to home page
     await page.goto("/");
     await page.waitForLoadState("load");
 
-    const dataTheme = await page.evaluate(() =>
+    // Verify dark theme is applied
+    let dataTheme = await page.evaluate(() =>
+      document.documentElement.getAttribute("data-theme"),
+    );
+    expect(dataTheme).toBe("ocean-deep");
+
+    // Click theme toggle
+    await page.locator("#theme-toggle").click();
+    await page.waitForTimeout(300);
+
+    // Verify light variant is applied
+    dataTheme = await page.evaluate(() =>
       document.documentElement.getAttribute("data-theme"),
     );
     expect(dataTheme).toBe("ocean-deep-light");
+
+    // Click theme toggle again
+    await page.locator("#theme-toggle").click();
+    await page.waitForTimeout(300);
+
+    // Verify back to dark variant
+    dataTheme = await page.evaluate(() =>
+      document.documentElement.getAttribute("data-theme"),
+    );
+    expect(dataTheme).toBe("ocean-deep");
+  });
+
+  test("should toggle default theme between dark and light", async ({
+    page,
+  }) => {
+    // Start with default theme
+    await page.goto("/");
+    await page.waitForLoadState("load");
+
+    // Default should be dark
+    let dataTheme = await page.evaluate(() =>
+      document.documentElement.getAttribute("data-theme"),
+    );
+    expect(dataTheme).toBe("dark");
+
+    // Click theme toggle
+    await page.locator("#theme-toggle").click();
+    await page.waitForTimeout(300);
+
+    // Should switch to light
+    dataTheme = await page.evaluate(() =>
+      document.documentElement.getAttribute("data-theme"),
+    );
+    expect(dataTheme).toBe("light");
+
+    // Click theme toggle again
+    await page.locator("#theme-toggle").click();
+    await page.waitForTimeout(300);
+
+    // Should switch back to dark
+    dataTheme = await page.evaluate(() =>
+      document.documentElement.getAttribute("data-theme"),
+    );
+    expect(dataTheme).toBe("dark");
+  });
+});
+
+test.describe("Arctic Blue Theme Special Handling", () => {
+  test("should apply arctic-blue-dark in dark mode", async ({ page }) => {
+    await page.goto("/settings.html");
+    await page.waitForLoadState("load");
+
+    // Select arctic-blue theme
+    await page.locator("#theme-setting").selectOption("arctic-blue");
+    await page.waitForTimeout(100);
+
+    // With default dark mode, it should apply arctic-blue-dark
+    const dataTheme = await page.evaluate(() =>
+      document.documentElement.getAttribute("data-theme"),
+    );
+    expect(dataTheme).toBe("arctic-blue-dark");
+  });
+
+  test("should apply arctic-blue in light mode", async ({ page }) => {
+    // First switch to light mode via home page toggle
+    await page.goto("/");
+    await page.waitForLoadState("load");
+    await page.locator("#theme-toggle").click();
+    await page.waitForTimeout(300);
+
+    // Now go to settings and select arctic-blue
+    await page.goto("/settings.html");
+    await page.waitForLoadState("load");
+    await page.locator("#theme-setting").selectOption("arctic-blue");
+    await page.waitForTimeout(100);
+
+    // With light mode, it should apply arctic-blue (naturally light)
+    const dataTheme = await page.evaluate(() =>
+      document.documentElement.getAttribute("data-theme"),
+    );
+    expect(dataTheme).toBe("arctic-blue");
+  });
+});
+
+test.describe("No Theme Mode Dropdown in Settings", () => {
+  test("should not have theme-mode-setting dropdown in appearance section", async ({
+    page,
+  }) => {
+    await page.goto("/settings.html");
+    await page.waitForLoadState("load");
+
+    // Check that theme-mode-setting does not exist
+    const themeModeSelect = page.locator("#theme-mode-setting");
+    await expect(themeModeSelect).not.toBeAttached();
+  });
+
+  test("should not have experimental section in settings menu", async ({
+    page,
+  }) => {
+    await page.goto("/settings.html");
+    await page.waitForLoadState("load");
+
+    // Check that experimental section does not exist
+    const experimentalMenuItem = page.locator(
+      '.settings-menu-item[data-section="experimental"]',
+    );
+    await expect(experimentalMenuItem).not.toBeAttached();
   });
 });
