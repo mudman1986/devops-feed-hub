@@ -561,20 +561,10 @@ function updateThemeButton(mode) {
 initializeDropdown("view-select", "view", "list", applyView);
 
 function applyView(view) {
-  // Determine the actual view to apply (could be experimental or standard)
-  let actualView = view;
-
-  // Check if there's an experimental view mode set
-  const experimentalViewMode = getLocalStorage("experimentalViewMode");
-  if (
-    experimentalViewMode &&
-    EXPERIMENTAL_VIEW_MODES.includes(experimentalViewMode)
-  ) {
-    actualView = experimentalViewMode;
-  }
-
   // Apply the view mode
-  htmlElement.setAttribute("data-view", actualView);
+  // Note: experimental view modes are set via settings.html, not this dropdown
+  // This function handles standard view modes (list/card) from the main page dropdown
+  htmlElement.setAttribute("data-view", view);
 }
 
 // ===== SIDEBAR FUNCTIONALITY =====

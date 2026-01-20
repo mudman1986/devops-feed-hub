@@ -622,11 +622,7 @@
                   localStorage.setItem("experimentalViewMode", selectedView);
                   localStorage.removeItem("view");
                   
-                  // Apply the view mode to the page
-                  const currentTheme = document.documentElement.getAttribute("data-theme");
-                  applyTheme(currentTheme); // Re-apply current theme
-                  
-                  // Also update the view attribute
+                  // Update the view attribute
                   document.documentElement.setAttribute("data-view", selectedView);
                   
                   showToast(
