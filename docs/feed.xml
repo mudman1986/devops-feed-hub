@@ -5,8 +5,15 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 20 Jan 2026 20:39:01 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 20 Jan 2026 21:05:45 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>AI-supported vulnerability triage with the GitHub Security Lab Taskflow Agent</title>
+      <link>https://github.blog/security/ai-supported-vulnerability-triage-with-the-github-security-lab-taskflow-agent/</link>
+      <guid isPermaLink="true">https://github.blog/security/ai-supported-vulnerability-triage-with-the-github-security-lab-taskflow-agent/</guid>
+      <pubDate>Tue, 20 Jan 2026 19:52:50 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
     <item>
       <title>Context windows, Plan agent, and TDD: What I learned building a countdown app with GitHub Copilot</title>
       <link>https://github.blog/developer-skills/application-development/context-windows-plan-agent-and-tdd-what-i-learned-building-a-countdown-app-with-github-copilot/</link>
@@ -41,6 +48,13 @@
       <guid isPermaLink="true">https://github.blog/changelog/2026-01-19-enterprise-scoped-budgets-that-exclude-cost-center-usage-in-public-preview</guid>
       <pubDate>Tue, 20 Jan 2026 00:27:17 +0000</pubDate>
       <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>GitLab Bug Bounty Program policy updates</title>
+      <link>https://about.gitlab.com/blog/gitlab-bug-bounty-program-policy-updates/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/gitlab-bug-bounty-program-policy-updates/</guid>
+      <pubDate>Tue, 20 Jan 2026 00:00:00 +0000</pubDate>
+      <source>GitLab Blog</source>
     </item>
     <item>
       <title>Azure Boards additional field filters (private preview)</title>
@@ -566,13 +580,6 @@
       <guid isPermaLink="true">https://kubernetes.io/blog/2025/12/30/kubernetes-v1-35-watch-based-route-reconciliation-in-ccm/</guid>
       <pubDate>Tue, 30 Dec 2025 18:30:00 +0000</pubDate>
       <source>Kubernetes Blog</source>
-    </item>
-    <item>
-      <title>Agentic AI, MCP, and spec-driven development: Top blog posts of 2025</title>
-      <link>https://github.blog/developer-skills/agentic-ai-mcp-and-spec-driven-development-top-blog-posts-of-2025/</link>
-      <guid isPermaLink="true">https://github.blog/developer-skills/agentic-ai-mcp-and-spec-driven-development-top-blog-posts-of-2025/</guid>
-      <pubDate>Tue, 30 Dec 2025 17:20:10 +0000</pubDate>
-      <source>GitHub Blog</source>
     </item>
     <item>
       <title>Kubernetes v1.35: Introducing Workload Aware Scheduling</title>

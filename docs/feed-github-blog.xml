@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-blog.xml</link>
     <description>Articles from GitHub Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 20 Jan 2026 20:39:01 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 20 Jan 2026 21:05:45 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>AI-supported vulnerability triage with the GitHub Security Lab Taskflow Agent</title>
+      <link>https://github.blog/security/ai-supported-vulnerability-triage-with-the-github-security-lab-taskflow-agent/</link>
+      <guid isPermaLink="true">https://github.blog/security/ai-supported-vulnerability-triage-with-the-github-security-lab-taskflow-agent/</guid>
+      <pubDate>Tue, 20 Jan 2026 19:52:50 +0000</pubDate>
+    </item>
     <item>
       <title>Context windows, Plan agent, and TDD: What I learned building a countdown app with GitHub Copilot</title>
       <link>https://github.blog/developer-skills/application-development/context-windows-plan-agent-and-tdd-what-i-learned-building-a-countdown-app-with-github-copilot/</link>
@@ -60,12 +66,6 @@
       <link>https://github.blog/ai-and-ml/llms/why-ai-is-pushing-developers-toward-typed-languages/</link>
       <guid isPermaLink="true">https://github.blog/ai-and-ml/llms/why-ai-is-pushing-developers-toward-typed-languages/</guid>
       <pubDate>Thu, 08 Jan 2026 22:25:54 +0000</pubDate>
-    </item>
-    <item>
-      <title>Agentic AI, MCP, and spec-driven development: Top blog posts of 2025</title>
-      <link>https://github.blog/developer-skills/agentic-ai-mcp-and-spec-driven-development-top-blog-posts-of-2025/</link>
-      <guid isPermaLink="true">https://github.blog/developer-skills/agentic-ai-mcp-and-spec-driven-development-top-blog-posts-of-2025/</guid>
-      <pubDate>Tue, 30 Dec 2025 17:20:10 +0000</pubDate>
     </item>
   </channel>
 </rss>

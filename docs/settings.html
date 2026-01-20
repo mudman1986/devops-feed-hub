@@ -194,15 +194,28 @@
           <div class="settings-group">
             <div class="settings-item">
               <div class="settings-item-label">
+                <label for="theme-mode-setting">Theme Mode</label>
+                <p class="settings-item-description">
+                  Choose between light and dark mode for all themes
+                </p>
+              </div>
+              <div class="settings-item-control">
+                <select id="theme-mode-setting" class="settings-select">
+                  <option value="dark">Dark Mode</option>
+                  <option value="light">Light Mode</option>
+                </select>
+              </div>
+            </div>
+            <div class="settings-item">
+              <div class="settings-item-label">
                 <label for="theme-setting">Theme</label>
                 <p class="settings-item-description">
-                  Choose between light and dark theme
+                  Select the default theme (works with both light and dark mode)
                 </p>
               </div>
               <div class="settings-item-control">
                 <select id="theme-setting" class="settings-select">
-                  <option value="dark">Dark</option>
-                  <option value="light">Light</option>
+                  <option value="default">Default</option>
                 </select>
               </div>
             </div>
@@ -352,35 +365,19 @@
                   >Experimental Color Theme</label
                 >
                 <p class="settings-item-description">
-                  Try out new color schemes
+                  Try out new color schemes (works with dark/light mode toggle)
                 </p>
               </div>
               <div class="settings-item-control">
                 <select id="experimental-theme-setting" class="settings-select">
-                  <option value="">None (Use Standard Theme)</option>
-                  <optgroup label="Color Variations - Dark">
-                    <option value="purple-haze">Purple Haze (Dark)</option>
-                    <option value="ocean-deep">Ocean Deep (Dark)</option>
-                    <option value="arctic-blue">Arctic Blue (Dark)</option>
-                    <option value="high-contrast-dark">
-                      High Contrast (Dark)
-                    </option>
-                    <option value="monochrome">Monochrome (Dark)</option>
-                    <option value="dracula">Dracula (Dark)</option>
-                  </optgroup>
-                  <optgroup label="Color Variations - Light">
-                    <option value="purple-haze-light">
-                      Purple Haze (Light)
-                    </option>
-                    <option value="ocean-deep-light">Ocean Deep (Light)</option>
-                    <option value="arctic-blue-light">
-                      Arctic Blue (Light)
-                    </option>
-                    <option value="high-contrast-light">
-                      High Contrast (Light)
-                    </option>
-                    <option value="monochrome-light">Monochrome (Light)</option>
-                    <option value="dracula-light">Dracula (Light)</option>
+                  <option value="">None (Use Default Theme)</option>
+                  <optgroup label="Color Variations">
+                    <option value="purple-haze">Purple Haze</option>
+                    <option value="ocean-deep">Ocean Deep</option>
+                    <option value="arctic-blue">Arctic Blue</option>
+                    <option value="high-contrast">High Contrast</option>
+                    <option value="monochrome">Monochrome</option>
+                    <option value="dracula">Dracula</option>
                   </optgroup>
                   <optgroup label="Themed Styles">
                     <option value="minimalist">
@@ -392,21 +389,6 @@
                     <option value="retro">Retro - 80s/90s Inspired</option>
                     <option value="futuristic">Futuristic - Sci-Fi Neon</option>
                     <option value="compact">Compact - Dense Information</option>
-                    <option value="minimalist-light">
-                      Minimalist Light - Bright & Clean
-                    </option>
-                    <option value="terminal-light">
-                      Terminal Light - Light Background
-                    </option>
-                    <option value="retro-light">
-                      Retro Light - Vintage Pastel
-                    </option>
-                    <option value="futuristic-light">
-                      Futuristic Light - Bright Sci-Fi
-                    </option>
-                    <option value="compact-light">
-                      Compact Light - Dense & Bright
-                    </option>
                   </optgroup>
                 </select>
               </div>
@@ -514,23 +496,23 @@
           loadRSSFeedLinks();
         }
 
-        // List of valid experimental themes
-        const VALID_EXPERIMENTAL_THEMES = [
+        // List of base experimental themes (without -light/-dark suffixes)
+        const EXPERIMENTAL_BASE_THEMES = [
           "purple-haze",
-          "purple-haze-light",
           "ocean-deep",
-          "ocean-deep-light",
           "arctic-blue",
-          "high-contrast-dark",
-          "high-contrast-light",
+          "high-contrast",
           "monochrome",
           "dracula",
-          "dracula-light",
           "minimalist",
           "terminal",
           "retro",
           "futuristic",
           "compact",
+        ];
+
+        // List of experimental view modes (layout alternatives)
+        const EXPERIMENTAL_VIEW_MODES = [
           "horizontal-scroll",
           "masonry-grid",
           "floating-panels",
@@ -539,6 +521,67 @@
           "list-dense",
           "timeline-vertical",
         ];
+
+        // All valid experimental themes including variants
+        const VALID_EXPERIMENTAL_THEMES = [
+          ...EXPERIMENTAL_BASE_THEMES,
+          ...EXPERIMENTAL_BASE_THEMES.map((t) => `${t}-light`),
+          ...EXPERIMENTAL_BASE_THEMES.map((t) => `${t}-dark`),
+          ...EXPERIMENTAL_VIEW_MODES,
+        ];
+
+        /**
+         * Get the base theme name (without -light or -dark suffix)
+         */
+        function getBaseTheme(theme) {
+          if (!theme) return null;
+          return theme.replace(/-light$|-dark$/, "");
+        }
+
+        /**
+         * Determine if a theme is light mode
+         */
+        function isLightMode(theme) {
+          if (!theme) return false;
+          if (theme === "arctic-blue") return true;
+          return theme.endsWith("-light") || theme === "light";
+        }
+
+        /**
+         * Get current mode (light or dark)
+         */
+        function getCurrentMode(theme) {
+          return isLightMode(theme) ? "light" : "dark";
+        }
+
+        /**
+         * Apply mode to a theme
+         */
+        function applyModeToTheme(baseTheme, mode) {
+          if (!baseTheme) return mode;
+
+          // View modes don't have light/dark variants
+          if (EXPERIMENTAL_VIEW_MODES.includes(baseTheme)) {
+            return baseTheme;
+          }
+
+          // Standard themes (light/dark) - these are already full theme names
+          if (baseTheme === "light" || baseTheme === "dark") {
+            return mode;
+          }
+
+          // Arctic-blue is naturally light, so no suffix for light mode
+          if (baseTheme === "arctic-blue") {
+            return mode === "light" ? "arctic-blue" : "arctic-blue-dark";
+          }
+
+          // For other experimental themes, append mode suffix
+          if (EXPERIMENTAL_BASE_THEMES.includes(baseTheme)) {
+            return mode === "light" ? `${baseTheme}-light` : baseTheme;
+          }
+
+          return baseTheme;
+        }
 
         // Helper function to apply theme
         function applyTheme(themeName) {
@@ -558,11 +601,23 @@
         }
 
         function loadSettings() {
-          // Load theme
+          // Load theme mode (light or dark)
           try {
-            const theme = localStorage.getItem("theme") || "dark";
+            const themeMode = localStorage.getItem("themeMode") || "dark";
+            const themeModeSelect =
+              document.getElementById("theme-mode-setting");
+            if (themeModeSelect) themeModeSelect.value = themeMode;
+          } catch (e) {
+            console.warn("Unable to load theme mode setting:", e);
+          }
+
+          // Load theme (default or experimental base theme)
+          try {
+            const experimentalTheme =
+              localStorage.getItem("experimentalTheme") || "";
+            const baseTheme = getBaseTheme(experimentalTheme) || "default";
             const themeSelect = document.getElementById("theme-setting");
-            if (themeSelect) themeSelect.value = theme;
+            if (themeSelect) themeSelect.value = baseTheme;
           } catch (e) {
             console.warn("Unable to load theme setting:", e);
           }
@@ -590,13 +645,15 @@
                 "timeline-vertical",
               ];
 
+              const baseTheme = getBaseTheme(experimentalTheme);
+
               if (viewModeThemes.includes(experimentalTheme)) {
                 if (experimentalViewmodeSelect) {
                   experimentalViewmodeSelect.value = experimentalTheme;
                 }
-              } else {
+              } else if (EXPERIMENTAL_BASE_THEMES.includes(baseTheme)) {
                 if (experimentalThemeSelect) {
-                  experimentalThemeSelect.value = experimentalTheme;
+                  experimentalThemeSelect.value = baseTheme;
                 }
               }
 
@@ -630,15 +687,67 @@
         }
 
         function setupSettingsListeners() {
-          // Theme setting
+          // Theme Mode setting (light/dark)
+          const themeModeSelect = document.getElementById("theme-mode-setting");
+          if (themeModeSelect) {
+            themeModeSelect.addEventListener("change", async (e) => {
+              const mode = e.target.value;
+              LoadingState.show(themeModeSelect, "Applying mode");
+              try {
+                localStorage.setItem("themeMode", mode);
+
+                // Get current theme and apply the new mode to it
+                const currentTheme =
+                  document.documentElement.getAttribute("data-theme");
+                const baseTheme = getBaseTheme(currentTheme);
+                const experimentalTheme =
+                  localStorage.getItem("experimentalTheme");
+
+                let newTheme;
+                if (
+                  experimentalTheme &&
+                  EXPERIMENTAL_VIEW_MODES.includes(experimentalTheme)
+                ) {
+                  // View modes don't change with mode
+                  newTheme = experimentalTheme;
+                } else if (
+                  baseTheme &&
+                  EXPERIMENTAL_BASE_THEMES.includes(baseTheme)
+                ) {
+                  // Apply mode to experimental theme
+                  newTheme = applyModeToTheme(baseTheme, mode);
+                  localStorage.setItem("experimentalTheme", newTheme);
+                } else {
+                  // Standard theme: just "light" or "dark"
+                  newTheme = mode;
+                  localStorage.setItem("theme", newTheme);
+                }
+
+                applyTheme(newTheme);
+
+                LoadingState.hide(themeModeSelect);
+                showToast(
+                  `Mode changed to ${mode === "dark" ? "Dark" : "Light"}`,
+                  "success",
+                );
+              } catch (err) {
+                console.warn("Unable to save theme mode:", err);
+                LoadingState.hide(themeModeSelect);
+                showToast("Failed to save theme mode", "error");
+              }
+            });
+          }
+
+          // Theme setting (default theme selector)
           const themeSelect = document.getElementById("theme-setting");
           if (themeSelect) {
             themeSelect.addEventListener("change", async (e) => {
               const theme = e.target.value;
               LoadingState.show(themeSelect, "Applying theme");
               try {
-                localStorage.setItem("theme", theme);
-                // Clear experimental theme when standard theme is selected
+                const mode = localStorage.getItem("themeMode") || "dark";
+
+                // Clear experimental theme when default theme is selected
                 localStorage.removeItem("experimentalTheme");
                 const experimentalThemeSelect = document.getElementById(
                   "experimental-theme-setting",
@@ -649,13 +758,14 @@
                 if (experimentalThemeSelect) experimentalThemeSelect.value = "";
                 if (experimentalViewmodeSelect)
                   experimentalViewmodeSelect.value = "";
-                applyTheme(theme);
+
+                // Apply mode to default theme
+                const newTheme = mode;
+                localStorage.setItem("theme", newTheme);
+                applyTheme(newTheme);
 
                 LoadingState.hide(themeSelect);
-                showToast(
-                  `Theme changed to ${theme === "dark" ? "Dark" : "Light"} mode`,
-                  "success",
-                );
+                showToast(`Theme changed to Default`, "success");
               } catch (err) {
                 console.warn("Unable to save theme:", err);
                 LoadingState.hide(themeSelect);
@@ -670,17 +780,24 @@
           );
           if (experimentalThemeSelect) {
             experimentalThemeSelect.addEventListener("change", async (e) => {
-              const experimentalTheme = e.target.value;
+              const baseTheme = e.target.value;
               LoadingState.show(experimentalThemeSelect, "Applying theme");
               try {
-                if (experimentalTheme) {
-                  // Save experimental theme if valid
-                  if (VALID_EXPERIMENTAL_THEMES.includes(experimentalTheme)) {
-                    localStorage.setItem(
-                      "experimentalTheme",
-                      experimentalTheme,
-                    );
-                    applyTheme(experimentalTheme);
+                if (baseTheme) {
+                  // Get current mode
+                  const mode = localStorage.getItem("themeMode") || "dark";
+
+                  // Apply mode to experimental theme
+                  const fullTheme = applyModeToTheme(baseTheme, mode);
+
+                  // Save experimental theme with mode applied
+                  if (
+                    VALID_EXPERIMENTAL_THEMES.includes(fullTheme) ||
+                    EXPERIMENTAL_BASE_THEMES.includes(baseTheme)
+                  ) {
+                    localStorage.setItem("experimentalTheme", fullTheme);
+                    applyTheme(fullTheme);
+
                     // Clear viewmode dropdown when theme is selected
                     const viewmodeSelect = document.getElementById(
                       "experimental-viewmode-setting",
@@ -689,20 +806,19 @@
 
                     LoadingState.hide(experimentalThemeSelect);
                     showToast(
-                      `Experimental theme applied: ${experimentalTheme}`,
+                      `Experimental theme applied: ${baseTheme}`,
                       "success",
                     );
                   } else {
-                    console.warn(
-                      `Invalid experimental theme: ${experimentalTheme}`,
-                    );
+                    console.warn(`Invalid experimental theme: ${baseTheme}`);
                     LoadingState.hide(experimentalThemeSelect);
                     showToast("Invalid experimental theme", "error");
                   }
                 } else {
-                  // Clear experimental theme and revert to standard theme
+                  // Clear experimental theme and revert to default theme
                   localStorage.removeItem("experimentalTheme");
-                  const theme = localStorage.getItem("theme") || "dark";
+                  const mode = localStorage.getItem("themeMode") || "dark";
+                  const theme = localStorage.getItem("theme") || mode;
                   applyTheme(theme);
 
                   LoadingState.hide(experimentalThemeSelect);
