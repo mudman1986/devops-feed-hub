@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml</link>
     <description>Articles from GitHub Changelog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 20 Jan 2026 12:26:31 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 20 Jan 2026 20:36:33 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Strengthen your supply chain with code-to-cloud traceability and SLSA Build Level 3 security</title>
+      <link>https://github.blog/changelog/2026-01-20-strengthen-your-supply-chain-with-code-to-cloud-traceability-and-slsa-build-level-3-security</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-01-20-strengthen-your-supply-chain-with-code-to-cloud-traceability-and-slsa-build-level-3-security</guid>
+      <pubDate>Tue, 20 Jan 2026 16:46:13 +0000</pubDate>
+    </item>
     <item>
       <title>Enterprise-scoped budgets that exclude cost center usage in public preview</title>
       <link>https://github.blog/changelog/2026-01-19-enterprise-scoped-budgets-that-exclude-cost-center-usage-in-public-preview</link>
@@ -60,12 +66,6 @@
       <link>https://github.blog/changelog/2026-01-14-github-copilot-cli-enhanced-agents-context-management-and-new-ways-to-install</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-01-14-github-copilot-cli-enhanced-agents-context-management-and-new-ways-to-install</guid>
       <pubDate>Wed, 14 Jan 2026 20:21:16 +0000</pubDate>
-    </item>
-    <item>
-      <title>GPT-5.2-Codex is now generally available in GitHub Copilot</title>
-      <link>https://github.blog/changelog/2026-01-14-gpt-5-2-codex-is-now-generally-available-in-github-copilot</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-01-14-gpt-5-2-codex-is-now-generally-available-in-github-copilot</guid>
-      <pubDate>Wed, 14 Jan 2026 17:04:31 +0000</pubDate>
     </item>
   </channel>
 </rss>

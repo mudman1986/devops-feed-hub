@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-blog.xml</link>
     <description>Articles from GitHub Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 20 Jan 2026 12:26:31 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 20 Jan 2026 20:36:33 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Context windows, Plan agent, and TDD: What I learned building a countdown app with GitHub Copilot</title>
+      <link>https://github.blog/developer-skills/application-development/context-windows-plan-agent-and-tdd-what-i-learned-building-a-countdown-app-with-github-copilot/</link>
+      <guid isPermaLink="true">https://github.blog/developer-skills/application-development/context-windows-plan-agent-and-tdd-what-i-learned-building-a-countdown-app-with-github-copilot/</guid>
+      <pubDate>Tue, 20 Jan 2026 17:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Building an agentic memory system for GitHub Copilot</title>
       <link>https://github.blog/ai-and-ml/github-copilot/building-an-agentic-memory-system-for-github-copilot/</link>
@@ -60,12 +66,6 @@
       <link>https://github.blog/developer-skills/agentic-ai-mcp-and-spec-driven-development-top-blog-posts-of-2025/</link>
       <guid isPermaLink="true">https://github.blog/developer-skills/agentic-ai-mcp-and-spec-driven-development-top-blog-posts-of-2025/</guid>
       <pubDate>Tue, 30 Dec 2025 17:20:10 +0000</pubDate>
-    </item>
-    <item>
-      <title>Bugs that survive the heat of continuous fuzzing</title>
-      <link>https://github.blog/security/vulnerability-research/bugs-that-survive-the-heat-of-continuous-fuzzing/</link>
-      <guid isPermaLink="true">https://github.blog/security/vulnerability-research/bugs-that-survive-the-heat-of-continuous-fuzzing/</guid>
-      <pubDate>Mon, 29 Dec 2025 22:01:14 +0000</pubDate>
     </item>
   </channel>
 </rss>

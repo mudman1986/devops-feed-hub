@@ -5,8 +5,36 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 20 Jan 2026 12:26:31 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 20 Jan 2026 20:36:33 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Context windows, Plan agent, and TDD: What I learned building a countdown app with GitHub Copilot</title>
+      <link>https://github.blog/developer-skills/application-development/context-windows-plan-agent-and-tdd-what-i-learned-building-a-countdown-app-with-github-copilot/</link>
+      <guid isPermaLink="true">https://github.blog/developer-skills/application-development/context-windows-plan-agent-and-tdd-what-i-learned-building-a-countdown-app-with-github-copilot/</guid>
+      <pubDate>Tue, 20 Jan 2026 17:00:00 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
+    <item>
+      <title>Simplify your identity landscape, reduce risk, and modernize access for any identity</title>
+      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/simplify-your-identity-landscape-reduce-risk-and-modernize/ba-p/4486059</link>
+      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/simplify-your-identity-landscape-reduce-risk-and-modernize/ba-p/4486059</guid>
+      <pubDate>Tue, 20 Jan 2026 17:00:00 +0000</pubDate>
+      <source>Microsoft Entra Blog</source>
+    </item>
+    <item>
+      <title>Four priorities for AI-powered identity and network access security in 2026</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/01/20/four-priorities-for-ai-powered-identity-and-network-access-security-in-2026/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/20/four-priorities-for-ai-powered-identity-and-network-access-security-in-2026/</guid>
+      <pubDate>Tue, 20 Jan 2026 17:00:00 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>Strengthen your supply chain with code-to-cloud traceability and SLSA Build Level 3 security</title>
+      <link>https://github.blog/changelog/2026-01-20-strengthen-your-supply-chain-with-code-to-cloud-traceability-and-slsa-build-level-3-security</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-01-20-strengthen-your-supply-chain-with-code-to-cloud-traceability-and-slsa-build-level-3-security</guid>
+      <pubDate>Tue, 20 Jan 2026 16:46:13 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
     <item>
       <title>Enterprise-scoped budgets that exclude cost center usage in public preview</title>
       <link>https://github.blog/changelog/2026-01-19-enterprise-scoped-budgets-that-exclude-cost-center-usage-in-public-preview</link>
@@ -188,13 +216,6 @@
       <guid isPermaLink="true">https://github.blog/security/community-powered-security-with-ai-an-open-source-framework-for-security-research/</guid>
       <pubDate>Wed, 14 Jan 2026 18:45:09 +0000</pubDate>
       <source>GitHub Blog</source>
-    </item>
-    <item>
-      <title>GPT-5.2-Codex is now generally available in GitHub Copilot</title>
-      <link>https://github.blog/changelog/2026-01-14-gpt-5-2-codex-is-now-generally-available-in-github-copilot</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-01-14-gpt-5-2-codex-is-now-generally-available-in-github-copilot</guid>
-      <pubDate>Wed, 14 Jan 2026 17:04:31 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>Microsoft named a Leader in IDC MarketScape for Unified AI Governance Platforms</title>
@@ -551,13 +572,6 @@
       <link>https://github.blog/developer-skills/agentic-ai-mcp-and-spec-driven-development-top-blog-posts-of-2025/</link>
       <guid isPermaLink="true">https://github.blog/developer-skills/agentic-ai-mcp-and-spec-driven-development-top-blog-posts-of-2025/</guid>
       <pubDate>Tue, 30 Dec 2025 17:20:10 +0000</pubDate>
-      <source>GitHub Blog</source>
-    </item>
-    <item>
-      <title>Bugs that survive the heat of continuous fuzzing</title>
-      <link>https://github.blog/security/vulnerability-research/bugs-that-survive-the-heat-of-continuous-fuzzing/</link>
-      <guid isPermaLink="true">https://github.blog/security/vulnerability-research/bugs-that-survive-the-heat-of-continuous-fuzzing/</guid>
-      <pubDate>Mon, 29 Dec 2025 22:01:14 +0000</pubDate>
       <source>GitHub Blog</source>
     </item>
     <item>
