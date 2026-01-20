@@ -101,28 +101,28 @@ function getCurrentMode(theme) {
  */
 function applyModeToTheme(baseTheme, mode) {
   if (!baseTheme) return mode;
-  
+
   // View modes don't have light/dark variants
   if (EXPERIMENTAL_VIEW_MODES.includes(baseTheme)) {
     return baseTheme;
   }
-  
+
   // Standard themes - "light" and "dark" are already full theme names
   // (not base themes, but we handle them here for completeness)
   if (baseTheme === "light" || baseTheme === "dark") {
     return mode;
   }
-  
+
   // Arctic-blue is naturally light, so no suffix for light mode
   if (baseTheme === "arctic-blue") {
     return mode === "light" ? "arctic-blue" : "arctic-blue-dark";
   }
-  
+
   // For other experimental themes, append mode suffix
   if (EXPERIMENTAL_BASE_THEMES.includes(baseTheme)) {
     return mode === "light" ? `${baseTheme}-light` : baseTheme;
   }
-  
+
   return baseTheme;
 }
 
