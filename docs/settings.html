@@ -637,11 +637,6 @@
               const theme = e.target.value;
               LoadingState.show(themeSelect, "Applying theme");
               try {
-                // Brief delay for visual feedback
-                await new Promise((resolve) =>
-                  setTimeout(resolve, TIMEOUTS.LOADING_MIN_DURATION),
-                );
-
                 localStorage.setItem("theme", theme);
                 // Clear experimental theme when standard theme is selected
                 localStorage.removeItem("experimentalTheme");
@@ -678,11 +673,6 @@
               const experimentalTheme = e.target.value;
               LoadingState.show(experimentalThemeSelect, "Applying theme");
               try {
-                // Brief delay for visual feedback
-                await new Promise((resolve) =>
-                  setTimeout(resolve, TIMEOUTS.LOADING_MIN_DURATION),
-                );
-
                 if (experimentalTheme) {
                   // Save experimental theme if valid
                   if (VALID_EXPERIMENTAL_THEMES.includes(experimentalTheme)) {
@@ -773,9 +763,6 @@
               const view = e.target.value;
               LoadingState.show(viewSelect, "Updating view mode");
               try {
-                await new Promise((resolve) =>
-                  setTimeout(resolve, TIMEOUTS.LOADING_MIN_DURATION),
-                );
                 localStorage.setItem("view", view);
                 LoadingState.hide(viewSelect);
                 showToast(
@@ -797,9 +784,6 @@
               const timeframe = e.target.value;
               LoadingState.show(timeframeSelect, "Updating time range");
               try {
-                await new Promise((resolve) =>
-                  setTimeout(resolve, TIMEOUTS.LOADING_MIN_DURATION),
-                );
                 localStorage.setItem("timeframe", timeframe);
                 LoadingState.hide(timeframeSelect);
                 const timeframeLabels = {
