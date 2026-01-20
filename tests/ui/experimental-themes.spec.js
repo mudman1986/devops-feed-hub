@@ -194,7 +194,7 @@ test.describe("Experimental Themes", () => {
       expect(["dark", "light"]).toContain(dataTheme);
     });
 
-    test("should clear experimental theme when selecting standard theme", async ({
+    test("should clear experimental theme when selecting default theme", async ({
       page,
     }) => {
       await goToExperimentalSection(page);
@@ -208,8 +208,8 @@ test.describe("Experimental Themes", () => {
         .click();
       await page.waitForTimeout(300);
 
-      // Then select standard theme
-      await page.locator("#theme-setting").selectOption("light");
+      // Then select default theme
+      await page.locator("#theme-setting").selectOption("default");
 
       // Check that experimental theme is cleared
       const experimentalTheme = await page.evaluate(() =>
@@ -217,36 +217,32 @@ test.describe("Experimental Themes", () => {
       );
       expect(experimentalTheme).toBeNull();
 
-      // Check that standard theme is applied
+      // Check that default theme is applied (respects current mode)
       const dataTheme = await page.evaluate(() =>
         document.documentElement.getAttribute("data-theme"),
       );
-      expect(dataTheme).toBe("light");
+      expect(["dark", "light"]).toContain(dataTheme);
     });
   });
 
   test.describe("Color Variation Themes", () => {
     const colorThemes = [
-      "purple-haze",
-      "ocean-deep",
-      "arctic-blue",
-      "high-contrast-dark",
-      "high-contrast-light",
-      "monochrome",
-      "dracula",
+      { name: "purple-haze", expectedDark: "purple-haze" },
+      { name: "ocean-deep", expectedDark: "ocean-deep" },
+      { name: "arctic-blue", expectedDark: "arctic-blue-dark" }, // Arctic-blue special case
     ];
 
-    for (const theme of colorThemes.slice(0, 3)) {
-      // Test first 3 to save time
-      test(`should apply ${theme} color theme`, async ({ page }) => {
+    for (const { name, expectedDark } of colorThemes) {
+      test(`should apply ${name} color theme`, async ({ page }) => {
         await goToExperimentalSection(page);
 
-        await page.locator("#experimental-theme-setting").selectOption(theme);
+        await page.locator("#experimental-theme-setting").selectOption(name);
 
         const dataTheme = await page.evaluate(() =>
           document.documentElement.getAttribute("data-theme"),
         );
-        expect(dataTheme).toBe(theme);
+        // With default dark mode, should apply dark variant
+        expect(dataTheme).toBe(expectedDark);
       });
     }
   });
