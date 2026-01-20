@@ -95,7 +95,7 @@ function getCurrentMode(theme) {
 
 /**
  * Apply mode to a theme (returns theme-light or theme-dark)
- * @param {string} baseTheme - Base theme name
+ * @param {string} baseTheme - Base theme name (without mode suffix)
  * @param {string} mode - "light" or "dark"
  * @returns {string} - Full theme name with mode suffix
  */
@@ -107,7 +107,8 @@ function applyModeToTheme(baseTheme, mode) {
     return baseTheme;
   }
   
-  // Standard themes are just "light" or "dark"
+  // Standard themes - "light" and "dark" are already full theme names
+  // (not base themes, but we handle them here for completeness)
   if (baseTheme === "light" || baseTheme === "dark") {
     return mode;
   }

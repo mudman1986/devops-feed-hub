@@ -565,8 +565,8 @@
             return baseTheme;
           }
           
-          // Standard themes are just "light" or "dark"
-          if (baseTheme === "light" || baseTheme === "dark" || baseTheme === "default") {
+          // Standard themes (light/dark) - these are already full theme names
+          if (baseTheme === "light" || baseTheme === "dark") {
             return mode;
           }
           
