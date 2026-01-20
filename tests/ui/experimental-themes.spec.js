@@ -237,10 +237,10 @@ test.describe("Experimental Themes - Consolidated", () => {
       await page.waitForTimeout(100);
 
       // Check localStorage
-      const experimentalTheme = await page.evaluate(() =>
-        localStorage.getItem("experimentalTheme"),
+      const experimentalViewMode = await page.evaluate(() =>
+        localStorage.getItem("experimentalViewMode"),
       );
-      expect(experimentalTheme).toBe("horizontal-scroll");
+      expect(experimentalViewMode).toBe("horizontal-scroll");
     });
 
     test("should persist beta view mode in localStorage", async ({ page }) => {
@@ -252,10 +252,10 @@ test.describe("Experimental Themes - Consolidated", () => {
       await viewSelect.selectOption("masonry-grid");
 
       // Check localStorage
-      const experimentalTheme = await page.evaluate(() =>
-        localStorage.getItem("experimentalTheme"),
+      const experimentalViewMode = await page.evaluate(() =>
+        localStorage.getItem("experimentalViewMode"),
       );
-      expect(experimentalTheme).toBe("masonry-grid");
+      expect(experimentalViewMode).toBe("masonry-grid");
     });
 
     test("should clear beta view mode when selecting standard view", async ({
@@ -271,10 +271,10 @@ test.describe("Experimental Themes - Consolidated", () => {
       await page.locator("#view-setting").selectOption("list");
 
       // Check localStorage
-      const experimentalTheme = await page.evaluate(() =>
-        localStorage.getItem("experimentalTheme"),
+      const experimentalViewMode = await page.evaluate(() =>
+        localStorage.getItem("experimentalViewMode"),
       );
-      expect(experimentalTheme).toBeNull();
+      expect(experimentalViewMode).toBeNull();
 
       const view = await page.evaluate(() => localStorage.getItem("view"));
       expect(view).toBe("list");

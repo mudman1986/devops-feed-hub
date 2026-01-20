@@ -189,6 +189,29 @@ function setLocalStorageJSON(key, value) {
   }
 }
 
+// ===== MIGRATION: Separate Theme and View Mode Storage =====
+// Migrate old data structure where view modes were stored in experimentalTheme
+(function migrateThemeViewModeStorage() {
+  try {
+    const experimentalTheme = localStorage.getItem("experimentalTheme");
+
+    if (
+      experimentalTheme &&
+      EXPERIMENTAL_VIEW_MODES.includes(experimentalTheme)
+    ) {
+      // Old data: experimentalTheme contains a view mode
+      // Move it to experimentalViewMode
+      localStorage.setItem("experimentalViewMode", experimentalTheme);
+      localStorage.removeItem("experimentalTheme");
+      console.log(
+        `Migrated view mode "${experimentalTheme}" to experimentalViewMode`,
+      );
+    }
+  } catch (e) {
+    console.warn("Unable to migrate theme/view mode storage:", e);
+  }
+})();
+
 /**
  * Initialize a dropdown with saved value from localStorage
  * @param {string} selectId - ID of select element
@@ -419,11 +442,14 @@ let savedTheme = "dark";
 let currentMode = "dark";
 
 const experimentalTheme = getLocalStorage("experimentalTheme");
+const experimentalViewMode = getLocalStorage("experimentalViewMode");
 const storedMode = getLocalStorage("themeMode", "dark"); // New: separate mode storage
 
+// Handle theme (color scheme)
 if (
   experimentalTheme &&
-  VALID_EXPERIMENTAL_THEMES.includes(experimentalTheme)
+  VALID_EXPERIMENTAL_THEMES.includes(experimentalTheme) &&
+  !EXPERIMENTAL_VIEW_MODES.includes(experimentalTheme) // Make sure it's not a view mode
 ) {
   // Experimental theme is set
   savedTheme = experimentalTheme;
@@ -435,7 +461,10 @@ if (
     setLocalStorage("themeMode", detectedMode);
   }
 } else {
-  if (experimentalTheme) {
+  if (
+    experimentalTheme &&
+    !EXPERIMENTAL_VIEW_MODES.includes(experimentalTheme)
+  ) {
     console.warn(
       `Invalid experimental theme: ${experimentalTheme}. Using default.`,
     );
@@ -450,7 +479,19 @@ if (
   setLocalStorage("themeMode", currentMode);
 }
 
+// Handle view mode (layout)
+let savedView = "list";
+if (
+  experimentalViewMode &&
+  EXPERIMENTAL_VIEW_MODES.includes(experimentalViewMode)
+) {
+  savedView = experimentalViewMode;
+} else {
+  savedView = getLocalStorage("view", "list");
+}
+
 htmlElement.setAttribute("data-theme", savedTheme);
+htmlElement.setAttribute("data-view", savedView);
 updateThemeButton(currentMode);
 
 themeToggle.addEventListener("click", async () => {
@@ -472,10 +513,6 @@ themeToggle.addEventListener("click", async () => {
   if (currentBaseTheme && EXPERIMENTAL_BASE_THEMES.includes(currentBaseTheme)) {
     // Experimental theme: toggle between light and dark variants
     newTheme = applyModeToTheme(currentBaseTheme, newMode);
-    setLocalStorage("experimentalTheme", newTheme);
-  } else if (EXPERIMENTAL_VIEW_MODES.includes(currentTheme)) {
-    // View modes don't have dark/light variants, just store the mode
-    newTheme = currentTheme;
     setLocalStorage("experimentalTheme", newTheme);
   } else {
     // Standard theme: just "light" or "dark"
@@ -521,18 +558,23 @@ function updateThemeButton(mode) {
 
 // ===== VIEW SELECTOR FUNCTIONALITY =====
 
-const savedView = getLocalStorage("view", "list");
 initializeDropdown("view-select", "view", "list", applyView);
-applyView(savedView);
 
 function applyView(view) {
-  // List is now the default, card needs the attribute
-  if (view === "card") {
-    htmlElement.setAttribute("data-view", "card");
-  } else {
-    // For list view, set data-view="list" to apply list styles
-    htmlElement.setAttribute("data-view", "list");
+  // Determine the actual view to apply (could be experimental or standard)
+  let actualView = view;
+
+  // Check if there's an experimental view mode set
+  const experimentalViewMode = getLocalStorage("experimentalViewMode");
+  if (
+    experimentalViewMode &&
+    EXPERIMENTAL_VIEW_MODES.includes(experimentalViewMode)
+  ) {
+    actualView = experimentalViewMode;
   }
+
+  // Apply the view mode
+  htmlElement.setAttribute("data-view", actualView);
 }
 
 // ===== SIDEBAR FUNCTIONALITY =====

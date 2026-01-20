@@ -511,14 +511,7 @@
               localStorage.getItem("experimentalTheme") || "";
             const themeSelect = document.getElementById("theme-setting");
 
-            // Check if experimentalTheme is a view mode or a theme
-            if (
-              experimentalTheme &&
-              EXPERIMENTAL_VIEW_MODES.includes(experimentalTheme)
-            ) {
-              // It's a view mode stored in experimentalTheme, so theme should be default
-              if (themeSelect) themeSelect.value = "default";
-            } else if (experimentalTheme) {
+            if (experimentalTheme) {
               // It's a theme, get the base theme
               const baseTheme = getBaseTheme(experimentalTheme);
               if (themeSelect && EXPERIMENTAL_BASE_THEMES.includes(baseTheme)) {
@@ -536,17 +529,17 @@
 
           // Load view mode setting (standard or experimental)
           try {
-            const experimentalTheme =
-              localStorage.getItem("experimentalTheme") || "";
+            const experimentalViewMode =
+              localStorage.getItem("experimentalViewMode") || "";
             const view = localStorage.getItem("view") || "list";
             const viewSelect = document.getElementById("view-setting");
 
             if (
-              experimentalTheme &&
-              EXPERIMENTAL_VIEW_MODES.includes(experimentalTheme)
+              experimentalViewMode &&
+              EXPERIMENTAL_VIEW_MODES.includes(experimentalViewMode)
             ) {
               // Experimental view mode
-              if (viewSelect) viewSelect.value = experimentalTheme;
+              if (viewSelect) viewSelect.value = experimentalViewMode;
             } else {
               // Standard view mode
               if (viewSelect) viewSelect.value = view;
@@ -625,10 +618,17 @@
               LoadingState.show(viewSelect, "Updating view mode");
               try {
                 if (EXPERIMENTAL_VIEW_MODES.includes(selectedView)) {
-                  // Store experimental view mode
-                  localStorage.setItem("experimentalTheme", selectedView);
-                  applyTheme(selectedView);
+                  // Store experimental view mode separately
+                  localStorage.setItem("experimentalViewMode", selectedView);
                   localStorage.removeItem("view");
+                  
+                  // Apply the view mode to the page
+                  const currentTheme = document.documentElement.getAttribute("data-theme");
+                  applyTheme(currentTheme); // Re-apply current theme
+                  
+                  // Also update the view attribute
+                  document.documentElement.setAttribute("data-view", selectedView);
+                  
                   showToast(
                     `Experimental view mode: ${selectedView
                       .split("-")
@@ -639,7 +639,11 @@
                 } else {
                   // Store standard view mode (list or card)
                   localStorage.setItem("view", selectedView);
-                  localStorage.removeItem("experimentalTheme");
+                  localStorage.removeItem("experimentalViewMode");
+                  
+                  // Update the view attribute
+                  document.documentElement.setAttribute("data-view", selectedView);
+                  
                   showToast(
                     `View mode changed to ${selectedView === "card" ? "Card" : "List"} view`,
                     "success",
@@ -976,10 +980,6 @@
             if (currentBaseTheme && EXPERIMENTAL_BASE_THEMES.includes(currentBaseTheme)) {
               // Experimental theme: toggle between light and dark variants
               newTheme = applyModeToTheme(currentBaseTheme, newMode);
-              localStorage.setItem("experimentalTheme", newTheme);
-            } else if (EXPERIMENTAL_VIEW_MODES.includes(currentTheme)) {
-              // View modes don't have dark/light variants, just store the mode
-              newTheme = currentTheme;
               localStorage.setItem("experimentalTheme", newTheme);
             } else {
               // Standard theme: just "light" or "dark"
