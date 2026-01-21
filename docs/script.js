@@ -24,23 +24,30 @@ const ACCESSIBILITY = {
 // Mark as Read constants
 const READ_ARTICLES_KEY = "readArticles";
 
-// List of base experimental themes (without -light/-dark suffixes)
-const EXPERIMENTAL_BASE_THEMES = [
+// List of valid experimental themes
+const VALID_EXPERIMENTAL_THEMES = [
   "purple-haze",
+  "purple-haze-light",
   "ocean-deep",
+  "ocean-deep-light",
   "arctic-blue",
-  "high-contrast",
+  "arctic-blue-light",
+  "high-contrast-dark",
+  "high-contrast-light",
   "monochrome",
+  "monochrome-light",
   "dracula",
+  "dracula-light",
   "minimalist",
+  "minimalist-light",
   "terminal",
+  "terminal-light",
   "retro",
+  "retro-light",
   "futuristic",
+  "futuristic-light",
   "compact",
-];
-
-// List of experimental view modes (layout alternatives)
-const EXPERIMENTAL_VIEW_MODES = [
+  "compact-light",
   "horizontal-scroll",
   "masonry-grid",
   "floating-panels",
@@ -49,82 +56,6 @@ const EXPERIMENTAL_VIEW_MODES = [
   "list-dense",
   "timeline-vertical",
 ];
-
-// All valid experimental themes including variants
-const VALID_EXPERIMENTAL_THEMES = [
-  ...EXPERIMENTAL_BASE_THEMES,
-  ...EXPERIMENTAL_BASE_THEMES.map((t) => `${t}-light`),
-  ...EXPERIMENTAL_BASE_THEMES.map((t) => `${t}-dark`),
-  ...EXPERIMENTAL_VIEW_MODES,
-];
-
-// ===== THEME UTILITY FUNCTIONS =====
-
-/**
- * Get the base theme name (without -light or -dark suffix)
- * @param {string} theme - Full theme name
- * @returns {string} - Base theme name
- */
-function getBaseTheme(theme) {
-  if (!theme) return null;
-  // Remove -light or -dark suffix
-  return theme.replace(/-light$|-dark$/, "");
-}
-
-/**
- * Determine if a theme is light mode
- * @param {string} theme - Full theme name
- * @returns {boolean} - True if light mode
- */
-function isLightMode(theme) {
-  if (!theme) return false;
-  // Arctic-blue is always light by default (no -light suffix needed)
-  if (theme === "arctic-blue") return true;
-  // Check for -light suffix
-  return theme.endsWith("-light") || theme === "light";
-}
-
-/**
- * Get current mode (light or dark)
- * @param {string} theme - Full theme name
- * @returns {string} - "light" or "dark"
- */
-function getCurrentMode(theme) {
-  return isLightMode(theme) ? "light" : "dark";
-}
-
-/**
- * Apply mode to a theme (returns theme-light or theme-dark)
- * @param {string} baseTheme - Base theme name (without mode suffix)
- * @param {string} mode - "light" or "dark"
- * @returns {string} - Full theme name with mode suffix
- */
-function applyModeToTheme(baseTheme, mode) {
-  if (!baseTheme) return mode;
-
-  // View modes don't have light/dark variants
-  if (EXPERIMENTAL_VIEW_MODES.includes(baseTheme)) {
-    return baseTheme;
-  }
-
-  // Standard themes - "light" and "dark" are already full theme names
-  // (not base themes, but we handle them here for completeness)
-  if (baseTheme === "light" || baseTheme === "dark") {
-    return mode;
-  }
-
-  // Arctic-blue is naturally light, so no suffix for light mode
-  if (baseTheme === "arctic-blue") {
-    return mode === "light" ? "arctic-blue" : "arctic-blue-dark";
-  }
-
-  // For other experimental themes, append mode suffix
-  if (EXPERIMENTAL_BASE_THEMES.includes(baseTheme)) {
-    return mode === "light" ? `${baseTheme}-light` : baseTheme;
-  }
-
-  return baseTheme;
-}
 
 // ===== SHARED UTILITY FUNCTIONS =====
 
@@ -188,29 +119,6 @@ function setLocalStorageJSON(key, value) {
     console.warn(`Unable to save to localStorage for key "${key}":`, e);
   }
 }
-
-// ===== MIGRATION: Separate Theme and View Mode Storage =====
-// Migrate old data structure where view modes were stored in experimentalTheme
-(function migrateThemeViewModeStorage() {
-  try {
-    const experimentalTheme = localStorage.getItem("experimentalTheme");
-
-    if (
-      experimentalTheme &&
-      EXPERIMENTAL_VIEW_MODES.includes(experimentalTheme)
-    ) {
-      // Old data: experimentalTheme contains a view mode
-      // Move it to experimentalViewMode
-      localStorage.setItem("experimentalViewMode", experimentalTheme);
-      localStorage.removeItem("experimentalTheme");
-      console.log(
-        `Migrated view mode "${experimentalTheme}" to experimentalViewMode`,
-      );
-    }
-  } catch (e) {
-    console.warn("Unable to migrate theme/view mode storage:", e);
-  }
-})();
 
 /**
  * Initialize a dropdown with saved value from localStorage
@@ -437,34 +345,16 @@ function showToast(
 const themeToggle = document.getElementById("theme-toggle");
 const htmlElement = document.documentElement;
 
-// Load theme and mode from localStorage
+// Check for experimental theme first, then fall back to standard theme
 let savedTheme = "dark";
-let currentMode = "dark";
-
 const experimentalTheme = getLocalStorage("experimentalTheme");
-const experimentalViewMode = getLocalStorage("experimentalViewMode");
-const storedMode = getLocalStorage("themeMode", "dark"); // New: separate mode storage
-
-// Handle theme (color scheme)
 if (
   experimentalTheme &&
-  VALID_EXPERIMENTAL_THEMES.includes(experimentalTheme) &&
-  !EXPERIMENTAL_VIEW_MODES.includes(experimentalTheme) // Make sure it's not a view mode
+  VALID_EXPERIMENTAL_THEMES.includes(experimentalTheme)
 ) {
-  // Experimental theme is set
   savedTheme = experimentalTheme;
-  // Detect mode from theme name or use stored mode
-  const detectedMode = getCurrentMode(experimentalTheme);
-  currentMode = detectedMode;
-  // Update stored mode if it differs
-  if (detectedMode !== storedMode) {
-    setLocalStorage("themeMode", detectedMode);
-  }
 } else {
-  if (
-    experimentalTheme &&
-    !EXPERIMENTAL_VIEW_MODES.includes(experimentalTheme)
-  ) {
+  if (experimentalTheme) {
     console.warn(
       `Invalid experimental theme: ${experimentalTheme}. Using default.`,
     );
@@ -475,71 +365,44 @@ if (
     }
   }
   savedTheme = getLocalStorage("theme", "dark");
-  currentMode = savedTheme === "light" ? "light" : "dark";
-  setLocalStorage("themeMode", currentMode);
-}
-
-// Handle view mode (layout)
-let savedView = "list";
-if (
-  experimentalViewMode &&
-  EXPERIMENTAL_VIEW_MODES.includes(experimentalViewMode)
-) {
-  savedView = experimentalViewMode;
-} else {
-  savedView = getLocalStorage("view", "list");
 }
 
 htmlElement.setAttribute("data-theme", savedTheme);
-htmlElement.setAttribute("data-view", savedView);
-updateThemeButton(currentMode);
+updateThemeButton(savedTheme);
 
 themeToggle.addEventListener("click", async () => {
   const currentTheme = htmlElement.getAttribute("data-theme");
-  const currentBaseTheme = getBaseTheme(currentTheme);
-  const currentThemeMode = getCurrentMode(currentTheme);
-  const newMode = currentThemeMode === "light" ? "dark" : "light";
+  const newTheme = currentTheme === "light" ? "dark" : "light";
 
   // Show loading state on the button
-  LoadingState.show(themeToggle, `Switching to ${newMode} mode`);
+  LoadingState.show(themeToggle, `Switching to ${newTheme} mode`);
 
   // Simulate brief delay for visual feedback
   await new Promise((resolve) =>
     setTimeout(resolve, TIMEOUTS.LOADING_MIN_DURATION),
   );
 
-  // Apply new mode to current theme (base or experimental)
-  let newTheme;
-  if (currentBaseTheme && EXPERIMENTAL_BASE_THEMES.includes(currentBaseTheme)) {
-    // Experimental theme: toggle between light and dark variants
-    newTheme = applyModeToTheme(currentBaseTheme, newMode);
-    setLocalStorage("experimentalTheme", newTheme);
-  } else {
-    // Standard theme: just "light" or "dark"
-    newTheme = newMode;
-    setLocalStorage("theme", newTheme);
-    try {
-      localStorage.removeItem("experimentalTheme");
-    } catch (e) {
-      console.warn("Unable to remove experimental theme:", e);
-    }
+  htmlElement.setAttribute("data-theme", newTheme);
+  setLocalStorage("theme", newTheme);
+
+  // Clear experimental theme when toggling standard theme
+  try {
+    localStorage.removeItem("experimentalTheme");
+  } catch (e) {
+    console.warn("Unable to remove experimental theme:", e);
   }
 
-  // Update mode storage
-  setLocalStorage("themeMode", newMode);
-
-  htmlElement.setAttribute("data-theme", newTheme);
-  updateThemeButton(newMode);
+  updateThemeButton(newTheme);
 
   // Hide loading state
   LoadingState.hide(themeToggle);
 });
 
-function updateThemeButton(mode) {
+function updateThemeButton(theme) {
   const iconSVG = document.getElementById("theme-icon");
   const themeText = document.getElementById("theme-text");
 
-  if (mode === "dark") {
+  if (theme === "dark") {
     // Sun icon for light mode
     iconSVG.innerHTML =
       '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
@@ -558,23 +421,18 @@ function updateThemeButton(mode) {
 
 // ===== VIEW SELECTOR FUNCTIONALITY =====
 
+const savedView = getLocalStorage("view", "list");
 initializeDropdown("view-select", "view", "list", applyView);
+applyView(savedView);
 
 function applyView(view) {
-  // Determine the actual view to apply (could be experimental or standard)
-  let actualView = view;
-
-  // Check if there's an experimental view mode set
-  const experimentalViewMode = getLocalStorage("experimentalViewMode");
-  if (
-    experimentalViewMode &&
-    EXPERIMENTAL_VIEW_MODES.includes(experimentalViewMode)
-  ) {
-    actualView = experimentalViewMode;
+  // List is now the default, card needs the attribute
+  if (view === "card") {
+    htmlElement.setAttribute("data-view", "card");
+  } else {
+    // For list view, set data-view="list" to apply list styles
+    htmlElement.setAttribute("data-view", "list");
   }
-
-  // Apply the view mode
-  htmlElement.setAttribute("data-view", actualView);
 }
 
 // ===== SIDEBAR FUNCTIONALITY =====

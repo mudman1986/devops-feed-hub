@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 20 Jan 2026 23:08:47 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 21 Jan 2026 00:58:55 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>CodeQL 2.23.9 has been released</title>
@@ -13,6 +13,13 @@
       <guid isPermaLink="true">https://github.blog/changelog/2026-01-20-codeql-2-23-9-has-been-released</guid>
       <pubDate>Tue, 20 Jan 2026 21:50:01 +0000</pubDate>
       <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>AI-supported vulnerability triage with the GitHub Security Lab Taskflow Agent</title>
+      <link>https://github.blog/security/ai-supported-vulnerability-triage-with-the-github-security-lab-taskflow-agent/</link>
+      <guid isPermaLink="true">https://github.blog/security/ai-supported-vulnerability-triage-with-the-github-security-lab-taskflow-agent/</guid>
+      <pubDate>Tue, 20 Jan 2026 19:52:50 +0000</pubDate>
+      <source>GitHub Blog</source>
     </item>
     <item>
       <title>Context windows, Plan agent, and TDD: What I learned building a countdown app with GitHub Copilot</title>
@@ -573,13 +580,6 @@
       <guid isPermaLink="true">https://kubernetes.io/blog/2025/12/30/kubernetes-v1-35-watch-based-route-reconciliation-in-ccm/</guid>
       <pubDate>Tue, 30 Dec 2025 18:30:00 +0000</pubDate>
       <source>Kubernetes Blog</source>
-    </item>
-    <item>
-      <title>Agentic AI, MCP, and spec-driven development: Top blog posts of 2025</title>
-      <link>https://github.blog/developer-skills/agentic-ai-mcp-and-spec-driven-development-top-blog-posts-of-2025/</link>
-      <guid isPermaLink="true">https://github.blog/developer-skills/agentic-ai-mcp-and-spec-driven-development-top-blog-posts-of-2025/</guid>
-      <pubDate>Tue, 30 Dec 2025 17:20:10 +0000</pubDate>
-      <source>GitHub Blog</source>
     </item>
     <item>
       <title>Kubernetes v1.35: Introducing Workload Aware Scheduling</title>
