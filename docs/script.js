@@ -126,6 +126,20 @@ function applyModeToTheme(baseTheme, mode) {
   return baseTheme;
 }
 
+/**
+ * Get the natural/default mode for a theme
+ * @param {string} baseTheme - Base theme name (without mode suffix)
+ * @returns {string} - "light" or "dark" (the natural default mode)
+ */
+function getNaturalThemeMode(baseTheme) {
+  // Arctic-blue is naturally light
+  if (baseTheme === "arctic-blue") {
+    return "light";
+  }
+  // All other themes are naturally dark
+  return "dark";
+}
+
 // ===== SHARED UTILITY FUNCTIONS =====
 
 /**

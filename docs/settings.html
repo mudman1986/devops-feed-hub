@@ -487,6 +487,20 @@
           return baseTheme;
         }
 
+        /**
+         * Get the natural/default mode for a theme
+         * @param {string} baseTheme - Base theme name (without mode suffix)
+         * @returns {string} - "light" or "dark" (the natural default mode)
+         */
+        function getNaturalThemeMode(baseTheme) {
+          // Arctic-blue is naturally light
+          if (baseTheme === "arctic-blue") {
+            return "light";
+          }
+          // All other themes are naturally dark
+          return "dark";
+        }
+
         // Helper function to apply theme
         function applyTheme(themeName) {
           if (
@@ -567,25 +581,26 @@
               const selectedTheme = e.target.value;
               LoadingState.show(themeSelect, "Applying theme");
               try {
-                const mode = localStorage.getItem("themeMode") || "dark";
-
                 if (selectedTheme === "default") {
-                  // Clear experimental theme and use default
+                  // Clear experimental theme and use current mode (dark/light)
                   localStorage.removeItem("experimentalTheme");
+                  const mode = localStorage.getItem("themeMode") || "dark";
                   const defaultTheme = mode;
                   localStorage.setItem("theme", defaultTheme);
                   applyTheme(defaultTheme);
                   showToast("Theme changed to Default", "success");
                 } else {
-                  // Apply mode to experimental theme
-                  const fullTheme = applyModeToTheme(selectedTheme, mode);
+                  // Apply theme in its natural mode (not forcing current themeMode)
+                  const naturalMode = getNaturalThemeMode(selectedTheme);
+                  const fullTheme = applyModeToTheme(selectedTheme, naturalMode);
 
-                  // Save experimental theme with mode applied
+                  // Save experimental theme in its natural mode
                   if (
                     VALID_EXPERIMENTAL_THEMES.includes(fullTheme) ||
                     EXPERIMENTAL_BASE_THEMES.includes(selectedTheme)
                   ) {
                     localStorage.setItem("experimentalTheme", fullTheme);
+                    localStorage.setItem("themeMode", naturalMode);
                     localStorage.removeItem("theme");
                     applyTheme(fullTheme);
                     showToast(

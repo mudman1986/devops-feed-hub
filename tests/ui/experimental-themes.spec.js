@@ -283,12 +283,12 @@ test.describe("Experimental Themes - Consolidated", () => {
 
   test.describe("Color Variation Themes", () => {
     const colorThemes = [
-      { name: "purple-haze", expectedDark: "purple-haze" },
-      { name: "ocean-deep", expectedDark: "ocean-deep" },
-      { name: "arctic-blue", expectedDark: "arctic-blue-dark" }, // Arctic-blue special case
+      { name: "purple-haze", expectedDefault: "purple-haze" }, // Naturally dark
+      { name: "ocean-deep", expectedDefault: "ocean-deep" }, // Naturally dark
+      { name: "arctic-blue", expectedDefault: "arctic-blue" }, // Naturally light (special case)
     ];
 
-    for (const { name, expectedDark } of colorThemes) {
+    for (const { name, expectedDefault } of colorThemes) {
       test(`should apply ${name} color theme`, async ({ page }) => {
         await page.goto("/settings.html");
         await page.waitForLoadState("load");
@@ -298,8 +298,8 @@ test.describe("Experimental Themes - Consolidated", () => {
         const dataTheme = await page.evaluate(() =>
           document.documentElement.getAttribute("data-theme"),
         );
-        // With default dark mode, should apply dark variant
-        expect(dataTheme).toBe(expectedDark);
+        // Should apply theme in its natural default mode
+        expect(dataTheme).toBe(expectedDefault);
       });
     }
   });
@@ -533,39 +533,44 @@ test.describe("Theme Mode Toggle - Home Page Only", () => {
 });
 
 test.describe("Arctic Blue Theme Special Handling", () => {
-  test("should apply arctic-blue-dark in dark mode", async ({ page }) => {
+  test("should apply arctic-blue in its natural light mode when selected", async ({
+    page,
+  }) => {
     await page.goto("/settings.html");
     await page.waitForLoadState("load");
 
-    // Select arctic-blue theme
+    // Select arctic-blue theme - should always be light (its natural mode)
     await page.locator("#theme-setting").selectOption("arctic-blue");
     await page.waitForTimeout(100);
 
-    // With default dark mode, it should apply arctic-blue-dark
+    // Should apply arctic-blue (naturally light)
     const dataTheme = await page.evaluate(() =>
       document.documentElement.getAttribute("data-theme"),
     );
-    expect(dataTheme).toBe("arctic-blue-dark");
+    expect(dataTheme).toBe("arctic-blue");
   });
 
-  test("should apply arctic-blue in light mode", async ({ page }) => {
-    // First switch to light mode via home page toggle
+  test("should toggle arctic-blue to dark mode using theme toggle", async ({
+    page,
+  }) => {
+    await page.goto("/settings.html");
+    await page.waitForLoadState("load");
+
+    // Select arctic-blue theme (naturally light)
+    await page.locator("#theme-setting").selectOption("arctic-blue");
+    await page.waitForTimeout(100);
+
+    // Navigate to home page and toggle to dark mode
     await page.goto("/");
     await page.waitForLoadState("load");
     await page.locator("#theme-toggle").click();
     await page.waitForTimeout(300);
 
-    // Now go to settings and select arctic-blue
-    await page.goto("/settings.html");
-    await page.waitForLoadState("load");
-    await page.locator("#theme-setting").selectOption("arctic-blue");
-    await page.waitForTimeout(100);
-
-    // With light mode, it should apply arctic-blue (naturally light)
+    // Should now be arctic-blue-dark
     const dataTheme = await page.evaluate(() =>
       document.documentElement.getAttribute("data-theme"),
     );
-    expect(dataTheme).toBe("arctic-blue");
+    expect(dataTheme).toBe("arctic-blue-dark");
   });
 });
 
