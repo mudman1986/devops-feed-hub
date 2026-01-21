@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml</link>
     <description>Articles from Azure Updates</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 21 Jan 2026 12:26:29 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 21 Jan 2026 21:29:39 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>[Launched] Generally Available: Ubuntu 24.04 support in AKS</title>
+      <link>https://azure.microsoft.com/updates?id=548096</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=548096</guid>
+      <pubDate>Wed, 21 Jan 2026 18:00:07 +0000</pubDate>
+    </item>
     <item>
       <title>[In preview] Public Preview: User delegation SAS for Azure Tables, Azure Files, and Azure Queues</title>
       <link>https://azure.microsoft.com/updates?id=548987</link>

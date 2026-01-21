@@ -5,8 +5,43 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 21 Jan 2026 12:26:29 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 21 Jan 2026 21:29:39 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Install and Use GitHub Copilot CLI directly from the GitHub CLI</title>
+      <link>https://github.blog/changelog/2026-01-21-install-and-use-github-copilot-cli-directly-from-the-github-cli</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-01-21-install-and-use-github-copilot-cli-directly-from-the-github-cli</guid>
+      <pubDate>Wed, 21 Jan 2026 20:02:42 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Ubuntu 24.04 support in AKS</title>
+      <link>https://azure.microsoft.com/updates?id=548096</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=548096</guid>
+      <pubDate>Wed, 21 Jan 2026 18:00:07 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>A cheat sheet to slash commands in GitHub Copilot CLI</title>
+      <link>https://github.blog/ai-and-ml/github-copilot/a-cheat-sheet-to-slash-commands-in-github-copilot-cli/</link>
+      <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/a-cheat-sheet-to-slash-commands-in-github-copilot-cli/</guid>
+      <pubDate>Wed, 21 Jan 2026 17:09:10 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
+    <item>
+      <title>Issue #258 - IaCConf, Multi-Environment GitHub Pipelines, ignore_changes Deep Dive, AWS Glue Data Exports, Terraform New Features, Agent Skill for Terraform and OpenTofu</title>
+      <link>https://www.weekly.tf/p/issue-258-iacconf-multi-environment-github-pipelines-ignore-changes-deep-dive-aws-glue-data-exports</link>
+      <guid isPermaLink="true">https://www.weekly.tf/p/issue-258-iacconf-multi-environment-github-pipelines-ignore-changes-deep-dive-aws-glue-data-exports</guid>
+      <pubDate>Wed, 21 Jan 2026 16:01:43 +0000</pubDate>
+      <source>Terraform weekly</source>
+    </item>
+    <item>
+      <title>A new era of agents, a new era of posture</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/01/21/new-era-of-agents-new-era-of-posture/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/21/new-era-of-agents-new-era-of-posture/</guid>
+      <pubDate>Wed, 21 Jan 2026 14:33:31 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
     <item>
       <title>CodeQL 2.23.9 has been released</title>
       <link>https://github.blog/changelog/2026-01-20-codeql-2-23-9-has-been-released</link>
@@ -197,13 +232,6 @@
       <source>GitLab Blog</source>
     </item>
     <item>
-      <title>Copilot SDK in technical preview</title>
-      <link>https://github.blog/changelog/2026-01-14-copilot-sdk-in-technical-preview</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-01-14-copilot-sdk-in-technical-preview</guid>
-      <pubDate>Wed, 14 Jan 2026 23:00:28 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>[Launched] Generally Available: Ubuntu 24.04 support in AKS</title>
       <link>https://azure.microsoft.com/updates?id=536550</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=536550</guid>
@@ -391,13 +419,6 @@
       <guid isPermaLink="true">https://about.gitlab.com/blog/strengthening-gitlab-com-security-mandatory-multi-factor-authentication/</guid>
       <pubDate>Fri, 09 Jan 2026 00:00:00 +0000</pubDate>
       <source>GitLab Blog</source>
-    </item>
-    <item>
-      <title>Why AI is pushing developers toward typed languages</title>
-      <link>https://github.blog/ai-and-ml/llms/why-ai-is-pushing-developers-toward-typed-languages/</link>
-      <guid isPermaLink="true">https://github.blog/ai-and-ml/llms/why-ai-is-pushing-developers-toward-typed-languages/</guid>
-      <pubDate>Thu, 08 Jan 2026 22:25:54 +0000</pubDate>
-      <source>GitHub Blog</source>
     </item>
     <item>
       <title>Automating AWS SDK for Java v1 to v2 Upgrades with AWS Transform</title>
@@ -622,27 +643,6 @@
       <guid isPermaLink="true">https://www.jenkins.io/blog/2025/12/23/repository-signing-keys-changing/</guid>
       <pubDate>Tue, 23 Dec 2025 00:00:00 +0000</pubDate>
       <source>Jenkins Blog</source>
-    </item>
-    <item>
-      <title>Kubernetes v1.35: Kubelet Configuration Drop-in Directory Graduates to GA</title>
-      <link>https://kubernetes.io/blog/2025/12/22/kubernetes-v1-35-kubelet-config-drop-in-directory-ga/</link>
-      <guid isPermaLink="true">https://kubernetes.io/blog/2025/12/22/kubernetes-v1-35-kubelet-config-drop-in-directory-ga/</guid>
-      <pubDate>Mon, 22 Dec 2025 18:30:00 +0000</pubDate>
-      <source>Kubernetes Blog</source>
-    </item>
-    <item>
-      <title>Infrastructure as demos: A Terraform-selling platform, built on Terraform</title>
-      <link>https://www.hashicorp.com/blog/infrastructure-as-demos-a-terraform-selling-platform-built-on-terraform</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/infrastructure-as-demos-a-terraform-selling-platform-built-on-terraform</guid>
-      <pubDate>Mon, 22 Dec 2025 17:00:00 +0000</pubDate>
-      <source>HashiCorp Blog</source>
-    </item>
-    <item>
-      <title>The New Test Run Hub is Going Generally Available!</title>
-      <link>https://devblogs.microsoft.com/devops/the-new-test-run-hub-is-going-generally-available/</link>
-      <guid isPermaLink="true">https://devblogs.microsoft.com/devops/the-new-test-run-hub-is-going-generally-available/</guid>
-      <pubDate>Mon, 22 Dec 2025 13:06:01 +0000</pubDate>
-      <source>Microsoft DevOps Blog</source>
     </item>
   </channel>
 </rss>

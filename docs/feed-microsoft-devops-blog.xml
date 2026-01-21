@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-microsoft-devops-blog.xml</link>
     <description>Articles from Microsoft DevOps Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-microsoft-devops-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 21 Jan 2026 12:26:29 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 21 Jan 2026 21:29:39 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Azure Boards additional field filters (private preview)</title>
@@ -18,12 +18,6 @@
       <link>https://devblogs.microsoft.com/devops/whats-new-with-azure-repos/</link>
       <guid isPermaLink="true">https://devblogs.microsoft.com/devops/whats-new-with-azure-repos/</guid>
       <pubDate>Fri, 16 Jan 2026 19:34:04 +0000</pubDate>
-    </item>
-    <item>
-      <title>The New Test Run Hub is Going Generally Available!</title>
-      <link>https://devblogs.microsoft.com/devops/the-new-test-run-hub-is-going-generally-available/</link>
-      <guid isPermaLink="true">https://devblogs.microsoft.com/devops/the-new-test-run-hub-is-going-generally-available/</guid>
-      <pubDate>Mon, 22 Dec 2025 13:06:01 +0000</pubDate>
     </item>
   </channel>
 </rss>

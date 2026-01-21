@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-hashicorp-blog.xml</link>
     <description>Articles from HashiCorp Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-hashicorp-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 21 Jan 2026 12:26:29 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 21 Jan 2026 21:29:39 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>How GEICO lowered its $300M cloud spend and decoupled security from the network</title>
@@ -48,12 +48,6 @@
       <link>https://www.hashicorp.com/blog/new-year-new-cloud-strategy-5-shifts-cloud-leaders-will-be-making-in-2026</link>
       <guid isPermaLink="true">https://www.hashicorp.com/blog/new-year-new-cloud-strategy-5-shifts-cloud-leaders-will-be-making-in-2026</guid>
       <pubDate>Mon, 29 Dec 2025 17:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Infrastructure as demos: A Terraform-selling platform, built on Terraform</title>
-      <link>https://www.hashicorp.com/blog/infrastructure-as-demos-a-terraform-selling-platform-built-on-terraform</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/infrastructure-as-demos-a-terraform-selling-platform-built-on-terraform</guid>
-      <pubDate>Mon, 22 Dec 2025 17:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
