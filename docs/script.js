@@ -572,12 +572,38 @@ function updateThemeButton(mode) {
 
 // ===== VIEW SELECTOR FUNCTIONALITY =====
 
-initializeDropdown("view-select", "view", "list", applyView);
+// Initialize view selector - need to get value from correct storage location
+const viewSelect = document.getElementById("view-select");
+if (viewSelect) {
+  // Set initial value from savedView (already determined above)
+  viewSelect.value = savedView;
+  
+  // Listen for changes
+  viewSelect.addEventListener("change", () => {
+    const value = viewSelect.value;
+    applyView(value);
+  });
+}
 
 function applyView(view) {
-  // Apply the view mode
-  // Note: experimental view modes are set via settings.html, not this dropdown
-  // This function handles standard view modes (list/card) from the main page dropdown
+  // Apply the view mode - handles both standard and experimental view modes
+  if (EXPERIMENTAL_VIEW_MODES.includes(view)) {
+    // Experimental view mode: store in experimentalViewMode
+    setLocalStorage("experimentalViewMode", view);
+    try {
+      localStorage.removeItem("view");
+    } catch (e) {
+      console.warn("Unable to remove standard view:", e);
+    }
+  } else {
+    // Standard view mode (list/card): store in view
+    setLocalStorage("view", view);
+    try {
+      localStorage.removeItem("experimentalViewMode");
+    } catch (e) {
+      console.warn("Unable to remove experimental view mode:", e);
+    }
+  }
   htmlElement.setAttribute("data-view", view);
 }
 
