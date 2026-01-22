@@ -592,7 +592,10 @@
                 } else {
                   // Apply theme in its natural mode (not forcing current themeMode)
                   const naturalMode = getNaturalThemeMode(selectedTheme);
-                  const fullTheme = applyModeToTheme(selectedTheme, naturalMode);
+                  const fullTheme = applyModeToTheme(
+                    selectedTheme,
+                    naturalMode,
+                  );
 
                   // Save experimental theme in its natural mode
                   if (

@@ -60,8 +60,7 @@ test.describe("Theme Combinations - All Settings", () => {
         let dataTheme = await page.evaluate(() =>
           document.documentElement.getAttribute("data-theme"),
         );
-        const expectedTheme =
-          theme === "default" ? "dark" : theme; // Default theme is just "dark" initially
+        const expectedTheme = theme === "default" ? "dark" : theme; // Default theme is just "dark" initially
         if (theme !== "default") {
           // For experimental themes, should have theme name (might have -light or no suffix for dark)
           expect(dataTheme).toContain(theme.split("-")[0]); // Check base theme name is present

@@ -2,17 +2,17 @@ const { test, expect } = require("@playwright/test");
 
 /**
  * Bug Reproduction Tests: Theme Toggle Bug
- * 
- * Bug Report: "Choose a random theme > theme gets selected > click on the 
+ *
+ * Bug Report: "Choose a random theme > theme gets selected > click on the
  * dark/light button > theme disappears"
- * 
- * Expected Behavior: 
- * - Selecting an experimental theme (e.g., purple-haze) should persist when 
+ *
+ * Expected Behavior:
+ * - Selecting an experimental theme (e.g., purple-haze) should persist when
  *   toggling between light/dark modes
- * - The theme should become "purple-haze-light" or "purple-haze" (not just 
+ * - The theme should become "purple-haze-light" or "purple-haze" (not just
  *   "light" or "dark")
- * 
- * This test file specifically tests the theme toggle button (#theme-toggle) 
+ *
+ * This test file specifically tests the theme toggle button (#theme-toggle)
  * behavior to ensure experimental themes don't disappear.
  */
 
@@ -42,7 +42,7 @@ test.describe("Theme Toggle Bug - Experimental Themes Disappearing", () => {
     expect(dataTheme).toBe("purple-haze");
 
     let experimentalTheme = await page.evaluate(() =>
-      localStorage.getItem("experimentalTheme")
+      localStorage.getItem("experimentalTheme"),
     );
     expect(experimentalTheme).toBe("purple-haze");
 
@@ -66,7 +66,7 @@ test.describe("Theme Toggle Bug - Experimental Themes Disappearing", () => {
     expect(dataTheme).toBe("purple-haze-light");
 
     experimentalTheme = await page.evaluate(() =>
-      localStorage.getItem("experimentalTheme")
+      localStorage.getItem("experimentalTheme"),
     );
     expect(experimentalTheme).toBe("purple-haze-light");
 
@@ -110,7 +110,7 @@ test.describe("Theme Toggle Bug - Experimental Themes Disappearing", () => {
     expect(dataTheme).toBe("purple-haze");
 
     const experimentalTheme = await page.evaluate(() =>
-      localStorage.getItem("experimentalTheme")
+      localStorage.getItem("experimentalTheme"),
     );
     expect(experimentalTheme).toBe("purple-haze");
 
@@ -133,7 +133,7 @@ test.describe("Theme Toggle Bug - Experimental Themes Disappearing", () => {
     // This is because settings.html applies the current themeMode (defaults to "dark") to ALL themes
     // Arctic-blue is naturally light and should stay "arctic-blue" when selected
     let dataTheme = await page.locator("html").getAttribute("data-theme");
-    
+
     // CURRENT BUGGY BEHAVIOR: Theme becomes "arctic-blue-dark" immediately
     // EXPECTED BEHAVIOR: Theme should be "arctic-blue" (its natural light mode)
     // This test FAILS to demonstrate the bug
@@ -155,11 +155,11 @@ test.describe("Theme Toggle Bug - Experimental Themes Disappearing", () => {
 
     // Step 4: CRITICAL TEST - Theme should become "arctic-blue-dark"
     dataTheme = await page.locator("html").getAttribute("data-theme");
-    
+
     expect(dataTheme).toBe("arctic-blue-dark");
 
     const experimentalTheme = await page.evaluate(() =>
-      localStorage.getItem("experimentalTheme")
+      localStorage.getItem("experimentalTheme"),
     );
     expect(experimentalTheme).toBe("arctic-blue-dark");
 
@@ -220,12 +220,12 @@ test.describe("Theme Toggle Bug - Experimental Themes Disappearing", () => {
     expect(dataView).toContain("center-stage");
 
     const experimentalTheme = await page.evaluate(() =>
-      localStorage.getItem("experimentalTheme")
+      localStorage.getItem("experimentalTheme"),
     );
     expect(experimentalTheme).toBe("purple-haze-light");
 
     const experimentalViewMode = await page.evaluate(() =>
-      localStorage.getItem("experimentalViewMode")
+      localStorage.getItem("experimentalViewMode"),
     );
     expect(experimentalViewMode).toBe("center-stage");
   });
@@ -271,7 +271,7 @@ test.describe("Theme Toggle Bug - Experimental Themes Disappearing", () => {
 
     // All toggles should maintain the base theme
     const experimentalTheme = await page.evaluate(() =>
-      localStorage.getItem("experimentalTheme")
+      localStorage.getItem("experimentalTheme"),
     );
     expect(experimentalTheme).toContain("ocean-deep");
   });
@@ -291,7 +291,7 @@ test.describe("Theme Toggle Bug - Experimental Themes Disappearing", () => {
 
     // Before toggle
     let experimentalTheme = await page.evaluate(() =>
-      localStorage.getItem("experimentalTheme")
+      localStorage.getItem("experimentalTheme"),
     );
     expect(experimentalTheme).toBe("dracula");
 
@@ -301,7 +301,7 @@ test.describe("Theme Toggle Bug - Experimental Themes Disappearing", () => {
     await page.waitForTimeout(500);
 
     experimentalTheme = await page.evaluate(() =>
-      localStorage.getItem("experimentalTheme")
+      localStorage.getItem("experimentalTheme"),
     );
     expect(experimentalTheme).toBe("dracula-light");
 
