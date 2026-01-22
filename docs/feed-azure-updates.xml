@@ -5,8 +5,26 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml</link>
     <description>Articles from Azure Updates</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 21 Jan 2026 21:29:39 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 22 Jan 2026 00:58:08 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>[Launched] Generally Available: Azure Load Testing in Switzerland North</title>
+      <link>https://azure.microsoft.com/updates?id=550685</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=550685</guid>
+      <pubDate>Thu, 22 Jan 2026 00:00:08 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Application volume group for Oracle create data protection volume group (API)</title>
+      <link>https://azure.microsoft.com/updates?id=548066</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=548066</guid>
+      <pubDate>Thu, 22 Jan 2026 00:00:08 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Azure File Sync in Israel Central</title>
+      <link>https://azure.microsoft.com/updates?id=548974</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=548974</guid>
+      <pubDate>Wed, 21 Jan 2026 22:15:11 +0000</pubDate>
+    </item>
     <item>
       <title>[Launched] Generally Available: Ubuntu 24.04 support in AKS</title>
       <link>https://azure.microsoft.com/updates?id=548096</link>

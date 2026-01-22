@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml</link>
     <description>Articles from GitHub Changelog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 21 Jan 2026 21:29:39 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 22 Jan 2026 00:58:08 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>GitHub Copilot CLI: Plan before you build, steer as you go</title>
+      <link>https://github.blog/changelog/2026-01-21-github-copilot-cli-plan-before-you-build-steer-as-you-go</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-01-21-github-copilot-cli-plan-before-you-build-steer-as-you-go</guid>
+      <pubDate>Wed, 21 Jan 2026 21:44:44 +0000</pubDate>
+    </item>
     <item>
       <title>Install and Use GitHub Copilot CLI directly from the GitHub CLI</title>
       <link>https://github.blog/changelog/2026-01-21-install-and-use-github-copilot-cli-directly-from-the-github-cli</link>
@@ -60,12 +66,6 @@
       <link>https://github.blog/changelog/2026-01-15-hierarchy-view-now-available-in-github-projects</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-01-15-hierarchy-view-now-available-in-github-projects</guid>
       <pubDate>Thu, 15 Jan 2026 20:19:53 +0000</pubDate>
-    </item>
-    <item>
-      <title>GitHub Copilot bring your own key (BYOK) enhancements</title>
-      <link>https://github.blog/changelog/2026-01-15-github-copilot-bring-your-own-key-byok-enhancements</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-01-15-github-copilot-bring-your-own-key-byok-enhancements</guid>
-      <pubDate>Thu, 15 Jan 2026 20:01:40 +0000</pubDate>
     </item>
   </channel>
 </rss>

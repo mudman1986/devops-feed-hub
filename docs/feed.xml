@@ -5,8 +5,36 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 21 Jan 2026 21:29:39 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 22 Jan 2026 00:58:08 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>[Launched] Generally Available: Azure Load Testing in Switzerland North</title>
+      <link>https://azure.microsoft.com/updates?id=550685</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=550685</guid>
+      <pubDate>Thu, 22 Jan 2026 00:00:08 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Application volume group for Oracle create data protection volume group (API)</title>
+      <link>https://azure.microsoft.com/updates?id=548066</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=548066</guid>
+      <pubDate>Thu, 22 Jan 2026 00:00:08 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Azure File Sync in Israel Central</title>
+      <link>https://azure.microsoft.com/updates?id=548974</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=548974</guid>
+      <pubDate>Wed, 21 Jan 2026 22:15:11 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>GitHub Copilot CLI: Plan before you build, steer as you go</title>
+      <link>https://github.blog/changelog/2026-01-21-github-copilot-cli-plan-before-you-build-steer-as-you-go</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-01-21-github-copilot-cli-plan-before-you-build-steer-as-you-go</guid>
+      <pubDate>Wed, 21 Jan 2026 21:44:44 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
     <item>
       <title>Install and Use GitHub Copilot CLI directly from the GitHub CLI</title>
       <link>https://github.blog/changelog/2026-01-21-install-and-use-github-copilot-cli-directly-from-the-github-cli</link>
@@ -20,6 +48,13 @@
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=548096</guid>
       <pubDate>Wed, 21 Jan 2026 18:00:07 +0000</pubDate>
       <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>Announcing the Checkpoint/Restore Working Group</title>
+      <link>https://kubernetes.io/blog/2026/01/21/introducing-checkpoint-restore-wg/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2026/01/21/introducing-checkpoint-restore-wg/</guid>
+      <pubDate>Wed, 21 Jan 2026 18:00:00 +0000</pubDate>
+      <source>Kubernetes Blog</source>
     </item>
     <item>
       <title>A cheat sheet to slash commands in GitHub Copilot CLI</title>
@@ -187,13 +222,6 @@
       <link>https://github.blog/changelog/2026-01-15-hierarchy-view-now-available-in-github-projects</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-01-15-hierarchy-view-now-available-in-github-projects</guid>
       <pubDate>Thu, 15 Jan 2026 20:19:53 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>GitHub Copilot bring your own key (BYOK) enhancements</title>
-      <link>https://github.blog/changelog/2026-01-15-github-copilot-bring-your-own-key-byok-enhancements</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-01-15-github-copilot-bring-your-own-key-byok-enhancements</guid>
-      <pubDate>Thu, 15 Jan 2026 20:01:40 +0000</pubDate>
       <source>GitHub Changelog</source>
     </item>
     <item>
@@ -636,13 +664,6 @@
       <guid isPermaLink="true">https://kubernetes.io/blog/2025/12/23/kubernetes-v1-35-fine-grained-supplementalgroups-control-ga/</guid>
       <pubDate>Tue, 23 Dec 2025 18:30:00 +0000</pubDate>
       <source>Kubernetes Blog</source>
-    </item>
-    <item>
-      <title>Jenkins 2.543 and 2.541.1: New Linux Repository Signing Keys</title>
-      <link>https://www.jenkins.io/blog/2025/12/23/repository-signing-keys-changing/</link>
-      <guid isPermaLink="true">https://www.jenkins.io/blog/2025/12/23/repository-signing-keys-changing/</guid>
-      <pubDate>Tue, 23 Dec 2025 00:00:00 +0000</pubDate>
-      <source>Jenkins Blog</source>
     </item>
   </channel>
 </rss>
