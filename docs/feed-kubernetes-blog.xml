@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-kubernetes-blog.xml</link>
     <description>Articles from Kubernetes Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-kubernetes-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 22 Jan 2026 18:20:33 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 22 Jan 2026 20:00:36 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Headlamp in 2025: Project Highlights</title>
@@ -72,12 +72,6 @@
       <link>https://kubernetes.io/blog/2025/12/29/kubernetes-v1-35-introducing-workload-aware-scheduling/</link>
       <guid isPermaLink="true">https://kubernetes.io/blog/2025/12/29/kubernetes-v1-35-introducing-workload-aware-scheduling/</guid>
       <pubDate>Mon, 29 Dec 2025 18:30:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Kubernetes v1.35: Fine-grained Supplemental Groups Control Graduates to GA</title>
-      <link>https://kubernetes.io/blog/2025/12/23/kubernetes-v1-35-fine-grained-supplementalgroups-control-ga/</link>
-      <guid isPermaLink="true">https://kubernetes.io/blog/2025/12/23/kubernetes-v1-35-fine-grained-supplementalgroups-control-ga/</guid>
-      <pubDate>Tue, 23 Dec 2025 18:30:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

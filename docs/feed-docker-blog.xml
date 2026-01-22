@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-docker-blog.xml</link>
     <description>Articles from Docker Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-docker-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 22 Jan 2026 18:20:33 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 22 Jan 2026 20:00:36 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Using MCP Servers: From Quick Tools to Multi-Agent Systems</title>
+      <link>https://www.docker.com/blog/mcp-servers-docker-toolkit-cagent-gateway/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/mcp-servers-docker-toolkit-cagent-gateway/</guid>
+      <pubDate>Thu, 22 Jan 2026 19:35:33 +0000</pubDate>
+    </item>
     <item>
       <title>Your Dependencies Don’t Care About Your FIPS Configuration</title>
       <link>https://www.docker.com/blog/fips-dependencies-and-prebuilt-binaries/</link>
