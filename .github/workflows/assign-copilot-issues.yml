@@ -77,3 +77,4 @@ jobs:
           allow-parent-issues: ${{ inputs.allow_parent_issues || 'false' }}
           skip-labels: ${{ inputs.skip_labels || 'no-ai,refining' }}
           refactor-threshold: ${{ inputs.refactor_threshold || '4' }}
+          refactor-issue-template: .github/REFACTOR_ISSUE_TEMPLATE.md
