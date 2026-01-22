@@ -577,7 +577,7 @@ const viewSelect = document.getElementById("view-select");
 if (viewSelect) {
   // Set initial value from savedView (already determined above)
   viewSelect.value = savedView;
-  
+
   // Listen for changes
   viewSelect.addEventListener("change", () => {
     const value = viewSelect.value;

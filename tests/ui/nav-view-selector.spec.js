@@ -136,9 +136,7 @@ test.describe("Navigation View Selector with Experimental Modes", () => {
     await page.waitForTimeout(500);
 
     // Verify settings page shows correct view mode
-    const settingsViewValue = await page
-      .locator("#view-setting")
-      .inputValue();
+    const settingsViewValue = await page.locator("#view-setting").inputValue();
     expect(settingsViewValue).toBe("timeline-vertical");
 
     // Navigate back to home
