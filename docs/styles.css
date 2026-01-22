@@ -3009,19 +3009,19 @@ h3 {
 }
 
 /* Horizontal-Scroll - Everything scrolls horizontally */
-[data-theme="horizontal-scroll"] .container {
+[data-view="horizontal-scroll"] .container {
   flex-direction: row;
   min-height: auto;
 }
 
-[data-theme="horizontal-scroll"] .main-content {
+[data-view="horizontal-scroll"] .main-content {
   overflow-x: auto;
   overflow-y: hidden;
   white-space: nowrap;
   padding: 2rem 0;
 }
 
-[data-theme="horizontal-scroll"] .feed-section {
+[data-view="horizontal-scroll"] .feed-section {
   display: inline-block;
   vertical-align: top;
   width: 500px;
@@ -3318,28 +3318,28 @@ h3 {
 }
 
 /* Center-Stage - Everything centered, single column */
-[data-theme="center-stage"] .container {
+[data-view="center-stage"] .container {
   flex-direction: row;
 }
 
-[data-theme="center-stage"] .header {
+[data-view="center-stage"] .header {
   width: 100%;
   text-align: center;
   padding: 3rem 2rem;
 }
 
-[data-theme="center-stage"] .header-title {
+[data-view="center-stage"] .header-title {
   font-size: 4rem;
   font-weight: 900;
   justify-content: center;
 }
 
-[data-theme="center-stage"] .header-controls {
+[data-view="center-stage"] .header-controls {
   justify-content: center;
   margin-top: 1.5rem;
 }
 
-[data-theme="center-stage"] .main-content {
+[data-view="center-stage"] .main-content {
   width: 100%;
   max-width: 900px;
   margin: 0 auto;
@@ -3348,29 +3348,29 @@ h3 {
 
 /* Sidebar stays on right side with flex-direction: row */
 
-[data-theme="center-stage"] .feed-section {
+[data-view="center-stage"] .feed-section {
   text-align: center;
   padding: 3rem 2rem;
 }
 
-[data-theme="center-stage"] h1,
-[data-theme="center-stage"] h2,
-[data-theme="center-stage"] h3 {
+[data-view="center-stage"] h1,
+[data-view="center-stage"] h2,
+[data-view="center-stage"] h3 {
   text-align: center;
 }
 
-[data-theme="center-stage"] h2 {
+[data-view="center-stage"] h2 {
   font-size: 2.5rem;
 }
 
-[data-theme="center-stage"] .article-item {
+[data-view="center-stage"] .article-item {
   text-align: left;
   padding: 2rem;
   margin: 1.5rem auto;
   max-width: 700px;
 }
 
-[data-theme="center-stage"] .article-title {
+[data-view="center-stage"] .article-title {
   font-size: 1.5rem;
 }
 
@@ -3765,11 +3765,11 @@ h3 {
 }
 
 /* Top-Strip - Drudge Report style with navigation strip on top */
-[data-theme="top-strip"] .container {
+[data-view="top-strip"] .container {
   flex-direction: row;
 }
 
-[data-theme="top-strip"] .header {
+[data-view="top-strip"] .header {
   padding: 1rem 2rem;
   background: var(--bg-secondary);
   border-bottom: 2px solid var(--border-accent);
@@ -3777,40 +3777,40 @@ h3 {
 
 /* Sidebar stays on right side with flex-direction: row */
 
-[data-theme="top-strip"] .main-content {
+[data-view="top-strip"] .main-content {
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
   padding: 2rem;
 }
 
-[data-theme="top-strip"] .article-list {
+[data-view="top-strip"] .article-list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
 }
 
-[data-theme="top-strip"] .article-item {
+[data-view="top-strip"] .article-item {
   padding: 1.5rem;
 }
 
 /* List-Dense - Reddit/Hacker News style minimal list */
-[data-theme="list-dense"] {
+[data-view="list-dense"] {
   font-family: "Verdana", "Arial", sans-serif;
   font-size: 0.875rem;
 }
 
-[data-theme="list-dense"] .container {
+[data-view="list-dense"] .container {
   flex-direction: row;
 }
 
-[data-theme="list-dense"] .header {
+[data-view="list-dense"] .header {
   padding: 0.5rem 1rem;
   background: var(--border-accent);
   border: none;
 }
 
-[data-theme="list-dense"] .header-title {
+[data-view="list-dense"] .header-title {
   font-size: 1.5rem;
   color: #fff;
   background: none;
@@ -3820,7 +3820,7 @@ h3 {
 
 /* Sidebar stays on right side with flex-direction: row */
 
-[data-theme="list-dense"] .main-content {
+[data-view="list-dense"] .main-content {
   flex: 1;
   max-width: 1200px;
   margin: 0 auto;
@@ -3828,7 +3828,7 @@ h3 {
   background: var(--bg-secondary);
 }
 
-[data-theme="list-dense"] .feed-section {
+[data-view="list-dense"] .feed-section {
   background: transparent;
   border: none;
   box-shadow: none;
@@ -3836,22 +3836,22 @@ h3 {
   margin-bottom: 1.5rem;
 }
 
-[data-theme="list-dense"] h2 {
+[data-view="list-dense"] h2 {
   font-size: 1.25rem;
   margin-bottom: 0.75rem;
   border-bottom: 2px solid var(--border-primary);
   padding-bottom: 0.5rem;
 }
 
-[data-theme="list-dense"] h2::before {
+[data-view="list-dense"] h2::before {
   display: none;
 }
 
-[data-theme="list-dense"] .article-list {
+[data-view="list-dense"] .article-list {
   list-style: none;
 }
 
-[data-theme="list-dense"] .article-item {
+[data-view="list-dense"] .article-item {
   background: transparent;
   border: none;
   border-bottom: 1px dotted var(--border-primary);
@@ -3859,24 +3859,24 @@ h3 {
   border-radius: 0;
 }
 
-[data-theme="list-dense"] .article-item:hover {
+[data-view="list-dense"] .article-item:hover {
   background: var(--bg-tertiary);
   padding-left: 0.5rem;
 }
 
-[data-theme="list-dense"] .article-title {
+[data-view="list-dense"] .article-title {
   font-size: 0.875rem;
   font-weight: 600;
   margin-bottom: 0.25rem;
 }
 
-[data-theme="list-dense"] .article-title::before {
+[data-view="list-dense"] .article-title::before {
   content: "▸ ";
   color: var(--border-accent);
   font-weight: 700;
 }
 
-[data-theme="list-dense"] .article-meta {
+[data-view="list-dense"] .article-meta {
   font-size: 0.75rem;
   color: var(--text-secondary);
 }
