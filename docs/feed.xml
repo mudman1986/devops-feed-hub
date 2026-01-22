@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 22 Jan 2026 20:00:36 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 22 Jan 2026 20:09:13 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Using MCP Servers: From Quick Tools to Multi-Agent Systems</title>
@@ -41,6 +41,13 @@
       <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/22/microsoft-security-success-stories-why-integrated-security-is-the-foundation-of-ai-transformation/</guid>
       <pubDate>Thu, 22 Jan 2026 17:00:00 +0000</pubDate>
       <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>Build an agent into any app with the GitHub Copilot SDK</title>
+      <link>https://github.blog/news-insights/company-news/build-an-agent-into-any-app-with-the-github-copilot-sdk/</link>
+      <guid isPermaLink="true">https://github.blog/news-insights/company-news/build-an-agent-into-any-app-with-the-github-copilot-sdk/</guid>
+      <pubDate>Thu, 22 Jan 2026 15:01:44 +0000</pubDate>
+      <source>GitHub Blog</source>
     </item>
     <item>
       <title>Your Dependencies Don’t Care About Your FIPS Configuration</title>
@@ -461,13 +468,6 @@
       <guid isPermaLink="true">https://www.hashicorp.com/blog/hybrid-cloud-explained-what-it-is-what-it-isn-t-and-why-having-a-plan-matters</guid>
       <pubDate>Mon, 12 Jan 2026 17:00:00 +0000</pubDate>
       <source>HashiCorp Blog</source>
-    </item>
-    <item>
-      <title>Light waves, rising tides, and drifting ships: Game Off 2025 winners</title>
-      <link>https://github.blog/open-source/gaming/light-waves-rising-tides-and-drifting-ships-game-off-2025-winners/</link>
-      <guid isPermaLink="true">https://github.blog/open-source/gaming/light-waves-rising-tides-and-drifting-ships-game-off-2025-winners/</guid>
-      <pubDate>Sat, 10 Jan 2026 21:36:00 +0000</pubDate>
-      <source>GitHub Blog</source>
     </item>
     <item>
       <title>Kubernetes v1.35: Restricting executables invoked by kubeconfigs via exec plugin allowList added to kuberc</title>
