@@ -5,8 +5,22 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 22 Jan 2026 00:58:08 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 22 Jan 2026 11:25:07 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Resurgence of a multi‑stage AiTM phishing and BEC campaign abusing SharePoint</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/01/21/multistage-aitm-phishing-bec-campaign-abusing-sharepoint/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/21/multistage-aitm-phishing-bec-campaign-abusing-sharepoint/</guid>
+      <pubDate>Thu, 22 Jan 2026 05:14:14 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>Headlamp in 2025: Project Highlights</title>
+      <link>https://kubernetes.io/blog/2026/01/22/headlamp-in-2025-project-highlights/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2026/01/22/headlamp-in-2025-project-highlights/</guid>
+      <pubDate>Thu, 22 Jan 2026 02:00:00 +0000</pubDate>
+      <source>Kubernetes Blog</source>
+    </item>
     <item>
       <title>[Launched] Generally Available: Azure Load Testing in Switzerland North</title>
       <link>https://azure.microsoft.com/updates?id=550685</link>

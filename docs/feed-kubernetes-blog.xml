@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-kubernetes-blog.xml</link>
     <description>Articles from Kubernetes Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-kubernetes-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 22 Jan 2026 00:58:08 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 22 Jan 2026 11:25:07 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Headlamp in 2025: Project Highlights</title>
+      <link>https://kubernetes.io/blog/2026/01/22/headlamp-in-2025-project-highlights/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2026/01/22/headlamp-in-2025-project-highlights/</guid>
+      <pubDate>Thu, 22 Jan 2026 02:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Announcing the Checkpoint/Restore Working Group</title>
       <link>https://kubernetes.io/blog/2026/01/21/introducing-checkpoint-restore-wg/</link>
