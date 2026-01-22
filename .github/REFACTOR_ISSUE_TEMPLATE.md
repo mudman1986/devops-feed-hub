@@ -1,6 +1,6 @@
 Review the codebase and identify opportunities for improvement.
 
-## Suggested Areas to Review:
+## Suggested Areas to Review
 
 - Code quality and maintainability
 - Test coverage and reliability
@@ -12,7 +12,7 @@ Review the codebase and identify opportunities for improvement.
 - Error handling
 - Dependencies and updates
 
-## Guidelines:
+## Guidelines
 
 - Prioritize high-impact, low-risk improvements
 - Make focused, incremental changes
