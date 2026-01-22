@@ -103,7 +103,7 @@ test.describe("Settings Page Toast Notifications", () => {
     const themeSelect = page.locator("#theme-setting");
 
     // Change theme
-    await themeSelect.selectOption("light");
+    await themeSelect.selectOption("purple-haze");
 
     // Wait for toast to appear
     const toast = page.locator(".toast.toast-success");
@@ -249,7 +249,7 @@ test.describe("Accessibility - ARIA attributes", () => {
     await page.evaluate(() => localStorage.clear());
 
     const themeSelect = page.locator("#theme-setting");
-    await themeSelect.selectOption("light");
+    await themeSelect.selectOption("purple-haze");
 
     // Wait for toast
     const toast = page.locator(".toast");
@@ -265,7 +265,7 @@ test.describe("Accessibility - ARIA attributes", () => {
     await page.evaluate(() => localStorage.clear());
 
     const themeSelect = page.locator("#theme-setting");
-    await themeSelect.selectOption("light");
+    await themeSelect.selectOption("purple-haze");
 
     // Wait for toast container
     const toastContainer = page.locator("#toast-container");
