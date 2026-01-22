@@ -5,8 +5,15 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 22 Jan 2026 18:05:03 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 22 Jan 2026 18:20:33 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>[Launched] Generally Available: StandardV2 NAT Gateway with zone-redundancy and StandardV2 public IPs</title>
+      <link>https://azure.microsoft.com/updates?id=547772</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=547772</guid>
+      <pubDate>Thu, 22 Jan 2026 17:30:31 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
     <item>
       <title>[Launched] Generally Available: Reporting in Playwright Workspaces (part of Azure App Testing)</title>
       <link>https://azure.microsoft.com/updates?id=550379</link>
@@ -20,13 +27,6 @@
       <guid isPermaLink="true">https://github.blog/changelog/2026-01-22-1-vcpu-linux-runner-now-generally-available-in-github-actions</guid>
       <pubDate>Thu, 22 Jan 2026 17:00:00 +0000</pubDate>
       <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>Microsoft Security success stories: Why integrated security is the foundation of AI transformation</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/01/22/microsoft-security-success-stories-why-integrated-security-is-the-foundation-of-ai-transformation/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/22/microsoft-security-success-stories-why-integrated-security-is-the-foundation-of-ai-transformation/</guid>
-      <pubDate>Thu, 22 Jan 2026 17:00:00 +0000</pubDate>
-      <source>Microsoft Security</source>
     </item>
     <item>
       <title>Build an agent into any app with the GitHub Copilot SDK</title>
@@ -414,13 +414,6 @@
       <source>GitHub Blog</source>
     </item>
     <item>
-      <title>How GEICO lowered its $300M cloud spend and decoupled security from the network</title>
-      <link>https://www.hashicorp.com/blog/how-geico-lowered-its-300m-cloud-spend-and-decoupled-security-from-the-network</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/how-geico-lowered-its-300m-cloud-spend-and-decoupled-security-from-the-network</guid>
-      <pubDate>Tue, 13 Jan 2026 18:00:00 +0000</pubDate>
-      <source>HashiCorp Blog</source>
-    </item>
-    <item>
       <title>How Microsoft builds privacy and security to work hand-in-hand</title>
       <link>https://www.microsoft.com/en-us/security/blog/2026/01/13/how-microsoft-builds-privacy-and-security-to-work-hand-in-hand/</link>
       <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/13/how-microsoft-builds-privacy-and-security-to-work-hand-in-hand/</guid>
@@ -428,32 +421,11 @@
       <source>Microsoft Security</source>
     </item>
     <item>
-      <title>The risks of cybersecurity tool sprawl: Why consolidation is a strategic priority</title>
-      <link>https://www.hashicorp.com/blog/the-risks-of-cybersecurity-tool-sprawl-and-why-we-need-consolidation</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/the-risks-of-cybersecurity-tool-sprawl-and-why-we-need-consolidation</guid>
-      <pubDate>Mon, 12 Jan 2026 23:00:00 +0000</pubDate>
-      <source>HashiCorp Blog</source>
-    </item>
-    <item>
-      <title>How to start consolidating your cybersecurity tools</title>
-      <link>https://www.hashicorp.com/blog/how-to-start-consolidating-your-cybersecurity-tools</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/how-to-start-consolidating-your-cybersecurity-tools</guid>
-      <pubDate>Mon, 12 Jan 2026 23:00:00 +0000</pubDate>
-      <source>HashiCorp Blog</source>
-    </item>
-    <item>
       <title>Want better AI outputs? Try context engineering.</title>
       <link>https://github.blog/ai-and-ml/generative-ai/want-better-ai-outputs-try-context-engineering/</link>
       <guid isPermaLink="true">https://github.blog/ai-and-ml/generative-ai/want-better-ai-outputs-try-context-engineering/</guid>
       <pubDate>Mon, 12 Jan 2026 17:00:00 +0000</pubDate>
       <source>GitHub Blog</source>
-    </item>
-    <item>
-      <title>Hybrid cloud, explained: What it is, what it isn’t, and why having a plan matters in 2026</title>
-      <link>https://www.hashicorp.com/blog/hybrid-cloud-explained-what-it-is-what-it-isn-t-and-why-having-a-plan-matters</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/hybrid-cloud-explained-what-it-is-what-it-isn-t-and-why-having-a-plan-matters</guid>
-      <pubDate>Mon, 12 Jan 2026 17:00:00 +0000</pubDate>
-      <source>HashiCorp Blog</source>
     </item>
     <item>
       <title>Kubernetes v1.35: Restricting executables invoked by kubeconfigs via exec plugin allowList added to kuberc</title>
@@ -526,13 +498,6 @@
       <source>Kubernetes Blog</source>
     </item>
     <item>
-      <title>The future of secrets and identity management</title>
-      <link>https://www.hashicorp.com/blog/the-future-of-secrets-and-identity-management</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/the-future-of-secrets-and-identity-management</guid>
-      <pubDate>Wed, 07 Jan 2026 17:00:00 +0000</pubDate>
-      <source>HashiCorp Blog</source>
-    </item>
-    <item>
       <title>Explore the latest Microsoft Incident Response proactive services for enhanced resilience</title>
       <link>https://www.microsoft.com/en-us/security/blog/2026/01/07/explore-the-latest-microsoft-incident-response-proactive-services-for-enhanced-resilience/</link>
       <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/07/explore-the-latest-microsoft-incident-response-proactive-services-for-enhanced-resilience/</guid>
@@ -580,13 +545,6 @@
       <guid isPermaLink="true">https://circleci.com/blog/multi-environment-dns-automation-on-cloudflare/</guid>
       <pubDate>Tue, 06 Jan 2026 16:00:00 +0000</pubDate>
       <source>CircleCI Blog</source>
-    </item>
-    <item>
-      <title>How AirFrance-KLM built a secure automation platform at global scale with Terraform, Vault, and Ansible</title>
-      <link>https://www.hashicorp.com/blog/how-airfrance-klm-built-secure-automation-platform-global-scale-terraform-vault-ansible</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/how-airfrance-klm-built-secure-automation-platform-global-scale-terraform-vault-ansible</guid>
-      <pubDate>Tue, 06 Jan 2026 15:00:00 +0000</pubDate>
-      <source>HashiCorp Blog</source>
     </item>
     <item>
       <title>AI-powered vulnerability triaging with GitLab Duo Security Agent</title>
@@ -678,13 +636,6 @@
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=513892</guid>
       <pubDate>Mon, 29 Dec 2025 17:30:40 +0000</pubDate>
       <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>New year, new cloud strategy: 5 shifts cloud leaders will be making in 2026</title>
-      <link>https://www.hashicorp.com/blog/new-year-new-cloud-strategy-5-shifts-cloud-leaders-will-be-making-in-2026</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/new-year-new-cloud-strategy-5-shifts-cloud-leaders-will-be-making-in-2026</guid>
-      <pubDate>Mon, 29 Dec 2025 17:00:00 +0000</pubDate>
-      <source>HashiCorp Blog</source>
     </item>
     <item>
       <title>2025 Jenkins Board and Officer Election Results</title>
