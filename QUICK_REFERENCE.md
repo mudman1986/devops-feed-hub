@@ -30,7 +30,7 @@ npx playwright test tests/ui/theme-toggle-bug.spec.js -g "arctic-blue"
 
 ## 📊 Current Test Results
 
-```
+```text
 ✅ 25 PASSING - Normal toggle behavior works
 ❌ 5 FAILING  - Arctic-blue bug (across 5 viewports)
 ```

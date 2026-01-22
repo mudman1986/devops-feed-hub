@@ -23,14 +23,14 @@ Successfully created comprehensive test suite that **reproduces the theme toggle
 
 **Expected Behavior:**
 
-```
+```text
 Select arctic-blue → Theme: "arctic-blue" (natural light mode)
 Click toggle → Theme: "arctic-blue-dark"
 ```
 
 **Actual Behavior (BUG):**
 
-```
+```text
 Select arctic-blue → Theme: "arctic-blue-dark" ❌
 Click toggle → Theme: "arctic-blue" (backwards!)
 ```

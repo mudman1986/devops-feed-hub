@@ -61,7 +61,7 @@ themeSelect.addEventListener("change", async (e) => {
 
 **Test Evidence:**
 
-```
+```text
 Error: expect(received).toBe(expected)
 
 Expected: "arctic-blue"
@@ -146,7 +146,7 @@ localStorage.setItem("themeMode", naturalMode);
 
 ## Test File Location
 
-```
+```text
 tests/ui/theme-toggle-bug.spec.js
 ```
 

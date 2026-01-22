@@ -27,22 +27,6 @@ test.describe("Theme Combinations - All Settings", () => {
     "compact",
   ];
 
-  // All view modes to test
-  const viewModes = [
-    "list",
-    "card",
-    "horizontal-scroll",
-    "masonry-grid",
-    "floating-panels",
-    "center-stage",
-    "top-strip",
-    "list-dense",
-    "timeline-vertical",
-  ];
-
-  // All modes to test
-  const modes = ["dark", "light"];
-
   test.describe("Theme Selection and Dark/Light Toggle", () => {
     for (const theme of themes) {
       test(`should persist ${theme} theme when toggling dark/light mode`, async ({
@@ -60,7 +44,7 @@ test.describe("Theme Combinations - All Settings", () => {
         let dataTheme = await page.evaluate(() =>
           document.documentElement.getAttribute("data-theme"),
         );
-        const expectedTheme = theme === "default" ? "dark" : theme; // Default theme is just "dark" initially
+        // Default theme is just "dark" initially
         if (theme !== "default") {
           // For experimental themes, should have theme name (might have -light or no suffix for dark)
           expect(dataTheme).toContain(theme.split("-")[0]); // Check base theme name is present
@@ -245,10 +229,7 @@ test.describe("Theme Combinations - All Settings", () => {
       expect(dataTheme).toContain("retro");
       expect(dataView).toBe("center-stage");
 
-      // View mode layout should be preserved
-      // Center stage has specific CSS classes that should be present
-      const bodyClass = await page.evaluate(() => document.body.className);
-      // The view mode should be applied via data-view attribute
+      // View mode layout should be preserved via data-view attribute
       expect(dataView).toBe("center-stage");
     });
 

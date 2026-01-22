@@ -80,7 +80,7 @@ Received: "arctic-blue-dark"
 
 ### Location
 
-```
+```text
 tests/ui/theme-toggle-bug.spec.js
 ```
 

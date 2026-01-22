@@ -1,5 +1,3 @@
-/* eslint-env browser */
-
 // Breakpoint constants (in pixels)
 const BREAKPOINTS = {
   MOBILE: 768,
@@ -131,14 +129,6 @@ function applyModeToTheme(baseTheme, mode) {
  * @param {string} baseTheme - Base theme name (without mode suffix)
  * @returns {string} - "light" or "dark" (the natural default mode)
  */
-function getNaturalThemeMode(baseTheme) {
-  // Arctic-blue is naturally light
-  if (baseTheme === "arctic-blue") {
-    return "light";
-  }
-  // All other themes are naturally dark
-  return "dark";
-}
 
 // ===== SHARED UTILITY FUNCTIONS =====
 
