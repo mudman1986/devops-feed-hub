@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-terraform-weekly.xml</link>
     <description>Articles from Terraform weekly</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-terraform-weekly.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 22 Jan 2026 12:00:27 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 22 Jan 2026 12:07:56 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Issue #258 - IaCConf, Multi-Environment GitHub Pipelines, ignore_changes Deep Dive, AWS Glue Data Exports, Terraform New Features, Agent Skill for Terraform and OpenTofu</title>
