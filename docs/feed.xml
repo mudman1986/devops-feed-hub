@@ -5,8 +5,43 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 22 Jan 2026 12:26:37 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 22 Jan 2026 18:05:03 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>[Launched] Generally Available: Reporting in Playwright Workspaces (part of Azure App Testing)</title>
+      <link>https://azure.microsoft.com/updates?id=550379</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=550379</guid>
+      <pubDate>Thu, 22 Jan 2026 17:00:03 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>1 vCPU Linux runner now generally available in GitHub Actions</title>
+      <link>https://github.blog/changelog/2026-01-22-1-vcpu-linux-runner-now-generally-available-in-github-actions</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-01-22-1-vcpu-linux-runner-now-generally-available-in-github-actions</guid>
+      <pubDate>Thu, 22 Jan 2026 17:00:00 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Microsoft Security success stories: Why integrated security is the foundation of AI transformation</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/01/22/microsoft-security-success-stories-why-integrated-security-is-the-foundation-of-ai-transformation/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/22/microsoft-security-success-stories-why-integrated-security-is-the-foundation-of-ai-transformation/</guid>
+      <pubDate>Thu, 22 Jan 2026 17:00:00 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>Build an agent into any app with the GitHub Copilot SDK</title>
+      <link>https://github.blog/news-insights/company-news/build-an-agent-into-any-app-with-the-github-copilot-sdk/</link>
+      <guid isPermaLink="true">https://github.blog/news-insights/company-news/build-an-agent-into-any-app-with-the-github-copilot-sdk/</guid>
+      <pubDate>Thu, 22 Jan 2026 15:01:44 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
+    <item>
+      <title>Your Dependencies Don’t Care About Your FIPS Configuration</title>
+      <link>https://www.docker.com/blog/fips-dependencies-and-prebuilt-binaries/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/fips-dependencies-and-prebuilt-binaries/</guid>
+      <pubDate>Thu, 22 Jan 2026 14:00:00 +0000</pubDate>
+      <source>Docker Blog</source>
+    </item>
     <item>
       <title>Resurgence of a multi‑stage AiTM phishing and BEC campaign abusing SharePoint</title>
       <link>https://www.microsoft.com/en-us/security/blog/2026/01/21/multistage-aitm-phishing-bec-campaign-abusing-sharepoint/</link>
@@ -232,13 +267,6 @@
       <source>GitHub Blog</source>
     </item>
     <item>
-      <title>Hierarchy view now available in GitHub Projects</title>
-      <link>https://github.blog/changelog/2026-01-15-hierarchy-view-now-available-in-github-projects</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-01-15-hierarchy-view-now-available-in-github-projects</guid>
-      <pubDate>Thu, 15 Jan 2026 20:19:53 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>From AI agent prototype to product: Lessons from building AWS DevOps Agent</title>
       <link>https://aws.amazon.com/blogs/devops/from-ai-agent-prototype-to-product-lessons-from-building-aws-devops-agent/</link>
       <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/from-ai-agent-prototype-to-product-lessons-from-building-aws-devops-agent/</guid>
@@ -426,13 +454,6 @@
       <guid isPermaLink="true">https://www.hashicorp.com/blog/hybrid-cloud-explained-what-it-is-what-it-isn-t-and-why-having-a-plan-matters</guid>
       <pubDate>Mon, 12 Jan 2026 17:00:00 +0000</pubDate>
       <source>HashiCorp Blog</source>
-    </item>
-    <item>
-      <title>Light waves, rising tides, and drifting ships: Game Off 2025 winners</title>
-      <link>https://github.blog/open-source/gaming/light-waves-rising-tides-and-drifting-ships-game-off-2025-winners/</link>
-      <guid isPermaLink="true">https://github.blog/open-source/gaming/light-waves-rising-tides-and-drifting-ships-game-off-2025-winners/</guid>
-      <pubDate>Sat, 10 Jan 2026 21:36:00 +0000</pubDate>
-      <source>GitHub Blog</source>
     </item>
     <item>
       <title>Kubernetes v1.35: Restricting executables invoked by kubeconfigs via exec plugin allowList added to kuberc</title>
