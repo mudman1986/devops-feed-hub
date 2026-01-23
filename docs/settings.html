@@ -85,33 +85,6 @@
           </svg>
           <span>Back to Feeds</span>
         </button>
-        <button
-          class="theme-toggle"
-          id="theme-toggle"
-          aria-label="Toggle theme"
-        >
-          <svg
-            id="theme-icon"
-            width="16"
-            height="16"
-            viewBox="0 0 24 24"
-            fill="none"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-          >
-            <circle cx="12" cy="12" r="5"></circle>
-            <line x1="12" y1="1" x2="12" y2="3"></line>
-            <line x1="12" y1="21" x2="12" y2="23"></line>
-            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-            <line x1="1" y1="12" x2="3" y2="12"></line>
-            <line x1="21" y1="12" x2="23" y2="12"></line>
-            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-          </svg>
-        </button>
       </div>
     </div>
     <div class="settings-container">
@@ -190,6 +163,29 @@
             </svg>
             <span>RSS Feeds</span>
           </div>
+          <div
+            class="settings-menu-item"
+            data-section="experimental"
+            role="button"
+            tabindex="0"
+            aria-label="experimental settings"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <polygon points="12 2 2 7 12 12 22 7 12 2"></polygon>
+              <polyline points="2 17 12 22 22 17"></polyline>
+              <polyline points="2 12 12 17 22 12"></polyline>
+            </svg>
+            <span>Experimental Themes</span>
+          </div>
         </div>
       </nav>
       <main class="settings-content" id="settings-content">
@@ -200,24 +196,13 @@
               <div class="settings-item-label">
                 <label for="theme-setting">Theme</label>
                 <p class="settings-item-description">
-                  Select your preferred color theme (use sun/moon toggle for
-                  light/dark mode)
+                  Choose between light and dark theme
                 </p>
               </div>
               <div class="settings-item-control">
                 <select id="theme-setting" class="settings-select">
-                  <option value="default">Default</option>
-                  <option value="purple-haze">Beta - Purple Haze</option>
-                  <option value="ocean-deep">Beta - Ocean Deep</option>
-                  <option value="arctic-blue">Beta - Arctic Blue</option>
-                  <option value="high-contrast">Beta - High Contrast</option>
-                  <option value="monochrome">Beta - Monochrome</option>
-                  <option value="dracula">Beta - Dracula</option>
-                  <option value="minimalist">Beta - Minimalist</option>
-                  <option value="terminal">Beta - Terminal</option>
-                  <option value="retro">Beta - Retro</option>
-                  <option value="futuristic">Beta - Futuristic</option>
-                  <option value="compact">Beta - Compact</option>
+                  <option value="dark">Dark</option>
+                  <option value="light">Light</option>
                 </select>
               </div>
             </div>
@@ -232,19 +217,6 @@
                 <select id="view-setting" class="settings-select">
                   <option value="list">List View</option>
                   <option value="card">Card View</option>
-                  <option value="horizontal-scroll">
-                    Beta - Horizontal Scroll
-                  </option>
-                  <option value="masonry-grid">Beta - Masonry Grid</option>
-                  <option value="floating-panels">
-                    Beta - Floating Panels
-                  </option>
-                  <option value="center-stage">Beta - Center Stage</option>
-                  <option value="top-strip">Beta - Top Strip</option>
-                  <option value="list-dense">Beta - List Dense</option>
-                  <option value="timeline-vertical">
-                    Beta - Timeline Vertical
-                  </option>
                 </select>
               </div>
             </div>
@@ -340,6 +312,148 @@
             </div>
           </div>
         </section>
+
+        <section class="settings-section" id="experimental-section">
+          <h2 class="settings-section-title" id="experimental-section-title">
+            Experimental Themes
+          </h2>
+          <div
+            class="settings-group experimental-themes"
+            role="region"
+            aria-labelledby="experimental-section-title"
+          >
+            <div class="experimental-disclaimer">
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                style="flex-shrink: 0; margin-top: 0.125rem"
+              >
+                <circle cx="12" cy="12" r="10"></circle>
+                <line x1="12" y1="8" x2="12" y2="12"></line>
+                <line x1="12" y1="16" x2="12.01" y2="16"></line>
+              </svg>
+              <p>
+                <strong>Work in Progress:</strong> These experimental themes are
+                under active development and may change or be removed without
+                notice. They represent different visual and layout approaches to
+                explore alternative UI/UX designs.
+              </p>
+            </div>
+
+            <div class="settings-item">
+              <div class="settings-item-label">
+                <label for="experimental-theme-setting"
+                  >Experimental Color Theme</label
+                >
+                <p class="settings-item-description">
+                  Try out new color schemes
+                </p>
+              </div>
+              <div class="settings-item-control">
+                <select id="experimental-theme-setting" class="settings-select">
+                  <option value="">None (Use Standard Theme)</option>
+                  <optgroup label="Color Variations - Dark">
+                    <option value="purple-haze">Purple Haze (Dark)</option>
+                    <option value="ocean-deep">Ocean Deep (Dark)</option>
+                    <option value="arctic-blue">Arctic Blue (Dark)</option>
+                    <option value="high-contrast-dark">
+                      High Contrast (Dark)
+                    </option>
+                    <option value="monochrome">Monochrome (Dark)</option>
+                    <option value="dracula">Dracula (Dark)</option>
+                  </optgroup>
+                  <optgroup label="Color Variations - Light">
+                    <option value="purple-haze-light">
+                      Purple Haze (Light)
+                    </option>
+                    <option value="ocean-deep-light">Ocean Deep (Light)</option>
+                    <option value="arctic-blue-light">
+                      Arctic Blue (Light)
+                    </option>
+                    <option value="high-contrast-light">
+                      High Contrast (Light)
+                    </option>
+                    <option value="monochrome-light">Monochrome (Light)</option>
+                    <option value="dracula-light">Dracula (Light)</option>
+                  </optgroup>
+                  <optgroup label="Themed Styles">
+                    <option value="minimalist">
+                      Minimalist - Clean & Simple
+                    </option>
+                    <option value="terminal">
+                      Terminal - Monospace Command-Line
+                    </option>
+                    <option value="retro">Retro - 80s/90s Inspired</option>
+                    <option value="futuristic">Futuristic - Sci-Fi Neon</option>
+                    <option value="compact">Compact - Dense Information</option>
+                    <option value="minimalist-light">
+                      Minimalist Light - Bright & Clean
+                    </option>
+                    <option value="terminal-light">
+                      Terminal Light - Light Background
+                    </option>
+                    <option value="retro-light">
+                      Retro Light - Vintage Pastel
+                    </option>
+                    <option value="futuristic-light">
+                      Futuristic Light - Bright Sci-Fi
+                    </option>
+                    <option value="compact-light">
+                      Compact Light - Dense & Bright
+                    </option>
+                  </optgroup>
+                </select>
+              </div>
+            </div>
+            <div class="settings-item">
+              <div class="settings-item-label">
+                <label for="experimental-viewmode-setting"
+                  >Experimental View Mode</label
+                >
+                <p class="settings-item-description">
+                  Try out alternative layout arrangements
+                </p>
+              </div>
+              <div class="settings-item-control">
+                <select
+                  id="experimental-viewmode-setting"
+                  class="settings-select"
+                >
+                  <option value="">None (Use Standard View)</option>
+                  <optgroup label="Alternative Layouts">
+                    <option value="horizontal-scroll">
+                      Horizontal Scroll - Side-to-Side
+                    </option>
+                    <option value="masonry-grid">
+                      Masonry Grid - Pinterest Style
+                    </option>
+                    <option value="floating-panels">
+                      Floating Panels - Tilted Cards
+                    </option>
+                    <option value="center-stage">
+                      Center Stage - Single Column Centered
+                    </option>
+                    <option value="top-strip">
+                      Top Strip - Drudge Report Style
+                    </option>
+                    <option value="list-dense">
+                      List Dense - Reddit/HN Style
+                    </option>
+                    <option value="timeline-vertical">
+                      Timeline Vertical - Medium/Substack Style
+                    </option>
+                  </optgroup>
+                </select>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
     </div>
 
@@ -400,23 +514,23 @@
           loadRSSFeedLinks();
         }
 
-        // List of base experimental themes (without -light/-dark suffixes)
-        const EXPERIMENTAL_BASE_THEMES = [
+        // List of valid experimental themes
+        const VALID_EXPERIMENTAL_THEMES = [
           "purple-haze",
+          "purple-haze-light",
           "ocean-deep",
+          "ocean-deep-light",
           "arctic-blue",
-          "high-contrast",
+          "high-contrast-dark",
+          "high-contrast-light",
           "monochrome",
           "dracula",
+          "dracula-light",
           "minimalist",
           "terminal",
           "retro",
           "futuristic",
           "compact",
-        ];
-
-        // List of experimental view modes (layout alternatives)
-        const EXPERIMENTAL_VIEW_MODES = [
           "horizontal-scroll",
           "masonry-grid",
           "floating-panels",
@@ -425,81 +539,6 @@
           "list-dense",
           "timeline-vertical",
         ];
-
-        // All valid experimental themes including variants
-        const VALID_EXPERIMENTAL_THEMES = [
-          ...EXPERIMENTAL_BASE_THEMES,
-          ...EXPERIMENTAL_BASE_THEMES.map((t) => `${t}-light`),
-          ...EXPERIMENTAL_BASE_THEMES.map((t) => `${t}-dark`),
-          ...EXPERIMENTAL_VIEW_MODES,
-        ];
-
-        /**
-         * Get the base theme name (without -light or -dark suffix)
-         */
-        function getBaseTheme(theme) {
-          if (!theme) return null;
-          return theme.replace(/-light$|-dark$/, "");
-        }
-
-        /**
-         * Determine if a theme is light mode
-         */
-        function isLightMode(theme) {
-          if (!theme) return false;
-          if (theme === "arctic-blue") return true;
-          return theme.endsWith("-light") || theme === "light";
-        }
-
-        /**
-         * Get current mode (light or dark)
-         */
-        function getCurrentMode(theme) {
-          return isLightMode(theme) ? "light" : "dark";
-        }
-
-        /**
-         * Apply mode to a theme
-         */
-        function applyModeToTheme(baseTheme, mode) {
-          if (!baseTheme) return mode;
-
-          // View modes don't have light/dark variants
-          if (EXPERIMENTAL_VIEW_MODES.includes(baseTheme)) {
-            return baseTheme;
-          }
-
-          // Standard themes (light/dark) - these are already full theme names
-          if (baseTheme === "light" || baseTheme === "dark") {
-            return mode;
-          }
-
-          // Arctic-blue is naturally light, so no suffix for light mode
-          if (baseTheme === "arctic-blue") {
-            return mode === "light" ? "arctic-blue" : "arctic-blue-dark";
-          }
-
-          // For other experimental themes, append mode suffix
-          if (EXPERIMENTAL_BASE_THEMES.includes(baseTheme)) {
-            return mode === "light" ? `${baseTheme}-light` : baseTheme;
-          }
-
-          return baseTheme;
-        }
-
-        /**
-         * Get the natural/default mode for a theme
-         * @param {string} baseTheme - Base theme name (without mode suffix)
-         * @returns {string} - "light" or "dark" (the natural default mode)
-         */
-        function getNaturalThemeMode(baseTheme) {
-          // Arctic-blue is naturally light
-          if (baseTheme === "arctic-blue") {
-            return "light";
-          }
-          // All other themes are naturally dark
-          return "dark";
-        }
 
         // Helper function to apply theme
         function applyTheme(themeName) {
@@ -519,45 +558,62 @@
         }
 
         function loadSettings() {
-          // Load theme setting (default or experimental base theme)
+          // Load theme
           try {
-            const experimentalTheme =
-              localStorage.getItem("experimentalTheme") || "";
+            const theme = localStorage.getItem("theme") || "dark";
             const themeSelect = document.getElementById("theme-setting");
-
-            if (experimentalTheme) {
-              // It's a theme, get the base theme
-              const baseTheme = getBaseTheme(experimentalTheme);
-              if (themeSelect && EXPERIMENTAL_BASE_THEMES.includes(baseTheme)) {
-                themeSelect.value = baseTheme;
-              } else {
-                if (themeSelect) themeSelect.value = "default";
-              }
-            } else {
-              // No experimental theme, use default
-              if (themeSelect) themeSelect.value = "default";
-            }
+            if (themeSelect) themeSelect.value = theme;
           } catch (e) {
             console.warn("Unable to load theme setting:", e);
           }
 
-          // Load view mode setting (standard or experimental)
+          // Load experimental theme
           try {
-            const experimentalViewMode =
-              localStorage.getItem("experimentalViewMode") || "";
+            const experimentalTheme =
+              localStorage.getItem("experimentalTheme") || "";
+            const experimentalThemeSelect = document.getElementById(
+              "experimental-theme-setting",
+            );
+            const experimentalViewmodeSelect = document.getElementById(
+              "experimental-viewmode-setting",
+            );
+
+            // Determine if the stored value is a theme or viewmode
+            if (experimentalTheme) {
+              const viewModeThemes = [
+                "horizontal-scroll",
+                "masonry-grid",
+                "floating-panels",
+                "center-stage",
+                "top-strip",
+                "list-dense",
+                "timeline-vertical",
+              ];
+
+              if (viewModeThemes.includes(experimentalTheme)) {
+                if (experimentalViewmodeSelect) {
+                  experimentalViewmodeSelect.value = experimentalTheme;
+                }
+              } else {
+                if (experimentalThemeSelect) {
+                  experimentalThemeSelect.value = experimentalTheme;
+                }
+              }
+
+              // Apply experimental theme if set and valid
+              if (VALID_EXPERIMENTAL_THEMES.includes(experimentalTheme)) {
+                applyTheme(experimentalTheme);
+              }
+            }
+          } catch (e) {
+            console.warn("Unable to load experimental theme setting:", e);
+          }
+
+          // Load view
+          try {
             const view = localStorage.getItem("view") || "list";
             const viewSelect = document.getElementById("view-setting");
-
-            if (
-              experimentalViewMode &&
-              EXPERIMENTAL_VIEW_MODES.includes(experimentalViewMode)
-            ) {
-              // Experimental view mode
-              if (viewSelect) viewSelect.value = experimentalViewMode;
-            } else {
-              // Standard view mode
-              if (viewSelect) viewSelect.value = view;
-            }
+            if (viewSelect) viewSelect.value = view;
           } catch (e) {
             console.warn("Unable to load view setting:", e);
           }
@@ -574,52 +630,32 @@
         }
 
         function setupSettingsListeners() {
-          // Theme setting (consolidated: default and experimental themes)
+          // Theme setting
           const themeSelect = document.getElementById("theme-setting");
           if (themeSelect) {
             themeSelect.addEventListener("change", async (e) => {
-              const selectedTheme = e.target.value;
+              const theme = e.target.value;
               LoadingState.show(themeSelect, "Applying theme");
               try {
-                if (selectedTheme === "default") {
-                  // Clear experimental theme and use current mode (dark/light)
-                  localStorage.removeItem("experimentalTheme");
-                  const mode = localStorage.getItem("themeMode") || "dark";
-                  const defaultTheme = mode;
-                  localStorage.setItem("theme", defaultTheme);
-                  applyTheme(defaultTheme);
-                  showToast("Theme changed to Default", "success");
-                } else {
-                  // Apply theme in its natural mode (not forcing current themeMode)
-                  const naturalMode = getNaturalThemeMode(selectedTheme);
-                  const fullTheme = applyModeToTheme(
-                    selectedTheme,
-                    naturalMode,
-                  );
-
-                  // Save experimental theme in its natural mode
-                  if (
-                    VALID_EXPERIMENTAL_THEMES.includes(fullTheme) ||
-                    EXPERIMENTAL_BASE_THEMES.includes(selectedTheme)
-                  ) {
-                    localStorage.setItem("experimentalTheme", fullTheme);
-                    localStorage.setItem("themeMode", naturalMode);
-                    localStorage.removeItem("theme");
-                    applyTheme(fullTheme);
-                    showToast(
-                      `Theme changed to ${selectedTheme
-                        .split("-")
-                        .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-                        .join(" ")}`,
-                      "success",
-                    );
-                  } else {
-                    console.warn(`Invalid theme: ${selectedTheme}`);
-                    showToast("Invalid theme selected", "error");
-                  }
-                }
+                localStorage.setItem("theme", theme);
+                // Clear experimental theme when standard theme is selected
+                localStorage.removeItem("experimentalTheme");
+                const experimentalThemeSelect = document.getElementById(
+                  "experimental-theme-setting",
+                );
+                const experimentalViewmodeSelect = document.getElementById(
+                  "experimental-viewmode-setting",
+                );
+                if (experimentalThemeSelect) experimentalThemeSelect.value = "";
+                if (experimentalViewmodeSelect)
+                  experimentalViewmodeSelect.value = "";
+                applyTheme(theme);
 
                 LoadingState.hide(themeSelect);
+                showToast(
+                  `Theme changed to ${theme === "dark" ? "Dark" : "Light"} mode`,
+                  "success",
+                );
               } catch (err) {
                 console.warn("Unable to save theme:", err);
                 LoadingState.hide(themeSelect);
@@ -628,43 +664,111 @@
             });
           }
 
-          // View setting (consolidated: standard and experimental view modes)
+          // Experimental theme setting
+          const experimentalThemeSelect = document.getElementById(
+            "experimental-theme-setting",
+          );
+          if (experimentalThemeSelect) {
+            experimentalThemeSelect.addEventListener("change", async (e) => {
+              const experimentalTheme = e.target.value;
+              LoadingState.show(experimentalThemeSelect, "Applying theme");
+              try {
+                if (experimentalTheme) {
+                  // Save experimental theme if valid
+                  if (VALID_EXPERIMENTAL_THEMES.includes(experimentalTheme)) {
+                    localStorage.setItem(
+                      "experimentalTheme",
+                      experimentalTheme,
+                    );
+                    applyTheme(experimentalTheme);
+                    // Clear viewmode dropdown when theme is selected
+                    const viewmodeSelect = document.getElementById(
+                      "experimental-viewmode-setting",
+                    );
+                    if (viewmodeSelect) viewmodeSelect.value = "";
+
+                    LoadingState.hide(experimentalThemeSelect);
+                    showToast(
+                      `Experimental theme applied: ${experimentalTheme}`,
+                      "success",
+                    );
+                  } else {
+                    console.warn(
+                      `Invalid experimental theme: ${experimentalTheme}`,
+                    );
+                    LoadingState.hide(experimentalThemeSelect);
+                    showToast("Invalid experimental theme", "error");
+                  }
+                } else {
+                  // Clear experimental theme and revert to standard theme
+                  localStorage.removeItem("experimentalTheme");
+                  const theme = localStorage.getItem("theme") || "dark";
+                  applyTheme(theme);
+
+                  LoadingState.hide(experimentalThemeSelect);
+                  showToast("Experimental theme cleared", "info");
+                }
+              } catch (err) {
+                console.warn("Unable to save experimental theme:", err);
+                LoadingState.hide(experimentalThemeSelect);
+                showToast("Failed to save experimental theme", "error");
+              }
+            });
+          }
+
+          // Experimental viewmode setting
+          const experimentalViewmodeSelect = document.getElementById(
+            "experimental-viewmode-setting",
+          );
+          if (experimentalViewmodeSelect) {
+            experimentalViewmodeSelect.addEventListener("change", (e) => {
+              const experimentalViewmode = e.target.value;
+              try {
+                if (experimentalViewmode) {
+                  // Save experimental viewmode if valid
+                  if (
+                    VALID_EXPERIMENTAL_THEMES.includes(experimentalViewmode)
+                  ) {
+                    localStorage.setItem(
+                      "experimentalTheme",
+                      experimentalViewmode,
+                    );
+                    applyTheme(experimentalViewmode);
+                    // Clear theme dropdown when viewmode is selected
+                    const themeSelect = document.getElementById(
+                      "experimental-theme-setting",
+                    );
+                    if (themeSelect) themeSelect.value = "";
+                  } else {
+                    console.warn(
+                      `Invalid experimental viewmode: ${experimentalViewmode}`,
+                    );
+                  }
+                } else {
+                  // Clear experimental viewmode
+                  localStorage.removeItem("experimentalTheme");
+                  const theme = localStorage.getItem("theme") || "dark";
+                  applyTheme(theme);
+                }
+              } catch (err) {
+                console.warn("Unable to save experimental viewmode:", err);
+              }
+            });
+          }
+
+          // View setting
           const viewSelect = document.getElementById("view-setting");
           if (viewSelect) {
             viewSelect.addEventListener("change", async (e) => {
-              const selectedView = e.target.value;
+              const view = e.target.value;
               LoadingState.show(viewSelect, "Updating view mode");
               try {
-                if (EXPERIMENTAL_VIEW_MODES.includes(selectedView)) {
-                  // Store experimental view mode separately
-                  localStorage.setItem("experimentalViewMode", selectedView);
-                  localStorage.removeItem("view");
-
-                  showToast(
-                    `Experimental view mode: ${selectedView
-                      .split("-")
-                      .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
-                      .join(" ")}`,
-                    "success",
-                  );
-                } else {
-                  // Store standard view mode (list or card)
-                  localStorage.setItem("view", selectedView);
-                  localStorage.removeItem("experimentalViewMode");
-
-                  showToast(
-                    `View mode changed to ${selectedView === "card" ? "Card" : "List"} view`,
-                    "success",
-                  );
-                }
-
-                // Update the view attribute (applies to both standard and experimental)
-                document.documentElement.setAttribute(
-                  "data-view",
-                  selectedView,
-                );
-
+                localStorage.setItem("view", view);
                 LoadingState.hide(viewSelect);
+                showToast(
+                  `View mode changed to ${view === "card" ? "Card" : "List"} view`,
+                  "success",
+                );
               } catch (err) {
                 console.warn("Unable to save view:", err);
                 LoadingState.hide(viewSelect);
@@ -955,68 +1059,6 @@
           setTimeout(initSettings, 0);
         } else {
           document.addEventListener("DOMContentLoaded", initSettings);
-        }
-
-        // ===== THEME TOGGLE FUNCTIONALITY =====
-        // Initialize theme toggle on settings page
-        const themeToggle = document.getElementById("theme-toggle");
-        if (themeToggle) {
-          // Update theme button based on current mode
-          function updateSettingsThemeButton(mode) {
-            const iconSVG = document.getElementById("theme-icon");
-            if (!iconSVG) return;
-
-            if (mode === "dark") {
-              // Sun icon for light mode
-              iconSVG.innerHTML =
-                '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
-            } else {
-              // Moon icon for dark mode
-              iconSVG.innerHTML =
-                '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
-            }
-          }
-
-          // Initialize button state
-          const currentTheme =
-            document.documentElement.getAttribute("data-theme");
-          const currentMode = getCurrentMode(currentTheme);
-          updateSettingsThemeButton(currentMode);
-
-          // Handle theme toggle click
-          themeToggle.addEventListener("click", async () => {
-            const currentTheme =
-              document.documentElement.getAttribute("data-theme");
-            const currentBaseTheme = getBaseTheme(currentTheme);
-            const currentThemeMode = getCurrentMode(currentTheme);
-            const newMode = currentThemeMode === "light" ? "dark" : "light";
-
-            // Apply new mode to current theme
-            let newTheme;
-            if (
-              currentBaseTheme &&
-              EXPERIMENTAL_BASE_THEMES.includes(currentBaseTheme)
-            ) {
-              // Experimental theme: toggle between light and dark variants
-              newTheme = applyModeToTheme(currentBaseTheme, newMode);
-              localStorage.setItem("experimentalTheme", newTheme);
-            } else {
-              // Standard theme: just "light" or "dark"
-              newTheme = newMode;
-              localStorage.setItem("theme", newTheme);
-              try {
-                localStorage.removeItem("experimentalTheme");
-              } catch (e) {
-                console.warn("Unable to remove experimental theme:", e);
-              }
-            }
-
-            // Update mode storage
-            localStorage.setItem("themeMode", newMode);
-
-            document.documentElement.setAttribute("data-theme", newTheme);
-            updateSettingsThemeButton(newMode);
-          });
         }
       })();
     </script>
