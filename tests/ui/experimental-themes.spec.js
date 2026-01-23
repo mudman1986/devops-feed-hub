@@ -520,11 +520,11 @@ test.describe("Theme Mode Toggle - Home Page Only", () => {
     );
     expect(dataTheme).toBe("light");
 
-    // Click theme toggle again
+    // Click theme toggle again and wait for theme change
     await page.locator("#theme-toggle").click();
-    await page.waitForTimeout(300);
+    await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
 
-    // Should switch back to dark
+    // Verify dark theme is applied
     dataTheme = await page.evaluate(() =>
       document.documentElement.getAttribute("data-theme"),
     );
