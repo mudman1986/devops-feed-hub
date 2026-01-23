@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-docker-blog.xml</link>
     <description>Articles from Docker Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-docker-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 23 Jan 2026 12:25:19 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 23 Jan 2026 19:24:30 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>How to Automate Arm Migration with Docker MCP Toolkit, VS Code, and GitHub Copilot</title>
+      <link>https://www.docker.com/blog/automate-arm-migration-docker-mcp-copilot/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/automate-arm-migration-docker-mcp-copilot/</guid>
+      <pubDate>Fri, 23 Jan 2026 14:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Using MCP Servers: From Quick Tools to Multi-Agent Systems</title>
       <link>https://www.docker.com/blog/mcp-servers-docker-toolkit-cagent-gateway/</link>

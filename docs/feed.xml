@@ -5,8 +5,22 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 23 Jan 2026 12:25:19 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 23 Jan 2026 19:24:30 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>How to Automate Arm Migration with Docker MCP Toolkit, VS Code, and GitHub Copilot</title>
+      <link>https://www.docker.com/blog/automate-arm-migration-docker-mcp-copilot/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/automate-arm-migration-docker-mcp-copilot/</guid>
+      <pubDate>Fri, 23 Jan 2026 14:00:00 +0000</pubDate>
+      <source>Docker Blog</source>
+    </item>
+    <item>
+      <title>Improved pull request “Files changed” page on by default</title>
+      <link>https://github.blog/changelog/2026-01-22-improved-pull-request-files-changed-page-on-by-default</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-01-22-improved-pull-request-files-changed-page-on-by-default</guid>
+      <pubDate>Fri, 23 Jan 2026 02:26:39 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
     <item>
       <title>[Launched] Generally Available: Deployment safeguards – pod security standard support in AKS</title>
       <link>https://azure.microsoft.com/updates?id=548101</link>
@@ -279,13 +293,6 @@
       <guid isPermaLink="true">https://www.docker.com/blog/making-small-llms-smarter/</guid>
       <pubDate>Fri, 16 Jan 2026 13:47:26 +0000</pubDate>
       <source>Docker Blog</source>
-    </item>
-    <item>
-      <title>Secret scanning extended metadata to be automatically enabled for certain repositories</title>
-      <link>https://github.blog/changelog/2026-01-15-secret-scanning-extended-metadata-to-be-automatically-enabled-for-certain-repositories</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-01-15-secret-scanning-extended-metadata-to-be-automatically-enabled-for-certain-repositories</guid>
-      <pubDate>Thu, 15 Jan 2026 21:59:35 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>Building an agentic memory system for GitHub Copilot</title>
