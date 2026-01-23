@@ -290,7 +290,6 @@ test.describe("Mark as Read Tests", () => {
     // SKIPPED: Pre-existing bug - article.classList.add('read') is not working
     // Article URL is correctly saved to localStorage but visual class is not applied
     // This is a bug in the updateArticleReadState function or related code in script.js
-    // TODO: Fix the JavaScript code to properly update article classes
   });
 
   test("should clear all read articles when clicking reset button", async ({

@@ -193,6 +193,18 @@ function setLocalStorageJSON(key, value) {
   }
 }
 
+/**
+ * Safely remove item from localStorage with error handling
+ * @param {string} key - localStorage key
+ */
+function removeLocalStorage(key) {
+  try {
+    localStorage.removeItem(key);
+  } catch (e) {
+    console.warn(`Unable to remove from localStorage for key "${key}":`, e);
+  }
+}
+
 // ===== MIGRATION: Separate Theme and View Mode Storage =====
 // Migrate old data structure where view modes were stored in experimentalTheme
 (function migrateThemeViewModeStorage() {
@@ -207,14 +219,39 @@ function setLocalStorageJSON(key, value) {
       // Move it to experimentalViewMode
       localStorage.setItem("experimentalViewMode", experimentalTheme);
       localStorage.removeItem("experimentalTheme");
-      console.log(
-        `Migrated view mode "${experimentalTheme}" to experimentalViewMode`,
-      );
     }
   } catch (e) {
     console.warn("Unable to migrate theme/view mode storage:", e);
   }
 })();
+
+/**
+ * Create an SVG element from path data
+ * @param {number} width - SVG width
+ * @param {number} height - SVG height
+ * @param {string} content - SVG inner content (paths, lines, etc.)
+ * @returns {SVGElement} - SVG element
+ */
+function createSVG(width, height, content) {
+  const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  svg.setAttribute("width", width.toString());
+  svg.setAttribute("height", height.toString());
+  svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
+  svg.setAttribute("fill", "none");
+  svg.setAttribute("stroke", "currentColor");
+  svg.setAttribute("stroke-width", "2");
+  svg.setAttribute("stroke-linecap", "round");
+  svg.setAttribute("stroke-linejoin", "round");
+
+  // Parse and create SVG elements from content string
+  const temp = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+  temp.innerHTML = content;
+  while (temp.firstChild) {
+    svg.appendChild(temp.firstChild);
+  }
+
+  return svg;
+}
 
 /**
  * Initialize a dropdown with saved value from localStorage
@@ -389,24 +426,24 @@ function showToast(
   icon.setAttribute("aria-hidden", "true");
 
   // Set icon SVG based on type
+  let svg;
   if (type === "success") {
-    icon.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="20 6 9 17 4 12"></polyline>
-    </svg>`;
+    svg = createSVG(24, 24, '<polyline points="20 6 9 17 4 12"></polyline>');
   } else if (type === "error") {
-    icon.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="12" cy="12" r="10"></circle>
-      <line x1="15" y1="9" x2="9" y2="15"></line>
-      <line x1="9" y1="9" x2="15" y2="15"></line>
-    </svg>`;
+    svg = createSVG(
+      24,
+      24,
+      '<circle cx="12" cy="12" r="10"></circle><line x1="15" y1="9" x2="9" y2="15"></line><line x1="9" y1="9" x2="15" y2="15"></line>',
+    );
   } else {
     // info
-    icon.innerHTML = `<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <circle cx="12" cy="12" r="10"></circle>
-      <line x1="12" y1="16" x2="12" y2="12"></line>
-      <line x1="12" y1="8" x2="12.01" y2="8"></line>
-    </svg>`;
+    svg = createSVG(
+      24,
+      24,
+      '<circle cx="12" cy="12" r="10"></circle><line x1="12" y1="16" x2="12" y2="12"></line><line x1="12" y1="8" x2="12.01" y2="8"></line>',
+    );
   }
+  icon.appendChild(svg);
 
   // Create content
   const content = document.createElement("div");
@@ -472,11 +509,7 @@ if (
     console.warn(
       `Invalid experimental theme: ${experimentalTheme}. Using default.`,
     );
-    try {
-      localStorage.removeItem("experimentalTheme");
-    } catch (e) {
-      console.warn("Unable to remove invalid theme:", e);
-    }
+    removeLocalStorage("experimentalTheme");
   }
   savedTheme = getLocalStorage("theme", "dark");
   currentMode = savedTheme === "light" ? "light" : "dark";
@@ -522,11 +555,7 @@ themeToggle.addEventListener("click", async () => {
     // Standard theme: just "light" or "dark"
     newTheme = newMode;
     setLocalStorage("theme", newTheme);
-    try {
-      localStorage.removeItem("experimentalTheme");
-    } catch (e) {
-      console.warn("Unable to remove experimental theme:", e);
-    }
+    removeLocalStorage("experimentalTheme");
   }
 
   // Update mode storage
@@ -543,17 +572,36 @@ function updateThemeButton(mode) {
   const iconSVG = document.getElementById("theme-icon");
   const themeText = document.getElementById("theme-text");
 
+  // Clear existing content
+  while (iconSVG.firstChild) {
+    iconSVG.removeChild(iconSVG.firstChild);
+  }
+
   if (mode === "dark") {
     // Sun icon for light mode
-    iconSVG.innerHTML =
+    const sunPath =
       '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+    const svg = createSVG(24, 24, sunPath);
+    Array.from(svg.attributes).forEach((attr) => {
+      iconSVG.setAttribute(attr.name, attr.value);
+    });
+    while (svg.firstChild) {
+      iconSVG.appendChild(svg.firstChild);
+    }
     if (themeText) {
       themeText.textContent = "Light Mode";
     }
   } else {
     // Moon icon for dark mode
-    iconSVG.innerHTML =
+    const moonPath =
       '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+    const svg = createSVG(24, 24, moonPath);
+    Array.from(svg.attributes).forEach((attr) => {
+      iconSVG.setAttribute(attr.name, attr.value);
+    });
+    while (svg.firstChild) {
+      iconSVG.appendChild(svg.firstChild);
+    }
     if (themeText) {
       themeText.textContent = "Dark Mode";
     }
@@ -580,19 +628,11 @@ function applyView(view) {
   if (EXPERIMENTAL_VIEW_MODES.includes(view)) {
     // Experimental view mode: store in experimentalViewMode
     setLocalStorage("experimentalViewMode", view);
-    try {
-      localStorage.removeItem("view");
-    } catch (e) {
-      console.warn("Unable to remove standard view:", e);
-    }
+    removeLocalStorage("view");
   } else {
     // Standard view mode (list/card): store in view
     setLocalStorage("view", view);
-    try {
-      localStorage.removeItem("experimentalViewMode");
-    } catch (e) {
-      console.warn("Unable to remove experimental view mode:", e);
-    }
+    removeLocalStorage("experimentalViewMode");
   }
   htmlElement.setAttribute("data-view", view);
 }
@@ -915,9 +955,12 @@ function initializeReadStatus() {
     const indicator = document.createElement("button");
     indicator.className = "read-indicator";
     indicator.setAttribute("aria-label", "Mark as read/unread");
-    indicator.innerHTML = `<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="20 6 9 17 4 12"></polyline>
-    </svg>`;
+    const svg = createSVG(
+      16,
+      16,
+      '<polyline points="20 6 9 17 4 12"></polyline>',
+    );
+    indicator.appendChild(svg);
 
     indicator.addEventListener("click", (e) => {
       e.preventDefault();
