@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-kubernetes-blog.xml</link>
     <description>Articles from Kubernetes Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-kubernetes-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 23 Jan 2026 20:04:30 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 23 Jan 2026 20:22:39 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Headlamp in 2025: Project Highlights</title>
@@ -72,6 +72,240 @@
       <link>https://kubernetes.io/blog/2025/12/29/kubernetes-v1-35-introducing-workload-aware-scheduling/</link>
       <guid isPermaLink="true">https://kubernetes.io/blog/2025/12/29/kubernetes-v1-35-introducing-workload-aware-scheduling/</guid>
       <pubDate>Mon, 29 Dec 2025 18:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Kubernetes v1.35: Fine-grained Supplemental Groups Control Graduates to GA</title>
+      <link>https://kubernetes.io/blog/2025/12/23/kubernetes-v1-35-fine-grained-supplementalgroups-control-ga/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/12/23/kubernetes-v1-35-fine-grained-supplementalgroups-control-ga/</guid>
+      <pubDate>Tue, 23 Dec 2025 18:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Kubernetes v1.35: Kubelet Configuration Drop-in Directory Graduates to GA</title>
+      <link>https://kubernetes.io/blog/2025/12/22/kubernetes-v1-35-kubelet-config-drop-in-directory-ga/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/12/22/kubernetes-v1-35-kubelet-config-drop-in-directory-ga/</guid>
+      <pubDate>Mon, 22 Dec 2025 18:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Avoiding Zombie Cluster Members When Upgrading to etcd v3.6</title>
+      <link>https://kubernetes.io/blog/2025/12/21/preventing-etcd-zombies/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/12/21/preventing-etcd-zombies/</guid>
+      <pubDate>Sun, 21 Dec 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Kubernetes 1.35: In-Place Pod Resize Graduates to Stable</title>
+      <link>https://kubernetes.io/blog/2025/12/19/kubernetes-v1-35-in-place-pod-resize-ga/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/12/19/kubernetes-v1-35-in-place-pod-resize-ga/</guid>
+      <pubDate>Fri, 19 Dec 2025 18:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Kubernetes v1.35: Job Managed By Goes GA</title>
+      <link>https://kubernetes.io/blog/2025/12/18/kubernetes-v1-35-job-managedby-for-jobs-goes-ga/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/12/18/kubernetes-v1-35-job-managedby-for-jobs-goes-ga/</guid>
+      <pubDate>Thu, 18 Dec 2025 18:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Kubernetes v1.35: Timbernetes (The World Tree Release)</title>
+      <link>https://kubernetes.io/blog/2025/12/17/kubernetes-v1-35-release/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/12/17/kubernetes-v1-35-release/</guid>
+      <pubDate>Wed, 17 Dec 2025 18:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Kubernetes v1.35 Sneak Peek</title>
+      <link>https://kubernetes.io/blog/2025/11/26/kubernetes-v1-35-sneak-peek/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/11/26/kubernetes-v1-35-sneak-peek/</guid>
+      <pubDate>Wed, 26 Nov 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Kubernetes Configuration Good Practices</title>
+      <link>https://kubernetes.io/blog/2025/11/25/configuration-good-practices/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/11/25/configuration-good-practices/</guid>
+      <pubDate>Tue, 25 Nov 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Ingress NGINX Retirement: What You Need to Know</title>
+      <link>https://kubernetes.io/blog/2025/11/11/ingress-nginx-retirement/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/11/11/ingress-nginx-retirement/</guid>
+      <pubDate>Tue, 11 Nov 2025 18:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Announcing the 2025 Steering Committee Election Results</title>
+      <link>https://kubernetes.io/blog/2025/11/09/steering-committee-results-2025/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/11/09/steering-committee-results-2025/</guid>
+      <pubDate>Sun, 09 Nov 2025 20:10:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Gateway API 1.4: New Features</title>
+      <link>https://kubernetes.io/blog/2025/11/06/gateway-api-v1-4/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/11/06/gateway-api-v1-4/</guid>
+      <pubDate>Thu, 06 Nov 2025 17:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>7 Common Kubernetes Pitfalls (and How I Learned to Avoid Them)</title>
+      <link>https://kubernetes.io/blog/2025/10/20/seven-kubernetes-pitfalls-and-how-to-avoid/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/10/20/seven-kubernetes-pitfalls-and-how-to-avoid/</guid>
+      <pubDate>Mon, 20 Oct 2025 15:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Spotlight on Policy Working Group</title>
+      <link>https://kubernetes.io/blog/2025/10/18/wg-policy-spotlight-2025/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/10/18/wg-policy-spotlight-2025/</guid>
+      <pubDate>Sat, 18 Oct 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Introducing Headlamp Plugin for Karpenter - Scaling and Visibility</title>
+      <link>https://kubernetes.io/blog/2025/10/06/introducing-headlamp-plugin-for-karpenter/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/10/06/introducing-headlamp-plugin-for-karpenter/</guid>
+      <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Announcing Changed Block Tracking API support (alpha)</title>
+      <link>https://kubernetes.io/blog/2025/09/25/csi-changed-block-tracking/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/09/25/csi-changed-block-tracking/</guid>
+      <pubDate>Thu, 25 Sep 2025 13:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Kubernetes v1.34: Pod Level Resources Graduated to Beta</title>
+      <link>https://kubernetes.io/blog/2025/09/22/kubernetes-v1-34-pod-level-resources/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/09/22/kubernetes-v1-34-pod-level-resources/</guid>
+      <pubDate>Mon, 22 Sep 2025 18:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Kubernetes v1.34: Recovery From Volume Expansion Failure (GA)</title>
+      <link>https://kubernetes.io/blog/2025/09/19/kubernetes-v1-34-recover-expansion-failure/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/09/19/kubernetes-v1-34-recover-expansion-failure/</guid>
+      <pubDate>Fri, 19 Sep 2025 18:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Kubernetes v1.34: DRA Consumable Capacity</title>
+      <link>https://kubernetes.io/blog/2025/09/18/kubernetes-v1-34-dra-consumable-capacity/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/09/18/kubernetes-v1-34-dra-consumable-capacity/</guid>
+      <pubDate>Thu, 18 Sep 2025 18:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Kubernetes v1.34: Pods Report DRA Resource Health</title>
+      <link>https://kubernetes.io/blog/2025/09/17/kubernetes-v1-34-pods-report-dra-resource-health/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/09/17/kubernetes-v1-34-pods-report-dra-resource-health/</guid>
+      <pubDate>Wed, 17 Sep 2025 18:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Kubernetes v1.34: Moving Volume Group Snapshots to v1beta2</title>
+      <link>https://kubernetes.io/blog/2025/09/16/kubernetes-v1-34-volume-group-snapshot-beta-2/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/09/16/kubernetes-v1-34-volume-group-snapshot-beta-2/</guid>
+      <pubDate>Tue, 16 Sep 2025 18:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Kubernetes v1.34: Decoupled Taint Manager Is Now Stable</title>
+      <link>https://kubernetes.io/blog/2025/09/15/kubernetes-v1-34-decoupled-taint-manager-is-now-stable/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/09/15/kubernetes-v1-34-decoupled-taint-manager-is-now-stable/</guid>
+      <pubDate>Mon, 15 Sep 2025 18:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Kubernetes v1.34: Autoconfiguration for Node Cgroup Driver Goes GA</title>
+      <link>https://kubernetes.io/blog/2025/09/12/kubernetes-v1-34-cri-cgroup-driver-lookup-now-ga/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/09/12/kubernetes-v1-34-cri-cgroup-driver-lookup-now-ga/</guid>
+      <pubDate>Fri, 12 Sep 2025 18:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Kubernetes v1.34: Mutable CSI Node Allocatable Graduates to Beta</title>
+      <link>https://kubernetes.io/blog/2025/09/11/kubernetes-v1-34-mutable-csi-node-allocatable-count/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/09/11/kubernetes-v1-34-mutable-csi-node-allocatable-count/</guid>
+      <pubDate>Thu, 11 Sep 2025 18:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Kubernetes v1.34: Use An Init Container To Define App Environment Variables</title>
+      <link>https://kubernetes.io/blog/2025/09/10/kubernetes-v1-34-env-files/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/09/10/kubernetes-v1-34-env-files/</guid>
+      <pubDate>Wed, 10 Sep 2025 18:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Kubernetes v1.34: Snapshottable API server cache</title>
+      <link>https://kubernetes.io/blog/2025/09/09/kubernetes-v1-34-snapshottable-api-server-cache/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/09/09/kubernetes-v1-34-snapshottable-api-server-cache/</guid>
+      <pubDate>Tue, 09 Sep 2025 18:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Kubernetes v1.34: VolumeAttributesClass for Volume Modification GA</title>
+      <link>https://kubernetes.io/blog/2025/09/08/kubernetes-v1-34-volume-attributes-class/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/09/08/kubernetes-v1-34-volume-attributes-class/</guid>
+      <pubDate>Mon, 08 Sep 2025 18:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Kubernetes v1.34: Pod Replacement Policy for Jobs Goes GA</title>
+      <link>https://kubernetes.io/blog/2025/09/05/kubernetes-v1-34-pod-replacement-policy-for-jobs-goes-ga/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/09/05/kubernetes-v1-34-pod-replacement-policy-for-jobs-goes-ga/</guid>
+      <pubDate>Fri, 05 Sep 2025 18:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Kubernetes v1.34: PSI Metrics for Kubernetes Graduates to Beta</title>
+      <link>https://kubernetes.io/blog/2025/09/04/kubernetes-v1-34-introducing-psi-metrics-beta/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/09/04/kubernetes-v1-34-introducing-psi-metrics-beta/</guid>
+      <pubDate>Thu, 04 Sep 2025 18:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Kubernetes v1.34: Service Account Token Integration for Image Pulls Graduates to Beta</title>
+      <link>https://kubernetes.io/blog/2025/09/03/kubernetes-v1-34-sa-tokens-image-pulls-beta/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/09/03/kubernetes-v1-34-sa-tokens-image-pulls-beta/</guid>
+      <pubDate>Wed, 03 Sep 2025 18:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Kubernetes v1.34: Introducing CPU Manager Static Policy Option for Uncore Cache Alignment</title>
+      <link>https://kubernetes.io/blog/2025/09/02/kubernetes-v1-34-prefer-align-by-uncore-cache-cpumanager-static-policy-optimization/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/09/02/kubernetes-v1-34-prefer-align-by-uncore-cache-cpumanager-static-policy-optimization/</guid>
+      <pubDate>Tue, 02 Sep 2025 18:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Kubernetes v1.34: DRA has graduated to GA</title>
+      <link>https://kubernetes.io/blog/2025/09/01/kubernetes-v1-34-dra-updates/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/09/01/kubernetes-v1-34-dra-updates/</guid>
+      <pubDate>Mon, 01 Sep 2025 18:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Kubernetes v1.34: Finer-Grained Control Over Container Restarts</title>
+      <link>https://kubernetes.io/blog/2025/08/29/kubernetes-v1-34-per-container-restart-policy/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/08/29/kubernetes-v1-34-per-container-restart-policy/</guid>
+      <pubDate>Fri, 29 Aug 2025 18:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Kubernetes v1.34: User preferences (kuberc) are available for testing in kubectl 1.34</title>
+      <link>https://kubernetes.io/blog/2025/08/28/kubernetes-v1-34-kubectl-kuberc-beta/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/08/28/kubernetes-v1-34-kubectl-kuberc-beta/</guid>
+      <pubDate>Thu, 28 Aug 2025 18:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Kubernetes v1.34: Of Wind &amp; Will (O' WaW)</title>
+      <link>https://kubernetes.io/blog/2025/08/27/kubernetes-v1-34-release/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/08/27/kubernetes-v1-34-release/</guid>
+      <pubDate>Wed, 27 Aug 2025 18:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Tuning Linux Swap for Kubernetes: A Deep Dive</title>
+      <link>https://kubernetes.io/blog/2025/08/19/tuning-linux-swap-for-kubernetes-a-deep-dive/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/08/19/tuning-linux-swap-for-kubernetes-a-deep-dive/</guid>
+      <pubDate>Tue, 19 Aug 2025 18:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Introducing Headlamp AI Assistant</title>
+      <link>https://kubernetes.io/blog/2025/08/07/introducing-headlamp-ai-assistant/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/08/07/introducing-headlamp-ai-assistant/</guid>
+      <pubDate>Thu, 07 Aug 2025 19:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Kubernetes v1.34 Sneak Peek</title>
+      <link>https://kubernetes.io/blog/2025/07/28/kubernetes-v1-34-sneak-peek/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/07/28/kubernetes-v1-34-sneak-peek/</guid>
+      <pubDate>Mon, 28 Jul 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Post-Quantum Cryptography in Kubernetes</title>
+      <link>https://kubernetes.io/blog/2025/07/18/pqc-in-k8s/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/07/18/pqc-in-k8s/</guid>
+      <pubDate>Fri, 18 Jul 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Navigating Failures in Pods With Devices</title>
+      <link>https://kubernetes.io/blog/2025/07/03/navigating-failures-in-pods-with-devices/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2025/07/03/navigating-failures-in-pods-with-devices/</guid>
+      <pubDate>Thu, 03 Jul 2025 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

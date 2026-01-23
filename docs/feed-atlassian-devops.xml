@@ -5,13 +5,37 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-atlassian-devops.xml</link>
     <description>Articles from Atlassian DevOps</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-atlassian-devops.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 23 Jan 2026 20:04:30 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 23 Jan 2026 20:22:39 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>How tech leaders can turn AI hype into real team productivity</title>
       <link>https://www.atlassian.com/blog/devops/how-tech-leaders-can-turn-ai-hype-into-real-team-productivity</link>
       <guid isPermaLink="true">https://www.atlassian.com/blog/devops/how-tech-leaders-can-turn-ai-hype-into-real-team-productivity</guid>
       <pubDate>Fri, 16 Jan 2026 23:42:26 +0000</pubDate>
+    </item>
+    <item>
+      <title>Supercharging Rovo: how Unito’s Connectors in the Atlassian Marketplace transform AI intelligence</title>
+      <link>https://www.atlassian.com/blog/artificial-intelligence/supercharging-rovo-with-unito-connectors-in-the-atlassian-marketplace</link>
+      <guid isPermaLink="true">https://www.atlassian.com/blog/artificial-intelligence/supercharging-rovo-with-unito-connectors-in-the-atlassian-marketplace</guid>
+      <pubDate>Tue, 02 Dec 2025 17:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Rovo Dev agent, now available in the CLI</title>
+      <link>https://www.atlassian.com/blog/announcements/rovo-dev-command-line-interface</link>
+      <guid isPermaLink="true">https://www.atlassian.com/blog/announcements/rovo-dev-command-line-interface</guid>
+      <pubDate>Sat, 22 Nov 2025 01:32:24 +0000</pubDate>
+    </item>
+    <item>
+      <title>Partner with Atlassian and unlock your next wave of growth</title>
+      <link>https://www.atlassian.com/blog/enterprise/partner-with-atlassian-and-unlock-your-next-wave-of-growth</link>
+      <guid isPermaLink="true">https://www.atlassian.com/blog/enterprise/partner-with-atlassian-and-unlock-your-next-wave-of-growth</guid>
+      <pubDate>Thu, 06 Nov 2025 18:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>To Bitbucket from Jenkins: Enhancing Developer Experience</title>
+      <link>https://www.atlassian.com/blog/bitbucket/devex-bitbucket-pipelines-versus-jenkins</link>
+      <guid isPermaLink="true">https://www.atlassian.com/blog/bitbucket/devex-bitbucket-pipelines-versus-jenkins</guid>
+      <pubDate>Tue, 19 Aug 2025 17:53:25 +0000</pubDate>
     </item>
   </channel>
 </rss>

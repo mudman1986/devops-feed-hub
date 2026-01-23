@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-jenkins-blog.xml</link>
     <description>Articles from Jenkins Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-jenkins-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 23 Jan 2026 20:04:30 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 23 Jan 2026 20:22:39 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Google Summer of Code 2026: Volunteers Needed to Mentor Future Jenkins Contributors</title>
@@ -18,6 +18,204 @@
       <link>https://www.jenkins.io/blog/2025/12/29/election-results-2025/</link>
       <guid isPermaLink="true">https://www.jenkins.io/blog/2025/12/29/election-results-2025/</guid>
       <pubDate>Mon, 29 Dec 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Jenkins 2.543 and 2.541.1: New Linux Repository Signing Keys</title>
+      <link>https://www.jenkins.io/blog/2025/12/23/repository-signing-keys-changing/</link>
+      <guid isPermaLink="true">https://www.jenkins.io/blog/2025/12/23/repository-signing-keys-changing/</guid>
+      <pubDate>Tue, 23 Dec 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Announcing the new Jenkins Bug Bounty Program</title>
+      <link>https://www.jenkins.io/blog/2025/12/10/jenkins-bug-bounty-program-yeswehack-european-commission/</link>
+      <guid isPermaLink="true">https://www.jenkins.io/blog/2025/12/10/jenkins-bug-bounty-program-yeswehack-european-commission/</guid>
+      <pubDate>Wed, 10 Dec 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Automating Jenkins on Android with Infrastructure as Code</title>
+      <link>https://www.jenkins.io/blog/2025/10/31/automating-jenkins-on-android/</link>
+      <guid isPermaLink="true">https://www.jenkins.io/blog/2025/10/31/automating-jenkins-on-android/</guid>
+      <pubDate>Fri, 31 Oct 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Advancing the Jenkins Tekton Client Plugin through CRD Generation, JUnit 5 Modernization, and Automated CI</title>
+      <link>https://www.jenkins.io/blog/2025/10/19/maeve-final-evaluation/</link>
+      <guid isPermaLink="true">https://www.jenkins.io/blog/2025/10/19/maeve-final-evaluation/</guid>
+      <pubDate>Sun, 19 Oct 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>GSoC 2025 Final Term: Build Retooling of jenkins.io</title>
+      <link>https://www.jenkins.io/blog/2025/10/19/birajit-saikia-gsoc-finalterm-update-blog-post/</link>
+      <guid isPermaLink="true">https://www.jenkins.io/blog/2025/10/19/birajit-saikia-gsoc-finalterm-update-blog-post/</guid>
+      <pubDate>Sun, 19 Oct 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Revamped Tests UI in Jenkins</title>
+      <link>https://www.jenkins.io/blog/2025/10/16/revamped-tests-in-jenkins/</link>
+      <guid isPermaLink="true">https://www.jenkins.io/blog/2025/10/16/revamped-tests-in-jenkins/</guid>
+      <pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Hacktoberfest 2025</title>
+      <link>https://www.jenkins.io/blog/2025/09/24/hacktoberfest-2025-intro/</link>
+      <guid isPermaLink="true">https://www.jenkins.io/blog/2025/09/24/hacktoberfest-2025-intro/</guid>
+      <pubDate>Wed, 24 Sep 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Introducing the Gradle Convention Plugin for Jenkins Plugin Development</title>
+      <link>https://www.jenkins.io/blog/2025/08/31/aarav-mahajan-gsoc-gradle-convention-plugin-for-jenkins-plugin-development/</link>
+      <guid isPermaLink="true">https://www.jenkins.io/blog/2025/08/31/aarav-mahajan-gsoc-gradle-convention-plugin-for-jenkins-plugin-development/</guid>
+      <pubDate>Sun, 31 Aug 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>GSoC 2025 Endterm - Improving Plugin Modernizer</title>
+      <link>https://www.jenkins.io/blog/2025/08/30/raunak-madan-gsoc-endterm-blog-post/</link>
+      <guid isPermaLink="true">https://www.jenkins.io/blog/2025/08/30/raunak-madan-gsoc-endterm-blog-post/</guid>
+      <pubDate>Sat, 30 Aug 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Jenkins Board and Officer Elections 2025 - Nominations Open</title>
+      <link>https://www.jenkins.io/blog/2025/08/08/board-officer-election-announcement/</link>
+      <guid isPermaLink="true">https://www.jenkins.io/blog/2025/08/08/board-officer-election-announcement/</guid>
+      <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Enforced HTTPS for Update Center</title>
+      <link>https://www.jenkins.io/blog/2025/08/04/update-center-enforce-https/</link>
+      <guid isPermaLink="true">https://www.jenkins.io/blog/2025/08/04/update-center-enforce-https/</guid>
+      <pubDate>Mon, 04 Aug 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>GSoC 2025 Midterm - An AI Agent for Jenkins Failure Diagnosis</title>
+      <link>https://www.jenkins.io/blog/2025/08/03/chirag-gupta-gsoc-community-bonding-blog-post/</link>
+      <guid isPermaLink="true">https://www.jenkins.io/blog/2025/08/03/chirag-gupta-gsoc-community-bonding-blog-post/</guid>
+      <pubDate>Sun, 03 Aug 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>GSoC 2025 Midterm - Improving Plugin Modernizer</title>
+      <link>https://www.jenkins.io/blog/2025/07/28/raunak-madan-gsoc-midterm-blog-post/</link>
+      <guid isPermaLink="true">https://www.jenkins.io/blog/2025/07/28/raunak-madan-gsoc-midterm-blog-post/</guid>
+      <pubDate>Mon, 28 Jul 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>GSoC Midterm Update, Modernizing and Stabilizing the Jenkins Tekton Plugin</title>
+      <link>https://www.jenkins.io/blog/2025/07/28/maeve-ho-gsoc-midterm-update-post/</link>
+      <guid isPermaLink="true">https://www.jenkins.io/blog/2025/07/28/maeve-ho-gsoc-midterm-update-post/</guid>
+      <pubDate>Mon, 28 Jul 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Redesigning Jenkins (Part Two)</title>
+      <link>https://www.jenkins.io/blog/2025/07/24/redesigning-jenkins-part-two/</link>
+      <guid isPermaLink="true">https://www.jenkins.io/blog/2025/07/24/redesigning-jenkins-part-two/</guid>
+      <pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>GSoC Midterm Update, Building an AI-Powered Chatbot</title>
+      <link>https://www.jenkins.io/blog/2025/07/24/giovanni-vaccarino-gsoc-midterm-post/</link>
+      <guid isPermaLink="true">https://www.jenkins.io/blog/2025/07/24/giovanni-vaccarino-gsoc-midterm-post/</guid>
+      <pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>GSoC 2025 Midterm: Complete Build Retooling of jenkins.io</title>
+      <link>https://www.jenkins.io/blog/2025/07/24/birajit-saikia-gsoc-midterm-update-blog-post/</link>
+      <guid isPermaLink="true">https://www.jenkins.io/blog/2025/07/24/birajit-saikia-gsoc-midterm-update-blog-post/</guid>
+      <pubDate>Thu, 24 Jul 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Amazon donates $60,000 to Jenkins</title>
+      <link>https://www.jenkins.io/blog/2025/07/11/aws-sponsorship/</link>
+      <guid isPermaLink="true">https://www.jenkins.io/blog/2025/07/11/aws-sponsorship/</guid>
+      <pubDate>Fri, 11 Jul 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>YourKit sponsors the Jenkins project</title>
+      <link>https://www.jenkins.io/blog/2025/07/10/yourkit-sponsorship/</link>
+      <guid isPermaLink="true">https://www.jenkins.io/blog/2025/07/10/yourkit-sponsorship/</guid>
+      <pubDate>Thu, 10 Jul 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>JetBrains sponsors the Jenkins project</title>
+      <link>https://www.jenkins.io/blog/2025/07/10/jetbrains-sponsorship/</link>
+      <guid isPermaLink="true">https://www.jenkins.io/blog/2025/07/10/jetbrains-sponsorship/</guid>
+      <pubDate>Thu, 10 Jul 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>🌟 Celebrating the 2025 Jenkins Contributor Award Winners</title>
+      <link>https://www.jenkins.io/blog/2025/06/25/Celebrating-the-2025-Jenkins-Contributor-Award-Winners/</link>
+      <guid isPermaLink="true">https://www.jenkins.io/blog/2025/06/25/Celebrating-the-2025-Jenkins-Contributor-Award-Winners/</guid>
+      <pubDate>Wed, 25 Jun 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Meet Chirag Gupta, GSoC 2025 Contributor Building an LLM for Jenkins Failure Diagnosis</title>
+      <link>https://www.jenkins.io/blog/2025/06/11/chirag-gupta-gsoc-community-bonding-blog-post/</link>
+      <guid isPermaLink="true">https://www.jenkins.io/blog/2025/06/11/chirag-gupta-gsoc-community-bonding-blog-post/</guid>
+      <pubDate>Wed, 11 Jun 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Meet Raunak Madan – GSoC 2025 Contributor Working on Improving Plugin Modernizer Tool</title>
+      <link>https://www.jenkins.io/blog/2025/06/06/raunak-madan-gsoc-community-bonding-blog-post/</link>
+      <guid isPermaLink="true">https://www.jenkins.io/blog/2025/06/06/raunak-madan-gsoc-community-bonding-blog-post/</guid>
+      <pubDate>Fri, 06 Jun 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Meet Giovanni Vaccarino GSoC 2025 Contributor Working on AI-Powered Chatbot for Quick Access to Jenkins Resources</title>
+      <link>https://www.jenkins.io/blog/2025/06/06/giovanni-vaccarino-gsoc-community-bonding-blog-post/</link>
+      <guid isPermaLink="true">https://www.jenkins.io/blog/2025/06/06/giovanni-vaccarino-gsoc-community-bonding-blog-post/</guid>
+      <pubDate>Fri, 06 Jun 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Introducing Maeve Ho – GSoC 2025 Contributor Enhancing Tekton Integration in Jenkins</title>
+      <link>https://www.jenkins.io/blog/2025/06/04/maeve-ho-gsoc-community-bonding-blog-post/</link>
+      <guid isPermaLink="true">https://www.jenkins.io/blog/2025/06/04/maeve-ho-gsoc-community-bonding-blog-post/</guid>
+      <pubDate>Wed, 04 Jun 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Meet Birajit Saikia GSoC 2025 Contributor Working on Complete Build Retooling of jenkins.io</title>
+      <link>https://www.jenkins.io/blog/2025/06/03/birajit-saikia-gsoc-community-bonding-blog-post/</link>
+      <guid isPermaLink="true">https://www.jenkins.io/blog/2025/06/03/birajit-saikia-gsoc-community-bonding-blog-post/</guid>
+      <pubDate>Tue, 03 Jun 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Android and Jenkins: What Is the Limit? Part Two.</title>
+      <link>https://www.jenkins.io/blog/2025/05/22/jenkins-on-android/</link>
+      <guid isPermaLink="true">https://www.jenkins.io/blog/2025/05/22/jenkins-on-android/</guid>
+      <pubDate>Thu, 22 May 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Jenkins Contributor Awards: Cast Your Vote</title>
+      <link>https://www.jenkins.io/blog/2025/05/15/jenkins-contributor-awards-cast-your-vote/</link>
+      <guid isPermaLink="true">https://www.jenkins.io/blog/2025/05/15/jenkins-contributor-awards-cast-your-vote/</guid>
+      <pubDate>Thu, 15 May 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Revamped Pipeline visualization in Jenkins</title>
+      <link>https://www.jenkins.io/blog/2025/05/02/pipeline-graph-view/</link>
+      <guid isPermaLink="true">https://www.jenkins.io/blog/2025/05/02/pipeline-graph-view/</guid>
+      <pubDate>Fri, 02 May 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Redesigning Jenkins (Part One)</title>
+      <link>https://www.jenkins.io/blog/2025/03/26/design-post/</link>
+      <guid isPermaLink="true">https://www.jenkins.io/blog/2025/03/26/design-post/</guid>
+      <pubDate>Wed, 26 Mar 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Jenkins Contributor Awards 2025 - Nominations are Open</title>
+      <link>https://www.jenkins.io/blog/2025/03/18/jenkins-contributor-awards-2025-nomination-is-open/</link>
+      <guid isPermaLink="true">https://www.jenkins.io/blog/2025/03/18/jenkins-contributor-awards-2025-nomination-is-open/</guid>
+      <pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Jenkins in Google Summer of Code 2025</title>
+      <link>https://www.jenkins.io/blog/2025/03/05/Jenkins-in-Google-Summer-of-Code-2025/</link>
+      <guid isPermaLink="true">https://www.jenkins.io/blog/2025/03/05/Jenkins-in-Google-Summer-of-Code-2025/</guid>
+      <pubDate>Wed, 05 Mar 2025 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>A new way to search in Jenkins 2.492.1</title>
+      <link>https://www.jenkins.io/blog/2025/02/05/command-palette/</link>
+      <guid isPermaLink="true">https://www.jenkins.io/blog/2025/02/05/command-palette/</guid>
+      <pubDate>Wed, 05 Feb 2025 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

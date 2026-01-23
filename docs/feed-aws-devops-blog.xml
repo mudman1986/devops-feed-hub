@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-aws-devops-blog.xml</link>
     <description>Articles from AWS DevOps Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-aws-devops-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 23 Jan 2026 20:04:30 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 23 Jan 2026 20:22:39 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>From AI agent prototype to product: Lessons from building AWS DevOps Agent</title>
@@ -18,6 +18,114 @@
       <link>https://aws.amazon.com/blogs/devops/automating-aws-sdk-for-java-v1-to-v2-upgrades-with-aws-transform/</link>
       <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/automating-aws-sdk-for-java-v1-to-v2-upgrades-with-aws-transform/</guid>
       <pubDate>Thu, 08 Jan 2026 20:40:13 +0000</pubDate>
+    </item>
+    <item>
+      <title>How Kaltura Accelerates CI/CD Using AWS CodeBuild-hosted Runners</title>
+      <link>https://aws.amazon.com/blogs/devops/how-kaltura-accelerates-ci-cd-using-aws-codebuild-hosted-runners/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/how-kaltura-accelerates-ci-cd-using-aws-codebuild-hosted-runners/</guid>
+      <pubDate>Thu, 18 Dec 2025 14:54:45 +0000</pubDate>
+    </item>
+    <item>
+      <title>Resolve and prevent operational incidents with AWS DevOps Agent and New Relic</title>
+      <link>https://aws.amazon.com/blogs/devops/resolve-and-prevent-operational-incidents-with-aws-devops-agent-and-new-relic/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/resolve-and-prevent-operational-incidents-with-aws-devops-agent-and-new-relic/</guid>
+      <pubDate>Wed, 10 Dec 2025 22:03:04 +0000</pubDate>
+    </item>
+    <item>
+      <title>Accelerate autonomous incident resolutions using the Datadog MCP server and AWS DevOps agent (in preview)</title>
+      <link>https://aws.amazon.com/blogs/devops/accelerate-autonomous-incident-resolutions-using-the-datadog-mcp-server-and-aws-devops-agent-in-preview/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/accelerate-autonomous-incident-resolutions-using-the-datadog-mcp-server-and-aws-devops-agent-in-preview/</guid>
+      <pubDate>Thu, 04 Dec 2025 16:55:21 +0000</pubDate>
+    </item>
+    <item>
+      <title>Building with AI-DLC using Amazon Q Developer</title>
+      <link>https://aws.amazon.com/blogs/devops/building-with-ai-dlc-using-amazon-q-developer/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/building-with-ai-dlc-using-amazon-q-developer/</guid>
+      <pubDate>Sat, 29 Nov 2025 21:07:21 +0000</pubDate>
+    </item>
+    <item>
+      <title>Open-Sourcing Adaptive Workflows for AI-Driven Development Life Cycle (AI-DLC)</title>
+      <link>https://aws.amazon.com/blogs/devops/open-sourcing-adaptive-workflows-for-ai-driven-development-life-cycle-ai-dlc/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/open-sourcing-adaptive-workflows-for-ai-driven-development-life-cycle-ai-dlc/</guid>
+      <pubDate>Sat, 29 Nov 2025 20:54:04 +0000</pubDate>
+    </item>
+    <item>
+      <title>Introducing the AWS Infrastructure as Code MCP Server: AI-Powered CDK and CloudFormation Assistance</title>
+      <link>https://aws.amazon.com/blogs/devops/introducing-the-aws-infrastructure-as-code-mcp-server-ai-powered-cdk-and-cloudformation-assistance/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/introducing-the-aws-infrastructure-as-code-mcp-server-ai-powered-cdk-and-cloudformation-assistance/</guid>
+      <pubDate>Fri, 28 Nov 2025 22:52:07 +0000</pubDate>
+    </item>
+    <item>
+      <title>The Future of AWS CodeCommit</title>
+      <link>https://aws.amazon.com/blogs/devops/aws-codecommit-returns-to-general-availability/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/aws-codecommit-returns-to-general-availability/</guid>
+      <pubDate>Mon, 24 Nov 2025 19:56:45 +0000</pubDate>
+    </item>
+    <item>
+      <title>Your Guide to the Developer Tools Track at AWS re:Invent 2025</title>
+      <link>https://aws.amazon.com/blogs/devops/your-guide-to-the-developer-tools-track-at-aws-reinvent-2025/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/your-guide-to-the-developer-tools-track-at-aws-reinvent-2025/</guid>
+      <pubDate>Mon, 24 Nov 2025 12:27:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>Introducing AWS CloudFormation Stack Refactoring Console Experience: Reorganize Your Infrastructure Without Disruption</title>
+      <link>https://aws.amazon.com/blogs/devops/introducing-aws-cloudformation-stack-refactoring-reorganize-your-infrastructure-without-disruption/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/introducing-aws-cloudformation-stack-refactoring-reorganize-your-infrastructure-without-disruption/</guid>
+      <pubDate>Sat, 22 Nov 2025 00:50:47 +0000</pubDate>
+    </item>
+    <item>
+      <title>Take fine-grained control of your AWS CloudFormation StackSets Deployment with StackSet Dependencies</title>
+      <link>https://aws.amazon.com/blogs/devops/take-fine-grained-control-of-your-aws-cloudformation-stacksets-deployment-with-stackset-dependencies/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/take-fine-grained-control-of-your-aws-cloudformation-stacksets-deployment-with-stackset-dependencies/</guid>
+      <pubDate>Fri, 21 Nov 2025 22:22:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Announcing CloudFormation IDE Experience: End-to-End Development in Your IDE</title>
+      <link>https://aws.amazon.com/blogs/devops/announcing-cloudformation-ide-experience-end-to-end-development-in-your-ide/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/announcing-cloudformation-ide-experience-end-to-end-development-in-your-ide/</guid>
+      <pubDate>Wed, 19 Nov 2025 19:01:49 +0000</pubDate>
+    </item>
+    <item>
+      <title>Amazon introduces two benchmark datasets for evaluating AI agents’ ability on code migration</title>
+      <link>https://aws.amazon.com/blogs/devops/amazon-introduces-two-benchmark-datasets-for-evaluating-ai-agents-ability-on-code-migration/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/amazon-introduces-two-benchmark-datasets-for-evaluating-ai-agents-ability-on-code-migration/</guid>
+      <pubDate>Wed, 19 Nov 2025 18:55:15 +0000</pubDate>
+    </item>
+    <item>
+      <title>Safely Handle Configuration Drift with CloudFormation Drift-Aware Change Sets</title>
+      <link>https://aws.amazon.com/blogs/devops/safely-handle-configuration-drift-with-cloudformation-drift-aware-change-sets/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/safely-handle-configuration-drift-with-cloudformation-drift-aware-change-sets/</guid>
+      <pubDate>Wed, 19 Nov 2025 18:54:15 +0000</pubDate>
+    </item>
+    <item>
+      <title>Accelerate infrastructure development with CloudFormation pre-deployment validation and simplified troubleshooting</title>
+      <link>https://aws.amazon.com/blogs/devops/accelerate-infrastructure-development-with-cloudformation-pre-deployment-validation-and-simplified-troubleshooting/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/accelerate-infrastructure-development-with-cloudformation-pre-deployment-validation-and-simplified-troubleshooting/</guid>
+      <pubDate>Tue, 18 Nov 2025 23:47:10 +0000</pubDate>
+    </item>
+    <item>
+      <title>Streamlining Multi-Account Infrastructure with AWS CloudFormation StackSets and AWS CDK</title>
+      <link>https://aws.amazon.com/blogs/devops/streamlining-multi-account-infrastructure-with-aws-cloudformation-stacksets-and-aws-cdk/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/streamlining-multi-account-infrastructure-with-aws-cloudformation-stacksets-and-aws-cdk/</guid>
+      <pubDate>Mon, 03 Nov 2025 14:44:41 +0000</pubDate>
+    </item>
+    <item>
+      <title>How to Simplify Multi-Account Deployments Monitoring: Centralized Logs for AWS CloudFormation StackSets</title>
+      <link>https://aws.amazon.com/blogs/devops/how-to-simplify-multi-account-deployments-monitoring-centralized-logs-for-aws-cloudformation-stacksets/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/how-to-simplify-multi-account-deployments-monitoring-centralized-logs-for-aws-cloudformation-stacksets/</guid>
+      <pubDate>Fri, 24 Oct 2025 15:35:20 +0000</pubDate>
+    </item>
+    <item>
+      <title>Infrastructure as Code at Thomson Reuters with AWS CDK</title>
+      <link>https://aws.amazon.com/blogs/devops/infrastructure-as-code-at-thomson-reuters-with-aws-cdk/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/infrastructure-as-code-at-thomson-reuters-with-aws-cdk/</guid>
+      <pubDate>Tue, 21 Oct 2025 07:28:37 +0000</pubDate>
+    </item>
+    <item>
+      <title>Boosting Unit Test Automation at Audible with Amazon Q Developer</title>
+      <link>https://aws.amazon.com/blogs/devops/boosting-unit-test-automation-at-audible-with-amazon-q-developer/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/boosting-unit-test-automation-at-audible-with-amazon-q-developer/</guid>
+      <pubDate>Fri, 10 Oct 2025 19:01:08 +0000</pubDate>
     </item>
   </channel>
 </rss>

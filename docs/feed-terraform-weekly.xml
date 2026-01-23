@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-terraform-weekly.xml</link>
     <description>Articles from Terraform weekly</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-terraform-weekly.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 23 Jan 2026 20:04:30 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 23 Jan 2026 20:22:39 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Issue #258 - IaCConf, Multi-Environment GitHub Pipelines, ignore_changes Deep Dive, AWS Glue Data Exports, Terraform New Features, Agent Skill for Terraform and OpenTofu</title>
@@ -18,6 +18,114 @@
       <link>https://www.weekly.tf/p/issue-257-iacconf-terraform-secrets-protection-ai-devops-agents-pulumi-s-multi-iac-platform-future-o</link>
       <guid isPermaLink="true">https://www.weekly.tf/p/issue-257-iacconf-terraform-secrets-protection-ai-devops-agents-pulumi-s-multi-iac-platform-future-o</guid>
       <pubDate>Wed, 14 Jan 2026 16:00:15 +0000</pubDate>
+    </item>
+    <item>
+      <title>Issue #256 - AWS Credits, Shift Left at Scale: Enterprise IaC, GitHub Repo Automation, CDK for Terraform (bye), and AWS IAM Security</title>
+      <link>https://www.weekly.tf/p/issue-256-aws-credits-shift-left-at-scale-enterprise-iac-github-repo-automation-cdk-for-terraform-by</link>
+      <guid isPermaLink="true">https://www.weekly.tf/p/issue-256-aws-credits-shift-left-at-scale-enterprise-iac-github-repo-automation-cdk-for-terraform-by</guid>
+      <pubDate>Wed, 17 Dec 2025 16:00:34 +0000</pubDate>
+    </item>
+    <item>
+      <title>Issue #255 - Stop Misconfigurations with compliance.tf and OPA, Discover Provider Actions via Schema JSON, Secure Serverless with IAM Identity Center</title>
+      <link>https://www.weekly.tf/p/issue-255-stop-misconfigurations-with-compliance-tf-and-opa-discover-provider-actions-via-schema</link>
+      <guid isPermaLink="true">https://www.weekly.tf/p/issue-255-stop-misconfigurations-with-compliance-tf-and-opa-discover-provider-actions-via-schema</guid>
+      <pubDate>Wed, 10 Dec 2025 16:01:28 +0000</pubDate>
+    </item>
+    <item>
+      <title>Issue #254 - Terragrunt 2025, Provider Caching, Aurora IAM Users, and AWS Bill Shock Prevention</title>
+      <link>https://www.weekly.tf/p/issue-254-terragrunt-2025-provider-caching-aurora-iam-users-and-aws-bill-shock-prevention</link>
+      <guid isPermaLink="true">https://www.weekly.tf/p/issue-254-terragrunt-2025-provider-caching-aurora-iam-users-and-aws-bill-shock-prevention</guid>
+      <pubDate>Wed, 03 Dec 2025 16:01:08 +0000</pubDate>
+    </item>
+    <item>
+      <title>Issue #253 - Terraspace to Terramate Migration, Self-Hosted Registries with Cognito, MLOps Pipelines, and Custom CloudWatch Metrics</title>
+      <link>https://www.weekly.tf/p/issue-253-terraspace-to-terramate-migration-self-hosted-registries-with-cognito-mlops-pipelines</link>
+      <guid isPermaLink="true">https://www.weekly.tf/p/issue-253-terraspace-to-terramate-migration-self-hosted-registries-with-cognito-mlops-pipelines</guid>
+      <pubDate>Wed, 26 Nov 2025 16:01:04 +0000</pubDate>
+    </item>
+    <item>
+      <title>Issue #252 - Secure Lambda Deployments, Team Workflows, AWS Control Tower Implementation, and OverlayFS Caching Techniques</title>
+      <link>https://www.weekly.tf/p/issue-252-secure-lambda-deployments-team-workflows-aws-control-tower-implementation-and-overlayfs</link>
+      <guid isPermaLink="true">https://www.weekly.tf/p/issue-252-secure-lambda-deployments-team-workflows-aws-control-tower-implementation-and-overlayfs</guid>
+      <pubDate>Wed, 19 Nov 2025 16:00:31 +0000</pubDate>
+    </item>
+    <item>
+      <title>Issue #251 - Harness, Terraform Security Scanning, SSM Parameter Management, Athena State Queries, AWS Backup vs Lambda, and ECS Fargate Deployment</title>
+      <link>https://www.weekly.tf/p/issue-251-harness-terraform-security-scanning-ssm-parameter-management-athena-state-queries-aws-back</link>
+      <guid isPermaLink="true">https://www.weekly.tf/p/issue-251-harness-terraform-security-scanning-ssm-parameter-management-athena-state-queries-aws-back</guid>
+      <pubDate>Wed, 12 Nov 2025 16:01:29 +0000</pubDate>
+    </item>
+    <item>
+      <title>Issue #250 - Plugin Framework Actions Tutorial, Multi-Cloud Drift Scanning Tools Compared, Atlantis Custom Workflows, Lock Files and EC2 Backups</title>
+      <link>https://www.weekly.tf/p/issue-250-plugin-framework-actions-tutorial-multi-cloud-drift-scanning-tools-compared-atlantis-custo</link>
+      <guid isPermaLink="true">https://www.weekly.tf/p/issue-250-plugin-framework-actions-tutorial-multi-cloud-drift-scanning-tools-compared-atlantis-custo</guid>
+      <pubDate>Wed, 05 Nov 2025 16:01:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>Issue #249 - Terraform Testing and TDD, Version Switcher Tool, AI Code with Copilot MCP, S3 Content Moderation, Secure EC2 Runners on AWS</title>
+      <link>https://www.weekly.tf/p/issue-249-terraform-testing-and-tdd-version-switcher-tool-ai-code-with-copilot-mcp-s3-content-modera</link>
+      <guid isPermaLink="true">https://www.weekly.tf/p/issue-249-terraform-testing-and-tdd-version-switcher-tool-ai-code-with-copilot-mcp-s3-content-modera</guid>
+      <pubDate>Wed, 29 Oct 2025 16:01:53 +0000</pubDate>
+    </item>
+    <item>
+      <title>Issue #248 - Terraform State Locking Explained, Rightsize Terraform modules, Terraform with AI and GitHub Copilot, Terratags, Terramaid</title>
+      <link>https://www.weekly.tf/p/issue-248-terraform-state-locking-explained-rightsize-terraform-modules-terraform-with-ai-and-github</link>
+      <guid isPermaLink="true">https://www.weekly.tf/p/issue-248-terraform-state-locking-explained-rightsize-terraform-modules-terraform-with-ai-and-github</guid>
+      <pubDate>Wed, 22 Oct 2025 15:00:42 +0000</pubDate>
+    </item>
+    <item>
+      <title>Issue #247 - Ephemeral Resources, Automating Hub &amp; Spoke Secure Azure Networks, AWS SES to Gmail, Semgrep with Terraform, Slack and  Bedrock Agents, Azure TFE</title>
+      <link>https://www.weekly.tf/p/issue-247-ephemeral-resources-automating-hub-spoke-secure-azure-networks-aws-ses-to-gmail-semgrep</link>
+      <guid isPermaLink="true">https://www.weekly.tf/p/issue-247-ephemeral-resources-automating-hub-spoke-secure-azure-networks-aws-ses-to-gmail-semgrep</guid>
+      <pubDate>Wed, 15 Oct 2025 15:01:19 +0000</pubDate>
+    </item>
+    <item>
+      <title>Issue #246 - Terraforming With AI, AWS SSM with External Updates, AWS Control Tower Deep Dive, 2048 on K8S, sortTF</title>
+      <link>https://www.weekly.tf/p/issue-246-terraforming-with-ai-aws-ssm-with-external-updates-aws-control-tower-deep-dive-2048-on-k8s</link>
+      <guid isPermaLink="true">https://www.weekly.tf/p/issue-246-terraforming-with-ai-aws-ssm-with-external-updates-aws-control-tower-deep-dive-2048-on-k8s</guid>
+      <pubDate>Wed, 08 Oct 2025 15:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Issue #245 - Terraform Actions, Automating Policy Enforcement with OPA, Multi-Account Terraform CI/CD, GitHub Self-Hosted Runners, tftargets</title>
+      <link>https://www.weekly.tf/p/issue-245-terraform-actions-automating-policy-enforcement-with-opa-multi-account-terraform-ci-cd-git</link>
+      <guid isPermaLink="true">https://www.weekly.tf/p/issue-245-terraform-actions-automating-policy-enforcement-with-opa-multi-account-terraform-ci-cd-git</guid>
+      <pubDate>Wed, 01 Oct 2025 15:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Issue #244 - Terraform Pipeline Caching issues, Microsoft Graph, Bots Write Bad Terraform, IaC Reviews, Terraform without the state file bottleneck</title>
+      <link>https://www.weekly.tf/p/issue-244-terraform-pipeline-caching-issues-microsoft-graph-bots-write-bad-terraform-iac-reviews</link>
+      <guid isPermaLink="true">https://www.weekly.tf/p/issue-244-terraform-pipeline-caching-issues-microsoft-graph-bots-write-bad-terraform-iac-reviews</guid>
+      <pubDate>Wed, 24 Sep 2025 15:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Issue #243 - Terraform Remote Code Execution, "resource must be replaced", Designing Terraform Modules, Prevent Accidental Deletion</title>
+      <link>https://www.weekly.tf/p/issue-243-terraform-remote-code-execution-resource-must-be-replaced-designing-terraform-modules</link>
+      <guid isPermaLink="true">https://www.weekly.tf/p/issue-243-terraform-remote-code-execution-resource-must-be-replaced-designing-terraform-modules</guid>
+      <pubDate>Wed, 17 Sep 2025 15:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Issue #242 - Overmind, Advanced Terraform Patterns for Teams, Production-Grade Video Upload Platform on AWS, AWS ECS, GitHub Actions with Azure and OIDC</title>
+      <link>https://www.weekly.tf/p/issue-242-overmind-advanced-terraform-patterns-for-teams-production-grade-video-upload-platform</link>
+      <guid isPermaLink="true">https://www.weekly.tf/p/issue-242-overmind-advanced-terraform-patterns-for-teams-production-grade-video-upload-platform</guid>
+      <pubDate>Wed, 10 Sep 2025 15:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Issue #241 - Terraform with GitLab, Secure CI/CD with Okta, Traces &amp; Profiling, Throttling for AWS API Gateway and Lambda, Managing AWS Tags</title>
+      <link>https://www.weekly.tf/p/issue-241-terraform-with-gitlab-secure-ci-cd-with-okta-traces-profiling-throttling-for-aws-api-gatew</link>
+      <guid isPermaLink="true">https://www.weekly.tf/p/issue-241-terraform-with-gitlab-secure-ci-cd-with-okta-traces-profiling-throttling-for-aws-api-gatew</guid>
+      <pubDate>Wed, 03 Sep 2025 15:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Issue #240 - Upgrade to AWS EKS v21, Karpenter in EKS, GitHub Actions Runner Controller, Serverless Image Resizer, Container Orchestrator</title>
+      <link>https://www.weekly.tf/p/issue-240-upgrade-to-aws-eks-v21-karpenter-in-eks-github-actions-runner-controller-serverless-image</link>
+      <guid isPermaLink="true">https://www.weekly.tf/p/issue-240-upgrade-to-aws-eks-v21-karpenter-in-eks-github-actions-runner-controller-serverless-image</guid>
+      <pubDate>Wed, 27 Aug 2025 15:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Issue #239 - IaCConf, S3 Tables using Glue Jobs, LocalStack and Outbox Pattern, Serverless Chat, Terraform Module Tests, tfclean, iam-convert</title>
+      <link>https://www.weekly.tf/p/issue-239-iacconf-s3-tables-using-glue-jobs-localstack-and-outbox-pattern-serverless-chat-terraform</link>
+      <guid isPermaLink="true">https://www.weekly.tf/p/issue-239-iacconf-s3-tables-using-glue-jobs-localstack-and-outbox-pattern-serverless-chat-terraform</guid>
+      <pubDate>Wed, 20 Aug 2025 15:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

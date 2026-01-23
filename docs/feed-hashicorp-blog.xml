@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-hashicorp-blog.xml</link>
     <description>Articles from HashiCorp Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-hashicorp-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 23 Jan 2026 20:04:30 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 23 Jan 2026 20:22:39 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Secrets management disaster recovery without the operational burden</title>
@@ -54,6 +54,78 @@
       <link>https://www.hashicorp.com/blog/new-year-new-cloud-strategy-5-shifts-cloud-leaders-will-be-making-in-2026</link>
       <guid isPermaLink="true">https://www.hashicorp.com/blog/new-year-new-cloud-strategy-5-shifts-cloud-leaders-will-be-making-in-2026</guid>
       <pubDate>Mon, 29 Dec 2025 17:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Infrastructure as demos: A Terraform-selling platform, built on Terraform</title>
+      <link>https://www.hashicorp.com/blog/infrastructure-as-demos-a-terraform-selling-platform-built-on-terraform</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/infrastructure-as-demos-a-terraform-selling-platform-built-on-terraform</guid>
+      <pubDate>Mon, 22 Dec 2025 17:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Terraform adds native monorepo support, Stack component configurations, and more</title>
+      <link>https://www.hashicorp.com/blog/terraform-adds-native-monorepo-support-stack-component-configurations-and-more</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/terraform-adds-native-monorepo-support-stack-component-configurations-and-more</guid>
+      <pubDate>Thu, 18 Dec 2025 20:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Terraform Stacks, explained</title>
+      <link>https://www.hashicorp.com/blog/terraform-stacks-explained</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/terraform-stacks-explained</guid>
+      <pubDate>Thu, 18 Dec 2025 19:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Continuing HCP Terraform’s enhanced free tier experience</title>
+      <link>https://www.hashicorp.com/blog/continuing-hcp-terraform-s-enhanced-free-tier-experience</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/continuing-hcp-terraform-s-enhanced-free-tier-experience</guid>
+      <pubDate>Wed, 17 Dec 2025 21:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Deliver secrets to Kubernetes pods without storing in etcd, using VSO</title>
+      <link>https://www.hashicorp.com/blog/deliver-secrets-to-kubernetes-pods-without-storing-in-etcd-using-vso</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/deliver-secrets-to-kubernetes-pods-without-storing-in-etcd-using-vso</guid>
+      <pubDate>Tue, 16 Dec 2025 15:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>HashiCorp year in review 2025: Lessons in simplifying the cloud</title>
+      <link>https://www.hashicorp.com/blog/hashicorp-year-in-review-2025-lessons-in-simplifying-the-cloud</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/hashicorp-year-in-review-2025-lessons-in-simplifying-the-cloud</guid>
+      <pubDate>Fri, 12 Dec 2025 17:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Boundary 0.21 improves remote access security and UX for RDP connections</title>
+      <link>https://www.hashicorp.com/blog/boundary-0-21-improves-remote-access-security-and-ux-for-rdp-connections</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/boundary-0-21-improves-remote-access-security-and-ux-for-rdp-connections</guid>
+      <pubDate>Thu, 11 Dec 2025 17:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>5 Lessons for enabling self-service and AI-driven infrastructure despite legacy tech at a national bank</title>
+      <link>https://www.hashicorp.com/blog/5-lessons-for-enabling-self-service-and-ai-driven-infrastructure-despite-legacy-tech-at-a-national-bank</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/5-lessons-for-enabling-self-service-and-ai-driven-infrastructure-despite-legacy-tech-at-a-national-bank</guid>
+      <pubDate>Thu, 11 Dec 2025 16:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>A cloud engineering lead’s 7 lessons about speed vs. security</title>
+      <link>https://www.hashicorp.com/blog/a-cloud-engineering-lead-s-7-lessons-about-speed-vs-security</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/a-cloud-engineering-lead-s-7-lessons-about-speed-vs-security</guid>
+      <pubDate>Tue, 09 Dec 2025 21:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>A research-backed look at why cloud ops is breaking at AI’s doorstep</title>
+      <link>https://www.hashicorp.com/blog/a-research-backed-look-at-why-cloud-ops-is-breaking-at-ai-s-doorstep</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/a-research-backed-look-at-why-cloud-ops-is-breaking-at-ai-s-doorstep</guid>
+      <pubDate>Mon, 08 Dec 2025 23:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>HashiCorp is a Kiro powers launch partner</title>
+      <link>https://www.hashicorp.com/blog/hashicorp-is-a-kiro-powers-launch-partner</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/hashicorp-is-a-kiro-powers-launch-partner</guid>
+      <pubDate>Thu, 04 Dec 2025 18:30:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Zero trust for agentic systems: Managing non-human identities at scale</title>
+      <link>https://www.hashicorp.com/blog/zero-trust-for-agentic-systems-managing-non-human-identities-at-scale</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/zero-trust-for-agentic-systems-managing-non-human-identities-at-scale</guid>
+      <pubDate>Wed, 03 Dec 2025 17:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

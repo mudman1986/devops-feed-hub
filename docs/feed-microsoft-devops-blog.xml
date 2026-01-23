@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-microsoft-devops-blog.xml</link>
     <description>Articles from Microsoft DevOps Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-microsoft-devops-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 23 Jan 2026 20:04:30 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 23 Jan 2026 20:22:39 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Azure Boards additional field filters (private preview)</title>
@@ -18,6 +18,54 @@
       <link>https://devblogs.microsoft.com/devops/whats-new-with-azure-repos/</link>
       <guid isPermaLink="true">https://devblogs.microsoft.com/devops/whats-new-with-azure-repos/</guid>
       <pubDate>Fri, 16 Jan 2026 19:34:04 +0000</pubDate>
+    </item>
+    <item>
+      <title>The New Test Run Hub is Going Generally Available!</title>
+      <link>https://devblogs.microsoft.com/devops/the-new-test-run-hub-is-going-generally-available/</link>
+      <guid isPermaLink="true">https://devblogs.microsoft.com/devops/the-new-test-run-hub-is-going-generally-available/</guid>
+      <pubDate>Mon, 22 Dec 2025 13:06:01 +0000</pubDate>
+    </item>
+    <item>
+      <title>Work item linking for Advanced Security alerts now available</title>
+      <link>https://devblogs.microsoft.com/devops/work-item-linking-for-advanced-security-alerts-now-available/</link>
+      <guid isPermaLink="true">https://devblogs.microsoft.com/devops/work-item-linking-for-advanced-security-alerts-now-available/</guid>
+      <pubDate>Fri, 19 Dec 2025 18:24:14 +0000</pubDate>
+    </item>
+    <item>
+      <title>Azure Boards integration with GitHub Copilot</title>
+      <link>https://devblogs.microsoft.com/devops/github-copilot-for-azure-boards/</link>
+      <guid isPermaLink="true">https://devblogs.microsoft.com/devops/github-copilot-for-azure-boards/</guid>
+      <pubDate>Tue, 16 Dec 2025 13:17:08 +0000</pubDate>
+    </item>
+    <item>
+      <title>Retirement of Global Personal Access Tokens in Azure DevOps</title>
+      <link>https://devblogs.microsoft.com/devops/retirement-of-global-personal-access-tokens-in-azure-devops/</link>
+      <guid isPermaLink="true">https://devblogs.microsoft.com/devops/retirement-of-global-personal-access-tokens-in-azure-devops/</guid>
+      <pubDate>Fri, 12 Dec 2025 14:15:06 +0000</pubDate>
+    </item>
+    <item>
+      <title>Announcing Azure DevOps Server General Availability</title>
+      <link>https://devblogs.microsoft.com/devops/announcing-azure-devops-server-general-availability/</link>
+      <guid isPermaLink="true">https://devblogs.microsoft.com/devops/announcing-azure-devops-server-general-availability/</guid>
+      <pubDate>Tue, 09 Dec 2025 20:39:17 +0000</pubDate>
+    </item>
+    <item>
+      <title>Azure DevOps and GitHub Repositories — Next Steps in the Path to Agentic AI</title>
+      <link>https://devblogs.microsoft.com/devops/azure-devops-and-github-repositories-next-steps-in-the-path-to-agentic-ai/</link>
+      <guid isPermaLink="true">https://devblogs.microsoft.com/devops/azure-devops-and-github-repositories-next-steps-in-the-path-to-agentic-ai/</guid>
+      <pubDate>Tue, 18 Nov 2025 17:21:58 +0000</pubDate>
+    </item>
+    <item>
+      <title>November Patches for Azure DevOps Server</title>
+      <link>https://devblogs.microsoft.com/devops/november-patches-for-azure-devops-server-2/</link>
+      <guid isPermaLink="true">https://devblogs.microsoft.com/devops/november-patches-for-azure-devops-server-2/</guid>
+      <pubDate>Tue, 11 Nov 2025 17:25:03 +0000</pubDate>
+    </item>
+    <item>
+      <title>Azure Developer CLI: Azure Container Apps Dev-to-Prod Deployment with Layered Infrastructure</title>
+      <link>https://devblogs.microsoft.com/devops/azure-developer-cli-azure-container-apps-dev-to-prod-deployment-with-layered-infrastructure/</link>
+      <guid isPermaLink="true">https://devblogs.microsoft.com/devops/azure-developer-cli-azure-container-apps-dev-to-prod-deployment-with-layered-infrastructure/</guid>
+      <pubDate>Tue, 04 Nov 2025 22:45:46 +0000</pubDate>
     </item>
   </channel>
 </rss>

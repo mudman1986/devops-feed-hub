@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-circleci-blog.xml</link>
     <description>Articles from CircleCI Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-circleci-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 23 Jan 2026 20:04:30 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 23 Jan 2026 20:22:39 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Mastering waits and timeouts in Playwright</title>
@@ -36,6 +36,36 @@
       <link>https://circleci.com/blog/automating-llm-application-deployment-with-bentoml-and-circleci/</link>
       <guid isPermaLink="true">https://circleci.com/blog/automating-llm-application-deployment-with-bentoml-and-circleci/</guid>
       <pubDate>Mon, 05 Jan 2026 16:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Sign OCI containers &amp; other artifacts using Sigstore Cosign &amp; CircleCI OIDC tokens</title>
+      <link>https://circleci.com/blog/sign-oci-containers-and-other-artifacts-using-sigstore-cosign/</link>
+      <guid isPermaLink="true">https://circleci.com/blog/sign-oci-containers-and-other-artifacts-using-sigstore-cosign/</guid>
+      <pubDate>Mon, 22 Dec 2025 07:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>The ROI of autonomous validation: How to unlock $1.8M in engineering value</title>
+      <link>https://circleci.com/blog/roi-of-autonomous-validation/</link>
+      <guid isPermaLink="true">https://circleci.com/blog/roi-of-autonomous-validation/</guid>
+      <pubDate>Tue, 16 Dec 2025 11:50:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>CI/CD for Go Microservices on Scaleway Kubernetes with CircleCI</title>
+      <link>https://circleci.com/blog/ci-cd-for-go-microservices-on-scaleway-kubernetes/</link>
+      <guid isPermaLink="true">https://circleci.com/blog/ci-cd-for-go-microservices-on-scaleway-kubernetes/</guid>
+      <pubDate>Wed, 10 Dec 2025 16:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Tracking Azure SQL changes with Azure Functions and CI/CD automation</title>
+      <link>https://circleci.com/blog/tracking-azure-sql-changes-with-azure-functions/</link>
+      <guid isPermaLink="true">https://circleci.com/blog/tracking-azure-sql-changes-with-azure-functions/</guid>
+      <pubDate>Tue, 09 Dec 2025 16:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Automating deployment of Azure Functions</title>
+      <link>https://circleci.com/blog/automating-deployment-of-azure-functions/</link>
+      <guid isPermaLink="true">https://circleci.com/blog/automating-deployment-of-azure-functions/</guid>
+      <pubDate>Mon, 08 Dec 2025 16:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
