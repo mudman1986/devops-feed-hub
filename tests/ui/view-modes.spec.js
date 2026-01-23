@@ -43,7 +43,8 @@ test.describe("View Mode Selector", () => {
 
     expect(options).toContain("List");
     expect(options).toContain("Card");
-    expect(options.length).toBe(2);
+    // Now includes 7 Beta experimental view modes
+    expect(options.length).toBe(9);
   });
 
   test("should default to List view", async ({ page }) => {
