@@ -29,7 +29,7 @@ def generate_markdown_summary(data: Dict[str, Any]) -> str:
     hours = data["metadata"].get("hours", 24)
     summary.append(f"**Time range:** Last {hours} hours\n")
     summary.append(
-        "**Note:** Web interface provides filtering for 1 day, 7 days, or 30 days\n"
+        "**Note:** Web interface provides filtering for 1 day, 3 days, 7 days, 30 days, or 1 year\n"
     )
     summary.append("")
 
