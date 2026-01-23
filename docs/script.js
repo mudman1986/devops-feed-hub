@@ -637,8 +637,10 @@ if (sidebarToggle && sidebar) {
 
 const TIMEFRAME_HOURS = {
   "1day": 24,
+  "3days": 72,
   "7days": 168,
   "30days": 720,
+  "1year": 8760,
 };
 
 const savedTimeframe = getLocalStorage("timeframe", "1day");

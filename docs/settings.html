@@ -258,8 +258,10 @@
               <div class="settings-item-control">
                 <select id="timeframe-setting" class="settings-select">
                   <option value="1day">Last 24 hours</option>
+                  <option value="3days">Last 3 days</option>
                   <option value="7days">Last 7 days</option>
                   <option value="30days">Last 30 days</option>
+                  <option value="1year">Last year</option>
                 </select>
               </div>
             </div>
@@ -684,8 +686,10 @@
                 LoadingState.hide(timeframeSelect);
                 const timeframeLabels = {
                   "1day": "Last 24 hours",
+                  "3days": "Last 3 days",
                   "7days": "Last 7 days",
                   "30days": "Last 30 days",
+                  "1year": "Last year",
                 };
                 showToast(
                   `Time range updated to ${timeframeLabels[timeframe] || timeframe}`,

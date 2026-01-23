@@ -409,7 +409,7 @@ test.describe("Timeframe Selector Tests", () => {
 
     // Verify all options are present
     const options = await timeframeSelect.locator("option").all();
-    expect(options.length).toBe(3);
+    expect(options.length).toBe(5);
   });
 
   test("should change timeframe when selecting different option", async ({
