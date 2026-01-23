@@ -9,7 +9,6 @@ test.beforeEach(async ({ page }) => {
 
   // Navigate to page and clear localStorage in correct order
   await page.goto("/");
-  await page.waitForLoadState("load");
   await page.evaluate(() => localStorage.clear());
 });
 
@@ -21,7 +20,7 @@ test.describe("Settings Page Tests", () => {
   test.describe("Settings Page Navigation", () => {
     test("should have settings button in sidebar", async ({ page }) => {
       await page.goto("/");
-      await page.waitForSelector("#settings-button", { timeout: 10000 });
+      // Removed explicit wait - toBeVisible auto-waits
       const settingsButton = page.locator("#settings-button");
       await expect(settingsButton).toBeVisible();
     });
@@ -36,10 +35,11 @@ test.describe("Settings Page Tests", () => {
       const menuToggle = page.locator('.menu-toggle, button:has-text("Menu")');
       if (await menuToggle.isVisible().catch(() => false)) {
         await menuToggle.click();
-        await page.waitForTimeout(300); // Wait for sidebar animation
+        // Wait for settings button to be visible after menu opens
+        await expect(page.locator("#settings-button")).toBeVisible();
       }
 
-      await page.waitForSelector("#settings-button", { timeout: 10000 });
+      // Removed explicit wait - toBeVisible auto-waits
       const settingsButton = page.locator("#settings-button");
       await settingsButton.scrollIntoViewIfNeeded();
       await settingsButton.click();
@@ -50,7 +50,7 @@ test.describe("Settings Page Tests", () => {
 
     test("settings button should be in header controls", async ({ page }) => {
       await page.goto("/");
-      await page.waitForSelector("#settings-button", { timeout: 10000 });
+      // Removed explicit wait - toBeVisible auto-waits
       const settingsButton = page.locator("#settings-button");
 
       // Settings button is now in header (icon-only)
@@ -66,7 +66,7 @@ test.describe("Settings Page Tests", () => {
       page,
     }) => {
       await page.goto("/settings.html");
-      await page.waitForSelector(".settings-container", { timeout: 10000 });
+      // Removed explicit wait - toBeVisible auto-waits
 
       // Check for main container
       const container = page.locator(".settings-container");
@@ -85,7 +85,7 @@ test.describe("Settings Page Tests", () => {
       page,
     }) => {
       await page.goto("/settings.html");
-      await page.waitForSelector(".settings-sidebar", { timeout: 10000 });
+      // Removed explicit wait - toBeVisible auto-waits
 
       // Check for menu items in sidebar
       await expect(
@@ -111,7 +111,7 @@ test.describe("Settings Page Tests", () => {
   test.describe("Feed Selection Settings", () => {
     test("should display feed checkboxes", async ({ page }) => {
       await page.goto("/settings.html");
-      await page.waitForSelector(".settings-sidebar", { timeout: 10000 });
+      // Removed explicit wait - toBeVisible auto-waits
 
       // Click on Feed Selection menu item
       await page
@@ -133,7 +133,7 @@ test.describe("Settings Page Tests", () => {
       page,
     }) => {
       await page.goto("/settings.html");
-      await page.waitForSelector(".settings-sidebar", { timeout: 10000 });
+      // Removed explicit wait - toBeVisible auto-waits
       await page
         .locator('.settings-menu-item:has-text("Feed Selection")')
         .click();
@@ -151,7 +151,7 @@ test.describe("Settings Page Tests", () => {
       page,
     }) => {
       await page.goto("/settings.html");
-      await page.waitForSelector(".settings-sidebar", { timeout: 10000 });
+      // Removed explicit wait - toBeVisible auto-waits
       await page
         .locator('.settings-menu-item:has-text("Feed Selection")')
         .click();
@@ -176,7 +176,7 @@ test.describe("Settings Page Tests", () => {
       page,
     }) => {
       await page.goto("/settings.html");
-      await page.waitForSelector(".settings-sidebar", { timeout: 10000 });
+      // Removed explicit wait - toBeVisible auto-waits
       await page
         .locator('.settings-menu-item:has-text("Feed Selection")')
         .click();
@@ -203,7 +203,7 @@ test.describe("Settings Page Tests", () => {
 
     test("should persist feed selection in localStorage", async ({ page }) => {
       await page.goto("/settings.html");
-      await page.waitForSelector(".settings-sidebar", { timeout: 10000 });
+      // Removed explicit wait - toBeVisible auto-waits
       await page
         .locator('.settings-menu-item:has-text("Feed Selection")')
         .click();
@@ -231,7 +231,7 @@ test.describe("Settings Page Tests", () => {
       page,
     }) => {
       await page.goto("/settings.html");
-      await page.waitForSelector(".settings-sidebar", { timeout: 10000 });
+      // Removed explicit wait - toBeVisible auto-waits
       await page.locator('.settings-menu-item:has-text("Appearance")').click();
 
       // Check for theme section
@@ -245,7 +245,7 @@ test.describe("Settings Page Tests", () => {
   test.describe("Appearance & Display Settings", () => {
     test("should display view mode selector", async ({ page }) => {
       await page.goto("/settings.html");
-      await page.waitForSelector(".settings-sidebar", { timeout: 10000 });
+      // Removed explicit wait - toBeVisible auto-waits
       await page
         .locator('.settings-menu-item:has-text("Appearance & Display")')
         .click();
@@ -264,7 +264,7 @@ test.describe("Settings Page Tests", () => {
 
     test("should display timeframe default selector", async ({ page }) => {
       await page.goto("/settings.html");
-      await page.waitForSelector(".settings-sidebar", { timeout: 10000 });
+      // Removed explicit wait - toBeVisible auto-waits
       await page
         .locator('.settings-menu-item:has-text("Appearance & Display")')
         .click();
@@ -285,7 +285,7 @@ test.describe("Settings Page Tests", () => {
   test.describe("Settings Persistence", () => {
     test("should maintain settings across navigation", async ({ page }) => {
       await page.goto("/settings.html");
-      await page.waitForSelector(".settings-sidebar", { timeout: 10000 });
+      // Removed explicit wait - toBeVisible auto-waits
       await page
         .locator('.settings-menu-item:has-text("Feed Selection")')
         .click();
@@ -301,7 +301,7 @@ test.describe("Settings Page Tests", () => {
 
       // Navigate back to settings
       await page.goto("/settings.html");
-      await page.waitForSelector(".settings-sidebar", { timeout: 10000 });
+      // Removed explicit wait - toBeVisible auto-waits
       await page
         .locator('.settings-menu-item:has-text("Feed Selection")')
         .click();
@@ -320,7 +320,7 @@ test.describe("Settings Page Tests", () => {
     test("should be responsive on mobile", async ({ page }) => {
       await page.setViewportSize({ width: 375, height: 667 });
       await page.goto("/settings.html");
-      await page.waitForSelector(".settings-container", { timeout: 10000 });
+      // Removed explicit wait - toBeVisible auto-waits
 
       const container = page.locator(".settings-container");
       await expect(container).toBeVisible();
@@ -329,7 +329,7 @@ test.describe("Settings Page Tests", () => {
     test("should be responsive on tablet", async ({ page }) => {
       await page.setViewportSize({ width: 768, height: 1024 });
       await page.goto("/settings.html");
-      await page.waitForSelector(".settings-container", { timeout: 10000 });
+      // Removed explicit wait - toBeVisible auto-waits
 
       const container = page.locator(".settings-container");
       await expect(container).toBeVisible();
@@ -338,7 +338,7 @@ test.describe("Settings Page Tests", () => {
     test("should be responsive on desktop", async ({ page }) => {
       await page.setViewportSize({ width: 1920, height: 1080 });
       await page.goto("/settings.html");
-      await page.waitForSelector(".settings-container", { timeout: 10000 });
+      // Removed explicit wait - toBeVisible auto-waits
 
       const container = page.locator(".settings-container");
       await expect(container).toBeVisible();
@@ -353,7 +353,7 @@ test.describe("Settings Page Tests", () => {
 test.describe("Feed Filtering Integration Tests", () => {
   test("should show all feeds when no filter is set", async ({ page }) => {
     await page.goto("/");
-    await page.waitForSelector(".nav-link", { timeout: 10000 });
+    // Removed explicit wait - toBeVisible auto-waits
 
     // All feed navigation links should be visible
     const navLinks = page.locator(".nav-link");
@@ -376,7 +376,7 @@ test.describe("Feed Filtering Integration Tests", () => {
     });
 
     await page.reload();
-    await page.waitForSelector(".nav-link", { timeout: 10000 });
+    // Removed explicit wait - toBeVisible auto-waits
 
     // Test Feed A and Test Feed B should be visible
     const feedALink = page.locator('.nav-link:has-text("Test Feed A")');
@@ -399,7 +399,7 @@ test.describe("Feed Filtering Integration Tests", () => {
     });
 
     await page.reload();
-    await page.waitForSelector(".nav-link", { timeout: 10000 });
+    // Removed explicit wait - toBeVisible auto-waits
 
     // All Feeds and Summary should always be visible
     const allFeedsLink = page.locator('.nav-link:has-text("All Feeds")');

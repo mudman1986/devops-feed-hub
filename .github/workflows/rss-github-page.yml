@@ -28,7 +28,7 @@ jobs:
         id: collect
         uses: mudman1986/rss-feed-collector-action@main
         with:
-          hours: "720"
+          hours: "8760"
           config-path: ".github/rss-feeds.json"
           output-path: "rss-feeds-output.json"
 
