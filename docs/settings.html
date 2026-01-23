@@ -490,6 +490,36 @@
         }
 
         /**
+         * Create an SVG element from path data (XSS-safe)
+         */
+        function createSVG(width, height, content) {
+          const svg = document.createElementNS(
+            "http://www.w3.org/2000/svg",
+            "svg",
+          );
+          svg.setAttribute("width", width.toString());
+          svg.setAttribute("height", height.toString());
+          svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
+          svg.setAttribute("fill", "none");
+          svg.setAttribute("stroke", "currentColor");
+          svg.setAttribute("stroke-width", "2");
+          svg.setAttribute("stroke-linecap", "round");
+          svg.setAttribute("stroke-linejoin", "round");
+
+          // Parse and create SVG elements from content string
+          const temp = document.createElementNS(
+            "http://www.w3.org/2000/svg",
+            "svg",
+          );
+          temp.innerHTML = content;
+          while (temp.firstChild) {
+            svg.appendChild(temp.firstChild);
+          }
+
+          return svg;
+        }
+
+        /**
          * Get the natural/default mode for a theme
          * @param {string} baseTheme - Base theme name (without mode suffix)
          * @returns {string} - "light" or "dark" (the natural default mode)
@@ -902,23 +932,17 @@
             link.target = "_blank";
             link.rel = "noopener noreferrer";
 
-            link.innerHTML = `
-              <svg
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="2"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              >
-                <path d="M4 11a9 9 0 0 1 9 9"></path>
-                <path d="M4 4a16 16 0 0 1 16 16"></path>
-                <circle cx="5" cy="19" r="1"></circle>
-              </svg>
-              Subscribe
-            `;
+            // Create SVG icon safely
+            const svg = createSVG(
+              16,
+              16,
+              '<path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle>',
+            );
+            link.appendChild(svg);
+
+            // Add text
+            const text = document.createTextNode(" Subscribe");
+            link.appendChild(text);
 
             controlDiv.appendChild(link);
             item.appendChild(labelDiv);
@@ -970,14 +994,33 @@
             const iconSVG = document.getElementById("theme-icon");
             if (!iconSVG) return;
 
+            // Clear existing content
+            while (iconSVG.firstChild) {
+              iconSVG.removeChild(iconSVG.firstChild);
+            }
+
             if (mode === "dark") {
               // Sun icon for light mode
-              iconSVG.innerHTML =
+              const sunPath =
                 '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+              const svg = createSVG(24, 24, sunPath);
+              Array.from(svg.attributes).forEach((attr) => {
+                iconSVG.setAttribute(attr.name, attr.value);
+              });
+              while (svg.firstChild) {
+                iconSVG.appendChild(svg.firstChild);
+              }
             } else {
               // Moon icon for dark mode
-              iconSVG.innerHTML =
+              const moonPath =
                 '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+              const svg = createSVG(24, 24, moonPath);
+              Array.from(svg.attributes).forEach((attr) => {
+                iconSVG.setAttribute(attr.name, attr.value);
+              });
+              while (svg.firstChild) {
+                iconSVG.appendChild(svg.firstChild);
+              }
             }
           }
 
