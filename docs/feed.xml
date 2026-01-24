@@ -5,8 +5,15 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 23 Jan 2026 20:26:48 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 24 Jan 2026 00:55:54 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>From runtime risk to real‑time defense: Securing AI agents</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/01/23/runtime-risk-realtime-defense-securing-ai-agents/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/23/runtime-risk-realtime-defense-securing-ai-agents/</guid>
+      <pubDate>Fri, 23 Jan 2026 20:57:14 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
     <item>
       <title>How to Automate Arm Migration with Docker MCP Toolkit, VS Code, and GitHub Copilot</title>
       <link>https://www.docker.com/blog/automate-arm-migration-docker-mcp-copilot/</link>
@@ -607,13 +614,6 @@
       <link>https://www.microsoft.com/en-us/security/blog/2026/01/06/phishing-actors-exploit-complex-routing-and-misconfigurations-to-spoof-domains/</link>
       <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/06/phishing-actors-exploit-complex-routing-and-misconfigurations-to-spoof-domains/</guid>
       <pubDate>Tue, 06 Jan 2026 18:00:00 +0000</pubDate>
-      <source>Microsoft Security</source>
-    </item>
-    <item>
-      <title>Introducing the Microsoft Defender Experts Suite: Elevate your security with expert-led services</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/01/06/introducing-the-microsoft-defender-experts-suite-elevate-your-security-with-expert-led-services/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/06/introducing-the-microsoft-defender-experts-suite-elevate-your-security-with-expert-led-services/</guid>
-      <pubDate>Tue, 06 Jan 2026 17:00:00 +0000</pubDate>
       <source>Microsoft Security</source>
     </item>
     <item>
