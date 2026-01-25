@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-docker-blog.xml</link>
     <description>Articles from Docker Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-docker-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sat, 24 Jan 2026 12:20:55 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 25 Jan 2026 01:03:37 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Making the Most of Your Docker Hardened Images Enterprise Trial – Part 2</title>
+      <link>https://www.docker.com/blog/making-the-most-of-your-docker-hardened-images-enterprise-trial-part-2/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/making-the-most-of-your-docker-hardened-images-enterprise-trial-part-2/</guid>
+      <pubDate>Sat, 24 Jan 2026 20:24:39 +0000</pubDate>
+    </item>
     <item>
       <title>How to Automate Arm Migration with Docker MCP Toolkit, VS Code, and GitHub Copilot</title>
       <link>https://www.docker.com/blog/automate-arm-migration-docker-mcp-copilot/</link>
@@ -60,12 +66,6 @@
       <link>https://www.docker.com/blog/deterministic-ai-testing-with-session-recording-in-cagent/</link>
       <guid isPermaLink="true">https://www.docker.com/blog/deterministic-ai-testing-with-session-recording-in-cagent/</guid>
       <pubDate>Tue, 06 Jan 2026 19:16:04 +0000</pubDate>
-    </item>
-    <item>
-      <title>2025 Recap: The Year Software Development Changed Shape</title>
-      <link>https://www.docker.com/blog/2025-recap-the-year-software-development-changed-shape/</link>
-      <guid isPermaLink="true">https://www.docker.com/blog/2025-recap-the-year-software-development-changed-shape/</guid>
-      <pubDate>Sat, 20 Dec 2025 13:45:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
