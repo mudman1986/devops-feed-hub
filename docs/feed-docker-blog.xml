@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-docker-blog.xml</link>
     <description>Articles from Docker Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-docker-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sun, 25 Jan 2026 12:22:11 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 26 Jan 2026 01:02:26 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Making the Most of Your Docker Hardened Images Enterprise Trial – Part 3</title>
+      <link>https://www.docker.com/blog/making-the-most-of-your-docker-hardened-images-enterprise-trial-part-3/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/making-the-most-of-your-docker-hardened-images-enterprise-trial-part-3/</guid>
+      <pubDate>Sun, 25 Jan 2026 17:51:40 +0000</pubDate>
+    </item>
     <item>
       <title>Making the Most of Your Docker Hardened Images Enterprise Trial – Part 2</title>
       <link>https://www.docker.com/blog/making-the-most-of-your-docker-hardened-images-enterprise-trial-part-2/</link>
@@ -60,12 +66,6 @@
       <link>https://www.docker.com/blog/security-is-a-developer-experience-problem-rooted-in-our-foundations/</link>
       <guid isPermaLink="true">https://www.docker.com/blog/security-is-a-developer-experience-problem-rooted-in-our-foundations/</guid>
       <pubDate>Fri, 09 Jan 2026 16:11:53 +0000</pubDate>
-    </item>
-    <item>
-      <title>Deterministic AI Testing with Session Recording in cagent</title>
-      <link>https://www.docker.com/blog/deterministic-ai-testing-with-session-recording-in-cagent/</link>
-      <guid isPermaLink="true">https://www.docker.com/blog/deterministic-ai-testing-with-session-recording-in-cagent/</guid>
-      <pubDate>Tue, 06 Jan 2026 19:16:04 +0000</pubDate>
     </item>
   </channel>
 </rss>
