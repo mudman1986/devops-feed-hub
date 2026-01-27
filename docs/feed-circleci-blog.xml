@@ -5,8 +5,20 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-circleci-blog.xml</link>
     <description>Articles from CircleCI Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-circleci-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 26 Jan 2026 12:26:03 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Jan 2026 01:00:55 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>How Perk cut recovery time to 31 minutes with centralized rollbacks in CircleCI</title>
+      <link>https://circleci.com/blog/how-perk-recovers-faster-with-centralized-rollbacks/</link>
+      <guid isPermaLink="true">https://circleci.com/blog/how-perk-recovers-faster-with-centralized-rollbacks/</guid>
+      <pubDate>Mon, 26 Jan 2026 20:40:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Enforcing web performance budgets in CI/CD with Sitespeed.io and Slack</title>
+      <link>https://circleci.com/blog/enforcing-web-performance-budgets-with-sitespeed-io-and-slack/</link>
+      <guid isPermaLink="true">https://circleci.com/blog/enforcing-web-performance-budgets-with-sitespeed-io-and-slack/</guid>
+      <pubDate>Thu, 22 Jan 2026 16:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Mastering waits and timeouts in Playwright</title>
       <link>https://circleci.com/blog/mastering-waits-and-timeouts-in-playwright/</link>
@@ -44,28 +56,16 @@
       <pubDate>Mon, 22 Dec 2025 07:00:00 +0000</pubDate>
     </item>
     <item>
+      <title>Build a cost-optimized CI/CD pipeline with CircleCI and AWS CDK</title>
+      <link>https://circleci.com/blog/build-a-cost-optimized-ci-cd-pipeline-with-circleci-and-aws-cdk/</link>
+      <guid isPermaLink="true">https://circleci.com/blog/build-a-cost-optimized-ci-cd-pipeline-with-circleci-and-aws-cdk/</guid>
+      <pubDate>Wed, 17 Dec 2025 16:00:00 +0000</pubDate>
+    </item>
+    <item>
       <title>The ROI of autonomous validation: How to unlock $1.8M in engineering value</title>
       <link>https://circleci.com/blog/roi-of-autonomous-validation/</link>
       <guid isPermaLink="true">https://circleci.com/blog/roi-of-autonomous-validation/</guid>
       <pubDate>Tue, 16 Dec 2025 11:50:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>CI/CD for Go Microservices on Scaleway Kubernetes with CircleCI</title>
-      <link>https://circleci.com/blog/ci-cd-for-go-microservices-on-scaleway-kubernetes/</link>
-      <guid isPermaLink="true">https://circleci.com/blog/ci-cd-for-go-microservices-on-scaleway-kubernetes/</guid>
-      <pubDate>Wed, 10 Dec 2025 16:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Tracking Azure SQL changes with Azure Functions and CI/CD automation</title>
-      <link>https://circleci.com/blog/tracking-azure-sql-changes-with-azure-functions/</link>
-      <guid isPermaLink="true">https://circleci.com/blog/tracking-azure-sql-changes-with-azure-functions/</guid>
-      <pubDate>Tue, 09 Dec 2025 16:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Automating deployment of Azure Functions</title>
-      <link>https://circleci.com/blog/automating-deployment-of-azure-functions/</link>
-      <guid isPermaLink="true">https://circleci.com/blog/automating-deployment-of-azure-functions/</guid>
-      <pubDate>Mon, 08 Dec 2025 16:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

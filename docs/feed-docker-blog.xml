@@ -5,8 +5,20 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-docker-blog.xml</link>
     <description>Articles from Docker Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-docker-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 26 Jan 2026 12:26:03 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Jan 2026 01:00:55 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Clawdbot with Docker Model Runner, a Private Personal AI Assistant</title>
+      <link>https://www.docker.com/blog/clawdbot-docker-model-runner-private-personal-ai/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/clawdbot-docker-model-runner-private-personal-ai/</guid>
+      <pubDate>Mon, 26 Jan 2026 20:51:41 +0000</pubDate>
+    </item>
+    <item>
+      <title>Run Claude Code Locally with Docker Model Runner</title>
+      <link>https://www.docker.com/blog/run-claude-code-locally-docker-model-runner/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/run-claude-code-locally-docker-model-runner/</guid>
+      <pubDate>Mon, 26 Jan 2026 13:11:59 +0000</pubDate>
+    </item>
     <item>
       <title>Making the Most of Your Docker Hardened Images Enterprise Trial – Part 3</title>
       <link>https://www.docker.com/blog/making-the-most-of-your-docker-hardened-images-enterprise-trial-part-3/</link>
@@ -54,18 +66,6 @@
       <link>https://www.docker.com/blog/opencode-docker-model-runner-private-ai-coding/</link>
       <guid isPermaLink="true">https://www.docker.com/blog/opencode-docker-model-runner-private-ai-coding/</guid>
       <pubDate>Thu, 15 Jan 2026 13:47:17 +0000</pubDate>
-    </item>
-    <item>
-      <title>Safer Docker Hub Pulls via a Sonatype-Protected Proxy</title>
-      <link>https://www.docker.com/blog/safer-docker-hub-pulls-via-a-sonatype-protected-proxy/</link>
-      <guid isPermaLink="true">https://www.docker.com/blog/safer-docker-hub-pulls-via-a-sonatype-protected-proxy/</guid>
-      <pubDate>Wed, 14 Jan 2026 20:27:49 +0000</pubDate>
-    </item>
-    <item>
-      <title>Security Is a Developer Experience Problem, Rooted in Our Foundations</title>
-      <link>https://www.docker.com/blog/security-is-a-developer-experience-problem-rooted-in-our-foundations/</link>
-      <guid isPermaLink="true">https://www.docker.com/blog/security-is-a-developer-experience-problem-rooted-in-our-foundations/</guid>
-      <pubDate>Fri, 09 Jan 2026 16:11:53 +0000</pubDate>
     </item>
   </channel>
 </rss>

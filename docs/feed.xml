@@ -5,8 +5,57 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 26 Jan 2026 12:26:03 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Jan 2026 01:00:55 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Clawdbot with Docker Model Runner, a Private Personal AI Assistant</title>
+      <link>https://www.docker.com/blog/clawdbot-docker-model-runner-private-personal-ai/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/clawdbot-docker-model-runner-private-personal-ai/</guid>
+      <pubDate>Mon, 26 Jan 2026 20:51:41 +0000</pubDate>
+      <source>Docker Blog</source>
+    </item>
+    <item>
+      <title>How Perk cut recovery time to 31 minutes with centralized rollbacks in CircleCI</title>
+      <link>https://circleci.com/blog/how-perk-recovers-faster-with-centralized-rollbacks/</link>
+      <guid isPermaLink="true">https://circleci.com/blog/how-perk-recovers-faster-with-centralized-rollbacks/</guid>
+      <pubDate>Mon, 26 Jan 2026 20:40:00 +0000</pubDate>
+      <source>CircleCI Blog</source>
+    </item>
+    <item>
+      <title>Power agentic workflows in your terminal with GitHub Copilot CLI</title>
+      <link>https://github.blog/ai-and-ml/github-copilot/power-agentic-workflows-in-your-terminal-with-github-copilot-cli/</link>
+      <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/power-agentic-workflows-in-your-terminal-with-github-copilot-cli/</guid>
+      <pubDate>Mon, 26 Jan 2026 18:54:49 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
+    <item>
+      <title>GPT-5.2-Codex is now available in Visual Studio, JetBrains IDEs, Xcode, and Eclipse</title>
+      <link>https://github.blog/changelog/2026-01-26-gpt-5-2-codex-is-now-available-in-visual-studio-jetbrains-ides-xcode-and-eclipse</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-01-26-gpt-5-2-codex-is-now-available-in-visual-studio-jetbrains-ides-xcode-and-eclipse</guid>
+      <pubDate>Mon, 26 Jan 2026 18:18:00 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>How resilient is HCP Vault during real AWS regional outages?</title>
+      <link>https://www.hashicorp.com/blog/how-resilient-is-hcp-vault-during-real-aws-regional-outages</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/how-resilient-is-hcp-vault-during-real-aws-regional-outages</guid>
+      <pubDate>Mon, 26 Jan 2026 17:00:00 +0000</pubDate>
+      <source>HashiCorp Blog</source>
+    </item>
+    <item>
+      <title>Security strategies for safeguarding governmental data</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/01/26/security-strategies-for-safeguarding-governmental-data/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/26/security-strategies-for-safeguarding-governmental-data/</guid>
+      <pubDate>Mon, 26 Jan 2026 17:00:00 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>Run Claude Code Locally with Docker Model Runner</title>
+      <link>https://www.docker.com/blog/run-claude-code-locally-docker-model-runner/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/run-claude-code-locally-docker-model-runner/</guid>
+      <pubDate>Mon, 26 Jan 2026 13:11:59 +0000</pubDate>
+      <source>Docker Blog</source>
+    </item>
     <item>
       <title>Making the Most of Your Docker Hardened Images Enterprise Trial – Part 3</title>
       <link>https://www.docker.com/blog/making-the-most-of-your-docker-hardened-images-enterprise-trial-part-3/</link>
@@ -29,6 +78,13 @@
       <source>Microsoft Security</source>
     </item>
     <item>
+      <title>Terraform MCP server updates: Stacks support, new tools, and tips</title>
+      <link>https://www.hashicorp.com/blog/terraform-mcp-server-updates-stacks-support-new-tools-and-tips</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/terraform-mcp-server-updates-stacks-support-new-tools-and-tips</guid>
+      <pubDate>Fri, 23 Jan 2026 17:00:00 +0000</pubDate>
+      <source>HashiCorp Blog</source>
+    </item>
+    <item>
       <title>How to Automate Arm Migration with Docker MCP Toolkit, VS Code, and GitHub Copilot</title>
       <link>https://www.docker.com/blog/automate-arm-migration-docker-mcp-copilot/</link>
       <guid isPermaLink="true">https://www.docker.com/blog/automate-arm-migration-docker-mcp-copilot/</guid>
@@ -48,6 +104,13 @@
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=548101</guid>
       <pubDate>Thu, 22 Jan 2026 22:30:50 +0000</pubDate>
       <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>The 2026 Linux security threat landscape and strategic defense pillars</title>
+      <link>https://www.hashicorp.com/blog/the-linux-security-threat-landscape-and-strategic-defense-pillars</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/the-linux-security-threat-landscape-and-strategic-defense-pillars</guid>
+      <pubDate>Thu, 22 Jan 2026 22:00:00 +0000</pubDate>
+      <source>HashiCorp Blog</source>
     </item>
     <item>
       <title>Faster loading for GitHub Issues</title>
@@ -90,6 +153,13 @@
       <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/22/microsoft-security-success-stories-why-integrated-security-is-the-foundation-of-ai-transformation/</guid>
       <pubDate>Thu, 22 Jan 2026 17:00:00 +0000</pubDate>
       <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>Enforcing web performance budgets in CI/CD with Sitespeed.io and Slack</title>
+      <link>https://circleci.com/blog/enforcing-web-performance-budgets-with-sitespeed-io-and-slack/</link>
+      <guid isPermaLink="true">https://circleci.com/blog/enforcing-web-performance-budgets-with-sitespeed-io-and-slack/</guid>
+      <pubDate>Thu, 22 Jan 2026 16:00:00 +0000</pubDate>
+      <source>CircleCI Blog</source>
     </item>
     <item>
       <title>Build an agent into any app with the GitHub Copilot SDK</title>
@@ -288,13 +358,6 @@
       <source>GitHub Changelog</source>
     </item>
     <item>
-      <title>Rate limiting for actions cache entries</title>
-      <link>https://github.blog/changelog/2026-01-16-rate-limiting-for-actions-cache-entries</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-01-16-rate-limiting-for-actions-cache-entries</guid>
-      <pubDate>Fri, 16 Jan 2026 21:31:29 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>What’s new with Azure Repos?</title>
       <link>https://devblogs.microsoft.com/devops/whats-new-with-azure-repos/</link>
       <guid isPermaLink="true">https://devblogs.microsoft.com/devops/whats-new-with-azure-repos/</guid>
@@ -377,13 +440,6 @@
       <guid isPermaLink="true">https://github.blog/news-insights/company-news/github-availability-report-december-2025/</guid>
       <pubDate>Wed, 14 Jan 2026 22:06:49 +0000</pubDate>
       <source>GitHub Blog</source>
-    </item>
-    <item>
-      <title>Safer Docker Hub Pulls via a Sonatype-Protected Proxy</title>
-      <link>https://www.docker.com/blog/safer-docker-hub-pulls-via-a-sonatype-protected-proxy/</link>
-      <guid isPermaLink="true">https://www.docker.com/blog/safer-docker-hub-pulls-via-a-sonatype-protected-proxy/</guid>
-      <pubDate>Wed, 14 Jan 2026 20:27:49 +0000</pubDate>
-      <source>Docker Blog</source>
     </item>
     <item>
       <title>Community-powered security with AI: an open source framework for security research</title>
@@ -505,13 +561,6 @@
       <source>HashiCorp Blog</source>
     </item>
     <item>
-      <title>Want better AI outputs? Try context engineering.</title>
-      <link>https://github.blog/ai-and-ml/generative-ai/want-better-ai-outputs-try-context-engineering/</link>
-      <guid isPermaLink="true">https://github.blog/ai-and-ml/generative-ai/want-better-ai-outputs-try-context-engineering/</guid>
-      <pubDate>Mon, 12 Jan 2026 17:00:00 +0000</pubDate>
-      <source>GitHub Blog</source>
-    </item>
-    <item>
       <title>Hybrid cloud, explained: What it is, what it isn’t, and why having a plan matters in 2026</title>
       <link>https://www.hashicorp.com/blog/hybrid-cloud-explained-what-it-is-what-it-isn-t-and-why-having-a-plan-matters</link>
       <guid isPermaLink="true">https://www.hashicorp.com/blog/hybrid-cloud-explained-what-it-is-what-it-isn-t-and-why-having-a-plan-matters</guid>
@@ -524,13 +573,6 @@
       <guid isPermaLink="true">https://kubernetes.io/blog/2026/01/09/kubernetes-v1-35-kuberc-credential-plugin-allowlist/</guid>
       <pubDate>Fri, 09 Jan 2026 18:30:00 +0000</pubDate>
       <source>Kubernetes Blog</source>
-    </item>
-    <item>
-      <title>Security Is a Developer Experience Problem, Rooted in Our Foundations</title>
-      <link>https://www.docker.com/blog/security-is-a-developer-experience-problem-rooted-in-our-foundations/</link>
-      <guid isPermaLink="true">https://www.docker.com/blog/security-is-a-developer-experience-problem-rooted-in-our-foundations/</guid>
-      <pubDate>Fri, 09 Jan 2026 16:11:53 +0000</pubDate>
-      <source>Docker Blog</source>
     </item>
     <item>
       <title>[In preview] Public Preview: Azure Cosmos DB Mirroring with Private Endpoints</title>
@@ -615,13 +657,6 @@
       <guid isPermaLink="true">https://about.gitlab.com/blog/2025-owasp-top-10-whats-changed-and-why-it-matters/</guid>
       <pubDate>Wed, 07 Jan 2026 00:00:00 +0000</pubDate>
       <source>GitLab Blog</source>
-    </item>
-    <item>
-      <title>Phishing actors exploit complex routing and misconfigurations to spoof domains</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/01/06/phishing-actors-exploit-complex-routing-and-misconfigurations-to-spoof-domains/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/06/phishing-actors-exploit-complex-routing-and-misconfigurations-to-spoof-domains/</guid>
-      <pubDate>Tue, 06 Jan 2026 18:00:00 +0000</pubDate>
-      <source>Microsoft Security</source>
     </item>
     <item>
       <title>Multi-environment DNS automation on Cloudflare using CircleCI and Terraform</title>
@@ -904,6 +939,13 @@
       <source>Microsoft Entra Blog</source>
     </item>
     <item>
+      <title>Build a cost-optimized CI/CD pipeline with CircleCI and AWS CDK</title>
+      <link>https://circleci.com/blog/build-a-cost-optimized-ci-cd-pipeline-with-circleci-and-aws-cdk/</link>
+      <guid isPermaLink="true">https://circleci.com/blog/build-a-cost-optimized-ci-cd-pipeline-with-circleci-and-aws-cdk/</guid>
+      <pubDate>Wed, 17 Dec 2025 16:00:00 +0000</pubDate>
+      <source>CircleCI Blog</source>
+    </item>
+    <item>
       <title>Synced passkeys and high assurance account recovery</title>
       <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/synced-passkeys-and-high-assurance-account-recovery/ba-p/3627343</link>
       <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/synced-passkeys-and-high-assurance-account-recovery/ba-p/3627343</guid>
@@ -1030,13 +1072,6 @@
       <source>Microsoft Entra Blog</source>
     </item>
     <item>
-      <title>CI/CD for Go Microservices on Scaleway Kubernetes with CircleCI</title>
-      <link>https://circleci.com/blog/ci-cd-for-go-microservices-on-scaleway-kubernetes/</link>
-      <guid isPermaLink="true">https://circleci.com/blog/ci-cd-for-go-microservices-on-scaleway-kubernetes/</guid>
-      <pubDate>Wed, 10 Dec 2025 16:00:00 +0000</pubDate>
-      <source>CircleCI Blog</source>
-    </item>
-    <item>
       <title>Announcing the new Jenkins Bug Bounty Program</title>
       <link>https://www.jenkins.io/blog/2025/12/10/jenkins-bug-bounty-program-yeswehack-european-commission/</link>
       <guid isPermaLink="true">https://www.jenkins.io/blog/2025/12/10/jenkins-bug-bounty-program-yeswehack-european-commission/</guid>
@@ -1058,32 +1093,11 @@
       <source>Microsoft DevOps Blog</source>
     </item>
     <item>
-      <title>Tracking Azure SQL changes with Azure Functions and CI/CD automation</title>
-      <link>https://circleci.com/blog/tracking-azure-sql-changes-with-azure-functions/</link>
-      <guid isPermaLink="true">https://circleci.com/blog/tracking-azure-sql-changes-with-azure-functions/</guid>
-      <pubDate>Tue, 09 Dec 2025 16:00:00 +0000</pubDate>
-      <source>CircleCI Blog</source>
-    </item>
-    <item>
       <title>[Launched] Generally Available: FIPS compliant mode for Application Gateway V2 SKUs</title>
       <link>https://azure.microsoft.com/updates?id=536712</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=536712</guid>
       <pubDate>Tue, 09 Dec 2025 13:15:11 +0000</pubDate>
       <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>A research-backed look at why cloud ops is breaking at AI’s doorstep</title>
-      <link>https://www.hashicorp.com/blog/a-research-backed-look-at-why-cloud-ops-is-breaking-at-ai-s-doorstep</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/a-research-backed-look-at-why-cloud-ops-is-breaking-at-ai-s-doorstep</guid>
-      <pubDate>Mon, 08 Dec 2025 23:00:00 +0000</pubDate>
-      <source>HashiCorp Blog</source>
-    </item>
-    <item>
-      <title>Automating deployment of Azure Functions</title>
-      <link>https://circleci.com/blog/automating-deployment-of-azure-functions/</link>
-      <guid isPermaLink="true">https://circleci.com/blog/automating-deployment-of-azure-functions/</guid>
-      <pubDate>Mon, 08 Dec 2025 16:00:00 +0000</pubDate>
-      <source>CircleCI Blog</source>
     </item>
     <item>
       <title>[Launched] Generally Available: Zonal placement for Azure file shares Azure Files Premium LRS in select regions.</title>
@@ -1098,13 +1112,6 @@
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=536937</guid>
       <pubDate>Thu, 04 Dec 2025 22:30:44 +0000</pubDate>
       <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>HashiCorp is a Kiro powers launch partner</title>
-      <link>https://www.hashicorp.com/blog/hashicorp-is-a-kiro-powers-launch-partner</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/hashicorp-is-a-kiro-powers-launch-partner</guid>
-      <pubDate>Thu, 04 Dec 2025 18:30:00 +0000</pubDate>
-      <source>HashiCorp Blog</source>
     </item>
     <item>
       <title>[Launched] Generally Availaible: Azure MCP Server support for Azure confidential ledger</title>
@@ -1175,13 +1182,6 @@
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=536747</guid>
       <pubDate>Wed, 03 Dec 2025 17:00:27 +0000</pubDate>
       <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>Zero trust for agentic systems: Managing non-human identities at scale</title>
-      <link>https://www.hashicorp.com/blog/zero-trust-for-agentic-systems-managing-non-human-identities-at-scale</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/zero-trust-for-agentic-systems-managing-non-human-identities-at-scale</guid>
-      <pubDate>Wed, 03 Dec 2025 17:00:00 +0000</pubDate>
-      <source>HashiCorp Blog</source>
     </item>
     <item>
       <title>Issue #254 - Terragrunt 2025, Provider Caching, Aurora IAM Users, and AWS Bill Shock Prevention</title>

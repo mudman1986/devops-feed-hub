@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-blog.xml</link>
     <description>Articles from GitHub Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 26 Jan 2026 12:26:03 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Jan 2026 01:00:55 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Power agentic workflows in your terminal with GitHub Copilot CLI</title>
+      <link>https://github.blog/ai-and-ml/github-copilot/power-agentic-workflows-in-your-terminal-with-github-copilot-cli/</link>
+      <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/power-agentic-workflows-in-your-terminal-with-github-copilot-cli/</guid>
+      <pubDate>Mon, 26 Jan 2026 18:54:49 +0000</pubDate>
+    </item>
     <item>
       <title>Build an agent into any app with the GitHub Copilot SDK</title>
       <link>https://github.blog/news-insights/company-news/build-an-agent-into-any-app-with-the-github-copilot-sdk/</link>
@@ -60,12 +66,6 @@
       <link>https://github.blog/ai-and-ml/generative-ai/what-ai-is-actually-good-for-according-to-developers/</link>
       <guid isPermaLink="true">https://github.blog/ai-and-ml/generative-ai/what-ai-is-actually-good-for-according-to-developers/</guid>
       <pubDate>Tue, 13 Jan 2026 18:39:24 +0000</pubDate>
-    </item>
-    <item>
-      <title>Want better AI outputs? Try context engineering.</title>
-      <link>https://github.blog/ai-and-ml/generative-ai/want-better-ai-outputs-try-context-engineering/</link>
-      <guid isPermaLink="true">https://github.blog/ai-and-ml/generative-ai/want-better-ai-outputs-try-context-engineering/</guid>
-      <pubDate>Mon, 12 Jan 2026 17:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

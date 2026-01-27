@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml</link>
     <description>Articles from Microsoft Security</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 26 Jan 2026 12:26:03 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Jan 2026 01:00:55 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Security strategies for safeguarding governmental data</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/01/26/security-strategies-for-safeguarding-governmental-data/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/26/security-strategies-for-safeguarding-governmental-data/</guid>
+      <pubDate>Mon, 26 Jan 2026 17:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>From runtime risk to real‑time defense: Securing AI agents</title>
       <link>https://www.microsoft.com/en-us/security/blog/2026/01/23/runtime-risk-realtime-defense-securing-ai-agents/</link>
@@ -60,12 +66,6 @@
       <link>https://www.microsoft.com/en-us/security/blog/2026/01/07/explore-the-latest-microsoft-incident-response-proactive-services-for-enhanced-resilience/</link>
       <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/07/explore-the-latest-microsoft-incident-response-proactive-services-for-enhanced-resilience/</guid>
       <pubDate>Wed, 07 Jan 2026 17:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Phishing actors exploit complex routing and misconfigurations to spoof domains</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/01/06/phishing-actors-exploit-complex-routing-and-misconfigurations-to-spoof-domains/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/06/phishing-actors-exploit-complex-routing-and-misconfigurations-to-spoof-domains/</guid>
-      <pubDate>Tue, 06 Jan 2026 18:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

@@ -5,8 +5,26 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-hashicorp-blog.xml</link>
     <description>Articles from HashiCorp Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-hashicorp-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 26 Jan 2026 12:26:03 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 27 Jan 2026 01:00:55 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>How resilient is HCP Vault during real AWS regional outages?</title>
+      <link>https://www.hashicorp.com/blog/how-resilient-is-hcp-vault-during-real-aws-regional-outages</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/how-resilient-is-hcp-vault-during-real-aws-regional-outages</guid>
+      <pubDate>Mon, 26 Jan 2026 17:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Terraform MCP server updates: Stacks support, new tools, and tips</title>
+      <link>https://www.hashicorp.com/blog/terraform-mcp-server-updates-stacks-support-new-tools-and-tips</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/terraform-mcp-server-updates-stacks-support-new-tools-and-tips</guid>
+      <pubDate>Fri, 23 Jan 2026 17:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>The 2026 Linux security threat landscape and strategic defense pillars</title>
+      <link>https://www.hashicorp.com/blog/the-linux-security-threat-landscape-and-strategic-defense-pillars</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/the-linux-security-threat-landscape-and-strategic-defense-pillars</guid>
+      <pubDate>Thu, 22 Jan 2026 22:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Secrets management disaster recovery without the operational burden</title>
       <link>https://www.hashicorp.com/blog/secrets-management-disaster-recovery-without-the-operational-burden</link>
@@ -108,24 +126,6 @@
       <link>https://www.hashicorp.com/blog/a-cloud-engineering-lead-s-7-lessons-about-speed-vs-security</link>
       <guid isPermaLink="true">https://www.hashicorp.com/blog/a-cloud-engineering-lead-s-7-lessons-about-speed-vs-security</guid>
       <pubDate>Tue, 09 Dec 2025 21:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>A research-backed look at why cloud ops is breaking at AI’s doorstep</title>
-      <link>https://www.hashicorp.com/blog/a-research-backed-look-at-why-cloud-ops-is-breaking-at-ai-s-doorstep</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/a-research-backed-look-at-why-cloud-ops-is-breaking-at-ai-s-doorstep</guid>
-      <pubDate>Mon, 08 Dec 2025 23:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>HashiCorp is a Kiro powers launch partner</title>
-      <link>https://www.hashicorp.com/blog/hashicorp-is-a-kiro-powers-launch-partner</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/hashicorp-is-a-kiro-powers-launch-partner</guid>
-      <pubDate>Thu, 04 Dec 2025 18:30:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Zero trust for agentic systems: Managing non-human identities at scale</title>
-      <link>https://www.hashicorp.com/blog/zero-trust-for-agentic-systems-managing-non-human-identities-at-scale</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/zero-trust-for-agentic-systems-managing-non-human-identities-at-scale</guid>
-      <pubDate>Wed, 03 Dec 2025 17:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
