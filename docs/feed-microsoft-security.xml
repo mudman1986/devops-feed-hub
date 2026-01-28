@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml</link>
     <description>Articles from Microsoft Security</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 27 Jan 2026 12:25:56 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 28 Jan 2026 00:57:49 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Microsoft announces the 2026 Security Excellence Awards winners</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/01/27/microsoft-announces-the-2026-security-excellence-awards-winners/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/27/microsoft-announces-the-2026-security-excellence-awards-winners/</guid>
+      <pubDate>Tue, 27 Jan 2026 17:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Security strategies for safeguarding governmental data</title>
       <link>https://www.microsoft.com/en-us/security/blog/2026/01/26/security-strategies-for-safeguarding-governmental-data/</link>
@@ -60,12 +66,6 @@
       <link>https://www.microsoft.com/en-us/security/blog/2026/01/13/how-microsoft-builds-privacy-and-security-to-work-hand-in-hand/</link>
       <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/13/how-microsoft-builds-privacy-and-security-to-work-hand-in-hand/</guid>
       <pubDate>Tue, 13 Jan 2026 17:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Explore the latest Microsoft Incident Response proactive services for enhanced resilience</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/01/07/explore-the-latest-microsoft-incident-response-proactive-services-for-enhanced-resilience/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/07/explore-the-latest-microsoft-incident-response-proactive-services-for-enhanced-resilience/</guid>
-      <pubDate>Wed, 07 Jan 2026 17:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

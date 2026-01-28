@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml</link>
     <description>Articles from GitHub Changelog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 27 Jan 2026 12:25:56 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 28 Jan 2026 00:57:49 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Introducing the Agents tab in your repository</title>
+      <link>https://github.blog/changelog/2026-01-26-introducing-the-agents-tab-in-your-repository</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-01-26-introducing-the-agents-tab-in-your-repository</guid>
+      <pubDate>Mon, 26 Jan 2026 21:40:50 +0000</pubDate>
+    </item>
     <item>
       <title>GPT-5.2-Codex is now available in Visual Studio, JetBrains IDEs, Xcode, and Eclipse</title>
       <link>https://github.blog/changelog/2026-01-26-gpt-5-2-codex-is-now-available-in-visual-studio-jetbrains-ides-xcode-and-eclipse</link>
@@ -60,12 +66,6 @@
       <link>https://github.blog/changelog/2026-01-19-enterprise-scoped-budgets-that-exclude-cost-center-usage-in-public-preview</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-01-19-enterprise-scoped-budgets-that-exclude-cost-center-usage-in-public-preview</guid>
       <pubDate>Tue, 20 Jan 2026 00:27:17 +0000</pubDate>
-    </item>
-    <item>
-      <title>GitHub Copilot now supports OpenCode</title>
-      <link>https://github.blog/changelog/2026-01-16-github-copilot-now-supports-opencode</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-01-16-github-copilot-now-supports-opencode</guid>
-      <pubDate>Fri, 16 Jan 2026 23:03:03 +0000</pubDate>
     </item>
   </channel>
 </rss>

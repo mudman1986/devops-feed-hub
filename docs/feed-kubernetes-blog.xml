@@ -5,8 +5,20 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-kubernetes-blog.xml</link>
     <description>Articles from Kubernetes Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-kubernetes-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 27 Jan 2026 12:25:56 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 28 Jan 2026 00:57:49 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Experimenting with Gateway API using kind</title>
+      <link>https://kubernetes.io/blog/2026/01/28/experimenting-gateway-api-with-kind/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2026/01/28/experimenting-gateway-api-with-kind/</guid>
+      <pubDate>Wed, 28 Jan 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Cluster API v1.12: Introducing In-place Updates and Chained Upgrades</title>
+      <link>https://kubernetes.io/blog/2026/01/27/cluster-api-v1-12-release/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2026/01/27/cluster-api-v1-12-release/</guid>
+      <pubDate>Tue, 27 Jan 2026 16:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Headlamp in 2025: Project Highlights</title>
       <link>https://kubernetes.io/blog/2026/01/22/headlamp-in-2025-project-highlights/</link>
@@ -294,18 +306,6 @@
       <link>https://kubernetes.io/blog/2025/07/28/kubernetes-v1-34-sneak-peek/</link>
       <guid isPermaLink="true">https://kubernetes.io/blog/2025/07/28/kubernetes-v1-34-sneak-peek/</guid>
       <pubDate>Mon, 28 Jul 2025 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Post-Quantum Cryptography in Kubernetes</title>
-      <link>https://kubernetes.io/blog/2025/07/18/pqc-in-k8s/</link>
-      <guid isPermaLink="true">https://kubernetes.io/blog/2025/07/18/pqc-in-k8s/</guid>
-      <pubDate>Fri, 18 Jul 2025 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Navigating Failures in Pods With Devices</title>
-      <link>https://kubernetes.io/blog/2025/07/03/navigating-failures-in-pods-with-devices/</link>
-      <guid isPermaLink="true">https://kubernetes.io/blog/2025/07/03/navigating-failures-in-pods-with-devices/</guid>
-      <pubDate>Thu, 03 Jul 2025 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

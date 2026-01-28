@@ -5,8 +5,78 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 27 Jan 2026 12:25:56 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 28 Jan 2026 00:57:49 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Experimenting with Gateway API using kind</title>
+      <link>https://kubernetes.io/blog/2026/01/28/experimenting-gateway-api-with-kind/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2026/01/28/experimenting-gateway-api-with-kind/</guid>
+      <pubDate>Wed, 28 Jan 2026 00:00:00 +0000</pubDate>
+      <source>Kubernetes Blog</source>
+    </item>
+    <item>
+      <title>7 learnings from Anders Hejlsberg: The architect behind C# and TypeScript</title>
+      <link>https://github.blog/developer-skills/programming-languages-and-frameworks/7-learnings-from-anders-hejlsberg-the-architect-behind-c-and-typescript/</link>
+      <guid isPermaLink="true">https://github.blog/developer-skills/programming-languages-and-frameworks/7-learnings-from-anders-hejlsberg-the-architect-behind-c-and-typescript/</guid>
+      <pubDate>Tue, 27 Jan 2026 17:17:28 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Azure NetApp Files support in OpenShift Virtualization</title>
+      <link>https://azure.microsoft.com/updates?id=550466</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=550466</guid>
+      <pubDate>Tue, 27 Jan 2026 17:00:06 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: 7th generation Intel-based VMs – Dlsv7/Dsv7/Esv7</title>
+      <link>https://azure.microsoft.com/updates?id=529407</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=529407</guid>
+      <pubDate>Tue, 27 Jan 2026 17:00:06 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>Microsoft announces the 2026 Security Excellence Awards winners</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/01/27/microsoft-announces-the-2026-security-excellence-awards-winners/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/27/microsoft-announces-the-2026-security-excellence-awards-winners/</guid>
+      <pubDate>Tue, 27 Jan 2026 17:00:00 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>Cluster API v1.12: Introducing In-place Updates and Chained Upgrades</title>
+      <link>https://kubernetes.io/blog/2026/01/27/cluster-api-v1-12-release/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2026/01/27/cluster-api-v1-12-release/</guid>
+      <pubDate>Tue, 27 Jan 2026 16:00:00 +0000</pubDate>
+      <source>Kubernetes Blog</source>
+    </item>
+    <item>
+      <title>Help shape the future of open source in Europe</title>
+      <link>https://github.blog/news-insights/policy-news-and-insights/help-shape-the-future-of-open-source-in-europe/</link>
+      <guid isPermaLink="true">https://github.blog/news-insights/policy-news-and-insights/help-shape-the-future-of-open-source-in-europe/</guid>
+      <pubDate>Tue, 27 Jan 2026 14:16:04 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Azure Command Launcher for Java</title>
+      <link>https://azure.microsoft.com/updates?id=543994</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=543994</guid>
+      <pubDate>Tue, 27 Jan 2026 14:00:07 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>How to set up GitLab SAML SSO with Google Workspace</title>
+      <link>https://about.gitlab.com/blog/how-to-set-up-gitlab-saml-sso-with-google-workspace/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/how-to-set-up-gitlab-saml-sso-with-google-workspace/</guid>
+      <pubDate>Tue, 27 Jan 2026 00:00:00 +0000</pubDate>
+      <source>GitLab Blog</source>
+    </item>
+    <item>
+      <title>Introducing the Agents tab in your repository</title>
+      <link>https://github.blog/changelog/2026-01-26-introducing-the-agents-tab-in-your-repository</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-01-26-introducing-the-agents-tab-in-your-repository</guid>
+      <pubDate>Mon, 26 Jan 2026 21:40:50 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
     <item>
       <title>Clawdbot with Docker Model Runner, a Private Personal AI Assistant</title>
       <link>https://www.docker.com/blog/clawdbot-docker-model-runner-private-personal-ai/</link>
@@ -351,13 +421,6 @@
       <source>Atlassian DevOps</source>
     </item>
     <item>
-      <title>GitHub Copilot now supports OpenCode</title>
-      <link>https://github.blog/changelog/2026-01-16-github-copilot-now-supports-opencode</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-01-16-github-copilot-now-supports-opencode</guid>
-      <pubDate>Fri, 16 Jan 2026 23:03:03 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>What’s new with Azure Repos?</title>
       <link>https://devblogs.microsoft.com/devops/whats-new-with-azure-repos/</link>
       <guid isPermaLink="true">https://devblogs.microsoft.com/devops/whats-new-with-azure-repos/</guid>
@@ -442,13 +505,6 @@
       <source>GitHub Blog</source>
     </item>
     <item>
-      <title>Community-powered security with AI: an open source framework for security research</title>
-      <link>https://github.blog/security/community-powered-security-with-ai-an-open-source-framework-for-security-research/</link>
-      <guid isPermaLink="true">https://github.blog/security/community-powered-security-with-ai-an-open-source-framework-for-security-research/</guid>
-      <pubDate>Wed, 14 Jan 2026 18:45:09 +0000</pubDate>
-      <source>GitHub Blog</source>
-    </item>
-    <item>
       <title>Microsoft named a Leader in IDC MarketScape for Unified AI Governance Platforms</title>
       <link>https://www.microsoft.com/en-us/security/blog/2026/01/14/microsoft-named-a-leader-in-idc-marketscape-for-unified-ai-governance-platforms/</link>
       <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/14/microsoft-named-a-leader-in-idc-marketscape-for-unified-ai-governance-platforms/</guid>
@@ -524,13 +580,6 @@
       <guid isPermaLink="true">https://about.gitlab.com/blog/understanding-flows-multi-agent-workflows/</guid>
       <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
       <source>GitLab Blog</source>
-    </item>
-    <item>
-      <title>What AI is actually good for, according to developers</title>
-      <link>https://github.blog/ai-and-ml/generative-ai/what-ai-is-actually-good-for-according-to-developers/</link>
-      <guid isPermaLink="true">https://github.blog/ai-and-ml/generative-ai/what-ai-is-actually-good-for-according-to-developers/</guid>
-      <pubDate>Tue, 13 Jan 2026 18:39:24 +0000</pubDate>
-      <source>GitHub Blog</source>
     </item>
     <item>
       <title>How GEICO lowered its $300M cloud spend and decoupled security from the network</title>
@@ -636,13 +685,6 @@
       <guid isPermaLink="true">https://www.hashicorp.com/blog/the-future-of-secrets-and-identity-management</guid>
       <pubDate>Wed, 07 Jan 2026 17:00:00 +0000</pubDate>
       <source>HashiCorp Blog</source>
-    </item>
-    <item>
-      <title>Explore the latest Microsoft Incident Response proactive services for enhanced resilience</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/01/07/explore-the-latest-microsoft-incident-response-proactive-services-for-enhanced-resilience/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/07/explore-the-latest-microsoft-incident-response-proactive-services-for-enhanced-resilience/</guid>
-      <pubDate>Wed, 07 Jan 2026 17:00:00 +0000</pubDate>
-      <source>Microsoft Security</source>
     </item>
     <item>
       <title>Finetuning Gemma 3 on private data with Unsloth and CircleCI</title>
@@ -1042,13 +1084,6 @@
       <guid isPermaLink="true">https://www.hashicorp.com/blog/5-lessons-for-enabling-self-service-and-ai-driven-infrastructure-despite-legacy-tech-at-a-national-bank</guid>
       <pubDate>Thu, 11 Dec 2025 16:00:00 +0000</pubDate>
       <source>HashiCorp Blog</source>
-    </item>
-    <item>
-      <title>How we built and automated our new Japanese GitLab Docs site</title>
-      <link>https://about.gitlab.com/blog/how-we-built-and-automated-our-new-japanese-gitlab-docs-site/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/how-we-built-and-automated-our-new-japanese-gitlab-docs-site/</guid>
-      <pubDate>Thu, 11 Dec 2025 00:00:00 +0000</pubDate>
-      <source>GitLab Blog</source>
     </item>
     <item>
       <title>Resolve and prevent operational incidents with AWS DevOps Agent and New Relic</title>
@@ -2472,27 +2507,6 @@
       <source>Azure Updates</source>
     </item>
     <item>
-      <title>[In preview] Public Preview: OpenTelemetry visualizations and enhanced monitoring experience in Azure Monitor for Azure VMs and Arc Servers</title>
-      <link>https://azure.microsoft.com/updates?id=525536</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525536</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[In development] Public Preview: Large volumes up to 7.2 PiB</title>
-      <link>https://azure.microsoft.com/updates?id=525150</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525150</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Built-in CIS benchmarks for Azure endorsed Linux distros in Machine Config</title>
-      <link>https://azure.microsoft.com/updates?id=523614</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523614</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
       <title>Microsoft Entra at Ignite 2025: November 17-21</title>
       <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-at-ignite-2025-november-17-21/ba-p/4400194</link>
       <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-at-ignite-2025-november-17-21/ba-p/4400194</guid>
@@ -3025,13 +3039,6 @@
       <source>Jenkins Blog</source>
     </item>
     <item>
-      <title>Post-Quantum Cryptography in Kubernetes</title>
-      <link>https://kubernetes.io/blog/2025/07/18/pqc-in-k8s/</link>
-      <guid isPermaLink="true">https://kubernetes.io/blog/2025/07/18/pqc-in-k8s/</guid>
-      <pubDate>Fri, 18 Jul 2025 00:00:00 +0000</pubDate>
-      <source>Kubernetes Blog</source>
-    </item>
-    <item>
       <title>Amazon donates $60,000 to Jenkins</title>
       <link>https://www.jenkins.io/blog/2025/07/11/aws-sponsorship/</link>
       <guid isPermaLink="true">https://www.jenkins.io/blog/2025/07/11/aws-sponsorship/</guid>
@@ -3051,13 +3058,6 @@
       <guid isPermaLink="true">https://www.jenkins.io/blog/2025/07/10/jetbrains-sponsorship/</guid>
       <pubDate>Thu, 10 Jul 2025 00:00:00 +0000</pubDate>
       <source>Jenkins Blog</source>
-    </item>
-    <item>
-      <title>Navigating Failures in Pods With Devices</title>
-      <link>https://kubernetes.io/blog/2025/07/03/navigating-failures-in-pods-with-devices/</link>
-      <guid isPermaLink="true">https://kubernetes.io/blog/2025/07/03/navigating-failures-in-pods-with-devices/</guid>
-      <pubDate>Thu, 03 Jul 2025 00:00:00 +0000</pubDate>
-      <source>Kubernetes Blog</source>
     </item>
     <item>
       <title>🌟 Celebrating the 2025 Jenkins Contributor Award Winners</title>

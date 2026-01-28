@@ -5,8 +5,26 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml</link>
     <description>Articles from Azure Updates</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 27 Jan 2026 12:25:56 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 28 Jan 2026 00:57:49 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>[In preview] Public Preview: Azure NetApp Files support in OpenShift Virtualization</title>
+      <link>https://azure.microsoft.com/updates?id=550466</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=550466</guid>
+      <pubDate>Tue, 27 Jan 2026 17:00:06 +0000</pubDate>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: 7th generation Intel-based VMs – Dlsv7/Dsv7/Esv7</title>
+      <link>https://azure.microsoft.com/updates?id=529407</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=529407</guid>
+      <pubDate>Tue, 27 Jan 2026 17:00:06 +0000</pubDate>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Azure Command Launcher for Java</title>
+      <link>https://azure.microsoft.com/updates?id=543994</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=543994</guid>
+      <pubDate>Tue, 27 Jan 2026 14:00:07 +0000</pubDate>
+    </item>
     <item>
       <title>[Launched] Generally Available: Deployment safeguards – pod security standard support in AKS</title>
       <link>https://azure.microsoft.com/updates?id=548101</link>
@@ -1181,24 +1199,6 @@
       <title>[In preview] Public Preview: Agent mitigations and guardrail customization</title>
       <link>https://azure.microsoft.com/updates?id=525923</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525923</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: OpenTelemetry visualizations and enhanced monitoring experience in Azure Monitor for Azure VMs and Arc Servers</title>
-      <link>https://azure.microsoft.com/updates?id=525536</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525536</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In development] Public Preview: Large volumes up to 7.2 PiB</title>
-      <link>https://azure.microsoft.com/updates?id=525150</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525150</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Built-in CIS benchmarks for Azure endorsed Linux distros in Machine Config</title>
-      <link>https://azure.microsoft.com/updates?id=523614</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523614</guid>
       <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
     </item>
     <item>
