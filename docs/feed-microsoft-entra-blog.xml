@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-microsoft-entra-blog.xml</link>
     <description>Articles from Microsoft Entra Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-microsoft-entra-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 28 Jan 2026 12:27:05 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 29 Jan 2026 01:06:19 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Upcoming Conditional Access change: Improved enforcement for policies with resource exclusions</title>
+      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/upcoming-conditional-access-change-improved-enforcement-for/ba-p/4488925</link>
+      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/upcoming-conditional-access-change-improved-enforcement-for/ba-p/4488925</guid>
+      <pubDate>Wed, 28 Jan 2026 17:56:52 +0000</pubDate>
+    </item>
     <item>
       <title>Simplify your identity landscape, reduce risk, and modernize access for any identity</title>
       <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/simplify-your-identity-landscape-reduce-risk-and-modernize/ba-p/4486059</link>
@@ -66,12 +72,6 @@
       <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-at-ignite-2025-november-17-21/ba-p/4400194</link>
       <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-at-ignite-2025-november-17-21/ba-p/4400194</guid>
       <pubDate>Fri, 14 Nov 2025 19:20:09 +0000</pubDate>
-    </item>
-    <item>
-      <title>Identity and Network Security Practitioner Webinar Series</title>
-      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/identity-and-network-security-practitioner-webinar-series/ba-p/4448759</link>
-      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/identity-and-network-security-practitioner-webinar-series/ba-p/4448759</guid>
-      <pubDate>Tue, 11 Nov 2025 22:44:51 +0000</pubDate>
     </item>
     <item>
       <title>Riding the AI Wave: How Microsoft Entra is Evolving for the Agentic Era</title>

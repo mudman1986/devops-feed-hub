@@ -5,8 +5,32 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml</link>
     <description>Articles from Azure Updates</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 28 Jan 2026 12:27:05 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 29 Jan 2026 01:06:19 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Retirement: Support for Python 3.10 ends on October 1, 2026 – upgrade your Azure Functions apps to Python 3.13</title>
+      <link>https://azure.microsoft.com/updates?id=545771</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=545771</guid>
+      <pubDate>Wed, 28 Jan 2026 23:15:47 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Azure AMD Turin Dasv7, Easv7, and Fasv7-series Virtual Machines</title>
+      <link>https://azure.microsoft.com/updates?id=552318</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=552318</guid>
+      <pubDate>Wed, 28 Jan 2026 19:15:24 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Azure Databricks Agent Bricks Knowledge Assistant</title>
+      <link>https://azure.microsoft.com/updates?id=542455</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=542455</guid>
+      <pubDate>Wed, 28 Jan 2026 18:45:08 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Latest PostgreSQL minor versions supported by Azure Database for PostgreSQL – Flexible Server</title>
+      <link>https://azure.microsoft.com/updates?id=550164</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=550164</guid>
+      <pubDate>Wed, 28 Jan 2026 17:00:53 +0000</pubDate>
+    </item>
     <item>
       <title>[In preview] Public Preview: Azure NetApp Files support in OpenShift Virtualization</title>
       <link>https://azure.microsoft.com/updates?id=550466</link>
@@ -1175,30 +1199,6 @@
       <title>[In preview] Public Preview: Bring Your Own AI Gateway to Foundry Agent Service</title>
       <link>https://azure.microsoft.com/updates?id=525957</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525957</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Announcing: Developer Training tier for low-cost fine-tuning training</title>
-      <link>https://azure.microsoft.com/updates?id=525952</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525952</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Streamline IT governance, security, and cost management experiences with Microsoft Foundry</title>
-      <link>https://azure.microsoft.com/updates?id=525942</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525942</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: New granular controls for network and integration security in Microsoft Foundry</title>
-      <link>https://azure.microsoft.com/updates?id=525933</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525933</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Agent mitigations and guardrail customization</title>
-      <link>https://azure.microsoft.com/updates?id=525923</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525923</guid>
       <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
     </item>
     <item>

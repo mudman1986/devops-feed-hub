@@ -5,8 +5,85 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 28 Jan 2026 12:27:05 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 29 Jan 2026 01:06:19 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Retirement: Support for Python 3.10 ends on October 1, 2026 – upgrade your Azure Functions apps to Python 3.13</title>
+      <link>https://azure.microsoft.com/updates?id=545771</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=545771</guid>
+      <pubDate>Wed, 28 Jan 2026 23:15:47 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>Best Practices for Deploying AWS DevOps Agent in Production</title>
+      <link>https://aws.amazon.com/blogs/devops/best-practices-for-deploying-aws-devops-agent-in-production/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/best-practices-for-deploying-aws-devops-agent-in-production/</guid>
+      <pubDate>Wed, 28 Jan 2026 22:36:18 +0000</pubDate>
+      <source>AWS DevOps Blog</source>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Azure AMD Turin Dasv7, Easv7, and Fasv7-series Virtual Machines</title>
+      <link>https://azure.microsoft.com/updates?id=552318</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=552318</guid>
+      <pubDate>Wed, 28 Jan 2026 19:15:24 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Azure Databricks Agent Bricks Knowledge Assistant</title>
+      <link>https://azure.microsoft.com/updates?id=542455</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=542455</guid>
+      <pubDate>Wed, 28 Jan 2026 18:45:08 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>Upcoming Conditional Access change: Improved enforcement for policies with resource exclusions</title>
+      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/upcoming-conditional-access-change-improved-enforcement-for/ba-p/4488925</link>
+      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/upcoming-conditional-access-change-improved-enforcement-for/ba-p/4488925</guid>
+      <pubDate>Wed, 28 Jan 2026 17:56:52 +0000</pubDate>
+      <source>Microsoft Entra Blog</source>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Latest PostgreSQL minor versions supported by Azure Database for PostgreSQL – Flexible Server</title>
+      <link>https://azure.microsoft.com/updates?id=550164</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=550164</guid>
+      <pubDate>Wed, 28 Jan 2026 17:00:53 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>From pixels to characters: The engineering behind GitHub Copilot CLI’s animated ASCII banner</title>
+      <link>https://github.blog/engineering/from-pixels-to-characters-the-engineering-behind-github-copilot-clis-animated-ascii-banner/</link>
+      <guid isPermaLink="true">https://github.blog/engineering/from-pixels-to-characters-the-engineering-behind-github-copilot-clis-animated-ascii-banner/</guid>
+      <pubDate>Wed, 28 Jan 2026 17:00:00 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
+    <item>
+      <title>The top 5 sources of secret sprawl, and how attackers exploit them</title>
+      <link>https://www.hashicorp.com/blog/the-top-5-sources-of-secret-sprawl-and-how-attackers-exploit-them</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/the-top-5-sources-of-secret-sprawl-and-how-attackers-exploit-them</guid>
+      <pubDate>Wed, 28 Jan 2026 17:00:00 +0000</pubDate>
+      <source>HashiCorp Blog</source>
+    </item>
+    <item>
+      <title>Issue #259 - Everything as Code (incl. DNS), Terragrunt at Scale, Cloudflare v4 to v5 Migration, Self-Hosted GitLab Runners, CloudSlash for AWS Cost Optimization, Terraform Skill</title>
+      <link>https://www.weekly.tf/p/issue-259-everything-as-code-incl-dns-terragrunt-at-scale-cloudflare-v4-to-v5-migration-self-hosted</link>
+      <guid isPermaLink="true">https://www.weekly.tf/p/issue-259-everything-as-code-incl-dns-terragrunt-at-scale-cloudflare-v4-to-v5-migration-self-hosted</guid>
+      <pubDate>Wed, 28 Jan 2026 16:00:25 +0000</pubDate>
+      <source>Terraform weekly</source>
+    </item>
+    <item>
+      <title>Year recap and future goals for the GitHub Innovation Graph</title>
+      <link>https://github.blog/news-insights/policy-news-and-insights/year-recap-and-future-goals-for-the-github-innovation-graph/</link>
+      <guid isPermaLink="true">https://github.blog/news-insights/policy-news-and-insights/year-recap-and-future-goals-for-the-github-innovation-graph/</guid>
+      <pubDate>Wed, 28 Jan 2026 16:00:00 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
+    <item>
+      <title>ACP support in Copilot CLI is now in public preview</title>
+      <link>https://github.blog/changelog/2026-01-28-acp-support-in-copilot-cli-is-now-in-public-preview</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-01-28-acp-support-in-copilot-cli-is-now-in-public-preview</guid>
+      <pubDate>Wed, 28 Jan 2026 15:00:30 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
     <item>
       <title>AWS CloudFormation 2025 Year In Review</title>
       <link>https://aws.amazon.com/blogs/devops/aws-cloudformation-2025-year-in-review/</link>
@@ -20,6 +97,13 @@
       <guid isPermaLink="true">https://kubernetes.io/blog/2026/01/28/experimenting-gateway-api-with-kind/</guid>
       <pubDate>Wed, 28 Jan 2026 00:00:00 +0000</pubDate>
       <source>Kubernetes Blog</source>
+    </item>
+    <item>
+      <title>Changes to GitHub Dependabot pull request comment commands</title>
+      <link>https://github.blog/changelog/2026-01-27-changes-to-github-dependabot-pull-request-comment-commands</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-01-27-changes-to-github-dependabot-pull-request-comment-commands</guid>
+      <pubDate>Tue, 27 Jan 2026 19:35:52 +0000</pubDate>
+      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>7 learnings from Anders Hejlsberg: The architect behind C# and TypeScript</title>
@@ -386,20 +470,6 @@
       <source>Microsoft Security</source>
     </item>
     <item>
-      <title>Strengthen your supply chain with code-to-cloud traceability and SLSA Build Level 3 security</title>
-      <link>https://github.blog/changelog/2026-01-20-strengthen-your-supply-chain-with-code-to-cloud-traceability-and-slsa-build-level-3-security</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-01-20-strengthen-your-supply-chain-with-code-to-cloud-traceability-and-slsa-build-level-3-security</guid>
-      <pubDate>Tue, 20 Jan 2026 16:46:13 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>Enterprise-scoped budgets that exclude cost center usage in public preview</title>
-      <link>https://github.blog/changelog/2026-01-19-enterprise-scoped-budgets-that-exclude-cost-center-usage-in-public-preview</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-01-19-enterprise-scoped-budgets-that-exclude-cost-center-usage-in-public-preview</guid>
-      <pubDate>Tue, 20 Jan 2026 00:27:17 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>GitLab Bug Bounty Program policy updates</title>
       <link>https://about.gitlab.com/blog/gitlab-bug-bounty-program-policy-updates/</link>
       <guid isPermaLink="true">https://about.gitlab.com/blog/gitlab-bug-bounty-program-policy-updates/</guid>
@@ -456,13 +526,6 @@
       <source>GitHub Blog</source>
     </item>
     <item>
-      <title>When protections outlive their purpose: A lesson on managing defense systems at scale</title>
-      <link>https://github.blog/engineering/infrastructure/when-protections-outlive-their-purpose-a-lesson-on-managing-defense-systems-at-scale/</link>
-      <guid isPermaLink="true">https://github.blog/engineering/infrastructure/when-protections-outlive-their-purpose-a-lesson-on-managing-defense-systems-at-scale/</guid>
-      <pubDate>Thu, 15 Jan 2026 20:54:32 +0000</pubDate>
-      <source>GitHub Blog</source>
-    </item>
-    <item>
       <title>From AI agent prototype to product: Lessons from building AWS DevOps Agent</title>
       <link>https://aws.amazon.com/blogs/devops/from-ai-agent-prototype-to-product-lessons-from-building-aws-devops-agent/</link>
       <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/from-ai-agent-prototype-to-product-lessons-from-building-aws-devops-agent/</guid>
@@ -503,13 +566,6 @@
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=536550</guid>
       <pubDate>Wed, 14 Jan 2026 22:45:12 +0000</pubDate>
       <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>GitHub Availability Report: December 2025</title>
-      <link>https://github.blog/news-insights/company-news/github-availability-report-december-2025/</link>
-      <guid isPermaLink="true">https://github.blog/news-insights/company-news/github-availability-report-december-2025/</guid>
-      <pubDate>Wed, 14 Jan 2026 22:06:49 +0000</pubDate>
-      <source>GitHub Blog</source>
     </item>
     <item>
       <title>Microsoft named a Leader in IDC MarketScape for Unified AI Governance Platforms</title>
@@ -1119,13 +1175,6 @@
       <guid isPermaLink="true">https://www.jenkins.io/blog/2025/12/10/jenkins-bug-bounty-program-yeswehack-european-commission/</guid>
       <pubDate>Wed, 10 Dec 2025 00:00:00 +0000</pubDate>
       <source>Jenkins Blog</source>
-    </item>
-    <item>
-      <title>A cloud engineering lead’s 7 lessons about speed vs. security</title>
-      <link>https://www.hashicorp.com/blog/a-cloud-engineering-lead-s-7-lessons-about-speed-vs-security</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/a-cloud-engineering-lead-s-7-lessons-about-speed-vs-security</guid>
-      <pubDate>Tue, 09 Dec 2025 21:00:00 +0000</pubDate>
-      <source>HashiCorp Blog</source>
     </item>
     <item>
       <title>Announcing Azure DevOps Server General Availability</title>
@@ -2486,34 +2535,6 @@
       <source>Azure Updates</source>
     </item>
     <item>
-      <title>[In preview] Announcing: Developer Training tier for low-cost fine-tuning training</title>
-      <link>https://azure.microsoft.com/updates?id=525952</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525952</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Streamline IT governance, security, and cost management experiences with Microsoft Foundry</title>
-      <link>https://azure.microsoft.com/updates?id=525942</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525942</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: New granular controls for network and integration security in Microsoft Foundry</title>
-      <link>https://azure.microsoft.com/updates?id=525933</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525933</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Agent mitigations and guardrail customization</title>
-      <link>https://azure.microsoft.com/updates?id=525923</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525923</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
       <title>Microsoft Entra at Ignite 2025: November 17-21</title>
       <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-at-ignite-2025-november-17-21/ba-p/4400194</link>
       <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-at-ignite-2025-november-17-21/ba-p/4400194</guid>
@@ -2526,13 +2547,6 @@
       <guid isPermaLink="true">https://www.weekly.tf/p/issue-251-harness-terraform-security-scanning-ssm-parameter-management-athena-state-queries-aws-back</guid>
       <pubDate>Wed, 12 Nov 2025 16:01:29 +0000</pubDate>
       <source>Terraform weekly</source>
-    </item>
-    <item>
-      <title>Identity and Network Security Practitioner Webinar Series</title>
-      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/identity-and-network-security-practitioner-webinar-series/ba-p/4448759</link>
-      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/identity-and-network-security-practitioner-webinar-series/ba-p/4448759</guid>
-      <pubDate>Tue, 11 Nov 2025 22:44:51 +0000</pubDate>
-      <source>Microsoft Entra Blog</source>
     </item>
     <item>
       <title>Ingress NGINX Retirement: What You Need to Know</title>
@@ -2645,13 +2659,6 @@
       <guid isPermaLink="true">https://www.weekly.tf/p/issue-248-terraform-state-locking-explained-rightsize-terraform-modules-terraform-with-ai-and-github</guid>
       <pubDate>Wed, 22 Oct 2025 15:00:42 +0000</pubDate>
       <source>Terraform weekly</source>
-    </item>
-    <item>
-      <title>Infrastructure as Code at Thomson Reuters with AWS CDK</title>
-      <link>https://aws.amazon.com/blogs/devops/infrastructure-as-code-at-thomson-reuters-with-aws-cdk/</link>
-      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/infrastructure-as-code-at-thomson-reuters-with-aws-cdk/</guid>
-      <pubDate>Tue, 21 Oct 2025 07:28:37 +0000</pubDate>
-      <source>AWS DevOps Blog</source>
     </item>
     <item>
       <title>11 days remaining: Support for Microsoft Entra Permissions Management ends November 1, 2025</title>
@@ -2945,13 +2952,6 @@
       <link>https://www.weekly.tf/p/issue-240-upgrade-to-aws-eks-v21-karpenter-in-eks-github-actions-runner-controller-serverless-image</link>
       <guid isPermaLink="true">https://www.weekly.tf/p/issue-240-upgrade-to-aws-eks-v21-karpenter-in-eks-github-actions-runner-controller-serverless-image</guid>
       <pubDate>Wed, 27 Aug 2025 15:00:00 +0000</pubDate>
-      <source>Terraform weekly</source>
-    </item>
-    <item>
-      <title>Issue #239 - IaCConf, S3 Tables using Glue Jobs, LocalStack and Outbox Pattern, Serverless Chat, Terraform Module Tests, tfclean, iam-convert</title>
-      <link>https://www.weekly.tf/p/issue-239-iacconf-s3-tables-using-glue-jobs-localstack-and-outbox-pattern-serverless-chat-terraform</link>
-      <guid isPermaLink="true">https://www.weekly.tf/p/issue-239-iacconf-s3-tables-using-glue-jobs-localstack-and-outbox-pattern-serverless-chat-terraform</guid>
-      <pubDate>Wed, 20 Aug 2025 15:00:00 +0000</pubDate>
       <source>Terraform weekly</source>
     </item>
     <item>

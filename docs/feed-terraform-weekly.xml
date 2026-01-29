@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-terraform-weekly.xml</link>
     <description>Articles from Terraform weekly</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-terraform-weekly.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 28 Jan 2026 12:27:05 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 29 Jan 2026 01:06:19 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Issue #259 - Everything as Code (incl. DNS), Terragrunt at Scale, Cloudflare v4 to v5 Migration, Self-Hosted GitLab Runners, CloudSlash for AWS Cost Optimization, Terraform Skill</title>
+      <link>https://www.weekly.tf/p/issue-259-everything-as-code-incl-dns-terragrunt-at-scale-cloudflare-v4-to-v5-migration-self-hosted</link>
+      <guid isPermaLink="true">https://www.weekly.tf/p/issue-259-everything-as-code-incl-dns-terragrunt-at-scale-cloudflare-v4-to-v5-migration-self-hosted</guid>
+      <pubDate>Wed, 28 Jan 2026 16:00:25 +0000</pubDate>
+    </item>
     <item>
       <title>Issue #258 - IaCConf, Multi-Environment GitHub Pipelines, ignore_changes Deep Dive, AWS Glue Data Exports, Terraform New Features, Agent Skill for Terraform and OpenTofu</title>
       <link>https://www.weekly.tf/p/issue-258-iacconf-multi-environment-github-pipelines-ignore-changes-deep-dive-aws-glue-data-exports</link>
@@ -120,12 +126,6 @@
       <link>https://www.weekly.tf/p/issue-240-upgrade-to-aws-eks-v21-karpenter-in-eks-github-actions-runner-controller-serverless-image</link>
       <guid isPermaLink="true">https://www.weekly.tf/p/issue-240-upgrade-to-aws-eks-v21-karpenter-in-eks-github-actions-runner-controller-serverless-image</guid>
       <pubDate>Wed, 27 Aug 2025 15:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Issue #239 - IaCConf, S3 Tables using Glue Jobs, LocalStack and Outbox Pattern, Serverless Chat, Terraform Module Tests, tfclean, iam-convert</title>
-      <link>https://www.weekly.tf/p/issue-239-iacconf-s3-tables-using-glue-jobs-localstack-and-outbox-pattern-serverless-chat-terraform</link>
-      <guid isPermaLink="true">https://www.weekly.tf/p/issue-239-iacconf-s3-tables-using-glue-jobs-localstack-and-outbox-pattern-serverless-chat-terraform</guid>
-      <pubDate>Wed, 20 Aug 2025 15:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

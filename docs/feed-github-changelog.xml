@@ -5,8 +5,20 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml</link>
     <description>Articles from GitHub Changelog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 28 Jan 2026 12:27:05 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 29 Jan 2026 01:06:19 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>ACP support in Copilot CLI is now in public preview</title>
+      <link>https://github.blog/changelog/2026-01-28-acp-support-in-copilot-cli-is-now-in-public-preview</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-01-28-acp-support-in-copilot-cli-is-now-in-public-preview</guid>
+      <pubDate>Wed, 28 Jan 2026 15:00:30 +0000</pubDate>
+    </item>
+    <item>
+      <title>Changes to GitHub Dependabot pull request comment commands</title>
+      <link>https://github.blog/changelog/2026-01-27-changes-to-github-dependabot-pull-request-comment-commands</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-01-27-changes-to-github-dependabot-pull-request-comment-commands</guid>
+      <pubDate>Tue, 27 Jan 2026 19:35:52 +0000</pubDate>
+    </item>
     <item>
       <title>Introducing the Agents tab in your repository</title>
       <link>https://github.blog/changelog/2026-01-26-introducing-the-agents-tab-in-your-repository</link>
@@ -54,18 +66,6 @@
       <link>https://github.blog/changelog/2026-01-20-codeql-2-23-9-has-been-released</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-01-20-codeql-2-23-9-has-been-released</guid>
       <pubDate>Tue, 20 Jan 2026 21:50:01 +0000</pubDate>
-    </item>
-    <item>
-      <title>Strengthen your supply chain with code-to-cloud traceability and SLSA Build Level 3 security</title>
-      <link>https://github.blog/changelog/2026-01-20-strengthen-your-supply-chain-with-code-to-cloud-traceability-and-slsa-build-level-3-security</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-01-20-strengthen-your-supply-chain-with-code-to-cloud-traceability-and-slsa-build-level-3-security</guid>
-      <pubDate>Tue, 20 Jan 2026 16:46:13 +0000</pubDate>
-    </item>
-    <item>
-      <title>Enterprise-scoped budgets that exclude cost center usage in public preview</title>
-      <link>https://github.blog/changelog/2026-01-19-enterprise-scoped-budgets-that-exclude-cost-center-usage-in-public-preview</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-01-19-enterprise-scoped-budgets-that-exclude-cost-center-usage-in-public-preview</guid>
-      <pubDate>Tue, 20 Jan 2026 00:27:17 +0000</pubDate>
     </item>
   </channel>
 </rss>

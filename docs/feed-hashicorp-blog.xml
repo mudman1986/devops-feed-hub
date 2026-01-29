@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-hashicorp-blog.xml</link>
     <description>Articles from HashiCorp Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-hashicorp-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 28 Jan 2026 12:27:05 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 29 Jan 2026 01:06:19 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>The top 5 sources of secret sprawl, and how attackers exploit them</title>
+      <link>https://www.hashicorp.com/blog/the-top-5-sources-of-secret-sprawl-and-how-attackers-exploit-them</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/the-top-5-sources-of-secret-sprawl-and-how-attackers-exploit-them</guid>
+      <pubDate>Wed, 28 Jan 2026 17:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>How resilient is HCP Vault during real AWS regional outages?</title>
       <link>https://www.hashicorp.com/blog/how-resilient-is-hcp-vault-during-real-aws-regional-outages</link>
@@ -120,12 +126,6 @@
       <link>https://www.hashicorp.com/blog/5-lessons-for-enabling-self-service-and-ai-driven-infrastructure-despite-legacy-tech-at-a-national-bank</link>
       <guid isPermaLink="true">https://www.hashicorp.com/blog/5-lessons-for-enabling-self-service-and-ai-driven-infrastructure-despite-legacy-tech-at-a-national-bank</guid>
       <pubDate>Thu, 11 Dec 2025 16:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>A cloud engineering lead’s 7 lessons about speed vs. security</title>
-      <link>https://www.hashicorp.com/blog/a-cloud-engineering-lead-s-7-lessons-about-speed-vs-security</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/a-cloud-engineering-lead-s-7-lessons-about-speed-vs-security</guid>
-      <pubDate>Tue, 09 Dec 2025 21:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
