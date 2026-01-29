@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-hashicorp-blog.xml</link>
     <description>Articles from HashiCorp Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-hashicorp-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 29 Jan 2026 01:06:19 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 29 Jan 2026 12:31:49 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>The top 5 sources of secret sprawl, and how attackers exploit them</title>
