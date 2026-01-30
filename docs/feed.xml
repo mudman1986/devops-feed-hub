@@ -5,8 +5,15 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 30 Jan 2026 01:05:52 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 30 Jan 2026 12:30:58 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Meet Jenkins at FOSDEM Brussels</title>
+      <link>https://www.jenkins.io/blog/2026/01/30/fosdem/</link>
+      <guid isPermaLink="true">https://www.jenkins.io/blog/2026/01/30/fosdem/</guid>
+      <pubDate>Fri, 30 Jan 2026 00:00:00 +0000</pubDate>
+      <source>Jenkins Blog</source>
+    </item>
     <item>
       <title>Codespaces is now in public preview for GitHub Enterprise with data residency</title>
       <link>https://github.blog/changelog/2026-01-29-codespaces-is-now-in-public-preview-for-github-enterprise-with-data-residency</link>
