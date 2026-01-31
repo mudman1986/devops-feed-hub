@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml</link>
     <description>Articles from Azure Updates</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 30 Jan 2026 12:30:58 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 31 Jan 2026 01:03:24 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Retirement: "Send data to Event Hubs &amp; Storage (Preview)" retiring July 31, 2026</title>
+      <link>https://azure.microsoft.com/updates?id=551523</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=551523</guid>
+      <pubDate>Fri, 30 Jan 2026 18:30:02 +0000</pubDate>
+    </item>
     <item>
       <title>Retirement: Support for Python 3.10 ends on October 1, 2026 – upgrade your Azure Functions apps to Python 3.13</title>
       <link>https://azure.microsoft.com/updates?id=545771</link>
@@ -1193,12 +1199,6 @@
       <title>[In preview] Public Preview: LLM Speech in Microsoft Foundry</title>
       <link>https://azure.microsoft.com/updates?id=525962</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525962</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Bring Your Own AI Gateway to Foundry Agent Service</title>
-      <link>https://azure.microsoft.com/updates?id=525957</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525957</guid>
       <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
     </item>
     <item>

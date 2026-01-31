@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml</link>
     <description>Articles from GitHub Changelog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 30 Jan 2026 12:30:58 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 31 Jan 2026 01:03:24 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Docker and Docker Compose version upgrades on hosted runners</title>
+      <link>https://github.blog/changelog/2026-01-30-docker-and-docker-compose-version-upgrades-on-hosted-runners</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-01-30-docker-and-docker-compose-version-upgrades-on-hosted-runners</guid>
+      <pubDate>Fri, 30 Jan 2026 14:20:34 +0000</pubDate>
+    </item>
     <item>
       <title>Codespaces is now in public preview for GitHub Enterprise with data residency</title>
       <link>https://github.blog/changelog/2026-01-29-codespaces-is-now-in-public-preview-for-github-enterprise-with-data-residency</link>
@@ -60,12 +66,6 @@
       <link>https://github.blog/changelog/2026-01-28-github-mcp-server-new-projects-tools-oauth-scope-filtering-and-new-features</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-01-28-github-mcp-server-new-projects-tools-oauth-scope-filtering-and-new-features</guid>
       <pubDate>Wed, 28 Jan 2026 10:23:45 +0000</pubDate>
-    </item>
-    <item>
-      <title>Changes to GitHub Dependabot pull request comment commands</title>
-      <link>https://github.blog/changelog/2026-01-27-changes-to-github-dependabot-pull-request-comment-commands</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-01-27-changes-to-github-dependabot-pull-request-comment-commands</guid>
-      <pubDate>Tue, 27 Jan 2026 19:35:52 +0000</pubDate>
     </item>
   </channel>
 </rss>

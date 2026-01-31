@@ -5,8 +5,43 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 30 Jan 2026 12:30:58 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 31 Jan 2026 01:03:24 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Docker Sandboxes: Run Claude Code and Other Coding Agents Unsupervised (but Safely)</title>
+      <link>https://www.docker.com/blog/docker-sandboxes-run-claude-code-and-other-coding-agents-unsupervised-but-safely/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/docker-sandboxes-run-claude-code-and-other-coding-agents-unsupervised-but-safely/</guid>
+      <pubDate>Fri, 30 Jan 2026 23:39:54 +0000</pubDate>
+      <source>Docker Blog</source>
+    </item>
+    <item>
+      <title>Case study: Securing AI application supply chains</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/01/30/case-study-securing-ai-application-supply-chains/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/30/case-study-securing-ai-application-supply-chains/</guid>
+      <pubDate>Fri, 30 Jan 2026 18:49:44 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>Retirement: "Send data to Event Hubs &amp; Storage (Preview)" retiring July 31, 2026</title>
+      <link>https://azure.microsoft.com/updates?id=551523</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=551523</guid>
+      <pubDate>Fri, 30 Jan 2026 18:30:02 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>New Conversion from cgroup v1 CPU Shares to v2 CPU Weight</title>
+      <link>https://kubernetes.io/blog/2026/01/30/new-cgroup-v1-to-v2-cpu-conversion-formula/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2026/01/30/new-cgroup-v1-to-v2-cpu-conversion-formula/</guid>
+      <pubDate>Fri, 30 Jan 2026 16:00:00 +0000</pubDate>
+      <source>Kubernetes Blog</source>
+    </item>
+    <item>
+      <title>Docker and Docker Compose version upgrades on hosted runners</title>
+      <link>https://github.blog/changelog/2026-01-30-docker-and-docker-compose-version-upgrades-on-hosted-runners</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-01-30-docker-and-docker-compose-version-upgrades-on-hosted-runners</guid>
+      <pubDate>Fri, 30 Jan 2026 14:20:34 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
     <item>
       <title>Meet Jenkins at FOSDEM Brussels</title>
       <link>https://www.jenkins.io/blog/2026/01/30/fosdem/</link>
@@ -202,13 +237,6 @@
       <guid isPermaLink="true">https://kubernetes.io/blog/2026/01/28/experimenting-gateway-api-with-kind/</guid>
       <pubDate>Wed, 28 Jan 2026 00:00:00 +0000</pubDate>
       <source>Kubernetes Blog</source>
-    </item>
-    <item>
-      <title>Changes to GitHub Dependabot pull request comment commands</title>
-      <link>https://github.blog/changelog/2026-01-27-changes-to-github-dependabot-pull-request-comment-commands</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-01-27-changes-to-github-dependabot-pull-request-comment-commands</guid>
-      <pubDate>Tue, 27 Jan 2026 19:35:52 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>7 learnings from Anders Hejlsberg: The architect behind C# and TypeScript</title>
@@ -610,13 +638,6 @@
       <source>Docker Blog</source>
     </item>
     <item>
-      <title>OpenCode with Docker Model Runner for Private AI Coding</title>
-      <link>https://www.docker.com/blog/opencode-docker-model-runner-private-ai-coding/</link>
-      <guid isPermaLink="true">https://www.docker.com/blog/opencode-docker-model-runner-private-ai-coding/</guid>
-      <pubDate>Thu, 15 Jan 2026 13:47:17 +0000</pubDate>
-      <source>Docker Blog</source>
-    </item>
-    <item>
       <title>Announcing general availability for GitLab Duo Agent Platform</title>
       <link>https://about.gitlab.com/blog/gitlab-duo-agent-platform-is-generally-available/</link>
       <guid isPermaLink="true">https://about.gitlab.com/blog/gitlab-duo-agent-platform-is-generally-available/</guid>
@@ -636,13 +657,6 @@
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=536550</guid>
       <pubDate>Wed, 14 Jan 2026 22:45:12 +0000</pubDate>
       <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>Microsoft named a Leader in IDC MarketScape for Unified AI Governance Platforms</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/01/14/microsoft-named-a-leader-in-idc-marketscape-for-unified-ai-governance-platforms/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/14/microsoft-named-a-leader-in-idc-marketscape-for-unified-ai-governance-platforms/</guid>
-      <pubDate>Wed, 14 Jan 2026 17:00:00 +0000</pubDate>
-      <source>Microsoft Security</source>
     </item>
     <item>
       <title>Issue #257 - IaCConf, Terraform Secrets Protection, AI DevOps Agents, Pulumi's Multi-IaC Platform, Future of Open Source CDKTF, Terraform Қазақша (Kazakh)</title>
@@ -2542,13 +2556,6 @@
       <source>Azure Updates</source>
     </item>
     <item>
-      <title>[In preview] Public Preview: Bring Your Own AI Gateway to Foundry Agent Service</title>
-      <link>https://azure.microsoft.com/updates?id=525957</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525957</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
       <title>Microsoft Entra at Ignite 2025: November 17-21</title>
       <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-at-ignite-2025-november-17-21/ba-p/4400194</link>
       <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-at-ignite-2025-november-17-21/ba-p/4400194</guid>
@@ -2988,13 +2995,6 @@
       <guid isPermaLink="true">https://www.jenkins.io/blog/2025/08/08/board-officer-election-announcement/</guid>
       <pubDate>Fri, 08 Aug 2025 00:00:00 +0000</pubDate>
       <source>Jenkins Blog</source>
-    </item>
-    <item>
-      <title>Introducing Headlamp AI Assistant</title>
-      <link>https://kubernetes.io/blog/2025/08/07/introducing-headlamp-ai-assistant/</link>
-      <guid isPermaLink="true">https://kubernetes.io/blog/2025/08/07/introducing-headlamp-ai-assistant/</guid>
-      <pubDate>Thu, 07 Aug 2025 19:00:00 +0000</pubDate>
-      <source>Kubernetes Blog</source>
     </item>
     <item>
       <title>Enforced HTTPS for Update Center</title>

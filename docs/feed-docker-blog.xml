@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-docker-blog.xml</link>
     <description>Articles from Docker Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-docker-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 30 Jan 2026 12:30:58 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 31 Jan 2026 01:03:24 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Docker Sandboxes: Run Claude Code and Other Coding Agents Unsupervised (but Safely)</title>
+      <link>https://www.docker.com/blog/docker-sandboxes-run-claude-code-and-other-coding-agents-unsupervised-but-safely/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/docker-sandboxes-run-claude-code-and-other-coding-agents-unsupervised-but-safely/</guid>
+      <pubDate>Fri, 30 Jan 2026 23:39:54 +0000</pubDate>
+    </item>
     <item>
       <title>Clawdbot with Docker Model Runner, a Private Personal AI Assistant</title>
       <link>https://www.docker.com/blog/clawdbot-docker-model-runner-private-personal-ai/</link>
@@ -60,12 +66,6 @@
       <link>https://www.docker.com/blog/rag-permission-testing-testcontainers-spicedb/</link>
       <guid isPermaLink="true">https://www.docker.com/blog/rag-permission-testing-testcontainers-spicedb/</guid>
       <pubDate>Thu, 15 Jan 2026 14:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>OpenCode with Docker Model Runner for Private AI Coding</title>
-      <link>https://www.docker.com/blog/opencode-docker-model-runner-private-ai-coding/</link>
-      <guid isPermaLink="true">https://www.docker.com/blog/opencode-docker-model-runner-private-ai-coding/</guid>
-      <pubDate>Thu, 15 Jan 2026 13:47:17 +0000</pubDate>
     </item>
   </channel>
 </rss>

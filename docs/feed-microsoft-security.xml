@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml</link>
     <description>Articles from Microsoft Security</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 30 Jan 2026 12:30:58 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 31 Jan 2026 01:03:24 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Case study: Securing AI application supply chains</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/01/30/case-study-securing-ai-application-supply-chains/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/30/case-study-securing-ai-application-supply-chains/</guid>
+      <pubDate>Fri, 30 Jan 2026 18:49:44 +0000</pubDate>
+    </item>
     <item>
       <title>Turning threat reports into detection insights with AI</title>
       <link>https://www.microsoft.com/en-us/security/blog/2026/01/29/turning-threat-reports-detection-insights-ai/</link>
@@ -60,12 +66,6 @@
       <link>https://www.microsoft.com/en-us/security/blog/2026/01/20/four-priorities-for-ai-powered-identity-and-network-access-security-in-2026/</link>
       <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/20/four-priorities-for-ai-powered-identity-and-network-access-security-in-2026/</guid>
       <pubDate>Tue, 20 Jan 2026 17:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Microsoft named a Leader in IDC MarketScape for Unified AI Governance Platforms</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/01/14/microsoft-named-a-leader-in-idc-marketscape-for-unified-ai-governance-platforms/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/14/microsoft-named-a-leader-in-idc-marketscape-for-unified-ai-governance-platforms/</guid>
-      <pubDate>Wed, 14 Jan 2026 17:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
