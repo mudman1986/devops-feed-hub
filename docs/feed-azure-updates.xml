@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml</link>
     <description>Articles from Azure Updates</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 02 Feb 2026 03:24:46 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 02 Feb 2026 12:33:51 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Retirement: "Send data to Event Hubs &amp; Storage (Preview)" retiring July 31, 2026</title>
