@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml</link>
     <description>Articles from Microsoft Security</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 02 Feb 2026 12:33:51 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 03 Feb 2026 01:10:31 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Infostealers without borders: macOS, Python stealers, and platform abuse</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/02/02/infostealers-without-borders-macos-python-stealers-and-platform-abuse/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/02/infostealers-without-borders-macos-python-stealers-and-platform-abuse/</guid>
+      <pubDate>Mon, 02 Feb 2026 21:04:29 +0000</pubDate>
+    </item>
     <item>
       <title>Case study: Securing AI application supply chains</title>
       <link>https://www.microsoft.com/en-us/security/blog/2026/01/30/case-study-securing-ai-application-supply-chains/</link>
@@ -60,12 +66,6 @@
       <link>https://www.microsoft.com/en-us/security/blog/2026/01/21/new-era-of-agents-new-era-of-posture/</link>
       <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/21/new-era-of-agents-new-era-of-posture/</guid>
       <pubDate>Wed, 21 Jan 2026 14:33:31 +0000</pubDate>
-    </item>
-    <item>
-      <title>Four priorities for AI-powered identity and network access security in 2026</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/01/20/four-priorities-for-ai-powered-identity-and-network-access-security-in-2026/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/20/four-priorities-for-ai-powered-identity-and-network-access-security-in-2026/</guid>
-      <pubDate>Tue, 20 Jan 2026 17:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

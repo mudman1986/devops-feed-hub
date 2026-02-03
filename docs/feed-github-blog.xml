@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-blog.xml</link>
     <description>Articles from GitHub Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 02 Feb 2026 12:33:51 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 03 Feb 2026 01:10:31 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>How to maximize GitHub Copilot&amp;#8217;s agentic capabilities</title>
+      <link>https://github.blog/ai-and-ml/github-copilot/how-to-maximize-github-copilots-agentic-capabilities/</link>
+      <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/how-to-maximize-github-copilots-agentic-capabilities/</guid>
+      <pubDate>Mon, 02 Feb 2026 17:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>From pixels to characters: The engineering behind GitHub Copilot CLI’s animated ASCII banner</title>
       <link>https://github.blog/engineering/from-pixels-to-characters-the-engineering-behind-github-copilot-clis-animated-ascii-banner/</link>
@@ -60,12 +66,6 @@
       <link>https://github.blog/developer-skills/application-development/context-windows-plan-agent-and-tdd-what-i-learned-building-a-countdown-app-with-github-copilot/</link>
       <guid isPermaLink="true">https://github.blog/developer-skills/application-development/context-windows-plan-agent-and-tdd-what-i-learned-building-a-countdown-app-with-github-copilot/</guid>
       <pubDate>Tue, 20 Jan 2026 17:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Building an agentic memory system for GitHub Copilot</title>
-      <link>https://github.blog/ai-and-ml/github-copilot/building-an-agentic-memory-system-for-github-copilot/</link>
-      <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/building-an-agentic-memory-system-for-github-copilot/</guid>
-      <pubDate>Thu, 15 Jan 2026 21:31:10 +0000</pubDate>
     </item>
   </channel>
 </rss>

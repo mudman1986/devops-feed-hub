@@ -5,8 +5,26 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml</link>
     <description>Articles from Azure Updates</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 02 Feb 2026 12:33:51 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 03 Feb 2026 01:10:31 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Retirement: Azure Front Door and Azure CDN profiles will end support for DHE cipher suites on April 1, 2026</title>
+      <link>https://azure.microsoft.com/updates?id=553527</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=553527</guid>
+      <pubDate>Mon, 02 Feb 2026 18:15:39 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Serverless workspaces in Azure Databricks</title>
+      <link>https://azure.microsoft.com/updates?id=550845</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=550845</guid>
+      <pubDate>Mon, 02 Feb 2026 18:15:39 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Default Ruleset 2.2 in WAF for Azure Application Gateway</title>
+      <link>https://azure.microsoft.com/updates?id=553532</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=553532</guid>
+      <pubDate>Mon, 02 Feb 2026 17:45:01 +0000</pubDate>
+    </item>
     <item>
       <title>Retirement: "Send data to Event Hubs &amp; Storage (Preview)" retiring July 31, 2026</title>
       <link>https://azure.microsoft.com/updates?id=551523</link>
@@ -1181,24 +1199,6 @@
       <title>[Launched] Generally Available: Observability in Foundry Control Plane</title>
       <link>https://azure.microsoft.com/updates?id=525985</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525985</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Enterprise MCP enhancements in Foundry Agent Service</title>
-      <link>https://azure.microsoft.com/updates?id=525976</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525976</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Microsoft Foundry one-click deploy channels in Teams, M365 and non-Microsoft</title>
-      <link>https://azure.microsoft.com/updates?id=525971</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525971</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: LLM Speech in Microsoft Foundry</title>
-      <link>https://azure.microsoft.com/updates?id=525962</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525962</guid>
       <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
     </item>
     <item>

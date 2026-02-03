@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-hashicorp-blog.xml</link>
     <description>Articles from HashiCorp Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-hashicorp-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 02 Feb 2026 12:33:51 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 03 Feb 2026 01:10:31 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>HCP Vault performance replication at global scale: Better than DIY</title>
+      <link>https://www.hashicorp.com/blog/hcp-vault-performance-replication-at-global-scale-better-than-diy</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/hcp-vault-performance-replication-at-global-scale-better-than-diy</guid>
+      <pubDate>Fri, 30 Jan 2026 18:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>The top 5 sources of secret sprawl, and how attackers exploit them</title>
       <link>https://www.hashicorp.com/blog/the-top-5-sources-of-secret-sprawl-and-how-attackers-exploit-them</link>
@@ -120,12 +126,6 @@
       <link>https://www.hashicorp.com/blog/boundary-0-21-improves-remote-access-security-and-ux-for-rdp-connections</link>
       <guid isPermaLink="true">https://www.hashicorp.com/blog/boundary-0-21-improves-remote-access-security-and-ux-for-rdp-connections</guid>
       <pubDate>Thu, 11 Dec 2025 17:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>5 Lessons for enabling self-service and AI-driven infrastructure despite legacy tech at a national bank</title>
-      <link>https://www.hashicorp.com/blog/5-lessons-for-enabling-self-service-and-ai-driven-infrastructure-despite-legacy-tech-at-a-national-bank</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/5-lessons-for-enabling-self-service-and-ai-driven-infrastructure-despite-legacy-tech-at-a-national-bank</guid>
-      <pubDate>Thu, 11 Dec 2025 16:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

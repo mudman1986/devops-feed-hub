@@ -5,8 +5,50 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 02 Feb 2026 12:33:51 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 03 Feb 2026 01:10:31 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Infostealers without borders: macOS, Python stealers, and platform abuse</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/02/02/infostealers-without-borders-macos-python-stealers-and-platform-abuse/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/02/infostealers-without-borders-macos-python-stealers-and-platform-abuse/</guid>
+      <pubDate>Mon, 02 Feb 2026 21:04:29 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>Retirement: Azure Front Door and Azure CDN profiles will end support for DHE cipher suites on April 1, 2026</title>
+      <link>https://azure.microsoft.com/updates?id=553527</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=553527</guid>
+      <pubDate>Mon, 02 Feb 2026 18:15:39 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Serverless workspaces in Azure Databricks</title>
+      <link>https://azure.microsoft.com/updates?id=550845</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=550845</guid>
+      <pubDate>Mon, 02 Feb 2026 18:15:39 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Default Ruleset 2.2 in WAF for Azure Application Gateway</title>
+      <link>https://azure.microsoft.com/updates?id=553532</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=553532</guid>
+      <pubDate>Mon, 02 Feb 2026 17:45:01 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>How to maximize GitHub Copilot&amp;#8217;s agentic capabilities</title>
+      <link>https://github.blog/ai-and-ml/github-copilot/how-to-maximize-github-copilots-agentic-capabilities/</link>
+      <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/how-to-maximize-github-copilots-agentic-capabilities/</guid>
+      <pubDate>Mon, 02 Feb 2026 17:00:00 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
+    <item>
+      <title>What’s new in Git 2.53.0?</title>
+      <link>https://about.gitlab.com/blog/whats-new-in-git-2-53-0/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/whats-new-in-git-2-53-0/</guid>
+      <pubDate>Mon, 02 Feb 2026 00:00:00 +0000</pubDate>
+      <source>GitLab Blog</source>
+    </item>
     <item>
       <title>Docker Sandboxes: Run Claude Code and Other Coding Agents Unsupervised (but Safely)</title>
       <link>https://www.docker.com/blog/docker-sandboxes-run-claude-code-and-other-coding-agents-unsupervised-but-safely/</link>
@@ -27,6 +69,13 @@
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=551523</guid>
       <pubDate>Fri, 30 Jan 2026 18:30:02 +0000</pubDate>
       <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>HCP Vault performance replication at global scale: Better than DIY</title>
+      <link>https://www.hashicorp.com/blog/hcp-vault-performance-replication-at-global-scale-better-than-diy</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/hcp-vault-performance-replication-at-global-scale-better-than-diy</guid>
+      <pubDate>Fri, 30 Jan 2026 18:00:00 +0000</pubDate>
+      <source>HashiCorp Blog</source>
     </item>
     <item>
       <title>New Conversion from cgroup v1 CPU Shares to v2 CPU Weight</title>
@@ -561,13 +610,6 @@
       <source>Microsoft Entra Blog</source>
     </item>
     <item>
-      <title>Four priorities for AI-powered identity and network access security in 2026</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/01/20/four-priorities-for-ai-powered-identity-and-network-access-security-in-2026/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/20/four-priorities-for-ai-powered-identity-and-network-access-security-in-2026/</guid>
-      <pubDate>Tue, 20 Jan 2026 17:00:00 +0000</pubDate>
-      <source>Microsoft Security</source>
-    </item>
-    <item>
       <title>GitLab Bug Bounty Program policy updates</title>
       <link>https://about.gitlab.com/blog/gitlab-bug-bounty-program-policy-updates/</link>
       <guid isPermaLink="true">https://about.gitlab.com/blog/gitlab-bug-bounty-program-policy-updates/</guid>
@@ -615,13 +657,6 @@
       <guid isPermaLink="true">https://www.docker.com/blog/making-small-llms-smarter/</guid>
       <pubDate>Fri, 16 Jan 2026 13:47:26 +0000</pubDate>
       <source>Docker Blog</source>
-    </item>
-    <item>
-      <title>Building an agentic memory system for GitHub Copilot</title>
-      <link>https://github.blog/ai-and-ml/github-copilot/building-an-agentic-memory-system-for-github-copilot/</link>
-      <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/building-an-agentic-memory-system-for-github-copilot/</guid>
-      <pubDate>Thu, 15 Jan 2026 21:31:10 +0000</pubDate>
-      <source>GitHub Blog</source>
     </item>
     <item>
       <title>From AI agent prototype to product: Lessons from building AWS DevOps Agent</title>
@@ -1121,13 +1156,6 @@
       <source>Microsoft DevOps Blog</source>
     </item>
     <item>
-      <title>Taming tool sprawl: How to boost university IT productivity</title>
-      <link>https://about.gitlab.com/blog/taming-tool-sprawl-how-to-boost-university-it-productivity/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/taming-tool-sprawl-how-to-boost-university-it-productivity/</guid>
-      <pubDate>Mon, 15 Dec 2025 00:00:00 +0000</pubDate>
-      <source>GitLab Blog</source>
-    </item>
-    <item>
       <title>HashiCorp year in review 2025: Lessons in simplifying the cloud</title>
       <link>https://www.hashicorp.com/blog/hashicorp-year-in-review-2025-lessons-in-simplifying-the-cloud</link>
       <guid isPermaLink="true">https://www.hashicorp.com/blog/hashicorp-year-in-review-2025-lessons-in-simplifying-the-cloud</guid>
@@ -1167,13 +1195,6 @@
       <link>https://www.hashicorp.com/blog/boundary-0-21-improves-remote-access-security-and-ux-for-rdp-connections</link>
       <guid isPermaLink="true">https://www.hashicorp.com/blog/boundary-0-21-improves-remote-access-security-and-ux-for-rdp-connections</guid>
       <pubDate>Thu, 11 Dec 2025 17:00:00 +0000</pubDate>
-      <source>HashiCorp Blog</source>
-    </item>
-    <item>
-      <title>5 Lessons for enabling self-service and AI-driven infrastructure despite legacy tech at a national bank</title>
-      <link>https://www.hashicorp.com/blog/5-lessons-for-enabling-self-service-and-ai-driven-infrastructure-despite-legacy-tech-at-a-national-bank</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/5-lessons-for-enabling-self-service-and-ai-driven-infrastructure-despite-legacy-tech-at-a-national-bank</guid>
-      <pubDate>Thu, 11 Dec 2025 16:00:00 +0000</pubDate>
       <source>HashiCorp Blog</source>
     </item>
     <item>
@@ -2531,27 +2552,6 @@
       <title>[Launched] Generally Available: Observability in Foundry Control Plane</title>
       <link>https://azure.microsoft.com/updates?id=525985</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525985</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Enterprise MCP enhancements in Foundry Agent Service</title>
-      <link>https://azure.microsoft.com/updates?id=525976</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525976</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Microsoft Foundry one-click deploy channels in Teams, M365 and non-Microsoft</title>
-      <link>https://azure.microsoft.com/updates?id=525971</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525971</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: LLM Speech in Microsoft Foundry</title>
-      <link>https://azure.microsoft.com/updates?id=525962</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525962</guid>
       <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
       <source>Azure Updates</source>
     </item>
