@@ -5,8 +5,20 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml</link>
     <description>Articles from GitHub Changelog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 03 Feb 2026 12:34:40 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 04 Feb 2026 01:05:30 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Dependabot now supports OIDC authentication</title>
+      <link>https://github.blog/changelog/2026-02-03-dependabot-now-supports-oidc-authentication</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-03-dependabot-now-supports-oidc-authentication</guid>
+      <pubDate>Tue, 03 Feb 2026 17:09:59 +0000</pubDate>
+    </item>
+    <item>
+      <title>The Dependabot Proxy is now open source with an MIT license</title>
+      <link>https://github.blog/changelog/2026-02-03-the-dependabot-proxy-is-now-open-source-with-an-mit-license</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-03-the-dependabot-proxy-is-now-open-source-with-an-mit-license</guid>
+      <pubDate>Tue, 03 Feb 2026 16:48:51 +0000</pubDate>
+    </item>
     <item>
       <title>Docker and Docker Compose version upgrades on hosted runners</title>
       <link>https://github.blog/changelog/2026-01-30-docker-and-docker-compose-version-upgrades-on-hosted-runners</link>
@@ -54,18 +66,6 @@
       <link>https://github.blog/changelog/2026-01-29-improved-search-for-github-issues-in-public-preview</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-01-29-improved-search-for-github-issues-in-public-preview</guid>
       <pubDate>Thu, 29 Jan 2026 11:07:03 +0000</pubDate>
-    </item>
-    <item>
-      <title>ACP support in Copilot CLI is now in public preview</title>
-      <link>https://github.blog/changelog/2026-01-28-acp-support-in-copilot-cli-is-now-in-public-preview</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-01-28-acp-support-in-copilot-cli-is-now-in-public-preview</guid>
-      <pubDate>Wed, 28 Jan 2026 15:00:30 +0000</pubDate>
-    </item>
-    <item>
-      <title>GitHub MCP Server: New Projects tools, OAuth scope filtering, and new features</title>
-      <link>https://github.blog/changelog/2026-01-28-github-mcp-server-new-projects-tools-oauth-scope-filtering-and-new-features</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-01-28-github-mcp-server-new-projects-tools-oauth-scope-filtering-and-new-features</guid>
-      <pubDate>Wed, 28 Jan 2026 10:23:45 +0000</pubDate>
     </item>
   </channel>
 </rss>

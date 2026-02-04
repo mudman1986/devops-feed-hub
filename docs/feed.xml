@@ -5,8 +5,71 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 03 Feb 2026 12:34:40 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 04 Feb 2026 01:05:30 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>[In development] Public Preview: X-Forwarded-For (XFF) grouping for rate limiting on Application Gateway WAF v2</title>
+      <link>https://azure.microsoft.com/updates?id=555205</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=555205</guid>
+      <pubDate>Tue, 03 Feb 2026 20:30:31 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Azure Container Storage v2.1.0 now with Elastic SAN integration and on demand installation</title>
+      <link>https://azure.microsoft.com/updates?id=553917</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=553917</guid>
+      <pubDate>Tue, 03 Feb 2026 20:30:31 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Azure Kubernetes Fleet Manager namespace-scoped resource placement</title>
+      <link>https://azure.microsoft.com/updates?id=548198</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=548198</guid>
+      <pubDate>Tue, 03 Feb 2026 20:30:31 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>Dependabot now supports OIDC authentication</title>
+      <link>https://github.blog/changelog/2026-02-03-dependabot-now-supports-oidc-authentication</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-03-dependabot-now-supports-oidc-authentication</guid>
+      <pubDate>Tue, 03 Feb 2026 17:09:59 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>What the fastest-growing tools reveal about how software is being built</title>
+      <link>https://github.blog/news-insights/octoverse/what-the-fastest-growing-tools-reveal-about-how-software-is-being-built/</link>
+      <guid isPermaLink="true">https://github.blog/news-insights/octoverse/what-the-fastest-growing-tools-reveal-about-how-software-is-being-built/</guid>
+      <pubDate>Tue, 03 Feb 2026 17:00:00 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
+    <item>
+      <title>PCI DSS 4.0.1 compliance with HashiCorp Vault and Vault Radar</title>
+      <link>https://www.hashicorp.com/blog/pci-dss-4-compliance-with-hashicorp-vault-and-vault-radar</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/pci-dss-4-compliance-with-hashicorp-vault-and-vault-radar</guid>
+      <pubDate>Tue, 03 Feb 2026 17:00:00 +0000</pubDate>
+      <source>HashiCorp Blog</source>
+    </item>
+    <item>
+      <title>Microsoft SDL: Evolving security practices for an AI-powered world</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/02/03/microsoft-sdl-evolving-security-practices-for-an-ai-powered-world/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/03/microsoft-sdl-evolving-security-practices-for-an-ai-powered-world/</guid>
+      <pubDate>Tue, 03 Feb 2026 17:00:00 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>The Dependabot Proxy is now open source with an MIT license</title>
+      <link>https://github.blog/changelog/2026-02-03-the-dependabot-proxy-is-now-open-source-with-an-mit-license</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-03-the-dependabot-proxy-is-now-open-source-with-an-mit-license</guid>
+      <pubDate>Tue, 03 Feb 2026 16:48:51 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Introducing Node Readiness Controller</title>
+      <link>https://kubernetes.io/blog/2026/02/03/introducing-node-readiness-controller/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2026/02/03/introducing-node-readiness-controller/</guid>
+      <pubDate>Tue, 03 Feb 2026 02:00:00 +0000</pubDate>
+      <source>Kubernetes Blog</source>
+    </item>
     <item>
       <title>Infostealers without borders: macOS, Python stealers, and platform abuse</title>
       <link>https://www.microsoft.com/en-us/security/blog/2026/02/02/infostealers-without-borders-macos-python-stealers-and-platform-abuse/</link>
@@ -41,6 +104,13 @@
       <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/how-to-maximize-github-copilots-agentic-capabilities/</guid>
       <pubDate>Mon, 02 Feb 2026 17:00:00 +0000</pubDate>
       <source>GitHub Blog</source>
+    </item>
+    <item>
+      <title>Introducing HashiCorp Agent Skills</title>
+      <link>https://www.hashicorp.com/blog/introducing-hashicorp-agent-skills</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/introducing-hashicorp-agent-skills</guid>
+      <pubDate>Mon, 02 Feb 2026 17:00:00 +0000</pubDate>
+      <source>HashiCorp Blog</source>
     </item>
     <item>
       <title>What’s new in Git 2.53.0?</title>
@@ -258,20 +328,6 @@
       <guid isPermaLink="true">https://circleci.com/blog/boost-your-test-coverage-with-circleci-chunk-ai-agent/</guid>
       <pubDate>Wed, 28 Jan 2026 16:00:00 +0000</pubDate>
       <source>CircleCI Blog</source>
-    </item>
-    <item>
-      <title>ACP support in Copilot CLI is now in public preview</title>
-      <link>https://github.blog/changelog/2026-01-28-acp-support-in-copilot-cli-is-now-in-public-preview</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-01-28-acp-support-in-copilot-cli-is-now-in-public-preview</guid>
-      <pubDate>Wed, 28 Jan 2026 15:00:30 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>GitHub MCP Server: New Projects tools, OAuth scope filtering, and new features</title>
-      <link>https://github.blog/changelog/2026-01-28-github-mcp-server-new-projects-tools-oauth-scope-filtering-and-new-features</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-01-28-github-mcp-server-new-projects-tools-oauth-scope-filtering-and-new-features</guid>
-      <pubDate>Wed, 28 Jan 2026 10:23:45 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>AWS CloudFormation 2025 Year In Review</title>
@@ -582,24 +638,10 @@
       <source>CircleCI Blog</source>
     </item>
     <item>
-      <title>A new era of agents, a new era of posture</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/01/21/new-era-of-agents-new-era-of-posture/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/21/new-era-of-agents-new-era-of-posture/</guid>
-      <pubDate>Wed, 21 Jan 2026 14:33:31 +0000</pubDate>
-      <source>Microsoft Security</source>
-    </item>
-    <item>
       <title>AI-supported vulnerability triage with the GitHub Security Lab Taskflow Agent</title>
       <link>https://github.blog/security/ai-supported-vulnerability-triage-with-the-github-security-lab-taskflow-agent/</link>
       <guid isPermaLink="true">https://github.blog/security/ai-supported-vulnerability-triage-with-the-github-security-lab-taskflow-agent/</guid>
       <pubDate>Tue, 20 Jan 2026 19:52:50 +0000</pubDate>
-      <source>GitHub Blog</source>
-    </item>
-    <item>
-      <title>Context windows, Plan agent, and TDD: What I learned building a countdown app with GitHub Copilot</title>
-      <link>https://github.blog/developer-skills/application-development/context-windows-plan-agent-and-tdd-what-i-learned-building-a-countdown-app-with-github-copilot/</link>
-      <guid isPermaLink="true">https://github.blog/developer-skills/application-development/context-windows-plan-agent-and-tdd-what-i-learned-building-a-countdown-app-with-github-copilot/</guid>
-      <pubDate>Tue, 20 Jan 2026 17:00:00 +0000</pubDate>
       <source>GitHub Blog</source>
     </item>
     <item>
@@ -1156,13 +1198,6 @@
       <source>Microsoft DevOps Blog</source>
     </item>
     <item>
-      <title>HashiCorp year in review 2025: Lessons in simplifying the cloud</title>
-      <link>https://www.hashicorp.com/blog/hashicorp-year-in-review-2025-lessons-in-simplifying-the-cloud</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/hashicorp-year-in-review-2025-lessons-in-simplifying-the-cloud</guid>
-      <pubDate>Fri, 12 Dec 2025 17:00:00 +0000</pubDate>
-      <source>HashiCorp Blog</source>
-    </item>
-    <item>
       <title>Retirement of Global Personal Access Tokens in Azure DevOps</title>
       <link>https://devblogs.microsoft.com/devops/retirement-of-global-personal-access-tokens-in-azure-devops/</link>
       <guid isPermaLink="true">https://devblogs.microsoft.com/devops/retirement-of-global-personal-access-tokens-in-azure-devops/</guid>
@@ -1189,13 +1224,6 @@
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=541784</guid>
       <pubDate>Thu, 11 Dec 2025 18:00:36 +0000</pubDate>
       <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>Boundary 0.21 improves remote access security and UX for RDP connections</title>
-      <link>https://www.hashicorp.com/blog/boundary-0-21-improves-remote-access-security-and-ux-for-rdp-connections</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/boundary-0-21-improves-remote-access-security-and-ux-for-rdp-connections</guid>
-      <pubDate>Thu, 11 Dec 2025 17:00:00 +0000</pubDate>
-      <source>HashiCorp Blog</source>
     </item>
     <item>
       <title>Resolve and prevent operational incidents with AWS DevOps Agent and New Relic</title>
@@ -2535,27 +2563,6 @@
       <source>Azure Updates</source>
     </item>
     <item>
-      <title>[In preview] Public Preview: Multi-agent workflows in Foundry Agent Service</title>
-      <link>https://azure.microsoft.com/updates?id=525999</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525999</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Hosted agents in Foundry Agent Service</title>
-      <link>https://azure.microsoft.com/updates?id=525994</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525994</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Observability in Foundry Control Plane</title>
-      <link>https://azure.microsoft.com/updates?id=525985</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525985</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
       <title>Microsoft Entra at Ignite 2025: November 17-21</title>
       <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-at-ignite-2025-november-17-21/ba-p/4400194</link>
       <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-at-ignite-2025-november-17-21/ba-p/4400194</guid>
@@ -2974,13 +2981,6 @@
       <guid isPermaLink="true">https://www.weekly.tf/p/issue-240-upgrade-to-aws-eks-v21-karpenter-in-eks-github-actions-runner-controller-serverless-image</guid>
       <pubDate>Wed, 27 Aug 2025 15:00:00 +0000</pubDate>
       <source>Terraform weekly</source>
-    </item>
-    <item>
-      <title>Tuning Linux Swap for Kubernetes: A Deep Dive</title>
-      <link>https://kubernetes.io/blog/2025/08/19/tuning-linux-swap-for-kubernetes-a-deep-dive/</link>
-      <guid isPermaLink="true">https://kubernetes.io/blog/2025/08/19/tuning-linux-swap-for-kubernetes-a-deep-dive/</guid>
-      <pubDate>Tue, 19 Aug 2025 18:30:00 +0000</pubDate>
-      <source>Kubernetes Blog</source>
     </item>
     <item>
       <title>To Bitbucket from Jenkins: Enhancing Developer Experience</title>
