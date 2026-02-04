@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml</link>
     <description>Articles from GitHub Changelog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 04 Feb 2026 01:05:30 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 04 Feb 2026 12:34:43 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Dependabot now supports OIDC authentication</title>
@@ -18,6 +18,12 @@
       <link>https://github.blog/changelog/2026-02-03-the-dependabot-proxy-is-now-open-source-with-an-mit-license</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-02-03-the-dependabot-proxy-is-now-open-source-with-an-mit-license</guid>
       <pubDate>Tue, 03 Feb 2026 16:48:51 +0000</pubDate>
+    </item>
+    <item>
+      <title>GitHub Mobile: Comment on unchanged lines in pull request files</title>
+      <link>https://github.blog/changelog/2026-02-03-github-mobile-comment-on-unchanged-lines-in-pull-request-files</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-03-github-mobile-comment-on-unchanged-lines-in-pull-request-files</guid>
+      <pubDate>Tue, 03 Feb 2026 13:28:49 +0000</pubDate>
     </item>
     <item>
       <title>Docker and Docker Compose version upgrades on hosted runners</title>
@@ -60,12 +66,6 @@
       <link>https://github.blog/changelog/2026-01-29-closing-down-notice-of-legacy-copilot-metrics-apis</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-01-29-closing-down-notice-of-legacy-copilot-metrics-apis</guid>
       <pubDate>Thu, 29 Jan 2026 15:57:01 +0000</pubDate>
-    </item>
-    <item>
-      <title>Improved search for GitHub Issues in public preview</title>
-      <link>https://github.blog/changelog/2026-01-29-improved-search-for-github-issues-in-public-preview</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-01-29-improved-search-for-github-issues-in-public-preview</guid>
-      <pubDate>Thu, 29 Jan 2026 11:07:03 +0000</pubDate>
     </item>
   </channel>
 </rss>

@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-docker-blog.xml</link>
     <description>Articles from Docker Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-docker-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 04 Feb 2026 01:05:30 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 04 Feb 2026 12:34:43 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>The 3Cs: A Framework for AI Agent Security</title>
+      <link>https://www.docker.com/blog/the-3cs-a-framework-for-ai-agent-security/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/the-3cs-a-framework-for-ai-agent-security/</guid>
+      <pubDate>Wed, 04 Feb 2026 02:02:19 +0000</pubDate>
+    </item>
     <item>
       <title>Docker Sandboxes: Run Claude Code and Other Coding Agents Unsupervised (but Safely)</title>
       <link>https://www.docker.com/blog/docker-sandboxes-run-claude-code-and-other-coding-agents-unsupervised-but-safely/</link>
@@ -60,12 +66,6 @@
       <link>https://www.docker.com/blog/making-small-llms-smarter/</link>
       <guid isPermaLink="true">https://www.docker.com/blog/making-small-llms-smarter/</guid>
       <pubDate>Fri, 16 Jan 2026 13:47:26 +0000</pubDate>
-    </item>
-    <item>
-      <title>Permission-Aware RAG: End-to-End Testing with the SpiceDB Testcontainer</title>
-      <link>https://www.docker.com/blog/rag-permission-testing-testcontainers-spicedb/</link>
-      <guid isPermaLink="true">https://www.docker.com/blog/rag-permission-testing-testcontainers-spicedb/</guid>
-      <pubDate>Thu, 15 Jan 2026 14:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

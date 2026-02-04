@@ -5,8 +5,15 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 04 Feb 2026 01:05:30 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 04 Feb 2026 12:34:43 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>The 3Cs: A Framework for AI Agent Security</title>
+      <link>https://www.docker.com/blog/the-3cs-a-framework-for-ai-agent-security/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/the-3cs-a-framework-for-ai-agent-security/</guid>
+      <pubDate>Wed, 04 Feb 2026 02:02:19 +0000</pubDate>
+      <source>Docker Blog</source>
+    </item>
     <item>
       <title>[In development] Public Preview: X-Forwarded-For (XFF) grouping for rate limiting on Application Gateway WAF v2</title>
       <link>https://azure.microsoft.com/updates?id=555205</link>
@@ -61,6 +68,13 @@
       <link>https://github.blog/changelog/2026-02-03-the-dependabot-proxy-is-now-open-source-with-an-mit-license</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-02-03-the-dependabot-proxy-is-now-open-source-with-an-mit-license</guid>
       <pubDate>Tue, 03 Feb 2026 16:48:51 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>GitHub Mobile: Comment on unchanged lines in pull request files</title>
+      <link>https://github.blog/changelog/2026-02-03-github-mobile-comment-on-unchanged-lines-in-pull-request-files</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-03-github-mobile-comment-on-unchanged-lines-in-pull-request-files</guid>
+      <pubDate>Tue, 03 Feb 2026 13:28:49 +0000</pubDate>
       <source>GitHub Changelog</source>
     </item>
     <item>
@@ -222,13 +236,6 @@
       <link>https://github.blog/changelog/2026-01-29-closing-down-notice-of-legacy-copilot-metrics-apis</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-01-29-closing-down-notice-of-legacy-copilot-metrics-apis</guid>
       <pubDate>Thu, 29 Jan 2026 15:57:01 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>Improved search for GitHub Issues in public preview</title>
-      <link>https://github.blog/changelog/2026-01-29-improved-search-for-github-issues-in-public-preview</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-01-29-improved-search-for-github-issues-in-public-preview</guid>
-      <pubDate>Thu, 29 Jan 2026 11:07:03 +0000</pubDate>
       <source>GitHub Changelog</source>
     </item>
     <item>
@@ -706,13 +713,6 @@
       <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/from-ai-agent-prototype-to-product-lessons-from-building-aws-devops-agent/</guid>
       <pubDate>Thu, 15 Jan 2026 17:03:50 +0000</pubDate>
       <source>AWS DevOps Blog</source>
-    </item>
-    <item>
-      <title>Permission-Aware RAG: End-to-End Testing with the SpiceDB Testcontainer</title>
-      <link>https://www.docker.com/blog/rag-permission-testing-testcontainers-spicedb/</link>
-      <guid isPermaLink="true">https://www.docker.com/blog/rag-permission-testing-testcontainers-spicedb/</guid>
-      <pubDate>Thu, 15 Jan 2026 14:00:00 +0000</pubDate>
-      <source>Docker Blog</source>
     </item>
     <item>
       <title>Announcing general availability for GitLab Duo Agent Platform</title>
