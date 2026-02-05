@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-aws-devops-blog.xml</link>
     <description>Articles from AWS DevOps Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-aws-devops-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 05 Feb 2026 01:06:47 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Feb 2026 12:36:14 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>AWS Transform custom: AI-driven Java modernization to reduce tech debt</title>
+      <link>https://aws.amazon.com/blogs/devops/aws-transform-custom-ai-driven-java-modernization-to-reduce-tech-debt/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/aws-transform-custom-ai-driven-java-modernization-to-reduce-tech-debt/</guid>
+      <pubDate>Thu, 05 Feb 2026 03:00:42 +0000</pubDate>
+    </item>
     <item>
       <title>Best Practices for Deploying AWS DevOps Agent in Production</title>
       <link>https://aws.amazon.com/blogs/devops/best-practices-for-deploying-aws-devops-agent-in-production/</link>
@@ -120,12 +126,6 @@
       <link>https://aws.amazon.com/blogs/devops/streamlining-multi-account-infrastructure-with-aws-cloudformation-stacksets-and-aws-cdk/</link>
       <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/streamlining-multi-account-infrastructure-with-aws-cloudformation-stacksets-and-aws-cdk/</guid>
       <pubDate>Mon, 03 Nov 2025 14:44:41 +0000</pubDate>
-    </item>
-    <item>
-      <title>How to Simplify Multi-Account Deployments Monitoring: Centralized Logs for AWS CloudFormation StackSets</title>
-      <link>https://aws.amazon.com/blogs/devops/how-to-simplify-multi-account-deployments-monitoring-centralized-logs-for-aws-cloudformation-stacksets/</link>
-      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/how-to-simplify-multi-account-deployments-monitoring-centralized-logs-for-aws-cloudformation-stacksets/</guid>
-      <pubDate>Fri, 24 Oct 2025 15:35:20 +0000</pubDate>
     </item>
   </channel>
 </rss>

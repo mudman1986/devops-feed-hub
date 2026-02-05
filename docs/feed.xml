@@ -5,8 +5,15 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 05 Feb 2026 01:06:47 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Feb 2026 12:36:14 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>AWS Transform custom: AI-driven Java modernization to reduce tech debt</title>
+      <link>https://aws.amazon.com/blogs/devops/aws-transform-custom-ai-driven-java-modernization-to-reduce-tech-debt/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/aws-transform-custom-ai-driven-java-modernization-to-reduce-tech-debt/</guid>
+      <pubDate>Thu, 05 Feb 2026 03:00:42 +0000</pubDate>
+      <source>AWS DevOps Blog</source>
+    </item>
     <item>
       <title>[In preview] Public Preview: Azure NetApp Files Elastic zone-redundant service level</title>
       <link>https://azure.microsoft.com/updates?id=550863</link>
@@ -2673,13 +2680,6 @@
       <guid isPermaLink="true">https://www.weekly.tf/p/issue-249-terraform-testing-and-tdd-version-switcher-tool-ai-code-with-copilot-mcp-s3-content-modera</guid>
       <pubDate>Wed, 29 Oct 2025 16:01:53 +0000</pubDate>
       <source>Terraform weekly</source>
-    </item>
-    <item>
-      <title>How to Simplify Multi-Account Deployments Monitoring: Centralized Logs for AWS CloudFormation StackSets</title>
-      <link>https://aws.amazon.com/blogs/devops/how-to-simplify-multi-account-deployments-monitoring-centralized-logs-for-aws-cloudformation-stacksets/</link>
-      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/how-to-simplify-multi-account-deployments-monitoring-centralized-logs-for-aws-cloudformation-stacksets/</guid>
-      <pubDate>Fri, 24 Oct 2025 15:35:20 +0000</pubDate>
-      <source>AWS DevOps Blog</source>
     </item>
     <item>
       <title>What’s new in Microsoft Entra – September 2025</title>
