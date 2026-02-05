@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-hashicorp-blog.xml</link>
     <description>Articles from HashiCorp Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-hashicorp-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 04 Feb 2026 12:34:43 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Feb 2026 01:06:47 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>5 lessons from banking &amp; finance: Why we need zero trust secrets management</title>
+      <link>https://www.hashicorp.com/blog/5-lessons-from-banking-finance-why-we-need-zero-trust-secrets-management</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/5-lessons-from-banking-finance-why-we-need-zero-trust-secrets-management</guid>
+      <pubDate>Wed, 04 Feb 2026 17:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>PCI DSS 4.0.1 compliance with HashiCorp Vault and Vault Radar</title>
       <link>https://www.hashicorp.com/blog/pci-dss-4-compliance-with-hashicorp-vault-and-vault-radar</link>
@@ -120,12 +126,6 @@
       <link>https://www.hashicorp.com/blog/continuing-hcp-terraform-s-enhanced-free-tier-experience</link>
       <guid isPermaLink="true">https://www.hashicorp.com/blog/continuing-hcp-terraform-s-enhanced-free-tier-experience</guid>
       <pubDate>Wed, 17 Dec 2025 21:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Deliver secrets to Kubernetes pods without storing in etcd, using VSO</title>
-      <link>https://www.hashicorp.com/blog/deliver-secrets-to-kubernetes-pods-without-storing-in-etcd-using-vso</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/deliver-secrets-to-kubernetes-pods-without-storing-in-etcd-using-vso</guid>
-      <pubDate>Tue, 16 Dec 2025 15:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

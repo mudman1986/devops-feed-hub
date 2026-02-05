@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-blog.xml</link>
     <description>Articles from GitHub Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 04 Feb 2026 12:34:43 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Feb 2026 01:06:47 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Pick your agent: Use Claude and Codex on Agent HQ</title>
+      <link>https://github.blog/news-insights/company-news/pick-your-agent-use-claude-and-codex-on-agent-hq/</link>
+      <guid isPermaLink="true">https://github.blog/news-insights/company-news/pick-your-agent-use-claude-and-codex-on-agent-hq/</guid>
+      <pubDate>Wed, 04 Feb 2026 17:00:19 +0000</pubDate>
+    </item>
     <item>
       <title>What the fastest-growing tools reveal about how software is being built</title>
       <link>https://github.blog/news-insights/octoverse/what-the-fastest-growing-tools-reveal-about-how-software-is-being-built/</link>
@@ -60,12 +66,6 @@
       <link>https://github.blog/ai-and-ml/github-copilot/a-cheat-sheet-to-slash-commands-in-github-copilot-cli/</link>
       <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/a-cheat-sheet-to-slash-commands-in-github-copilot-cli/</guid>
       <pubDate>Wed, 21 Jan 2026 17:09:10 +0000</pubDate>
-    </item>
-    <item>
-      <title>AI-supported vulnerability triage with the GitHub Security Lab Taskflow Agent</title>
-      <link>https://github.blog/security/ai-supported-vulnerability-triage-with-the-github-security-lab-taskflow-agent/</link>
-      <guid isPermaLink="true">https://github.blog/security/ai-supported-vulnerability-triage-with-the-github-security-lab-taskflow-agent/</guid>
-      <pubDate>Tue, 20 Jan 2026 19:52:50 +0000</pubDate>
     </item>
   </channel>
 </rss>

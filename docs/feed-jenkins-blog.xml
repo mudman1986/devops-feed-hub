@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-jenkins-blog.xml</link>
     <description>Articles from Jenkins Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-jenkins-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 04 Feb 2026 12:34:43 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Feb 2026 01:06:47 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Meet Jenkins at FOSDEM Brussels</title>
@@ -216,12 +216,6 @@
       <link>https://www.jenkins.io/blog/2025/03/05/Jenkins-in-Google-Summer-of-Code-2025/</link>
       <guid isPermaLink="true">https://www.jenkins.io/blog/2025/03/05/Jenkins-in-Google-Summer-of-Code-2025/</guid>
       <pubDate>Wed, 05 Mar 2025 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>A new way to search in Jenkins 2.492.1</title>
-      <link>https://www.jenkins.io/blog/2025/02/05/command-palette/</link>
-      <guid isPermaLink="true">https://www.jenkins.io/blog/2025/02/05/command-palette/</guid>
-      <pubDate>Wed, 05 Feb 2025 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

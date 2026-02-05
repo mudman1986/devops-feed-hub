@@ -5,8 +5,92 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 04 Feb 2026 12:34:43 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Feb 2026 01:06:47 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>[In preview] Public Preview: Azure NetApp Files Elastic zone-redundant service level</title>
+      <link>https://azure.microsoft.com/updates?id=550863</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=550863</guid>
+      <pubDate>Wed, 04 Feb 2026 20:00:42 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>Azure Boards integration with GitHub Copilot includes custom agent support</title>
+      <link>https://devblogs.microsoft.com/devops/azure-boards-integration-with-github-copilot-includes-custom-agent-support/</link>
+      <guid isPermaLink="true">https://devblogs.microsoft.com/devops/azure-boards-integration-with-github-copilot-includes-custom-agent-support/</guid>
+      <pubDate>Wed, 04 Feb 2026 18:33:03 +0000</pubDate>
+      <source>Microsoft DevOps Blog</source>
+    </item>
+    <item>
+      <title>Showing tool calls and other improvements to Copilot chat on the web</title>
+      <link>https://github.blog/changelog/2026-02-04-showing-tool-calls-and-other-improvements-to-copilot-chat-on-the-web</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-04-showing-tool-calls-and-other-improvements-to-copilot-chat-on-the-web</guid>
+      <pubDate>Wed, 04 Feb 2026 18:17:01 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>GitHub Copilot in Visual Studio Code v1.109 – January Release</title>
+      <link>https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release</guid>
+      <pubDate>Wed, 04 Feb 2026 18:00:01 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>GitHub Copilot in Visual Studio — January update</title>
+      <link>https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-january-update</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-january-update</guid>
+      <pubDate>Wed, 04 Feb 2026 17:41:21 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Claude and Codex are now available in public preview on GitHub</title>
+      <link>https://github.blog/changelog/2026-02-04-claude-and-codex-are-now-available-in-public-preview-on-github</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-04-claude-and-codex-are-now-available-in-public-preview-on-github</guid>
+      <pubDate>Wed, 04 Feb 2026 17:00:26 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Pick your agent: Use Claude and Codex on Agent HQ</title>
+      <link>https://github.blog/news-insights/company-news/pick-your-agent-use-claude-and-codex-on-agent-hq/</link>
+      <guid isPermaLink="true">https://github.blog/news-insights/company-news/pick-your-agent-use-claude-and-codex-on-agent-hq/</guid>
+      <pubDate>Wed, 04 Feb 2026 17:00:19 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
+    <item>
+      <title>5 lessons from banking &amp; finance: Why we need zero trust secrets management</title>
+      <link>https://www.hashicorp.com/blog/5-lessons-from-banking-finance-why-we-need-zero-trust-secrets-management</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/5-lessons-from-banking-finance-why-we-need-zero-trust-secrets-management</guid>
+      <pubDate>Wed, 04 Feb 2026 17:00:00 +0000</pubDate>
+      <source>HashiCorp Blog</source>
+    </item>
+    <item>
+      <title>Detecting backdoored language models at scale</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/02/04/detecting-backdoored-language-models-at-scale/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/04/detecting-backdoored-language-models-at-scale/</guid>
+      <pubDate>Wed, 04 Feb 2026 17:00:00 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>Issue #260 - Preply's IaC Setup with Atlantis, Version Control with ASDF, Governance at Scale, ALB DNS Automation, and Graft's Module Overlay Pattern</title>
+      <link>https://www.weekly.tf/p/issue-260-preply-s-iac-setup-with-atlantis-version-control-with-asdf-governance-at-scale-alb-dns</link>
+      <guid isPermaLink="true">https://www.weekly.tf/p/issue-260-preply-s-iac-setup-with-atlantis-version-control-with-asdf-governance-at-scale-alb-dns</guid>
+      <pubDate>Wed, 04 Feb 2026 16:00:11 +0000</pubDate>
+      <source>Terraform weekly</source>
+    </item>
+    <item>
+      <title>Get Started with the Atlassian Rovo MCP Server Using Docker</title>
+      <link>https://www.docker.com/blog/atlassian-remote-mcp-server-getting-started-with-docker/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/atlassian-remote-mcp-server-getting-started-with-docker/</guid>
+      <pubDate>Wed, 04 Feb 2026 13:52:53 +0000</pubDate>
+      <source>Docker Blog</source>
+    </item>
+    <item>
+      <title>Simplified Copilot model enablement experience for individual users</title>
+      <link>https://github.blog/changelog/2026-02-03-simplified-copilot-model-enablement-experience-for-individual-users</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-03-simplified-copilot-model-enablement-experience-for-individual-users</guid>
+      <pubDate>Wed, 04 Feb 2026 02:46:48 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
     <item>
       <title>The 3Cs: A Framework for AI Agent Security</title>
       <link>https://www.docker.com/blog/the-3cs-a-framework-for-ai-agent-security/</link>
@@ -127,6 +211,13 @@
       <source>HashiCorp Blog</source>
     </item>
     <item>
+      <title>Automating Infrastructure as Code changes with an AI agent</title>
+      <link>https://circleci.com/blog/automating-infrastructure-as-code-changes-with-an-ai-agent/</link>
+      <guid isPermaLink="true">https://circleci.com/blog/automating-infrastructure-as-code-changes-with-an-ai-agent/</guid>
+      <pubDate>Mon, 02 Feb 2026 07:00:00 +0000</pubDate>
+      <source>CircleCI Blog</source>
+    </item>
+    <item>
       <title>What’s new in Git 2.53.0?</title>
       <link>https://about.gitlab.com/blog/whats-new-in-git-2-53-0/</link>
       <guid isPermaLink="true">https://about.gitlab.com/blog/whats-new-in-git-2-53-0/</guid>
@@ -190,13 +281,6 @@
       <source>GitHub Changelog</source>
     </item>
     <item>
-      <title>CodeQL 2.24.0 adds Swift 6.2 and .NET 10 support, and improves file handling for minified JavaScript</title>
-      <link>https://github.blog/changelog/2026-01-29-codeql-2-24-0-adds-swift-6-2-support-net-10-compatibility-and-file-handling-for-minified-javascript</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-01-29-codeql-2-24-0-adds-swift-6-2-support-net-10-compatibility-and-file-handling-for-minified-javascript</guid>
-      <pubDate>Thu, 29 Jan 2026 23:17:01 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>Turning threat reports into detection insights with AI</title>
       <link>https://www.microsoft.com/en-us/security/blog/2026/01/29/turning-threat-reports-detection-insights-ai/</link>
       <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/29/turning-threat-reports-detection-insights-ai/</guid>
@@ -204,39 +288,11 @@
       <source>Microsoft Security</source>
     </item>
     <item>
-      <title>Copilot metrics in GitHub Enterprise Cloud with data residency in public preview</title>
-      <link>https://github.blog/changelog/2026-01-29-copilot-metrics-in-github-enterprise-cloud-with-data-residency-in-public-preview</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-01-29-copilot-metrics-in-github-enterprise-cloud-with-data-residency-in-public-preview</guid>
-      <pubDate>Thu, 29 Jan 2026 17:57:56 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>GitHub Actions: Smarter editing, clearer debugging, and a new case function</title>
-      <link>https://github.blog/changelog/2026-01-29-github-actions-smarter-editing-clearer-debugging-and-a-new-case-function</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-01-29-github-actions-smarter-editing-clearer-debugging-and-a-new-case-function</guid>
-      <pubDate>Thu, 29 Jan 2026 17:37:43 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>New Microsoft Data Security Index report explores secure AI adoption to protect sensitive data</title>
       <link>https://www.microsoft.com/en-us/security/blog/2026/01/29/new-microsoft-data-security-index-report-explores-secure-ai-adoption-to-protect-sensitive-data/</link>
       <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/29/new-microsoft-data-security-index-report-explores-secure-ai-adoption-to-protect-sensitive-data/</guid>
       <pubDate>Thu, 29 Jan 2026 17:00:00 +0000</pubDate>
       <source>Microsoft Security</source>
-    </item>
-    <item>
-      <title>arm64 standard runners are now available in private repositories</title>
-      <link>https://github.blog/changelog/2026-01-29-arm64-standard-runners-are-now-available-in-private-repositories</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-01-29-arm64-standard-runners-are-now-available-in-private-repositories</guid>
-      <pubDate>Thu, 29 Jan 2026 16:00:13 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>Closing down notice of legacy Copilot metrics APIs</title>
-      <link>https://github.blog/changelog/2026-01-29-closing-down-notice-of-legacy-copilot-metrics-apis</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-01-29-closing-down-notice-of-legacy-copilot-metrics-apis</guid>
-      <pubDate>Thu, 29 Jan 2026 15:57:01 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>Ingress NGINX: Statement from the Kubernetes Steering and Security Response Committees</title>
@@ -568,13 +624,6 @@
       <source>Docker Blog</source>
     </item>
     <item>
-      <title>Resurgence of a multi‑stage AiTM phishing and BEC campaign abusing SharePoint</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/01/21/multistage-aitm-phishing-bec-campaign-abusing-sharepoint/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/21/multistage-aitm-phishing-bec-campaign-abusing-sharepoint/</guid>
-      <pubDate>Thu, 22 Jan 2026 05:14:14 +0000</pubDate>
-      <source>Microsoft Security</source>
-    </item>
-    <item>
       <title>Headlamp in 2025: Project Highlights</title>
       <link>https://kubernetes.io/blog/2026/01/22/headlamp-in-2025-project-highlights/</link>
       <guid isPermaLink="true">https://kubernetes.io/blog/2026/01/22/headlamp-in-2025-project-highlights/</guid>
@@ -645,13 +694,6 @@
       <source>CircleCI Blog</source>
     </item>
     <item>
-      <title>AI-supported vulnerability triage with the GitHub Security Lab Taskflow Agent</title>
-      <link>https://github.blog/security/ai-supported-vulnerability-triage-with-the-github-security-lab-taskflow-agent/</link>
-      <guid isPermaLink="true">https://github.blog/security/ai-supported-vulnerability-triage-with-the-github-security-lab-taskflow-agent/</guid>
-      <pubDate>Tue, 20 Jan 2026 19:52:50 +0000</pubDate>
-      <source>GitHub Blog</source>
-    </item>
-    <item>
       <title>Simplify your identity landscape, reduce risk, and modernize access for any identity</title>
       <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/simplify-your-identity-landscape-reduce-risk-and-modernize/ba-p/4486059</link>
       <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/simplify-your-identity-landscape-reduce-risk-and-modernize/ba-p/4486059</guid>
@@ -699,13 +741,6 @@
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=548987</guid>
       <pubDate>Fri, 16 Jan 2026 17:00:49 +0000</pubDate>
       <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>Making (Very) Small LLMs Smarter</title>
-      <link>https://www.docker.com/blog/making-small-llms-smarter/</link>
-      <guid isPermaLink="true">https://www.docker.com/blog/making-small-llms-smarter/</guid>
-      <pubDate>Fri, 16 Jan 2026 13:47:26 +0000</pubDate>
-      <source>Docker Blog</source>
     </item>
     <item>
       <title>From AI agent prototype to product: Lessons from building AWS DevOps Agent</title>
@@ -860,13 +895,6 @@
       <guid isPermaLink="true">https://kubernetes.io/blog/2026/01/08/kubernetes-v1-35-mutable-pv-nodeaffinity/</guid>
       <pubDate>Thu, 08 Jan 2026 18:30:00 +0000</pubDate>
       <source>Kubernetes Blog</source>
-    </item>
-    <item>
-      <title>Deploy a serverless Python API to Scaleway Functions using CircleCI</title>
-      <link>https://circleci.com/blog/deploy-a-serverless-python-api-to-scaleway-functions-using-circleci/</link>
-      <guid isPermaLink="true">https://circleci.com/blog/deploy-a-serverless-python-api-to-scaleway-functions-using-circleci/</guid>
-      <pubDate>Thu, 08 Jan 2026 16:00:00 +0000</pubDate>
-      <source>CircleCI Blog</source>
     </item>
     <item>
       <title>AI is reshaping DevSecOps: Attend GitLab Transcend to see what’s next</title>
@@ -1182,13 +1210,6 @@
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=536699</guid>
       <pubDate>Tue, 16 Dec 2025 15:45:45 +0000</pubDate>
       <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>Deliver secrets to Kubernetes pods without storing in etcd, using VSO</title>
-      <link>https://www.hashicorp.com/blog/deliver-secrets-to-kubernetes-pods-without-storing-in-etcd-using-vso</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/deliver-secrets-to-kubernetes-pods-without-storing-in-etcd-using-vso</guid>
-      <pubDate>Tue, 16 Dec 2025 15:00:00 +0000</pubDate>
-      <source>HashiCorp Blog</source>
     </item>
     <item>
       <title>Azure Boards integration with GitHub Copilot</title>
@@ -2556,13 +2577,6 @@
       <source>Azure Updates</source>
     </item>
     <item>
-      <title>[In preview] Public Preview: Built-in memory in Foundry Agent Service</title>
-      <link>https://azure.microsoft.com/updates?id=526004</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=526004</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
       <title>Microsoft Entra at Ignite 2025: November 17-21</title>
       <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-at-ignite-2025-november-17-21/ba-p/4400194</link>
       <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-at-ignite-2025-november-17-21/ba-p/4400194</guid>
@@ -2631,13 +2645,6 @@
       <guid isPermaLink="true">https://www.weekly.tf/p/issue-250-plugin-framework-actions-tutorial-multi-cloud-drift-scanning-tools-compared-atlantis-custo</guid>
       <pubDate>Wed, 05 Nov 2025 16:01:35 +0000</pubDate>
       <source>Terraform weekly</source>
-    </item>
-    <item>
-      <title>Azure Developer CLI: Azure Container Apps Dev-to-Prod Deployment with Layered Infrastructure</title>
-      <link>https://devblogs.microsoft.com/devops/azure-developer-cli-azure-container-apps-dev-to-prod-deployment-with-layered-infrastructure/</link>
-      <guid isPermaLink="true">https://devblogs.microsoft.com/devops/azure-developer-cli-azure-container-apps-dev-to-prod-deployment-with-layered-infrastructure/</guid>
-      <pubDate>Tue, 04 Nov 2025 22:45:46 +0000</pubDate>
-      <source>Microsoft DevOps Blog</source>
     </item>
     <item>
       <title>Driving cloud-first identity: User SOA is now Public Preview and Group SOA is Generally Available</title>
@@ -2976,13 +2983,6 @@
       <source>Kubernetes Blog</source>
     </item>
     <item>
-      <title>Issue #240 - Upgrade to AWS EKS v21, Karpenter in EKS, GitHub Actions Runner Controller, Serverless Image Resizer, Container Orchestrator</title>
-      <link>https://www.weekly.tf/p/issue-240-upgrade-to-aws-eks-v21-karpenter-in-eks-github-actions-runner-controller-serverless-image</link>
-      <guid isPermaLink="true">https://www.weekly.tf/p/issue-240-upgrade-to-aws-eks-v21-karpenter-in-eks-github-actions-runner-controller-serverless-image</guid>
-      <pubDate>Wed, 27 Aug 2025 15:00:00 +0000</pubDate>
-      <source>Terraform weekly</source>
-    </item>
-    <item>
       <title>To Bitbucket from Jenkins: Enhancing Developer Experience</title>
       <link>https://www.atlassian.com/blog/bitbucket/devex-bitbucket-pipelines-versus-jenkins</link>
       <guid isPermaLink="true">https://www.atlassian.com/blog/bitbucket/devex-bitbucket-pipelines-versus-jenkins</guid>
@@ -3155,13 +3155,6 @@
       <link>https://www.jenkins.io/blog/2025/03/05/Jenkins-in-Google-Summer-of-Code-2025/</link>
       <guid isPermaLink="true">https://www.jenkins.io/blog/2025/03/05/Jenkins-in-Google-Summer-of-Code-2025/</guid>
       <pubDate>Wed, 05 Mar 2025 00:00:00 +0000</pubDate>
-      <source>Jenkins Blog</source>
-    </item>
-    <item>
-      <title>A new way to search in Jenkins 2.492.1</title>
-      <link>https://www.jenkins.io/blog/2025/02/05/command-palette/</link>
-      <guid isPermaLink="true">https://www.jenkins.io/blog/2025/02/05/command-palette/</guid>
-      <pubDate>Wed, 05 Feb 2025 00:00:00 +0000</pubDate>
       <source>Jenkins Blog</source>
     </item>
   </channel>
