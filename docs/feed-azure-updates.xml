@@ -5,8 +5,20 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml</link>
     <description>Articles from Azure Updates</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 05 Feb 2026 12:36:14 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 06 Feb 2026 01:05:33 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>[In preview] Public Preview: Azure virtual network routing appliance</title>
+      <link>https://azure.microsoft.com/updates?id=555944</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=555944</guid>
+      <pubDate>Thu, 05 Feb 2026 21:45:03 +0000</pubDate>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Claude Opus 4.6, Available on Microsoft Foundry</title>
+      <link>https://azure.microsoft.com/updates?id=555870</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=555870</guid>
+      <pubDate>Thu, 05 Feb 2026 18:30:32 +0000</pubDate>
+    </item>
     <item>
       <title>[In preview] Public Preview: Azure NetApp Files Elastic zone-redundant service level</title>
       <link>https://azure.microsoft.com/updates?id=550863</link>
@@ -1187,18 +1199,6 @@
       <title>[Launched] Generally Available: Foundry Tools (rebrand from Azure AI Services)</title>
       <link>https://azure.microsoft.com/updates?id=526132</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=526132</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Content Understanding in Microsoft Foundry</title>
-      <link>https://azure.microsoft.com/updates?id=526123</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=526123</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Enrich agents with a unified catalog of prebuilt and custom tools in Microsoft Foundry</title>
-      <link>https://azure.microsoft.com/updates?id=526114</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=526114</guid>
       <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
     </item>
     <item>

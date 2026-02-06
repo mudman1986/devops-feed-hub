@@ -5,8 +5,20 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml</link>
     <description>Articles from Microsoft Security</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 05 Feb 2026 12:36:14 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 06 Feb 2026 01:05:33 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>New Clickfix variant ‘CrashFix’ deploying Python Remote Access Trojan</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/02/05/clickfix-variant-crashfix-deploying-python-rat-trojan/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/05/clickfix-variant-crashfix-deploying-python-rat-trojan/</guid>
+      <pubDate>Thu, 05 Feb 2026 18:51:39 +0000</pubDate>
+    </item>
+    <item>
+      <title>The security implementation gap: Why Microsoft is supporting Operation Winter SHIELD</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/02/05/the-security-implementation-gap-why-microsoft-is-supporting-operation-winter-shield/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/05/the-security-implementation-gap-why-microsoft-is-supporting-operation-winter-shield/</guid>
+      <pubDate>Thu, 05 Feb 2026 17:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Detecting backdoored language models at scale</title>
       <link>https://www.microsoft.com/en-us/security/blog/2026/02/04/detecting-backdoored-language-models-at-scale/</link>
@@ -54,18 +66,6 @@
       <link>https://www.microsoft.com/en-us/security/blog/2026/01/26/security-strategies-for-safeguarding-governmental-data/</link>
       <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/26/security-strategies-for-safeguarding-governmental-data/</guid>
       <pubDate>Mon, 26 Jan 2026 17:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>From runtime risk to real‑time defense: Securing AI agents</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/01/23/runtime-risk-realtime-defense-securing-ai-agents/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/23/runtime-risk-realtime-defense-securing-ai-agents/</guid>
-      <pubDate>Fri, 23 Jan 2026 20:57:14 +0000</pubDate>
-    </item>
-    <item>
-      <title>Microsoft Security success stories: Why integrated security is the foundation of AI transformation</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/01/22/microsoft-security-success-stories-why-integrated-security-is-the-foundation-of-ai-transformation/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/22/microsoft-security-success-stories-why-integrated-security-is-the-foundation-of-ai-transformation/</guid>
-      <pubDate>Thu, 22 Jan 2026 17:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

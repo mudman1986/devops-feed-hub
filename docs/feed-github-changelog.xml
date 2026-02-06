@@ -5,8 +5,38 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml</link>
     <description>Articles from GitHub Changelog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 05 Feb 2026 12:36:14 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 06 Feb 2026 01:05:33 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Improved pull request “Files changed” – February 5 updates</title>
+      <link>https://github.blog/changelog/2026-02-05-improved-pull-request-files-changed-february-5-updates</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-05-improved-pull-request-files-changed-february-5-updates</guid>
+      <pubDate>Thu, 05 Feb 2026 23:05:59 +0000</pubDate>
+    </item>
+    <item>
+      <title>Pinned comments on GitHub Issues</title>
+      <link>https://github.blog/changelog/2026-02-05-pinned-comments-on-github-issues</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-05-pinned-comments-on-github-issues</guid>
+      <pubDate>Thu, 05 Feb 2026 17:59:54 +0000</pubDate>
+    </item>
+    <item>
+      <title>Claude Opus 4.6 is now generally available for GitHub Copilot</title>
+      <link>https://github.blog/changelog/2026-02-05-claude-opus-4-6-is-now-generally-available-for-github-copilot</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-05-claude-opus-4-6-is-now-generally-available-for-github-copilot</guid>
+      <pubDate>Thu, 05 Feb 2026 17:45:16 +0000</pubDate>
+    </item>
+    <item>
+      <title>GitHub Actions: Self-hosted runner minimum version enforcement extended</title>
+      <link>https://github.blog/changelog/2026-02-05-github-actions-self-hosted-runner-minimum-version-enforcement-extended</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-05-github-actions-self-hosted-runner-minimum-version-enforcement-extended</guid>
+      <pubDate>Thu, 05 Feb 2026 12:53:50 +0000</pubDate>
+    </item>
+    <item>
+      <title>GitHub Actions: Early February 2026 updates</title>
+      <link>https://github.blog/changelog/2026-02-05-github-actions-early-february-2026-updates</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-05-github-actions-early-february-2026-updates</guid>
+      <pubDate>Thu, 05 Feb 2026 12:51:46 +0000</pubDate>
+    </item>
     <item>
       <title>Showing tool calls and other improvements to Copilot chat on the web</title>
       <link>https://github.blog/changelog/2026-02-04-showing-tool-calls-and-other-improvements-to-copilot-chat-on-the-web</link>
@@ -36,36 +66,6 @@
       <link>https://github.blog/changelog/2026-02-03-simplified-copilot-model-enablement-experience-for-individual-users</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-02-03-simplified-copilot-model-enablement-experience-for-individual-users</guid>
       <pubDate>Wed, 04 Feb 2026 02:46:48 +0000</pubDate>
-    </item>
-    <item>
-      <title>Dependabot now supports OIDC authentication</title>
-      <link>https://github.blog/changelog/2026-02-03-dependabot-now-supports-oidc-authentication</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-03-dependabot-now-supports-oidc-authentication</guid>
-      <pubDate>Tue, 03 Feb 2026 17:09:59 +0000</pubDate>
-    </item>
-    <item>
-      <title>The Dependabot Proxy is now open source with an MIT license</title>
-      <link>https://github.blog/changelog/2026-02-03-the-dependabot-proxy-is-now-open-source-with-an-mit-license</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-03-the-dependabot-proxy-is-now-open-source-with-an-mit-license</guid>
-      <pubDate>Tue, 03 Feb 2026 16:48:51 +0000</pubDate>
-    </item>
-    <item>
-      <title>GitHub Mobile: Comment on unchanged lines in pull request files</title>
-      <link>https://github.blog/changelog/2026-02-03-github-mobile-comment-on-unchanged-lines-in-pull-request-files</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-03-github-mobile-comment-on-unchanged-lines-in-pull-request-files</guid>
-      <pubDate>Tue, 03 Feb 2026 13:28:49 +0000</pubDate>
-    </item>
-    <item>
-      <title>Docker and Docker Compose version upgrades on hosted runners</title>
-      <link>https://github.blog/changelog/2026-01-30-docker-and-docker-compose-version-upgrades-on-hosted-runners</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-01-30-docker-and-docker-compose-version-upgrades-on-hosted-runners</guid>
-      <pubDate>Fri, 30 Jan 2026 14:20:34 +0000</pubDate>
-    </item>
-    <item>
-      <title>Codespaces is now in public preview for GitHub Enterprise with data residency</title>
-      <link>https://github.blog/changelog/2026-01-29-codespaces-is-now-in-public-preview-for-github-enterprise-with-data-residency</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-01-29-codespaces-is-now-in-public-preview-for-github-enterprise-with-data-residency</guid>
-      <pubDate>Thu, 29 Jan 2026 23:25:07 +0000</pubDate>
     </item>
   </channel>
 </rss>

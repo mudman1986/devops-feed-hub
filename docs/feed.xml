@@ -5,8 +5,85 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 05 Feb 2026 12:36:14 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 06 Feb 2026 01:05:33 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Reduce Vulnerability Noise with VEX: Wiz + Docker Hardened Images</title>
+      <link>https://www.docker.com/blog/reduce-vulnerability-noise-with-vex-wiz-docker-hardened-images/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/reduce-vulnerability-noise-with-vex-wiz-docker-hardened-images/</guid>
+      <pubDate>Thu, 05 Feb 2026 23:25:55 +0000</pubDate>
+      <source>Docker Blog</source>
+    </item>
+    <item>
+      <title>Improved pull request “Files changed” – February 5 updates</title>
+      <link>https://github.blog/changelog/2026-02-05-improved-pull-request-files-changed-february-5-updates</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-05-improved-pull-request-files-changed-february-5-updates</guid>
+      <pubDate>Thu, 05 Feb 2026 23:05:59 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Azure virtual network routing appliance</title>
+      <link>https://azure.microsoft.com/updates?id=555944</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=555944</guid>
+      <pubDate>Thu, 05 Feb 2026 21:45:03 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>New Clickfix variant ‘CrashFix’ deploying Python Remote Access Trojan</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/02/05/clickfix-variant-crashfix-deploying-python-rat-trojan/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/05/clickfix-variant-crashfix-deploying-python-rat-trojan/</guid>
+      <pubDate>Thu, 05 Feb 2026 18:51:39 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Claude Opus 4.6, Available on Microsoft Foundry</title>
+      <link>https://azure.microsoft.com/updates?id=555870</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=555870</guid>
+      <pubDate>Thu, 05 Feb 2026 18:30:32 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>How to control session routing for multi-IP hosts in Boundary</title>
+      <link>https://www.hashicorp.com/blog/how-to-control-session-routing-for-multi-ip-hosts-in-boundary</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/how-to-control-session-routing-for-multi-ip-hosts-in-boundary</guid>
+      <pubDate>Thu, 05 Feb 2026 18:30:00 +0000</pubDate>
+      <source>HashiCorp Blog</source>
+    </item>
+    <item>
+      <title>Pinned comments on GitHub Issues</title>
+      <link>https://github.blog/changelog/2026-02-05-pinned-comments-on-github-issues</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-05-pinned-comments-on-github-issues</guid>
+      <pubDate>Thu, 05 Feb 2026 17:59:54 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Claude Opus 4.6 is now generally available for GitHub Copilot</title>
+      <link>https://github.blog/changelog/2026-02-05-claude-opus-4-6-is-now-generally-available-for-github-copilot</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-05-claude-opus-4-6-is-now-generally-available-for-github-copilot</guid>
+      <pubDate>Thu, 05 Feb 2026 17:45:16 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>The security implementation gap: Why Microsoft is supporting Operation Winter SHIELD</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/02/05/the-security-implementation-gap-why-microsoft-is-supporting-operation-winter-shield/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/05/the-security-implementation-gap-why-microsoft-is-supporting-operation-winter-shield/</guid>
+      <pubDate>Thu, 05 Feb 2026 17:00:00 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>GitHub Actions: Self-hosted runner minimum version enforcement extended</title>
+      <link>https://github.blog/changelog/2026-02-05-github-actions-self-hosted-runner-minimum-version-enforcement-extended</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-05-github-actions-self-hosted-runner-minimum-version-enforcement-extended</guid>
+      <pubDate>Thu, 05 Feb 2026 12:53:50 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>GitHub Actions: Early February 2026 updates</title>
+      <link>https://github.blog/changelog/2026-02-05-github-actions-early-february-2026-updates</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-05-github-actions-early-february-2026-updates</guid>
+      <pubDate>Thu, 05 Feb 2026 12:51:46 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
     <item>
       <title>AWS Transform custom: AI-driven Java modernization to reduce tech debt</title>
       <link>https://aws.amazon.com/blogs/devops/aws-transform-custom-ai-driven-java-modernization-to-reduce-tech-debt/</link>
@@ -127,13 +204,6 @@
       <source>Azure Updates</source>
     </item>
     <item>
-      <title>Dependabot now supports OIDC authentication</title>
-      <link>https://github.blog/changelog/2026-02-03-dependabot-now-supports-oidc-authentication</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-03-dependabot-now-supports-oidc-authentication</guid>
-      <pubDate>Tue, 03 Feb 2026 17:09:59 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>What the fastest-growing tools reveal about how software is being built</title>
       <link>https://github.blog/news-insights/octoverse/what-the-fastest-growing-tools-reveal-about-how-software-is-being-built/</link>
       <guid isPermaLink="true">https://github.blog/news-insights/octoverse/what-the-fastest-growing-tools-reveal-about-how-software-is-being-built/</guid>
@@ -153,20 +223,6 @@
       <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/03/microsoft-sdl-evolving-security-practices-for-an-ai-powered-world/</guid>
       <pubDate>Tue, 03 Feb 2026 17:00:00 +0000</pubDate>
       <source>Microsoft Security</source>
-    </item>
-    <item>
-      <title>The Dependabot Proxy is now open source with an MIT license</title>
-      <link>https://github.blog/changelog/2026-02-03-the-dependabot-proxy-is-now-open-source-with-an-mit-license</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-03-the-dependabot-proxy-is-now-open-source-with-an-mit-license</guid>
-      <pubDate>Tue, 03 Feb 2026 16:48:51 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>GitHub Mobile: Comment on unchanged lines in pull request files</title>
-      <link>https://github.blog/changelog/2026-02-03-github-mobile-comment-on-unchanged-lines-in-pull-request-files</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-03-github-mobile-comment-on-unchanged-lines-in-pull-request-files</guid>
-      <pubDate>Tue, 03 Feb 2026 13:28:49 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>Introducing Node Readiness Controller</title>
@@ -267,25 +323,11 @@
       <source>Kubernetes Blog</source>
     </item>
     <item>
-      <title>Docker and Docker Compose version upgrades on hosted runners</title>
-      <link>https://github.blog/changelog/2026-01-30-docker-and-docker-compose-version-upgrades-on-hosted-runners</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-01-30-docker-and-docker-compose-version-upgrades-on-hosted-runners</guid>
-      <pubDate>Fri, 30 Jan 2026 14:20:34 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>Meet Jenkins at FOSDEM Brussels</title>
       <link>https://www.jenkins.io/blog/2026/01/30/fosdem/</link>
       <guid isPermaLink="true">https://www.jenkins.io/blog/2026/01/30/fosdem/</guid>
       <pubDate>Fri, 30 Jan 2026 00:00:00 +0000</pubDate>
       <source>Jenkins Blog</source>
-    </item>
-    <item>
-      <title>Codespaces is now in public preview for GitHub Enterprise with data residency</title>
-      <link>https://github.blog/changelog/2026-01-29-codespaces-is-now-in-public-preview-for-github-enterprise-with-data-residency</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-01-29-codespaces-is-now-in-public-preview-for-github-enterprise-with-data-residency</guid>
-      <pubDate>Thu, 29 Jan 2026 23:25:07 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>Turning threat reports into detection insights with AI</title>
@@ -547,13 +589,6 @@
       <source>Docker Blog</source>
     </item>
     <item>
-      <title>From runtime risk to real‑time defense: Securing AI agents</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/01/23/runtime-risk-realtime-defense-securing-ai-agents/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/23/runtime-risk-realtime-defense-securing-ai-agents/</guid>
-      <pubDate>Fri, 23 Jan 2026 20:57:14 +0000</pubDate>
-      <source>Microsoft Security</source>
-    </item>
-    <item>
       <title>Terraform MCP server updates: Stacks support, new tools, and tips</title>
       <link>https://www.hashicorp.com/blog/terraform-mcp-server-updates-stacks-support-new-tools-and-tips</link>
       <guid isPermaLink="true">https://www.hashicorp.com/blog/terraform-mcp-server-updates-stacks-support-new-tools-and-tips</guid>
@@ -603,13 +638,6 @@
       <source>Azure Updates</source>
     </item>
     <item>
-      <title>Microsoft Security success stories: Why integrated security is the foundation of AI transformation</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/01/22/microsoft-security-success-stories-why-integrated-security-is-the-foundation-of-ai-transformation/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/22/microsoft-security-success-stories-why-integrated-security-is-the-foundation-of-ai-transformation/</guid>
-      <pubDate>Thu, 22 Jan 2026 17:00:00 +0000</pubDate>
-      <source>Microsoft Security</source>
-    </item>
-    <item>
       <title>Enforcing web performance budgets in CI/CD with Sitespeed.io and Slack</title>
       <link>https://circleci.com/blog/enforcing-web-performance-budgets-with-sitespeed-io-and-slack/</link>
       <guid isPermaLink="true">https://circleci.com/blog/enforcing-web-performance-budgets-with-sitespeed-io-and-slack/</guid>
@@ -622,13 +650,6 @@
       <guid isPermaLink="true">https://github.blog/news-insights/company-news/build-an-agent-into-any-app-with-the-github-copilot-sdk/</guid>
       <pubDate>Thu, 22 Jan 2026 15:01:44 +0000</pubDate>
       <source>GitHub Blog</source>
-    </item>
-    <item>
-      <title>Your Dependencies Don’t Care About Your FIPS Configuration</title>
-      <link>https://www.docker.com/blog/fips-dependencies-and-prebuilt-binaries/</link>
-      <guid isPermaLink="true">https://www.docker.com/blog/fips-dependencies-and-prebuilt-binaries/</guid>
-      <pubDate>Thu, 22 Jan 2026 14:00:00 +0000</pubDate>
-      <source>Docker Blog</source>
     </item>
     <item>
       <title>Headlamp in 2025: Project Highlights</title>
@@ -1147,13 +1168,6 @@
       <guid isPermaLink="true">https://about.gitlab.com/blog/gitlab-18-7-advancing-ai-automation/</guid>
       <pubDate>Thu, 18 Dec 2025 00:00:00 +0000</pubDate>
       <source>GitLab Blog</source>
-    </item>
-    <item>
-      <title>Continuing HCP Terraform’s enhanced free tier experience</title>
-      <link>https://www.hashicorp.com/blog/continuing-hcp-terraform-s-enhanced-free-tier-experience</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/continuing-hcp-terraform-s-enhanced-free-tier-experience</guid>
-      <pubDate>Wed, 17 Dec 2025 21:00:00 +0000</pubDate>
-      <source>HashiCorp Blog</source>
     </item>
     <item>
       <title>[In preview] Public Preview: Service Bus SDK type bindings in Azure Functions for Node.js</title>
@@ -2566,20 +2580,6 @@
       <title>[Launched] Generally Available: Foundry Tools (rebrand from Azure AI Services)</title>
       <link>https://azure.microsoft.com/updates?id=526132</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=526132</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Content Understanding in Microsoft Foundry</title>
-      <link>https://azure.microsoft.com/updates?id=526123</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=526123</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Enrich agents with a unified catalog of prebuilt and custom tools in Microsoft Foundry</title>
-      <link>https://azure.microsoft.com/updates?id=526114</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=526114</guid>
       <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
       <source>Azure Updates</source>
     </item>
