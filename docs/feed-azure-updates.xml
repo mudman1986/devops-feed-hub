@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml</link>
     <description>Articles from Azure Updates</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 06 Feb 2026 01:05:33 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 06 Feb 2026 12:34:45 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>[Launched] Generally Available: AMD v6 confidential VMs in new regions for January 2026</title>
+      <link>https://azure.microsoft.com/updates?id=553966</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=553966</guid>
+      <pubDate>Fri, 06 Feb 2026 01:00:02 +0000</pubDate>
+    </item>
     <item>
       <title>[In preview] Public Preview: Azure virtual network routing appliance</title>
       <link>https://azure.microsoft.com/updates?id=555944</link>
@@ -1193,12 +1199,6 @@
       <title>[In preview] Public Preview: Foundry IQ by Azure AI Search</title>
       <link>https://azure.microsoft.com/updates?id=526150</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=526150</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Foundry Tools (rebrand from Azure AI Services)</title>
-      <link>https://azure.microsoft.com/updates?id=526132</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=526132</guid>
       <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
     </item>
     <item>

@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-blog.xml</link>
     <description>Articles from GitHub Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 06 Feb 2026 01:05:33 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 06 Feb 2026 12:34:45 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Continuous AI in practice: What developers can automate today with agentic CI</title>
+      <link>https://github.blog/ai-and-ml/generative-ai/continuous-ai-in-practice-what-developers-can-automate-today-with-agentic-ci/</link>
+      <guid isPermaLink="true">https://github.blog/ai-and-ml/generative-ai/continuous-ai-in-practice-what-developers-can-automate-today-with-agentic-ci/</guid>
+      <pubDate>Thu, 05 Feb 2026 17:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Pick your agent: Use Claude and Codex on Agent HQ</title>
       <link>https://github.blog/news-insights/company-news/pick-your-agent-use-claude-and-codex-on-agent-hq/</link>
@@ -60,12 +66,6 @@
       <link>https://github.blog/news-insights/company-news/build-an-agent-into-any-app-with-the-github-copilot-sdk/</link>
       <guid isPermaLink="true">https://github.blog/news-insights/company-news/build-an-agent-into-any-app-with-the-github-copilot-sdk/</guid>
       <pubDate>Thu, 22 Jan 2026 15:01:44 +0000</pubDate>
-    </item>
-    <item>
-      <title>A cheat sheet to slash commands in GitHub Copilot CLI</title>
-      <link>https://github.blog/ai-and-ml/github-copilot/a-cheat-sheet-to-slash-commands-in-github-copilot-cli/</link>
-      <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/a-cheat-sheet-to-slash-commands-in-github-copilot-cli/</guid>
-      <pubDate>Wed, 21 Jan 2026 17:09:10 +0000</pubDate>
     </item>
   </channel>
 </rss>

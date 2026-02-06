@@ -5,8 +5,15 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 06 Feb 2026 01:05:33 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 06 Feb 2026 12:34:45 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>[Launched] Generally Available: AMD v6 confidential VMs in new regions for January 2026</title>
+      <link>https://azure.microsoft.com/updates?id=553966</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=553966</guid>
+      <pubDate>Fri, 06 Feb 2026 01:00:02 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
     <item>
       <title>Reduce Vulnerability Noise with VEX: Wiz + Docker Hardened Images</title>
       <link>https://www.docker.com/blog/reduce-vulnerability-noise-with-vex-wiz-docker-hardened-images/</link>
@@ -62,6 +69,13 @@
       <guid isPermaLink="true">https://github.blog/changelog/2026-02-05-claude-opus-4-6-is-now-generally-available-for-github-copilot</guid>
       <pubDate>Thu, 05 Feb 2026 17:45:16 +0000</pubDate>
       <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Continuous AI in practice: What developers can automate today with agentic CI</title>
+      <link>https://github.blog/ai-and-ml/generative-ai/continuous-ai-in-practice-what-developers-can-automate-today-with-agentic-ci/</link>
+      <guid isPermaLink="true">https://github.blog/ai-and-ml/generative-ai/continuous-ai-in-practice-what-developers-can-automate-today-with-agentic-ci/</guid>
+      <pubDate>Thu, 05 Feb 2026 17:00:00 +0000</pubDate>
+      <source>GitHub Blog</source>
     </item>
     <item>
       <title>The security implementation gap: Why Microsoft is supporting Operation Winter SHIELD</title>
@@ -699,13 +713,6 @@
       <guid isPermaLink="true">https://kubernetes.io/blog/2026/01/21/introducing-checkpoint-restore-wg/</guid>
       <pubDate>Wed, 21 Jan 2026 18:00:00 +0000</pubDate>
       <source>Kubernetes Blog</source>
-    </item>
-    <item>
-      <title>A cheat sheet to slash commands in GitHub Copilot CLI</title>
-      <link>https://github.blog/ai-and-ml/github-copilot/a-cheat-sheet-to-slash-commands-in-github-copilot-cli/</link>
-      <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/a-cheat-sheet-to-slash-commands-in-github-copilot-cli/</guid>
-      <pubDate>Wed, 21 Jan 2026 17:09:10 +0000</pubDate>
-      <source>GitHub Blog</source>
     </item>
     <item>
       <title>Issue #258 - IaCConf, Multi-Environment GitHub Pipelines, ignore_changes Deep Dive, AWS Glue Data Exports, Terraform New Features, Agent Skill for Terraform and OpenTofu</title>
@@ -2573,13 +2580,6 @@
       <title>[In preview] Public Preview: Foundry IQ by Azure AI Search</title>
       <link>https://azure.microsoft.com/updates?id=526150</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=526150</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Foundry Tools (rebrand from Azure AI Services)</title>
-      <link>https://azure.microsoft.com/updates?id=526132</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=526132</guid>
       <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
       <source>Azure Updates</source>
     </item>
