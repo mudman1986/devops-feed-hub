@@ -5,8 +5,32 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml</link>
     <description>Articles from Azure Updates</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 06 Feb 2026 12:34:45 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 07 Feb 2026 01:04:33 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>[In development] Private Preview: Vaulted Backups for Azure Disk</title>
+      <link>https://azure.microsoft.com/updates?id=555184</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=555184</guid>
+      <pubDate>Fri, 06 Feb 2026 23:00:02 +0000</pubDate>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Azure Monitor pipeline data transformations</title>
+      <link>https://azure.microsoft.com/updates?id=555488</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=555488</guid>
+      <pubDate>Fri, 06 Feb 2026 22:45:47 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Launched] ​Generally Available: Claude Opus 4.6 now available on Azure Databricks</title>
+      <link>https://azure.microsoft.com/updates?id=555981</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=555981</guid>
+      <pubDate>Fri, 06 Feb 2026 19:00:01 +0000</pubDate>
+    </item>
+    <item>
+      <title>[In development] Private Preview: New planned datacenter region in Thailand (Thailand South)</title>
+      <link>https://azure.microsoft.com/updates?id=553999</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=553999</guid>
+      <pubDate>Fri, 06 Feb 2026 19:00:01 +0000</pubDate>
+    </item>
     <item>
       <title>[Launched] Generally Available: AMD v6 confidential VMs in new regions for January 2026</title>
       <link>https://azure.microsoft.com/updates?id=553966</link>
@@ -1175,30 +1199,6 @@
       <title>[Launched] Generally Available: GitHub Copilot app modernization expanded capabilities</title>
       <link>https://azure.microsoft.com/updates?id=526618</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=526618</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Model Router in Microsoft Foundry</title>
-      <link>https://azure.microsoft.com/updates?id=526330</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=526330</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In development] Private Preview: Foundry Local Android support</title>
-      <link>https://azure.microsoft.com/updates?id=526198</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=526198</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Foundry Local updates</title>
-      <link>https://azure.microsoft.com/updates?id=526193</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=526193</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Foundry IQ by Azure AI Search</title>
-      <link>https://azure.microsoft.com/updates?id=526150</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=526150</guid>
       <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
     </item>
     <item>

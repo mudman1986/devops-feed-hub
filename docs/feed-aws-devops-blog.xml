@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-aws-devops-blog.xml</link>
     <description>Articles from AWS DevOps Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-aws-devops-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 06 Feb 2026 12:34:45 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 07 Feb 2026 01:04:33 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Building a scalable code modernization solution with AWS Transform custom</title>
+      <link>https://aws.amazon.com/blogs/devops/building-a-scalable-code-modernization-solution-with-aws-transform-custom/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/building-a-scalable-code-modernization-solution-with-aws-transform-custom/</guid>
+      <pubDate>Fri, 06 Feb 2026 22:53:29 +0000</pubDate>
+    </item>
     <item>
       <title>AWS Transform custom: AI-driven Java modernization to reduce tech debt</title>
       <link>https://aws.amazon.com/blogs/devops/aws-transform-custom-ai-driven-java-modernization-to-reduce-tech-debt/</link>
@@ -120,12 +126,6 @@
       <link>https://aws.amazon.com/blogs/devops/accelerate-infrastructure-development-with-cloudformation-pre-deployment-validation-and-simplified-troubleshooting/</link>
       <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/accelerate-infrastructure-development-with-cloudformation-pre-deployment-validation-and-simplified-troubleshooting/</guid>
       <pubDate>Tue, 18 Nov 2025 23:47:10 +0000</pubDate>
-    </item>
-    <item>
-      <title>Streamlining Multi-Account Infrastructure with AWS CloudFormation StackSets and AWS CDK</title>
-      <link>https://aws.amazon.com/blogs/devops/streamlining-multi-account-infrastructure-with-aws-cloudformation-stacksets-and-aws-cdk/</link>
-      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/streamlining-multi-account-infrastructure-with-aws-cloudformation-stacksets-and-aws-cdk/</guid>
-      <pubDate>Mon, 03 Nov 2025 14:44:41 +0000</pubDate>
     </item>
   </channel>
 </rss>
