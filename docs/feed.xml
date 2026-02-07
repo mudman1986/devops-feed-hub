@@ -5,8 +5,15 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sat, 07 Feb 2026 01:04:33 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 07 Feb 2026 12:24:50 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Analysis of active exploitation of SolarWinds Web Help Desk</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/02/06/active-exploitation-solarwinds-web-help-desk/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/06/active-exploitation-solarwinds-web-help-desk/</guid>
+      <pubDate>Sat, 07 Feb 2026 01:08:49 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
     <item>
       <title>CodeQL 2.24.1 improves Maven private registry support and improves query accuracy</title>
       <link>https://github.blog/changelog/2026-02-06-codeql-2-24-1-improves-maven-private-registry-support-and-improves-query-accuracy</link>
@@ -601,13 +608,6 @@
       <guid isPermaLink="true">https://www.hashicorp.com/blog/how-resilient-is-hcp-vault-during-real-aws-regional-outages</guid>
       <pubDate>Mon, 26 Jan 2026 17:00:00 +0000</pubDate>
       <source>HashiCorp Blog</source>
-    </item>
-    <item>
-      <title>Security strategies for safeguarding governmental data</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/01/26/security-strategies-for-safeguarding-governmental-data/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/26/security-strategies-for-safeguarding-governmental-data/</guid>
-      <pubDate>Mon, 26 Jan 2026 17:00:00 +0000</pubDate>
-      <source>Microsoft Security</source>
     </item>
     <item>
       <title>Automate deployment of MCP servers to AWS App Runner with CircleCI</title>

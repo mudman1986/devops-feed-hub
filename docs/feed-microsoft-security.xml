@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml</link>
     <description>Articles from Microsoft Security</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sat, 07 Feb 2026 01:04:33 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 07 Feb 2026 12:24:50 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Analysis of active exploitation of SolarWinds Web Help Desk</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/02/06/active-exploitation-solarwinds-web-help-desk/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/06/active-exploitation-solarwinds-web-help-desk/</guid>
+      <pubDate>Sat, 07 Feb 2026 01:08:49 +0000</pubDate>
+    </item>
     <item>
       <title>New Clickfix variant ‘CrashFix’ deploying Python Remote Access Trojan</title>
       <link>https://www.microsoft.com/en-us/security/blog/2026/02/05/clickfix-variant-crashfix-deploying-python-rat-trojan/</link>
@@ -60,12 +66,6 @@
       <link>https://www.microsoft.com/en-us/security/blog/2026/01/27/microsoft-announces-the-2026-security-excellence-awards-winners/</link>
       <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/27/microsoft-announces-the-2026-security-excellence-awards-winners/</guid>
       <pubDate>Tue, 27 Jan 2026 17:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Security strategies for safeguarding governmental data</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/01/26/security-strategies-for-safeguarding-governmental-data/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/26/security-strategies-for-safeguarding-governmental-data/</guid>
-      <pubDate>Mon, 26 Jan 2026 17:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
