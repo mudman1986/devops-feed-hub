@@ -5,8 +5,15 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sat, 07 Feb 2026 12:24:50 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 08 Feb 2026 01:27:18 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Fast mode for Claude Opus 4.6 is now in preview for GitHub Copilot</title>
+      <link>https://github.blog/changelog/2026-02-07-claude-opus-4-6-fast-is-now-in-public-preview-for-github-copilot</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-07-claude-opus-4-6-fast-is-now-in-public-preview-for-github-copilot</guid>
+      <pubDate>Sat, 07 Feb 2026 16:02:23 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
     <item>
       <title>Analysis of active exploitation of SolarWinds Web Help Desk</title>
       <link>https://www.microsoft.com/en-us/security/blog/2026/02/06/active-exploitation-solarwinds-web-help-desk/</link>
@@ -187,13 +194,6 @@
       <link>https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-january-update</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-january-update</guid>
       <pubDate>Wed, 04 Feb 2026 17:41:21 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>Claude and Codex are now available in public preview on GitHub</title>
-      <link>https://github.blog/changelog/2026-02-04-claude-and-codex-are-now-available-in-public-preview-on-github</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-04-claude-and-codex-are-now-available-in-public-preview-on-github</guid>
-      <pubDate>Wed, 04 Feb 2026 17:00:26 +0000</pubDate>
       <source>GitHub Changelog</source>
     </item>
     <item>
