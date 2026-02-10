@@ -5,8 +5,36 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 09 Feb 2026 12:41:49 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 10 Feb 2026 01:20:35 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>[In preview] Public Preview: Application Gateway for Containers - AKS managed add-on</title>
+      <link>https://azure.microsoft.com/updates?id=555603</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=555603</guid>
+      <pubDate>Mon, 09 Feb 2026 19:45:45 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>GPT-5.3-Codex is now generally available for GitHub Copilot</title>
+      <link>https://github.blog/changelog/2026-02-09-gpt-5-3-codex-is-now-generally-available-for-github-copilot</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-09-gpt-5-3-codex-is-now-generally-available-for-github-copilot</guid>
+      <pubDate>Mon, 09 Feb 2026 17:41:21 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>A one-prompt attack that breaks LLM safety alignment</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/02/09/prompt-attack-breaks-llm-safety/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/09/prompt-attack-breaks-llm-safety/</guid>
+      <pubDate>Mon, 09 Feb 2026 17:12:11 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>GitHub Apps can now utilize public preview Enterprise Teams APIs via fine-grained permissions</title>
+      <link>https://github.blog/changelog/2026-02-09-github-apps-can-now-utilize-public-preview-enterprise-teams-apis-via-fine-grained-permissions</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-09-github-apps-can-now-utilize-public-preview-enterprise-teams-apis-via-fine-grained-permissions</guid>
+      <pubDate>Mon, 09 Feb 2026 14:03:31 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
     <item>
       <title>Fast mode for Claude Opus 4.6 is now in preview for GitHub Copilot</title>
       <link>https://github.blog/changelog/2026-02-07-claude-opus-4-6-fast-is-now-in-public-preview-for-github-copilot</link>
@@ -43,7 +71,7 @@
       <source>AWS DevOps Blog</source>
     </item>
     <item>
-      <title>[In preview] Public Preview: Azure Monitor pipeline data transformations</title>
+      <title>[In preview] Public Preview: Azure Monitor pipeline transformations</title>
       <link>https://azure.microsoft.com/updates?id=555488</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=555488</guid>
       <pubDate>Fri, 06 Feb 2026 22:45:47 +0000</pubDate>
@@ -180,20 +208,6 @@
       <link>https://github.blog/changelog/2026-02-04-showing-tool-calls-and-other-improvements-to-copilot-chat-on-the-web</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-02-04-showing-tool-calls-and-other-improvements-to-copilot-chat-on-the-web</guid>
       <pubDate>Wed, 04 Feb 2026 18:17:01 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>GitHub Copilot in Visual Studio Code v1.109 – January Release</title>
-      <link>https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release</guid>
-      <pubDate>Wed, 04 Feb 2026 18:00:01 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>GitHub Copilot in Visual Studio — January update</title>
-      <link>https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-january-update</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-january-update</guid>
-      <pubDate>Wed, 04 Feb 2026 17:41:21 +0000</pubDate>
       <source>GitHub Changelog</source>
     </item>
     <item>
@@ -531,13 +545,6 @@
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=529407</guid>
       <pubDate>Tue, 27 Jan 2026 17:00:06 +0000</pubDate>
       <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>Microsoft announces the 2026 Security Excellence Awards winners</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/01/27/microsoft-announces-the-2026-security-excellence-awards-winners/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/27/microsoft-announces-the-2026-security-excellence-awards-winners/</guid>
-      <pubDate>Tue, 27 Jan 2026 17:00:00 +0000</pubDate>
-      <source>Microsoft Security</source>
     </item>
     <item>
       <title>Cluster API v1.12: Introducing In-place Updates and Chained Upgrades</title>
@@ -2580,13 +2587,6 @@
       <title>[In preview] Public Preview: Microsoft Foundry Control Plane &amp; Entra Agent ID</title>
       <link>https://azure.microsoft.com/updates?id=526665</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=526665</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: GitHub Copilot app modernization expanded capabilities</title>
-      <link>https://azure.microsoft.com/updates?id=526618</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=526618</guid>
       <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
       <source>Azure Updates</source>
     </item>

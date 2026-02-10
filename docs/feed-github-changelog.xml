@@ -5,8 +5,20 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml</link>
     <description>Articles from GitHub Changelog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 09 Feb 2026 12:41:49 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 10 Feb 2026 01:20:35 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>GPT-5.3-Codex is now generally available for GitHub Copilot</title>
+      <link>https://github.blog/changelog/2026-02-09-gpt-5-3-codex-is-now-generally-available-for-github-copilot</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-09-gpt-5-3-codex-is-now-generally-available-for-github-copilot</guid>
+      <pubDate>Mon, 09 Feb 2026 17:41:21 +0000</pubDate>
+    </item>
+    <item>
+      <title>GitHub Apps can now utilize public preview Enterprise Teams APIs via fine-grained permissions</title>
+      <link>https://github.blog/changelog/2026-02-09-github-apps-can-now-utilize-public-preview-enterprise-teams-apis-via-fine-grained-permissions</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-09-github-apps-can-now-utilize-public-preview-enterprise-teams-apis-via-fine-grained-permissions</guid>
+      <pubDate>Mon, 09 Feb 2026 14:03:31 +0000</pubDate>
+    </item>
     <item>
       <title>Fast mode for Claude Opus 4.6 is now in preview for GitHub Copilot</title>
       <link>https://github.blog/changelog/2026-02-07-claude-opus-4-6-fast-is-now-in-public-preview-for-github-copilot</link>
@@ -54,18 +66,6 @@
       <link>https://github.blog/changelog/2026-02-04-showing-tool-calls-and-other-improvements-to-copilot-chat-on-the-web</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-02-04-showing-tool-calls-and-other-improvements-to-copilot-chat-on-the-web</guid>
       <pubDate>Wed, 04 Feb 2026 18:17:01 +0000</pubDate>
-    </item>
-    <item>
-      <title>GitHub Copilot in Visual Studio Code v1.109 – January Release</title>
-      <link>https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-code-v1-109-january-release</guid>
-      <pubDate>Wed, 04 Feb 2026 18:00:01 +0000</pubDate>
-    </item>
-    <item>
-      <title>GitHub Copilot in Visual Studio — January update</title>
-      <link>https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-january-update</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-04-github-copilot-in-visual-studio-january-update</guid>
-      <pubDate>Wed, 04 Feb 2026 17:41:21 +0000</pubDate>
     </item>
   </channel>
 </rss>
