@@ -5,8 +5,71 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 10 Feb 2026 12:46:04 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 11 Feb 2026 01:18:45 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>[In preview] Public Preview: Azure Front Door Premium now supports Azure Private Link origins in UAE North</title>
+      <link>https://azure.microsoft.com/updates?id=556282</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=556282</guid>
+      <pubDate>Tue, 10 Feb 2026 21:15:47 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>February Patches for Azure DevOps Server</title>
+      <link>https://devblogs.microsoft.com/devops/february-patches-for-azure-devops-server-5/</link>
+      <guid isPermaLink="true">https://devblogs.microsoft.com/devops/february-patches-for-azure-devops-server-5/</guid>
+      <pubDate>Tue, 10 Feb 2026 20:21:41 +0000</pubDate>
+      <source>Microsoft DevOps Blog</source>
+    </item>
+    <item>
+      <title>[Launched] Generally Available:  Azure Databricks Supervisor Agent</title>
+      <link>https://azure.microsoft.com/updates?id=557081</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557081</guid>
+      <pubDate>Tue, 10 Feb 2026 18:00:43 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>How World Bank manages hybrid cloud complexity with Terraform</title>
+      <link>https://www.hashicorp.com/blog/how-world-bank-manages-hybrid-cloud-complexity-with-terraform</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/how-world-bank-manages-hybrid-cloud-complexity-with-terraform</guid>
+      <pubDate>Tue, 10 Feb 2026 17:00:00 +0000</pubDate>
+      <source>HashiCorp Blog</source>
+    </item>
+    <item>
+      <title>80% of Fortune 500 use active AI Agents: Observability, governance, and security shape the new frontier</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/02/10/80-of-fortune-500-use-active-ai-agents-observability-governance-and-security-shape-the-new-frontier/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/10/80-of-fortune-500-use-active-ai-agents-observability-governance-and-security-shape-the-new-frontier/</guid>
+      <pubDate>Tue, 10 Feb 2026 16:00:00 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>Manipulating AI memory for profit: The rise of AI Recommendation Poisoning</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/02/10/ai-recommendation-poisoning/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/10/ai-recommendation-poisoning/</guid>
+      <pubDate>Tue, 10 Feb 2026 14:56:21 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>Track additional Dependabot configuration changes in audit logs</title>
+      <link>https://github.blog/changelog/2026-02-10-track-additional-dependabot-configuration-changes-in-audit-logs</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-10-track-additional-dependabot-configuration-changes-in-audit-logs</guid>
+      <pubDate>Tue, 10 Feb 2026 14:13:08 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Hardened Images Are Free. Now What?</title>
+      <link>https://www.docker.com/blog/hardened-images-free-now-what/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/hardened-images-free-now-what/</guid>
+      <pubDate>Tue, 10 Feb 2026 14:00:00 +0000</pubDate>
+      <source>Docker Blog</source>
+    </item>
+    <item>
+      <title>DevSecOps-as-a-Service on Oracle Cloud Infrastructure by Data Intensity</title>
+      <link>https://about.gitlab.com/blog/devsecops-as-a-service-on-oracle-cloud-infrastructure-by-data-intensity/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/devsecops-as-a-service-on-oracle-cloud-infrastructure-by-data-intensity/</guid>
+      <pubDate>Tue, 10 Feb 2026 00:00:00 +0000</pubDate>
+      <source>GitLab Blog</source>
+    </item>
     <item>
       <title>[In preview] Public Preview: Application Gateway for Containers - AKS managed add-on</title>
       <link>https://azure.microsoft.com/updates?id=555603</link>
@@ -27,6 +90,13 @@
       <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/09/prompt-attack-breaks-llm-safety/</guid>
       <pubDate>Mon, 09 Feb 2026 17:12:11 +0000</pubDate>
       <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>How Duke Energy enforces cloud security at scale with Terraform &amp; Vault, and 6 lessons</title>
+      <link>https://www.hashicorp.com/blog/how-duke-energy-enforces-cloud-security-at-scale-with-terraform-vault-6-lessons</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/how-duke-energy-enforces-cloud-security-at-scale-with-terraform-vault-6-lessons</guid>
+      <pubDate>Mon, 09 Feb 2026 17:00:00 +0000</pubDate>
+      <source>HashiCorp Blog</source>
     </item>
     <item>
       <title>GitHub Apps can now utilize public preview Enterprise Teams APIs via fine-grained permissions</title>
@@ -204,13 +274,6 @@
       <source>Microsoft DevOps Blog</source>
     </item>
     <item>
-      <title>Showing tool calls and other improvements to Copilot chat on the web</title>
-      <link>https://github.blog/changelog/2026-02-04-showing-tool-calls-and-other-improvements-to-copilot-chat-on-the-web</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-04-showing-tool-calls-and-other-improvements-to-copilot-chat-on-the-web</guid>
-      <pubDate>Wed, 04 Feb 2026 18:17:01 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>Pick your agent: Use Claude and Codex on Agent HQ</title>
       <link>https://github.blog/news-insights/company-news/pick-your-agent-use-claude-and-codex-on-agent-hq/</link>
       <guid isPermaLink="true">https://github.blog/news-insights/company-news/pick-your-agent-use-claude-and-codex-on-agent-hq/</guid>
@@ -281,7 +344,7 @@
       <source>GitHub Blog</source>
     </item>
     <item>
-      <title>PCI DSS 4.0.1 compliance with HashiCorp Vault and Vault Radar</title>
+      <title>PCI DSS 4.0.1 compliance with Vault, Boundary &amp; Vault Radar</title>
       <link>https://www.hashicorp.com/blog/pci-dss-4-compliance-with-hashicorp-vault-and-vault-radar</link>
       <guid isPermaLink="true">https://www.hashicorp.com/blog/pci-dss-4-compliance-with-hashicorp-vault-and-vault-radar</guid>
       <pubDate>Tue, 03 Feb 2026 17:00:00 +0000</pubDate>
@@ -398,20 +461,6 @@
       <guid isPermaLink="true">https://www.jenkins.io/blog/2026/01/30/fosdem/</guid>
       <pubDate>Fri, 30 Jan 2026 00:00:00 +0000</pubDate>
       <source>Jenkins Blog</source>
-    </item>
-    <item>
-      <title>Turning threat reports into detection insights with AI</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/01/29/turning-threat-reports-detection-insights-ai/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/29/turning-threat-reports-detection-insights-ai/</guid>
-      <pubDate>Thu, 29 Jan 2026 21:20:18 +0000</pubDate>
-      <source>Microsoft Security</source>
-    </item>
-    <item>
-      <title>New Microsoft Data Security Index report explores secure AI adoption to protect sensitive data</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/01/29/new-microsoft-data-security-index-report-explores-secure-ai-adoption-to-protect-sensitive-data/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/29/new-microsoft-data-security-index-report-explores-secure-ai-adoption-to-protect-sensitive-data/</guid>
-      <pubDate>Thu, 29 Jan 2026 17:00:00 +0000</pubDate>
-      <source>Microsoft Security</source>
     </item>
     <item>
       <title>Ingress NGINX: Statement from the Kubernetes Steering and Security Response Committees</title>
@@ -671,13 +720,6 @@
       <guid isPermaLink="true">https://www.hashicorp.com/blog/the-linux-security-threat-landscape-and-strategic-defense-pillars</guid>
       <pubDate>Thu, 22 Jan 2026 22:00:00 +0000</pubDate>
       <source>HashiCorp Blog</source>
-    </item>
-    <item>
-      <title>Using MCP Servers: From Quick Tools to Multi-Agent Systems</title>
-      <link>https://www.docker.com/blog/mcp-servers-docker-toolkit-cagent-gateway/</link>
-      <guid isPermaLink="true">https://www.docker.com/blog/mcp-servers-docker-toolkit-cagent-gateway/</guid>
-      <pubDate>Thu, 22 Jan 2026 19:35:33 +0000</pubDate>
-      <source>Docker Blog</source>
     </item>
     <item>
       <title>[Launched] Generally Available: StandardV2 NAT Gateway with zone-redundancy and StandardV2 public IPs</title>
@@ -1177,20 +1219,6 @@
       <source>Microsoft Entra Blog</source>
     </item>
     <item>
-      <title>Terraform adds native monorepo support, Stack component configurations, and more</title>
-      <link>https://www.hashicorp.com/blog/terraform-adds-native-monorepo-support-stack-component-configurations-and-more</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/terraform-adds-native-monorepo-support-stack-component-configurations-and-more</guid>
-      <pubDate>Thu, 18 Dec 2025 20:00:00 +0000</pubDate>
-      <source>HashiCorp Blog</source>
-    </item>
-    <item>
-      <title>Terraform Stacks, explained</title>
-      <link>https://www.hashicorp.com/blog/terraform-stacks-explained</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/terraform-stacks-explained</guid>
-      <pubDate>Thu, 18 Dec 2025 19:00:00 +0000</pubDate>
-      <source>HashiCorp Blog</source>
-    </item>
-    <item>
       <title>[In preview] Public Preview: Azure Blob-to-Blob migration made simple with Azure Storage Mover</title>
       <link>https://azure.microsoft.com/updates?id=542813</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=542813</guid>
@@ -1210,13 +1238,6 @@
       <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/how-kaltura-accelerates-ci-cd-using-aws-codebuild-hosted-runners/</guid>
       <pubDate>Thu, 18 Dec 2025 14:54:45 +0000</pubDate>
       <source>AWS DevOps Blog</source>
-    </item>
-    <item>
-      <title>GitLab 18.7: Advancing AI automation, governance, and developer experience</title>
-      <link>https://about.gitlab.com/blog/gitlab-18-7-advancing-ai-automation/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/gitlab-18-7-advancing-ai-automation/</guid>
-      <pubDate>Thu, 18 Dec 2025 00:00:00 +0000</pubDate>
-      <source>GitLab Blog</source>
     </item>
     <item>
       <title>[In preview] Public Preview: Service Bus SDK type bindings in Azure Functions for Node.js</title>
@@ -2577,20 +2598,6 @@
       <source>Azure Updates</source>
     </item>
     <item>
-      <title>[In preview] Public Preview: Microsoft Foundry Fine-Tuning Updates</title>
-      <link>https://azure.microsoft.com/updates?id=526742</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=526742</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Microsoft Foundry Control Plane &amp; Entra Agent ID</title>
-      <link>https://azure.microsoft.com/updates?id=526665</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=526665</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
       <title>Microsoft Entra at Ignite 2025: November 17-21</title>
       <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-at-ignite-2025-november-17-21/ba-p/4400194</link>
       <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-at-ignite-2025-november-17-21/ba-p/4400194</guid>
@@ -2610,13 +2617,6 @@
       <guid isPermaLink="true">https://kubernetes.io/blog/2025/11/11/ingress-nginx-retirement/</guid>
       <pubDate>Tue, 11 Nov 2025 18:30:00 +0000</pubDate>
       <source>Kubernetes Blog</source>
-    </item>
-    <item>
-      <title>November Patches for Azure DevOps Server</title>
-      <link>https://devblogs.microsoft.com/devops/november-patches-for-azure-devops-server-2/</link>
-      <guid isPermaLink="true">https://devblogs.microsoft.com/devops/november-patches-for-azure-devops-server-2/</guid>
-      <pubDate>Tue, 11 Nov 2025 17:25:03 +0000</pubDate>
-      <source>Microsoft DevOps Blog</source>
     </item>
     <item>
       <title>Riding the AI Wave: How Microsoft Entra is Evolving for the Agentic Era</title>

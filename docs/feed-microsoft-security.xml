@@ -5,8 +5,20 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml</link>
     <description>Articles from Microsoft Security</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 10 Feb 2026 12:46:04 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 11 Feb 2026 01:18:45 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>80% of Fortune 500 use active AI Agents: Observability, governance, and security shape the new frontier</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/02/10/80-of-fortune-500-use-active-ai-agents-observability-governance-and-security-shape-the-new-frontier/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/10/80-of-fortune-500-use-active-ai-agents-observability-governance-and-security-shape-the-new-frontier/</guid>
+      <pubDate>Tue, 10 Feb 2026 16:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Manipulating AI memory for profit: The rise of AI Recommendation Poisoning</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/02/10/ai-recommendation-poisoning/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/10/ai-recommendation-poisoning/</guid>
+      <pubDate>Tue, 10 Feb 2026 14:56:21 +0000</pubDate>
+    </item>
     <item>
       <title>A one-prompt attack that breaks LLM safety alignment</title>
       <link>https://www.microsoft.com/en-us/security/blog/2026/02/09/prompt-attack-breaks-llm-safety/</link>
@@ -54,18 +66,6 @@
       <link>https://www.microsoft.com/en-us/security/blog/2026/01/30/case-study-securing-ai-application-supply-chains/</link>
       <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/30/case-study-securing-ai-application-supply-chains/</guid>
       <pubDate>Fri, 30 Jan 2026 18:49:44 +0000</pubDate>
-    </item>
-    <item>
-      <title>Turning threat reports into detection insights with AI</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/01/29/turning-threat-reports-detection-insights-ai/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/29/turning-threat-reports-detection-insights-ai/</guid>
-      <pubDate>Thu, 29 Jan 2026 21:20:18 +0000</pubDate>
-    </item>
-    <item>
-      <title>New Microsoft Data Security Index report explores secure AI adoption to protect sensitive data</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/01/29/new-microsoft-data-security-index-report-explores-secure-ai-adoption-to-protect-sensitive-data/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/29/new-microsoft-data-security-index-report-explores-secure-ai-adoption-to-protect-sensitive-data/</guid>
-      <pubDate>Thu, 29 Jan 2026 17:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
