@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml</link>
     <description>Articles from Azure Updates</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 11 Feb 2026 12:42:15 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 12 Feb 2026 01:10:55 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>[In preview] Public Preview: Azure SQL updates for mid-February 2026</title>
+      <link>https://azure.microsoft.com/updates?id=550159</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=550159</guid>
+      <pubDate>Wed, 11 Feb 2026 23:15:55 +0000</pubDate>
+    </item>
     <item>
       <title>[In preview] Public Preview: Azure Front Door Premium now supports Azure Private Link origins in UAE North</title>
       <link>https://azure.microsoft.com/updates?id=556282</link>
@@ -1193,12 +1199,6 @@
       <title>[Launched] Generally Available: Premium v2 tier in Azure API Management</title>
       <link>https://azure.microsoft.com/updates?id=527612</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=527612</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: OpenShift Virtualization now available on Azure Red Hat OpenShift</title>
-      <link>https://azure.microsoft.com/updates?id=527236</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=527236</guid>
       <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
     </item>
     <item>

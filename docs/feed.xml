@@ -5,8 +5,50 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 11 Feb 2026 12:42:15 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 12 Feb 2026 01:10:55 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Spotlight on SIG Architecture: API Governance</title>
+      <link>https://kubernetes.io/blog/2026/02/12/sig-architecture-api-spotlight/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2026/02/12/sig-architecture-api-spotlight/</guid>
+      <pubDate>Thu, 12 Feb 2026 00:00:00 +0000</pubDate>
+      <source>Kubernetes Blog</source>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Azure SQL updates for mid-February 2026</title>
+      <link>https://azure.microsoft.com/updates?id=550159</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=550159</guid>
+      <pubDate>Wed, 11 Feb 2026 23:15:55 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>GitHub availability report: January 2026</title>
+      <link>https://github.blog/news-insights/company-news/github-availability-report-january-2026/</link>
+      <guid isPermaLink="true">https://github.blog/news-insights/company-news/github-availability-report-january-2026/</guid>
+      <pubDate>Wed, 11 Feb 2026 23:12:34 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
+    <item>
+      <title>Choosing between Amazon ECS Blue/Green Native or AWS CodeDeploy in AWS CDK</title>
+      <link>https://aws.amazon.com/blogs/devops/choosing-between-amazon-ecs-blue-green-native-or-aws-codedeploy-in-aws-cdk/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/choosing-between-amazon-ecs-blue-green-native-or-aws-codedeploy-in-aws-cdk/</guid>
+      <pubDate>Wed, 11 Feb 2026 18:59:00 +0000</pubDate>
+      <source>AWS DevOps Blog</source>
+    </item>
+    <item>
+      <title>The strategic SIEM buyer’s guide: Choosing an AI-ready platform for the agentic era</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/02/11/the-strategic-siem-buyers-guide-choosing-an-ai-ready-platform-for-the-agentic-era/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/11/the-strategic-siem-buyers-guide-choosing-an-ai-ready-platform-for-the-agentic-era/</guid>
+      <pubDate>Wed, 11 Feb 2026 17:00:00 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>Issue #261 - Stategraph, Native Terraform at Scale, Event-Driven Translation, Infrastructure Layers, Plan-to-Markdown, Serverless CI/CD Pipelines</title>
+      <link>https://www.weekly.tf/p/issue-261-stategraph-native-terraform-at-scale-event-driven-translation-infrastructure-layers-plan</link>
+      <guid isPermaLink="true">https://www.weekly.tf/p/issue-261-stategraph-native-terraform-at-scale-event-driven-translation-infrastructure-layers-plan</guid>
+      <pubDate>Wed, 11 Feb 2026 16:00:14 +0000</pubDate>
+      <source>Terraform weekly</source>
+    </item>
     <item>
       <title>[In preview] Public Preview: Azure Front Door Premium now supports Azure Private Link origins in UAE North</title>
       <link>https://azure.microsoft.com/updates?id=556282</link>
@@ -428,13 +470,6 @@
       <source>Docker Blog</source>
     </item>
     <item>
-      <title>Case study: Securing AI application supply chains</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/01/30/case-study-securing-ai-application-supply-chains/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/01/30/case-study-securing-ai-application-supply-chains/</guid>
-      <pubDate>Fri, 30 Jan 2026 18:49:44 +0000</pubDate>
-      <source>Microsoft Security</source>
-    </item>
-    <item>
       <title>Retirement: "Send data to Event Hubs &amp; Storage (Preview)" retiring July 31, 2026</title>
       <link>https://azure.microsoft.com/updates?id=551523</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=551523</guid>
@@ -741,13 +776,6 @@
       <guid isPermaLink="true">https://circleci.com/blog/enforcing-web-performance-budgets-with-sitespeed-io-and-slack/</guid>
       <pubDate>Thu, 22 Jan 2026 16:00:00 +0000</pubDate>
       <source>CircleCI Blog</source>
-    </item>
-    <item>
-      <title>Build an agent into any app with the GitHub Copilot SDK</title>
-      <link>https://github.blog/news-insights/company-news/build-an-agent-into-any-app-with-the-github-copilot-sdk/</link>
-      <guid isPermaLink="true">https://github.blog/news-insights/company-news/build-an-agent-into-any-app-with-the-github-copilot-sdk/</guid>
-      <pubDate>Thu, 22 Jan 2026 15:01:44 +0000</pubDate>
-      <source>GitHub Blog</source>
     </item>
     <item>
       <title>Headlamp in 2025: Project Highlights</title>
@@ -1842,13 +1870,6 @@
       <source>Azure Updates</source>
     </item>
     <item>
-      <title>Accelerate infrastructure development with CloudFormation pre-deployment validation and simplified troubleshooting</title>
-      <link>https://aws.amazon.com/blogs/devops/accelerate-infrastructure-development-with-cloudformation-pre-deployment-validation-and-simplified-troubleshooting/</link>
-      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/accelerate-infrastructure-development-with-cloudformation-pre-deployment-validation-and-simplified-troubleshooting/</guid>
-      <pubDate>Tue, 18 Nov 2025 23:47:10 +0000</pubDate>
-      <source>AWS DevOps Blog</source>
-    </item>
-    <item>
       <title>[In preview] Public Preview: Azure Copilot agents - a closer look at the deployment agent</title>
       <link>https://azure.microsoft.com/updates?id=526751</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=526751</guid>
@@ -2591,13 +2612,6 @@
       <source>Azure Updates</source>
     </item>
     <item>
-      <title>[Launched] Generally Available: OpenShift Virtualization now available on Azure Red Hat OpenShift</title>
-      <link>https://azure.microsoft.com/updates?id=527236</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=527236</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
       <title>Microsoft Entra at Ignite 2025: November 17-21</title>
       <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-at-ignite-2025-november-17-21/ba-p/4400194</link>
       <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-at-ignite-2025-november-17-21/ba-p/4400194</guid>
@@ -2927,13 +2941,6 @@
       <source>Kubernetes Blog</source>
     </item>
     <item>
-      <title>Issue #241 - Terraform with GitLab, Secure CI/CD with Okta, Traces &amp; Profiling, Throttling for AWS API Gateway and Lambda, Managing AWS Tags</title>
-      <link>https://www.weekly.tf/p/issue-241-terraform-with-gitlab-secure-ci-cd-with-okta-traces-profiling-throttling-for-aws-api-gatew</link>
-      <guid isPermaLink="true">https://www.weekly.tf/p/issue-241-terraform-with-gitlab-secure-ci-cd-with-okta-traces-profiling-throttling-for-aws-api-gatew</guid>
-      <pubDate>Wed, 03 Sep 2025 15:00:00 +0000</pubDate>
-      <source>Terraform weekly</source>
-    </item>
-    <item>
       <title>Kubernetes v1.34: Introducing CPU Manager Static Policy Option for Uncore Cache Alignment</title>
       <link>https://kubernetes.io/blog/2025/09/02/kubernetes-v1-34-prefer-align-by-uncore-cache-cpumanager-static-policy-optimization/</link>
       <guid isPermaLink="true">https://kubernetes.io/blog/2025/09/02/kubernetes-v1-34-prefer-align-by-uncore-cache-cpumanager-static-policy-optimization/</guid>
@@ -2973,13 +2980,6 @@
       <link>https://kubernetes.io/blog/2025/08/28/kubernetes-v1-34-kubectl-kuberc-beta/</link>
       <guid isPermaLink="true">https://kubernetes.io/blog/2025/08/28/kubernetes-v1-34-kubectl-kuberc-beta/</guid>
       <pubDate>Thu, 28 Aug 2025 18:30:00 +0000</pubDate>
-      <source>Kubernetes Blog</source>
-    </item>
-    <item>
-      <title>Kubernetes v1.34: Of Wind &amp; Will (O' WaW)</title>
-      <link>https://kubernetes.io/blog/2025/08/27/kubernetes-v1-34-release/</link>
-      <guid isPermaLink="true">https://kubernetes.io/blog/2025/08/27/kubernetes-v1-34-release/</guid>
-      <pubDate>Wed, 27 Aug 2025 18:30:00 +0000</pubDate>
       <source>Kubernetes Blog</source>
     </item>
     <item>

@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-aws-devops-blog.xml</link>
     <description>Articles from AWS DevOps Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-aws-devops-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 11 Feb 2026 12:42:15 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 12 Feb 2026 01:10:55 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Choosing between Amazon ECS Blue/Green Native or AWS CodeDeploy in AWS CDK</title>
+      <link>https://aws.amazon.com/blogs/devops/choosing-between-amazon-ecs-blue-green-native-or-aws-codedeploy-in-aws-cdk/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/choosing-between-amazon-ecs-blue-green-native-or-aws-codedeploy-in-aws-cdk/</guid>
+      <pubDate>Wed, 11 Feb 2026 18:59:00 +0000</pubDate>
+    </item>
     <item>
       <title>Building a scalable code modernization solution with AWS Transform custom</title>
       <link>https://aws.amazon.com/blogs/devops/building-a-scalable-code-modernization-solution-with-aws-transform-custom/</link>
@@ -120,12 +126,6 @@
       <link>https://aws.amazon.com/blogs/devops/safely-handle-configuration-drift-with-cloudformation-drift-aware-change-sets/</link>
       <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/safely-handle-configuration-drift-with-cloudformation-drift-aware-change-sets/</guid>
       <pubDate>Wed, 19 Nov 2025 18:54:15 +0000</pubDate>
-    </item>
-    <item>
-      <title>Accelerate infrastructure development with CloudFormation pre-deployment validation and simplified troubleshooting</title>
-      <link>https://aws.amazon.com/blogs/devops/accelerate-infrastructure-development-with-cloudformation-pre-deployment-validation-and-simplified-troubleshooting/</link>
-      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/accelerate-infrastructure-development-with-cloudformation-pre-deployment-validation-and-simplified-troubleshooting/</guid>
-      <pubDate>Tue, 18 Nov 2025 23:47:10 +0000</pubDate>
     </item>
   </channel>
 </rss>

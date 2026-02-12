@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-kubernetes-blog.xml</link>
     <description>Articles from Kubernetes Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-kubernetes-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 11 Feb 2026 12:42:15 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 12 Feb 2026 01:10:55 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Spotlight on SIG Architecture: API Governance</title>
+      <link>https://kubernetes.io/blog/2026/02/12/sig-architecture-api-spotlight/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2026/02/12/sig-architecture-api-spotlight/</guid>
+      <pubDate>Thu, 12 Feb 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Introducing Node Readiness Controller</title>
       <link>https://kubernetes.io/blog/2026/02/03/introducing-node-readiness-controller/</link>
@@ -300,12 +306,6 @@
       <link>https://kubernetes.io/blog/2025/08/28/kubernetes-v1-34-kubectl-kuberc-beta/</link>
       <guid isPermaLink="true">https://kubernetes.io/blog/2025/08/28/kubernetes-v1-34-kubectl-kuberc-beta/</guid>
       <pubDate>Thu, 28 Aug 2025 18:30:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Kubernetes v1.34: Of Wind &amp; Will (O' WaW)</title>
-      <link>https://kubernetes.io/blog/2025/08/27/kubernetes-v1-34-release/</link>
-      <guid isPermaLink="true">https://kubernetes.io/blog/2025/08/27/kubernetes-v1-34-release/</guid>
-      <pubDate>Wed, 27 Aug 2025 18:30:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
