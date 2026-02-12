@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml</link>
     <description>Articles from GitHub Changelog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 12 Feb 2026 01:10:55 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 12 Feb 2026 12:39:09 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>GitHub Mobile: Model picker for Copilot coding agent</title>
+      <link>https://github.blog/changelog/2026-02-11-github-mobile-model-picker-for-copilot-coding-agent</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-11-github-mobile-model-picker-for-copilot-coding-agent</guid>
+      <pubDate>Wed, 11 Feb 2026 18:14:50 +0000</pubDate>
+    </item>
     <item>
       <title>Track additional Dependabot configuration changes in audit logs</title>
       <link>https://github.blog/changelog/2026-02-10-track-additional-dependabot-configuration-changes-in-audit-logs</link>
@@ -60,12 +66,6 @@
       <link>https://github.blog/changelog/2026-02-05-github-actions-self-hosted-runner-minimum-version-enforcement-extended</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-02-05-github-actions-self-hosted-runner-minimum-version-enforcement-extended</guid>
       <pubDate>Thu, 05 Feb 2026 12:53:50 +0000</pubDate>
-    </item>
-    <item>
-      <title>GitHub Actions: Early February 2026 updates</title>
-      <link>https://github.blog/changelog/2026-02-05-github-actions-early-february-2026-updates</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-05-github-actions-early-february-2026-updates</guid>
-      <pubDate>Thu, 05 Feb 2026 12:51:46 +0000</pubDate>
     </item>
   </channel>
 </rss>

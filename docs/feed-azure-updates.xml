@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml</link>
     <description>Articles from Azure Updates</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 12 Feb 2026 01:10:55 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 12 Feb 2026 12:39:09 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>[In preview] Public Preview: Azure SQL updates for mid-February 2026</title>
@@ -608,6 +608,12 @@
       <pubDate>Tue, 18 Nov 2025 18:00:28 +0000</pubDate>
     </item>
     <item>
+      <title>[In preview] Public Preview: Entra-only identities support with Azure Files SMB</title>
+      <link>https://azure.microsoft.com/updates?id=527713</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=527713</guid>
+      <pubDate>Tue, 18 Nov 2025 17:30:44 +0000</pubDate>
+    </item>
+    <item>
       <title>[In development] Private Preview: Azure Boost confidential device</title>
       <link>https://azure.microsoft.com/updates?id=530661</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=530661</guid>
@@ -1193,12 +1199,6 @@
       <title>[Launched] Announcing: API Center Standard now included at no additional cost for linked Azure API Management Standard and Premium tiers</title>
       <link>https://azure.microsoft.com/updates?id=527621</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=527621</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Premium v2 tier in Azure API Management</title>
-      <link>https://azure.microsoft.com/updates?id=527612</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=527612</guid>
       <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
     </item>
     <item>
