@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-hashicorp-blog.xml</link>
     <description>Articles from HashiCorp Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-hashicorp-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 12 Feb 2026 12:39:09 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 13 Feb 2026 01:14:56 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Securing modern workloads with HashiCorp Vault and WIF</title>
+      <link>https://www.hashicorp.com/blog/securing-modern-workloads-with-hashicorp-vault-and-wif</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/securing-modern-workloads-with-hashicorp-vault-and-wif</guid>
+      <pubDate>Thu, 12 Feb 2026 17:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>How World Bank manages hybrid cloud complexity with Terraform</title>
       <link>https://www.hashicorp.com/blog/how-world-bank-manages-hybrid-cloud-complexity-with-terraform</link>
@@ -120,12 +126,6 @@
       <link>https://www.hashicorp.com/blog/new-year-new-cloud-strategy-5-shifts-cloud-leaders-will-be-making-in-2026</link>
       <guid isPermaLink="true">https://www.hashicorp.com/blog/new-year-new-cloud-strategy-5-shifts-cloud-leaders-will-be-making-in-2026</guid>
       <pubDate>Mon, 29 Dec 2025 17:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Infrastructure as demos: A Terraform-selling platform, built on Terraform</title>
-      <link>https://www.hashicorp.com/blog/infrastructure-as-demos-a-terraform-selling-platform-built-on-terraform</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/infrastructure-as-demos-a-terraform-selling-platform-built-on-terraform</guid>
-      <pubDate>Mon, 22 Dec 2025 17:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

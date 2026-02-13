@@ -5,8 +5,43 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 12 Feb 2026 12:39:09 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 13 Feb 2026 01:14:56 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>[Launched] Generally Available: AKS support for Kubernetes version 1.34</title>
+      <link>https://azure.microsoft.com/updates?id=548114</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=548114</guid>
+      <pubDate>Fri, 13 Feb 2026 00:30:15 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>Copilot Studio agent security: Top 10 risks you can detect and prevent</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/02/12/copilot-studio-agent-security-top-10-risks-detect-prevent/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/12/copilot-studio-agent-security-top-10-risks-detect-prevent/</guid>
+      <pubDate>Thu, 12 Feb 2026 20:38:49 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>Welcome to the Eternal September of open source. Here&amp;#8217;s what we plan to do for maintainers.</title>
+      <link>https://github.blog/open-source/maintainers/welcome-to-the-eternal-september-of-open-source-heres-what-we-plan-to-do-for-maintainers/</link>
+      <guid isPermaLink="true">https://github.blog/open-source/maintainers/welcome-to-the-eternal-september-of-open-source-heres-what-we-plan-to-do-for-maintainers/</guid>
+      <pubDate>Thu, 12 Feb 2026 20:14:11 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
+    <item>
+      <title>Securing modern workloads with HashiCorp Vault and WIF</title>
+      <link>https://www.hashicorp.com/blog/securing-modern-workloads-with-hashicorp-vault-and-wif</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/securing-modern-workloads-with-hashicorp-vault-and-wif</guid>
+      <pubDate>Thu, 12 Feb 2026 17:00:00 +0000</pubDate>
+      <source>HashiCorp Blog</source>
+    </item>
+    <item>
+      <title>Your complete guide to Microsoft experiences at RSAC™ 2026 Conference</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/02/12/your-complete-guide-to-microsoft-experiences-at-rsac-2026-conference/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/12/your-complete-guide-to-microsoft-experiences-at-rsac-2026-conference/</guid>
+      <pubDate>Thu, 12 Feb 2026 17:00:00 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
     <item>
       <title>Spotlight on SIG Architecture: API Governance</title>
       <link>https://kubernetes.io/blog/2026/02/12/sig-architecture-api-spotlight/</link>
@@ -393,25 +428,11 @@
       <source>HashiCorp Blog</source>
     </item>
     <item>
-      <title>Microsoft SDL: Evolving security practices for an AI-powered world</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/02/03/microsoft-sdl-evolving-security-practices-for-an-ai-powered-world/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/03/microsoft-sdl-evolving-security-practices-for-an-ai-powered-world/</guid>
-      <pubDate>Tue, 03 Feb 2026 17:00:00 +0000</pubDate>
-      <source>Microsoft Security</source>
-    </item>
-    <item>
       <title>Introducing Node Readiness Controller</title>
       <link>https://kubernetes.io/blog/2026/02/03/introducing-node-readiness-controller/</link>
       <guid isPermaLink="true">https://kubernetes.io/blog/2026/02/03/introducing-node-readiness-controller/</guid>
       <pubDate>Tue, 03 Feb 2026 02:00:00 +0000</pubDate>
       <source>Kubernetes Blog</source>
-    </item>
-    <item>
-      <title>Infostealers without borders: macOS, Python stealers, and platform abuse</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/02/02/infostealers-without-borders-macos-python-stealers-and-platform-abuse/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/02/infostealers-without-borders-macos-python-stealers-and-platform-abuse/</guid>
-      <pubDate>Mon, 02 Feb 2026 21:04:29 +0000</pubDate>
-      <source>Microsoft Security</source>
     </item>
     <item>
       <title>Retirement: Azure Front Door and Azure CDN profiles will end support for DHE cipher suites on April 1, 2026</title>
@@ -685,13 +706,6 @@
       <guid isPermaLink="true">https://circleci.com/blog/how-perk-recovers-faster-with-centralized-rollbacks/</guid>
       <pubDate>Mon, 26 Jan 2026 20:40:00 +0000</pubDate>
       <source>CircleCI Blog</source>
-    </item>
-    <item>
-      <title>Power agentic workflows in your terminal with GitHub Copilot CLI</title>
-      <link>https://github.blog/ai-and-ml/github-copilot/power-agentic-workflows-in-your-terminal-with-github-copilot-cli/</link>
-      <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/power-agentic-workflows-in-your-terminal-with-github-copilot-cli/</guid>
-      <pubDate>Mon, 26 Jan 2026 18:54:49 +0000</pubDate>
-      <source>GitHub Blog</source>
     </item>
     <item>
       <title>How resilient is HCP Vault during real AWS regional outages?</title>
@@ -1203,13 +1217,6 @@
       <guid isPermaLink="true">https://kubernetes.io/blog/2025/12/22/kubernetes-v1-35-kubelet-config-drop-in-directory-ga/</guid>
       <pubDate>Mon, 22 Dec 2025 18:30:00 +0000</pubDate>
       <source>Kubernetes Blog</source>
-    </item>
-    <item>
-      <title>Infrastructure as demos: A Terraform-selling platform, built on Terraform</title>
-      <link>https://www.hashicorp.com/blog/infrastructure-as-demos-a-terraform-selling-platform-built-on-terraform</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/infrastructure-as-demos-a-terraform-selling-platform-built-on-terraform</guid>
-      <pubDate>Mon, 22 Dec 2025 17:00:00 +0000</pubDate>
-      <source>HashiCorp Blog</source>
     </item>
     <item>
       <title>The New Test Run Hub is Going Generally Available!</title>
@@ -2601,13 +2608,6 @@
       <title>[Launched] Generally Available: Govern Model Context Protocol (MCP) endpoints using Azure API Management</title>
       <link>https://azure.microsoft.com/updates?id=527626</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=527626</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[Launched] Announcing: API Center Standard now included at no additional cost for linked Azure API Management Standard and Premium tiers</title>
-      <link>https://azure.microsoft.com/updates?id=527621</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=527621</guid>
       <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
       <source>Azure Updates</source>
     </item>
