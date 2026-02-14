@@ -5,8 +5,38 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml</link>
     <description>Articles from GitHub Changelog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 13 Feb 2026 12:34:16 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 14 Feb 2026 01:07:18 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Updated GitHub status page experience</title>
+      <link>https://github.blog/changelog/2026-02-13-updated-status-experience</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-13-updated-status-experience</guid>
+      <pubDate>Sat, 14 Feb 2026 00:16:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>Show profile names (first and last name) alongside user handles</title>
+      <link>https://github.blog/changelog/2026-02-13-you-can-now-show-profile-names-alongside-user-handles</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-13-you-can-now-show-profile-names-alongside-user-handles</guid>
+      <pubDate>Fri, 13 Feb 2026 18:27:44 +0000</pubDate>
+    </item>
+    <item>
+      <title>New repository settings for configuring pull request access</title>
+      <link>https://github.blog/changelog/2026-02-13-new-repository-settings-for-configuring-pull-request-access</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-13-new-repository-settings-for-configuring-pull-request-access</guid>
+      <pubDate>Fri, 13 Feb 2026 18:12:55 +0000</pubDate>
+    </item>
+    <item>
+      <title>Network configuration changes for Copilot coding agent</title>
+      <link>https://github.blog/changelog/2026-02-13-network-configuration-changes-for-copilot-coding-agent</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-13-network-configuration-changes-for-copilot-coding-agent</guid>
+      <pubDate>Fri, 13 Feb 2026 15:37:05 +0000</pubDate>
+    </item>
+    <item>
+      <title>GitHub Agentic Workflows are now in technical preview</title>
+      <link>https://github.blog/changelog/2026-02-13-github-agentic-workflows-are-now-in-technical-preview</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-13-github-agentic-workflows-are-now-in-technical-preview</guid>
+      <pubDate>Fri, 13 Feb 2026 14:00:26 +0000</pubDate>
+    </item>
     <item>
       <title>GitHub Mobile: Model picker for Copilot coding agent</title>
       <link>https://github.blog/changelog/2026-02-11-github-mobile-model-picker-for-copilot-coding-agent</link>
@@ -36,36 +66,6 @@
       <link>https://github.blog/changelog/2026-02-07-claude-opus-4-6-fast-is-now-in-public-preview-for-github-copilot</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-02-07-claude-opus-4-6-fast-is-now-in-public-preview-for-github-copilot</guid>
       <pubDate>Sat, 07 Feb 2026 16:02:23 +0000</pubDate>
-    </item>
-    <item>
-      <title>CodeQL 2.24.1 improves Maven private registry support and improves query accuracy</title>
-      <link>https://github.blog/changelog/2026-02-06-codeql-2-24-1-improves-maven-private-registry-support-and-improves-query-accuracy</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-06-codeql-2-24-1-improves-maven-private-registry-support-and-improves-query-accuracy</guid>
-      <pubDate>Sat, 07 Feb 2026 00:05:05 +0000</pubDate>
-    </item>
-    <item>
-      <title>Improved pull request Files changed – February 5 updates</title>
-      <link>https://github.blog/changelog/2026-02-05-improved-pull-request-files-changed-february-5-updates</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-05-improved-pull-request-files-changed-february-5-updates</guid>
-      <pubDate>Thu, 05 Feb 2026 23:05:59 +0000</pubDate>
-    </item>
-    <item>
-      <title>Pinned comments on GitHub Issues</title>
-      <link>https://github.blog/changelog/2026-02-05-pinned-comments-on-github-issues</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-05-pinned-comments-on-github-issues</guid>
-      <pubDate>Thu, 05 Feb 2026 17:59:54 +0000</pubDate>
-    </item>
-    <item>
-      <title>Claude Opus 4.6 is now generally available for GitHub Copilot</title>
-      <link>https://github.blog/changelog/2026-02-05-claude-opus-4-6-is-now-generally-available-for-github-copilot</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-05-claude-opus-4-6-is-now-generally-available-for-github-copilot</guid>
-      <pubDate>Thu, 05 Feb 2026 17:45:16 +0000</pubDate>
-    </item>
-    <item>
-      <title>GitHub Actions: Self-hosted runner minimum version enforcement extended</title>
-      <link>https://github.blog/changelog/2026-02-05-github-actions-self-hosted-runner-minimum-version-enforcement-extended</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-05-github-actions-self-hosted-runner-minimum-version-enforcement-extended</guid>
-      <pubDate>Thu, 05 Feb 2026 12:53:50 +0000</pubDate>
     </item>
   </channel>
 </rss>

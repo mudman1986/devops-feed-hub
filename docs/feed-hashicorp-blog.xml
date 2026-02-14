@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-hashicorp-blog.xml</link>
     <description>Articles from HashiCorp Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-hashicorp-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 13 Feb 2026 12:34:16 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 14 Feb 2026 01:07:18 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Vault certificates and secrets inventory reporting: Improve visibility and audit readiness</title>
+      <link>https://www.hashicorp.com/blog/vault-certificates-secrets-inventory-reporting-visibility-audit-readiness</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/vault-certificates-secrets-inventory-reporting-visibility-audit-readiness</guid>
+      <pubDate>Fri, 13 Feb 2026 17:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Securing modern workloads with HashiCorp Vault and WIF</title>
       <link>https://www.hashicorp.com/blog/securing-modern-workloads-with-hashicorp-vault-and-wif</link>
@@ -120,12 +126,6 @@
       <link>https://www.hashicorp.com/blog/how-airfrance-klm-built-secure-automation-platform-global-scale-terraform-vault-ansible</link>
       <guid isPermaLink="true">https://www.hashicorp.com/blog/how-airfrance-klm-built-secure-automation-platform-global-scale-terraform-vault-ansible</guid>
       <pubDate>Tue, 06 Jan 2026 15:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>New year, new cloud strategy: 5 shifts cloud leaders will be making in 2026</title>
-      <link>https://www.hashicorp.com/blog/new-year-new-cloud-strategy-5-shifts-cloud-leaders-will-be-making-in-2026</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/new-year-new-cloud-strategy-5-shifts-cloud-leaders-will-be-making-in-2026</guid>
-      <pubDate>Mon, 29 Dec 2025 17:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
