@@ -5,8 +5,15 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sat, 14 Feb 2026 01:07:18 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 14 Feb 2026 12:24:06 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>New features and improvements in GitHub Copilot in JetBrains IDEs</title>
+      <link>https://github.blog/changelog/2026-02-13-new-features-and-improvements-in-github-copilot-in-jetbrains-ides-2</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-13-new-features-and-improvements-in-github-copilot-in-jetbrains-ides-2</guid>
+      <pubDate>Sat, 14 Feb 2026 02:11:06 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
     <item>
       <title>Updated GitHub status page experience</title>
       <link>https://github.blog/changelog/2026-02-13-updated-status-experience</link>
@@ -243,13 +250,6 @@
       <link>https://github.blog/changelog/2026-02-09-github-apps-can-now-utilize-public-preview-enterprise-teams-apis-via-fine-grained-permissions</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-02-09-github-apps-can-now-utilize-public-preview-enterprise-teams-apis-via-fine-grained-permissions</guid>
       <pubDate>Mon, 09 Feb 2026 14:03:31 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>Fast mode for Claude Opus 4.6 is now in preview for GitHub Copilot</title>
-      <link>https://github.blog/changelog/2026-02-07-claude-opus-4-6-fast-is-now-in-public-preview-for-github-copilot</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-07-claude-opus-4-6-fast-is-now-in-public-preview-for-github-copilot</guid>
-      <pubDate>Sat, 07 Feb 2026 16:02:23 +0000</pubDate>
       <source>GitHub Changelog</source>
     </item>
     <item>
