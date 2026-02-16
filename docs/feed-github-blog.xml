@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-blog.xml</link>
     <description>Articles from GitHub Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sun, 15 Feb 2026 12:26:02 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 16 Feb 2026 01:10:57 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Automate repository tasks with GitHub Agentic Workflows</title>
