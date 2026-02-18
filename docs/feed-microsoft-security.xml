@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml</link>
     <description>Articles from Microsoft Security</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 17 Feb 2026 12:37:01 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 18 Feb 2026 01:12:27 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Unify now or pay later: New research exposes the operational cost of a fragmented SOC</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/02/17/unify-now-or-pay-later-new-research-exposes-the-operational-cost-of-a-fragmented-soc/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/17/unify-now-or-pay-later-new-research-exposes-the-operational-cost-of-a-fragmented-soc/</guid>
+      <pubDate>Tue, 17 Feb 2026 17:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Copilot Studio agent security: Top 10 risks you can detect and prevent</title>
       <link>https://www.microsoft.com/en-us/security/blog/2026/02/12/copilot-studio-agent-security-top-10-risks-detect-prevent/</link>
@@ -60,12 +66,6 @@
       <link>https://www.microsoft.com/en-us/security/blog/2026/02/05/the-security-implementation-gap-why-microsoft-is-supporting-operation-winter-shield/</link>
       <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/05/the-security-implementation-gap-why-microsoft-is-supporting-operation-winter-shield/</guid>
       <pubDate>Thu, 05 Feb 2026 17:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Detecting backdoored language models at scale</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/02/04/detecting-backdoored-language-models-at-scale/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/04/detecting-backdoored-language-models-at-scale/</guid>
-      <pubDate>Wed, 04 Feb 2026 17:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

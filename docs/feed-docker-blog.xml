@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-docker-blog.xml</link>
     <description>Articles from Docker Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-docker-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 17 Feb 2026 12:37:01 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 18 Feb 2026 01:12:27 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>The Multi-Model Database for AI Agents: Deploy SurrealDB with Docker Extension</title>
+      <link>https://www.docker.com/blog/deploy-surrealdb-docker-desktop-extension/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/deploy-surrealdb-docker-desktop-extension/</guid>
+      <pubDate>Tue, 17 Feb 2026 14:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Running NanoClaw in a Docker Shell Sandbox</title>
       <link>https://www.docker.com/blog/run-nanoclaw-in-docker-shell-sandboxes/</link>
@@ -60,12 +66,6 @@
       <link>https://www.docker.com/blog/run-claude-code-locally-docker-model-runner/</link>
       <guid isPermaLink="true">https://www.docker.com/blog/run-claude-code-locally-docker-model-runner/</guid>
       <pubDate>Mon, 26 Jan 2026 13:11:59 +0000</pubDate>
-    </item>
-    <item>
-      <title>Making the Most of Your Docker Hardened Images Enterprise Trial – Part 3</title>
-      <link>https://www.docker.com/blog/making-the-most-of-your-docker-hardened-images-enterprise-trial-part-3/</link>
-      <guid isPermaLink="true">https://www.docker.com/blog/making-the-most-of-your-docker-hardened-images-enterprise-trial-part-3/</guid>
-      <pubDate>Sun, 25 Jan 2026 17:51:40 +0000</pubDate>
     </item>
   </channel>
 </rss>

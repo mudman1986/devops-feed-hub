@@ -5,8 +5,56 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml</link>
     <description>Articles from GitHub Changelog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 17 Feb 2026 12:37:01 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 18 Feb 2026 01:12:27 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>API access to billing usage reports in public preview</title>
+      <link>https://github.blog/changelog/2026-02-17-api-access-to-billing-usage-reports-in-public-preview</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-17-api-access-to-billing-usage-reports-in-public-preview</guid>
+      <pubDate>Tue, 17 Feb 2026 22:15:41 +0000</pubDate>
+    </item>
+    <item>
+      <title>Enterprise-wide credential management tools for incident response</title>
+      <link>https://github.blog/changelog/2026-02-17-enterprise-wide-credential-management-tools-for-incident-response</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-17-enterprise-wide-credential-management-tools-for-incident-response</guid>
+      <pubDate>Tue, 17 Feb 2026 18:55:38 +0000</pubDate>
+    </item>
+    <item>
+      <title>Claude Sonnet 4.6 is now generally available in GitHub Copilot</title>
+      <link>https://github.blog/changelog/2026-02-17-claude-sonnet-4-6-is-now-generally-available-in-github-copilot</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-17-claude-sonnet-4-6-is-now-generally-available-in-github-copilot</guid>
+      <pubDate>Tue, 17 Feb 2026 18:35:17 +0000</pubDate>
+    </item>
+    <item>
+      <title>MCP Registry and more improvements in Copilot in Eclipse</title>
+      <link>https://github.blog/changelog/2026-02-17-mcp-registry-and-more-improvements-in-copilot-in-eclipse</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-17-mcp-registry-and-more-improvements-in-copilot-in-eclipse</guid>
+      <pubDate>Tue, 17 Feb 2026 18:22:24 +0000</pubDate>
+    </item>
+    <item>
+      <title>Delegate tasks to Copilot coding agent from Visual Studio</title>
+      <link>https://github.blog/changelog/2026-02-17-delegate-tasks-to-copilot-coding-agent-from-visual-studio</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-17-delegate-tasks-to-copilot-coding-agent-from-visual-studio</guid>
+      <pubDate>Tue, 17 Feb 2026 17:00:11 +0000</pubDate>
+    </item>
+    <item>
+      <title>Assign issues to Copilot coding agent from Raycast</title>
+      <link>https://github.blog/changelog/2026-02-17-assign-issues-to-copilot-coding-agent-from-raycast</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-17-assign-issues-to-copilot-coding-agent-from-raycast</guid>
+      <pubDate>Tue, 17 Feb 2026 16:59:55 +0000</pubDate>
+    </item>
+    <item>
+      <title>Required reviewer rule is now generally available</title>
+      <link>https://github.blog/changelog/2026-02-17-required-reviewer-rule-is-now-generally-available</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-17-required-reviewer-rule-is-now-generally-available</guid>
+      <pubDate>Tue, 17 Feb 2026 15:35:39 +0000</pubDate>
+    </item>
+    <item>
+      <title>Custom properties and rule insights improvements</title>
+      <link>https://github.blog/changelog/2026-02-17-custom-properties-and-rule-insights-improvements</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-17-custom-properties-and-rule-insights-improvements</guid>
+      <pubDate>Tue, 17 Feb 2026 15:35:22 +0000</pubDate>
+    </item>
     <item>
       <title>New features and improvements in GitHub Copilot in JetBrains IDEs</title>
       <link>https://github.blog/changelog/2026-02-13-new-features-and-improvements-in-github-copilot-in-jetbrains-ides-2</link>
@@ -18,54 +66,6 @@
       <link>https://github.blog/changelog/2026-02-13-updated-status-experience</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-02-13-updated-status-experience</guid>
       <pubDate>Sat, 14 Feb 2026 00:16:35 +0000</pubDate>
-    </item>
-    <item>
-      <title>Show profile names (first and last name) alongside user handles</title>
-      <link>https://github.blog/changelog/2026-02-13-you-can-now-show-profile-names-alongside-user-handles</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-13-you-can-now-show-profile-names-alongside-user-handles</guid>
-      <pubDate>Fri, 13 Feb 2026 18:27:44 +0000</pubDate>
-    </item>
-    <item>
-      <title>New repository settings for configuring pull request access</title>
-      <link>https://github.blog/changelog/2026-02-13-new-repository-settings-for-configuring-pull-request-access</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-13-new-repository-settings-for-configuring-pull-request-access</guid>
-      <pubDate>Fri, 13 Feb 2026 18:12:55 +0000</pubDate>
-    </item>
-    <item>
-      <title>Network configuration changes for Copilot coding agent</title>
-      <link>https://github.blog/changelog/2026-02-13-network-configuration-changes-for-copilot-coding-agent</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-13-network-configuration-changes-for-copilot-coding-agent</guid>
-      <pubDate>Fri, 13 Feb 2026 15:37:05 +0000</pubDate>
-    </item>
-    <item>
-      <title>GitHub Agentic Workflows are now in technical preview</title>
-      <link>https://github.blog/changelog/2026-02-13-github-agentic-workflows-are-now-in-technical-preview</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-13-github-agentic-workflows-are-now-in-technical-preview</guid>
-      <pubDate>Fri, 13 Feb 2026 14:00:26 +0000</pubDate>
-    </item>
-    <item>
-      <title>GitHub Mobile: Model picker for Copilot coding agent</title>
-      <link>https://github.blog/changelog/2026-02-11-github-mobile-model-picker-for-copilot-coding-agent</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-11-github-mobile-model-picker-for-copilot-coding-agent</guid>
-      <pubDate>Wed, 11 Feb 2026 18:14:50 +0000</pubDate>
-    </item>
-    <item>
-      <title>Track additional Dependabot configuration changes in audit logs</title>
-      <link>https://github.blog/changelog/2026-02-10-track-additional-dependabot-configuration-changes-in-audit-logs</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-10-track-additional-dependabot-configuration-changes-in-audit-logs</guid>
-      <pubDate>Tue, 10 Feb 2026 14:13:08 +0000</pubDate>
-    </item>
-    <item>
-      <title>GPT-5.3-Codex is now generally available for GitHub Copilot</title>
-      <link>https://github.blog/changelog/2026-02-09-gpt-5-3-codex-is-now-generally-available-for-github-copilot</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-09-gpt-5-3-codex-is-now-generally-available-for-github-copilot</guid>
-      <pubDate>Mon, 09 Feb 2026 17:41:21 +0000</pubDate>
-    </item>
-    <item>
-      <title>GitHub Apps can now utilize public preview Enterprise Teams APIs via fine-grained permissions</title>
-      <link>https://github.blog/changelog/2026-02-09-github-apps-can-now-utilize-public-preview-enterprise-teams-apis-via-fine-grained-permissions</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-09-github-apps-can-now-utilize-public-preview-enterprise-teams-apis-via-fine-grained-permissions</guid>
-      <pubDate>Mon, 09 Feb 2026 14:03:31 +0000</pubDate>
     </item>
   </channel>
 </rss>

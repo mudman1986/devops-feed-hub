@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-blog.xml</link>
     <description>Articles from GitHub Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 17 Feb 2026 12:37:01 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 18 Feb 2026 01:12:27 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Securing the AI software supply chain: Security results across 67 open source projects</title>
+      <link>https://github.blog/open-source/maintainers/securing-the-ai-software-supply-chain-security-results-across-67-open-source-projects/</link>
+      <guid isPermaLink="true">https://github.blog/open-source/maintainers/securing-the-ai-software-supply-chain-security-results-across-67-open-source-projects/</guid>
+      <pubDate>Tue, 17 Feb 2026 19:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Automate repository tasks with GitHub Agentic Workflows</title>
       <link>https://github.blog/ai-and-ml/automate-repository-tasks-with-github-agentic-workflows/</link>
@@ -60,12 +66,6 @@
       <link>https://github.blog/news-insights/policy-news-and-insights/year-recap-and-future-goals-for-the-github-innovation-graph/</link>
       <guid isPermaLink="true">https://github.blog/news-insights/policy-news-and-insights/year-recap-and-future-goals-for-the-github-innovation-graph/</guid>
       <pubDate>Wed, 28 Jan 2026 16:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>7 learnings from Anders Hejlsberg: The architect behind C# and TypeScript</title>
-      <link>https://github.blog/developer-skills/programming-languages-and-frameworks/7-learnings-from-anders-hejlsberg-the-architect-behind-c-and-typescript/</link>
-      <guid isPermaLink="true">https://github.blog/developer-skills/programming-languages-and-frameworks/7-learnings-from-anders-hejlsberg-the-architect-behind-c-and-typescript/</guid>
-      <pubDate>Tue, 27 Jan 2026 17:17:28 +0000</pubDate>
     </item>
   </channel>
 </rss>
