@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml</link>
     <description>Articles from Microsoft Security</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 18 Feb 2026 01:12:27 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 18 Feb 2026 12:36:30 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Unify now or pay later: New research exposes the operational cost of a fragmented SOC</title>
@@ -14,7 +14,7 @@
       <pubDate>Tue, 17 Feb 2026 17:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>Copilot Studio agent security: Top 10 risks you can detect and prevent</title>
+      <title>Top 10 actions to build agents securely with Microsoft Copilot Studio</title>
       <link>https://www.microsoft.com/en-us/security/blog/2026/02/12/copilot-studio-agent-security-top-10-risks-detect-prevent/</link>
       <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/12/copilot-studio-agent-security-top-10-risks-detect-prevent/</guid>
       <pubDate>Thu, 12 Feb 2026 20:38:49 +0000</pubDate>

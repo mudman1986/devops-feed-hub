@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml</link>
     <description>Articles from Azure Updates</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 18 Feb 2026 01:12:27 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 18 Feb 2026 12:36:30 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>[Launched] General Availability: Instant access support for incremental snapshots of Azure Premium SSD v2 and Ultra Disk</title>
