@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-blog.xml</link>
     <description>Articles from GitHub Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 18 Feb 2026 12:36:30 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 19 Feb 2026 01:11:24 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>What to expect for open source in 2026</title>
+      <link>https://github.blog/open-source/maintainers/what-to-expect-for-open-source-in-2026/</link>
+      <guid isPermaLink="true">https://github.blog/open-source/maintainers/what-to-expect-for-open-source-in-2026/</guid>
+      <pubDate>Wed, 18 Feb 2026 18:41:42 +0000</pubDate>
+    </item>
     <item>
       <title>Securing the AI software supply chain: Security results across 67 open source projects</title>
       <link>https://github.blog/open-source/maintainers/securing-the-ai-software-supply-chain-security-results-across-67-open-source-projects/</link>
@@ -60,12 +66,6 @@
       <link>https://github.blog/engineering/from-pixels-to-characters-the-engineering-behind-github-copilot-clis-animated-ascii-banner/</link>
       <guid isPermaLink="true">https://github.blog/engineering/from-pixels-to-characters-the-engineering-behind-github-copilot-clis-animated-ascii-banner/</guid>
       <pubDate>Wed, 28 Jan 2026 17:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Year recap and future goals for the GitHub Innovation Graph</title>
-      <link>https://github.blog/news-insights/policy-news-and-insights/year-recap-and-future-goals-for-the-github-innovation-graph/</link>
-      <guid isPermaLink="true">https://github.blog/news-insights/policy-news-and-insights/year-recap-and-future-goals-for-the-github-innovation-graph/</guid>
-      <pubDate>Wed, 28 Jan 2026 16:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
