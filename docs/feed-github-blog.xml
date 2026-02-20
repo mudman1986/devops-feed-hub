@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-blog.xml</link>
     <description>Articles from GitHub Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 19 Feb 2026 12:37:53 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 20 Feb 2026 01:07:11 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>How AI is reshaping developer choice (and Octoverse data proves it)</title>
+      <link>https://github.blog/ai-and-ml/generative-ai/how-ai-is-reshaping-developer-choice-and-octoverse-data-proves-it/</link>
+      <guid isPermaLink="true">https://github.blog/ai-and-ml/generative-ai/how-ai-is-reshaping-developer-choice-and-octoverse-data-proves-it/</guid>
+      <pubDate>Thu, 19 Feb 2026 17:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>What to expect for open source in 2026</title>
       <link>https://github.blog/open-source/maintainers/what-to-expect-for-open-source-in-2026/</link>
@@ -60,12 +66,6 @@
       <link>https://github.blog/ai-and-ml/github-copilot/how-to-maximize-github-copilots-agentic-capabilities/</link>
       <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/how-to-maximize-github-copilots-agentic-capabilities/</guid>
       <pubDate>Mon, 02 Feb 2026 17:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>From pixels to characters: The engineering behind GitHub Copilot CLI’s animated ASCII banner</title>
-      <link>https://github.blog/engineering/from-pixels-to-characters-the-engineering-behind-github-copilot-clis-animated-ascii-banner/</link>
-      <guid isPermaLink="true">https://github.blog/engineering/from-pixels-to-characters-the-engineering-behind-github-copilot-clis-animated-ascii-banner/</guid>
-      <pubDate>Wed, 28 Jan 2026 17:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

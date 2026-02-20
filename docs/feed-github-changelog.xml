@@ -5,67 +5,67 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml</link>
     <description>Articles from GitHub Changelog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 19 Feb 2026 12:37:53 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 20 Feb 2026 01:07:11 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Workflow dispatch API now returns run IDs</title>
+      <link>https://github.blog/changelog/2026-02-19-workflow-dispatch-api-now-returns-run-ids</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-19-workflow-dispatch-api-now-returns-run-ids</guid>
+      <pubDate>Thu, 19 Feb 2026 22:39:37 +0000</pubDate>
+    </item>
+    <item>
+      <title>GitHub Copilot support in Zed generally available</title>
+      <link>https://github.blog/changelog/2026-02-19-github-copilot-support-in-zed-generally-available</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-19-github-copilot-support-in-zed-generally-available</guid>
+      <pubDate>Thu, 19 Feb 2026 22:24:53 +0000</pubDate>
+    </item>
+    <item>
+      <title>Changes to test merge commit generation for pull requests</title>
+      <link>https://github.blog/changelog/2026-02-19-changes-to-test-merge-commit-generation-for-pull-requests</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-19-changes-to-test-merge-commit-generation-for-pull-requests</guid>
+      <pubDate>Thu, 19 Feb 2026 22:01:57 +0000</pubDate>
+    </item>
+    <item>
+      <title>Copilot coding agent model picker for Copilot Business and Enterprise</title>
+      <link>https://github.blog/changelog/2026-02-19-model-picker-for-copilot-coding-agent-for-copilot-business-and-enterprise-users</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-19-model-picker-for-copilot-coding-agent-for-copilot-business-and-enterprise-users</guid>
+      <pubDate>Thu, 19 Feb 2026 19:55:01 +0000</pubDate>
+    </item>
+    <item>
+      <title>Selected Anthropic and OpenAI models are now deprecated</title>
+      <link>https://github.blog/changelog/2026-02-19-selected-anthropic-and-openai-models-are-now-deprecated</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-19-selected-anthropic-and-openai-models-are-now-deprecated</guid>
+      <pubDate>Thu, 19 Feb 2026 19:47:37 +0000</pubDate>
+    </item>
+    <item>
+      <title>GitHub Projects: Import items based on a query and hierarchy view improvements</title>
+      <link>https://github.blog/changelog/2026-02-19-github-projects-import-items-based-on-a-query-and-hierarchy-view-improvements</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-19-github-projects-import-items-based-on-a-query-and-hierarchy-view-improvements</guid>
+      <pubDate>Thu, 19 Feb 2026 19:33:33 +0000</pubDate>
+    </item>
+    <item>
+      <title>Access all pull request comments without leaving the new Files changed page</title>
+      <link>https://github.blog/changelog/2026-02-19-access-all-pull-request-comments-without-leaving-the-new-files-changed-page</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-19-access-all-pull-request-comments-without-leaving-the-new-files-changed-page</guid>
+      <pubDate>Thu, 19 Feb 2026 19:03:09 +0000</pubDate>
+    </item>
+    <item>
+      <title>Gemini 3.1 Pro is now in public preview in GitHub Copilot</title>
+      <link>https://github.blog/changelog/2026-02-19-gemini-3-1-pro-is-now-in-public-preview-in-github-copilot</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-19-gemini-3-1-pro-is-now-in-public-preview-in-github-copilot</guid>
+      <pubDate>Thu, 19 Feb 2026 17:30:18 +0000</pubDate>
+    </item>
+    <item>
+      <title>Pull request throughput and time to merge available in Copilot usage metrics API</title>
+      <link>https://github.blog/changelog/2026-02-19-pull-request-throughput-and-time-to-merge-available-in-copilot-usage-metrics-api</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-19-pull-request-throughput-and-time-to-merge-available-in-copilot-usage-metrics-api</guid>
+      <pubDate>Thu, 19 Feb 2026 16:08:02 +0000</pubDate>
+    </item>
     <item>
       <title>Use Copilot coding agent with Windows projects</title>
       <link>https://github.blog/changelog/2026-02-18-use-copilot-coding-agent-with-windows-projects</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-02-18-use-copilot-coding-agent-with-windows-projects</guid>
       <pubDate>Wed, 18 Feb 2026 22:04:40 +0000</pubDate>
-    </item>
-    <item>
-      <title>Copilot coding agent supports code referencing</title>
-      <link>https://github.blog/changelog/2026-02-18-copilot-coding-agent-supports-code-referencing</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-18-copilot-coding-agent-supports-code-referencing</guid>
-      <pubDate>Wed, 18 Feb 2026 22:02:22 +0000</pubDate>
-    </item>
-    <item>
-      <title>Secret scanning improvements to extended metadata checks</title>
-      <link>https://github.blog/changelog/2026-02-18-secret-scanning-improvements-to-extended-metadata-checks</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-18-secret-scanning-improvements-to-extended-metadata-checks</guid>
-      <pubDate>Wed, 18 Feb 2026 21:31:29 +0000</pubDate>
-    </item>
-    <item>
-      <title>Claude Opus 4.6 is now available in Visual Studio, JetBrains IDEs, Xcode, and Eclipse</title>
-      <link>https://github.blog/changelog/2026-02-18-claude-opus-4-6-is-now-available-in-visual-studio-jetbrains-ides-xcode-and-eclipse</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-18-claude-opus-4-6-is-now-available-in-visual-studio-jetbrains-ides-xcode-and-eclipse</guid>
-      <pubDate>Wed, 18 Feb 2026 20:05:54 +0000</pubDate>
-    </item>
-    <item>
-      <title>npm bulk trusted publishing config and script security now generally available</title>
-      <link>https://github.blog/changelog/2026-02-18-npm-bulk-trusted-publishing-config-and-script-security-now-generally-available</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-18-npm-bulk-trusted-publishing-config-and-script-security-now-generally-available</guid>
-      <pubDate>Wed, 18 Feb 2026 18:11:24 +0000</pubDate>
-    </item>
-    <item>
-      <title>API access to billing usage reports in public preview</title>
-      <link>https://github.blog/changelog/2026-02-17-api-access-to-billing-usage-reports-in-public-preview</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-17-api-access-to-billing-usage-reports-in-public-preview</guid>
-      <pubDate>Tue, 17 Feb 2026 22:15:41 +0000</pubDate>
-    </item>
-    <item>
-      <title>Enterprise-wide credential management tools for incident response</title>
-      <link>https://github.blog/changelog/2026-02-17-enterprise-wide-credential-management-tools-for-incident-response</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-17-enterprise-wide-credential-management-tools-for-incident-response</guid>
-      <pubDate>Tue, 17 Feb 2026 18:55:38 +0000</pubDate>
-    </item>
-    <item>
-      <title>Claude Sonnet 4.6 is now generally available in GitHub Copilot</title>
-      <link>https://github.blog/changelog/2026-02-17-claude-sonnet-4-6-is-now-generally-available-in-github-copilot</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-17-claude-sonnet-4-6-is-now-generally-available-in-github-copilot</guid>
-      <pubDate>Tue, 17 Feb 2026 18:35:17 +0000</pubDate>
-    </item>
-    <item>
-      <title>MCP Registry and more improvements in Copilot in Eclipse</title>
-      <link>https://github.blog/changelog/2026-02-17-mcp-registry-and-more-improvements-in-copilot-in-eclipse</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-17-mcp-registry-and-more-improvements-in-copilot-in-eclipse</guid>
-      <pubDate>Tue, 17 Feb 2026 18:22:24 +0000</pubDate>
-    </item>
-    <item>
-      <title>Delegate tasks to Copilot coding agent from Visual Studio</title>
-      <link>https://github.blog/changelog/2026-02-17-delegate-tasks-to-copilot-coding-agent-from-visual-studio</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-17-delegate-tasks-to-copilot-coding-agent-from-visual-studio</guid>
-      <pubDate>Tue, 17 Feb 2026 17:00:11 +0000</pubDate>
     </item>
   </channel>
 </rss>

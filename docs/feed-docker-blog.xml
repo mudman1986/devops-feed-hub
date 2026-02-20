@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-docker-blog.xml</link>
     <description>Articles from Docker Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-docker-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 19 Feb 2026 12:37:53 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 20 Feb 2026 01:07:11 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>How Medplum Secured Their Healthcare Platform with Docker Hardened Images (DHI)</title>
+      <link>https://www.docker.com/blog/medplum-healthcare-docker-hardened-images/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/medplum-healthcare-docker-hardened-images/</guid>
+      <pubDate>Thu, 19 Feb 2026 14:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>The Multi-Model Database for AI Agents: Deploy SurrealDB with Docker Extension</title>
       <link>https://www.docker.com/blog/deploy-surrealdb-docker-desktop-extension/</link>
@@ -60,12 +66,6 @@
       <link>https://www.docker.com/blog/clawdbot-docker-model-runner-private-personal-ai/</link>
       <guid isPermaLink="true">https://www.docker.com/blog/clawdbot-docker-model-runner-private-personal-ai/</guid>
       <pubDate>Mon, 26 Jan 2026 20:51:41 +0000</pubDate>
-    </item>
-    <item>
-      <title>Run Claude Code Locally with Docker Model Runner</title>
-      <link>https://www.docker.com/blog/run-claude-code-locally-docker-model-runner/</link>
-      <guid isPermaLink="true">https://www.docker.com/blog/run-claude-code-locally-docker-model-runner/</guid>
-      <pubDate>Mon, 26 Jan 2026 13:11:59 +0000</pubDate>
     </item>
   </channel>
 </rss>

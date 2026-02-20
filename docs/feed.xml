@@ -5,8 +5,141 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 19 Feb 2026 12:37:53 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 20 Feb 2026 01:07:11 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Workflow dispatch API now returns run IDs</title>
+      <link>https://github.blog/changelog/2026-02-19-workflow-dispatch-api-now-returns-run-ids</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-19-workflow-dispatch-api-now-returns-run-ids</guid>
+      <pubDate>Thu, 19 Feb 2026 22:39:37 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>GitHub Copilot support in Zed generally available</title>
+      <link>https://github.blog/changelog/2026-02-19-github-copilot-support-in-zed-generally-available</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-19-github-copilot-support-in-zed-generally-available</guid>
+      <pubDate>Thu, 19 Feb 2026 22:24:53 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Changes to test merge commit generation for pull requests</title>
+      <link>https://github.blog/changelog/2026-02-19-changes-to-test-merge-commit-generation-for-pull-requests</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-19-changes-to-test-merge-commit-generation-for-pull-requests</guid>
+      <pubDate>Thu, 19 Feb 2026 22:01:57 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Copilot coding agent model picker for Copilot Business and Enterprise</title>
+      <link>https://github.blog/changelog/2026-02-19-model-picker-for-copilot-coding-agent-for-copilot-business-and-enterprise-users</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-19-model-picker-for-copilot-coding-agent-for-copilot-business-and-enterprise-users</guid>
+      <pubDate>Thu, 19 Feb 2026 19:55:01 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Selected Anthropic and OpenAI models are now deprecated</title>
+      <link>https://github.blog/changelog/2026-02-19-selected-anthropic-and-openai-models-are-now-deprecated</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-19-selected-anthropic-and-openai-models-are-now-deprecated</guid>
+      <pubDate>Thu, 19 Feb 2026 19:47:37 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>GitHub Projects: Import items based on a query and hierarchy view improvements</title>
+      <link>https://github.blog/changelog/2026-02-19-github-projects-import-items-based-on-a-query-and-hierarchy-view-improvements</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-19-github-projects-import-items-based-on-a-query-and-hierarchy-view-improvements</guid>
+      <pubDate>Thu, 19 Feb 2026 19:33:33 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Access all pull request comments without leaving the new Files changed page</title>
+      <link>https://github.blog/changelog/2026-02-19-access-all-pull-request-comments-without-leaving-the-new-files-changed-page</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-19-access-all-pull-request-comments-without-leaving-the-new-files-changed-page</guid>
+      <pubDate>Thu, 19 Feb 2026 19:03:09 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Gemini 3.1 Pro is now in public preview in GitHub Copilot</title>
+      <link>https://github.blog/changelog/2026-02-19-gemini-3-1-pro-is-now-in-public-preview-in-github-copilot</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-19-gemini-3-1-pro-is-now-in-public-preview-in-github-copilot</guid>
+      <pubDate>Thu, 19 Feb 2026 17:30:18 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>How AI is reshaping developer choice (and Octoverse data proves it)</title>
+      <link>https://github.blog/ai-and-ml/generative-ai/how-ai-is-reshaping-developer-choice-and-octoverse-data-proves-it/</link>
+      <guid isPermaLink="true">https://github.blog/ai-and-ml/generative-ai/how-ai-is-reshaping-developer-choice-and-octoverse-data-proves-it/</guid>
+      <pubDate>Thu, 19 Feb 2026 17:00:00 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
+    <item>
+      <title>Saving banks from technical debt: How Atruvia built secure, self-service infrastructure</title>
+      <link>https://www.hashicorp.com/blog/saving-banks-from-technical-debt-how-atruvia-built-secure-self-service-infrastructure</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/saving-banks-from-technical-debt-how-atruvia-built-secure-self-service-infrastructure</guid>
+      <pubDate>Thu, 19 Feb 2026 17:00:00 +0000</pubDate>
+      <source>HashiCorp Blog</source>
+    </item>
+    <item>
+      <title>New e-book: Establishing a proactive defense with Microsoft Security Exposure Management</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/02/19/new-e-book-establishing-a-proactive-defense-with-microsoft-security-exposure-management/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/19/new-e-book-establishing-a-proactive-defense-with-microsoft-security-exposure-management/</guid>
+      <pubDate>Thu, 19 Feb 2026 17:00:00 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>Running OpenClaw safely: identity, isolation, and runtime risk</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/02/19/running-openclaw-safely-identity-isolation-runtime-risk/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/19/running-openclaw-safely-identity-isolation-runtime-risk/</guid>
+      <pubDate>Thu, 19 Feb 2026 16:27:00 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>Pull request throughput and time to merge available in Copilot usage metrics API</title>
+      <link>https://github.blog/changelog/2026-02-19-pull-request-throughput-and-time-to-merge-available-in-copilot-usage-metrics-api</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-19-pull-request-throughput-and-time-to-merge-available-in-copilot-usage-metrics-api</guid>
+      <pubDate>Thu, 19 Feb 2026 16:08:02 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Simultaneous multi-cloud deployment to AWS and GCP with CircleCI</title>
+      <link>https://circleci.com/blog/simultaneous-multi-cloud-deployment-to-aws-and-gcp/</link>
+      <guid isPermaLink="true">https://circleci.com/blog/simultaneous-multi-cloud-deployment-to-aws-and-gcp/</guid>
+      <pubDate>Thu, 19 Feb 2026 16:00:00 +0000</pubDate>
+      <source>CircleCI Blog</source>
+    </item>
+    <item>
+      <title>How Medplum Secured Their Healthcare Platform with Docker Hardened Images (DHI)</title>
+      <link>https://www.docker.com/blog/medplum-healthcare-docker-hardened-images/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/medplum-healthcare-docker-hardened-images/</guid>
+      <pubDate>Thu, 19 Feb 2026 14:00:00 +0000</pubDate>
+      <source>Docker Blog</source>
+    </item>
+    <item>
+      <title>Agentic AI, enterprise control: Self-hosted Duo Agent Platform and BYOM</title>
+      <link>https://about.gitlab.com/blog/agentic-ai-enterprise-control-self-hosted-duo-agent-platform-and-byom/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/agentic-ai-enterprise-control-self-hosted-duo-agent-platform-and-byom/</guid>
+      <pubDate>Thu, 19 Feb 2026 00:00:00 +0000</pubDate>
+      <source>GitLab Blog</source>
+    </item>
+    <item>
+      <title>GitLab Threat Intelligence Team reveals North Korean tradecraft</title>
+      <link>https://about.gitlab.com/blog/gitlab-threat-intelligence-reveals-north-korean-tradecraft/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/gitlab-threat-intelligence-reveals-north-korean-tradecraft/</guid>
+      <pubDate>Thu, 19 Feb 2026 00:00:00 +0000</pubDate>
+      <source>GitLab Blog</source>
+    </item>
+    <item>
+      <title>Track vulnerability remediation with the updated GitLab Security Dashboard</title>
+      <link>https://about.gitlab.com/blog/track-vulnerability-remediation-with-the-updated-gitlab-security-dashboard/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/track-vulnerability-remediation-with-the-updated-gitlab-security-dashboard/</guid>
+      <pubDate>Thu, 19 Feb 2026 00:00:00 +0000</pubDate>
+      <source>GitLab Blog</source>
+    </item>
+    <item>
+      <title>Jenkins accepted as mentoring org for Google Summer of Code (GSoC) 2026</title>
+      <link>https:/www.jenkins.io/blog/2026/02/19/jenkins-accepted-as-gsoc-2026-mentoring-org/</link>
+      <guid isPermaLink="true">https:/www.jenkins.io/blog/2026/02/19/jenkins-accepted-as-gsoc-2026-mentoring-org/</guid>
+      <pubDate>Thu, 19 Feb 2026 00:00:00 +0000</pubDate>
+      <source>Jenkins Blog</source>
+    </item>
     <item>
       <title>Use Copilot coding agent with Windows projects</title>
       <link>https://github.blog/changelog/2026-02-18-use-copilot-coding-agent-with-windows-projects</link>
@@ -15,39 +148,11 @@
       <source>GitHub Changelog</source>
     </item>
     <item>
-      <title>Copilot coding agent supports code referencing</title>
-      <link>https://github.blog/changelog/2026-02-18-copilot-coding-agent-supports-code-referencing</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-18-copilot-coding-agent-supports-code-referencing</guid>
-      <pubDate>Wed, 18 Feb 2026 22:02:22 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>Secret scanning improvements to extended metadata checks</title>
-      <link>https://github.blog/changelog/2026-02-18-secret-scanning-improvements-to-extended-metadata-checks</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-18-secret-scanning-improvements-to-extended-metadata-checks</guid>
-      <pubDate>Wed, 18 Feb 2026 21:31:29 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>Claude Opus 4.6 is now available in Visual Studio, JetBrains IDEs, Xcode, and Eclipse</title>
-      <link>https://github.blog/changelog/2026-02-18-claude-opus-4-6-is-now-available-in-visual-studio-jetbrains-ides-xcode-and-eclipse</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-18-claude-opus-4-6-is-now-available-in-visual-studio-jetbrains-ides-xcode-and-eclipse</guid>
-      <pubDate>Wed, 18 Feb 2026 20:05:54 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>What to expect for open source in 2026</title>
       <link>https://github.blog/open-source/maintainers/what-to-expect-for-open-source-in-2026/</link>
       <guid isPermaLink="true">https://github.blog/open-source/maintainers/what-to-expect-for-open-source-in-2026/</guid>
       <pubDate>Wed, 18 Feb 2026 18:41:42 +0000</pubDate>
       <source>GitHub Blog</source>
-    </item>
-    <item>
-      <title>npm bulk trusted publishing config and script security now generally available</title>
-      <link>https://github.blog/changelog/2026-02-18-npm-bulk-trusted-publishing-config-and-script-security-now-generally-available</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-18-npm-bulk-trusted-publishing-config-and-script-security-now-generally-available</guid>
-      <pubDate>Wed, 18 Feb 2026 18:11:24 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>[Launched] Generally Available: Anthropic Claude Sonnet 4.6 is now available on Azure Databricks</title>
@@ -83,6 +188,13 @@
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=556003</guid>
       <pubDate>Wed, 18 Feb 2026 18:00:55 +0000</pubDate>
       <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>How Benchling saved 8,000 hours by changing how it used Terraform</title>
+      <link>https://www.hashicorp.com/blog/how-benchling-saved-8000-hours-by-changing-how-it-used-terraform</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/how-benchling-saved-8000-hours-by-changing-how-it-used-terraform</guid>
+      <pubDate>Wed, 18 Feb 2026 18:00:00 +0000</pubDate>
+      <source>HashiCorp Blog</source>
     </item>
     <item>
       <title>[Launched] Generally Available: Node auto-provisioning support in Azure government and private cloud</title>
@@ -141,25 +253,11 @@
       <source>GitLab Blog</source>
     </item>
     <item>
-      <title>API access to billing usage reports in public preview</title>
-      <link>https://github.blog/changelog/2026-02-17-api-access-to-billing-usage-reports-in-public-preview</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-17-api-access-to-billing-usage-reports-in-public-preview</guid>
-      <pubDate>Tue, 17 Feb 2026 22:15:41 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>Securing the AI software supply chain: Security results across 67 open source projects</title>
       <link>https://github.blog/open-source/maintainers/securing-the-ai-software-supply-chain-security-results-across-67-open-source-projects/</link>
       <guid isPermaLink="true">https://github.blog/open-source/maintainers/securing-the-ai-software-supply-chain-security-results-across-67-open-source-projects/</guid>
       <pubDate>Tue, 17 Feb 2026 19:00:00 +0000</pubDate>
       <source>GitHub Blog</source>
-    </item>
-    <item>
-      <title>Enterprise-wide credential management tools for incident response</title>
-      <link>https://github.blog/changelog/2026-02-17-enterprise-wide-credential-management-tools-for-incident-response</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-17-enterprise-wide-credential-management-tools-for-incident-response</guid>
-      <pubDate>Tue, 17 Feb 2026 18:55:38 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>HCP Packer adds SBOM vulnerability scanning</title>
@@ -169,32 +267,11 @@
       <source>HashiCorp Blog</source>
     </item>
     <item>
-      <title>Claude Sonnet 4.6 is now generally available in GitHub Copilot</title>
-      <link>https://github.blog/changelog/2026-02-17-claude-sonnet-4-6-is-now-generally-available-in-github-copilot</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-17-claude-sonnet-4-6-is-now-generally-available-in-github-copilot</guid>
-      <pubDate>Tue, 17 Feb 2026 18:35:17 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>MCP Registry and more improvements in Copilot in Eclipse</title>
-      <link>https://github.blog/changelog/2026-02-17-mcp-registry-and-more-improvements-in-copilot-in-eclipse</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-17-mcp-registry-and-more-improvements-in-copilot-in-eclipse</guid>
-      <pubDate>Tue, 17 Feb 2026 18:22:24 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>[Launched] Generally Available: Instant access support for incremental snapshots of Azure Premium SSD v2 and Ultra Disk</title>
       <link>https://azure.microsoft.com/updates?id=545784</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=545784</guid>
       <pubDate>Tue, 17 Feb 2026 17:00:32 +0000</pubDate>
       <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>Delegate tasks to Copilot coding agent from Visual Studio</title>
-      <link>https://github.blog/changelog/2026-02-17-delegate-tasks-to-copilot-coding-agent-from-visual-studio</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-17-delegate-tasks-to-copilot-coding-agent-from-visual-studio</guid>
-      <pubDate>Tue, 17 Feb 2026 17:00:11 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>Unify now or pay later: New research exposes the operational cost of a fragmented SOC</title>
@@ -491,13 +568,6 @@
       <source>Azure Updates</source>
     </item>
     <item>
-      <title>New Clickfix variant ‘CrashFix’ deploying Python Remote Access Trojan</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/02/05/clickfix-variant-crashfix-deploying-python-rat-trojan/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/05/clickfix-variant-crashfix-deploying-python-rat-trojan/</guid>
-      <pubDate>Thu, 05 Feb 2026 18:51:39 +0000</pubDate>
-      <source>Microsoft Security</source>
-    </item>
-    <item>
       <title>[In preview] Public Preview: Claude Opus 4.6, Available on Microsoft Foundry</title>
       <link>https://azure.microsoft.com/updates?id=555870</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=555870</guid>
@@ -517,13 +587,6 @@
       <guid isPermaLink="true">https://github.blog/ai-and-ml/generative-ai/continuous-ai-in-practice-what-developers-can-automate-today-with-agentic-ci/</guid>
       <pubDate>Thu, 05 Feb 2026 17:00:00 +0000</pubDate>
       <source>GitHub Blog</source>
-    </item>
-    <item>
-      <title>The security implementation gap: Why Microsoft is supporting Operation Winter SHIELD</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/02/05/the-security-implementation-gap-why-microsoft-is-supporting-operation-winter-shield/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/05/the-security-implementation-gap-why-microsoft-is-supporting-operation-winter-shield/</guid>
-      <pubDate>Thu, 05 Feb 2026 17:00:00 +0000</pubDate>
-      <source>Microsoft Security</source>
     </item>
     <item>
       <title>AWS Transform custom: AI-driven Java modernization to reduce tech debt</title>
@@ -757,13 +820,6 @@
       <source>Azure Updates</source>
     </item>
     <item>
-      <title>From pixels to characters: The engineering behind GitHub Copilot CLI’s animated ASCII banner</title>
-      <link>https://github.blog/engineering/from-pixels-to-characters-the-engineering-behind-github-copilot-clis-animated-ascii-banner/</link>
-      <guid isPermaLink="true">https://github.blog/engineering/from-pixels-to-characters-the-engineering-behind-github-copilot-clis-animated-ascii-banner/</guid>
-      <pubDate>Wed, 28 Jan 2026 17:00:00 +0000</pubDate>
-      <source>GitHub Blog</source>
-    </item>
-    <item>
       <title>The top 5 sources of secret sprawl, and how attackers exploit them</title>
       <link>https://www.hashicorp.com/blog/the-top-5-sources-of-secret-sprawl-and-how-attackers-exploit-them</link>
       <guid isPermaLink="true">https://www.hashicorp.com/blog/the-top-5-sources-of-secret-sprawl-and-how-attackers-exploit-them</guid>
@@ -881,20 +937,6 @@
       <guid isPermaLink="true">https://www.hashicorp.com/blog/how-resilient-is-hcp-vault-during-real-aws-regional-outages</guid>
       <pubDate>Mon, 26 Jan 2026 17:00:00 +0000</pubDate>
       <source>HashiCorp Blog</source>
-    </item>
-    <item>
-      <title>Automate deployment of MCP servers to AWS App Runner with CircleCI</title>
-      <link>https://circleci.com/blog/deploy-mcp-servers-to-aws-app-runner/</link>
-      <guid isPermaLink="true">https://circleci.com/blog/deploy-mcp-servers-to-aws-app-runner/</guid>
-      <pubDate>Mon, 26 Jan 2026 16:00:00 +0000</pubDate>
-      <source>CircleCI Blog</source>
-    </item>
-    <item>
-      <title>Run Claude Code Locally with Docker Model Runner</title>
-      <link>https://www.docker.com/blog/run-claude-code-locally-docker-model-runner/</link>
-      <guid isPermaLink="true">https://www.docker.com/blog/run-claude-code-locally-docker-model-runner/</guid>
-      <pubDate>Mon, 26 Jan 2026 13:11:59 +0000</pubDate>
-      <source>Docker Blog</source>
     </item>
     <item>
       <title>Terraform MCP server updates: Stacks support, new tools, and tips</title>
@@ -1142,20 +1184,6 @@
       <source>HashiCorp Blog</source>
     </item>
     <item>
-      <title>How to start consolidating your cybersecurity tools</title>
-      <link>https://www.hashicorp.com/blog/how-to-start-consolidating-your-cybersecurity-tools</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/how-to-start-consolidating-your-cybersecurity-tools</guid>
-      <pubDate>Mon, 12 Jan 2026 23:00:00 +0000</pubDate>
-      <source>HashiCorp Blog</source>
-    </item>
-    <item>
-      <title>Hybrid cloud, explained: What it is, what it isn’t, and why having a plan matters in 2026</title>
-      <link>https://www.hashicorp.com/blog/hybrid-cloud-explained-what-it-is-what-it-isn-t-and-why-having-a-plan-matters</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/hybrid-cloud-explained-what-it-is-what-it-isn-t-and-why-having-a-plan-matters</guid>
-      <pubDate>Mon, 12 Jan 2026 17:00:00 +0000</pubDate>
-      <source>HashiCorp Blog</source>
-    </item>
-    <item>
       <title>Kubernetes v1.35: Restricting executables invoked by kubeconfigs via exec plugin allowList added to kuberc</title>
       <link>https://kubernetes.io/blog/2026/01/09/kubernetes-v1-35-kuberc-credential-plugin-allowlist/</link>
       <guid isPermaLink="true">https://kubernetes.io/blog/2026/01/09/kubernetes-v1-35-kuberc-credential-plugin-allowlist/</guid>
@@ -1191,32 +1219,11 @@
       <source>Kubernetes Blog</source>
     </item>
     <item>
-      <title>AI is reshaping DevSecOps: Attend GitLab Transcend to see what’s next</title>
-      <link>https://about.gitlab.com/blog/ai-is-reshaping-devsecops-attend-gitlab-transcend-to-see-whats-next/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/ai-is-reshaping-devsecops-attend-gitlab-transcend-to-see-whats-next/</guid>
-      <pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate>
-      <source>GitLab Blog</source>
-    </item>
-    <item>
-      <title>How IIT Bombay students are coding the future with GitLab</title>
-      <link>https://about.gitlab.com/blog/how-iit-bombay-students-code-future-with-gitlab/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/how-iit-bombay-students-code-future-with-gitlab/</guid>
-      <pubDate>Thu, 08 Jan 2026 00:00:00 +0000</pubDate>
-      <source>GitLab Blog</source>
-    </item>
-    <item>
       <title>Kubernetes v1.35: A Better Way to Pass Service Account Tokens to CSI Drivers</title>
       <link>https://kubernetes.io/blog/2026/01/07/kubernetes-v1-35-csi-sa-tokens-secrets-field-beta/</link>
       <guid isPermaLink="true">https://kubernetes.io/blog/2026/01/07/kubernetes-v1-35-csi-sa-tokens-secrets-field-beta/</guid>
       <pubDate>Wed, 07 Jan 2026 18:30:00 +0000</pubDate>
       <source>Kubernetes Blog</source>
-    </item>
-    <item>
-      <title>OWASP Top 10 2025: What's changed and why it matters</title>
-      <link>https://about.gitlab.com/blog/2025-owasp-top-10-whats-changed-and-why-it-matters/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/2025-owasp-top-10-whats-changed-and-why-it-matters/</guid>
-      <pubDate>Wed, 07 Jan 2026 00:00:00 +0000</pubDate>
-      <source>GitLab Blog</source>
     </item>
     <item>
       <title>Kubernetes v1.35: Extended Toleration Operators to Support Numeric Comparisons (Alpha)</title>

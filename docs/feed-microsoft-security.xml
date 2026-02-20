@@ -5,8 +5,20 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml</link>
     <description>Articles from Microsoft Security</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 19 Feb 2026 12:37:53 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 20 Feb 2026 01:07:11 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>New e-book: Establishing a proactive defense with Microsoft Security Exposure Management</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/02/19/new-e-book-establishing-a-proactive-defense-with-microsoft-security-exposure-management/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/19/new-e-book-establishing-a-proactive-defense-with-microsoft-security-exposure-management/</guid>
+      <pubDate>Thu, 19 Feb 2026 17:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Running OpenClaw safely: identity, isolation, and runtime risk</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/02/19/running-openclaw-safely-identity-isolation-runtime-risk/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/19/running-openclaw-safely-identity-isolation-runtime-risk/</guid>
+      <pubDate>Thu, 19 Feb 2026 16:27:00 +0000</pubDate>
+    </item>
     <item>
       <title>Unify now or pay later: New research exposes the operational cost of a fragmented SOC</title>
       <link>https://www.microsoft.com/en-us/security/blog/2026/02/17/unify-now-or-pay-later-new-research-exposes-the-operational-cost-of-a-fragmented-soc/</link>
@@ -54,18 +66,6 @@
       <link>https://www.microsoft.com/en-us/security/blog/2026/02/06/active-exploitation-solarwinds-web-help-desk/</link>
       <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/06/active-exploitation-solarwinds-web-help-desk/</guid>
       <pubDate>Sat, 07 Feb 2026 01:08:49 +0000</pubDate>
-    </item>
-    <item>
-      <title>New Clickfix variant ‘CrashFix’ deploying Python Remote Access Trojan</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/02/05/clickfix-variant-crashfix-deploying-python-rat-trojan/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/05/clickfix-variant-crashfix-deploying-python-rat-trojan/</guid>
-      <pubDate>Thu, 05 Feb 2026 18:51:39 +0000</pubDate>
-    </item>
-    <item>
-      <title>The security implementation gap: Why Microsoft is supporting Operation Winter SHIELD</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/02/05/the-security-implementation-gap-why-microsoft-is-supporting-operation-winter-shield/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/05/the-security-implementation-gap-why-microsoft-is-supporting-operation-winter-shield/</guid>
-      <pubDate>Thu, 05 Feb 2026 17:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
