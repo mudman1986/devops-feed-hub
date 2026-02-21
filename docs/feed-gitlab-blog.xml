@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-gitlab-blog.xml</link>
     <description>Articles from GitLab Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-gitlab-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 20 Feb 2026 12:33:12 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 21 Feb 2026 01:05:47 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>GitLab extends Omnibus package signing key expiration to 2028</title>
+      <link>https://about.gitlab.com/blog/gitlab-extends-omnibus-package-signing-key-expiration-to-2028/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/gitlab-extends-omnibus-package-signing-key-expiration-to-2028/</guid>
+      <pubDate>Fri, 20 Feb 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Agentic AI, enterprise control: Self-hosted Duo Agent Platform and BYOM</title>
       <link>https://about.gitlab.com/blog/agentic-ai-enterprise-control-self-hosted-duo-agent-platform-and-byom/</link>
@@ -120,12 +126,6 @@
       <link>https://about.gitlab.com/blog/understanding-flows-multi-agent-workflows/</link>
       <guid isPermaLink="true">https://about.gitlab.com/blog/understanding-flows-multi-agent-workflows/</guid>
       <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Strengthening GitLab.com security: Mandatory multi-factor authentication</title>
-      <link>https://about.gitlab.com/blog/strengthening-gitlab-com-security-mandatory-multi-factor-authentication/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/strengthening-gitlab-com-security-mandatory-multi-factor-authentication/</guid>
-      <pubDate>Fri, 09 Jan 2026 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml</link>
     <description>Articles from GitHub Changelog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 20 Feb 2026 12:33:12 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 21 Feb 2026 01:05:47 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Organization-level Copilot usage metrics dashboard available in public preview</title>
+      <link>https://github.blog/changelog/2026-02-20-organization-level-copilot-usage-metrics-dashboard-available-in-public-preview</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-20-organization-level-copilot-usage-metrics-dashboard-available-in-public-preview</guid>
+      <pubDate>Fri, 20 Feb 2026 19:01:39 +0000</pubDate>
+    </item>
     <item>
       <title>Workflow dispatch API now returns run IDs</title>
       <link>https://github.blog/changelog/2026-02-19-workflow-dispatch-api-now-returns-run-ids</link>
@@ -60,12 +66,6 @@
       <link>https://github.blog/changelog/2026-02-19-pull-request-throughput-and-time-to-merge-available-in-copilot-usage-metrics-api</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-02-19-pull-request-throughput-and-time-to-merge-available-in-copilot-usage-metrics-api</guid>
       <pubDate>Thu, 19 Feb 2026 16:08:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>Use Copilot coding agent with Windows projects</title>
-      <link>https://github.blog/changelog/2026-02-18-use-copilot-coding-agent-with-windows-projects</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-18-use-copilot-coding-agent-with-windows-projects</guid>
-      <pubDate>Wed, 18 Feb 2026 22:04:40 +0000</pubDate>
     </item>
   </channel>
 </rss>

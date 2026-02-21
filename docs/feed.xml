@@ -5,8 +5,36 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 20 Feb 2026 12:33:12 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 21 Feb 2026 01:05:47 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Organization-level Copilot usage metrics dashboard available in public preview</title>
+      <link>https://github.blog/changelog/2026-02-20-organization-level-copilot-usage-metrics-dashboard-available-in-public-preview</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-20-organization-level-copilot-usage-metrics-dashboard-available-in-public-preview</guid>
+      <pubDate>Fri, 20 Feb 2026 19:01:39 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Azure Premium SSD v2 Disk is now available in Brazil Southeast, and in a third Availability Zone in Malaysia West and Indonesia Central</title>
+      <link>https://azure.microsoft.com/updates?id=557623</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557623</guid>
+      <pubDate>Fri, 20 Feb 2026 19:00:04 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>State of Agentic AI Report: Key Findings</title>
+      <link>https://www.docker.com/blog/state-of-agentic-ai-key-findings/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/state-of-agentic-ai-key-findings/</guid>
+      <pubDate>Fri, 20 Feb 2026 17:18:29 +0000</pubDate>
+      <source>Docker Blog</source>
+    </item>
+    <item>
+      <title>GitLab extends Omnibus package signing key expiration to 2028</title>
+      <link>https://about.gitlab.com/blog/gitlab-extends-omnibus-package-signing-key-expiration-to-2028/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/gitlab-extends-omnibus-package-signing-key-expiration-to-2028/</guid>
+      <pubDate>Fri, 20 Feb 2026 00:00:00 +0000</pubDate>
+      <source>GitLab Blog</source>
+    </item>
     <item>
       <title>Workflow dispatch API now returns run IDs</title>
       <link>https://github.blog/changelog/2026-02-19-workflow-dispatch-api-now-returns-run-ids</link>
@@ -106,6 +134,13 @@
       <source>CircleCI Blog</source>
     </item>
     <item>
+      <title>Getting started with Amazon Q Developer and CircleCI</title>
+      <link>https://circleci.com/blog/getting-started-with-amazon-q-developer-and-circleci/</link>
+      <guid isPermaLink="true">https://circleci.com/blog/getting-started-with-amazon-q-developer-and-circleci/</guid>
+      <pubDate>Thu, 19 Feb 2026 16:00:00 +0000</pubDate>
+      <source>CircleCI Blog</source>
+    </item>
+    <item>
       <title>How Medplum Secured Their Healthcare Platform with Docker Hardened Images (DHI)</title>
       <link>https://www.docker.com/blog/medplum-healthcare-docker-hardened-images/</link>
       <guid isPermaLink="true">https://www.docker.com/blog/medplum-healthcare-docker-hardened-images/</guid>
@@ -139,13 +174,6 @@
       <guid isPermaLink="true">https:/www.jenkins.io/blog/2026/02/19/jenkins-accepted-as-gsoc-2026-mentoring-org/</guid>
       <pubDate>Thu, 19 Feb 2026 00:00:00 +0000</pubDate>
       <source>Jenkins Blog</source>
-    </item>
-    <item>
-      <title>Use Copilot coding agent with Windows projects</title>
-      <link>https://github.blog/changelog/2026-02-18-use-copilot-coding-agent-with-windows-projects</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-18-use-copilot-coding-agent-with-windows-projects</guid>
-      <pubDate>Wed, 18 Feb 2026 22:04:40 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>What to expect for open source in 2026</title>
@@ -918,20 +946,6 @@
       <source>GitLab Blog</source>
     </item>
     <item>
-      <title>Clawdbot with Docker Model Runner, a Private Personal AI Assistant</title>
-      <link>https://www.docker.com/blog/clawdbot-docker-model-runner-private-personal-ai/</link>
-      <guid isPermaLink="true">https://www.docker.com/blog/clawdbot-docker-model-runner-private-personal-ai/</guid>
-      <pubDate>Mon, 26 Jan 2026 20:51:41 +0000</pubDate>
-      <source>Docker Blog</source>
-    </item>
-    <item>
-      <title>How Perk cut recovery time to 31 minutes with centralized rollbacks in CircleCI</title>
-      <link>https://circleci.com/blog/how-perk-recovers-faster-with-centralized-rollbacks/</link>
-      <guid isPermaLink="true">https://circleci.com/blog/how-perk-recovers-faster-with-centralized-rollbacks/</guid>
-      <pubDate>Mon, 26 Jan 2026 20:40:00 +0000</pubDate>
-      <source>CircleCI Blog</source>
-    </item>
-    <item>
       <title>How resilient is HCP Vault during real AWS regional outages?</title>
       <link>https://www.hashicorp.com/blog/how-resilient-is-hcp-vault-during-real-aws-regional-outages</link>
       <guid isPermaLink="true">https://www.hashicorp.com/blog/how-resilient-is-hcp-vault-during-real-aws-regional-outages</guid>
@@ -1196,13 +1210,6 @@
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=543086</guid>
       <pubDate>Fri, 09 Jan 2026 14:30:36 +0000</pubDate>
       <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>Strengthening GitLab.com security: Mandatory multi-factor authentication</title>
-      <link>https://about.gitlab.com/blog/strengthening-gitlab-com-security-mandatory-multi-factor-authentication/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/strengthening-gitlab-com-security-mandatory-multi-factor-authentication/</guid>
-      <pubDate>Fri, 09 Jan 2026 00:00:00 +0000</pubDate>
-      <source>GitLab Blog</source>
     </item>
     <item>
       <title>Automating AWS SDK for Java v1 to v2 Upgrades with AWS Transform</title>
@@ -2629,13 +2636,6 @@
       <title>[Launched] Generally Available: Resale enabled offers through Microsoft Marketplace</title>
       <link>https://azure.microsoft.com/updates?id=530593</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=530593</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: GitHub Copilot app modernization expanded capabilities</title>
-      <link>https://azure.microsoft.com/updates?id=530257</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=530257</guid>
       <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
       <source>Azure Updates</source>
     </item>

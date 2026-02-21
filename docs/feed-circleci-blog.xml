@@ -5,12 +5,18 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-circleci-blog.xml</link>
     <description>Articles from CircleCI Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-circleci-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 20 Feb 2026 12:33:12 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 21 Feb 2026 01:05:47 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Simultaneous multi-cloud deployment to AWS and GCP with CircleCI</title>
       <link>https://circleci.com/blog/simultaneous-multi-cloud-deployment-to-aws-and-gcp/</link>
       <guid isPermaLink="true">https://circleci.com/blog/simultaneous-multi-cloud-deployment-to-aws-and-gcp/</guid>
+      <pubDate>Thu, 19 Feb 2026 16:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Getting started with Amazon Q Developer and CircleCI</title>
+      <link>https://circleci.com/blog/getting-started-with-amazon-q-developer-and-circleci/</link>
+      <guid isPermaLink="true">https://circleci.com/blog/getting-started-with-amazon-q-developer-and-circleci/</guid>
       <pubDate>Thu, 19 Feb 2026 16:00:00 +0000</pubDate>
     </item>
     <item>
@@ -60,12 +66,6 @@
       <link>https://circleci.com/blog/optimize-your-ci-cd-pipeline-with-circleci-chunk-ai-agent/</link>
       <guid isPermaLink="true">https://circleci.com/blog/optimize-your-ci-cd-pipeline-with-circleci-chunk-ai-agent/</guid>
       <pubDate>Tue, 27 Jan 2026 16:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>How Perk cut recovery time to 31 minutes with centralized rollbacks in CircleCI</title>
-      <link>https://circleci.com/blog/how-perk-recovers-faster-with-centralized-rollbacks/</link>
-      <guid isPermaLink="true">https://circleci.com/blog/how-perk-recovers-faster-with-centralized-rollbacks/</guid>
-      <pubDate>Mon, 26 Jan 2026 20:40:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
