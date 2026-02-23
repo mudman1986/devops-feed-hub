@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-hashicorp-blog.xml</link>
     <description>Articles from HashiCorp Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-hashicorp-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sun, 22 Feb 2026 12:25:45 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 23 Feb 2026 01:10:04 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Saving banks from technical debt: How Atruvia built secure, self-service infrastructure</title>
