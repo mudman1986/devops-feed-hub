@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-terraform-weekly.xml</link>
     <description>Articles from Terraform weekly</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-terraform-weekly.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 24 Feb 2026 01:08:39 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 24 Feb 2026 12:38:40 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Issue #262 - Terramate Environments, Landing Zone AI Agents, FastAPI Production Deployments, Terragrunt EKS Clusters, Route 53 DNSSEC Security, tfdocs-extras</title>
