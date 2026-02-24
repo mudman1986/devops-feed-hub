@@ -5,8 +5,20 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml</link>
     <description>Articles from Azure Updates</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 23 Feb 2026 12:37:47 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 24 Feb 2026 01:08:39 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Retirement: Windows Server Annual Channel (preview)</title>
+      <link>https://azure.microsoft.com/updates?id=557224</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557224</guid>
+      <pubDate>Mon, 23 Feb 2026 18:15:17 +0000</pubDate>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: WAF Insights for Application Gateway</title>
+      <link>https://azure.microsoft.com/updates?id=557416</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557416</guid>
+      <pubDate>Mon, 23 Feb 2026 16:15:47 +0000</pubDate>
+    </item>
     <item>
       <title>[Launched] Generally Available: Azure Premium SSD v2 Disk is now available in Brazil Southeast, and in a third Availability Zone in Malaysia West and Indonesia Central</title>
       <link>https://azure.microsoft.com/updates?id=557623</link>
@@ -1187,18 +1199,6 @@
       <title>[Launched] Generally Available: Scheduled Actions</title>
       <link>https://azure.microsoft.com/updates?id=530797</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=530797</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Microsoft Marketplace</title>
-      <link>https://azure.microsoft.com/updates?id=530614</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=530614</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Resale enabled offers through Microsoft Marketplace</title>
-      <link>https://azure.microsoft.com/updates?id=530593</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=530593</guid>
       <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
     </item>
     <item>

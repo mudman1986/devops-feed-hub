@@ -5,8 +5,20 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-docker-blog.xml</link>
     <description>Articles from Docker Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-docker-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 23 Feb 2026 12:37:47 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 24 Feb 2026 01:08:39 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Gordon: Docker’s AI Agent Just Got an Update</title>
+      <link>https://www.docker.com/blog/gordon-dockers-ai-agent-just-got-an-update/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/gordon-dockers-ai-agent-just-got-an-update/</guid>
+      <pubDate>Mon, 23 Feb 2026 14:13:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Run OpenClaw Securely in Docker Sandboxes</title>
+      <link>https://www.docker.com/blog/run-openclaw-securely-in-docker-sandboxes/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/run-openclaw-securely-in-docker-sandboxes/</guid>
+      <pubDate>Mon, 23 Feb 2026 14:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>State of Agentic AI Report: Key Findings</title>
       <link>https://www.docker.com/blog/state-of-agentic-ai-key-findings/</link>
@@ -54,18 +66,6 @@
       <link>https://www.docker.com/blog/atlassian-remote-mcp-server-getting-started-with-docker/</link>
       <guid isPermaLink="true">https://www.docker.com/blog/atlassian-remote-mcp-server-getting-started-with-docker/</guid>
       <pubDate>Wed, 04 Feb 2026 13:52:53 +0000</pubDate>
-    </item>
-    <item>
-      <title>The 3Cs: A Framework for AI Agent Security</title>
-      <link>https://www.docker.com/blog/the-3cs-a-framework-for-ai-agent-security/</link>
-      <guid isPermaLink="true">https://www.docker.com/blog/the-3cs-a-framework-for-ai-agent-security/</guid>
-      <pubDate>Wed, 04 Feb 2026 02:02:19 +0000</pubDate>
-    </item>
-    <item>
-      <title>Docker Sandboxes: Run Claude Code and Other Coding Agents Unsupervised (but Safely)</title>
-      <link>https://www.docker.com/blog/docker-sandboxes-run-claude-code-and-other-coding-agents-unsupervised-but-safely/</link>
-      <guid isPermaLink="true">https://www.docker.com/blog/docker-sandboxes-run-claude-code-and-other-coding-agents-unsupervised-but-safely/</guid>
-      <pubDate>Fri, 30 Jan 2026 23:39:54 +0000</pubDate>
     </item>
   </channel>
 </rss>

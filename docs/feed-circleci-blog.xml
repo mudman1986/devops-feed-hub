@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-circleci-blog.xml</link>
     <description>Articles from CircleCI Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-circleci-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 23 Feb 2026 12:37:47 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 24 Feb 2026 01:08:39 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Getting started with Claude Code and CircleCI</title>
+      <link>https://circleci.com/blog/getting-started-with-claude-code-and-circleci/</link>
+      <guid isPermaLink="true">https://circleci.com/blog/getting-started-with-claude-code-and-circleci/</guid>
+      <pubDate>Mon, 23 Feb 2026 16:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Simultaneous multi-cloud deployment to AWS and GCP with CircleCI</title>
       <link>https://circleci.com/blog/simultaneous-multi-cloud-deployment-to-aws-and-gcp/</link>
@@ -59,12 +65,6 @@
       <title>Refactor your codebase with CircleCI Chunk AI agent</title>
       <link>https://circleci.com/blog/refactor-your-codebase-with-circleci-chunk-ai-agent/</link>
       <guid isPermaLink="true">https://circleci.com/blog/refactor-your-codebase-with-circleci-chunk-ai-agent/</guid>
-      <pubDate>Tue, 27 Jan 2026 16:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Optimize your CI/CD pipeline with CircleCI Chunk AI agent</title>
-      <link>https://circleci.com/blog/optimize-your-ci-cd-pipeline-with-circleci-chunk-ai-agent/</link>
-      <guid isPermaLink="true">https://circleci.com/blog/optimize-your-ci-cd-pipeline-with-circleci-chunk-ai-agent/</guid>
       <pubDate>Tue, 27 Jan 2026 16:00:00 +0000</pubDate>
     </item>
   </channel>

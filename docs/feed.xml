@@ -5,8 +5,57 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 23 Feb 2026 12:37:47 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 24 Feb 2026 01:08:39 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Retirement: Windows Server Annual Channel (preview)</title>
+      <link>https://azure.microsoft.com/updates?id=557224</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557224</guid>
+      <pubDate>Mon, 23 Feb 2026 18:15:17 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>IP allow list coverage extended to EMU namespaces in public preview</title>
+      <link>https://github.blog/changelog/2026-02-23-ip-allow-list-coverage-extended-to-emu-namespaces-in-public-preview</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-23-ip-allow-list-coverage-extended-to-emu-namespaces-in-public-preview</guid>
+      <pubDate>Mon, 23 Feb 2026 17:44:32 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Enterprise team support in organization APIs</title>
+      <link>https://github.blog/changelog/2026-02-23-enterprise-team-support-in-organization-apis</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-23-enterprise-team-support-in-organization-apis</guid>
+      <pubDate>Mon, 23 Feb 2026 16:25:07 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: WAF Insights for Application Gateway</title>
+      <link>https://azure.microsoft.com/updates?id=557416</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557416</guid>
+      <pubDate>Mon, 23 Feb 2026 16:15:47 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>Getting started with Claude Code and CircleCI</title>
+      <link>https://circleci.com/blog/getting-started-with-claude-code-and-circleci/</link>
+      <guid isPermaLink="true">https://circleci.com/blog/getting-started-with-claude-code-and-circleci/</guid>
+      <pubDate>Mon, 23 Feb 2026 16:00:00 +0000</pubDate>
+      <source>CircleCI Blog</source>
+    </item>
+    <item>
+      <title>Gordon: Docker’s AI Agent Just Got an Update</title>
+      <link>https://www.docker.com/blog/gordon-dockers-ai-agent-just-got-an-update/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/gordon-dockers-ai-agent-just-got-an-update/</guid>
+      <pubDate>Mon, 23 Feb 2026 14:13:00 +0000</pubDate>
+      <source>Docker Blog</source>
+    </item>
+    <item>
+      <title>Run OpenClaw Securely in Docker Sandboxes</title>
+      <link>https://www.docker.com/blog/run-openclaw-securely-in-docker-sandboxes/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/run-openclaw-securely-in-docker-sandboxes/</guid>
+      <pubDate>Mon, 23 Feb 2026 14:00:00 +0000</pubDate>
+      <source>Docker Blog</source>
+    </item>
     <item>
       <title>Organization-level Copilot usage metrics dashboard available in public preview</title>
       <link>https://github.blog/changelog/2026-02-20-organization-level-copilot-usage-metrics-dashboard-available-in-public-preview</link>
@@ -85,13 +134,6 @@
       <source>GitHub Changelog</source>
     </item>
     <item>
-      <title>Gemini 3.1 Pro is now in public preview in GitHub Copilot</title>
-      <link>https://github.blog/changelog/2026-02-19-gemini-3-1-pro-is-now-in-public-preview-in-github-copilot</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-19-gemini-3-1-pro-is-now-in-public-preview-in-github-copilot</guid>
-      <pubDate>Thu, 19 Feb 2026 17:30:18 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>How AI is reshaping developer choice (and Octoverse data proves it)</title>
       <link>https://github.blog/ai-and-ml/generative-ai/how-ai-is-reshaping-developer-choice-and-octoverse-data-proves-it/</link>
       <guid isPermaLink="true">https://github.blog/ai-and-ml/generative-ai/how-ai-is-reshaping-developer-choice-and-octoverse-data-proves-it/</guid>
@@ -118,13 +160,6 @@
       <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/19/running-openclaw-safely-identity-isolation-runtime-risk/</guid>
       <pubDate>Thu, 19 Feb 2026 16:27:00 +0000</pubDate>
       <source>Microsoft Security</source>
-    </item>
-    <item>
-      <title>Pull request throughput and time to merge available in Copilot usage metrics API</title>
-      <link>https://github.blog/changelog/2026-02-19-pull-request-throughput-and-time-to-merge-available-in-copilot-usage-metrics-api</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-19-pull-request-throughput-and-time-to-merge-available-in-copilot-usage-metrics-api</guid>
-      <pubDate>Thu, 19 Feb 2026 16:08:02 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>Simultaneous multi-cloud deployment to AWS and GCP with CircleCI</title>
@@ -666,13 +701,6 @@
       <source>Docker Blog</source>
     </item>
     <item>
-      <title>The 3Cs: A Framework for AI Agent Security</title>
-      <link>https://www.docker.com/blog/the-3cs-a-framework-for-ai-agent-security/</link>
-      <guid isPermaLink="true">https://www.docker.com/blog/the-3cs-a-framework-for-ai-agent-security/</guid>
-      <pubDate>Wed, 04 Feb 2026 02:02:19 +0000</pubDate>
-      <source>Docker Blog</source>
-    </item>
-    <item>
       <title>[In development] Public Preview: X-Forwarded-For (XFF) grouping for rate limiting on Application Gateway WAF v2</title>
       <link>https://azure.microsoft.com/updates?id=555205</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=555205</guid>
@@ -762,13 +790,6 @@
       <guid isPermaLink="true">https://about.gitlab.com/blog/whats-new-in-git-2-53-0/</guid>
       <pubDate>Mon, 02 Feb 2026 00:00:00 +0000</pubDate>
       <source>GitLab Blog</source>
-    </item>
-    <item>
-      <title>Docker Sandboxes: Run Claude Code and Other Coding Agents Unsupervised (but Safely)</title>
-      <link>https://www.docker.com/blog/docker-sandboxes-run-claude-code-and-other-coding-agents-unsupervised-but-safely/</link>
-      <guid isPermaLink="true">https://www.docker.com/blog/docker-sandboxes-run-claude-code-and-other-coding-agents-unsupervised-but-safely/</guid>
-      <pubDate>Fri, 30 Jan 2026 23:39:54 +0000</pubDate>
-      <source>Docker Blog</source>
     </item>
     <item>
       <title>Retirement: "Send data to Event Hubs &amp; Storage (Preview)" retiring July 31, 2026</title>
@@ -921,13 +942,6 @@
       <title>Refactor your codebase with CircleCI Chunk AI agent</title>
       <link>https://circleci.com/blog/refactor-your-codebase-with-circleci-chunk-ai-agent/</link>
       <guid isPermaLink="true">https://circleci.com/blog/refactor-your-codebase-with-circleci-chunk-ai-agent/</guid>
-      <pubDate>Tue, 27 Jan 2026 16:00:00 +0000</pubDate>
-      <source>CircleCI Blog</source>
-    </item>
-    <item>
-      <title>Optimize your CI/CD pipeline with CircleCI Chunk AI agent</title>
-      <link>https://circleci.com/blog/optimize-your-ci-cd-pipeline-with-circleci-chunk-ai-agent/</link>
-      <guid isPermaLink="true">https://circleci.com/blog/optimize-your-ci-cd-pipeline-with-circleci-chunk-ai-agent/</guid>
       <pubDate>Tue, 27 Jan 2026 16:00:00 +0000</pubDate>
       <source>CircleCI Blog</source>
     </item>
@@ -2622,20 +2636,6 @@
       <title>[Launched] Generally Available: Scheduled Actions</title>
       <link>https://azure.microsoft.com/updates?id=530797</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=530797</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Microsoft Marketplace</title>
-      <link>https://azure.microsoft.com/updates?id=530614</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=530614</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Resale enabled offers through Microsoft Marketplace</title>
-      <link>https://azure.microsoft.com/updates?id=530593</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=530593</guid>
       <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
       <source>Azure Updates</source>
     </item>

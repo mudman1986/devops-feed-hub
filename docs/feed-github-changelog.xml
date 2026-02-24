@@ -5,8 +5,20 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml</link>
     <description>Articles from GitHub Changelog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 23 Feb 2026 12:37:47 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 24 Feb 2026 01:08:39 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>IP allow list coverage extended to EMU namespaces in public preview</title>
+      <link>https://github.blog/changelog/2026-02-23-ip-allow-list-coverage-extended-to-emu-namespaces-in-public-preview</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-23-ip-allow-list-coverage-extended-to-emu-namespaces-in-public-preview</guid>
+      <pubDate>Mon, 23 Feb 2026 17:44:32 +0000</pubDate>
+    </item>
+    <item>
+      <title>Enterprise team support in organization APIs</title>
+      <link>https://github.blog/changelog/2026-02-23-enterprise-team-support-in-organization-apis</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-23-enterprise-team-support-in-organization-apis</guid>
+      <pubDate>Mon, 23 Feb 2026 16:25:07 +0000</pubDate>
+    </item>
     <item>
       <title>Organization-level Copilot usage metrics dashboard available in public preview</title>
       <link>https://github.blog/changelog/2026-02-20-organization-level-copilot-usage-metrics-dashboard-available-in-public-preview</link>
@@ -54,18 +66,6 @@
       <link>https://github.blog/changelog/2026-02-19-access-all-pull-request-comments-without-leaving-the-new-files-changed-page</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-02-19-access-all-pull-request-comments-without-leaving-the-new-files-changed-page</guid>
       <pubDate>Thu, 19 Feb 2026 19:03:09 +0000</pubDate>
-    </item>
-    <item>
-      <title>Gemini 3.1 Pro is now in public preview in GitHub Copilot</title>
-      <link>https://github.blog/changelog/2026-02-19-gemini-3-1-pro-is-now-in-public-preview-in-github-copilot</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-19-gemini-3-1-pro-is-now-in-public-preview-in-github-copilot</guid>
-      <pubDate>Thu, 19 Feb 2026 17:30:18 +0000</pubDate>
-    </item>
-    <item>
-      <title>Pull request throughput and time to merge available in Copilot usage metrics API</title>
-      <link>https://github.blog/changelog/2026-02-19-pull-request-throughput-and-time-to-merge-available-in-copilot-usage-metrics-api</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-19-pull-request-throughput-and-time-to-merge-available-in-copilot-usage-metrics-api</guid>
-      <pubDate>Thu, 19 Feb 2026 16:08:02 +0000</pubDate>
     </item>
   </channel>
 </rss>
