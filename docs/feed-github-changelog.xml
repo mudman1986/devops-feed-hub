@@ -5,8 +5,38 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml</link>
     <description>Articles from GitHub Changelog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 24 Feb 2026 12:38:40 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 25 Feb 2026 01:14:18 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>GitHub Enterprise Server 3.20 release candidate is available</title>
+      <link>https://github.blog/changelog/2026-02-24-github-enterprise-server-3-20-release-candidate-is-available</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-24-github-enterprise-server-3-20-release-candidate-is-available</guid>
+      <pubDate>Tue, 24 Feb 2026 23:37:14 +0000</pubDate>
+    </item>
+    <item>
+      <title>CodeQL adds Go 1.26 and Kotlin 2.3.10 support and improves query accuracy</title>
+      <link>https://github.blog/changelog/2026-02-24-codeql-adds-go-1-26-and-kotlin-2-3-10-support-and-improves-query-accuracy</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-24-codeql-adds-go-1-26-and-kotlin-2-3-10-support-and-improves-query-accuracy</guid>
+      <pubDate>Tue, 24 Feb 2026 22:20:46 +0000</pubDate>
+    </item>
+    <item>
+      <title>Dependabot can group updates by dependency name across multiple directories</title>
+      <link>https://github.blog/changelog/2026-02-24-dependabot-can-group-updates-by-dependency-name-across-multiple-directories</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-24-dependabot-can-group-updates-by-dependency-name-across-multiple-directories</guid>
+      <pubDate>Tue, 24 Feb 2026 21:28:17 +0000</pubDate>
+    </item>
+    <item>
+      <title>GitHub Code Quality: Organization-level dashboard in public preview</title>
+      <link>https://github.blog/changelog/2026-02-24-github-code-quality-organization-level-dashboard-in-public-preview</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-24-github-code-quality-organization-level-dashboard-in-public-preview</guid>
+      <pubDate>Tue, 24 Feb 2026 19:49:29 +0000</pubDate>
+    </item>
+    <item>
+      <title>Repository dashboard is now generally available</title>
+      <link>https://github.blog/changelog/2026-02-24-repository-dashboard-is-now-generally-available</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-24-repository-dashboard-is-now-generally-available</guid>
+      <pubDate>Tue, 24 Feb 2026 18:49:44 +0000</pubDate>
+    </item>
     <item>
       <title>Enterprise-defined custom organization roles are generally available</title>
       <link>https://github.blog/changelog/2026-02-23-enterprise-defined-custom-organization-roles-are-generally-available</link>
@@ -36,36 +66,6 @@
       <link>https://github.blog/changelog/2026-02-19-workflow-dispatch-api-now-returns-run-ids</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-02-19-workflow-dispatch-api-now-returns-run-ids</guid>
       <pubDate>Thu, 19 Feb 2026 22:39:37 +0000</pubDate>
-    </item>
-    <item>
-      <title>GitHub Copilot support in Zed generally available</title>
-      <link>https://github.blog/changelog/2026-02-19-github-copilot-support-in-zed-generally-available</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-19-github-copilot-support-in-zed-generally-available</guid>
-      <pubDate>Thu, 19 Feb 2026 22:24:53 +0000</pubDate>
-    </item>
-    <item>
-      <title>Changes to test merge commit generation for pull requests</title>
-      <link>https://github.blog/changelog/2026-02-19-changes-to-test-merge-commit-generation-for-pull-requests</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-19-changes-to-test-merge-commit-generation-for-pull-requests</guid>
-      <pubDate>Thu, 19 Feb 2026 22:01:57 +0000</pubDate>
-    </item>
-    <item>
-      <title>Copilot coding agent model picker for Copilot Business and Enterprise</title>
-      <link>https://github.blog/changelog/2026-02-19-model-picker-for-copilot-coding-agent-for-copilot-business-and-enterprise-users</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-19-model-picker-for-copilot-coding-agent-for-copilot-business-and-enterprise-users</guid>
-      <pubDate>Thu, 19 Feb 2026 19:55:01 +0000</pubDate>
-    </item>
-    <item>
-      <title>Selected Anthropic and OpenAI models are now deprecated</title>
-      <link>https://github.blog/changelog/2026-02-19-selected-anthropic-and-openai-models-are-now-deprecated</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-19-selected-anthropic-and-openai-models-are-now-deprecated</guid>
-      <pubDate>Thu, 19 Feb 2026 19:47:37 +0000</pubDate>
-    </item>
-    <item>
-      <title>GitHub Projects: Import items based on a query and hierarchy view improvements</title>
-      <link>https://github.blog/changelog/2026-02-19-github-projects-import-items-based-on-a-query-and-hierarchy-view-improvements</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-19-github-projects-import-items-based-on-a-query-and-hierarchy-view-improvements</guid>
-      <pubDate>Thu, 19 Feb 2026 19:33:33 +0000</pubDate>
     </item>
   </channel>
 </rss>

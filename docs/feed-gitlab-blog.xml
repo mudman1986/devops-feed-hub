@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-gitlab-blog.xml</link>
     <description>Articles from GitLab Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-gitlab-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 24 Feb 2026 12:38:40 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 25 Feb 2026 01:14:18 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>GPG key used to sign GitLab package repositories' metadata has been extended</title>
+      <link>https://about.gitlab.com/blog/gpg-key-used-to-sign-gitlab-package-repositories-metadata-has-been-extended/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/gpg-key-used-to-sign-gitlab-package-repositories-metadata-has-been-extended/</guid>
+      <pubDate>Tue, 24 Feb 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>GitLab extends Omnibus package signing key expiration to 2028</title>
       <link>https://about.gitlab.com/blog/gitlab-extends-omnibus-package-signing-key-expiration-to-2028/</link>
@@ -113,18 +119,6 @@
       <title>Monitor, manage, and automate AI workflows</title>
       <link>https://about.gitlab.com/blog/monitor-manage-automate-ai-workflows/</link>
       <guid isPermaLink="true">https://about.gitlab.com/blog/monitor-manage-automate-ai-workflows/</guid>
-      <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Understanding agents: Foundational, custom, and external</title>
-      <link>https://about.gitlab.com/blog/understanding-agents-foundational-custom-external/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/understanding-agents-foundational-custom-external/</guid>
-      <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Understanding flows: Multi-agent workflows</title>
-      <link>https://about.gitlab.com/blog/understanding-flows-multi-agent-workflows/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/understanding-flows-multi-agent-workflows/</guid>
       <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
     </item>
   </channel>

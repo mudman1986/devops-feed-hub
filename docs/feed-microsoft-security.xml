@@ -5,8 +5,20 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml</link>
     <description>Articles from Microsoft Security</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 24 Feb 2026 12:38:40 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 25 Feb 2026 01:14:18 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Developer-targeting campaign using malicious Next.js repositories</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/02/24/c2-developer-targeting-campaign/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/24/c2-developer-targeting-campaign/</guid>
+      <pubDate>Tue, 24 Feb 2026 17:28:24 +0000</pubDate>
+    </item>
+    <item>
+      <title>Scaling security operations with Microsoft Defender autonomous defense and expert-led services</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/02/24/scaling-security-operations-with-microsoft-defender-autonomous-defense-and-expert-led-services/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/24/scaling-security-operations-with-microsoft-defender-autonomous-defense-and-expert-led-services/</guid>
+      <pubDate>Tue, 24 Feb 2026 13:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>New e-book: Establishing a proactive defense with Microsoft Security Exposure Management</title>
       <link>https://www.microsoft.com/en-us/security/blog/2026/02/19/new-e-book-establishing-a-proactive-defense-with-microsoft-security-exposure-management/</link>
@@ -26,7 +38,7 @@
       <pubDate>Tue, 17 Feb 2026 17:00:00 +0000</pubDate>
     </item>
     <item>
-      <title>Top 10 actions to build agents securely with Microsoft Copilot Studio</title>
+      <title>Detecting and mitigating common agent misconfigurations</title>
       <link>https://www.microsoft.com/en-us/security/blog/2026/02/12/copilot-studio-agent-security-top-10-risks-detect-prevent/</link>
       <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/12/copilot-studio-agent-security-top-10-risks-detect-prevent/</guid>
       <pubDate>Thu, 12 Feb 2026 20:38:49 +0000</pubDate>
@@ -54,18 +66,6 @@
       <link>https://www.microsoft.com/en-us/security/blog/2026/02/10/ai-recommendation-poisoning/</link>
       <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/10/ai-recommendation-poisoning/</guid>
       <pubDate>Tue, 10 Feb 2026 14:56:21 +0000</pubDate>
-    </item>
-    <item>
-      <title>A one-prompt attack that breaks LLM safety alignment</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/02/09/prompt-attack-breaks-llm-safety/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/09/prompt-attack-breaks-llm-safety/</guid>
-      <pubDate>Mon, 09 Feb 2026 17:12:11 +0000</pubDate>
-    </item>
-    <item>
-      <title>Analysis of active exploitation of SolarWinds Web Help Desk</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/02/06/active-exploitation-solarwinds-web-help-desk/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/06/active-exploitation-solarwinds-web-help-desk/</guid>
-      <pubDate>Sat, 07 Feb 2026 01:08:49 +0000</pubDate>
     </item>
   </channel>
 </rss>

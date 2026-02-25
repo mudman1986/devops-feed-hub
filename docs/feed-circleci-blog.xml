@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-circleci-blog.xml</link>
     <description>Articles from CircleCI Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-circleci-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 24 Feb 2026 12:38:40 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 25 Feb 2026 01:14:18 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Getting started with Gemini and CircleCI</title>
+      <link>https://circleci.com/blog/getting-started-with-gemini-and-circleci/</link>
+      <guid isPermaLink="true">https://circleci.com/blog/getting-started-with-gemini-and-circleci/</guid>
+      <pubDate>Mon, 23 Feb 2026 16:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Getting started with Claude Code and CircleCI</title>
       <link>https://circleci.com/blog/getting-started-with-claude-code-and-circleci/</link>
@@ -60,12 +66,6 @@
       <link>https://circleci.com/blog/boost-your-test-coverage-with-circleci-chunk-ai-agent/</link>
       <guid isPermaLink="true">https://circleci.com/blog/boost-your-test-coverage-with-circleci-chunk-ai-agent/</guid>
       <pubDate>Wed, 28 Jan 2026 16:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Refactor your codebase with CircleCI Chunk AI agent</title>
-      <link>https://circleci.com/blog/refactor-your-codebase-with-circleci-chunk-ai-agent/</link>
-      <guid isPermaLink="true">https://circleci.com/blog/refactor-your-codebase-with-circleci-chunk-ai-agent/</guid>
-      <pubDate>Tue, 27 Jan 2026 16:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

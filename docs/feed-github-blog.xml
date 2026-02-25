@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-blog.xml</link>
     <description>Articles from GitHub Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 24 Feb 2026 12:38:40 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 25 Feb 2026 01:14:18 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Multi-agent workflows often fail. Here’s how to engineer ones that don’t.</title>
+      <link>https://github.blog/ai-and-ml/generative-ai/multi-agent-workflows-often-fail-heres-how-to-engineer-ones-that-dont/</link>
+      <guid isPermaLink="true">https://github.blog/ai-and-ml/generative-ai/multi-agent-workflows-often-fail-heres-how-to-engineer-ones-that-dont/</guid>
+      <pubDate>Tue, 24 Feb 2026 16:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>How AI is reshaping developer choice (and Octoverse data proves it)</title>
       <link>https://github.blog/ai-and-ml/generative-ai/how-ai-is-reshaping-developer-choice-and-octoverse-data-proves-it/</link>
@@ -60,12 +66,6 @@
       <link>https://github.blog/news-insights/octoverse/what-the-fastest-growing-tools-reveal-about-how-software-is-being-built/</link>
       <guid isPermaLink="true">https://github.blog/news-insights/octoverse/what-the-fastest-growing-tools-reveal-about-how-software-is-being-built/</guid>
       <pubDate>Tue, 03 Feb 2026 17:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>How to maximize GitHub Copilot&amp;#8217;s agentic capabilities</title>
-      <link>https://github.blog/ai-and-ml/github-copilot/how-to-maximize-github-copilots-agentic-capabilities/</link>
-      <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/how-to-maximize-github-copilots-agentic-capabilities/</guid>
-      <pubDate>Mon, 02 Feb 2026 17:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
