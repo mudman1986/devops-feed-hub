@@ -5,8 +5,99 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 25 Feb 2026 12:38:31 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 26 Feb 2026 01:07:23 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Generate pull request titles with Copilot on the web</title>
+      <link>https://github.blog/changelog/2026-02-25-generate-pull-request-titles-with-copilot-on-the-web</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-25-generate-pull-request-titles-with-copilot-on-the-web</guid>
+      <pubDate>Wed, 25 Feb 2026 23:51:39 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>GPT-5.3-Codex is now available in github.com, GitHub Mobile, and Visual Studio</title>
+      <link>https://github.blog/changelog/2026-02-25-gpt-5-3-codex-is-now-available-in-github-com-github-mobile-and-visual-studio</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-25-gpt-5-3-codex-is-now-available-in-github-com-github-mobile-and-visual-studio</guid>
+      <pubDate>Wed, 25 Feb 2026 23:25:30 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Improved web search in Copilot on github.com</title>
+      <link>https://github.blog/changelog/2026-02-25-improved-web-search-in-copilot-on-github-com</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-25-improved-web-search-in-copilot-on-github-com</guid>
+      <pubDate>Wed, 25 Feb 2026 22:52:05 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Azure SQL updates for late-February 2026</title>
+      <link>https://azure.microsoft.com/updates?id=557517</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557517</guid>
+      <pubDate>Wed, 25 Feb 2026 19:00:32 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Azure SQL updates for late-February 2026</title>
+      <link>https://azure.microsoft.com/updates?id=557522</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557522</guid>
+      <pubDate>Wed, 25 Feb 2026 18:45:40 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Geo‑redundant backups for Premium SSD v2 in Azure Database for PostgreSQL</title>
+      <link>https://azure.microsoft.com/updates?id=557532</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557532</guid>
+      <pubDate>Wed, 25 Feb 2026 18:30:06 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>GitHub Copilot CLI is now generally available</title>
+      <link>https://github.blog/changelog/2026-02-25-github-copilot-cli-is-now-generally-available</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-25-github-copilot-cli-is-now-generally-available</guid>
+      <pubDate>Wed, 25 Feb 2026 17:01:29 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Secure remote access without the ‘portal tax’: Boundary vs other vendors</title>
+      <link>https://www.hashicorp.com/blog/secure-remote-access-without-the-portal-tax-boundary-vs-other-vendors</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/secure-remote-access-without-the-portal-tax-boundary-vs-other-vendors</guid>
+      <pubDate>Wed, 25 Feb 2026 17:00:00 +0000</pubDate>
+      <source>HashiCorp Blog</source>
+    </item>
+    <item>
+      <title>Getting started with Windsurf and CircleCI</title>
+      <link>https://circleci.com/blog/getting-started-with-windsurf-and-circleci/</link>
+      <guid isPermaLink="true">https://circleci.com/blog/getting-started-with-windsurf-and-circleci/</guid>
+      <pubDate>Wed, 25 Feb 2026 16:00:00 +0000</pubDate>
+      <source>CircleCI Blog</source>
+    </item>
+    <item>
+      <title>Issue #263 - Gemini CLI Review Agents, Reliable Databricks Deployments, S3 Lifecycle Automation, HCP Terraform AI Guardrails</title>
+      <link>https://www.weekly.tf/p/issue-263-gemini-cli-review-agents-reliable-databricks-deployments-s3-lifecycle-automation-hcp</link>
+      <guid isPermaLink="true">https://www.weekly.tf/p/issue-263-gemini-cli-review-agents-reliable-databricks-deployments-s3-lifecycle-automation-hcp</guid>
+      <pubDate>Wed, 25 Feb 2026 16:00:00 +0000</pubDate>
+      <source>Terraform weekly</source>
+    </item>
+    <item>
+      <title>Open WebUI + Docker Model Runner: Self-Hosted Models, Zero Configuration</title>
+      <link>https://www.docker.com/blog/openwebui-docker-model-runner/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/openwebui-docker-model-runner/</guid>
+      <pubDate>Wed, 25 Feb 2026 14:37:33 +0000</pubDate>
+      <source>Docker Blog</source>
+    </item>
+    <item>
+      <title>New GitLab metrics and registry features help reduce CI/CD bottlenecks</title>
+      <link>https://about.gitlab.com/blog/new-gitlab-metrics-and-registry-features-help-reduce-ci-cd-bottlenecks/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/new-gitlab-metrics-and-registry-features-help-reduce-ci-cd-bottlenecks/</guid>
+      <pubDate>Wed, 25 Feb 2026 00:00:00 +0000</pubDate>
+      <source>GitLab Blog</source>
+    </item>
+    <item>
+      <title>Passkeys now available for passwordless sign-in and 2FA on GitLab</title>
+      <link>https://about.gitlab.com/blog/passkeys-now-available-for-passwordless-sign-in-and-2fa-on-gitlab/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/passkeys-now-available-for-passwordless-sign-in-and-2fa-on-gitlab/</guid>
+      <pubDate>Wed, 25 Feb 2026 00:00:00 +0000</pubDate>
+      <source>GitLab Blog</source>
+    </item>
     <item>
       <title>GitHub Enterprise Server 3.20 release candidate is available</title>
       <link>https://github.blog/changelog/2026-02-24-github-enterprise-server-3-20-release-candidate-is-available</link>
@@ -48,6 +139,13 @@
       <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/24/c2-developer-targeting-campaign/</guid>
       <pubDate>Tue, 24 Feb 2026 17:28:24 +0000</pubDate>
       <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>Terraform Enterprise 1.2 upgrades workflows, visibility, and brownfield migration</title>
+      <link>https://www.hashicorp.com/blog/terraform-enterprise-12-upgrades-workflows-visibility-and-brownfield-migration</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/terraform-enterprise-12-upgrades-workflows-visibility-and-brownfield-migration</guid>
+      <pubDate>Tue, 24 Feb 2026 17:00:00 +0000</pubDate>
+      <source>HashiCorp Blog</source>
     </item>
     <item>
       <title>Multi-agent workflows often fail. Here’s how to engineer ones that don’t.</title>
@@ -92,20 +190,6 @@
       <source>Azure Updates</source>
     </item>
     <item>
-      <title>IP allow list coverage extended to EMU namespaces in public preview</title>
-      <link>https://github.blog/changelog/2026-02-23-ip-allow-list-coverage-extended-to-emu-namespaces-in-public-preview</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-23-ip-allow-list-coverage-extended-to-emu-namespaces-in-public-preview</guid>
-      <pubDate>Mon, 23 Feb 2026 17:44:32 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>Enterprise team support in organization APIs</title>
-      <link>https://github.blog/changelog/2026-02-23-enterprise-team-support-in-organization-apis</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-23-enterprise-team-support-in-organization-apis</guid>
-      <pubDate>Mon, 23 Feb 2026 16:25:07 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>[In preview] Public Preview: WAF Insights for Application Gateway</title>
       <link>https://azure.microsoft.com/updates?id=557416</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557416</guid>
@@ -141,13 +225,6 @@
       <source>Docker Blog</source>
     </item>
     <item>
-      <title>Organization-level Copilot usage metrics dashboard available in public preview</title>
-      <link>https://github.blog/changelog/2026-02-20-organization-level-copilot-usage-metrics-dashboard-available-in-public-preview</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-20-organization-level-copilot-usage-metrics-dashboard-available-in-public-preview</guid>
-      <pubDate>Fri, 20 Feb 2026 19:01:39 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>[Launched] Generally Available: Azure Premium SSD v2 Disk is now available in Brazil Southeast, and in a third Availability Zone in Malaysia West and Indonesia Central</title>
       <link>https://azure.microsoft.com/updates?id=557623</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557623</guid>
@@ -167,13 +244,6 @@
       <guid isPermaLink="true">https://about.gitlab.com/blog/gitlab-extends-omnibus-package-signing-key-expiration-to-2028/</guid>
       <pubDate>Fri, 20 Feb 2026 00:00:00 +0000</pubDate>
       <source>GitLab Blog</source>
-    </item>
-    <item>
-      <title>Workflow dispatch API now returns run IDs</title>
-      <link>https://github.blog/changelog/2026-02-19-workflow-dispatch-api-now-returns-run-ids</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-19-workflow-dispatch-api-now-returns-run-ids</guid>
-      <pubDate>Thu, 19 Feb 2026 22:39:37 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>How AI is reshaping developer choice (and Octoverse data proves it)</title>
@@ -302,7 +372,7 @@
       <source>HashiCorp Blog</source>
     </item>
     <item>
-      <title>[Launched] Generally Available: Node auto-provisioning support in Azure government and private cloud</title>
+      <title>[Launched] Generally Available: Node auto-provisioning support in Sovereign Cloud</title>
       <link>https://azure.microsoft.com/updates?id=557208</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557208</guid>
       <pubDate>Wed, 18 Feb 2026 17:15:17 +0000</pubDate>
@@ -645,13 +715,6 @@
       <source>Jenkins Blog</source>
     </item>
     <item>
-      <title>Reduce Vulnerability Noise with VEX: Wiz + Docker Hardened Images</title>
-      <link>https://www.docker.com/blog/reduce-vulnerability-noise-with-vex-wiz-docker-hardened-images/</link>
-      <guid isPermaLink="true">https://www.docker.com/blog/reduce-vulnerability-noise-with-vex-wiz-docker-hardened-images/</guid>
-      <pubDate>Thu, 05 Feb 2026 23:25:55 +0000</pubDate>
-      <source>Docker Blog</source>
-    </item>
-    <item>
       <title>[In preview] Public Preview: Azure virtual network routing appliance</title>
       <link>https://azure.microsoft.com/updates?id=555944</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=555944</guid>
@@ -907,13 +970,6 @@
       <title>Fix bugs faster with CircleCI’s Chunk AI agent</title>
       <link>https://circleci.com/blog/fix-bugs-faster-with-circlecis-chunk-ai-agent/</link>
       <guid isPermaLink="true">https://circleci.com/blog/fix-bugs-faster-with-circlecis-chunk-ai-agent/</guid>
-      <pubDate>Wed, 28 Jan 2026 16:00:00 +0000</pubDate>
-      <source>CircleCI Blog</source>
-    </item>
-    <item>
-      <title>Boost your test coverage with CircleCI Chunk AI agent</title>
-      <link>https://circleci.com/blog/boost-your-test-coverage-with-circleci-chunk-ai-agent/</link>
-      <guid isPermaLink="true">https://circleci.com/blog/boost-your-test-coverage-with-circleci-chunk-ai-agent/</guid>
       <pubDate>Wed, 28 Jan 2026 16:00:00 +0000</pubDate>
       <source>CircleCI Blog</source>
     </item>
@@ -1175,34 +1231,6 @@
       <guid isPermaLink="true">https://about.gitlab.com/blog/gitlab-duo-agent-platform-complete-getting-started-guide/</guid>
       <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
       <source>GitLab Blog</source>
-    </item>
-    <item>
-      <title>Introduction to GitLab Duo Agent Platform</title>
-      <link>https://about.gitlab.com/blog/introduction-to-gitlab-duo-agent-platform/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/introduction-to-gitlab-duo-agent-platform/</guid>
-      <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
-      <source>GitLab Blog</source>
-    </item>
-    <item>
-      <title>Monitor, manage, and automate AI workflows</title>
-      <link>https://about.gitlab.com/blog/monitor-manage-automate-ai-workflows/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/monitor-manage-automate-ai-workflows/</guid>
-      <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
-      <source>GitLab Blog</source>
-    </item>
-    <item>
-      <title>How GEICO lowered its $300M cloud spend and decoupled security from the network</title>
-      <link>https://www.hashicorp.com/blog/how-geico-lowered-its-300m-cloud-spend-and-decoupled-security-from-the-network</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/how-geico-lowered-its-300m-cloud-spend-and-decoupled-security-from-the-network</guid>
-      <pubDate>Tue, 13 Jan 2026 18:00:00 +0000</pubDate>
-      <source>HashiCorp Blog</source>
-    </item>
-    <item>
-      <title>The risks of cybersecurity tool sprawl: Why consolidation is a strategic priority</title>
-      <link>https://www.hashicorp.com/blog/the-risks-of-cybersecurity-tool-sprawl-and-why-we-need-consolidation</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/the-risks-of-cybersecurity-tool-sprawl-and-why-we-need-consolidation</guid>
-      <pubDate>Mon, 12 Jan 2026 23:00:00 +0000</pubDate>
-      <source>HashiCorp Blog</source>
     </item>
     <item>
       <title>Kubernetes v1.35: Restricting executables invoked by kubeconfigs via exec plugin allowList added to kuberc</title>
@@ -2612,27 +2640,6 @@
       <source>Azure Updates</source>
     </item>
     <item>
-      <title>[In development] Private Preview: ActiveMQ and JMS connector for Azure Logic Apps</title>
-      <link>https://azure.microsoft.com/updates?id=531783</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=531783</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: New healthcare connectors for Azure Logic Apps</title>
-      <link>https://azure.microsoft.com/updates?id=531778</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=531778</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Scheduled Actions</title>
-      <link>https://azure.microsoft.com/updates?id=530797</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=530797</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
       <title>Microsoft Entra at Ignite 2025: November 17-21</title>
       <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-at-ignite-2025-november-17-21/ba-p/4400194</link>
       <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-at-ignite-2025-november-17-21/ba-p/4400194</guid>
@@ -2869,13 +2876,6 @@
       <guid isPermaLink="true">https://kubernetes.io/blog/2025/09/17/kubernetes-v1-34-pods-report-dra-resource-health/</guid>
       <pubDate>Wed, 17 Sep 2025 18:30:00 +0000</pubDate>
       <source>Kubernetes Blog</source>
-    </item>
-    <item>
-      <title>Issue #243 - Terraform Remote Code Execution, "resource must be replaced", Designing Terraform Modules, Prevent Accidental Deletion</title>
-      <link>https://www.weekly.tf/p/issue-243-terraform-remote-code-execution-resource-must-be-replaced-designing-terraform-modules</link>
-      <guid isPermaLink="true">https://www.weekly.tf/p/issue-243-terraform-remote-code-execution-resource-must-be-replaced-designing-terraform-modules</guid>
-      <pubDate>Wed, 17 Sep 2025 15:00:00 +0000</pubDate>
-      <source>Terraform weekly</source>
     </item>
     <item>
       <title>Beyond OAuth: Why SCIM must evolve for the AI agent revolution</title>

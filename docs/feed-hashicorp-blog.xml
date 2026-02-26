@@ -5,8 +5,20 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-hashicorp-blog.xml</link>
     <description>Articles from HashiCorp Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-hashicorp-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 25 Feb 2026 12:38:31 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 26 Feb 2026 01:07:23 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Secure remote access without the ‘portal tax’: Boundary vs other vendors</title>
+      <link>https://www.hashicorp.com/blog/secure-remote-access-without-the-portal-tax-boundary-vs-other-vendors</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/secure-remote-access-without-the-portal-tax-boundary-vs-other-vendors</guid>
+      <pubDate>Wed, 25 Feb 2026 17:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Terraform Enterprise 1.2 upgrades workflows, visibility, and brownfield migration</title>
+      <link>https://www.hashicorp.com/blog/terraform-enterprise-12-upgrades-workflows-visibility-and-brownfield-migration</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/terraform-enterprise-12-upgrades-workflows-visibility-and-brownfield-migration</guid>
+      <pubDate>Tue, 24 Feb 2026 17:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Saving banks from technical debt: How Atruvia built secure, self-service infrastructure</title>
       <link>https://www.hashicorp.com/blog/saving-banks-from-technical-debt-how-atruvia-built-secure-self-service-infrastructure</link>
@@ -114,18 +126,6 @@
       <link>https://www.hashicorp.com/blog/secrets-management-disaster-recovery-without-the-operational-burden</link>
       <guid isPermaLink="true">https://www.hashicorp.com/blog/secrets-management-disaster-recovery-without-the-operational-burden</guid>
       <pubDate>Wed, 21 Jan 2026 19:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>How GEICO lowered its $300M cloud spend and decoupled security from the network</title>
-      <link>https://www.hashicorp.com/blog/how-geico-lowered-its-300m-cloud-spend-and-decoupled-security-from-the-network</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/how-geico-lowered-its-300m-cloud-spend-and-decoupled-security-from-the-network</guid>
-      <pubDate>Tue, 13 Jan 2026 18:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>The risks of cybersecurity tool sprawl: Why consolidation is a strategic priority</title>
-      <link>https://www.hashicorp.com/blog/the-risks-of-cybersecurity-tool-sprawl-and-why-we-need-consolidation</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/the-risks-of-cybersecurity-tool-sprawl-and-why-we-need-consolidation</guid>
-      <pubDate>Mon, 12 Jan 2026 23:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

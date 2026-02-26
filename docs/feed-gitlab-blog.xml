@@ -5,8 +5,20 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-gitlab-blog.xml</link>
     <description>Articles from GitLab Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-gitlab-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 25 Feb 2026 12:38:31 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 26 Feb 2026 01:07:23 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>New GitLab metrics and registry features help reduce CI/CD bottlenecks</title>
+      <link>https://about.gitlab.com/blog/new-gitlab-metrics-and-registry-features-help-reduce-ci-cd-bottlenecks/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/new-gitlab-metrics-and-registry-features-help-reduce-ci-cd-bottlenecks/</guid>
+      <pubDate>Wed, 25 Feb 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Passkeys now available for passwordless sign-in and 2FA on GitLab</title>
+      <link>https://about.gitlab.com/blog/passkeys-now-available-for-passwordless-sign-in-and-2fa-on-gitlab/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/passkeys-now-available-for-passwordless-sign-in-and-2fa-on-gitlab/</guid>
+      <pubDate>Wed, 25 Feb 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>GPG key used to sign GitLab package repositories' metadata has been extended</title>
       <link>https://about.gitlab.com/blog/gpg-key-used-to-sign-gitlab-package-repositories-metadata-has-been-extended/</link>
@@ -107,18 +119,6 @@
       <title>Get started with GitLab Duo Agent Platform: The complete guide</title>
       <link>https://about.gitlab.com/blog/gitlab-duo-agent-platform-complete-getting-started-guide/</link>
       <guid isPermaLink="true">https://about.gitlab.com/blog/gitlab-duo-agent-platform-complete-getting-started-guide/</guid>
-      <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Introduction to GitLab Duo Agent Platform</title>
-      <link>https://about.gitlab.com/blog/introduction-to-gitlab-duo-agent-platform/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/introduction-to-gitlab-duo-agent-platform/</guid>
-      <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Monitor, manage, and automate AI workflows</title>
-      <link>https://about.gitlab.com/blog/monitor-manage-automate-ai-workflows/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/monitor-manage-automate-ai-workflows/</guid>
       <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
     </item>
   </channel>

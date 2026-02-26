@@ -5,8 +5,32 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml</link>
     <description>Articles from GitHub Changelog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 25 Feb 2026 12:38:31 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 26 Feb 2026 01:07:23 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Generate pull request titles with Copilot on the web</title>
+      <link>https://github.blog/changelog/2026-02-25-generate-pull-request-titles-with-copilot-on-the-web</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-25-generate-pull-request-titles-with-copilot-on-the-web</guid>
+      <pubDate>Wed, 25 Feb 2026 23:51:39 +0000</pubDate>
+    </item>
+    <item>
+      <title>GPT-5.3-Codex is now available in github.com, GitHub Mobile, and Visual Studio</title>
+      <link>https://github.blog/changelog/2026-02-25-gpt-5-3-codex-is-now-available-in-github-com-github-mobile-and-visual-studio</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-25-gpt-5-3-codex-is-now-available-in-github-com-github-mobile-and-visual-studio</guid>
+      <pubDate>Wed, 25 Feb 2026 23:25:30 +0000</pubDate>
+    </item>
+    <item>
+      <title>Improved web search in Copilot on github.com</title>
+      <link>https://github.blog/changelog/2026-02-25-improved-web-search-in-copilot-on-github-com</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-25-improved-web-search-in-copilot-on-github-com</guid>
+      <pubDate>Wed, 25 Feb 2026 22:52:05 +0000</pubDate>
+    </item>
+    <item>
+      <title>GitHub Copilot CLI is now generally available</title>
+      <link>https://github.blog/changelog/2026-02-25-github-copilot-cli-is-now-generally-available</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-25-github-copilot-cli-is-now-generally-available</guid>
+      <pubDate>Wed, 25 Feb 2026 17:01:29 +0000</pubDate>
+    </item>
     <item>
       <title>GitHub Enterprise Server 3.20 release candidate is available</title>
       <link>https://github.blog/changelog/2026-02-24-github-enterprise-server-3-20-release-candidate-is-available</link>
@@ -42,30 +66,6 @@
       <link>https://github.blog/changelog/2026-02-23-enterprise-defined-custom-organization-roles-are-generally-available</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-02-23-enterprise-defined-custom-organization-roles-are-generally-available</guid>
       <pubDate>Tue, 24 Feb 2026 02:33:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>IP allow list coverage extended to EMU namespaces in public preview</title>
-      <link>https://github.blog/changelog/2026-02-23-ip-allow-list-coverage-extended-to-emu-namespaces-in-public-preview</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-23-ip-allow-list-coverage-extended-to-emu-namespaces-in-public-preview</guid>
-      <pubDate>Mon, 23 Feb 2026 17:44:32 +0000</pubDate>
-    </item>
-    <item>
-      <title>Enterprise team support in organization APIs</title>
-      <link>https://github.blog/changelog/2026-02-23-enterprise-team-support-in-organization-apis</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-23-enterprise-team-support-in-organization-apis</guid>
-      <pubDate>Mon, 23 Feb 2026 16:25:07 +0000</pubDate>
-    </item>
-    <item>
-      <title>Organization-level Copilot usage metrics dashboard available in public preview</title>
-      <link>https://github.blog/changelog/2026-02-20-organization-level-copilot-usage-metrics-dashboard-available-in-public-preview</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-20-organization-level-copilot-usage-metrics-dashboard-available-in-public-preview</guid>
-      <pubDate>Fri, 20 Feb 2026 19:01:39 +0000</pubDate>
-    </item>
-    <item>
-      <title>Workflow dispatch API now returns run IDs</title>
-      <link>https://github.blog/changelog/2026-02-19-workflow-dispatch-api-now-returns-run-ids</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-19-workflow-dispatch-api-now-returns-run-ids</guid>
-      <pubDate>Thu, 19 Feb 2026 22:39:37 +0000</pubDate>
     </item>
   </channel>
 </rss>

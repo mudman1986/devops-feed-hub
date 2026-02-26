@@ -5,8 +5,26 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml</link>
     <description>Articles from Azure Updates</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 25 Feb 2026 12:38:31 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 26 Feb 2026 01:07:23 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>[Launched] Generally Available: Azure SQL updates for late-February 2026</title>
+      <link>https://azure.microsoft.com/updates?id=557517</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557517</guid>
+      <pubDate>Wed, 25 Feb 2026 19:00:32 +0000</pubDate>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Azure SQL updates for late-February 2026</title>
+      <link>https://azure.microsoft.com/updates?id=557522</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557522</guid>
+      <pubDate>Wed, 25 Feb 2026 18:45:40 +0000</pubDate>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Geo‑redundant backups for Premium SSD v2 in Azure Database for PostgreSQL</title>
+      <link>https://azure.microsoft.com/updates?id=557532</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557532</guid>
+      <pubDate>Wed, 25 Feb 2026 18:30:06 +0000</pubDate>
+    </item>
     <item>
       <title>Retirement: Windows Server Annual Channel (preview)</title>
       <link>https://azure.microsoft.com/updates?id=557224</link>
@@ -56,7 +74,7 @@
       <pubDate>Wed, 18 Feb 2026 18:00:55 +0000</pubDate>
     </item>
     <item>
-      <title>[Launched] Generally Available: Node auto-provisioning support in Azure government and private cloud</title>
+      <title>[Launched] Generally Available: Node auto-provisioning support in Sovereign Cloud</title>
       <link>https://azure.microsoft.com/updates?id=557208</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557208</guid>
       <pubDate>Wed, 18 Feb 2026 17:15:17 +0000</pubDate>
@@ -1182,24 +1200,6 @@
       <link>https://azure.microsoft.com/updates?id=528538</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=528538</guid>
       <pubDate>Tue, 18 Nov 2025 16:30:36 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In development] Private Preview: ActiveMQ and JMS connector for Azure Logic Apps</title>
-      <link>https://azure.microsoft.com/updates?id=531783</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=531783</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: New healthcare connectors for Azure Logic Apps</title>
-      <link>https://azure.microsoft.com/updates?id=531778</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=531778</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Scheduled Actions</title>
-      <link>https://azure.microsoft.com/updates?id=530797</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=530797</guid>
-      <pubDate>Tue, 18 Nov 2025 16:00:16 +0000</pubDate>
     </item>
     <item>
       <title>[Launched] Generally Available: Model Context Protocol support in Azure API Management and Azure API Center</title>
