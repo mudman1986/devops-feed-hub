@@ -5,8 +5,15 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 26 Feb 2026 01:07:23 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 26 Feb 2026 12:38:13 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>[In preview] Public Preview: Secure ingestion and pod placement for Azure Monitor pipeline</title>
+      <link>https://azure.microsoft.com/updates?id=552808</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=552808</guid>
+      <pubDate>Thu, 26 Feb 2026 00:30:50 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
     <item>
       <title>Generate pull request titles with Copilot on the web</title>
       <link>https://github.blog/changelog/2026-02-25-generate-pull-request-titles-with-copilot-on-the-web</link>
@@ -2630,13 +2637,6 @@
       <link>https://azure.microsoft.com/updates?id=488990</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=488990</guid>
       <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Azure Copilot observability agent</title>
-      <link>https://azure.microsoft.com/updates?id=528538</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=528538</guid>
-      <pubDate>Tue, 18 Nov 2025 16:30:36 +0000</pubDate>
       <source>Azure Updates</source>
     </item>
     <item>
