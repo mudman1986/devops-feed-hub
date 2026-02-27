@@ -5,8 +5,56 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml</link>
     <description>Articles from GitHub Changelog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 26 Feb 2026 12:38:13 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 27 Feb 2026 01:06:37 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>GitHub Actions now supports uploading and downloading non-zipped artifacts</title>
+      <link>https://github.blog/changelog/2026-02-26-github-actions-now-supports-uploading-and-downloading-non-zipped-artifacts</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-26-github-actions-now-supports-uploading-and-downloading-non-zipped-artifacts</guid>
+      <pubDate>Thu, 26 Feb 2026 22:36:48 +0000</pubDate>
+    </item>
+    <item>
+      <title>Copilot metrics report URLs update</title>
+      <link>https://github.blog/changelog/2026-02-26-copilot-metrics-report-urls-update</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-26-copilot-metrics-report-urls-update</guid>
+      <pubDate>Thu, 26 Feb 2026 20:11:34 +0000</pubDate>
+    </item>
+    <item>
+      <title>Enterprise AI Controls &amp; agent control plane now generally available</title>
+      <link>https://github.blog/changelog/2026-02-26-enterprise-ai-controls-agent-control-plane-now-generally-available</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-26-enterprise-ai-controls-agent-control-plane-now-generally-available</guid>
+      <pubDate>Thu, 26 Feb 2026 20:10:23 +0000</pubDate>
+    </item>
+    <item>
+      <title>Claude and Codex now available for Copilot Business &amp; Pro users</title>
+      <link>https://github.blog/changelog/2026-02-26-claude-and-codex-now-available-for-copilot-business-pro-users</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-26-claude-and-codex-now-available-for-copilot-business-pro-users</guid>
+      <pubDate>Thu, 26 Feb 2026 17:18:39 +0000</pubDate>
+    </item>
+    <item>
+      <title>macos-26 is now generally available for GitHub-hosted runners</title>
+      <link>https://github.blog/changelog/2026-02-26-macos-26-is-now-generally-available-for-github-hosted-runners</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-26-macos-26-is-now-generally-available-for-github-hosted-runners</guid>
+      <pubDate>Thu, 26 Feb 2026 16:00:59 +0000</pubDate>
+    </item>
+    <item>
+      <title>Copilot Content Exclusion REST API in public preview</title>
+      <link>https://github.blog/changelog/2026-02-26-copilot-content-exclusion-rest-api-in-public-preview</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-26-copilot-content-exclusion-rest-api-in-public-preview</guid>
+      <pubDate>Thu, 26 Feb 2026 15:37:48 +0000</pubDate>
+    </item>
+    <item>
+      <title>GitHub Mobile: Track coding agent progress in real time with Live Notifications</title>
+      <link>https://github.blog/changelog/2026-02-26-github-mobile-track-coding-agent-progress-in-real-time-with-live-notifications</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-26-github-mobile-track-coding-agent-progress-in-real-time-with-live-notifications</guid>
+      <pubDate>Thu, 26 Feb 2026 10:58:22 +0000</pubDate>
+    </item>
+    <item>
+      <title>Improved search on the issues dashboard</title>
+      <link>https://github.blog/changelog/2026-02-26-improved-search-on-the-issues-dashboard</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-26-improved-search-on-the-issues-dashboard</guid>
+      <pubDate>Thu, 26 Feb 2026 09:29:08 +0000</pubDate>
+    </item>
     <item>
       <title>Generate pull request titles with Copilot on the web</title>
       <link>https://github.blog/changelog/2026-02-25-generate-pull-request-titles-with-copilot-on-the-web</link>
@@ -18,54 +66,6 @@
       <link>https://github.blog/changelog/2026-02-25-gpt-5-3-codex-is-now-available-in-github-com-github-mobile-and-visual-studio</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-02-25-gpt-5-3-codex-is-now-available-in-github-com-github-mobile-and-visual-studio</guid>
       <pubDate>Wed, 25 Feb 2026 23:25:30 +0000</pubDate>
-    </item>
-    <item>
-      <title>Improved web search in Copilot on github.com</title>
-      <link>https://github.blog/changelog/2026-02-25-improved-web-search-in-copilot-on-github-com</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-25-improved-web-search-in-copilot-on-github-com</guid>
-      <pubDate>Wed, 25 Feb 2026 22:52:05 +0000</pubDate>
-    </item>
-    <item>
-      <title>GitHub Copilot CLI is now generally available</title>
-      <link>https://github.blog/changelog/2026-02-25-github-copilot-cli-is-now-generally-available</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-25-github-copilot-cli-is-now-generally-available</guid>
-      <pubDate>Wed, 25 Feb 2026 17:01:29 +0000</pubDate>
-    </item>
-    <item>
-      <title>GitHub Enterprise Server 3.20 release candidate is available</title>
-      <link>https://github.blog/changelog/2026-02-24-github-enterprise-server-3-20-release-candidate-is-available</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-24-github-enterprise-server-3-20-release-candidate-is-available</guid>
-      <pubDate>Tue, 24 Feb 2026 23:37:14 +0000</pubDate>
-    </item>
-    <item>
-      <title>CodeQL adds Go 1.26 and Kotlin 2.3.10 support and improves query accuracy</title>
-      <link>https://github.blog/changelog/2026-02-24-codeql-adds-go-1-26-and-kotlin-2-3-10-support-and-improves-query-accuracy</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-24-codeql-adds-go-1-26-and-kotlin-2-3-10-support-and-improves-query-accuracy</guid>
-      <pubDate>Tue, 24 Feb 2026 22:20:46 +0000</pubDate>
-    </item>
-    <item>
-      <title>Dependabot can group updates by dependency name across multiple directories</title>
-      <link>https://github.blog/changelog/2026-02-24-dependabot-can-group-updates-by-dependency-name-across-multiple-directories</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-24-dependabot-can-group-updates-by-dependency-name-across-multiple-directories</guid>
-      <pubDate>Tue, 24 Feb 2026 21:28:17 +0000</pubDate>
-    </item>
-    <item>
-      <title>GitHub Code Quality: Organization-level dashboard in public preview</title>
-      <link>https://github.blog/changelog/2026-02-24-github-code-quality-organization-level-dashboard-in-public-preview</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-24-github-code-quality-organization-level-dashboard-in-public-preview</guid>
-      <pubDate>Tue, 24 Feb 2026 19:49:29 +0000</pubDate>
-    </item>
-    <item>
-      <title>Repository dashboard is now generally available</title>
-      <link>https://github.blog/changelog/2026-02-24-repository-dashboard-is-now-generally-available</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-24-repository-dashboard-is-now-generally-available</guid>
-      <pubDate>Tue, 24 Feb 2026 18:49:44 +0000</pubDate>
-    </item>
-    <item>
-      <title>Enterprise-defined custom organization roles are generally available</title>
-      <link>https://github.blog/changelog/2026-02-23-enterprise-defined-custom-organization-roles-are-generally-available</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-23-enterprise-defined-custom-organization-roles-are-generally-available</guid>
-      <pubDate>Tue, 24 Feb 2026 02:33:02 +0000</pubDate>
     </item>
   </channel>
 </rss>

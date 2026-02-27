@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-docker-blog.xml</link>
     <description>Articles from Docker Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-docker-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 26 Feb 2026 12:38:13 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 27 Feb 2026 01:06:37 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Docker Model Runner Brings vLLM to macOS with Apple Silicon</title>
+      <link>https://www.docker.com/blog/docker-model-runner-vllm-metal-macos/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/docker-model-runner-vllm-metal-macos/</guid>
+      <pubDate>Thu, 26 Feb 2026 14:42:57 +0000</pubDate>
+    </item>
     <item>
       <title>Open WebUI + Docker Model Runner: Self-Hosted Models, Zero Configuration</title>
       <link>https://www.docker.com/blog/openwebui-docker-model-runner/</link>
@@ -60,12 +66,6 @@
       <link>https://www.docker.com/blog/context-packing-context-window/</link>
       <guid isPermaLink="true">https://www.docker.com/blog/context-packing-context-window/</guid>
       <pubDate>Fri, 13 Feb 2026 13:57:36 +0000</pubDate>
-    </item>
-    <item>
-      <title>Hardened Images Are Free. Now What?</title>
-      <link>https://www.docker.com/blog/hardened-images-free-now-what/</link>
-      <guid isPermaLink="true">https://www.docker.com/blog/hardened-images-free-now-what/</guid>
-      <pubDate>Tue, 10 Feb 2026 14:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

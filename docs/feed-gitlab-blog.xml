@@ -5,8 +5,26 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-gitlab-blog.xml</link>
     <description>Articles from GitLab Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-gitlab-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 26 Feb 2026 12:38:13 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 27 Feb 2026 01:06:37 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>GitLab Duo Agent Platform with Claude accelerates development</title>
+      <link>https://about.gitlab.com/blog/gitlab-duo-agent-platform-with-claude-accelerates-development/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/gitlab-duo-agent-platform-with-claude-accelerates-development/</guid>
+      <pubDate>Thu, 26 Feb 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Introducing the GitLab Managed Service Provider (MSP) Partner Program</title>
+      <link>https://about.gitlab.com/blog/introducing-the-gitlab-managed-service-provider-msp-partner-program/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/introducing-the-gitlab-managed-service-provider-msp-partner-program/</guid>
+      <pubDate>Thu, 26 Feb 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Secure and fast deployments to Google Agent Engine with GitLab</title>
+      <link>https://about.gitlab.com/blog/secure-and-fast-deployments-to-google-agent-engine-with-gitlab/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/secure-and-fast-deployments-to-google-agent-engine-with-gitlab/</guid>
+      <pubDate>Thu, 26 Feb 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>New GitLab metrics and registry features help reduce CI/CD bottlenecks</title>
       <link>https://about.gitlab.com/blog/new-gitlab-metrics-and-registry-features-help-reduce-ci-cd-bottlenecks/</link>
@@ -101,24 +119,6 @@
       <title>AI Catalog: Discover, create, and share agents and flows</title>
       <link>https://about.gitlab.com/blog/ai-catalog-discover-and-share-agents/</link>
       <guid isPermaLink="true">https://about.gitlab.com/blog/ai-catalog-discover-and-share-agents/</guid>
-      <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Customizing GitLab Duo Agent Platform: Chat rules, prompts, and workflows</title>
-      <link>https://about.gitlab.com/blog/customizing-gitlab-duo-chat-rules-prompts-workflows/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/customizing-gitlab-duo-chat-rules-prompts-workflows/</guid>
-      <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Getting started with GitLab Duo Agentic Chat</title>
-      <link>https://about.gitlab.com/blog/getting-started-with-gitlab-duo-agentic-chat/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/getting-started-with-gitlab-duo-agentic-chat/</guid>
-      <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Get started with GitLab Duo Agent Platform: The complete guide</title>
-      <link>https://about.gitlab.com/blog/gitlab-duo-agent-platform-complete-getting-started-guide/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/gitlab-duo-agent-platform-complete-getting-started-guide/</guid>
       <pubDate>Wed, 14 Jan 2026 00:00:00 +0000</pubDate>
     </item>
   </channel>
