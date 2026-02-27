@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-hashicorp-blog.xml</link>
     <description>Articles from HashiCorp Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-hashicorp-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 27 Feb 2026 01:06:37 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 27 Feb 2026 12:33:53 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Secure remote access without the ‘portal tax’: Boundary vs other vendors</title>
