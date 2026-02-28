@@ -5,8 +5,20 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml</link>
     <description>Articles from GitHub Changelog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 27 Feb 2026 12:33:53 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 28 Feb 2026 01:01:02 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Copilot usage metrics now includes enterprise-level GitHub Copilot CLI activity</title>
+      <link>https://github.blog/changelog/2026-02-27-copilot-usage-metrics-now-includes-enterprise-level-github-copilot-cli-activity</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-27-copilot-usage-metrics-now-includes-enterprise-level-github-copilot-cli-activity</guid>
+      <pubDate>Fri, 27 Feb 2026 18:00:19 +0000</pubDate>
+    </item>
+    <item>
+      <title>Copilot metrics is now generally available</title>
+      <link>https://github.blog/changelog/2026-02-27-copilot-metrics-is-now-generally-available</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-02-27-copilot-metrics-is-now-generally-available</guid>
+      <pubDate>Fri, 27 Feb 2026 17:29:13 +0000</pubDate>
+    </item>
     <item>
       <title>GitHub Actions now supports uploading and downloading non-zipped artifacts</title>
       <link>https://github.blog/changelog/2026-02-26-github-actions-now-supports-uploading-and-downloading-non-zipped-artifacts</link>
@@ -54,18 +66,6 @@
       <link>https://github.blog/changelog/2026-02-26-improved-search-on-the-issues-dashboard</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-02-26-improved-search-on-the-issues-dashboard</guid>
       <pubDate>Thu, 26 Feb 2026 09:29:08 +0000</pubDate>
-    </item>
-    <item>
-      <title>Generate pull request titles with Copilot on the web</title>
-      <link>https://github.blog/changelog/2026-02-25-generate-pull-request-titles-with-copilot-on-the-web</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-25-generate-pull-request-titles-with-copilot-on-the-web</guid>
-      <pubDate>Wed, 25 Feb 2026 23:51:39 +0000</pubDate>
-    </item>
-    <item>
-      <title>GPT-5.3-Codex is now available in github.com, GitHub Mobile, and Visual Studio</title>
-      <link>https://github.blog/changelog/2026-02-25-gpt-5-3-codex-is-now-available-in-github-com-github-mobile-and-visual-studio</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-25-gpt-5-3-codex-is-now-available-in-github-com-github-mobile-and-visual-studio</guid>
-      <pubDate>Wed, 25 Feb 2026 23:25:30 +0000</pubDate>
     </item>
   </channel>
 </rss>

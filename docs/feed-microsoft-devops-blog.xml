@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-microsoft-devops-blog.xml</link>
     <description>Articles from Microsoft DevOps Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-microsoft-devops-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 27 Feb 2026 12:33:53 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 28 Feb 2026 01:01:02 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Updates to Team Calendar extension</title>
+      <link>https://devblogs.microsoft.com/devops/updates-to-team-calendar-extension/</link>
+      <guid isPermaLink="true">https://devblogs.microsoft.com/devops/updates-to-team-calendar-extension/</guid>
+      <pubDate>Fri, 27 Feb 2026 18:30:30 +0000</pubDate>
+    </item>
     <item>
       <title>TFVC Remove Existing Obsolete Policies ASAP</title>
       <link>https://devblogs.microsoft.com/devops/tfvc-remove-existing-obsolete-policies-asap/</link>
@@ -60,12 +66,6 @@
       <link>https://devblogs.microsoft.com/devops/github-copilot-for-azure-boards/</link>
       <guid isPermaLink="true">https://devblogs.microsoft.com/devops/github-copilot-for-azure-boards/</guid>
       <pubDate>Tue, 16 Dec 2025 13:17:08 +0000</pubDate>
-    </item>
-    <item>
-      <title>Retirement of Global Personal Access Tokens in Azure DevOps</title>
-      <link>https://devblogs.microsoft.com/devops/retirement-of-global-personal-access-tokens-in-azure-devops/</link>
-      <guid isPermaLink="true">https://devblogs.microsoft.com/devops/retirement-of-global-personal-access-tokens-in-azure-devops/</guid>
-      <pubDate>Fri, 12 Dec 2025 14:15:06 +0000</pubDate>
     </item>
   </channel>
 </rss>

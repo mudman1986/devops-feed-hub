@@ -5,8 +5,32 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml</link>
     <description>Articles from Azure Updates</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 27 Feb 2026 12:33:53 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 28 Feb 2026 01:01:02 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>[Launched] Generally available: Azure Premium SSD v2 Disk Storage is now available in a third Availability Zone in New Zealan North</title>
+      <link>https://azure.microsoft.com/updates?id=558078</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558078</guid>
+      <pubDate>Fri, 27 Feb 2026 23:15:13 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: DCesv6, DCedsv6, ECesv6, and ECedsv6 confidential VMs</title>
+      <link>https://azure.microsoft.com/updates?id=558051</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558051</guid>
+      <pubDate>Fri, 27 Feb 2026 23:15:13 +0000</pubDate>
+    </item>
+    <item>
+      <title>Retirement: Managed NGINX Ingress with Application Routing Add-on Retiring November 2026</title>
+      <link>https://azure.microsoft.com/updates?id=555839</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=555839</guid>
+      <pubDate>Fri, 27 Feb 2026 21:45:03 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Azure Red Hat OpenShift is now available in Malaysia West, New Zealand North, and Mexico Central</title>
+      <link>https://azure.microsoft.com/updates?id=557897</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557897</guid>
+      <pubDate>Fri, 27 Feb 2026 17:30:41 +0000</pubDate>
+    </item>
     <item>
       <title>[In preview] Public Preview: Restrict usage of user delegation SAS to an Entra ID identity</title>
       <link>https://azure.microsoft.com/updates?id=557694</link>
@@ -1175,30 +1199,6 @@
       <title>[In preview] Public Preview: Dynamic sessions shell environment and MCP support in Azure Container Apps</title>
       <link>https://azure.microsoft.com/updates?id=512949</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=512949</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Deployment labels in Azure Container Apps</title>
-      <link>https://azure.microsoft.com/updates?id=512900</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=512900</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Rule-based routing in Azure Container Apps</title>
-      <link>https://azure.microsoft.com/updates?id=512850</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=512850</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Premium Ingress in Azure Container Apps</title>
-      <link>https://azure.microsoft.com/updates?id=512813</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=512813</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: JWT Validation in Azure Application Gateway</title>
-      <link>https://azure.microsoft.com/updates?id=489855</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=489855</guid>
       <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
     </item>
     <item>
