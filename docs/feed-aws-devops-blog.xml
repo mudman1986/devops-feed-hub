@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-aws-devops-blog.xml</link>
     <description>Articles from AWS DevOps Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-aws-devops-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 02 Mar 2026 03:22:14 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 02 Mar 2026 12:33:31 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Automate AWS Lambda Runtime Upgrades with AWS Transform custom</title>
+      <link>https://aws.amazon.com/blogs/devops/automate-aws-lambda-runtime-upgrades-with-aws-transform-custom/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/automate-aws-lambda-runtime-upgrades-with-aws-transform-custom/</guid>
+      <pubDate>Mon, 02 Mar 2026 11:54:36 +0000</pubDate>
+    </item>
     <item>
       <title>Choosing between Amazon ECS Blue/Green Native or AWS CodeDeploy in AWS CDK</title>
       <link>https://aws.amazon.com/blogs/devops/choosing-between-amazon-ecs-blue-green-native-or-aws-codedeploy-in-aws-cdk/</link>
@@ -120,12 +126,6 @@
       <link>https://aws.amazon.com/blogs/devops/amazon-introduces-two-benchmark-datasets-for-evaluating-ai-agents-ability-on-code-migration/</link>
       <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/amazon-introduces-two-benchmark-datasets-for-evaluating-ai-agents-ability-on-code-migration/</guid>
       <pubDate>Wed, 19 Nov 2025 18:55:15 +0000</pubDate>
-    </item>
-    <item>
-      <title>Safely Handle Configuration Drift with CloudFormation Drift-Aware Change Sets</title>
-      <link>https://aws.amazon.com/blogs/devops/safely-handle-configuration-drift-with-cloudformation-drift-aware-change-sets/</link>
-      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/safely-handle-configuration-drift-with-cloudformation-drift-aware-change-sets/</guid>
-      <pubDate>Wed, 19 Nov 2025 18:54:15 +0000</pubDate>
     </item>
   </channel>
 </rss>
