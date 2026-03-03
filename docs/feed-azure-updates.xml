@@ -5,8 +5,20 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml</link>
     <description>Articles from Azure Updates</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 02 Mar 2026 12:33:31 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 03 Mar 2026 01:10:24 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>[Launched] Generally Available: Azure Databricks update workspace network configuration</title>
+      <link>https://azure.microsoft.com/updates?id=558060</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558060</guid>
+      <pubDate>Mon, 02 Mar 2026 19:15:14 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Azure Databricks Lakebase</title>
+      <link>https://azure.microsoft.com/updates?id=557991</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557991</guid>
+      <pubDate>Mon, 02 Mar 2026 19:15:14 +0000</pubDate>
+    </item>
     <item>
       <title>[Launched] Generally available: Azure Premium SSD v2 Disk Storage is now available in a third Availability Zone in New Zealan North</title>
       <link>https://azure.microsoft.com/updates?id=558078</link>
@@ -1187,18 +1199,6 @@
       <title>[Launched] Generally Available: Azure SQL updates for November 2025</title>
       <link>https://azure.microsoft.com/updates?id=522523</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=522523</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Azure SQL updates for November 2025</title>
-      <link>https://azure.microsoft.com/updates?id=522514</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=522514</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Dynamic sessions shell environment and MCP support in Azure Container Apps</title>
-      <link>https://azure.microsoft.com/updates?id=512949</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=512949</guid>
       <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
     </item>
     <item>

@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-blog.xml</link>
     <description>Articles from GitHub Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 02 Mar 2026 12:33:31 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 03 Mar 2026 01:10:24 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>GitHub for Beginners: Getting started with GitHub Issues and Projects</title>
+      <link>https://github.blog/developer-skills/github/github-for-beginners-getting-started-with-github-issues-and-projects/</link>
+      <guid isPermaLink="true">https://github.blog/developer-skills/github/github-for-beginners-getting-started-with-github-issues-and-projects/</guid>
+      <pubDate>Mon, 02 Mar 2026 17:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>From idea to pull request: A practical guide to building with GitHub Copilot CLI</title>
       <link>https://github.blog/ai-and-ml/github-copilot/from-idea-to-pull-request-a-practical-guide-to-building-with-github-copilot-cli/</link>
@@ -60,12 +66,6 @@
       <link>https://github.blog/news-insights/company-news/github-availability-report-january-2026/</link>
       <guid isPermaLink="true">https://github.blog/news-insights/company-news/github-availability-report-january-2026/</guid>
       <pubDate>Wed, 11 Feb 2026 23:12:34 +0000</pubDate>
-    </item>
-    <item>
-      <title>Continuous AI in practice: What developers can automate today with agentic CI</title>
-      <link>https://github.blog/ai-and-ml/generative-ai/continuous-ai-in-practice-what-developers-can-automate-today-with-agentic-ci/</link>
-      <guid isPermaLink="true">https://github.blog/ai-and-ml/generative-ai/continuous-ai-in-practice-what-developers-can-automate-today-with-agentic-ci/</guid>
-      <pubDate>Thu, 05 Feb 2026 17:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

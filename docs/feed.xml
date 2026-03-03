@@ -5,14 +5,77 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 02 Mar 2026 12:33:31 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 03 Mar 2026 01:10:24 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Upcoming deprecation of Gemini 3 Pro and GPT-5.1 models</title>
+      <link>https://github.blog/changelog/2026-03-02-upcoming-deprecation-of-gemini-3-pro-and-gpt-5-1-models</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-02-upcoming-deprecation-of-gemini-3-pro-and-gpt-5-1-models</guid>
+      <pubDate>Mon, 02 Mar 2026 20:47:00 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Network configuration changes for Copilot coding agent now in effect</title>
+      <link>https://github.blog/changelog/2026-03-02-network-configuration-changes-for-copilot-coding-agent-now-in-effect</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-02-network-configuration-changes-for-copilot-coding-agent-now-in-effect</guid>
+      <pubDate>Mon, 02 Mar 2026 20:42:32 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>OAuth redirection abuse enables phishing and malware delivery</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/03/02/oauth-redirection-abuse-enables-phishing-malware-delivery/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/02/oauth-redirection-abuse-enables-phishing-malware-delivery/</guid>
+      <pubDate>Mon, 02 Mar 2026 19:29:53 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Azure Databricks update workspace network configuration</title>
+      <link>https://azure.microsoft.com/updates?id=558060</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558060</guid>
+      <pubDate>Mon, 02 Mar 2026 19:15:14 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Azure Databricks Lakebase</title>
+      <link>https://azure.microsoft.com/updates?id=557991</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557991</guid>
+      <pubDate>Mon, 02 Mar 2026 19:15:14 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>GitHub for Beginners: Getting started with GitHub Issues and Projects</title>
+      <link>https://github.blog/developer-skills/github/github-for-beginners-getting-started-with-github-issues-and-projects/</link>
+      <guid isPermaLink="true">https://github.blog/developer-skills/github/github-for-beginners-getting-started-with-github-issues-and-projects/</guid>
+      <pubDate>Mon, 02 Mar 2026 17:00:00 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
+    <item>
+      <title>Copilot metrics now includes plan mode</title>
+      <link>https://github.blog/changelog/2026-03-02-copilot-metrics-now-includes-plan-mode</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-02-copilot-metrics-now-includes-plan-mode</guid>
+      <pubDate>Mon, 02 Mar 2026 16:50:58 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Copilot metrics reports now return consistent usernames for Enterprise Managed Users</title>
+      <link>https://github.blog/changelog/2026-03-02-copilot-metrics-reports-now-return-consistent-usernames-for-enterprise-managed-users</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-02-copilot-metrics-reports-now-return-consistent-usernames-for-enterprise-managed-users</guid>
+      <pubDate>Mon, 02 Mar 2026 16:42:49 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
     <item>
       <title>Automate AWS Lambda Runtime Upgrades with AWS Transform custom</title>
       <link>https://aws.amazon.com/blogs/devops/automate-aws-lambda-runtime-upgrades-with-aws-transform-custom/</link>
       <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/automate-aws-lambda-runtime-upgrades-with-aws-transform-custom/</guid>
       <pubDate>Mon, 02 Mar 2026 11:54:36 +0000</pubDate>
       <source>AWS DevOps Blog</source>
+    </item>
+    <item>
+      <title>Impressions from Jenkins Contributor Summit in Brussels</title>
+      <link>https:/www.jenkins.io/blog/2026/03/02/contributor-summit/</link>
+      <guid isPermaLink="true">https:/www.jenkins.io/blog/2026/03/02/contributor-summit/</guid>
+      <pubDate>Mon, 02 Mar 2026 00:00:00 +0000</pubDate>
+      <source>Jenkins Blog</source>
     </item>
     <item>
       <title>[Launched] Generally available: Azure Premium SSD v2 Disk Storage is now available in a third Availability Zone in New Zealan North</title>
@@ -134,39 +197,11 @@
       <source>Microsoft Security</source>
     </item>
     <item>
-      <title>macos-26 is now generally available for GitHub-hosted runners</title>
-      <link>https://github.blog/changelog/2026-02-26-macos-26-is-now-generally-available-for-github-hosted-runners</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-26-macos-26-is-now-generally-available-for-github-hosted-runners</guid>
-      <pubDate>Thu, 26 Feb 2026 16:00:59 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>Copilot Content Exclusion REST API in public preview</title>
-      <link>https://github.blog/changelog/2026-02-26-copilot-content-exclusion-rest-api-in-public-preview</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-26-copilot-content-exclusion-rest-api-in-public-preview</guid>
-      <pubDate>Thu, 26 Feb 2026 15:37:48 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>Docker Model Runner Brings vLLM to macOS with Apple Silicon</title>
       <link>https://www.docker.com/blog/docker-model-runner-vllm-metal-macos/</link>
       <guid isPermaLink="true">https://www.docker.com/blog/docker-model-runner-vllm-metal-macos/</guid>
       <pubDate>Thu, 26 Feb 2026 14:42:57 +0000</pubDate>
       <source>Docker Blog</source>
-    </item>
-    <item>
-      <title>GitHub Mobile: Track coding agent progress in real time with Live Notifications</title>
-      <link>https://github.blog/changelog/2026-02-26-github-mobile-track-coding-agent-progress-in-real-time-with-live-notifications</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-26-github-mobile-track-coding-agent-progress-in-real-time-with-live-notifications</guid>
-      <pubDate>Thu, 26 Feb 2026 10:58:22 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>Improved search on the issues dashboard</title>
-      <link>https://github.blog/changelog/2026-02-26-improved-search-on-the-issues-dashboard</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-26-improved-search-on-the-issues-dashboard</guid>
-      <pubDate>Thu, 26 Feb 2026 09:29:08 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>[In preview] Public Preview: Secure ingestion and pod placement for Azure Monitor pipeline</title>
@@ -743,13 +778,6 @@
       <source>HashiCorp Blog</source>
     </item>
     <item>
-      <title>80% of Fortune 500 use active AI Agents: Observability, governance, and security shape the new frontier</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/02/10/80-of-fortune-500-use-active-ai-agents-observability-governance-and-security-shape-the-new-frontier/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/10/80-of-fortune-500-use-active-ai-agents-observability-governance-and-security-shape-the-new-frontier/</guid>
-      <pubDate>Tue, 10 Feb 2026 16:00:00 +0000</pubDate>
-      <source>Microsoft Security</source>
-    </item>
-    <item>
       <title>DevSecOps-as-a-Service on Oracle Cloud Infrastructure by Data Intensity</title>
       <link>https://about.gitlab.com/blog/devsecops-as-a-service-on-oracle-cloud-infrastructure-by-data-intensity/</link>
       <guid isPermaLink="true">https://about.gitlab.com/blog/devsecops-as-a-service-on-oracle-cloud-infrastructure-by-data-intensity/</guid>
@@ -839,13 +867,6 @@
       <guid isPermaLink="true">https://www.hashicorp.com/blog/how-to-control-session-routing-for-multi-ip-hosts-in-boundary</guid>
       <pubDate>Thu, 05 Feb 2026 18:30:00 +0000</pubDate>
       <source>HashiCorp Blog</source>
-    </item>
-    <item>
-      <title>Continuous AI in practice: What developers can automate today with agentic CI</title>
-      <link>https://github.blog/ai-and-ml/generative-ai/continuous-ai-in-practice-what-developers-can-automate-today-with-agentic-ci/</link>
-      <guid isPermaLink="true">https://github.blog/ai-and-ml/generative-ai/continuous-ai-in-practice-what-developers-can-automate-today-with-agentic-ci/</guid>
-      <pubDate>Thu, 05 Feb 2026 17:00:00 +0000</pubDate>
-      <source>GitHub Blog</source>
     </item>
     <item>
       <title>AWS Transform custom: AI-driven Java modernization to reduce tech debt</title>
@@ -2629,20 +2650,6 @@
       <title>[Launched] Generally Available: Azure SQL updates for November 2025</title>
       <link>https://azure.microsoft.com/updates?id=522523</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=522523</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Azure SQL updates for November 2025</title>
-      <link>https://azure.microsoft.com/updates?id=522514</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=522514</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Dynamic sessions shell environment and MCP support in Azure Container Apps</title>
-      <link>https://azure.microsoft.com/updates?id=512949</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=512949</guid>
       <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
       <source>Azure Updates</source>
     </item>
