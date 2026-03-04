@@ -5,8 +5,26 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml</link>
     <description>Articles from GitHub Changelog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 03 Mar 2026 12:33:09 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 04 Mar 2026 01:06:42 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Dependabot alert assignees are now generally available</title>
+      <link>https://github.blog/changelog/2026-03-03-dependabot-alert-assignees-are-now-generally-available</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-03-dependabot-alert-assignees-are-now-generally-available</guid>
+      <pubDate>Tue, 03 Mar 2026 21:58:19 +0000</pubDate>
+    </item>
+    <item>
+      <title>GitHub Code Quality enterprise policy</title>
+      <link>https://github.blog/changelog/2026-03-03-github-code-quality-enterprise-policy</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-03-github-code-quality-enterprise-policy</guid>
+      <pubDate>Tue, 03 Mar 2026 19:07:26 +0000</pubDate>
+    </item>
+    <item>
+      <title>Email notifications for included usage thresholds</title>
+      <link>https://github.blog/changelog/2026-03-03-email-notifications-for-included-usage-thresholds</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-03-email-notifications-for-included-usage-thresholds</guid>
+      <pubDate>Tue, 03 Mar 2026 13:29:14 +0000</pubDate>
+    </item>
     <item>
       <title>Upcoming deprecation of Gemini 3 Pro and GPT-5.1 models</title>
       <link>https://github.blog/changelog/2026-03-02-upcoming-deprecation-of-gemini-3-pro-and-gpt-5-1-models</link>
@@ -48,24 +66,6 @@
       <link>https://github.blog/changelog/2026-02-26-github-actions-now-supports-uploading-and-downloading-non-zipped-artifacts</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-02-26-github-actions-now-supports-uploading-and-downloading-non-zipped-artifacts</guid>
       <pubDate>Thu, 26 Feb 2026 22:36:48 +0000</pubDate>
-    </item>
-    <item>
-      <title>Copilot metrics report URLs update</title>
-      <link>https://github.blog/changelog/2026-02-26-copilot-metrics-report-urls-update</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-26-copilot-metrics-report-urls-update</guid>
-      <pubDate>Thu, 26 Feb 2026 20:11:34 +0000</pubDate>
-    </item>
-    <item>
-      <title>Enterprise AI Controls &amp; agent control plane now generally available</title>
-      <link>https://github.blog/changelog/2026-02-26-enterprise-ai-controls-agent-control-plane-now-generally-available</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-26-enterprise-ai-controls-agent-control-plane-now-generally-available</guid>
-      <pubDate>Thu, 26 Feb 2026 20:10:23 +0000</pubDate>
-    </item>
-    <item>
-      <title>Claude and Codex now available for Copilot Business &amp; Pro users</title>
-      <link>https://github.blog/changelog/2026-02-26-claude-and-codex-now-available-for-copilot-business-pro-users</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-26-claude-and-codex-now-available-for-copilot-business-pro-users</guid>
-      <pubDate>Thu, 26 Feb 2026 17:18:39 +0000</pubDate>
     </item>
   </channel>
 </rss>
