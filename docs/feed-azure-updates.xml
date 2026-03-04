@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml</link>
     <description>Articles from Azure Updates</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 04 Mar 2026 01:06:42 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 04 Mar 2026 12:32:35 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>[Launched] Generally Available: Draft &amp; Deploy on Azure Firewall</title>

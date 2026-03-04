@@ -5,8 +5,15 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 04 Mar 2026 01:06:42 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 04 Mar 2026 12:32:35 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Copilot Memory now on by default for Pro and Pro+ users in public preview</title>
+      <link>https://github.blog/changelog/2026-03-04-copilot-memory-now-on-by-default-for-pro-and-pro-users-in-public-preview</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-04-copilot-memory-now-on-by-default-for-pro-and-pro-users-in-public-preview</guid>
+      <pubDate>Wed, 04 Mar 2026 10:07:12 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
     <item>
       <title>Dependabot alert assignees are now generally available</title>
       <link>https://github.blog/changelog/2026-03-03-dependabot-alert-assignees-are-now-generally-available</link>
@@ -34,6 +41,20 @@
       <guid isPermaLink="true">https://github.blog/changelog/2026-03-03-github-code-quality-enterprise-policy</guid>
       <pubDate>Tue, 03 Mar 2026 19:07:26 +0000</pubDate>
       <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>How we rebuilt the search architecture for high availability in GitHub Enterprise Server</title>
+      <link>https://github.blog/engineering/architecture-optimization/how-we-rebuilt-the-search-architecture-for-high-availability-in-github-enterprise-server/</link>
+      <guid isPermaLink="true">https://github.blog/engineering/architecture-optimization/how-we-rebuilt-the-search-architecture-for-high-availability-in-github-enterprise-server/</guid>
+      <pubDate>Tue, 03 Mar 2026 18:45:09 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
+    <item>
+      <title>Join or host a GitHub Copilot Dev Days event near you</title>
+      <link>https://github.blog/ai-and-ml/github-copilot/join-or-host-a-github-copilot-dev-days-event-near-you/</link>
+      <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/join-or-host-a-github-copilot-dev-days-event-near-you/</guid>
+      <pubDate>Tue, 03 Mar 2026 16:55:00 +0000</pubDate>
+      <source>GitHub Blog</source>
     </item>
     <item>
       <title>Email notifications for included usage thresholds</title>
@@ -195,13 +216,6 @@
       <guid isPermaLink="true">https://about.gitlab.com/blog/ai-can-detect-vulnerabilities-but-who-governs-risk/</guid>
       <pubDate>Fri, 27 Feb 2026 00:00:00 +0000</pubDate>
       <source>GitLab Blog</source>
-    </item>
-    <item>
-      <title>GitHub Actions now supports uploading and downloading non-zipped artifacts</title>
-      <link>https://github.blog/changelog/2026-02-26-github-actions-now-supports-uploading-and-downloading-non-zipped-artifacts</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-26-github-actions-now-supports-uploading-and-downloading-non-zipped-artifacts</guid>
-      <pubDate>Thu, 26 Feb 2026 22:36:48 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>What&amp;#8217;s new with GitHub Copilot coding agent</title>
@@ -715,13 +729,6 @@
       <source>Microsoft Security</source>
     </item>
     <item>
-      <title>Welcome to the Eternal September of open source. Here&amp;#8217;s what we plan to do for maintainers.</title>
-      <link>https://github.blog/open-source/maintainers/welcome-to-the-eternal-september-of-open-source-heres-what-we-plan-to-do-for-maintainers/</link>
-      <guid isPermaLink="true">https://github.blog/open-source/maintainers/welcome-to-the-eternal-september-of-open-source-heres-what-we-plan-to-do-for-maintainers/</guid>
-      <pubDate>Thu, 12 Feb 2026 20:14:11 +0000</pubDate>
-      <source>GitHub Blog</source>
-    </item>
-    <item>
       <title>Securing modern workloads with HashiCorp Vault and WIF</title>
       <link>https://www.hashicorp.com/blog/securing-modern-workloads-with-hashicorp-vault-and-wif</link>
       <guid isPermaLink="true">https://www.hashicorp.com/blog/securing-modern-workloads-with-hashicorp-vault-and-wif</guid>
@@ -748,13 +755,6 @@
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=550159</guid>
       <pubDate>Wed, 11 Feb 2026 23:15:55 +0000</pubDate>
       <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>GitHub availability report: January 2026</title>
-      <link>https://github.blog/news-insights/company-news/github-availability-report-january-2026/</link>
-      <guid isPermaLink="true">https://github.blog/news-insights/company-news/github-availability-report-january-2026/</guid>
-      <pubDate>Wed, 11 Feb 2026 23:12:34 +0000</pubDate>
-      <source>GitHub Blog</source>
     </item>
     <item>
       <title>Choosing between Amazon ECS Blue/Green Native or AWS CodeDeploy in AWS CDK</title>
