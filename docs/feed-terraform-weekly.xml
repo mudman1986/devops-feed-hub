@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-terraform-weekly.xml</link>
     <description>Articles from Terraform weekly</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-terraform-weekly.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 04 Mar 2026 12:32:35 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Mar 2026 01:08:55 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Issue #264 - Semgrep Meets AI for IaC, Entra ID in Stacks, Feature Flags Beyond Booleans, AgentCore Bots</title>
+      <link>https://www.weekly.tf/p/issue-264-semgrep-meets-ai-for-iac-entra-id-in-stacks-feature-flags-beyond-booleans-agentcore-bots</link>
+      <guid isPermaLink="true">https://www.weekly.tf/p/issue-264-semgrep-meets-ai-for-iac-entra-id-in-stacks-feature-flags-beyond-booleans-agentcore-bots</guid>
+      <pubDate>Wed, 04 Mar 2026 16:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Issue #263 - Gemini CLI Review Agents, Reliable Databricks Deployments, S3 Lifecycle Automation, HCP Terraform AI Guardrails</title>
       <link>https://www.weekly.tf/p/issue-263-gemini-cli-review-agents-reliable-databricks-deployments-s3-lifecycle-automation-hcp</link>
@@ -120,12 +126,6 @@
       <link>https://www.weekly.tf/p/issue-245-terraform-actions-automating-policy-enforcement-with-opa-multi-account-terraform-ci-cd-git</link>
       <guid isPermaLink="true">https://www.weekly.tf/p/issue-245-terraform-actions-automating-policy-enforcement-with-opa-multi-account-terraform-ci-cd-git</guid>
       <pubDate>Wed, 01 Oct 2025 15:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Issue #244 - Terraform Pipeline Caching issues, Microsoft Graph, Bots Write Bad Terraform, IaC Reviews, Terraform without the state file bottleneck</title>
-      <link>https://www.weekly.tf/p/issue-244-terraform-pipeline-caching-issues-microsoft-graph-bots-write-bad-terraform-iac-reviews</link>
-      <guid isPermaLink="true">https://www.weekly.tf/p/issue-244-terraform-pipeline-caching-issues-microsoft-graph-bots-write-bad-terraform-iac-reviews</guid>
-      <pubDate>Wed, 24 Sep 2025 15:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

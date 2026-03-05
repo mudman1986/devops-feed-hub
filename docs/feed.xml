@@ -5,14 +5,63 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 04 Mar 2026 12:32:35 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 05 Mar 2026 01:08:55 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Lock and unlock draft repository security advisories</title>
+      <link>https://github.blog/changelog/2026-03-04-lock-and-unlock-draft-repository-security-advisories</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-04-lock-and-unlock-draft-repository-security-advisories</guid>
+      <pubDate>Wed, 04 Mar 2026 21:45:08 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Retirement: Azure Policy faster enforcement and retirement of login/logout workaround</title>
+      <link>https://azure.microsoft.com/updates?id=558102</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558102</guid>
+      <pubDate>Wed, 04 Mar 2026 21:15:02 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>Grok Code Fast 1 is now available in Copilot Free auto model selection</title>
+      <link>https://github.blog/changelog/2026-03-04-grok-code-fast-1-is-now-available-in-copilot-free-auto-model-selection</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-04-grok-code-fast-1-is-now-available-in-copilot-free-auto-model-selection</guid>
+      <pubDate>Wed, 04 Mar 2026 18:21:02 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Inside Tycoon2FA: How a leading AiTM phishing kit operated at scale</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/03/04/inside-tycoon2fa-how-a-leading-aitm-phishing-kit-operated-at-scale/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/04/inside-tycoon2fa-how-a-leading-aitm-phishing-kit-operated-at-scale/</guid>
+      <pubDate>Wed, 04 Mar 2026 16:04:24 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>Issue #264 - Semgrep Meets AI for IaC, Entra ID in Stacks, Feature Flags Beyond Booleans, AgentCore Bots</title>
+      <link>https://www.weekly.tf/p/issue-264-semgrep-meets-ai-for-iac-entra-id-in-stacks-feature-flags-beyond-booleans-agentcore-bots</link>
+      <guid isPermaLink="true">https://www.weekly.tf/p/issue-264-semgrep-meets-ai-for-iac-entra-id-in-stacks-feature-flags-beyond-booleans-agentcore-bots</guid>
+      <pubDate>Wed, 04 Mar 2026 16:00:00 +0000</pubDate>
+      <source>Terraform weekly</source>
+    </item>
     <item>
       <title>Copilot Memory now on by default for Pro and Pro+ users in public preview</title>
       <link>https://github.blog/changelog/2026-03-04-copilot-memory-now-on-by-default-for-pro-and-pro-users-in-public-preview</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-03-04-copilot-memory-now-on-by-default-for-pro-and-pro-users-in-public-preview</guid>
       <pubDate>Wed, 04 Mar 2026 10:07:12 +0000</pubDate>
       <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>10 AI prompts to speed your team’s software delivery</title>
+      <link>https://about.gitlab.com/blog/10-ai-prompts-to-speed-your-teams-software-delivery/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/10-ai-prompts-to-speed-your-teams-software-delivery/</guid>
+      <pubDate>Wed, 04 Mar 2026 00:00:00 +0000</pubDate>
+      <source>GitLab Blog</source>
+    </item>
+    <item>
+      <title>How GitLab built a security control framework from scratch</title>
+      <link>https://about.gitlab.com/blog/how-gitlab-built-a-security-control-framework-from-scratch/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/how-gitlab-built-a-security-control-framework-from-scratch/</guid>
+      <pubDate>Wed, 04 Mar 2026 00:00:00 +0000</pubDate>
+      <source>GitLab Blog</source>
     </item>
     <item>
       <title>Dependabot alert assignees are now generally available</title>
@@ -169,25 +218,11 @@
       <source>Microsoft DevOps Blog</source>
     </item>
     <item>
-      <title>Copilot usage metrics now includes enterprise-level GitHub Copilot CLI activity</title>
-      <link>https://github.blog/changelog/2026-02-27-copilot-usage-metrics-now-includes-enterprise-level-github-copilot-cli-activity</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-27-copilot-usage-metrics-now-includes-enterprise-level-github-copilot-cli-activity</guid>
-      <pubDate>Fri, 27 Feb 2026 18:00:19 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>[Launched] Generally Available: Azure Red Hat OpenShift is now available in Malaysia West, New Zealand North, and Mexico Central</title>
       <link>https://azure.microsoft.com/updates?id=557897</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557897</guid>
       <pubDate>Fri, 27 Feb 2026 17:30:41 +0000</pubDate>
       <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>Copilot metrics is now generally available</title>
-      <link>https://github.blog/changelog/2026-02-27-copilot-metrics-is-now-generally-available</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-02-27-copilot-metrics-is-now-generally-available</guid>
-      <pubDate>Fri, 27 Feb 2026 17:29:13 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>Everything as code for your security lifecycle</title>
@@ -734,13 +769,6 @@
       <guid isPermaLink="true">https://www.hashicorp.com/blog/securing-modern-workloads-with-hashicorp-vault-and-wif</guid>
       <pubDate>Thu, 12 Feb 2026 17:00:00 +0000</pubDate>
       <source>HashiCorp Blog</source>
-    </item>
-    <item>
-      <title>Your complete guide to Microsoft experiences at RSAC™ 2026 Conference</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/02/12/your-complete-guide-to-microsoft-experiences-at-rsac-2026-conference/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/12/your-complete-guide-to-microsoft-experiences-at-rsac-2026-conference/</guid>
-      <pubDate>Thu, 12 Feb 2026 17:00:00 +0000</pubDate>
-      <source>Microsoft Security</source>
     </item>
     <item>
       <title>Spotlight on SIG Architecture: API Governance</title>
@@ -1294,20 +1322,6 @@
       <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/from-ai-agent-prototype-to-product-lessons-from-building-aws-devops-agent/</guid>
       <pubDate>Thu, 15 Jan 2026 17:03:50 +0000</pubDate>
       <source>AWS DevOps Blog</source>
-    </item>
-    <item>
-      <title>Announcing general availability for GitLab Duo Agent Platform</title>
-      <link>https://about.gitlab.com/blog/gitlab-duo-agent-platform-is-generally-available/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/gitlab-duo-agent-platform-is-generally-available/</guid>
-      <pubDate>Thu, 15 Jan 2026 00:00:00 +0000</pubDate>
-      <source>GitLab Blog</source>
-    </item>
-    <item>
-      <title>Introducing GitLab Credits, usage-based pricing for GitLab Duo Agent Platform</title>
-      <link>https://about.gitlab.com/blog/introducing-gitlab-credits/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/introducing-gitlab-credits/</guid>
-      <pubDate>Thu, 15 Jan 2026 00:00:00 +0000</pubDate>
-      <source>GitLab Blog</source>
     </item>
     <item>
       <title>[Launched] Generally Available: Ubuntu 24.04 support in AKS</title>
@@ -2647,13 +2661,6 @@
       <source>Azure Updates</source>
     </item>
     <item>
-      <title>[Launched] Generally Availabe: SQL Server 2025</title>
-      <link>https://azure.microsoft.com/updates?id=522559</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=522559</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
       <title>Microsoft Entra at Ignite 2025: November 17-21</title>
       <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-at-ignite-2025-november-17-21/ba-p/4400194</link>
       <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-at-ignite-2025-november-17-21/ba-p/4400194</guid>
@@ -2841,13 +2848,6 @@
       <guid isPermaLink="true">https://kubernetes.io/blog/2025/09/25/csi-changed-block-tracking/</guid>
       <pubDate>Thu, 25 Sep 2025 13:00:00 +0000</pubDate>
       <source>Kubernetes Blog</source>
-    </item>
-    <item>
-      <title>Issue #244 - Terraform Pipeline Caching issues, Microsoft Graph, Bots Write Bad Terraform, IaC Reviews, Terraform without the state file bottleneck</title>
-      <link>https://www.weekly.tf/p/issue-244-terraform-pipeline-caching-issues-microsoft-graph-bots-write-bad-terraform-iac-reviews</link>
-      <guid isPermaLink="true">https://www.weekly.tf/p/issue-244-terraform-pipeline-caching-issues-microsoft-graph-bots-write-bad-terraform-iac-reviews</guid>
-      <pubDate>Wed, 24 Sep 2025 15:00:00 +0000</pubDate>
-      <source>Terraform weekly</source>
     </item>
     <item>
       <title>Hacktoberfest 2025</title>
@@ -3169,13 +3169,6 @@
       <link>https:/www.jenkins.io/blog/2025/03/18/jenkins-contributor-awards-2025-nomination-is-open/</link>
       <guid isPermaLink="true">https:/www.jenkins.io/blog/2025/03/18/jenkins-contributor-awards-2025-nomination-is-open/</guid>
       <pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
-      <source>Jenkins Blog</source>
-    </item>
-    <item>
-      <title>Jenkins in Google Summer of Code 2025</title>
-      <link>https:/www.jenkins.io/blog/2025/03/05/Jenkins-in-Google-Summer-of-Code-2025/</link>
-      <guid isPermaLink="true">https:/www.jenkins.io/blog/2025/03/05/Jenkins-in-Google-Summer-of-Code-2025/</guid>
-      <pubDate>Wed, 05 Mar 2025 00:00:00 +0000</pubDate>
       <source>Jenkins Blog</source>
     </item>
   </channel>
