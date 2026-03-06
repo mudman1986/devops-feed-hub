@@ -5,8 +5,127 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 05 Mar 2026 12:35:53 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 06 Mar 2026 01:13:05 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>GPT-5.4 is generally available in GitHub Copilot</title>
+      <link>https://github.blog/changelog/2026-03-05-gpt-5-4-is-generally-available-in-github-copilot</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-05-gpt-5-4-is-generally-available-in-github-copilot</guid>
+      <pubDate>Thu, 05 Mar 2026 23:36:06 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Discover and manage agent activity with new session filters</title>
+      <link>https://github.blog/changelog/2026-03-05-discover-and-manage-agent-activity-with-new-session-filters</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-05-discover-and-manage-agent-activity-with-new-session-filters</guid>
+      <pubDate>Thu, 05 Mar 2026 22:37:24 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Pick a model for @copilot in pull request comments</title>
+      <link>https://github.blog/changelog/2026-03-05-pick-a-model-for-copilot-in-pull-request-comments</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-05-pick-a-model-for-copilot-in-pull-request-comments</guid>
+      <pubDate>Thu, 05 Mar 2026 20:44:19 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>60 million Copilot code reviews and counting</title>
+      <link>https://github.blog/ai-and-ml/github-copilot/60-million-copilot-code-reviews-and-counting/</link>
+      <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/60-million-copilot-code-reviews-and-counting/</guid>
+      <pubDate>Thu, 05 Mar 2026 20:10:43 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
+    <item>
+      <title>Hierarchy view improvements and file uploads in issue forms</title>
+      <link>https://github.blog/changelog/2026-03-05-hierarchy-view-improvements-and-file-uploads-in-issue-forms</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-05-hierarchy-view-improvements-and-file-uploads-in-issue-forms</guid>
+      <pubDate>Thu, 05 Mar 2026 19:54:12 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>GitHub Copilot coding agent for Jira is now in public preview</title>
+      <link>https://github.blog/changelog/2026-03-05-github-copilot-coding-agent-for-jira-is-now-in-public-preview</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-05-github-copilot-coding-agent-for-jira-is-now-in-public-preview</guid>
+      <pubDate>Thu, 05 Mar 2026 19:37:59 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Copilot code review now runs on an agentic architecture</title>
+      <link>https://github.blog/changelog/2026-03-05-copilot-code-review-now-runs-on-an-agentic-architecture</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-05-copilot-code-review-now-runs-on-an-agentic-architecture</guid>
+      <pubDate>Thu, 05 Mar 2026 19:36:13 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Quick access to merge status in pull requests is in public preview</title>
+      <link>https://github.blog/changelog/2026-03-05-quick-access-to-merge-status-in-pull-requests-in-public-preview</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-05-quick-access-to-merge-status-in-pull-requests-in-public-preview</guid>
+      <pubDate>Thu, 05 Mar 2026 18:20:25 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Standardizing construct properties with AWS CDK Property Injection</title>
+      <link>https://aws.amazon.com/blogs/devops/standardizing-construct-properties-with-aws-cdk-property-injection/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/standardizing-construct-properties-with-aws-cdk-property-injection/</guid>
+      <pubDate>Thu, 05 Mar 2026 17:39:48 +0000</pubDate>
+      <source>AWS DevOps Blog</source>
+    </item>
+    <item>
+      <title>Scaling AI opportunity across the globe: Learnings from GitHub and Andela</title>
+      <link>https://github.blog/developer-skills/career-growth/scaling-ai-opportunity-across-the-globe-learnings-from-github-and-andela/</link>
+      <guid isPermaLink="true">https://github.blog/developer-skills/career-growth/scaling-ai-opportunity-across-the-globe-learnings-from-github-and-andela/</guid>
+      <pubDate>Thu, 05 Mar 2026 17:00:00 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
+    <item>
+      <title>Women’s History Month: Encouraging women in cybersecurity at every career stage</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/03/05/womens-history-month-encouraging-women-in-cybersecurity-at-every-career-stage/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/05/womens-history-month-encouraging-women-in-cybersecurity-at-every-career-stage/</guid>
+      <pubDate>Thu, 05 Mar 2026 17:00:00 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>Add images to agent sessions</title>
+      <link>https://github.blog/changelog/2026-03-05-add-images-to-agent-sessions</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-05-add-images-to-agent-sessions</guid>
+      <pubDate>Thu, 05 Mar 2026 16:05:08 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Malicious AI Assistant Extensions Harvest LLM Chat Histories</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/03/05/malicious-ai-assistant-extensions-harvest-llm-chat-histories/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/05/malicious-ai-assistant-extensions-harvest-llm-chat-histories/</guid>
+      <pubDate>Thu, 05 Mar 2026 16:02:12 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>Regression Testing: What it is, why it matters, and how to automate it with CI/CD</title>
+      <link>https://circleci.com/blog/regression-testing-and-how-to-automate-it-with-ci/</link>
+      <guid isPermaLink="true">https://circleci.com/blog/regression-testing-and-how-to-automate-it-with-ci/</guid>
+      <pubDate>Thu, 05 Mar 2026 16:00:00 +0000</pubDate>
+      <source>CircleCI Blog</source>
+    </item>
+    <item>
+      <title>Copilot usage metrics now includes user-level GitHub Copilot CLI activity</title>
+      <link>https://github.blog/changelog/2026-03-05-copilot-usage-metrics-now-includes-user-level-github-copilot-cli-activity</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-05-copilot-usage-metrics-now-includes-user-level-github-copilot-cli-activity</guid>
+      <pubDate>Thu, 05 Mar 2026 15:14:18 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>A complete guide to GitLab Container Scanning</title>
+      <link>https://about.gitlab.com/blog/complete-guide-to-gitlab-container-scanning/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/complete-guide-to-gitlab-container-scanning/</guid>
+      <pubDate>Thu, 05 Mar 2026 00:00:00 +0000</pubDate>
+      <source>GitLab Blog</source>
+    </item>
+    <item>
+      <title>Extend GitLab Duo Agent Platform: Connect any tool with MCP</title>
+      <link>https://about.gitlab.com/blog/extend-gitlab-duo-agent-platform-connect-any-tool-with-mcp/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/extend-gitlab-duo-agent-platform-connect-any-tool-with-mcp/</guid>
+      <pubDate>Thu, 05 Mar 2026 00:00:00 +0000</pubDate>
+      <source>GitLab Blog</source>
+    </item>
     <item>
       <title>Lock and unlock draft repository security advisories</title>
       <link>https://github.blog/changelog/2026-03-04-lock-and-unlock-draft-repository-security-advisories</link>
@@ -20,13 +139,6 @@
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558102</guid>
       <pubDate>Wed, 04 Mar 2026 21:15:02 +0000</pubDate>
       <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>Grok Code Fast 1 is now available in Copilot Free auto model selection</title>
-      <link>https://github.blog/changelog/2026-03-04-grok-code-fast-1-is-now-available-in-copilot-free-auto-model-selection</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-04-grok-code-fast-1-is-now-available-in-copilot-free-auto-model-selection</guid>
-      <pubDate>Wed, 04 Mar 2026 18:21:02 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>Inside Tycoon2FA: How a leading AiTM phishing kit operated at scale</title>
@@ -43,13 +155,6 @@
       <source>Terraform weekly</source>
     </item>
     <item>
-      <title>Copilot Memory now on by default for Pro and Pro+ users in public preview</title>
-      <link>https://github.blog/changelog/2026-03-04-copilot-memory-now-on-by-default-for-pro-and-pro-users-in-public-preview</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-04-copilot-memory-now-on-by-default-for-pro-and-pro-users-in-public-preview</guid>
-      <pubDate>Wed, 04 Mar 2026 10:07:12 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>10 AI prompts to speed your team’s software delivery</title>
       <link>https://about.gitlab.com/blog/10-ai-prompts-to-speed-your-teams-software-delivery/</link>
       <guid isPermaLink="true">https://about.gitlab.com/blog/10-ai-prompts-to-speed-your-teams-software-delivery/</guid>
@@ -62,13 +167,6 @@
       <guid isPermaLink="true">https://about.gitlab.com/blog/how-gitlab-built-a-security-control-framework-from-scratch/</guid>
       <pubDate>Wed, 04 Mar 2026 00:00:00 +0000</pubDate>
       <source>GitLab Blog</source>
-    </item>
-    <item>
-      <title>Dependabot alert assignees are now generally available</title>
-      <link>https://github.blog/changelog/2026-03-03-dependabot-alert-assignees-are-now-generally-available</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-03-dependabot-alert-assignees-are-now-generally-available</guid>
-      <pubDate>Tue, 03 Mar 2026 21:58:19 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>Signed malware impersonating workplace apps deploys RMM backdoors</title>
@@ -85,13 +183,6 @@
       <source>Docker Blog</source>
     </item>
     <item>
-      <title>GitHub Code Quality enterprise policy</title>
-      <link>https://github.blog/changelog/2026-03-03-github-code-quality-enterprise-policy</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-03-github-code-quality-enterprise-policy</guid>
-      <pubDate>Tue, 03 Mar 2026 19:07:26 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>How we rebuilt the search architecture for high availability in GitHub Enterprise Server</title>
       <link>https://github.blog/engineering/architecture-optimization/how-we-rebuilt-the-search-architecture-for-high-availability-in-github-enterprise-server/</link>
       <guid isPermaLink="true">https://github.blog/engineering/architecture-optimization/how-we-rebuilt-the-search-architecture-for-high-availability-in-github-enterprise-server/</guid>
@@ -106,32 +197,11 @@
       <source>GitHub Blog</source>
     </item>
     <item>
-      <title>Email notifications for included usage thresholds</title>
-      <link>https://github.blog/changelog/2026-03-03-email-notifications-for-included-usage-thresholds</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-03-email-notifications-for-included-usage-thresholds</guid>
-      <pubDate>Tue, 03 Mar 2026 13:29:14 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>[Launched] Generally Available: Draft &amp; Deploy on Azure Firewall</title>
       <link>https://azure.microsoft.com/updates?id=558072</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558072</guid>
       <pubDate>Tue, 03 Mar 2026 01:00:04 +0000</pubDate>
       <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>Upcoming deprecation of Gemini 3 Pro and GPT-5.1 models</title>
-      <link>https://github.blog/changelog/2026-03-02-upcoming-deprecation-of-gemini-3-pro-and-gpt-5-1-models</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-02-upcoming-deprecation-of-gemini-3-pro-and-gpt-5-1-models</guid>
-      <pubDate>Mon, 02 Mar 2026 20:47:00 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>Network configuration changes for Copilot coding agent now in effect</title>
-      <link>https://github.blog/changelog/2026-03-02-network-configuration-changes-for-copilot-coding-agent-now-in-effect</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-02-network-configuration-changes-for-copilot-coding-agent-now-in-effect</guid>
-      <pubDate>Mon, 02 Mar 2026 20:42:32 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>OAuth redirection abuse enables phishing and malware delivery</title>
@@ -160,20 +230,6 @@
       <guid isPermaLink="true">https://github.blog/developer-skills/github/github-for-beginners-getting-started-with-github-issues-and-projects/</guid>
       <pubDate>Mon, 02 Mar 2026 17:00:00 +0000</pubDate>
       <source>GitHub Blog</source>
-    </item>
-    <item>
-      <title>Copilot metrics now includes plan mode</title>
-      <link>https://github.blog/changelog/2026-03-02-copilot-metrics-now-includes-plan-mode</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-02-copilot-metrics-now-includes-plan-mode</guid>
-      <pubDate>Mon, 02 Mar 2026 16:50:58 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>Copilot metrics reports now return consistent usernames for Enterprise Managed Users</title>
-      <link>https://github.blog/changelog/2026-03-02-copilot-metrics-reports-now-return-consistent-usernames-for-enterprise-managed-users</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-02-copilot-metrics-reports-now-return-consistent-usernames-for-enterprise-managed-users</guid>
-      <pubDate>Mon, 02 Mar 2026 16:42:49 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>Automate AWS Lambda Runtime Upgrades with AWS Transform custom</title>
@@ -666,13 +722,6 @@
       <source>GitLab Blog</source>
     </item>
     <item>
-      <title>Securing the AI software supply chain: Security results across 67 open source projects</title>
-      <link>https://github.blog/open-source/maintainers/securing-the-ai-software-supply-chain-security-results-across-67-open-source-projects/</link>
-      <guid isPermaLink="true">https://github.blog/open-source/maintainers/securing-the-ai-software-supply-chain-security-results-across-67-open-source-projects/</guid>
-      <pubDate>Tue, 17 Feb 2026 19:00:00 +0000</pubDate>
-      <source>GitHub Blog</source>
-    </item>
-    <item>
       <title>HCP Packer adds SBOM vulnerability scanning</title>
       <link>https://www.hashicorp.com/blog/hcp-packer-adds-sbom-vulnerability-scanning</link>
       <guid isPermaLink="true">https://www.hashicorp.com/blog/hcp-packer-adds-sbom-vulnerability-scanning</guid>
@@ -685,13 +734,6 @@
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=545784</guid>
       <pubDate>Tue, 17 Feb 2026 17:00:32 +0000</pubDate>
       <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>Unify now or pay later: New research exposes the operational cost of a fragmented SOC</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/02/17/unify-now-or-pay-later-new-research-exposes-the-operational-cost-of-a-fragmented-soc/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/17/unify-now-or-pay-later-new-research-exposes-the-operational-cost-of-a-fragmented-soc/</guid>
-      <pubDate>Tue, 17 Feb 2026 17:00:00 +0000</pubDate>
-      <source>Microsoft Security</source>
     </item>
     <item>
       <title>The Multi-Model Database for AI Agents: Deploy SurrealDB with Docker Extension</title>
@@ -743,25 +785,11 @@
       <source>HashiCorp Blog</source>
     </item>
     <item>
-      <title>Automate repository tasks with GitHub Agentic Workflows</title>
-      <link>https://github.blog/ai-and-ml/automate-repository-tasks-with-github-agentic-workflows/</link>
-      <guid isPermaLink="true">https://github.blog/ai-and-ml/automate-repository-tasks-with-github-agentic-workflows/</guid>
-      <pubDate>Fri, 13 Feb 2026 14:00:00 +0000</pubDate>
-      <source>GitHub Blog</source>
-    </item>
-    <item>
       <title>[Launched] Generally Available: AKS support for Kubernetes version 1.34</title>
       <link>https://azure.microsoft.com/updates?id=548114</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=548114</guid>
       <pubDate>Fri, 13 Feb 2026 00:30:15 +0000</pubDate>
       <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>Detecting and mitigating common agent misconfigurations</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/02/12/copilot-studio-agent-security-top-10-risks-detect-prevent/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/12/copilot-studio-agent-security-top-10-risks-detect-prevent/</guid>
-      <pubDate>Thu, 12 Feb 2026 20:38:49 +0000</pubDate>
-      <source>Microsoft Security</source>
     </item>
     <item>
       <title>Securing modern workloads with HashiCorp Vault and WIF</title>
@@ -1128,13 +1156,6 @@
       <source>CircleCI Blog</source>
     </item>
     <item>
-      <title>Fix bugs faster with CircleCI’s Chunk AI agent</title>
-      <link>https://circleci.com/blog/fix-bugs-faster-with-circlecis-chunk-ai-agent/</link>
-      <guid isPermaLink="true">https://circleci.com/blog/fix-bugs-faster-with-circlecis-chunk-ai-agent/</guid>
-      <pubDate>Wed, 28 Jan 2026 16:00:00 +0000</pubDate>
-      <source>CircleCI Blog</source>
-    </item>
-    <item>
       <title>AWS CloudFormation 2025 Year In Review</title>
       <link>https://aws.amazon.com/blogs/devops/aws-cloudformation-2025-year-in-review/</link>
       <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/aws-cloudformation-2025-year-in-review/</guid>
@@ -1175,13 +1196,6 @@
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=543994</guid>
       <pubDate>Tue, 27 Jan 2026 14:00:07 +0000</pubDate>
       <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>How to set up GitLab SAML SSO with Google Workspace</title>
-      <link>https://about.gitlab.com/blog/how-to-set-up-gitlab-saml-sso-with-google-workspace/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/how-to-set-up-gitlab-saml-sso-with-google-workspace/</guid>
-      <pubDate>Tue, 27 Jan 2026 00:00:00 +0000</pubDate>
-      <source>GitLab Blog</source>
     </item>
     <item>
       <title>How resilient is HCP Vault during real AWS regional outages?</title>
@@ -1273,13 +1287,6 @@
       <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/simplify-your-identity-landscape-reduce-risk-and-modernize/ba-p/4486059</guid>
       <pubDate>Tue, 20 Jan 2026 17:00:00 +0000</pubDate>
       <source>Microsoft Entra Blog</source>
-    </item>
-    <item>
-      <title>GitLab Bug Bounty Program policy updates</title>
-      <link>https://about.gitlab.com/blog/gitlab-bug-bounty-program-policy-updates/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/gitlab-bug-bounty-program-policy-updates/</guid>
-      <pubDate>Tue, 20 Jan 2026 00:00:00 +0000</pubDate>
-      <source>GitLab Blog</source>
     </item>
     <item>
       <title>Azure Boards additional field filters (private preview)</title>
@@ -2042,13 +2049,6 @@
       <link>https://aws.amazon.com/blogs/devops/announcing-cloudformation-ide-experience-end-to-end-development-in-your-ide/</link>
       <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/announcing-cloudformation-ide-experience-end-to-end-development-in-your-ide/</guid>
       <pubDate>Wed, 19 Nov 2025 19:01:49 +0000</pubDate>
-      <source>AWS DevOps Blog</source>
-    </item>
-    <item>
-      <title>Amazon introduces two benchmark datasets for evaluating AI agents’ ability on code migration</title>
-      <link>https://aws.amazon.com/blogs/devops/amazon-introduces-two-benchmark-datasets-for-evaluating-ai-agents-ability-on-code-migration/</link>
-      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/amazon-introduces-two-benchmark-datasets-for-evaluating-ai-agents-ability-on-code-migration/</guid>
-      <pubDate>Wed, 19 Nov 2025 18:55:15 +0000</pubDate>
       <source>AWS DevOps Blog</source>
     </item>
     <item>

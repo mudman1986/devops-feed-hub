@@ -5,8 +5,20 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-blog.xml</link>
     <description>Articles from GitHub Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 05 Mar 2026 12:35:53 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 06 Mar 2026 01:13:05 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>60 million Copilot code reviews and counting</title>
+      <link>https://github.blog/ai-and-ml/github-copilot/60-million-copilot-code-reviews-and-counting/</link>
+      <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/60-million-copilot-code-reviews-and-counting/</guid>
+      <pubDate>Thu, 05 Mar 2026 20:10:43 +0000</pubDate>
+    </item>
+    <item>
+      <title>Scaling AI opportunity across the globe: Learnings from GitHub and Andela</title>
+      <link>https://github.blog/developer-skills/career-growth/scaling-ai-opportunity-across-the-globe-learnings-from-github-and-andela/</link>
+      <guid isPermaLink="true">https://github.blog/developer-skills/career-growth/scaling-ai-opportunity-across-the-globe-learnings-from-github-and-andela/</guid>
+      <pubDate>Thu, 05 Mar 2026 17:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>How we rebuilt the search architecture for high availability in GitHub Enterprise Server</title>
       <link>https://github.blog/engineering/architecture-optimization/how-we-rebuilt-the-search-architecture-for-high-availability-in-github-enterprise-server/</link>
@@ -54,18 +66,6 @@
       <link>https://github.blog/open-source/maintainers/what-to-expect-for-open-source-in-2026/</link>
       <guid isPermaLink="true">https://github.blog/open-source/maintainers/what-to-expect-for-open-source-in-2026/</guid>
       <pubDate>Wed, 18 Feb 2026 18:41:42 +0000</pubDate>
-    </item>
-    <item>
-      <title>Securing the AI software supply chain: Security results across 67 open source projects</title>
-      <link>https://github.blog/open-source/maintainers/securing-the-ai-software-supply-chain-security-results-across-67-open-source-projects/</link>
-      <guid isPermaLink="true">https://github.blog/open-source/maintainers/securing-the-ai-software-supply-chain-security-results-across-67-open-source-projects/</guid>
-      <pubDate>Tue, 17 Feb 2026 19:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Automate repository tasks with GitHub Agentic Workflows</title>
-      <link>https://github.blog/ai-and-ml/automate-repository-tasks-with-github-agentic-workflows/</link>
-      <guid isPermaLink="true">https://github.blog/ai-and-ml/automate-repository-tasks-with-github-agentic-workflows/</guid>
-      <pubDate>Fri, 13 Feb 2026 14:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
