@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-hashicorp-blog.xml</link>
     <description>Articles from HashiCorp Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-hashicorp-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 06 Mar 2026 12:31:02 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 07 Mar 2026 01:04:39 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>High-performance envelope encryption at Ariso.ai with Vault</title>
+      <link>https://www.hashicorp.com/blog/adopting-hashicorp-vaults-transit-engine-high-performance-envelope-encryption-ariso-ai</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/adopting-hashicorp-vaults-transit-engine-high-performance-envelope-encryption-ariso-ai</guid>
+      <pubDate>Thu, 05 Mar 2026 23:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Everything as code for your security lifecycle</title>
       <link>https://www.hashicorp.com/blog/everything-as-code-for-your-security-lifecycle</link>
@@ -120,12 +126,6 @@
       <link>https://www.hashicorp.com/blog/how-resilient-is-hcp-vault-during-real-aws-regional-outages</link>
       <guid isPermaLink="true">https://www.hashicorp.com/blog/how-resilient-is-hcp-vault-during-real-aws-regional-outages</guid>
       <pubDate>Mon, 26 Jan 2026 17:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Terraform MCP server updates: Stacks support, new tools, and tips</title>
-      <link>https://www.hashicorp.com/blog/terraform-mcp-server-updates-stacks-support-new-tools-and-tips</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/terraform-mcp-server-updates-stacks-support-new-tools-and-tips</guid>
-      <pubDate>Fri, 23 Jan 2026 17:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

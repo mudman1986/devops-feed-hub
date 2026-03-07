@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-blog.xml</link>
     <description>Articles from GitHub Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 06 Mar 2026 12:31:02 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 07 Mar 2026 01:04:39 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>How to scan for vulnerabilities with GitHub Security Lab’s open source AI-powered framework</title>
+      <link>https://github.blog/security/how-to-scan-for-vulnerabilities-with-github-security-labs-open-source-ai-powered-framework/</link>
+      <guid isPermaLink="true">https://github.blog/security/how-to-scan-for-vulnerabilities-with-github-security-labs-open-source-ai-powered-framework/</guid>
+      <pubDate>Fri, 06 Mar 2026 21:09:04 +0000</pubDate>
+    </item>
     <item>
       <title>60 million Copilot code reviews and counting</title>
       <link>https://github.blog/ai-and-ml/github-copilot/60-million-copilot-code-reviews-and-counting/</link>
@@ -60,12 +66,6 @@
       <link>https://github.blog/ai-and-ml/generative-ai/how-ai-is-reshaping-developer-choice-and-octoverse-data-proves-it/</link>
       <guid isPermaLink="true">https://github.blog/ai-and-ml/generative-ai/how-ai-is-reshaping-developer-choice-and-octoverse-data-proves-it/</guid>
       <pubDate>Thu, 19 Feb 2026 17:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>What to expect for open source in 2026</title>
-      <link>https://github.blog/open-source/maintainers/what-to-expect-for-open-source-in-2026/</link>
-      <guid isPermaLink="true">https://github.blog/open-source/maintainers/what-to-expect-for-open-source-in-2026/</guid>
-      <pubDate>Wed, 18 Feb 2026 18:41:42 +0000</pubDate>
     </item>
   </channel>
 </rss>

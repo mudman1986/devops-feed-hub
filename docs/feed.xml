@@ -5,8 +5,43 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 06 Mar 2026 12:31:02 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 07 Mar 2026 01:04:39 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Figma MCP server can now generate design layers from VS Code</title>
+      <link>https://github.blog/changelog/2026-03-06-figma-mcp-server-can-now-generate-design-layers-from-vs-code</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-06-figma-mcp-server-can-now-generate-design-layers-from-vs-code</guid>
+      <pubDate>Fri, 06 Mar 2026 21:20:15 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>How to scan for vulnerabilities with GitHub Security Lab’s open source AI-powered framework</title>
+      <link>https://github.blog/security/how-to-scan-for-vulnerabilities-with-github-security-labs-open-source-ai-powered-framework/</link>
+      <guid isPermaLink="true">https://github.blog/security/how-to-scan-for-vulnerabilities-with-github-security-labs-open-source-ai-powered-framework/</guid>
+      <pubDate>Fri, 06 Mar 2026 21:09:04 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
+    <item>
+      <title>GitHub Copilot in Visual Studio Code v1.110 – February release</title>
+      <link>https://github.blog/changelog/2026-03-06-github-copilot-in-visual-studio-code-v1-110-february-release</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-06-github-copilot-in-visual-studio-code-v1-110-february-release</guid>
+      <pubDate>Fri, 06 Mar 2026 19:03:06 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>AI as tradecraft: How threat actors operationalize AI</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/03/06/ai-as-tradecraft-how-threat-actors-operationalize-ai/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/06/ai-as-tradecraft-how-threat-actors-operationalize-ai/</guid>
+      <pubDate>Fri, 06 Mar 2026 17:00:00 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>Celebrating Women in AI: 3 Questions with Cecilia Liu on Leading Docker’s MCP Strategy</title>
+      <link>https://www.docker.com/blog/women-in-ai-cecilia-liu-docker-mcp-strategy/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/women-in-ai-cecilia-liu-docker-mcp-strategy/</guid>
+      <pubDate>Fri, 06 Mar 2026 12:59:30 +0000</pubDate>
+      <source>Docker Blog</source>
+    </item>
     <item>
       <title>Jenkins Contributor Awards 2026 - Nominations are Open</title>
       <link>https:/www.jenkins.io/blog/2026/03/06/jenkins-contributor-awards-2026-nomination-is-open/</link>
@@ -20,6 +55,13 @@
       <guid isPermaLink="true">https://github.blog/changelog/2026-03-05-gpt-5-4-is-generally-available-in-github-copilot</guid>
       <pubDate>Thu, 05 Mar 2026 23:36:06 +0000</pubDate>
       <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>High-performance envelope encryption at Ariso.ai with Vault</title>
+      <link>https://www.hashicorp.com/blog/adopting-hashicorp-vaults-transit-engine-high-performance-envelope-encryption-ariso-ai</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/adopting-hashicorp-vaults-transit-engine-high-performance-envelope-encryption-ariso-ai</guid>
+      <pubDate>Thu, 05 Mar 2026 23:00:00 +0000</pubDate>
+      <source>HashiCorp Blog</source>
     </item>
     <item>
       <title>Discover and manage agent activity with new session filters</title>
@@ -113,13 +155,6 @@
       <source>CircleCI Blog</source>
     </item>
     <item>
-      <title>Copilot usage metrics now includes user-level GitHub Copilot CLI activity</title>
-      <link>https://github.blog/changelog/2026-03-05-copilot-usage-metrics-now-includes-user-level-github-copilot-cli-activity</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-05-copilot-usage-metrics-now-includes-user-level-github-copilot-cli-activity</guid>
-      <pubDate>Thu, 05 Mar 2026 15:14:18 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>A complete guide to GitLab Container Scanning</title>
       <link>https://about.gitlab.com/blog/complete-guide-to-gitlab-container-scanning/</link>
       <guid isPermaLink="true">https://about.gitlab.com/blog/complete-guide-to-gitlab-container-scanning/</guid>
@@ -132,13 +167,6 @@
       <guid isPermaLink="true">https://about.gitlab.com/blog/extend-gitlab-duo-agent-platform-connect-any-tool-with-mcp/</guid>
       <pubDate>Thu, 05 Mar 2026 00:00:00 +0000</pubDate>
       <source>GitLab Blog</source>
-    </item>
-    <item>
-      <title>Lock and unlock draft repository security advisories</title>
-      <link>https://github.blog/changelog/2026-03-04-lock-and-unlock-draft-repository-security-advisories</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-04-lock-and-unlock-draft-repository-security-advisories</guid>
-      <pubDate>Wed, 04 Mar 2026 21:45:08 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>Retirement: Azure Policy faster enforcement and retirement of login/logout workaround</title>
@@ -568,13 +596,6 @@
       <source>Microsoft Security</source>
     </item>
     <item>
-      <title>Running OpenClaw safely: identity, isolation, and runtime risk</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/02/19/running-openclaw-safely-identity-isolation-runtime-risk/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/19/running-openclaw-safely-identity-isolation-runtime-risk/</guid>
-      <pubDate>Thu, 19 Feb 2026 16:27:00 +0000</pubDate>
-      <source>Microsoft Security</source>
-    </item>
-    <item>
       <title>Simultaneous multi-cloud deployment to AWS and GCP with CircleCI</title>
       <link>https://circleci.com/blog/simultaneous-multi-cloud-deployment-to-aws-and-gcp/</link>
       <guid isPermaLink="true">https://circleci.com/blog/simultaneous-multi-cloud-deployment-to-aws-and-gcp/</guid>
@@ -622,13 +643,6 @@
       <guid isPermaLink="true">https:/www.jenkins.io/blog/2026/02/19/jenkins-accepted-as-gsoc-2026-mentoring-org/</guid>
       <pubDate>Thu, 19 Feb 2026 00:00:00 +0000</pubDate>
       <source>Jenkins Blog</source>
-    </item>
-    <item>
-      <title>What to expect for open source in 2026</title>
-      <link>https://github.blog/open-source/maintainers/what-to-expect-for-open-source-in-2026/</link>
-      <guid isPermaLink="true">https://github.blog/open-source/maintainers/what-to-expect-for-open-source-in-2026/</guid>
-      <pubDate>Wed, 18 Feb 2026 18:41:42 +0000</pubDate>
-      <source>GitHub Blog</source>
     </item>
     <item>
       <title>[Launched] Generally Available: Anthropic Claude Sonnet 4.6 is now available on Azure Databricks</title>
@@ -769,13 +783,6 @@
       <guid isPermaLink="true">https://www.hashicorp.com/blog/vault-radar-2025-recap-expanding-visibility-deepening-integration-simplifying-security</guid>
       <pubDate>Mon, 16 Feb 2026 16:00:00 +0000</pubDate>
       <source>HashiCorp Blog</source>
-    </item>
-    <item>
-      <title>Running NanoClaw in a Docker Shell Sandbox</title>
-      <link>https://www.docker.com/blog/run-nanoclaw-in-docker-shell-sandboxes/</link>
-      <guid isPermaLink="true">https://www.docker.com/blog/run-nanoclaw-in-docker-shell-sandboxes/</guid>
-      <pubDate>Mon, 16 Feb 2026 14:00:00 +0000</pubDate>
-      <source>Docker Blog</source>
     </item>
     <item>
       <title>Impressions from Jenkins Stand at FOSDEM Brussels</title>
@@ -1209,13 +1216,6 @@
       <link>https://www.hashicorp.com/blog/how-resilient-is-hcp-vault-during-real-aws-regional-outages</link>
       <guid isPermaLink="true">https://www.hashicorp.com/blog/how-resilient-is-hcp-vault-during-real-aws-regional-outages</guid>
       <pubDate>Mon, 26 Jan 2026 17:00:00 +0000</pubDate>
-      <source>HashiCorp Blog</source>
-    </item>
-    <item>
-      <title>Terraform MCP server updates: Stacks support, new tools, and tips</title>
-      <link>https://www.hashicorp.com/blog/terraform-mcp-server-updates-stacks-support-new-tools-and-tips</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/terraform-mcp-server-updates-stacks-support-new-tools-and-tips</guid>
-      <pubDate>Fri, 23 Jan 2026 17:00:00 +0000</pubDate>
       <source>HashiCorp Blog</source>
     </item>
     <item>
