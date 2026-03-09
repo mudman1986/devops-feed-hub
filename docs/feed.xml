@@ -5,8 +5,15 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sun, 08 Mar 2026 12:25:28 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 09 Mar 2026 01:09:31 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Jenkins Contributor Summit: Officers View on the Present and Future</title>
+      <link>https:/www.jenkins.io/blog/2026/03/09/contributor-summit-part-2/</link>
+      <guid isPermaLink="true">https:/www.jenkins.io/blog/2026/03/09/contributor-summit-part-2/</guid>
+      <pubDate>Mon, 09 Mar 2026 00:00:00 +0000</pubDate>
+      <source>Jenkins Blog</source>
+    </item>
     <item>
       <title>Figma MCP server can now generate design layers from VS Code</title>
       <link>https://github.blog/changelog/2026-03-06-figma-mcp-server-can-now-generate-design-layers-from-vs-code</link>
