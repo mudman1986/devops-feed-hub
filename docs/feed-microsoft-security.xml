@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml</link>
     <description>Articles from Microsoft Security</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 09 Mar 2026 12:35:41 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 10 Mar 2026 01:04:05 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Secure agentic AI for your Frontier Transformation</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/03/09/secure-agentic-ai-for-your-frontier-transformation/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/09/secure-agentic-ai-for-your-frontier-transformation/</guid>
+      <pubDate>Mon, 09 Mar 2026 13:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>AI as tradecraft: How threat actors operationalize AI</title>
       <link>https://www.microsoft.com/en-us/security/blog/2026/03/06/ai-as-tradecraft-how-threat-actors-operationalize-ai/</link>
@@ -60,12 +66,6 @@
       <link>https://www.microsoft.com/en-us/security/blog/2026/02/24/scaling-security-operations-with-microsoft-defender-autonomous-defense-and-expert-led-services/</link>
       <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/24/scaling-security-operations-with-microsoft-defender-autonomous-defense-and-expert-led-services/</guid>
       <pubDate>Tue, 24 Feb 2026 13:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>New e-book: Establishing a proactive defense with Microsoft Security Exposure Management</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/02/19/new-e-book-establishing-a-proactive-defense-with-microsoft-security-exposure-management/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/19/new-e-book-establishing-a-proactive-defense-with-microsoft-security-exposure-management/</guid>
-      <pubDate>Thu, 19 Feb 2026 17:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

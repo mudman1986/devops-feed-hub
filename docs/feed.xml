@@ -5,8 +5,36 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 09 Mar 2026 12:35:41 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 10 Mar 2026 01:04:05 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Announcing the AI Gateway Working Group</title>
+      <link>https://kubernetes.io/blog/2026/03/09/announcing-ai-gateway-wg/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2026/03/09/announcing-ai-gateway-wg/</guid>
+      <pubDate>Mon, 09 Mar 2026 18:00:00 +0000</pubDate>
+      <source>Kubernetes Blog</source>
+    </item>
+    <item>
+      <title>Under the hood: Security architecture of GitHub Agentic Workflows</title>
+      <link>https://github.blog/ai-and-ml/generative-ai/under-the-hood-security-architecture-of-github-agentic-workflows/</link>
+      <guid isPermaLink="true">https://github.blog/ai-and-ml/generative-ai/under-the-hood-security-architecture-of-github-agentic-workflows/</guid>
+      <pubDate>Mon, 09 Mar 2026 16:00:00 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
+    <item>
+      <title>Secure agentic AI for your Frontier Transformation</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/03/09/secure-agentic-ai-for-your-frontier-transformation/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/09/secure-agentic-ai-for-your-frontier-transformation/</guid>
+      <pubDate>Mon, 09 Mar 2026 13:00:00 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>Navigate repositories faster with the file tree browser</title>
+      <link>https://about.gitlab.com/blog/navigate-repositories-faster-with-the-file-tree-browser/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/navigate-repositories-faster-with-the-file-tree-browser/</guid>
+      <pubDate>Mon, 09 Mar 2026 00:00:00 +0000</pubDate>
+      <source>GitLab Blog</source>
+    </item>
     <item>
       <title>Jenkins Contributor Summit: Officers View on the Present and Future</title>
       <link>https:/www.jenkins.io/blog/2026/03/09/contributor-summit-part-2/</link>
@@ -162,16 +190,16 @@
       <source>CircleCI Blog</source>
     </item>
     <item>
-      <title>A complete guide to GitLab Container Scanning</title>
-      <link>https://about.gitlab.com/blog/complete-guide-to-gitlab-container-scanning/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/complete-guide-to-gitlab-container-scanning/</guid>
+      <title>Extend GitLab Duo Agent Platform: Connect any tool with MCP</title>
+      <link>https://about.gitlab.com/blog/extend-gitlab-duo-agent-platform-connect-any-tool-with-mcp/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/extend-gitlab-duo-agent-platform-connect-any-tool-with-mcp/</guid>
       <pubDate>Thu, 05 Mar 2026 00:00:00 +0000</pubDate>
       <source>GitLab Blog</source>
     </item>
     <item>
-      <title>Extend GitLab Duo Agent Platform: Connect any tool with MCP</title>
-      <link>https://about.gitlab.com/blog/extend-gitlab-duo-agent-platform-connect-any-tool-with-mcp/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/extend-gitlab-duo-agent-platform-connect-any-tool-with-mcp/</guid>
+      <title>A complete guide to GitLab Container Scanning</title>
+      <link>https://about.gitlab.com/blog/complete-guide-to-gitlab-container-scanning/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/complete-guide-to-gitlab-container-scanning/</guid>
       <pubDate>Thu, 05 Mar 2026 00:00:00 +0000</pubDate>
       <source>GitLab Blog</source>
     </item>
@@ -197,16 +225,16 @@
       <source>Terraform weekly</source>
     </item>
     <item>
-      <title>10 AI prompts to speed your team’s software delivery</title>
-      <link>https://about.gitlab.com/blog/10-ai-prompts-to-speed-your-teams-software-delivery/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/10-ai-prompts-to-speed-your-teams-software-delivery/</guid>
+      <title>How GitLab built a security control framework from scratch</title>
+      <link>https://about.gitlab.com/blog/how-gitlab-built-a-security-control-framework-from-scratch/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/how-gitlab-built-a-security-control-framework-from-scratch/</guid>
       <pubDate>Wed, 04 Mar 2026 00:00:00 +0000</pubDate>
       <source>GitLab Blog</source>
     </item>
     <item>
-      <title>How GitLab built a security control framework from scratch</title>
-      <link>https://about.gitlab.com/blog/how-gitlab-built-a-security-control-framework-from-scratch/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/how-gitlab-built-a-security-control-framework-from-scratch/</guid>
+      <title>10 AI prompts to speed your team’s software delivery</title>
+      <link>https://about.gitlab.com/blog/10-ai-prompts-to-speed-your-teams-software-delivery/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/10-ai-prompts-to-speed-your-teams-software-delivery/</guid>
       <pubDate>Wed, 04 Mar 2026 00:00:00 +0000</pubDate>
       <source>GitLab Blog</source>
     </item>
@@ -393,9 +421,9 @@
       <source>Azure Updates</source>
     </item>
     <item>
-      <title>GitLab Duo Agent Platform with Claude accelerates development</title>
-      <link>https://about.gitlab.com/blog/gitlab-duo-agent-platform-with-claude-accelerates-development/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/gitlab-duo-agent-platform-with-claude-accelerates-development/</guid>
+      <title>Secure and fast deployments to Google Agent Engine with GitLab</title>
+      <link>https://about.gitlab.com/blog/secure-and-fast-deployments-to-google-agent-engine-with-gitlab/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/secure-and-fast-deployments-to-google-agent-engine-with-gitlab/</guid>
       <pubDate>Thu, 26 Feb 2026 00:00:00 +0000</pubDate>
       <source>GitLab Blog</source>
     </item>
@@ -407,9 +435,9 @@
       <source>GitLab Blog</source>
     </item>
     <item>
-      <title>Secure and fast deployments to Google Agent Engine with GitLab</title>
-      <link>https://about.gitlab.com/blog/secure-and-fast-deployments-to-google-agent-engine-with-gitlab/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/secure-and-fast-deployments-to-google-agent-engine-with-gitlab/</guid>
+      <title>GitLab Duo Agent Platform with Claude accelerates development</title>
+      <link>https://about.gitlab.com/blog/gitlab-duo-agent-platform-with-claude-accelerates-development/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/gitlab-duo-agent-platform-with-claude-accelerates-development/</guid>
       <pubDate>Thu, 26 Feb 2026 00:00:00 +0000</pubDate>
       <source>GitLab Blog</source>
     </item>
@@ -463,16 +491,16 @@
       <source>Docker Blog</source>
     </item>
     <item>
-      <title>New GitLab metrics and registry features help reduce CI/CD bottlenecks</title>
-      <link>https://about.gitlab.com/blog/new-gitlab-metrics-and-registry-features-help-reduce-ci-cd-bottlenecks/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/new-gitlab-metrics-and-registry-features-help-reduce-ci-cd-bottlenecks/</guid>
+      <title>Passkeys now available for passwordless sign-in and 2FA on GitLab</title>
+      <link>https://about.gitlab.com/blog/passkeys-now-available-for-passwordless-sign-in-and-2fa-on-gitlab/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/passkeys-now-available-for-passwordless-sign-in-and-2fa-on-gitlab/</guid>
       <pubDate>Wed, 25 Feb 2026 00:00:00 +0000</pubDate>
       <source>GitLab Blog</source>
     </item>
     <item>
-      <title>Passkeys now available for passwordless sign-in and 2FA on GitLab</title>
-      <link>https://about.gitlab.com/blog/passkeys-now-available-for-passwordless-sign-in-and-2fa-on-gitlab/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/passkeys-now-available-for-passwordless-sign-in-and-2fa-on-gitlab/</guid>
+      <title>New GitLab metrics and registry features help reduce CI/CD bottlenecks</title>
+      <link>https://about.gitlab.com/blog/new-gitlab-metrics-and-registry-features-help-reduce-ci-cd-bottlenecks/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/new-gitlab-metrics-and-registry-features-help-reduce-ci-cd-bottlenecks/</guid>
       <pubDate>Wed, 25 Feb 2026 00:00:00 +0000</pubDate>
       <source>GitLab Blog</source>
     </item>
@@ -515,6 +543,13 @@
       <title>GPG key used to sign GitLab package repositories' metadata has been extended</title>
       <link>https://about.gitlab.com/blog/gpg-key-used-to-sign-gitlab-package-repositories-metadata-has-been-extended/</link>
       <guid isPermaLink="true">https://about.gitlab.com/blog/gpg-key-used-to-sign-gitlab-package-repositories-metadata-has-been-extended/</guid>
+      <pubDate>Tue, 24 Feb 2026 00:00:00 +0000</pubDate>
+      <source>GitLab Blog</source>
+    </item>
+    <item>
+      <title>Agentic SDLC: GitLab and TCS deliver Intelligent Orchestration across the enterprise</title>
+      <link>https://about.gitlab.com/blog/agentic-sdlc-gitlab-and-tcs-deliver-intelligent-orchestration-across-the-enterprise/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/agentic-sdlc-gitlab-and-tcs-deliver-intelligent-orchestration-across-the-enterprise/</guid>
       <pubDate>Tue, 24 Feb 2026 00:00:00 +0000</pubDate>
       <source>GitLab Blog</source>
     </item>
@@ -582,25 +617,11 @@
       <source>GitLab Blog</source>
     </item>
     <item>
-      <title>How AI is reshaping developer choice (and Octoverse data proves it)</title>
-      <link>https://github.blog/ai-and-ml/generative-ai/how-ai-is-reshaping-developer-choice-and-octoverse-data-proves-it/</link>
-      <guid isPermaLink="true">https://github.blog/ai-and-ml/generative-ai/how-ai-is-reshaping-developer-choice-and-octoverse-data-proves-it/</guid>
-      <pubDate>Thu, 19 Feb 2026 17:00:00 +0000</pubDate>
-      <source>GitHub Blog</source>
-    </item>
-    <item>
       <title>Saving banks from technical debt: How Atruvia built secure, self-service infrastructure</title>
       <link>https://www.hashicorp.com/blog/saving-banks-from-technical-debt-how-atruvia-built-secure-self-service-infrastructure</link>
       <guid isPermaLink="true">https://www.hashicorp.com/blog/saving-banks-from-technical-debt-how-atruvia-built-secure-self-service-infrastructure</guid>
       <pubDate>Thu, 19 Feb 2026 17:00:00 +0000</pubDate>
       <source>HashiCorp Blog</source>
-    </item>
-    <item>
-      <title>New e-book: Establishing a proactive defense with Microsoft Security Exposure Management</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/02/19/new-e-book-establishing-a-proactive-defense-with-microsoft-security-exposure-management/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/19/new-e-book-establishing-a-proactive-defense-with-microsoft-security-exposure-management/</guid>
-      <pubDate>Thu, 19 Feb 2026 17:00:00 +0000</pubDate>
-      <source>Microsoft Security</source>
     </item>
     <item>
       <title>Simultaneous multi-cloud deployment to AWS and GCP with CircleCI</title>
@@ -624,9 +645,9 @@
       <source>Docker Blog</source>
     </item>
     <item>
-      <title>Agentic AI, enterprise control: Self-hosted Duo Agent Platform and BYOM</title>
-      <link>https://about.gitlab.com/blog/agentic-ai-enterprise-control-self-hosted-duo-agent-platform-and-byom/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/agentic-ai-enterprise-control-self-hosted-duo-agent-platform-and-byom/</guid>
+      <title>Track vulnerability remediation with the updated GitLab Security Dashboard</title>
+      <link>https://about.gitlab.com/blog/track-vulnerability-remediation-with-the-updated-gitlab-security-dashboard/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/track-vulnerability-remediation-with-the-updated-gitlab-security-dashboard/</guid>
       <pubDate>Thu, 19 Feb 2026 00:00:00 +0000</pubDate>
       <source>GitLab Blog</source>
     </item>
@@ -638,9 +659,9 @@
       <source>GitLab Blog</source>
     </item>
     <item>
-      <title>Track vulnerability remediation with the updated GitLab Security Dashboard</title>
-      <link>https://about.gitlab.com/blog/track-vulnerability-remediation-with-the-updated-gitlab-security-dashboard/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/track-vulnerability-remediation-with-the-updated-gitlab-security-dashboard/</guid>
+      <title>Agentic AI, enterprise control: Self-hosted Duo Agent Platform and BYOM</title>
+      <link>https://about.gitlab.com/blog/agentic-ai-enterprise-control-self-hosted-duo-agent-platform-and-byom/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/agentic-ai-enterprise-control-self-hosted-duo-agent-platform-and-byom/</guid>
       <pubDate>Thu, 19 Feb 2026 00:00:00 +0000</pubDate>
       <source>GitLab Blog</source>
     </item>
@@ -1070,13 +1091,6 @@
       <guid isPermaLink="true">https://circleci.com/blog/automating-infrastructure-as-code-changes-with-an-ai-agent/</guid>
       <pubDate>Mon, 02 Feb 2026 07:00:00 +0000</pubDate>
       <source>CircleCI Blog</source>
-    </item>
-    <item>
-      <title>What’s new in Git 2.53.0?</title>
-      <link>https://about.gitlab.com/blog/whats-new-in-git-2-53-0/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/whats-new-in-git-2-53-0/</guid>
-      <pubDate>Mon, 02 Feb 2026 00:00:00 +0000</pubDate>
-      <source>GitLab Blog</source>
     </item>
     <item>
       <title>Retirement: "Send data to Event Hubs &amp; Storage (Preview)" retiring July 31, 2026</title>
@@ -3009,13 +3023,6 @@
       <guid isPermaLink="true">https:/www.jenkins.io/blog/2025/08/30/raunak-madan-gsoc-endterm-blog-post/</guid>
       <pubDate>Sat, 30 Aug 2025 00:00:00 +0000</pubDate>
       <source>Jenkins Blog</source>
-    </item>
-    <item>
-      <title>Kubernetes v1.34: Finer-Grained Control Over Container Restarts</title>
-      <link>https://kubernetes.io/blog/2025/08/29/kubernetes-v1-34-per-container-restart-policy/</link>
-      <guid isPermaLink="true">https://kubernetes.io/blog/2025/08/29/kubernetes-v1-34-per-container-restart-policy/</guid>
-      <pubDate>Fri, 29 Aug 2025 18:30:00 +0000</pubDate>
-      <source>Kubernetes Blog</source>
     </item>
     <item>
       <title>To Bitbucket from Jenkins: Enhancing Developer Experience</title>
