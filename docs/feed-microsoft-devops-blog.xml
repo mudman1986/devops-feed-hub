@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-microsoft-devops-blog.xml</link>
     <description>Articles from Microsoft DevOps Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-microsoft-devops-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 11 Mar 2026 12:35:11 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 12 Mar 2026 01:01:52 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Temporary rollback: build identities can access Advanced Security: read alerts again</title>
+      <link>https://devblogs.microsoft.com/devops/temporary-rollback-build-identities-can-access-advanced-security-read-alerts-again/</link>
+      <guid isPermaLink="true">https://devblogs.microsoft.com/devops/temporary-rollback-build-identities-can-access-advanced-security-read-alerts-again/</guid>
+      <pubDate>Wed, 11 Mar 2026 23:46:28 +0000</pubDate>
+    </item>
     <item>
       <title>Updates to Team Calendar extension</title>
       <link>https://devblogs.microsoft.com/devops/updates-to-team-calendar-extension/</link>
@@ -60,12 +66,6 @@
       <link>https://devblogs.microsoft.com/devops/work-item-linking-for-advanced-security-alerts-now-available/</link>
       <guid isPermaLink="true">https://devblogs.microsoft.com/devops/work-item-linking-for-advanced-security-alerts-now-available/</guid>
       <pubDate>Fri, 19 Dec 2025 18:24:14 +0000</pubDate>
-    </item>
-    <item>
-      <title>Azure Boards integration with GitHub Copilot</title>
-      <link>https://devblogs.microsoft.com/devops/github-copilot-for-azure-boards/</link>
-      <guid isPermaLink="true">https://devblogs.microsoft.com/devops/github-copilot-for-azure-boards/</guid>
-      <pubDate>Tue, 16 Dec 2025 13:17:08 +0000</pubDate>
     </item>
   </channel>
 </rss>

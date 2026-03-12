@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-terraform-weekly.xml</link>
     <description>Articles from Terraform weekly</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-terraform-weekly.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 11 Mar 2026 12:35:11 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 12 Mar 2026 01:01:52 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Issue #265 - Dropping Prod with Terraform, the terraform.applying Symbol, AI Agents vs IaC, and Terraform Internals Unpacked</title>
+      <link>https://www.weekly.tf/p/issue-265-dropping-prod-with-terraform-the-terraform-applying-symbol-ai-agents-vs-iac-and-terraform</link>
+      <guid isPermaLink="true">https://www.weekly.tf/p/issue-265-dropping-prod-with-terraform-the-terraform-applying-symbol-ai-agents-vs-iac-and-terraform</guid>
+      <pubDate>Wed, 11 Mar 2026 16:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Issue #264 - Semgrep Meets AI for IaC, Entra ID in Stacks, Feature Flags Beyond Booleans, AgentCore Bots</title>
       <link>https://www.weekly.tf/p/issue-264-semgrep-meets-ai-for-iac-entra-id-in-stacks-feature-flags-beyond-booleans-agentcore-bots</link>
@@ -120,12 +126,6 @@
       <link>https://www.weekly.tf/p/issue-246-terraforming-with-ai-aws-ssm-with-external-updates-aws-control-tower-deep-dive-2048-on-k8s</link>
       <guid isPermaLink="true">https://www.weekly.tf/p/issue-246-terraforming-with-ai-aws-ssm-with-external-updates-aws-control-tower-deep-dive-2048-on-k8s</guid>
       <pubDate>Wed, 08 Oct 2025 15:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Issue #245 - Terraform Actions, Automating Policy Enforcement with OPA, Multi-Account Terraform CI/CD, GitHub Self-Hosted Runners, tftargets</title>
-      <link>https://www.weekly.tf/p/issue-245-terraform-actions-automating-policy-enforcement-with-opa-multi-account-terraform-ci-cd-git</link>
-      <guid isPermaLink="true">https://www.weekly.tf/p/issue-245-terraform-actions-automating-policy-enforcement-with-opa-multi-account-terraform-ci-cd-git</guid>
-      <pubDate>Wed, 01 Oct 2025 15:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

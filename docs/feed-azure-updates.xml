@@ -5,8 +5,38 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml</link>
     <description>Articles from Azure Updates</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 11 Mar 2026 12:35:11 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 12 Mar 2026 01:01:52 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>[Launched] Generally Available: Terraform, Bicep, Ansible support for elastic clusters on Azure Database for PostgreSQL</title>
+      <link>https://azure.microsoft.com/updates?id=558145</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558145</guid>
+      <pubDate>Wed, 11 Mar 2026 18:00:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Azure Database for PostgreSQL dashboards with Grafana</title>
+      <link>https://azure.microsoft.com/updates?id=558140</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558140</guid>
+      <pubDate>Wed, 11 Mar 2026 18:00:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Customer‑managed encryption keys now supported on Premium SSD v2 disks for Azure Database for PostgreSQL</title>
+      <link>https://azure.microsoft.com/updates?id=557527</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557527</guid>
+      <pubDate>Wed, 11 Mar 2026 18:00:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Azure SRE Agent with new capabilities</title>
+      <link>https://azure.microsoft.com/updates?id=558321</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558321</guid>
+      <pubDate>Wed, 11 Mar 2026 17:45:49 +0000</pubDate>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Query Profiler in MSSQL extension for Visual Studio Code</title>
+      <link>https://azure.microsoft.com/updates?id=558164</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558164</guid>
+      <pubDate>Wed, 11 Mar 2026 17:45:49 +0000</pubDate>
+    </item>
     <item>
       <title>Retirement: Azure Policy faster enforcement and retirement of login/logout workaround</title>
       <link>https://azure.microsoft.com/updates?id=558102</link>
@@ -1169,36 +1199,6 @@
       <title>[In preview] Public Preview: Azure SQL Database DiskANN vector indexing</title>
       <link>https://azure.microsoft.com/updates?id=523110</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523110</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Generally Available: MSSQL extension integration with GitHub Copilot in Visual Studio Code</title>
-      <link>https://azure.microsoft.com/updates?id=523105</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523105</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Azure SQL Database long-term retention (LTR) backup immutability</title>
-      <link>https://azure.microsoft.com/updates?id=523095</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523095</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: SQL Server Management Studio (SSMS) 22</title>
-      <link>https://azure.microsoft.com/updates?id=522586</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=522586</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Microsoft Python driver for SQL Server</title>
-      <link>https://azure.microsoft.com/updates?id=522581</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=522581</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: New SQL Server migration in Azure Arc</title>
-      <link>https://azure.microsoft.com/updates?id=522572</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=522572</guid>
       <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
     </item>
     <item>
