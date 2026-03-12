@@ -5,8 +5,85 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 12 Mar 2026 12:34:22 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 12 Mar 2026 20:58:15 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Storm-2561 uses SEO poisoning to distribute fake VPN clients for credential theft</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/03/12/storm-2561-uses-seo-poisoning-to-distribute-fake-vpn-clients-for-credential-theft/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/12/storm-2561-uses-seo-poisoning-to-distribute-fake-vpn-clients-for-credential-theft/</guid>
+      <pubDate>Thu, 12 Mar 2026 17:00:00 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>REST API version 2026-03-10 is now available</title>
+      <link>https://github.blog/changelog/2026-03-12-rest-api-version-2026-03-10-is-now-available</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-12-rest-api-version-2026-03-10-is-now-available</guid>
+      <pubDate>Thu, 12 Mar 2026 16:00:07 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Continuous AI for accessibility: How GitHub transforms feedback into inclusion</title>
+      <link>https://github.blog/ai-and-ml/github-copilot/continuous-ai-for-accessibility-how-github-transforms-feedback-into-inclusion/</link>
+      <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/continuous-ai-for-accessibility-how-github-transforms-feedback-into-inclusion/</guid>
+      <pubDate>Thu, 12 Mar 2026 16:00:00 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
+    <item>
+      <title>From transparency to action: What the latest Microsoft email security benchmark reveals</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/03/12/from-transparency-to-action-what-the-latest-microsoft-email-security-benchmark-reveals/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/12/from-transparency-to-action-what-the-latest-microsoft-email-security-benchmark-reveals/</guid>
+      <pubDate>Thu, 12 Mar 2026 16:00:00 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>Copilot auto model selection is generally available in JetBrains IDEs</title>
+      <link>https://github.blog/changelog/2026-03-12-copilot-auto-model-selection-is-generally-available-in-jetbrains-ides</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-12-copilot-auto-model-selection-is-generally-available-in-jetbrains-ides</guid>
+      <pubDate>Thu, 12 Mar 2026 15:54:33 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Actions OIDC tokens now support repository custom properties</title>
+      <link>https://github.blog/changelog/2026-03-12-actions-oidc-tokens-now-support-repository-custom-properties</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-12-actions-oidc-tokens-now-support-repository-custom-properties</guid>
+      <pubDate>Thu, 12 Mar 2026 14:53:28 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Detecting and analyzing prompt abuse in AI tools</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/03/12/detecting-analyzing-prompt-abuse-in-ai-tools/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/12/detecting-analyzing-prompt-abuse-in-ai-tools/</guid>
+      <pubDate>Thu, 12 Mar 2026 14:00:00 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>Flexibility Over Lock-In: The Enterprise Shift in Agent Strategy</title>
+      <link>https://www.docker.com/blog/enterprise-shift-in-agent-strategy/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/enterprise-shift-in-agent-strategy/</guid>
+      <pubDate>Thu, 12 Mar 2026 12:50:49 +0000</pubDate>
+      <source>Docker Blog</source>
+    </item>
+    <item>
+      <title>Issue fields: Structured issue metadata is in public preview</title>
+      <link>https://github.blog/changelog/2026-03-12-issue-fields-structured-issue-metadata-is-in-public-preview</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-12-issue-fields-structured-issue-metadata-is-in-public-preview</guid>
+      <pubDate>Thu, 12 Mar 2026 08:03:06 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>GitHub availability report: February 2026</title>
+      <link>https://github.blog/news-insights/company-news/github-availability-report-february-2026/</link>
+      <guid isPermaLink="true">https://github.blog/news-insights/company-news/github-availability-report-february-2026/</guid>
+      <pubDate>Thu, 12 Mar 2026 03:23:54 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
+    <item>
+      <title>How to use GitLab Container Virtual Registry with Docker Hardened Images</title>
+      <link>https://about.gitlab.com/blog/using-gitlab-container-virtual-registry-with-docker-hardened-images/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/using-gitlab-container-virtual-registry-with-docker-hardened-images/</guid>
+      <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
+      <source>GitLab Blog</source>
+    </item>
     <item>
       <title>Temporary rollback: build identities can access Advanced Security: read alerts again</title>
       <link>https://devblogs.microsoft.com/devops/temporary-rollback-build-identities-can-access-advanced-security-read-alerts-again/</link>
@@ -190,25 +267,11 @@
       <source>Jenkins Blog</source>
     </item>
     <item>
-      <title>Figma MCP server can now generate design layers from VS Code</title>
-      <link>https://github.blog/changelog/2026-03-06-figma-mcp-server-can-now-generate-design-layers-from-vs-code</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-06-figma-mcp-server-can-now-generate-design-layers-from-vs-code</guid>
-      <pubDate>Fri, 06 Mar 2026 21:20:15 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>How to scan for vulnerabilities with GitHub Security Lab’s open source AI-powered framework</title>
       <link>https://github.blog/security/how-to-scan-for-vulnerabilities-with-github-security-labs-open-source-ai-powered-framework/</link>
       <guid isPermaLink="true">https://github.blog/security/how-to-scan-for-vulnerabilities-with-github-security-labs-open-source-ai-powered-framework/</guid>
       <pubDate>Fri, 06 Mar 2026 21:09:04 +0000</pubDate>
       <source>GitHub Blog</source>
-    </item>
-    <item>
-      <title>GitHub Copilot in Visual Studio Code v1.110 – February release</title>
-      <link>https://github.blog/changelog/2026-03-06-github-copilot-in-visual-studio-code-v1-110-february-release</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-06-github-copilot-in-visual-studio-code-v1-110-february-release</guid>
-      <pubDate>Fri, 06 Mar 2026 19:03:06 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>AI as tradecraft: How threat actors operationalize AI</title>
@@ -232,25 +295,11 @@
       <source>Jenkins Blog</source>
     </item>
     <item>
-      <title>GPT-5.4 is generally available in GitHub Copilot</title>
-      <link>https://github.blog/changelog/2026-03-05-gpt-5-4-is-generally-available-in-github-copilot</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-05-gpt-5-4-is-generally-available-in-github-copilot</guid>
-      <pubDate>Thu, 05 Mar 2026 23:36:06 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>High-performance envelope encryption at Ariso.ai with Vault</title>
       <link>https://www.hashicorp.com/blog/adopting-hashicorp-vaults-transit-engine-high-performance-envelope-encryption-ariso-ai</link>
       <guid isPermaLink="true">https://www.hashicorp.com/blog/adopting-hashicorp-vaults-transit-engine-high-performance-envelope-encryption-ariso-ai</guid>
       <pubDate>Thu, 05 Mar 2026 23:00:00 +0000</pubDate>
       <source>HashiCorp Blog</source>
-    </item>
-    <item>
-      <title>Discover and manage agent activity with new session filters</title>
-      <link>https://github.blog/changelog/2026-03-05-discover-and-manage-agent-activity-with-new-session-filters</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-05-discover-and-manage-agent-activity-with-new-session-filters</guid>
-      <pubDate>Thu, 05 Mar 2026 22:37:24 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>60 million Copilot code reviews and counting</title>
@@ -379,13 +428,6 @@
       <source>Azure Updates</source>
     </item>
     <item>
-      <title>OAuth redirection abuse enables phishing and malware delivery</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/03/02/oauth-redirection-abuse-enables-phishing-malware-delivery/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/02/oauth-redirection-abuse-enables-phishing-malware-delivery/</guid>
-      <pubDate>Mon, 02 Mar 2026 19:29:53 +0000</pubDate>
-      <source>Microsoft Security</source>
-    </item>
-    <item>
       <title>[Launched] Generally Available: Azure Databricks update workspace network configuration</title>
       <link>https://azure.microsoft.com/updates?id=558060</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558060</guid>
@@ -398,13 +440,6 @@
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557991</guid>
       <pubDate>Mon, 02 Mar 2026 19:15:14 +0000</pubDate>
       <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>GitHub for Beginners: Getting started with GitHub Issues and Projects</title>
-      <link>https://github.blog/developer-skills/github/github-for-beginners-getting-started-with-github-issues-and-projects/</link>
-      <guid isPermaLink="true">https://github.blog/developer-skills/github/github-for-beginners-getting-started-with-github-issues-and-projects/</guid>
-      <pubDate>Mon, 02 Mar 2026 17:00:00 +0000</pubDate>
-      <source>GitHub Blog</source>
     </item>
     <item>
       <title>Automate AWS Lambda Runtime Upgrades with AWS Transform custom</title>
@@ -463,13 +498,6 @@
       <source>HashiCorp Blog</source>
     </item>
     <item>
-      <title>From idea to pull request: A practical guide to building with GitHub Copilot CLI</title>
-      <link>https://github.blog/ai-and-ml/github-copilot/from-idea-to-pull-request-a-practical-guide-to-building-with-github-copilot-cli/</link>
-      <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/from-idea-to-pull-request-a-practical-guide-to-building-with-github-copilot-cli/</guid>
-      <pubDate>Fri, 27 Feb 2026 16:00:00 +0000</pubDate>
-      <source>GitHub Blog</source>
-    </item>
-    <item>
       <title>Before You Migrate: Five Surprising Ingress-NGINX Behaviors You Need to Know</title>
       <link>https://kubernetes.io/blog/2026/02/27/ingress-nginx-before-you-migrate/</link>
       <guid isPermaLink="true">https://kubernetes.io/blog/2026/02/27/ingress-nginx-before-you-migrate/</guid>
@@ -496,13 +524,6 @@
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557694</guid>
       <pubDate>Thu, 26 Feb 2026 19:45:06 +0000</pubDate>
       <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>Threat modeling AI applications</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/02/26/threat-modeling-ai-applications/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/26/threat-modeling-ai-applications/</guid>
-      <pubDate>Thu, 26 Feb 2026 17:04:08 +0000</pubDate>
-      <source>Microsoft Security</source>
     </item>
     <item>
       <title>Docker Model Runner Brings vLLM to macOS with Apple Silicon</title>
@@ -603,13 +624,6 @@
       <source>GitLab Blog</source>
     </item>
     <item>
-      <title>Developer-targeting campaign using malicious Next.js repositories</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/02/24/c2-developer-targeting-campaign/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/02/24/c2-developer-targeting-campaign/</guid>
-      <pubDate>Tue, 24 Feb 2026 17:28:24 +0000</pubDate>
-      <source>Microsoft Security</source>
-    </item>
-    <item>
       <title>Terraform Enterprise 1.2 upgrades workflows, visibility, and brownfield migration</title>
       <link>https://www.hashicorp.com/blog/terraform-enterprise-12-upgrades-workflows-visibility-and-brownfield-migration</link>
       <guid isPermaLink="true">https://www.hashicorp.com/blog/terraform-enterprise-12-upgrades-workflows-visibility-and-brownfield-migration</guid>
@@ -685,13 +699,6 @@
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557623</guid>
       <pubDate>Fri, 20 Feb 2026 19:00:04 +0000</pubDate>
       <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>State of Agentic AI Report: Key Findings</title>
-      <link>https://www.docker.com/blog/state-of-agentic-ai-key-findings/</link>
-      <guid isPermaLink="true">https://www.docker.com/blog/state-of-agentic-ai-key-findings/</guid>
-      <pubDate>Fri, 20 Feb 2026 17:18:29 +0000</pubDate>
-      <source>Docker Blog</source>
     </item>
     <item>
       <title>GitLab extends Omnibus package signing key expiration to 2028</title>
@@ -860,13 +867,6 @@
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=545784</guid>
       <pubDate>Tue, 17 Feb 2026 17:00:32 +0000</pubDate>
       <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>Claude Opus 4.6 now available in GitLab Duo Agent Platform</title>
-      <link>https://about.gitlab.com/blog/claude-opus-4-6-now-available-in-gitlab-duo-agent-platform/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/claude-opus-4-6-now-available-in-gitlab-duo-agent-platform/</guid>
-      <pubDate>Tue, 17 Feb 2026 00:00:00 +0000</pubDate>
-      <source>GitLab Blog</source>
     </item>
     <item>
       <title>Condensed views on Kanban and Sprint boards</title>

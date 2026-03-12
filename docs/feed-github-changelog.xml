@@ -5,8 +5,32 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml</link>
     <description>Articles from GitHub Changelog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 12 Mar 2026 12:34:22 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 12 Mar 2026 20:58:15 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>REST API version 2026-03-10 is now available</title>
+      <link>https://github.blog/changelog/2026-03-12-rest-api-version-2026-03-10-is-now-available</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-12-rest-api-version-2026-03-10-is-now-available</guid>
+      <pubDate>Thu, 12 Mar 2026 16:00:07 +0000</pubDate>
+    </item>
+    <item>
+      <title>Copilot auto model selection is generally available in JetBrains IDEs</title>
+      <link>https://github.blog/changelog/2026-03-12-copilot-auto-model-selection-is-generally-available-in-jetbrains-ides</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-12-copilot-auto-model-selection-is-generally-available-in-jetbrains-ides</guid>
+      <pubDate>Thu, 12 Mar 2026 15:54:33 +0000</pubDate>
+    </item>
+    <item>
+      <title>Actions OIDC tokens now support repository custom properties</title>
+      <link>https://github.blog/changelog/2026-03-12-actions-oidc-tokens-now-support-repository-custom-properties</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-12-actions-oidc-tokens-now-support-repository-custom-properties</guid>
+      <pubDate>Thu, 12 Mar 2026 14:53:28 +0000</pubDate>
+    </item>
+    <item>
+      <title>Issue fields: Structured issue metadata is in public preview</title>
+      <link>https://github.blog/changelog/2026-03-12-issue-fields-structured-issue-metadata-is-in-public-preview</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-12-issue-fields-structured-issue-metadata-is-in-public-preview</guid>
+      <pubDate>Thu, 12 Mar 2026 08:03:06 +0000</pubDate>
+    </item>
     <item>
       <title>Request Copilot code review from GitHub CLI</title>
       <link>https://github.blog/changelog/2026-03-11-request-copilot-code-review-from-github-cli</link>
@@ -42,30 +66,6 @@
       <link>https://github.blog/changelog/2026-03-10-dependabot-now-supports-pre-commit-hooks</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-03-10-dependabot-now-supports-pre-commit-hooks</guid>
       <pubDate>Tue, 10 Mar 2026 18:04:32 +0000</pubDate>
-    </item>
-    <item>
-      <title>Figma MCP server can now generate design layers from VS Code</title>
-      <link>https://github.blog/changelog/2026-03-06-figma-mcp-server-can-now-generate-design-layers-from-vs-code</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-06-figma-mcp-server-can-now-generate-design-layers-from-vs-code</guid>
-      <pubDate>Fri, 06 Mar 2026 21:20:15 +0000</pubDate>
-    </item>
-    <item>
-      <title>GitHub Copilot in Visual Studio Code v1.110 – February release</title>
-      <link>https://github.blog/changelog/2026-03-06-github-copilot-in-visual-studio-code-v1-110-february-release</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-06-github-copilot-in-visual-studio-code-v1-110-february-release</guid>
-      <pubDate>Fri, 06 Mar 2026 19:03:06 +0000</pubDate>
-    </item>
-    <item>
-      <title>GPT-5.4 is generally available in GitHub Copilot</title>
-      <link>https://github.blog/changelog/2026-03-05-gpt-5-4-is-generally-available-in-github-copilot</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-05-gpt-5-4-is-generally-available-in-github-copilot</guid>
-      <pubDate>Thu, 05 Mar 2026 23:36:06 +0000</pubDate>
-    </item>
-    <item>
-      <title>Discover and manage agent activity with new session filters</title>
-      <link>https://github.blog/changelog/2026-03-05-discover-and-manage-agent-activity-with-new-session-filters</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-05-discover-and-manage-agent-activity-with-new-session-filters</guid>
-      <pubDate>Thu, 05 Mar 2026 22:37:24 +0000</pubDate>
     </item>
   </channel>
 </rss>

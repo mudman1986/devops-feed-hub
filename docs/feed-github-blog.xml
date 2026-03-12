@@ -5,8 +5,20 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-blog.xml</link>
     <description>Articles from GitHub Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 12 Mar 2026 12:34:22 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 12 Mar 2026 20:58:15 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Continuous AI for accessibility: How GitHub transforms feedback into inclusion</title>
+      <link>https://github.blog/ai-and-ml/github-copilot/continuous-ai-for-accessibility-how-github-transforms-feedback-into-inclusion/</link>
+      <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/continuous-ai-for-accessibility-how-github-transforms-feedback-into-inclusion/</guid>
+      <pubDate>Thu, 12 Mar 2026 16:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>GitHub availability report: February 2026</title>
+      <link>https://github.blog/news-insights/company-news/github-availability-report-february-2026/</link>
+      <guid isPermaLink="true">https://github.blog/news-insights/company-news/github-availability-report-february-2026/</guid>
+      <pubDate>Thu, 12 Mar 2026 03:23:54 +0000</pubDate>
+    </item>
     <item>
       <title>Addressing GitHub’s recent availability issues</title>
       <link>https://github.blog/news-insights/company-news/addressing-githubs-recent-availability-issues-2/</link>
@@ -54,18 +66,6 @@
       <link>https://github.blog/ai-and-ml/github-copilot/join-or-host-a-github-copilot-dev-days-event-near-you/</link>
       <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/join-or-host-a-github-copilot-dev-days-event-near-you/</guid>
       <pubDate>Tue, 03 Mar 2026 16:55:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>GitHub for Beginners: Getting started with GitHub Issues and Projects</title>
-      <link>https://github.blog/developer-skills/github/github-for-beginners-getting-started-with-github-issues-and-projects/</link>
-      <guid isPermaLink="true">https://github.blog/developer-skills/github/github-for-beginners-getting-started-with-github-issues-and-projects/</guid>
-      <pubDate>Mon, 02 Mar 2026 17:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>From idea to pull request: A practical guide to building with GitHub Copilot CLI</title>
-      <link>https://github.blog/ai-and-ml/github-copilot/from-idea-to-pull-request-a-practical-guide-to-building-with-github-copilot-cli/</link>
-      <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/from-idea-to-pull-request-a-practical-guide-to-building-with-github-copilot-cli/</guid>
-      <pubDate>Fri, 27 Feb 2026 16:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
