@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-terraform-weekly.xml</link>
     <description>Articles from Terraform weekly</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-terraform-weekly.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 12 Mar 2026 20:58:15 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 13 Mar 2026 01:07:25 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Issue #265 - Dropping Prod with Terraform, the terraform.applying Symbol, AI Agents vs IaC, and Terraform Internals Unpacked</title>

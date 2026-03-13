@@ -5,8 +5,20 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml</link>
     <description>Articles from Azure Updates</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 12 Mar 2026 20:58:15 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 13 Mar 2026 01:07:25 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>[Launched] Generally Available: Summary rules in Log Analytics workspace now support manual “Retry bin”</title>
+      <link>https://azure.microsoft.com/updates?id=558656</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558656</guid>
+      <pubDate>Thu, 12 Mar 2026 21:15:25 +0000</pubDate>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Azure Storage Mover enables private data transfers from AWS S3 to Azure Blob</title>
+      <link>https://azure.microsoft.com/updates?id=558651</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558651</guid>
+      <pubDate>Thu, 12 Mar 2026 21:15:25 +0000</pubDate>
+    </item>
     <item>
       <title>[Launched] Generally Available: Terraform, Bicep, Ansible support for elastic clusters on Azure Database for PostgreSQL</title>
       <link>https://azure.microsoft.com/updates?id=558145</link>
@@ -1187,18 +1199,6 @@
       <title>[Launched] Generally Available: Azure Database for PostgreSQL storage extension support for Parquet</title>
       <link>https://azure.microsoft.com/updates?id=523167</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523167</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Azure SQL Managed Instance Next-gen General Purpose service tier</title>
-      <link>https://azure.microsoft.com/updates?id=523125</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523125</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Azure SQL Database DiskANN vector indexing</title>
-      <link>https://azure.microsoft.com/updates?id=523110</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523110</guid>
       <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
     </item>
     <item>

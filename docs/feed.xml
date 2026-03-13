@@ -5,8 +5,29 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 12 Mar 2026 20:58:15 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 13 Mar 2026 01:07:25 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Developer experience is a blueprint for enterprise productivity</title>
+      <link>https://www.atlassian.com/blog/devops/developer-experience-is-a-blueprint-for-enterprise-productivity</link>
+      <guid isPermaLink="true">https://www.atlassian.com/blog/devops/developer-experience-is-a-blueprint-for-enterprise-productivity</guid>
+      <pubDate>Fri, 13 Mar 2026 00:05:14 +0000</pubDate>
+      <source>Atlassian DevOps</source>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Summary rules in Log Analytics workspace now support manual “Retry bin”</title>
+      <link>https://azure.microsoft.com/updates?id=558656</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558656</guid>
+      <pubDate>Thu, 12 Mar 2026 21:15:25 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Azure Storage Mover enables private data transfers from AWS S3 to Azure Blob</title>
+      <link>https://azure.microsoft.com/updates?id=558651</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558651</guid>
+      <pubDate>Thu, 12 Mar 2026 21:15:25 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
     <item>
       <title>Storm-2561 uses SEO poisoning to distribute fake VPN clients for credential theft</title>
       <link>https://www.microsoft.com/en-us/security/blog/2026/03/12/storm-2561-uses-seo-poisoning-to-distribute-fake-vpn-clients-for-credential-theft/</link>
@@ -2682,20 +2703,6 @@
       <source>Azure Updates</source>
     </item>
     <item>
-      <title>[Launched] Generally Available: Azure SQL Managed Instance Next-gen General Purpose service tier</title>
-      <link>https://azure.microsoft.com/updates?id=523125</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523125</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Azure SQL Database DiskANN vector indexing</title>
-      <link>https://azure.microsoft.com/updates?id=523110</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523110</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
       <title>Microsoft Entra at Ignite 2025: November 17-21</title>
       <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-at-ignite-2025-november-17-21/ba-p/4400194</link>
       <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-at-ignite-2025-november-17-21/ba-p/4400194</guid>
@@ -3023,13 +3030,6 @@
       <guid isPermaLink="true">https:/www.jenkins.io/blog/2025/08/30/raunak-madan-gsoc-endterm-blog-post/</guid>
       <pubDate>Sat, 30 Aug 2025 00:00:00 +0000</pubDate>
       <source>Jenkins Blog</source>
-    </item>
-    <item>
-      <title>To Bitbucket from Jenkins: Enhancing Developer Experience</title>
-      <link>https://www.atlassian.com/blog/bitbucket/devex-bitbucket-pipelines-versus-jenkins</link>
-      <guid isPermaLink="true">https://www.atlassian.com/blog/bitbucket/devex-bitbucket-pipelines-versus-jenkins</guid>
-      <pubDate>Tue, 19 Aug 2025 17:53:25 +0000</pubDate>
-      <source>Atlassian DevOps</source>
     </item>
     <item>
       <title>Jenkins Board and Officer Elections 2025 - Nominations Open</title>
