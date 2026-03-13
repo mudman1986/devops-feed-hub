@@ -5,8 +5,22 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 13 Mar 2026 01:07:25 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 13 Mar 2026 12:33:34 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>How to Run Claude Code with Docker: Local Models, MCP Servers, and Secure Sandboxes</title>
+      <link>https://www.docker.com/blog/run-claude-code-with-docker/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/run-claude-code-with-docker/</guid>
+      <pubDate>Fri, 13 Mar 2026 12:17:54 +0000</pubDate>
+      <source>Docker Blog</source>
+    </item>
+    <item>
+      <title>Secure Agent Execution with NanoClaw and Docker Sandboxes</title>
+      <link>https://www.docker.com/blog/nanoclaw-docker-sandboxes-agent-security/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/nanoclaw-docker-sandboxes-agent-security/</guid>
+      <pubDate>Fri, 13 Mar 2026 12:01:00 +0000</pubDate>
+      <source>Docker Blog</source>
+    </item>
     <item>
       <title>Developer experience is a blueprint for enterprise productivity</title>
       <link>https://www.atlassian.com/blog/devops/developer-experience-is-a-blueprint-for-enterprise-productivity</link>
@@ -699,20 +713,6 @@
       <guid isPermaLink="true">https://circleci.com/blog/getting-started-with-claude-code-and-circleci/</guid>
       <pubDate>Mon, 23 Feb 2026 16:00:00 +0000</pubDate>
       <source>CircleCI Blog</source>
-    </item>
-    <item>
-      <title>Gordon (Beta): Docker’s AI Agent Just Got an Update</title>
-      <link>https://www.docker.com/blog/gordon-dockers-ai-agent-just-got-an-update/</link>
-      <guid isPermaLink="true">https://www.docker.com/blog/gordon-dockers-ai-agent-just-got-an-update/</guid>
-      <pubDate>Mon, 23 Feb 2026 14:13:00 +0000</pubDate>
-      <source>Docker Blog</source>
-    </item>
-    <item>
-      <title>Run OpenClaw Securely in Docker Sandboxes</title>
-      <link>https://www.docker.com/blog/run-openclaw-securely-in-docker-sandboxes/</link>
-      <guid isPermaLink="true">https://www.docker.com/blog/run-openclaw-securely-in-docker-sandboxes/</guid>
-      <pubDate>Mon, 23 Feb 2026 14:00:00 +0000</pubDate>
-      <source>Docker Blog</source>
     </item>
     <item>
       <title>[Launched] Generally Available: Azure Premium SSD v2 Disk is now available in Brazil Southeast, and in a third Availability Zone in Malaysia West and Indonesia Central</title>
