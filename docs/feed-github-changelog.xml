@@ -5,8 +5,26 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml</link>
     <description>Articles from GitHub Changelog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 13 Mar 2026 12:33:34 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 14 Mar 2026 01:07:15 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Optionally skip approval for Copilot coding agent Actions workflows</title>
+      <link>https://github.blog/changelog/2026-03-13-optionally-skip-approval-for-copilot-coding-agent-actions-workflows</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-13-optionally-skip-approval-for-copilot-coding-agent-actions-workflows</guid>
+      <pubDate>Fri, 13 Mar 2026 18:14:48 +0000</pubDate>
+    </item>
+    <item>
+      <title>Self-hosted runner minimum version enforcement paused</title>
+      <link>https://github.blog/changelog/2026-03-13-self-hosted-runner-minimum-version-enforcement-paused</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-13-self-hosted-runner-minimum-version-enforcement-paused</guid>
+      <pubDate>Fri, 13 Mar 2026 16:45:37 +0000</pubDate>
+    </item>
+    <item>
+      <title>Updates to GitHub Copilot for students</title>
+      <link>https://github.blog/changelog/2026-03-13-updates-to-github-copilot-for-students</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-13-updates-to-github-copilot-for-students</guid>
+      <pubDate>Fri, 13 Mar 2026 13:54:32 +0000</pubDate>
+    </item>
     <item>
       <title>REST API version 2026-03-10 is now available</title>
       <link>https://github.blog/changelog/2026-03-12-rest-api-version-2026-03-10-is-now-available</link>
@@ -48,24 +66,6 @@
       <link>https://github.blog/changelog/2026-03-11-explore-a-repository-using-copilot-on-the-web</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-03-11-explore-a-repository-using-copilot-on-the-web</guid>
       <pubDate>Wed, 11 Mar 2026 13:43:49 +0000</pubDate>
-    </item>
-    <item>
-      <title>Secret scanning pattern updates — March 2026</title>
-      <link>https://github.blog/changelog/2026-03-10-secret-scanning-pattern-updates-march-2026</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-10-secret-scanning-pattern-updates-march-2026</guid>
-      <pubDate>Tue, 10 Mar 2026 21:03:15 +0000</pubDate>
-    </item>
-    <item>
-      <title>CodeQL 2.24.3 adds Java 26 support and other improvements</title>
-      <link>https://github.blog/changelog/2026-03-10-codeql-2-24-3-adds-java-26-support-and-other-improvements</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-10-codeql-2-24-3-adds-java-26-support-and-other-improvements</guid>
-      <pubDate>Tue, 10 Mar 2026 19:51:23 +0000</pubDate>
-    </item>
-    <item>
-      <title>Dependabot now supports pre-commit hooks</title>
-      <link>https://github.blog/changelog/2026-03-10-dependabot-now-supports-pre-commit-hooks</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-10-dependabot-now-supports-pre-commit-hooks</guid>
-      <pubDate>Tue, 10 Mar 2026 18:04:32 +0000</pubDate>
     </item>
   </channel>
 </rss>

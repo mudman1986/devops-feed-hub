@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-microsoft-devops-blog.xml</link>
     <description>Articles from Microsoft DevOps Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-microsoft-devops-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 13 Mar 2026 12:33:34 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 14 Mar 2026 01:07:15 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>March Patches for Azure DevOps Server</title>
+      <link>https://devblogs.microsoft.com/devops/march-patches-for-azure-devops-server-4/</link>
+      <guid isPermaLink="true">https://devblogs.microsoft.com/devops/march-patches-for-azure-devops-server-4/</guid>
+      <pubDate>Fri, 13 Mar 2026 21:41:24 +0000</pubDate>
+    </item>
     <item>
       <title>Temporary rollback: build identities can access Advanced Security: read alerts again</title>
       <link>https://devblogs.microsoft.com/devops/temporary-rollback-build-identities-can-access-advanced-security-read-alerts-again/</link>
@@ -60,12 +66,6 @@
       <link>https://devblogs.microsoft.com/devops/the-new-test-run-hub-is-going-generally-available/</link>
       <guid isPermaLink="true">https://devblogs.microsoft.com/devops/the-new-test-run-hub-is-going-generally-available/</guid>
       <pubDate>Mon, 22 Dec 2025 13:06:01 +0000</pubDate>
-    </item>
-    <item>
-      <title>Work item linking for Advanced Security alerts now available</title>
-      <link>https://devblogs.microsoft.com/devops/work-item-linking-for-advanced-security-alerts-now-available/</link>
-      <guid isPermaLink="true">https://devblogs.microsoft.com/devops/work-item-linking-for-advanced-security-alerts-now-available/</guid>
-      <pubDate>Fri, 19 Dec 2025 18:24:14 +0000</pubDate>
     </item>
   </channel>
 </rss>
