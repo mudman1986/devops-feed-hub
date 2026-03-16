@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-jenkins-blog.xml</link>
     <description>Articles from Jenkins Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-jenkins-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sun, 15 Mar 2026 12:29:02 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 16 Mar 2026 01:18:36 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Introducing the Jenkins Plugin of the Month</title>
+      <link>https:/www.jenkins.io/blog/2026/03/16/plugin-of-the-month/</link>
+      <guid isPermaLink="true">https:/www.jenkins.io/blog/2026/03/16/plugin-of-the-month/</guid>
+      <pubDate>Mon, 16 Mar 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Jenkins Contributor Summit: Officers View on the Present and Future</title>
       <link>https:/www.jenkins.io/blog/2026/03/09/contributor-summit-part-2/</link>

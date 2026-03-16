@@ -5,8 +5,15 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sun, 15 Mar 2026 12:29:02 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 16 Mar 2026 01:18:36 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Introducing the Jenkins Plugin of the Month</title>
+      <link>https:/www.jenkins.io/blog/2026/03/16/plugin-of-the-month/</link>
+      <guid isPermaLink="true">https:/www.jenkins.io/blog/2026/03/16/plugin-of-the-month/</guid>
+      <pubDate>Mon, 16 Mar 2026 00:00:00 +0000</pubDate>
+      <source>Jenkins Blog</source>
+    </item>
     <item>
       <title>March Patches for Azure DevOps Server</title>
       <link>https://devblogs.microsoft.com/devops/march-patches-for-azure-devops-server-4/</link>
