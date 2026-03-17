@@ -5,8 +5,15 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 17 Mar 2026 01:09:24 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 17 Mar 2026 12:43:19 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>GitHub Code Quality: Batch apply quality suggestions on pull requests</title>
+      <link>https://github.blog/changelog/2026-03-17-github-code-quality-batch-apply-quality-suggestions-on-pull-requests</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-17-github-code-quality-batch-apply-quality-suggestions-on-pull-requests</guid>
+      <pubDate>Tue, 17 Mar 2026 10:01:32 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
     <item>
       <title>The Invisible Rewrite: Modernizing the Kubernetes Image Promoter</title>
       <link>https://kubernetes.io/blog/2026/03/17/image-promoter-rewrite/</link>
@@ -307,13 +314,6 @@
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558164</guid>
       <pubDate>Wed, 11 Mar 2026 17:45:49 +0000</pubDate>
       <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>Major agentic capabilities improvements in GitHub Copilot for JetBrains IDEs</title>
-      <link>https://github.blog/changelog/2026-03-11-major-agentic-capabilities-improvements-in-github-copilot-for-jetbrains-ides</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-11-major-agentic-capabilities-improvements-in-github-copilot-for-jetbrains-ides</guid>
-      <pubDate>Wed, 11 Mar 2026 16:40:03 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>Issue #265 - Dropping Prod with Terraform, the terraform.applying Symbol, AI Agents vs IaC, and Terraform Internals Unpacked</title>

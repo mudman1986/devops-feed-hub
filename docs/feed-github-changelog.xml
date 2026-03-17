@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml</link>
     <description>Articles from GitHub Changelog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 17 Mar 2026 01:09:24 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 17 Mar 2026 12:43:19 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>GitHub Code Quality: Batch apply quality suggestions on pull requests</title>
+      <link>https://github.blog/changelog/2026-03-17-github-code-quality-batch-apply-quality-suggestions-on-pull-requests</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-17-github-code-quality-batch-apply-quality-suggestions-on-pull-requests</guid>
+      <pubDate>Tue, 17 Mar 2026 10:01:32 +0000</pubDate>
+    </item>
     <item>
       <title>Deprecating the cost center integration on the enterprise People page</title>
       <link>https://github.blog/changelog/2026-03-16-deprecating-the-cost-center-integration-on-the-enterprise-people-page</link>
@@ -60,12 +66,6 @@
       <link>https://github.blog/changelog/2026-03-11-request-copilot-code-review-from-github-cli</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-03-11-request-copilot-code-review-from-github-cli</guid>
       <pubDate>Wed, 11 Mar 2026 18:11:51 +0000</pubDate>
-    </item>
-    <item>
-      <title>Major agentic capabilities improvements in GitHub Copilot for JetBrains IDEs</title>
-      <link>https://github.blog/changelog/2026-03-11-major-agentic-capabilities-improvements-in-github-copilot-for-jetbrains-ides</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-11-major-agentic-capabilities-improvements-in-github-copilot-for-jetbrains-ides</guid>
-      <pubDate>Wed, 11 Mar 2026 16:40:03 +0000</pubDate>
     </item>
   </channel>
 </rss>

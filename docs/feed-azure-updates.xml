@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml</link>
     <description>Articles from Azure Updates</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 17 Mar 2026 01:09:24 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 17 Mar 2026 12:43:19 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Retirement: Support for Windows Server 2016 Marketplace images on Azure Batch pools will end on January 12, 2027</title>
