@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml</link>
     <description>Articles from GitHub Changelog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 16 Mar 2026 12:44:57 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 17 Mar 2026 01:09:24 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Deprecating the cost center integration on the enterprise People page</title>
+      <link>https://github.blog/changelog/2026-03-16-deprecating-the-cost-center-integration-on-the-enterprise-people-page</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-16-deprecating-the-cost-center-integration-on-the-enterprise-people-page</guid>
+      <pubDate>Mon, 16 Mar 2026 12:55:31 +0000</pubDate>
+    </item>
     <item>
       <title>Optionally skip approval for Copilot coding agent Actions workflows</title>
       <link>https://github.blog/changelog/2026-03-13-optionally-skip-approval-for-copilot-coding-agent-actions-workflows</link>
@@ -60,12 +66,6 @@
       <link>https://github.blog/changelog/2026-03-11-major-agentic-capabilities-improvements-in-github-copilot-for-jetbrains-ides</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-03-11-major-agentic-capabilities-improvements-in-github-copilot-for-jetbrains-ides</guid>
       <pubDate>Wed, 11 Mar 2026 16:40:03 +0000</pubDate>
-    </item>
-    <item>
-      <title>Explore a repository using Copilot on the web</title>
-      <link>https://github.blog/changelog/2026-03-11-explore-a-repository-using-copilot-on-the-web</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-11-explore-a-repository-using-copilot-on-the-web</guid>
-      <pubDate>Wed, 11 Mar 2026 13:43:49 +0000</pubDate>
     </item>
   </channel>
 </rss>

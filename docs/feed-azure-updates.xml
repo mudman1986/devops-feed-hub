@@ -5,8 +5,38 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml</link>
     <description>Articles from Azure Updates</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 16 Mar 2026 12:44:57 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 17 Mar 2026 01:09:24 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Retirement: Support for Windows Server 2016 Marketplace images on Azure Batch pools will end on January 12, 2027</title>
+      <link>https://azure.microsoft.com/updates?id=549077</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=549077</guid>
+      <pubDate>Mon, 16 Mar 2026 18:45:11 +0000</pubDate>
+    </item>
+    <item>
+      <title>Retirement: Migration of Azure Batch Low-Priority VMs to Spot VMs in early March</title>
+      <link>https://azure.microsoft.com/updates?id=543279</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=543279</guid>
+      <pubDate>Mon, 16 Mar 2026 18:45:11 +0000</pubDate>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Entra ID-Based Access for Azure Blob Storage SFTP</title>
+      <link>https://azure.microsoft.com/updates?id=558662</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558662</guid>
+      <pubDate>Mon, 16 Mar 2026 18:30:34 +0000</pubDate>
+    </item>
+    <item>
+      <title>Retirement: End of life reminder of NVv3 and NVv4-series Azure virtual machine in Azure Batch pools</title>
+      <link>https://azure.microsoft.com/updates?id=516070</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=516070</guid>
+      <pubDate>Mon, 16 Mar 2026 18:30:34 +0000</pubDate>
+    </item>
+    <item>
+      <title>Retirement: Flatcar Container Linux for AKS (preview)</title>
+      <link>https://azure.microsoft.com/updates?id=557929</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557929</guid>
+      <pubDate>Mon, 16 Mar 2026 18:15:54 +0000</pubDate>
+    </item>
     <item>
       <title>[Launched] Generally Available: Summary rules in Log Analytics workspace now support manual “Retry bin”</title>
       <link>https://azure.microsoft.com/updates?id=558656</link>
@@ -1169,36 +1199,6 @@
       <title>[In preview] Public Preview: Azure Database for PostgreSQL – Flexible Server pg_duckdb extension</title>
       <link>https://azure.microsoft.com/updates?id=523559</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523559</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Azure SQL change event streaming</title>
-      <link>https://azure.microsoft.com/updates?id=523533</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523533</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: PostgreSQL 18 with in-place upgrade on Azure Database for PostgreSQL</title>
-      <link>https://azure.microsoft.com/updates?id=523196</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523196</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: PostgreSQL extension for Visual Studio Code with GitHub Copilot</title>
-      <link>https://azure.microsoft.com/updates?id=523187</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523187</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Mirroring in Fabric for PostgreSQL Flexible Server</title>
-      <link>https://azure.microsoft.com/updates?id=523177</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523177</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Azure Database for PostgreSQL storage extension support for Parquet</title>
-      <link>https://azure.microsoft.com/updates?id=523167</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523167</guid>
       <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
     </item>
     <item>

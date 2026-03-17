@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-kubernetes-blog.xml</link>
     <description>Articles from Kubernetes Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-kubernetes-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 16 Mar 2026 12:44:57 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 17 Mar 2026 01:09:24 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>The Invisible Rewrite: Modernizing the Kubernetes Image Promoter</title>
+      <link>https://kubernetes.io/blog/2026/03/17/image-promoter-rewrite/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2026/03/17/image-promoter-rewrite/</guid>
+      <pubDate>Tue, 17 Mar 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Announcing the AI Gateway Working Group</title>
       <link>https://kubernetes.io/blog/2026/03/09/announcing-ai-gateway-wg/</link>
@@ -300,12 +306,6 @@
       <link>https://kubernetes.io/blog/2025/09/02/kubernetes-v1-34-prefer-align-by-uncore-cache-cpumanager-static-policy-optimization/</link>
       <guid isPermaLink="true">https://kubernetes.io/blog/2025/09/02/kubernetes-v1-34-prefer-align-by-uncore-cache-cpumanager-static-policy-optimization/</guid>
       <pubDate>Tue, 02 Sep 2025 18:30:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Kubernetes v1.34: DRA has graduated to GA</title>
-      <link>https://kubernetes.io/blog/2025/09/01/kubernetes-v1-34-dra-updates/</link>
-      <guid isPermaLink="true">https://kubernetes.io/blog/2025/09/01/kubernetes-v1-34-dra-updates/</guid>
-      <pubDate>Mon, 01 Sep 2025 18:30:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

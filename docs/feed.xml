@@ -5,8 +5,85 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 16 Mar 2026 12:44:57 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 17 Mar 2026 01:09:24 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>The Invisible Rewrite: Modernizing the Kubernetes Image Promoter</title>
+      <link>https://kubernetes.io/blog/2026/03/17/image-promoter-rewrite/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2026/03/17/image-promoter-rewrite/</guid>
+      <pubDate>Tue, 17 Mar 2026 00:00:00 +0000</pubDate>
+      <source>Kubernetes Blog</source>
+    </item>
+    <item>
+      <title>Retirement: Support for Windows Server 2016 Marketplace images on Azure Batch pools will end on January 12, 2027</title>
+      <link>https://azure.microsoft.com/updates?id=549077</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=549077</guid>
+      <pubDate>Mon, 16 Mar 2026 18:45:11 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>Retirement: Migration of Azure Batch Low-Priority VMs to Spot VMs in early March</title>
+      <link>https://azure.microsoft.com/updates?id=543279</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=543279</guid>
+      <pubDate>Mon, 16 Mar 2026 18:45:11 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Entra ID-Based Access for Azure Blob Storage SFTP</title>
+      <link>https://azure.microsoft.com/updates?id=558662</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558662</guid>
+      <pubDate>Mon, 16 Mar 2026 18:30:34 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>Retirement: End of life reminder of NVv3 and NVv4-series Azure virtual machine in Azure Batch pools</title>
+      <link>https://azure.microsoft.com/updates?id=516070</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=516070</guid>
+      <pubDate>Mon, 16 Mar 2026 18:30:34 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>Retirement: Flatcar Container Linux for AKS (preview)</title>
+      <link>https://azure.microsoft.com/updates?id=557929</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557929</guid>
+      <pubDate>Mon, 16 Mar 2026 18:15:54 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>New Microsoft Purview innovations for Fabric to safely accelerate your AI transformation</title>
+      <link>https://techcommunity.microsoft.com/blog/microsoft-security-blog/new-microsoft-purview-innovations-for-fabric-to-safely-accelerate-your-ai-transf/4502156</link>
+      <guid isPermaLink="true">https://techcommunity.microsoft.com/blog/microsoft-security-blog/new-microsoft-purview-innovations-for-fabric-to-safely-accelerate-your-ai-transf/4502156</guid>
+      <pubDate>Mon, 16 Mar 2026 17:10:00 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>Simplify your identity landscape, reduce risk, and modernize access for any identity</title>
+      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/simplify-your-identity-landscape-reduce-risk-and-modernize/ba-p/4486059</link>
+      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/simplify-your-identity-landscape-reduce-risk-and-modernize/ba-p/4486059</guid>
+      <pubDate>Mon, 16 Mar 2026 16:50:00 +0000</pubDate>
+      <source>Microsoft Entra Blog</source>
+    </item>
+    <item>
+      <title>GitHub for Beginners: Getting started with GitHub Actions</title>
+      <link>https://github.blog/developer-skills/github/github-for-beginners-getting-started-with-github-actions/</link>
+      <guid isPermaLink="true">https://github.blog/developer-skills/github/github-for-beginners-getting-started-with-github-actions/</guid>
+      <pubDate>Mon, 16 Mar 2026 16:00:00 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
+    <item>
+      <title>Help on the line: How a Microsoft Teams support call led to compromise</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/03/16/help-on-the-line-how-a-microsoft-teams-support-call-led-to-compromise/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/16/help-on-the-line-how-a-microsoft-teams-support-call-led-to-compromise/</guid>
+      <pubDate>Mon, 16 Mar 2026 16:00:00 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>Deprecating the cost center integration on the enterprise People page</title>
+      <link>https://github.blog/changelog/2026-03-16-deprecating-the-cost-center-integration-on-the-enterprise-people-page</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-16-deprecating-the-cost-center-integration-on-the-enterprise-people-page</guid>
+      <pubDate>Mon, 16 Mar 2026 12:55:31 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
     <item>
       <title>Introducing the Jenkins Plugin of the Month</title>
       <link>https:/www.jenkins.io/blog/2026/03/16/plugin-of-the-month/</link>
@@ -246,13 +323,6 @@
       <source>Terraform weekly</source>
     </item>
     <item>
-      <title>Explore a repository using Copilot on the web</title>
-      <link>https://github.blog/changelog/2026-03-11-explore-a-repository-using-copilot-on-the-web</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-11-explore-a-repository-using-copilot-on-the-web</guid>
-      <pubDate>Wed, 11 Mar 2026 13:43:49 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>Building AI Teams: How Docker Sandboxes and Docker Agent Transform Development</title>
       <link>https://www.docker.com/blog/building-ai-teams-docker-sandboxes-agent/</link>
       <guid isPermaLink="true">https://www.docker.com/blog/building-ai-teams-docker-sandboxes-agent/</guid>
@@ -421,13 +491,6 @@
       <source>Azure Updates</source>
     </item>
     <item>
-      <title>Inside Tycoon2FA: How a leading AiTM phishing kit operated at scale</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/03/04/inside-tycoon2fa-how-a-leading-aitm-phishing-kit-operated-at-scale/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/04/inside-tycoon2fa-how-a-leading-aitm-phishing-kit-operated-at-scale/</guid>
-      <pubDate>Wed, 04 Mar 2026 16:04:24 +0000</pubDate>
-      <source>Microsoft Security</source>
-    </item>
-    <item>
       <title>Issue #264 - Semgrep Meets AI for IaC, Entra ID in Stacks, Feature Flags Beyond Booleans, AgentCore Bots</title>
       <link>https://www.weekly.tf/p/issue-264-semgrep-meets-ai-for-iac-entra-id-in-stacks-feature-flags-beyond-booleans-agentcore-bots</link>
       <guid isPermaLink="true">https://www.weekly.tf/p/issue-264-semgrep-meets-ai-for-iac-entra-id-in-stacks-feature-flags-beyond-booleans-agentcore-bots</guid>
@@ -449,13 +512,6 @@
       <source>GitLab Blog</source>
     </item>
     <item>
-      <title>Signed malware impersonating workplace apps deploys RMM backdoors</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/03/03/signed-malware-impersonating-workplace-apps-deploys-rmm-backdoors/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/03/signed-malware-impersonating-workplace-apps-deploys-rmm-backdoors/</guid>
-      <pubDate>Tue, 03 Mar 2026 21:11:03 +0000</pubDate>
-      <source>Microsoft Security</source>
-    </item>
-    <item>
       <title>Announcing Docker Hardened System Packages</title>
       <link>https://www.docker.com/blog/announcing-docker-hardened-system-packages/</link>
       <guid isPermaLink="true">https://www.docker.com/blog/announcing-docker-hardened-system-packages/</guid>
@@ -467,13 +523,6 @@
       <link>https://github.blog/engineering/architecture-optimization/how-we-rebuilt-the-search-architecture-for-high-availability-in-github-enterprise-server/</link>
       <guid isPermaLink="true">https://github.blog/engineering/architecture-optimization/how-we-rebuilt-the-search-architecture-for-high-availability-in-github-enterprise-server/</guid>
       <pubDate>Tue, 03 Mar 2026 18:45:09 +0000</pubDate>
-      <source>GitHub Blog</source>
-    </item>
-    <item>
-      <title>Join or host a GitHub Copilot Dev Days event near you</title>
-      <link>https://github.blog/ai-and-ml/github-copilot/join-or-host-a-github-copilot-dev-days-event-near-you/</link>
-      <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/join-or-host-a-github-copilot-dev-days-event-near-you/</guid>
-      <pubDate>Tue, 03 Mar 2026 16:55:00 +0000</pubDate>
       <source>GitHub Blog</source>
     </item>
     <item>
@@ -1392,13 +1441,6 @@
       <guid isPermaLink="true">https://www.weekly.tf/p/issue-258-iacconf-multi-environment-github-pipelines-ignore-changes-deep-dive-aws-glue-data-exports</guid>
       <pubDate>Wed, 21 Jan 2026 16:01:43 +0000</pubDate>
       <source>Terraform weekly</source>
-    </item>
-    <item>
-      <title>Simplify your identity landscape, reduce risk, and modernize access for any identity</title>
-      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/simplify-your-identity-landscape-reduce-risk-and-modernize/ba-p/4486059</link>
-      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/simplify-your-identity-landscape-reduce-risk-and-modernize/ba-p/4486059</guid>
-      <pubDate>Tue, 20 Jan 2026 17:00:00 +0000</pubDate>
-      <source>Microsoft Entra Blog</source>
     </item>
     <item>
       <title>Azure Boards additional field filters (private preview)</title>
@@ -2675,41 +2717,6 @@
       <source>Azure Updates</source>
     </item>
     <item>
-      <title>[In preview] Public Preview: Azure SQL change event streaming</title>
-      <link>https://azure.microsoft.com/updates?id=523533</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523533</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: PostgreSQL 18 with in-place upgrade on Azure Database for PostgreSQL</title>
-      <link>https://azure.microsoft.com/updates?id=523196</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523196</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: PostgreSQL extension for Visual Studio Code with GitHub Copilot</title>
-      <link>https://azure.microsoft.com/updates?id=523187</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523187</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Mirroring in Fabric for PostgreSQL Flexible Server</title>
-      <link>https://azure.microsoft.com/updates?id=523177</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523177</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Azure Database for PostgreSQL storage extension support for Parquet</title>
-      <link>https://azure.microsoft.com/updates?id=523167</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523167</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
       <title>Microsoft Entra at Ignite 2025: November 17-21</title>
       <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-at-ignite-2025-november-17-21/ba-p/4400194</link>
       <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-at-ignite-2025-november-17-21/ba-p/4400194</guid>
@@ -3015,13 +3022,6 @@
       <link>https://kubernetes.io/blog/2025/09/02/kubernetes-v1-34-prefer-align-by-uncore-cache-cpumanager-static-policy-optimization/</link>
       <guid isPermaLink="true">https://kubernetes.io/blog/2025/09/02/kubernetes-v1-34-prefer-align-by-uncore-cache-cpumanager-static-policy-optimization/</guid>
       <pubDate>Tue, 02 Sep 2025 18:30:00 +0000</pubDate>
-      <source>Kubernetes Blog</source>
-    </item>
-    <item>
-      <title>Kubernetes v1.34: DRA has graduated to GA</title>
-      <link>https://kubernetes.io/blog/2025/09/01/kubernetes-v1-34-dra-updates/</link>
-      <guid isPermaLink="true">https://kubernetes.io/blog/2025/09/01/kubernetes-v1-34-dra-updates/</guid>
-      <pubDate>Mon, 01 Sep 2025 18:30:00 +0000</pubDate>
       <source>Kubernetes Blog</source>
     </item>
     <item>

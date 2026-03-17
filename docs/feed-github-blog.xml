@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-blog.xml</link>
     <description>Articles from GitHub Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 16 Mar 2026 12:44:57 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 17 Mar 2026 01:09:24 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>GitHub for Beginners: Getting started with GitHub Actions</title>
+      <link>https://github.blog/developer-skills/github/github-for-beginners-getting-started-with-github-actions/</link>
+      <guid isPermaLink="true">https://github.blog/developer-skills/github/github-for-beginners-getting-started-with-github-actions/</guid>
+      <pubDate>Mon, 16 Mar 2026 16:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Continuous AI for accessibility: How GitHub transforms feedback into inclusion</title>
       <link>https://github.blog/ai-and-ml/github-copilot/continuous-ai-for-accessibility-how-github-transforms-feedback-into-inclusion/</link>
@@ -60,12 +66,6 @@
       <link>https://github.blog/engineering/architecture-optimization/how-we-rebuilt-the-search-architecture-for-high-availability-in-github-enterprise-server/</link>
       <guid isPermaLink="true">https://github.blog/engineering/architecture-optimization/how-we-rebuilt-the-search-architecture-for-high-availability-in-github-enterprise-server/</guid>
       <pubDate>Tue, 03 Mar 2026 18:45:09 +0000</pubDate>
-    </item>
-    <item>
-      <title>Join or host a GitHub Copilot Dev Days event near you</title>
-      <link>https://github.blog/ai-and-ml/github-copilot/join-or-host-a-github-copilot-dev-days-event-near-you/</link>
-      <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/join-or-host-a-github-copilot-dev-days-event-near-you/</guid>
-      <pubDate>Tue, 03 Mar 2026 16:55:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
