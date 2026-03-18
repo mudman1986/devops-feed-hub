@@ -5,8 +5,56 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml</link>
     <description>Articles from GitHub Changelog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 17 Mar 2026 12:43:19 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 18 Mar 2026 01:14:01 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Copilot coding agent works faster with semantic code search</title>
+      <link>https://github.blog/changelog/2026-03-17-copilot-coding-agent-works-faster-with-semantic-code-search</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-17-copilot-coding-agent-works-faster-with-semantic-code-search</guid>
+      <pubDate>Tue, 17 Mar 2026 22:56:46 +0000</pubDate>
+    </item>
+    <item>
+      <title>Secret scanning in AI coding agents via the GitHub MCP Server</title>
+      <link>https://github.blog/changelog/2026-03-17-secret-scanning-in-ai-coding-agents-via-the-github-mcp-server</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-17-secret-scanning-in-ai-coding-agents-via-the-github-mcp-server</guid>
+      <pubDate>Tue, 17 Mar 2026 21:00:44 +0000</pubDate>
+    </item>
+    <item>
+      <title>GitHub Enterprise Server 3.20 is now generally available</title>
+      <link>https://github.blog/changelog/2026-03-17-github-enterprise-server-3-20-is-now-generally-available</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-17-github-enterprise-server-3-20-is-now-generally-available</guid>
+      <pubDate>Tue, 17 Mar 2026 18:17:55 +0000</pubDate>
+    </item>
+    <item>
+      <title>GPT-5.4 mini is now generally available for GitHub Copilot</title>
+      <link>https://github.blog/changelog/2026-03-17-gpt-5-4-mini-is-now-generally-available-for-github-copilot</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-17-gpt-5-4-mini-is-now-generally-available-for-github-copilot</guid>
+      <pubDate>Tue, 17 Mar 2026 17:22:52 +0000</pubDate>
+    </item>
+    <item>
+      <title>Copilot usage metrics now includes organization-level GitHub Copilot CLI activity</title>
+      <link>https://github.blog/changelog/2026-03-17-copilot-usage-metrics-now-includes-organization-level-github-copilot-cli-activity</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-17-copilot-usage-metrics-now-includes-organization-level-github-copilot-cli-activity</guid>
+      <pubDate>Tue, 17 Mar 2026 17:22:24 +0000</pubDate>
+    </item>
+    <item>
+      <title>Push protection exemptions for roles, teams, and apps</title>
+      <link>https://github.blog/changelog/2026-03-17-push-protection-exemptions-for-apps-teams-and-roles</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-17-push-protection-exemptions-for-apps-teams-and-roles</guid>
+      <pubDate>Tue, 17 Mar 2026 16:00:33 +0000</pubDate>
+    </item>
+    <item>
+      <title>GitHub Advanced Security setup made simple</title>
+      <link>https://github.blog/changelog/2026-03-17-github-advanced-security-setup-made-simple</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-17-github-advanced-security-setup-made-simple</guid>
+      <pubDate>Tue, 17 Mar 2026 15:25:13 +0000</pubDate>
+    </item>
+    <item>
+      <title>Code Quality permissions removed from security manager role</title>
+      <link>https://github.blog/changelog/2026-03-17-code-quality-permissions-removed-from-security-manager-role</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-17-code-quality-permissions-removed-from-security-manager-role</guid>
+      <pubDate>Tue, 17 Mar 2026 12:44:48 +0000</pubDate>
+    </item>
     <item>
       <title>GitHub Code Quality: Batch apply quality suggestions on pull requests</title>
       <link>https://github.blog/changelog/2026-03-17-github-code-quality-batch-apply-quality-suggestions-on-pull-requests</link>
@@ -18,54 +66,6 @@
       <link>https://github.blog/changelog/2026-03-16-deprecating-the-cost-center-integration-on-the-enterprise-people-page</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-03-16-deprecating-the-cost-center-integration-on-the-enterprise-people-page</guid>
       <pubDate>Mon, 16 Mar 2026 12:55:31 +0000</pubDate>
-    </item>
-    <item>
-      <title>Optionally skip approval for Copilot coding agent Actions workflows</title>
-      <link>https://github.blog/changelog/2026-03-13-optionally-skip-approval-for-copilot-coding-agent-actions-workflows</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-13-optionally-skip-approval-for-copilot-coding-agent-actions-workflows</guid>
-      <pubDate>Fri, 13 Mar 2026 18:14:48 +0000</pubDate>
-    </item>
-    <item>
-      <title>Self-hosted runner minimum version enforcement paused</title>
-      <link>https://github.blog/changelog/2026-03-13-self-hosted-runner-minimum-version-enforcement-paused</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-13-self-hosted-runner-minimum-version-enforcement-paused</guid>
-      <pubDate>Fri, 13 Mar 2026 16:45:37 +0000</pubDate>
-    </item>
-    <item>
-      <title>Updates to GitHub Copilot for students</title>
-      <link>https://github.blog/changelog/2026-03-13-updates-to-github-copilot-for-students</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-13-updates-to-github-copilot-for-students</guid>
-      <pubDate>Fri, 13 Mar 2026 13:54:32 +0000</pubDate>
-    </item>
-    <item>
-      <title>REST API version 2026-03-10 is now available</title>
-      <link>https://github.blog/changelog/2026-03-12-rest-api-version-2026-03-10-is-now-available</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-12-rest-api-version-2026-03-10-is-now-available</guid>
-      <pubDate>Thu, 12 Mar 2026 16:00:07 +0000</pubDate>
-    </item>
-    <item>
-      <title>Copilot auto model selection is generally available in JetBrains IDEs</title>
-      <link>https://github.blog/changelog/2026-03-12-copilot-auto-model-selection-is-generally-available-in-jetbrains-ides</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-12-copilot-auto-model-selection-is-generally-available-in-jetbrains-ides</guid>
-      <pubDate>Thu, 12 Mar 2026 15:54:33 +0000</pubDate>
-    </item>
-    <item>
-      <title>Actions OIDC tokens now support repository custom properties</title>
-      <link>https://github.blog/changelog/2026-03-12-actions-oidc-tokens-now-support-repository-custom-properties</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-12-actions-oidc-tokens-now-support-repository-custom-properties</guid>
-      <pubDate>Thu, 12 Mar 2026 14:53:28 +0000</pubDate>
-    </item>
-    <item>
-      <title>Issue fields: Structured issue metadata is in public preview</title>
-      <link>https://github.blog/changelog/2026-03-12-issue-fields-structured-issue-metadata-is-in-public-preview</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-12-issue-fields-structured-issue-metadata-is-in-public-preview</guid>
-      <pubDate>Thu, 12 Mar 2026 08:03:06 +0000</pubDate>
-    </item>
-    <item>
-      <title>Request Copilot code review from GitHub CLI</title>
-      <link>https://github.blog/changelog/2026-03-11-request-copilot-code-review-from-github-cli</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-11-request-copilot-code-review-from-github-cli</guid>
-      <pubDate>Wed, 11 Mar 2026 18:11:51 +0000</pubDate>
     </item>
   </channel>
 </rss>

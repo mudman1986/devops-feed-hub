@@ -5,8 +5,106 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 17 Mar 2026 12:43:19 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 18 Mar 2026 01:14:01 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Copilot coding agent works faster with semantic code search</title>
+      <link>https://github.blog/changelog/2026-03-17-copilot-coding-agent-works-faster-with-semantic-code-search</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-17-copilot-coding-agent-works-faster-with-semantic-code-search</guid>
+      <pubDate>Tue, 17 Mar 2026 22:56:46 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Secret scanning in AI coding agents via the GitHub MCP Server</title>
+      <link>https://github.blog/changelog/2026-03-17-secret-scanning-in-ai-coding-agents-via-the-github-mcp-server</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-17-secret-scanning-in-ai-coding-agents-via-the-github-mcp-server</guid>
+      <pubDate>Tue, 17 Mar 2026 21:00:44 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>GitHub Enterprise Server 3.20 is now generally available</title>
+      <link>https://github.blog/changelog/2026-03-17-github-enterprise-server-3-20-is-now-generally-available</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-17-github-enterprise-server-3-20-is-now-generally-available</guid>
+      <pubDate>Tue, 17 Mar 2026 18:17:55 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Default Rule Set 2.2 and updates to ruleset support policy</title>
+      <link>https://azure.microsoft.com/updates?id=558016</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558016</guid>
+      <pubDate>Tue, 17 Mar 2026 17:45:45 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Foundry Agent Service</title>
+      <link>https://azure.microsoft.com/updates?id=557141</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557141</guid>
+      <pubDate>Tue, 17 Mar 2026 17:45:45 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>Retirement: Azure VMware Solution AV36P and AV52 node retirement on June 30, 2029</title>
+      <link>https://azure.microsoft.com/updates?id=557094</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557094</guid>
+      <pubDate>Tue, 17 Mar 2026 17:30:11 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>GPT-5.4 mini is now generally available for GitHub Copilot</title>
+      <link>https://github.blog/changelog/2026-03-17-gpt-5-4-mini-is-now-generally-available-for-github-copilot</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-17-gpt-5-4-mini-is-now-generally-available-for-github-copilot</guid>
+      <pubDate>Tue, 17 Mar 2026 17:22:52 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Copilot usage metrics now includes organization-level GitHub Copilot CLI activity</title>
+      <link>https://github.blog/changelog/2026-03-17-copilot-usage-metrics-now-includes-organization-level-github-copilot-cli-activity</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-17-copilot-usage-metrics-now-includes-organization-level-github-copilot-cli-activity</guid>
+      <pubDate>Tue, 17 Mar 2026 17:22:24 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Upcoming Conditional Access change: Improved enforcement for policies with resource exclusions</title>
+      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/upcoming-conditional-access-change-improved-enforcement-for/ba-p/4488925</link>
+      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/upcoming-conditional-access-change-improved-enforcement-for/ba-p/4488925</guid>
+      <pubDate>Tue, 17 Mar 2026 17:10:54 +0000</pubDate>
+      <source>Microsoft Entra Blog</source>
+    </item>
+    <item>
+      <title>Push protection exemptions for roles, teams, and apps</title>
+      <link>https://github.blog/changelog/2026-03-17-push-protection-exemptions-for-apps-teams-and-roles</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-17-push-protection-exemptions-for-apps-teams-and-roles</guid>
+      <pubDate>Tue, 17 Mar 2026 16:00:33 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Investing in the people shaping open source and securing the future together</title>
+      <link>https://github.blog/security/supply-chain-security/investing-in-the-people-shaping-open-source-and-securing-the-future-together/</link>
+      <guid isPermaLink="true">https://github.blog/security/supply-chain-security/investing-in-the-people-shaping-open-source-and-securing-the-future-together/</guid>
+      <pubDate>Tue, 17 Mar 2026 16:00:00 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
+    <item>
+      <title>GitHub Advanced Security setup made simple</title>
+      <link>https://github.blog/changelog/2026-03-17-github-advanced-security-setup-made-simple</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-17-github-advanced-security-setup-made-simple</guid>
+      <pubDate>Tue, 17 Mar 2026 15:25:13 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Azure DevOps Remote MCP Server (public preview)</title>
+      <link>https://devblogs.microsoft.com/devops/azure-devops-remote-mcp-server-public-preview/</link>
+      <guid isPermaLink="true">https://devblogs.microsoft.com/devops/azure-devops-remote-mcp-server-public-preview/</guid>
+      <pubDate>Tue, 17 Mar 2026 13:52:29 +0000</pubDate>
+      <source>Microsoft DevOps Blog</source>
+    </item>
+    <item>
+      <title>Code Quality permissions removed from security manager role</title>
+      <link>https://github.blog/changelog/2026-03-17-code-quality-permissions-removed-from-security-manager-role</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-17-code-quality-permissions-removed-from-security-manager-role</guid>
+      <pubDate>Tue, 17 Mar 2026 12:44:48 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
     <item>
       <title>GitHub Code Quality: Batch apply quality suggestions on pull requests</title>
       <link>https://github.blog/changelog/2026-03-17-github-code-quality-batch-apply-quality-suggestions-on-pull-requests</link>
@@ -106,27 +204,6 @@
       <source>Microsoft DevOps Blog</source>
     </item>
     <item>
-      <title>Optionally skip approval for Copilot coding agent Actions workflows</title>
-      <link>https://github.blog/changelog/2026-03-13-optionally-skip-approval-for-copilot-coding-agent-actions-workflows</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-13-optionally-skip-approval-for-copilot-coding-agent-actions-workflows</guid>
-      <pubDate>Fri, 13 Mar 2026 18:14:48 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>Self-hosted runner minimum version enforcement paused</title>
-      <link>https://github.blog/changelog/2026-03-13-self-hosted-runner-minimum-version-enforcement-paused</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-13-self-hosted-runner-minimum-version-enforcement-paused</guid>
-      <pubDate>Fri, 13 Mar 2026 16:45:37 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>Updates to GitHub Copilot for students</title>
-      <link>https://github.blog/changelog/2026-03-13-updates-to-github-copilot-for-students</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-13-updates-to-github-copilot-for-students</guid>
-      <pubDate>Fri, 13 Mar 2026 13:54:32 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>Achieving Test Reliability for Native E2E Testing: Beyond Fixing Broken Tests</title>
       <link>https://www.docker.com/blog/native-e2e-test-reliability/</link>
       <guid isPermaLink="true">https://www.docker.com/blog/native-e2e-test-reliability/</guid>
@@ -176,13 +253,6 @@
       <source>Microsoft Security</source>
     </item>
     <item>
-      <title>REST API version 2026-03-10 is now available</title>
-      <link>https://github.blog/changelog/2026-03-12-rest-api-version-2026-03-10-is-now-available</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-12-rest-api-version-2026-03-10-is-now-available</guid>
-      <pubDate>Thu, 12 Mar 2026 16:00:07 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>Continuous AI for accessibility: How GitHub transforms feedback into inclusion</title>
       <link>https://github.blog/ai-and-ml/github-copilot/continuous-ai-for-accessibility-how-github-transforms-feedback-into-inclusion/</link>
       <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/continuous-ai-for-accessibility-how-github-transforms-feedback-into-inclusion/</guid>
@@ -197,20 +267,6 @@
       <source>Microsoft Security</source>
     </item>
     <item>
-      <title>Copilot auto model selection is generally available in JetBrains IDEs</title>
-      <link>https://github.blog/changelog/2026-03-12-copilot-auto-model-selection-is-generally-available-in-jetbrains-ides</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-12-copilot-auto-model-selection-is-generally-available-in-jetbrains-ides</guid>
-      <pubDate>Thu, 12 Mar 2026 15:54:33 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>Actions OIDC tokens now support repository custom properties</title>
-      <link>https://github.blog/changelog/2026-03-12-actions-oidc-tokens-now-support-repository-custom-properties</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-12-actions-oidc-tokens-now-support-repository-custom-properties</guid>
-      <pubDate>Thu, 12 Mar 2026 14:53:28 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>Detecting and analyzing prompt abuse in AI tools</title>
       <link>https://www.microsoft.com/en-us/security/blog/2026/03/12/detecting-analyzing-prompt-abuse-in-ai-tools/</link>
       <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/12/detecting-analyzing-prompt-abuse-in-ai-tools/</guid>
@@ -223,13 +279,6 @@
       <guid isPermaLink="true">https://www.docker.com/blog/enterprise-shift-in-agent-strategy/</guid>
       <pubDate>Thu, 12 Mar 2026 12:50:49 +0000</pubDate>
       <source>Docker Blog</source>
-    </item>
-    <item>
-      <title>Issue fields: Structured issue metadata is in public preview</title>
-      <link>https://github.blog/changelog/2026-03-12-issue-fields-structured-issue-metadata-is-in-public-preview</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-12-issue-fields-structured-issue-metadata-is-in-public-preview</guid>
-      <pubDate>Thu, 12 Mar 2026 08:03:06 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>GitHub availability report: February 2026</title>
@@ -272,13 +321,6 @@
       <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/11/contagious-interview-malware-delivered-through-fake-developer-job-interviews/</guid>
       <pubDate>Wed, 11 Mar 2026 21:00:50 +0000</pubDate>
       <source>Microsoft Security</source>
-    </item>
-    <item>
-      <title>Request Copilot code review from GitHub CLI</title>
-      <link>https://github.blog/changelog/2026-03-11-request-copilot-code-review-from-github-cli</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-11-request-copilot-code-review-from-github-cli</guid>
-      <pubDate>Wed, 11 Mar 2026 18:11:51 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>[Launched] Generally Available: Terraform, Bicep, Ansible support for elastic clusters on Azure Database for PostgreSQL</title>
@@ -517,13 +559,6 @@
       <guid isPermaLink="true">https://www.docker.com/blog/announcing-docker-hardened-system-packages/</guid>
       <pubDate>Tue, 03 Mar 2026 20:30:00 +0000</pubDate>
       <source>Docker Blog</source>
-    </item>
-    <item>
-      <title>How we rebuilt the search architecture for high availability in GitHub Enterprise Server</title>
-      <link>https://github.blog/engineering/architecture-optimization/how-we-rebuilt-the-search-architecture-for-high-availability-in-github-enterprise-server/</link>
-      <guid isPermaLink="true">https://github.blog/engineering/architecture-optimization/how-we-rebuilt-the-search-architecture-for-high-availability-in-github-enterprise-server/</guid>
-      <pubDate>Tue, 03 Mar 2026 18:45:09 +0000</pubDate>
-      <source>GitHub Blog</source>
     </item>
     <item>
       <title>[Launched] Generally Available: Draft &amp; Deploy on Azure Firewall</title>
@@ -1303,13 +1338,6 @@
       <source>Azure Updates</source>
     </item>
     <item>
-      <title>Upcoming Conditional Access change: Improved enforcement for policies with resource exclusions</title>
-      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/upcoming-conditional-access-change-improved-enforcement-for/ba-p/4488925</link>
-      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/upcoming-conditional-access-change-improved-enforcement-for/ba-p/4488925</guid>
-      <pubDate>Wed, 28 Jan 2026 17:56:52 +0000</pubDate>
-      <source>Microsoft Entra Blog</source>
-    </item>
-    <item>
       <title>[Launched] Generally Available: Latest PostgreSQL minor versions supported by Azure Database for PostgreSQL – Flexible Server</title>
       <link>https://azure.microsoft.com/updates?id=550164</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=550164</guid>
@@ -1630,13 +1658,6 @@
       <guid isPermaLink="true">https://kubernetes.io/blog/2025/12/22/kubernetes-v1-35-kubelet-config-drop-in-directory-ga/</guid>
       <pubDate>Mon, 22 Dec 2025 18:30:00 +0000</pubDate>
       <source>Kubernetes Blog</source>
-    </item>
-    <item>
-      <title>The New Test Run Hub is Going Generally Available!</title>
-      <link>https://devblogs.microsoft.com/devops/the-new-test-run-hub-is-going-generally-available/</link>
-      <guid isPermaLink="true">https://devblogs.microsoft.com/devops/the-new-test-run-hub-is-going-generally-available/</guid>
-      <pubDate>Mon, 22 Dec 2025 13:06:01 +0000</pubDate>
-      <source>Microsoft DevOps Blog</source>
     </item>
     <item>
       <title>Avoiding Zombie Cluster Members When Upgrading to etcd v3.6</title>
@@ -2696,27 +2717,6 @@
       <source>Azure Updates</source>
     </item>
     <item>
-      <title>[Launched] Generally Available: Azure Database for PostgreSQL – Flexible Server anon extension</title>
-      <link>https://azure.microsoft.com/updates?id=523569</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523569</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[Launched] Public Preview: Azure Database for PostgreSQL – Flexible Server v6 series VMs and AMD v6 Confidential Compute</title>
-      <link>https://azure.microsoft.com/updates?id=523564</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523564</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Azure Database for PostgreSQL – Flexible Server pg_duckdb extension</title>
-      <link>https://azure.microsoft.com/updates?id=523559</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523559</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
       <title>Microsoft Entra at Ignite 2025: November 17-21</title>
       <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-at-ignite-2025-november-17-21/ba-p/4400194</link>
       <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-at-ignite-2025-november-17-21/ba-p/4400194</guid>
@@ -3190,13 +3190,6 @@
       <link>https:/www.jenkins.io/blog/2025/03/26/design-post/</link>
       <guid isPermaLink="true">https:/www.jenkins.io/blog/2025/03/26/design-post/</guid>
       <pubDate>Wed, 26 Mar 2025 00:00:00 +0000</pubDate>
-      <source>Jenkins Blog</source>
-    </item>
-    <item>
-      <title>Jenkins Contributor Awards 2025 - Nominations are Open</title>
-      <link>https:/www.jenkins.io/blog/2025/03/18/jenkins-contributor-awards-2025-nomination-is-open/</link>
-      <guid isPermaLink="true">https:/www.jenkins.io/blog/2025/03/18/jenkins-contributor-awards-2025-nomination-is-open/</guid>
-      <pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
       <source>Jenkins Blog</source>
     </item>
   </channel>

@@ -5,8 +5,26 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml</link>
     <description>Articles from Azure Updates</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 17 Mar 2026 12:43:19 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 18 Mar 2026 01:14:01 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>[Launched] Generally Available: Default Rule Set 2.2 and updates to ruleset support policy</title>
+      <link>https://azure.microsoft.com/updates?id=558016</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558016</guid>
+      <pubDate>Tue, 17 Mar 2026 17:45:45 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Foundry Agent Service</title>
+      <link>https://azure.microsoft.com/updates?id=557141</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557141</guid>
+      <pubDate>Tue, 17 Mar 2026 17:45:45 +0000</pubDate>
+    </item>
+    <item>
+      <title>Retirement: Azure VMware Solution AV36P and AV52 node retirement on June 30, 2029</title>
+      <link>https://azure.microsoft.com/updates?id=557094</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557094</guid>
+      <pubDate>Tue, 17 Mar 2026 17:30:11 +0000</pubDate>
+    </item>
     <item>
       <title>Retirement: Support for Windows Server 2016 Marketplace images on Azure Batch pools will end on January 12, 2027</title>
       <link>https://azure.microsoft.com/updates?id=549077</link>
@@ -1181,24 +1199,6 @@
       <title>[In preview] Public Preview: Native Microsoft Foundry support for Azure Database for PostgreSQL</title>
       <link>https://azure.microsoft.com/updates?id=523578</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523578</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Azure Database for PostgreSQL – Flexible Server anon extension</title>
-      <link>https://azure.microsoft.com/updates?id=523569</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523569</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Launched] Public Preview: Azure Database for PostgreSQL – Flexible Server v6 series VMs and AMD v6 Confidential Compute</title>
-      <link>https://azure.microsoft.com/updates?id=523564</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523564</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Azure Database for PostgreSQL – Flexible Server pg_duckdb extension</title>
-      <link>https://azure.microsoft.com/updates?id=523559</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523559</guid>
       <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
     </item>
     <item>

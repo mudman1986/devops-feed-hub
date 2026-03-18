@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-jenkins-blog.xml</link>
     <description>Articles from Jenkins Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-jenkins-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 17 Mar 2026 12:43:19 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 18 Mar 2026 01:14:01 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Introducing the Jenkins Plugin of the Month</title>
@@ -246,12 +246,6 @@
       <link>https:/www.jenkins.io/blog/2025/03/26/design-post/</link>
       <guid isPermaLink="true">https:/www.jenkins.io/blog/2025/03/26/design-post/</guid>
       <pubDate>Wed, 26 Mar 2025 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Jenkins Contributor Awards 2025 - Nominations are Open</title>
-      <link>https:/www.jenkins.io/blog/2025/03/18/jenkins-contributor-awards-2025-nomination-is-open/</link>
-      <guid isPermaLink="true">https:/www.jenkins.io/blog/2025/03/18/jenkins-contributor-awards-2025-nomination-is-open/</guid>
-      <pubDate>Tue, 18 Mar 2025 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
