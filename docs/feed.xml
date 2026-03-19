@@ -5,8 +5,15 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 19 Mar 2026 01:13:24 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 19 Mar 2026 12:37:30 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Revamped Build Monitor plugin</title>
+      <link>https:/www.jenkins.io/blog/2026/03/19/revamped-build-monitor-plugin/</link>
+      <guid isPermaLink="true">https:/www.jenkins.io/blog/2026/03/19/revamped-build-monitor-plugin/</guid>
+      <pubDate>Thu, 19 Mar 2026 00:00:00 +0000</pubDate>
+      <source>Jenkins Blog</source>
+    </item>
     <item>
       <title>Configure Copilot coding agent’s validation tools</title>
       <link>https://github.blog/changelog/2026-03-18-configure-copilot-coding-agents-validation-tools</link>
