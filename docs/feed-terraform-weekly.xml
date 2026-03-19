@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-terraform-weekly.xml</link>
     <description>Articles from Terraform weekly</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-terraform-weekly.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 18 Mar 2026 12:43:42 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 19 Mar 2026 01:13:24 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Issue #266 - AWS ECS Explained, Guard Hook Workarounds, Pulumi as State Backend, and 90% Faster Terraform Testing with AI</title>
+      <link>https://www.weekly.tf/p/issue-266-aws-ecs-explained-guard-hook-workarounds-pulumi-as-state-backend-and-90-faster-terraform</link>
+      <guid isPermaLink="true">https://www.weekly.tf/p/issue-266-aws-ecs-explained-guard-hook-workarounds-pulumi-as-state-backend-and-90-faster-terraform</guid>
+      <pubDate>Wed, 18 Mar 2026 16:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Issue #265 - Dropping Prod with Terraform, the terraform.applying Symbol, AI Agents vs IaC, and Terraform Internals Unpacked</title>
       <link>https://www.weekly.tf/p/issue-265-dropping-prod-with-terraform-the-terraform-applying-symbol-ai-agents-vs-iac-and-terraform</link>
@@ -120,12 +126,6 @@
       <link>https://www.weekly.tf/p/issue-247-ephemeral-resources-automating-hub-spoke-secure-azure-networks-aws-ses-to-gmail-semgrep</link>
       <guid isPermaLink="true">https://www.weekly.tf/p/issue-247-ephemeral-resources-automating-hub-spoke-secure-azure-networks-aws-ses-to-gmail-semgrep</guid>
       <pubDate>Wed, 15 Oct 2025 15:01:19 +0000</pubDate>
-    </item>
-    <item>
-      <title>Issue #246 - Terraforming With AI, AWS SSM with External Updates, AWS Control Tower Deep Dive, 2048 on K8S, sortTF</title>
-      <link>https://www.weekly.tf/p/issue-246-terraforming-with-ai-aws-ssm-with-external-updates-aws-control-tower-deep-dive-2048-on-k8s</link>
-      <guid isPermaLink="true">https://www.weekly.tf/p/issue-246-terraforming-with-ai-aws-ssm-with-external-updates-aws-control-tower-deep-dive-2048-on-k8s</guid>
-      <pubDate>Wed, 08 Oct 2025 15:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

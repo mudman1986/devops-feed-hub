@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-kubernetes-blog.xml</link>
     <description>Articles from Kubernetes Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-kubernetes-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 18 Mar 2026 12:43:42 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 19 Mar 2026 01:13:24 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Securing Production Debugging in Kubernetes</title>
+      <link>https://kubernetes.io/blog/2026/03/18/securing-production-debugging-in-kubernetes/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2026/03/18/securing-production-debugging-in-kubernetes/</guid>
+      <pubDate>Wed, 18 Mar 2026 18:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>The Invisible Rewrite: Modernizing the Kubernetes Image Promoter</title>
       <link>https://kubernetes.io/blog/2026/03/17/image-promoter-rewrite/</link>
@@ -300,12 +306,6 @@
       <link>https://kubernetes.io/blog/2025/09/03/kubernetes-v1-34-sa-tokens-image-pulls-beta/</link>
       <guid isPermaLink="true">https://kubernetes.io/blog/2025/09/03/kubernetes-v1-34-sa-tokens-image-pulls-beta/</guid>
       <pubDate>Wed, 03 Sep 2025 18:30:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Kubernetes v1.34: Introducing CPU Manager Static Policy Option for Uncore Cache Alignment</title>
-      <link>https://kubernetes.io/blog/2025/09/02/kubernetes-v1-34-prefer-align-by-uncore-cache-cpumanager-static-policy-optimization/</link>
-      <guid isPermaLink="true">https://kubernetes.io/blog/2025/09/02/kubernetes-v1-34-prefer-align-by-uncore-cache-cpumanager-static-policy-optimization/</guid>
-      <pubDate>Tue, 02 Sep 2025 18:30:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

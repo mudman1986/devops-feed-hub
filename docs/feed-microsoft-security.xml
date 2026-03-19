@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml</link>
     <description>Articles from Microsoft Security</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 18 Mar 2026 12:43:42 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 19 Mar 2026 01:13:24 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Observability for AI Systems: Strengthening visibility for proactive risk detection</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/03/18/observability-ai-systems-strengthening-visibility-proactive-risk-detection/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/18/observability-ai-systems-strengthening-visibility-proactive-risk-detection/</guid>
+      <pubDate>Wed, 18 Mar 2026 16:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>New Microsoft Purview innovations for Fabric to safely accelerate your AI transformation</title>
       <link>https://techcommunity.microsoft.com/blog/microsoft-security-blog/new-microsoft-purview-innovations-for-fabric-to-safely-accelerate-your-ai-transf/4502156</link>
@@ -60,12 +66,6 @@
       <link>https://www.microsoft.com/en-us/security/blog/2026/03/05/womens-history-month-encouraging-women-in-cybersecurity-at-every-career-stage/</link>
       <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/05/womens-history-month-encouraging-women-in-cybersecurity-at-every-career-stage/</guid>
       <pubDate>Thu, 05 Mar 2026 17:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Malicious AI Assistant Extensions Harvest LLM Chat Histories</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/03/05/malicious-ai-assistant-extensions-harvest-llm-chat-histories/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/05/malicious-ai-assistant-extensions-harvest-llm-chat-histories/</guid>
-      <pubDate>Thu, 05 Mar 2026 16:02:12 +0000</pubDate>
     </item>
   </channel>
 </rss>

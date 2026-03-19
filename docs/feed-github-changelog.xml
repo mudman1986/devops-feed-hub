@@ -5,8 +5,20 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml</link>
     <description>Articles from GitHub Changelog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 18 Mar 2026 12:43:42 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 19 Mar 2026 01:13:24 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Configure Copilot coding agent’s validation tools</title>
+      <link>https://github.blog/changelog/2026-03-18-configure-copilot-coding-agents-validation-tools</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-18-configure-copilot-coding-agents-validation-tools</guid>
+      <pubDate>Wed, 18 Mar 2026 19:46:44 +0000</pubDate>
+    </item>
+    <item>
+      <title>GPT-5.3-Codex long-term support in GitHub Copilot</title>
+      <link>https://github.blog/changelog/2026-03-18-gpt-5-3-codex-long-term-support-in-github-copilot</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-18-gpt-5-3-codex-long-term-support-in-github-copilot</guid>
+      <pubDate>Wed, 18 Mar 2026 16:55:41 +0000</pubDate>
+    </item>
     <item>
       <title>Copilot coding agent works faster with semantic code search</title>
       <link>https://github.blog/changelog/2026-03-17-copilot-coding-agent-works-faster-with-semantic-code-search</link>
@@ -54,18 +66,6 @@
       <link>https://github.blog/changelog/2026-03-17-code-quality-permissions-removed-from-security-manager-role</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-03-17-code-quality-permissions-removed-from-security-manager-role</guid>
       <pubDate>Tue, 17 Mar 2026 12:44:48 +0000</pubDate>
-    </item>
-    <item>
-      <title>GitHub Code Quality: Batch apply quality suggestions on pull requests</title>
-      <link>https://github.blog/changelog/2026-03-17-github-code-quality-batch-apply-quality-suggestions-on-pull-requests</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-17-github-code-quality-batch-apply-quality-suggestions-on-pull-requests</guid>
-      <pubDate>Tue, 17 Mar 2026 10:01:32 +0000</pubDate>
-    </item>
-    <item>
-      <title>Deprecating the cost center integration on the enterprise People page</title>
-      <link>https://github.blog/changelog/2026-03-16-deprecating-the-cost-center-integration-on-the-enterprise-people-page</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-16-deprecating-the-cost-center-integration-on-the-enterprise-people-page</guid>
-      <pubDate>Mon, 16 Mar 2026 12:55:31 +0000</pubDate>
     </item>
   </channel>
 </rss>
