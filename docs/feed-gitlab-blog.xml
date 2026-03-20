@@ -5,8 +5,26 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-gitlab-blog.xml</link>
     <description>Articles from GitLab Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-gitlab-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 19 Mar 2026 12:37:30 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 20 Mar 2026 01:09:25 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>GitLab 18.10 brings AI-native triage and remediation</title>
+      <link>https://about.gitlab.com/blog/gitlab-18-10-brings-ai-native-triage-and-remediation/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/gitlab-18-10-brings-ai-native-triage-and-remediation/</guid>
+      <pubDate>Thu, 19 Mar 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>GitLab 18.10: Agentic AI now open to even more teams on GitLab</title>
+      <link>https://about.gitlab.com/blog/gitlab-18-10-agentic-ai-now-open-to-even-more-teams-on-gitlab/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/gitlab-18-10-agentic-ai-now-open-to-even-more-teams-on-gitlab/</guid>
+      <pubDate>Thu, 19 Mar 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Code Review without the bottlenecks or the bill</title>
+      <link>https://about.gitlab.com/blog/code-review-without-the-bottlenecks-or-the-bill/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/code-review-without-the-bottlenecks-or-the-bill/</guid>
+      <pubDate>Thu, 19 Mar 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>How to use GitLab Container Virtual Registry with Docker Hardened Images</title>
       <link>https://about.gitlab.com/blog/using-gitlab-container-virtual-registry-with-docker-hardened-images/</link>
@@ -108,24 +126,6 @@
       <link>https://about.gitlab.com/blog/track-vulnerability-remediation-with-the-updated-gitlab-security-dashboard/</link>
       <guid isPermaLink="true">https://about.gitlab.com/blog/track-vulnerability-remediation-with-the-updated-gitlab-security-dashboard/</guid>
       <pubDate>Thu, 19 Feb 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>GitLab Threat Intelligence Team reveals North Korean tradecraft</title>
-      <link>https://about.gitlab.com/blog/gitlab-threat-intelligence-reveals-north-korean-tradecraft/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/gitlab-threat-intelligence-reveals-north-korean-tradecraft/</guid>
-      <pubDate>Thu, 19 Feb 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Agentic AI, enterprise control: Self-hosted Duo Agent Platform and BYOM</title>
-      <link>https://about.gitlab.com/blog/agentic-ai-enterprise-control-self-hosted-duo-agent-platform-and-byom/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/agentic-ai-enterprise-control-self-hosted-duo-agent-platform-and-byom/</guid>
-      <pubDate>Thu, 19 Feb 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>GitLab backs 99.9% availability with service credits for Ultimate customers</title>
-      <link>https://about.gitlab.com/blog/gitlab-backs-99-9-availability-with-service-credits-for-ultimate-customers/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/gitlab-backs-99-9-availability-with-service-credits-for-ultimate-customers/</guid>
-      <pubDate>Wed, 18 Feb 2026 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

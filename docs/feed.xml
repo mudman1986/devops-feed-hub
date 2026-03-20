@@ -5,8 +5,148 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 19 Mar 2026 12:37:30 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 20 Mar 2026 01:09:25 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>More visibility into Copilot coding agent sessions</title>
+      <link>https://github.blog/changelog/2026-03-19-more-visibility-into-copilot-coding-agent-sessions</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-19-more-visibility-into-copilot-coding-agent-sessions</guid>
+      <pubDate>Thu, 19 Mar 2026 22:26:33 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>GitHub Actions: Late March 2026 updates</title>
+      <link>https://github.blog/changelog/2026-03-19-github-actions-late-march-2026-updates</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-19-github-actions-late-march-2026-updates</guid>
+      <pubDate>Thu, 19 Mar 2026 20:41:58 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Actions Runner Controller release 0.14.0</title>
+      <link>https://github.blog/changelog/2026-03-19-actions-runner-controller-release-0-14-0</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-19-actions-runner-controller-release-0-14-0</guid>
+      <pubDate>Thu, 19 Mar 2026 19:17:41 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Copilot coding agent now starts work 50% faster</title>
+      <link>https://github.blog/changelog/2026-03-19-copilot-coding-agent-now-starts-work-50-faster</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-19-copilot-coding-agent-now-starts-work-50-faster</guid>
+      <pubDate>Thu, 19 Mar 2026 19:04:28 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Secure access in the age of AI: Key findings from our 2026 Report</title>
+      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/secure-access-in-the-age-of-ai-key-findings-from-our-2026-report/ba-p/4486060</link>
+      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/secure-access-in-the-age-of-ai-key-findings-from-our-2026-report/ba-p/4486060</guid>
+      <pubDate>Thu, 19 Mar 2026 19:00:00 +0000</pubDate>
+      <source>Microsoft Entra Blog</source>
+    </item>
+    <item>
+      <title>New tools and guidance: Announcing Zero Trust for AI</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/03/19/new-tools-and-guidance-announcing-zero-trust-for-ai/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/19/new-tools-and-guidance-announcing-zero-trust-for-ai/</guid>
+      <pubDate>Thu, 19 Mar 2026 19:00:00 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>Rethinking open source mentorship in the AI era</title>
+      <link>https://github.blog/open-source/maintainers/rethinking-open-source-mentorship-in-the-ai-era/</link>
+      <guid isPermaLink="true">https://github.blog/open-source/maintainers/rethinking-open-source-mentorship-in-the-ai-era/</guid>
+      <pubDate>Thu, 19 Mar 2026 18:00:00 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
+    <item>
+      <title>Remote MCP Server preview in Microsoft Foundry</title>
+      <link>https://devblogs.microsoft.com/devops/remote-mcp-server-preview-in-microsoft-foundry/</link>
+      <guid isPermaLink="true">https://devblogs.microsoft.com/devops/remote-mcp-server-preview-in-microsoft-foundry/</guid>
+      <pubDate>Thu, 19 Mar 2026 17:48:10 +0000</pubDate>
+      <source>Microsoft DevOps Blog</source>
+    </item>
+    <item>
+      <title>Codespaces with data residency now available in Japan</title>
+      <link>https://github.blog/changelog/2026-03-19-codespaces-with-data-residency-now-available-in-japan</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-19-codespaces-with-data-residency-now-available-in-japan</guid>
+      <pubDate>Thu, 19 Mar 2026 17:32:44 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Azure Databricks OneLake Catalog Federation</title>
+      <link>https://azure.microsoft.com/updates?id=558927</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558927</guid>
+      <pubDate>Thu, 19 Mar 2026 17:00:53 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>Retirement: HC-series Azure Virtual Machines will be retired on May 31, 2027</title>
+      <link>https://azure.microsoft.com/updates?id=548543</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=548543</guid>
+      <pubDate>Thu, 19 Mar 2026 16:30:27 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>Retirement: HBv2-series Azure Virtual Machines will be retired on May 31, 2027</title>
+      <link>https://azure.microsoft.com/updates?id=548525</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=548525</guid>
+      <pubDate>Thu, 19 Mar 2026 16:30:27 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>Retirement: NP-series Azure Virtual Machines will be retired on May 31, 2027</title>
+      <link>https://azure.microsoft.com/updates?id=548497</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=548497</guid>
+      <pubDate>Thu, 19 Mar 2026 16:30:27 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>View code and comments side-by-side in pull request Files changed page</title>
+      <link>https://github.blog/changelog/2026-03-19-view-code-and-comments-side-by-side-in-pull-request-files-changed-page</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-19-view-code-and-comments-side-by-side-in-pull-request-files-changed-page</guid>
+      <pubDate>Thu, 19 Mar 2026 16:25:45 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Hierarchy view in GitHub Projects is now generally available</title>
+      <link>https://github.blog/changelog/2026-03-19-hierarchy-view-in-github-projects-is-now-generally-available</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-19-hierarchy-view-in-github-projects-is-now-generally-available</guid>
+      <pubDate>Thu, 19 Mar 2026 16:18:09 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>How Squad runs coordinated AI agents inside your repository</title>
+      <link>https://github.blog/ai-and-ml/github-copilot/how-squad-runs-coordinated-ai-agents-inside-your-repository/</link>
+      <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/how-squad-runs-coordinated-ai-agents-inside-your-repository/</guid>
+      <pubDate>Thu, 19 Mar 2026 16:09:50 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
+    <item>
+      <title>When tax season becomes cyberattack season: Phishing and malware campaigns using tax-related lures</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/03/19/when-tax-season-becomes-cyberattack-season-phishing-and-malware-campaigns-using-tax-related-lures/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/19/when-tax-season-becomes-cyberattack-season-phishing-and-malware-campaigns-using-tax-related-lures/</guid>
+      <pubDate>Thu, 19 Mar 2026 15:00:00 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>GitLab 18.10 brings AI-native triage and remediation</title>
+      <link>https://about.gitlab.com/blog/gitlab-18-10-brings-ai-native-triage-and-remediation/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/gitlab-18-10-brings-ai-native-triage-and-remediation/</guid>
+      <pubDate>Thu, 19 Mar 2026 00:00:00 +0000</pubDate>
+      <source>GitLab Blog</source>
+    </item>
+    <item>
+      <title>GitLab 18.10: Agentic AI now open to even more teams on GitLab</title>
+      <link>https://about.gitlab.com/blog/gitlab-18-10-agentic-ai-now-open-to-even-more-teams-on-gitlab/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/gitlab-18-10-agentic-ai-now-open-to-even-more-teams-on-gitlab/</guid>
+      <pubDate>Thu, 19 Mar 2026 00:00:00 +0000</pubDate>
+      <source>GitLab Blog</source>
+    </item>
+    <item>
+      <title>Code Review without the bottlenecks or the bill</title>
+      <link>https://about.gitlab.com/blog/code-review-without-the-bottlenecks-or-the-bill/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/code-review-without-the-bottlenecks-or-the-bill/</guid>
+      <pubDate>Thu, 19 Mar 2026 00:00:00 +0000</pubDate>
+      <source>GitLab Blog</source>
+    </item>
     <item>
       <title>Revamped Build Monitor plugin</title>
       <link>https:/www.jenkins.io/blog/2026/03/19/revamped-build-monitor-plugin/</link>
@@ -148,20 +288,6 @@
       <source>GitHub Changelog</source>
     </item>
     <item>
-      <title>Secret scanning in AI coding agents via the GitHub MCP Server</title>
-      <link>https://github.blog/changelog/2026-03-17-secret-scanning-in-ai-coding-agents-via-the-github-mcp-server</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-17-secret-scanning-in-ai-coding-agents-via-the-github-mcp-server</guid>
-      <pubDate>Tue, 17 Mar 2026 21:00:44 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>GitHub Enterprise Server 3.20 is now generally available</title>
-      <link>https://github.blog/changelog/2026-03-17-github-enterprise-server-3-20-is-now-generally-available</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-17-github-enterprise-server-3-20-is-now-generally-available</guid>
-      <pubDate>Tue, 17 Mar 2026 18:17:55 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>[Launched] Generally Available: Default Rule Set 2.2 and updates to ruleset support policy</title>
       <link>https://azure.microsoft.com/updates?id=558016</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558016</guid>
@@ -183,32 +309,11 @@
       <source>Azure Updates</source>
     </item>
     <item>
-      <title>GPT-5.4 mini is now generally available for GitHub Copilot</title>
-      <link>https://github.blog/changelog/2026-03-17-gpt-5-4-mini-is-now-generally-available-for-github-copilot</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-17-gpt-5-4-mini-is-now-generally-available-for-github-copilot</guid>
-      <pubDate>Tue, 17 Mar 2026 17:22:52 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>Copilot usage metrics now includes organization-level GitHub Copilot CLI activity</title>
-      <link>https://github.blog/changelog/2026-03-17-copilot-usage-metrics-now-includes-organization-level-github-copilot-cli-activity</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-17-copilot-usage-metrics-now-includes-organization-level-github-copilot-cli-activity</guid>
-      <pubDate>Tue, 17 Mar 2026 17:22:24 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>Upcoming Conditional Access change: Improved enforcement for policies with resource exclusions</title>
       <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/upcoming-conditional-access-change-improved-enforcement-for/ba-p/4488925</link>
       <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/upcoming-conditional-access-change-improved-enforcement-for/ba-p/4488925</guid>
       <pubDate>Tue, 17 Mar 2026 17:10:54 +0000</pubDate>
       <source>Microsoft Entra Blog</source>
-    </item>
-    <item>
-      <title>Push protection exemptions for roles, teams, and apps</title>
-      <link>https://github.blog/changelog/2026-03-17-push-protection-exemptions-for-apps-teams-and-roles</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-17-push-protection-exemptions-for-apps-teams-and-roles</guid>
-      <pubDate>Tue, 17 Mar 2026 16:00:33 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>Investing in the people shaping open source and securing the future together</title>
@@ -218,25 +323,11 @@
       <source>GitHub Blog</source>
     </item>
     <item>
-      <title>GitHub Advanced Security setup made simple</title>
-      <link>https://github.blog/changelog/2026-03-17-github-advanced-security-setup-made-simple</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-17-github-advanced-security-setup-made-simple</guid>
-      <pubDate>Tue, 17 Mar 2026 15:25:13 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>Azure DevOps Remote MCP Server (public preview)</title>
       <link>https://devblogs.microsoft.com/devops/azure-devops-remote-mcp-server-public-preview/</link>
       <guid isPermaLink="true">https://devblogs.microsoft.com/devops/azure-devops-remote-mcp-server-public-preview/</guid>
       <pubDate>Tue, 17 Mar 2026 13:52:29 +0000</pubDate>
       <source>Microsoft DevOps Blog</source>
-    </item>
-    <item>
-      <title>Code Quality permissions removed from security manager role</title>
-      <link>https://github.blog/changelog/2026-03-17-code-quality-permissions-removed-from-security-manager-role</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-17-code-quality-permissions-removed-from-security-manager-role</guid>
-      <pubDate>Tue, 17 Mar 2026 12:44:48 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>The Invisible Rewrite: Modernizing the Kubernetes Image Promoter</title>
@@ -561,13 +652,6 @@
       <source>GitHub Blog</source>
     </item>
     <item>
-      <title>AI as tradecraft: How threat actors operationalize AI</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/03/06/ai-as-tradecraft-how-threat-actors-operationalize-ai/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/06/ai-as-tradecraft-how-threat-actors-operationalize-ai/</guid>
-      <pubDate>Fri, 06 Mar 2026 17:00:00 +0000</pubDate>
-      <source>Microsoft Security</source>
-    </item>
-    <item>
       <title>Celebrating Women in AI: 3 Questions with Cecilia Liu on Leading Docker’s MCP Strategy</title>
       <link>https://www.docker.com/blog/women-in-ai-cecilia-liu-docker-mcp-strategy/</link>
       <guid isPermaLink="true">https://www.docker.com/blog/women-in-ai-cecilia-liu-docker-mcp-strategy/</guid>
@@ -589,32 +673,11 @@
       <source>HashiCorp Blog</source>
     </item>
     <item>
-      <title>60 million Copilot code reviews and counting</title>
-      <link>https://github.blog/ai-and-ml/github-copilot/60-million-copilot-code-reviews-and-counting/</link>
-      <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/60-million-copilot-code-reviews-and-counting/</guid>
-      <pubDate>Thu, 05 Mar 2026 20:10:43 +0000</pubDate>
-      <source>GitHub Blog</source>
-    </item>
-    <item>
       <title>Standardizing construct properties with AWS CDK Property Injection</title>
       <link>https://aws.amazon.com/blogs/devops/standardizing-construct-properties-with-aws-cdk-property-injection/</link>
       <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/standardizing-construct-properties-with-aws-cdk-property-injection/</guid>
       <pubDate>Thu, 05 Mar 2026 17:39:48 +0000</pubDate>
       <source>AWS DevOps Blog</source>
-    </item>
-    <item>
-      <title>Scaling AI opportunity across the globe: Learnings from GitHub and Andela</title>
-      <link>https://github.blog/developer-skills/career-growth/scaling-ai-opportunity-across-the-globe-learnings-from-github-and-andela/</link>
-      <guid isPermaLink="true">https://github.blog/developer-skills/career-growth/scaling-ai-opportunity-across-the-globe-learnings-from-github-and-andela/</guid>
-      <pubDate>Thu, 05 Mar 2026 17:00:00 +0000</pubDate>
-      <source>GitHub Blog</source>
-    </item>
-    <item>
-      <title>Women’s History Month: Encouraging women in cybersecurity at every career stage</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/03/05/womens-history-month-encouraging-women-in-cybersecurity-at-every-career-stage/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/05/womens-history-month-encouraging-women-in-cybersecurity-at-every-career-stage/</guid>
-      <pubDate>Thu, 05 Mar 2026 17:00:00 +0000</pubDate>
-      <source>Microsoft Security</source>
     </item>
     <item>
       <title>Regression Testing: What it is, why it matters, and how to automate it with CI/CD</title>
@@ -960,20 +1023,6 @@
       <source>GitLab Blog</source>
     </item>
     <item>
-      <title>GitLab Threat Intelligence Team reveals North Korean tradecraft</title>
-      <link>https://about.gitlab.com/blog/gitlab-threat-intelligence-reveals-north-korean-tradecraft/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/gitlab-threat-intelligence-reveals-north-korean-tradecraft/</guid>
-      <pubDate>Thu, 19 Feb 2026 00:00:00 +0000</pubDate>
-      <source>GitLab Blog</source>
-    </item>
-    <item>
-      <title>Agentic AI, enterprise control: Self-hosted Duo Agent Platform and BYOM</title>
-      <link>https://about.gitlab.com/blog/agentic-ai-enterprise-control-self-hosted-duo-agent-platform-and-byom/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/agentic-ai-enterprise-control-self-hosted-duo-agent-platform-and-byom/</guid>
-      <pubDate>Thu, 19 Feb 2026 00:00:00 +0000</pubDate>
-      <source>GitLab Blog</source>
-    </item>
-    <item>
       <title>Jenkins accepted as mentoring org for Google Summer of Code (GSoC) 2026</title>
       <link>https:/www.jenkins.io/blog/2026/02/19/jenkins-accepted-as-gsoc-2026-mentoring-org/</link>
       <guid isPermaLink="true">https:/www.jenkins.io/blog/2026/02/19/jenkins-accepted-as-gsoc-2026-mentoring-org/</guid>
@@ -1070,13 +1119,6 @@
       <guid isPermaLink="true">https://circleci.com/blog/five-takeaways-2026-software-delivery-report/</guid>
       <pubDate>Wed, 18 Feb 2026 14:00:00 +0000</pubDate>
       <source>CircleCI Blog</source>
-    </item>
-    <item>
-      <title>GitLab backs 99.9% availability with service credits for Ultimate customers</title>
-      <link>https://about.gitlab.com/blog/gitlab-backs-99-9-availability-with-service-credits-for-ultimate-customers/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/gitlab-backs-99-9-availability-with-service-credits-for-ultimate-customers/</guid>
-      <pubDate>Wed, 18 Feb 2026 00:00:00 +0000</pubDate>
-      <source>GitLab Blog</source>
     </item>
     <item>
       <title>HCP Packer adds SBOM vulnerability scanning</title>
@@ -1567,13 +1609,6 @@
       <guid isPermaLink="true">https://www.weekly.tf/p/issue-258-iacconf-multi-environment-github-pipelines-ignore-changes-deep-dive-aws-glue-data-exports</guid>
       <pubDate>Wed, 21 Jan 2026 16:01:43 +0000</pubDate>
       <source>Terraform weekly</source>
-    </item>
-    <item>
-      <title>Azure Boards additional field filters (private preview)</title>
-      <link>https://devblogs.microsoft.com/devops/azure-boards-additional-field-filters-private-preview/</link>
-      <guid isPermaLink="true">https://devblogs.microsoft.com/devops/azure-boards-additional-field-filters-private-preview/</guid>
-      <pubDate>Mon, 19 Jan 2026 20:22:53 +0000</pubDate>
-      <source>Microsoft DevOps Blog</source>
     </item>
     <item>
       <title>Uniform API server access using clientcmd</title>
@@ -2710,34 +2745,6 @@
       <source>Azure Updates</source>
     </item>
     <item>
-      <title>[Launched] Generally Available: Azure Cosmos DB Mirroring in Microsoft Fabric</title>
-      <link>https://azure.microsoft.com/updates?id=523773</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523773</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Cosmos DB in Microsoft Fabric</title>
-      <link>https://azure.microsoft.com/updates?id=523768</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523768</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Index Advisor for Azure DocumentDB</title>
-      <link>https://azure.microsoft.com/updates?id=523763</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523763</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Priority-based execution in Azure Cosmos DB</title>
-      <link>https://azure.microsoft.com/updates?id=523754</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523754</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
       <title>Microsoft Entra at Ignite 2025: November 17-21</title>
       <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-at-ignite-2025-november-17-21/ba-p/4400194</link>
       <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-at-ignite-2025-november-17-21/ba-p/4400194</guid>
@@ -2953,13 +2960,6 @@
       <guid isPermaLink="true">https://kubernetes.io/blog/2025/09/17/kubernetes-v1-34-pods-report-dra-resource-health/</guid>
       <pubDate>Wed, 17 Sep 2025 18:30:00 +0000</pubDate>
       <source>Kubernetes Blog</source>
-    </item>
-    <item>
-      <title>Beyond OAuth: Why SCIM must evolve for the AI agent revolution</title>
-      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/beyond-oauth-why-scim-must-evolve-for-the-ai-agent-revolution/ba-p/4433036</link>
-      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/beyond-oauth-why-scim-must-evolve-for-the-ai-agent-revolution/ba-p/4433036</guid>
-      <pubDate>Tue, 16 Sep 2025 21:21:21 +0000</pubDate>
-      <source>Microsoft Entra Blog</source>
     </item>
     <item>
       <title>Kubernetes v1.34: Moving Volume Group Snapshots to v1beta2</title>

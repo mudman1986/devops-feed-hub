@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-microsoft-devops-blog.xml</link>
     <description>Articles from Microsoft DevOps Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-microsoft-devops-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 19 Mar 2026 12:37:30 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 20 Mar 2026 01:09:25 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Remote MCP Server preview in Microsoft Foundry</title>
+      <link>https://devblogs.microsoft.com/devops/remote-mcp-server-preview-in-microsoft-foundry/</link>
+      <guid isPermaLink="true">https://devblogs.microsoft.com/devops/remote-mcp-server-preview-in-microsoft-foundry/</guid>
+      <pubDate>Thu, 19 Mar 2026 17:48:10 +0000</pubDate>
+    </item>
     <item>
       <title>Authentication Tokens Are Not a Data Contract</title>
       <link>https://devblogs.microsoft.com/devops/authentication-tokens-are-not-a-data-contract/</link>
@@ -60,12 +66,6 @@
       <link>https://devblogs.microsoft.com/devops/azure-boards-integration-with-github-copilot-includes-custom-agent-support/</link>
       <guid isPermaLink="true">https://devblogs.microsoft.com/devops/azure-boards-integration-with-github-copilot-includes-custom-agent-support/</guid>
       <pubDate>Wed, 04 Feb 2026 18:33:03 +0000</pubDate>
-    </item>
-    <item>
-      <title>Azure Boards additional field filters (private preview)</title>
-      <link>https://devblogs.microsoft.com/devops/azure-boards-additional-field-filters-private-preview/</link>
-      <guid isPermaLink="true">https://devblogs.microsoft.com/devops/azure-boards-additional-field-filters-private-preview/</guid>
-      <pubDate>Mon, 19 Jan 2026 20:22:53 +0000</pubDate>
     </item>
   </channel>
 </rss>

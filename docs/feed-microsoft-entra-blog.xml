@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-microsoft-entra-blog.xml</link>
     <description>Articles from Microsoft Entra Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-microsoft-entra-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 19 Mar 2026 12:37:30 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 20 Mar 2026 01:09:25 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Secure access in the age of AI: Key findings from our 2026 Report</title>
+      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/secure-access-in-the-age-of-ai-key-findings-from-our-2026-report/ba-p/4486060</link>
+      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/secure-access-in-the-age-of-ai-key-findings-from-our-2026-report/ba-p/4486060</guid>
+      <pubDate>Thu, 19 Mar 2026 19:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Upcoming Conditional Access change: Improved enforcement for policies with resource exclusions</title>
       <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/upcoming-conditional-access-change-improved-enforcement-for/ba-p/4488925</link>
@@ -120,12 +126,6 @@
       <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/driving-transparency-new-logging-capabilities-and-attribute/ba-p/4436814</link>
       <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/driving-transparency-new-logging-capabilities-and-attribute/ba-p/4436814</guid>
       <pubDate>Mon, 22 Sep 2025 15:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Beyond OAuth: Why SCIM must evolve for the AI agent revolution</title>
-      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/beyond-oauth-why-scim-must-evolve-for-the-ai-agent-revolution/ba-p/4433036</link>
-      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/beyond-oauth-why-scim-must-evolve-for-the-ai-agent-revolution/ba-p/4433036</guid>
-      <pubDate>Tue, 16 Sep 2025 21:21:21 +0000</pubDate>
     </item>
   </channel>
 </rss>

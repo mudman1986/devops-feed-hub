@@ -5,8 +5,32 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml</link>
     <description>Articles from Azure Updates</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 19 Mar 2026 12:37:30 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 20 Mar 2026 01:09:25 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>[In preview] Public Preview: Azure Databricks OneLake Catalog Federation</title>
+      <link>https://azure.microsoft.com/updates?id=558927</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558927</guid>
+      <pubDate>Thu, 19 Mar 2026 17:00:53 +0000</pubDate>
+    </item>
+    <item>
+      <title>Retirement: HC-series Azure Virtual Machines will be retired on May 31, 2027</title>
+      <link>https://azure.microsoft.com/updates?id=548543</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=548543</guid>
+      <pubDate>Thu, 19 Mar 2026 16:30:27 +0000</pubDate>
+    </item>
+    <item>
+      <title>Retirement: HBv2-series Azure Virtual Machines will be retired on May 31, 2027</title>
+      <link>https://azure.microsoft.com/updates?id=548525</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=548525</guid>
+      <pubDate>Thu, 19 Mar 2026 16:30:27 +0000</pubDate>
+    </item>
+    <item>
+      <title>Retirement: NP-series Azure Virtual Machines will be retired on May 31, 2027</title>
+      <link>https://azure.microsoft.com/updates?id=548497</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=548497</guid>
+      <pubDate>Thu, 19 Mar 2026 16:30:27 +0000</pubDate>
+    </item>
     <item>
       <title>Retirement: Emissions Impact Dashboard for Azure</title>
       <link>https://azure.microsoft.com/updates?id=558278</link>
@@ -1175,30 +1199,6 @@
       <title>[Launched] Generally Available: Azure Cosmos DB for Visual Studio Code</title>
       <link>https://azure.microsoft.com/updates?id=523782</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523782</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Azure Cosmos DB Mirroring in Microsoft Fabric</title>
-      <link>https://azure.microsoft.com/updates?id=523773</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523773</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Cosmos DB in Microsoft Fabric</title>
-      <link>https://azure.microsoft.com/updates?id=523768</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523768</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Index Advisor for Azure DocumentDB</title>
-      <link>https://azure.microsoft.com/updates?id=523763</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523763</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Priority-based execution in Azure Cosmos DB</title>
-      <link>https://azure.microsoft.com/updates?id=523754</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523754</guid>
       <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
     </item>
     <item>

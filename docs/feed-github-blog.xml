@@ -5,8 +5,20 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-blog.xml</link>
     <description>Articles from GitHub Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 19 Mar 2026 12:37:30 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 20 Mar 2026 01:09:25 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Rethinking open source mentorship in the AI era</title>
+      <link>https://github.blog/open-source/maintainers/rethinking-open-source-mentorship-in-the-ai-era/</link>
+      <guid isPermaLink="true">https://github.blog/open-source/maintainers/rethinking-open-source-mentorship-in-the-ai-era/</guid>
+      <pubDate>Thu, 19 Mar 2026 18:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>How Squad runs coordinated AI agents inside your repository</title>
+      <link>https://github.blog/ai-and-ml/github-copilot/how-squad-runs-coordinated-ai-agents-inside-your-repository/</link>
+      <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/how-squad-runs-coordinated-ai-agents-inside-your-repository/</guid>
+      <pubDate>Thu, 19 Mar 2026 16:09:50 +0000</pubDate>
+    </item>
     <item>
       <title>Investing in the people shaping open source and securing the future together</title>
       <link>https://github.blog/security/supply-chain-security/investing-in-the-people-shaping-open-source-and-securing-the-future-together/</link>
@@ -54,18 +66,6 @@
       <link>https://github.blog/security/how-to-scan-for-vulnerabilities-with-github-security-labs-open-source-ai-powered-framework/</link>
       <guid isPermaLink="true">https://github.blog/security/how-to-scan-for-vulnerabilities-with-github-security-labs-open-source-ai-powered-framework/</guid>
       <pubDate>Fri, 06 Mar 2026 21:09:04 +0000</pubDate>
-    </item>
-    <item>
-      <title>60 million Copilot code reviews and counting</title>
-      <link>https://github.blog/ai-and-ml/github-copilot/60-million-copilot-code-reviews-and-counting/</link>
-      <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/60-million-copilot-code-reviews-and-counting/</guid>
-      <pubDate>Thu, 05 Mar 2026 20:10:43 +0000</pubDate>
-    </item>
-    <item>
-      <title>Scaling AI opportunity across the globe: Learnings from GitHub and Andela</title>
-      <link>https://github.blog/developer-skills/career-growth/scaling-ai-opportunity-across-the-globe-learnings-from-github-and-andela/</link>
-      <guid isPermaLink="true">https://github.blog/developer-skills/career-growth/scaling-ai-opportunity-across-the-globe-learnings-from-github-and-andela/</guid>
-      <pubDate>Thu, 05 Mar 2026 17:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

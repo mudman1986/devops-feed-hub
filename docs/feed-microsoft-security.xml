@@ -5,8 +5,20 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml</link>
     <description>Articles from Microsoft Security</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 19 Mar 2026 12:37:30 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 20 Mar 2026 01:09:25 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>New tools and guidance: Announcing Zero Trust for AI</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/03/19/new-tools-and-guidance-announcing-zero-trust-for-ai/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/19/new-tools-and-guidance-announcing-zero-trust-for-ai/</guid>
+      <pubDate>Thu, 19 Mar 2026 19:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>When tax season becomes cyberattack season: Phishing and malware campaigns using tax-related lures</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/03/19/when-tax-season-becomes-cyberattack-season-phishing-and-malware-campaigns-using-tax-related-lures/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/19/when-tax-season-becomes-cyberattack-season-phishing-and-malware-campaigns-using-tax-related-lures/</guid>
+      <pubDate>Thu, 19 Mar 2026 15:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Observability for AI Systems: Strengthening visibility for proactive risk detection</title>
       <link>https://www.microsoft.com/en-us/security/blog/2026/03/18/observability-ai-systems-strengthening-visibility-proactive-risk-detection/</link>
@@ -54,18 +66,6 @@
       <link>https://www.microsoft.com/en-us/security/blog/2026/03/09/secure-agentic-ai-for-your-frontier-transformation/</link>
       <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/09/secure-agentic-ai-for-your-frontier-transformation/</guid>
       <pubDate>Mon, 09 Mar 2026 13:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>AI as tradecraft: How threat actors operationalize AI</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/03/06/ai-as-tradecraft-how-threat-actors-operationalize-ai/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/06/ai-as-tradecraft-how-threat-actors-operationalize-ai/</guid>
-      <pubDate>Fri, 06 Mar 2026 17:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Women’s History Month: Encouraging women in cybersecurity at every career stage</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/03/05/womens-history-month-encouraging-women-in-cybersecurity-at-every-career-stage/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/05/womens-history-month-encouraging-women-in-cybersecurity-at-every-career-stage/</guid>
-      <pubDate>Thu, 05 Mar 2026 17:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
