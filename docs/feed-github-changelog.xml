@@ -5,8 +5,32 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml</link>
     <description>Articles from GitHub Changelog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 20 Mar 2026 12:33:49 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 21 Mar 2026 01:05:01 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Copilot usage metrics now resolve auto model selection to actual models</title>
+      <link>https://github.blog/changelog/2026-03-20-copilot-usage-metrics-now-resolve-auto-model-selection-to-actual-models</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-20-copilot-usage-metrics-now-resolve-auto-model-selection-to-actual-models</guid>
+      <pubDate>Fri, 20 Mar 2026 18:37:18 +0000</pubDate>
+    </item>
+    <item>
+      <title>Trace any Copilot coding agent commit to its session logs</title>
+      <link>https://github.blog/changelog/2026-03-20-trace-any-copilot-coding-agent-commit-to-its-session-logs</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-20-trace-any-copilot-coding-agent-commit-to-its-session-logs</guid>
+      <pubDate>Fri, 20 Mar 2026 12:21:49 +0000</pubDate>
+    </item>
+    <item>
+      <title>Monitor Copilot coding agent logs live in Raycast</title>
+      <link>https://github.blog/changelog/2026-03-20-monitor-copilot-coding-agent-logs-live-in-raycast</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-20-monitor-copilot-coding-agent-logs-live-in-raycast</guid>
+      <pubDate>Fri, 20 Mar 2026 12:21:30 +0000</pubDate>
+    </item>
+    <item>
+      <title>A smoother navigation experience in GitHub Mobile for Android</title>
+      <link>https://github.blog/changelog/2026-03-20-a-smoother-navigation-experience-in-github-mobile-for-android</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-20-a-smoother-navigation-experience-in-github-mobile-for-android</guid>
+      <pubDate>Fri, 20 Mar 2026 10:45:48 +0000</pubDate>
+    </item>
     <item>
       <title>More visibility into Copilot coding agent sessions</title>
       <link>https://github.blog/changelog/2026-03-19-more-visibility-into-copilot-coding-agent-sessions</link>
@@ -42,30 +66,6 @@
       <link>https://github.blog/changelog/2026-03-19-view-code-and-comments-side-by-side-in-pull-request-files-changed-page</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-03-19-view-code-and-comments-side-by-side-in-pull-request-files-changed-page</guid>
       <pubDate>Thu, 19 Mar 2026 16:25:45 +0000</pubDate>
-    </item>
-    <item>
-      <title>Hierarchy view in GitHub Projects is now generally available</title>
-      <link>https://github.blog/changelog/2026-03-19-hierarchy-view-in-github-projects-is-now-generally-available</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-19-hierarchy-view-in-github-projects-is-now-generally-available</guid>
-      <pubDate>Thu, 19 Mar 2026 16:18:09 +0000</pubDate>
-    </item>
-    <item>
-      <title>Configure Copilot coding agent’s validation tools</title>
-      <link>https://github.blog/changelog/2026-03-18-configure-copilot-coding-agents-validation-tools</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-18-configure-copilot-coding-agents-validation-tools</guid>
-      <pubDate>Wed, 18 Mar 2026 19:46:44 +0000</pubDate>
-    </item>
-    <item>
-      <title>GPT-5.3-Codex long-term support in GitHub Copilot</title>
-      <link>https://github.blog/changelog/2026-03-18-gpt-5-3-codex-long-term-support-in-github-copilot</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-18-gpt-5-3-codex-long-term-support-in-github-copilot</guid>
-      <pubDate>Wed, 18 Mar 2026 16:55:41 +0000</pubDate>
-    </item>
-    <item>
-      <title>Copilot coding agent works faster with semantic code search</title>
-      <link>https://github.blog/changelog/2026-03-17-copilot-coding-agent-works-faster-with-semantic-code-search</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-17-copilot-coding-agent-works-faster-with-semantic-code-search</guid>
-      <pubDate>Tue, 17 Mar 2026 22:56:46 +0000</pubDate>
     </item>
   </channel>
 </rss>

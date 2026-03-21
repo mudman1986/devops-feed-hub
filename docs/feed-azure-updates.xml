@@ -5,8 +5,26 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml</link>
     <description>Articles from Azure Updates</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 20 Mar 2026 12:33:49 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 21 Mar 2026 01:05:01 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>[In preview] Public Preview: Azure SQL updates for mid-March 2026</title>
+      <link>https://azure.microsoft.com/updates?id=558116</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558116</guid>
+      <pubDate>Fri, 20 Mar 2026 19:15:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>Retirement: Azure SQL Elastic query - Shard_Map_Manager mode</title>
+      <link>https://azure.microsoft.com/updates?id=558086</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558086</guid>
+      <pubDate>Fri, 20 Mar 2026 19:00:50 +0000</pubDate>
+    </item>
+    <item>
+      <title>Retirement: Azure Sphere will be retired on July 31, 2031</title>
+      <link>https://azure.microsoft.com/updates?id=557123</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557123</guid>
+      <pubDate>Fri, 20 Mar 2026 17:15:50 +0000</pubDate>
+    </item>
     <item>
       <title>[In preview] Public Preview: Azure Databricks OneLake Catalog Federation</title>
       <link>https://azure.microsoft.com/updates?id=558927</link>
@@ -1181,24 +1199,6 @@
       <title>[Launched] Generally Available: Fuzzy search in Azure Cosmos DB for NoSQL full-text search</title>
       <link>https://azure.microsoft.com/updates?id=523809</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523809</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Vector indexing performance improvements in Azure Cosmos DB for NoSQL</title>
-      <link>https://azure.microsoft.com/updates?id=523803</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523803</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Float16 data type for vector indexes in Azure Cosmos DB</title>
-      <link>https://azure.microsoft.com/updates?id=523796</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523796</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Azure Cosmos DB for Visual Studio Code</title>
-      <link>https://azure.microsoft.com/updates?id=523782</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523782</guid>
       <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
     </item>
     <item>

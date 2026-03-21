@@ -5,8 +5,92 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 20 Mar 2026 12:33:49 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 21 Mar 2026 01:05:01 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>[In preview] Public Preview: Azure SQL updates for mid-March 2026</title>
+      <link>https://azure.microsoft.com/updates?id=558116</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558116</guid>
+      <pubDate>Fri, 20 Mar 2026 19:15:35 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>Retirement: Azure SQL Elastic query - Shard_Map_Manager mode</title>
+      <link>https://azure.microsoft.com/updates?id=558086</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558086</guid>
+      <pubDate>Fri, 20 Mar 2026 19:00:50 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>Announcing Ingress2Gateway 1.0: Your Path to Gateway API</title>
+      <link>https://kubernetes.io/blog/2026/03/20/ingress2gateway-1-0-release/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2026/03/20/ingress2gateway-1-0-release/</guid>
+      <pubDate>Fri, 20 Mar 2026 19:00:00 +0000</pubDate>
+      <source>Kubernetes Blog</source>
+    </item>
+    <item>
+      <title>Copilot usage metrics now resolve auto model selection to actual models</title>
+      <link>https://github.blog/changelog/2026-03-20-copilot-usage-metrics-now-resolve-auto-model-selection-to-actual-models</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-20-copilot-usage-metrics-now-resolve-auto-model-selection-to-actual-models</guid>
+      <pubDate>Fri, 20 Mar 2026 18:37:18 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Running Agents on Kubernetes with Agent Sandbox</title>
+      <link>https://kubernetes.io/blog/2026/03/20/running-agents-on-kubernetes-with-agent-sandbox/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2026/03/20/running-agents-on-kubernetes-with-agent-sandbox/</guid>
+      <pubDate>Fri, 20 Mar 2026 18:00:00 +0000</pubDate>
+      <source>Kubernetes Blog</source>
+    </item>
+    <item>
+      <title>Microsoft Entra innovations announced at RSAC 2026</title>
+      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-innovations-announced-at-rsac-2026/ba-p/4502146</link>
+      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-innovations-announced-at-rsac-2026/ba-p/4502146</guid>
+      <pubDate>Fri, 20 Mar 2026 17:38:44 +0000</pubDate>
+      <source>Microsoft Entra Blog</source>
+    </item>
+    <item>
+      <title>Retirement: Azure Sphere will be retired on July 31, 2031</title>
+      <link>https://azure.microsoft.com/updates?id=557123</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557123</guid>
+      <pubDate>Fri, 20 Mar 2026 17:15:50 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>CTI-REALM: A new benchmark for end-to-end detection rule generation with AI agents</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/03/20/cti-realm-a-new-benchmark-for-end-to-end-detection-rule-generation-with-ai-agents/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/20/cti-realm-a-new-benchmark-for-end-to-end-detection-rule-generation-with-ai-agents/</guid>
+      <pubDate>Fri, 20 Mar 2026 16:19:00 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>Secure agentic AI end-to-end</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/03/20/secure-agentic-ai-end-to-end/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/20/secure-agentic-ai-end-to-end/</guid>
+      <pubDate>Fri, 20 Mar 2026 16:00:00 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>Trace any Copilot coding agent commit to its session logs</title>
+      <link>https://github.blog/changelog/2026-03-20-trace-any-copilot-coding-agent-commit-to-its-session-logs</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-20-trace-any-copilot-coding-agent-commit-to-its-session-logs</guid>
+      <pubDate>Fri, 20 Mar 2026 12:21:49 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Monitor Copilot coding agent logs live in Raycast</title>
+      <link>https://github.blog/changelog/2026-03-20-monitor-copilot-coding-agent-logs-live-in-raycast</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-20-monitor-copilot-coding-agent-logs-live-in-raycast</guid>
+      <pubDate>Fri, 20 Mar 2026 12:21:30 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>A smoother navigation experience in GitHub Mobile for Android</title>
+      <link>https://github.blog/changelog/2026-03-20-a-smoother-navigation-experience-in-github-mobile-for-android</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-20-a-smoother-navigation-experience-in-github-mobile-for-android</guid>
+      <pubDate>Fri, 20 Mar 2026 10:45:48 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
     <item>
       <title>More visibility into Copilot coding agent sessions</title>
       <link>https://github.blog/changelog/2026-03-19-more-visibility-into-copilot-coding-agent-sessions</link>
@@ -106,13 +190,6 @@
       <source>GitHub Changelog</source>
     </item>
     <item>
-      <title>Hierarchy view in GitHub Projects is now generally available</title>
-      <link>https://github.blog/changelog/2026-03-19-hierarchy-view-in-github-projects-is-now-generally-available</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-19-hierarchy-view-in-github-projects-is-now-generally-available</guid>
-      <pubDate>Thu, 19 Mar 2026 16:18:09 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>How Squad runs coordinated AI agents inside your repository</title>
       <link>https://github.blog/ai-and-ml/github-copilot/how-squad-runs-coordinated-ai-agents-inside-your-repository/</link>
       <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/how-squad-runs-coordinated-ai-agents-inside-your-repository/</guid>
@@ -141,9 +218,9 @@
       <source>GitLab Blog</source>
     </item>
     <item>
-      <title>Code Review without the bottlenecks or the bill</title>
-      <link>https://about.gitlab.com/blog/code-review-without-the-bottlenecks-or-the-bill/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/code-review-without-the-bottlenecks-or-the-bill/</guid>
+      <title>Agentic code reviews for $0.25 each</title>
+      <link>https://about.gitlab.com/blog/agentic-code-reviews-with-flat-rate-pricing/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/agentic-code-reviews-with-flat-rate-pricing/</guid>
       <pubDate>Thu, 19 Mar 2026 00:00:00 +0000</pubDate>
       <source>GitLab Blog</source>
     </item>
@@ -153,13 +230,6 @@
       <guid isPermaLink="true">https:/www.jenkins.io/blog/2026/03/19/revamped-build-monitor-plugin/</guid>
       <pubDate>Thu, 19 Mar 2026 00:00:00 +0000</pubDate>
       <source>Jenkins Blog</source>
-    </item>
-    <item>
-      <title>Configure Copilot coding agent’s validation tools</title>
-      <link>https://github.blog/changelog/2026-03-18-configure-copilot-coding-agents-validation-tools</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-18-configure-copilot-coding-agents-validation-tools</guid>
-      <pubDate>Wed, 18 Mar 2026 19:46:44 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>Authentication Tokens Are Not a Data Contract</title>
@@ -246,13 +316,6 @@
       <source>Azure Updates</source>
     </item>
     <item>
-      <title>GPT-5.3-Codex long-term support in GitHub Copilot</title>
-      <link>https://github.blog/changelog/2026-03-18-gpt-5-3-codex-long-term-support-in-github-copilot</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-18-gpt-5-3-codex-long-term-support-in-github-copilot</guid>
-      <pubDate>Wed, 18 Mar 2026 16:55:41 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>What are test hooks in AI-native development?</title>
       <link>https://circleci.com/blog/test-hooks-ai-development/</link>
       <guid isPermaLink="true">https://circleci.com/blog/test-hooks-ai-development/</guid>
@@ -279,13 +342,6 @@
       <guid isPermaLink="true">https://www.weekly.tf/p/issue-266-aws-ecs-explained-guard-hook-workarounds-pulumi-as-state-backend-and-90-faster-terraform</guid>
       <pubDate>Wed, 18 Mar 2026 16:00:00 +0000</pubDate>
       <source>Terraform weekly</source>
-    </item>
-    <item>
-      <title>Copilot coding agent works faster with semantic code search</title>
-      <link>https://github.blog/changelog/2026-03-17-copilot-coding-agent-works-faster-with-semantic-code-search</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-17-copilot-coding-agent-works-faster-with-semantic-code-search</guid>
-      <pubDate>Tue, 17 Mar 2026 22:56:46 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>[Launched] Generally Available: Default Rule Set 2.2 and updates to ruleset support policy</title>
@@ -526,13 +582,6 @@
       <source>CircleCI Blog</source>
     </item>
     <item>
-      <title>Contagious Interview: Malware delivered through fake developer job interviews</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/03/11/contagious-interview-malware-delivered-through-fake-developer-job-interviews/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/11/contagious-interview-malware-delivered-through-fake-developer-job-interviews/</guid>
-      <pubDate>Wed, 11 Mar 2026 21:00:50 +0000</pubDate>
-      <source>Microsoft Security</source>
-    </item>
-    <item>
       <title>[Launched] Generally Available: Terraform, Bicep, Ansible support for elastic clusters on Azure Database for PostgreSQL</title>
       <link>https://azure.microsoft.com/updates?id=558145</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558145</guid>
@@ -622,13 +671,6 @@
       <guid isPermaLink="true">https://github.blog/ai-and-ml/generative-ai/under-the-hood-security-architecture-of-github-agentic-workflows/</guid>
       <pubDate>Mon, 09 Mar 2026 16:00:00 +0000</pubDate>
       <source>GitHub Blog</source>
-    </item>
-    <item>
-      <title>Secure agentic AI for your Frontier Transformation</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/03/09/secure-agentic-ai-for-your-frontier-transformation/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/09/secure-agentic-ai-for-your-frontier-transformation/</guid>
-      <pubDate>Mon, 09 Mar 2026 13:00:00 +0000</pubDate>
-      <source>Microsoft Security</source>
     </item>
     <item>
       <title>Navigate repositories faster with the file tree browser</title>
@@ -2724,27 +2766,6 @@
       <source>Azure Updates</source>
     </item>
     <item>
-      <title>[Launched] Generally Available: Vector indexing performance improvements in Azure Cosmos DB for NoSQL</title>
-      <link>https://azure.microsoft.com/updates?id=523803</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523803</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Float16 data type for vector indexes in Azure Cosmos DB</title>
-      <link>https://azure.microsoft.com/updates?id=523796</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523796</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Azure Cosmos DB for Visual Studio Code</title>
-      <link>https://azure.microsoft.com/updates?id=523782</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523782</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
       <title>Microsoft Entra at Ignite 2025: November 17-21</title>
       <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-at-ignite-2025-november-17-21/ba-p/4400194</link>
       <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-at-ignite-2025-november-17-21/ba-p/4400194</guid>
@@ -2934,13 +2955,6 @@
       <source>Kubernetes Blog</source>
     </item>
     <item>
-      <title>Driving transparency: New logging capabilities and attribute enhancements in Microsoft Entra</title>
-      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/driving-transparency-new-logging-capabilities-and-attribute/ba-p/4436814</link>
-      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/driving-transparency-new-logging-capabilities-and-attribute/ba-p/4436814</guid>
-      <pubDate>Mon, 22 Sep 2025 15:00:00 +0000</pubDate>
-      <source>Microsoft Entra Blog</source>
-    </item>
-    <item>
       <title>Kubernetes v1.34: Recovery From Volume Expansion Failure (GA)</title>
       <link>https://kubernetes.io/blog/2025/09/19/kubernetes-v1-34-recover-expansion-failure/</link>
       <guid isPermaLink="true">https://kubernetes.io/blog/2025/09/19/kubernetes-v1-34-recover-expansion-failure/</guid>
@@ -3015,20 +3029,6 @@
       <link>https://kubernetes.io/blog/2025/09/05/kubernetes-v1-34-pod-replacement-policy-for-jobs-goes-ga/</link>
       <guid isPermaLink="true">https://kubernetes.io/blog/2025/09/05/kubernetes-v1-34-pod-replacement-policy-for-jobs-goes-ga/</guid>
       <pubDate>Fri, 05 Sep 2025 18:30:00 +0000</pubDate>
-      <source>Kubernetes Blog</source>
-    </item>
-    <item>
-      <title>Kubernetes v1.34: PSI Metrics for Kubernetes Graduates to Beta</title>
-      <link>https://kubernetes.io/blog/2025/09/04/kubernetes-v1-34-introducing-psi-metrics-beta/</link>
-      <guid isPermaLink="true">https://kubernetes.io/blog/2025/09/04/kubernetes-v1-34-introducing-psi-metrics-beta/</guid>
-      <pubDate>Thu, 04 Sep 2025 18:30:00 +0000</pubDate>
-      <source>Kubernetes Blog</source>
-    </item>
-    <item>
-      <title>Kubernetes v1.34: Service Account Token Integration for Image Pulls Graduates to Beta</title>
-      <link>https://kubernetes.io/blog/2025/09/03/kubernetes-v1-34-sa-tokens-image-pulls-beta/</link>
-      <guid isPermaLink="true">https://kubernetes.io/blog/2025/09/03/kubernetes-v1-34-sa-tokens-image-pulls-beta/</guid>
-      <pubDate>Wed, 03 Sep 2025 18:30:00 +0000</pubDate>
       <source>Kubernetes Blog</source>
     </item>
     <item>

@@ -5,8 +5,20 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-kubernetes-blog.xml</link>
     <description>Articles from Kubernetes Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-kubernetes-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 20 Mar 2026 12:33:49 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 21 Mar 2026 01:05:01 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Announcing Ingress2Gateway 1.0: Your Path to Gateway API</title>
+      <link>https://kubernetes.io/blog/2026/03/20/ingress2gateway-1-0-release/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2026/03/20/ingress2gateway-1-0-release/</guid>
+      <pubDate>Fri, 20 Mar 2026 19:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Running Agents on Kubernetes with Agent Sandbox</title>
+      <link>https://kubernetes.io/blog/2026/03/20/running-agents-on-kubernetes-with-agent-sandbox/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2026/03/20/running-agents-on-kubernetes-with-agent-sandbox/</guid>
+      <pubDate>Fri, 20 Mar 2026 18:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Securing Production Debugging in Kubernetes</title>
       <link>https://kubernetes.io/blog/2026/03/18/securing-production-debugging-in-kubernetes/</link>
@@ -294,18 +306,6 @@
       <link>https://kubernetes.io/blog/2025/09/05/kubernetes-v1-34-pod-replacement-policy-for-jobs-goes-ga/</link>
       <guid isPermaLink="true">https://kubernetes.io/blog/2025/09/05/kubernetes-v1-34-pod-replacement-policy-for-jobs-goes-ga/</guid>
       <pubDate>Fri, 05 Sep 2025 18:30:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Kubernetes v1.34: PSI Metrics for Kubernetes Graduates to Beta</title>
-      <link>https://kubernetes.io/blog/2025/09/04/kubernetes-v1-34-introducing-psi-metrics-beta/</link>
-      <guid isPermaLink="true">https://kubernetes.io/blog/2025/09/04/kubernetes-v1-34-introducing-psi-metrics-beta/</guid>
-      <pubDate>Thu, 04 Sep 2025 18:30:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Kubernetes v1.34: Service Account Token Integration for Image Pulls Graduates to Beta</title>
-      <link>https://kubernetes.io/blog/2025/09/03/kubernetes-v1-34-sa-tokens-image-pulls-beta/</link>
-      <guid isPermaLink="true">https://kubernetes.io/blog/2025/09/03/kubernetes-v1-34-sa-tokens-image-pulls-beta/</guid>
-      <pubDate>Wed, 03 Sep 2025 18:30:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

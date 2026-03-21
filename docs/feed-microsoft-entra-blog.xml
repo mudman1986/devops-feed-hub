@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-microsoft-entra-blog.xml</link>
     <description>Articles from Microsoft Entra Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-microsoft-entra-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 20 Mar 2026 12:33:49 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 21 Mar 2026 01:05:01 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Microsoft Entra innovations announced at RSAC 2026</title>
+      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-innovations-announced-at-rsac-2026/ba-p/4502146</link>
+      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-innovations-announced-at-rsac-2026/ba-p/4502146</guid>
+      <pubDate>Fri, 20 Mar 2026 17:38:44 +0000</pubDate>
+    </item>
     <item>
       <title>Secure access in the age of AI: Key findings from our 2026 Report</title>
       <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/secure-access-in-the-age-of-ai-key-findings-from-our-2026-report/ba-p/4486060</link>
@@ -120,12 +126,6 @@
       <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/the-microsoft-entra-agent-for-smarter-access-governance-access/ba-p/4279689</link>
       <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/the-microsoft-entra-agent-for-smarter-access-governance-access/ba-p/4279689</guid>
       <pubDate>Tue, 30 Sep 2025 13:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Driving transparency: New logging capabilities and attribute enhancements in Microsoft Entra</title>
-      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/driving-transparency-new-logging-capabilities-and-attribute/ba-p/4436814</link>
-      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/driving-transparency-new-logging-capabilities-and-attribute/ba-p/4436814</guid>
-      <pubDate>Mon, 22 Sep 2025 15:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

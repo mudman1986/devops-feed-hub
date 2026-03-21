@@ -5,8 +5,20 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml</link>
     <description>Articles from Microsoft Security</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 20 Mar 2026 12:33:49 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 21 Mar 2026 01:05:01 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>CTI-REALM: A new benchmark for end-to-end detection rule generation with AI agents</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/03/20/cti-realm-a-new-benchmark-for-end-to-end-detection-rule-generation-with-ai-agents/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/20/cti-realm-a-new-benchmark-for-end-to-end-detection-rule-generation-with-ai-agents/</guid>
+      <pubDate>Fri, 20 Mar 2026 16:19:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Secure agentic AI end-to-end</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/03/20/secure-agentic-ai-end-to-end/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/20/secure-agentic-ai-end-to-end/</guid>
+      <pubDate>Fri, 20 Mar 2026 16:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>New tools and guidance: Announcing Zero Trust for AI</title>
       <link>https://www.microsoft.com/en-us/security/blog/2026/03/19/new-tools-and-guidance-announcing-zero-trust-for-ai/</link>
@@ -54,18 +66,6 @@
       <link>https://www.microsoft.com/en-us/security/blog/2026/03/12/detecting-analyzing-prompt-abuse-in-ai-tools/</link>
       <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/12/detecting-analyzing-prompt-abuse-in-ai-tools/</guid>
       <pubDate>Thu, 12 Mar 2026 14:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Contagious Interview: Malware delivered through fake developer job interviews</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/03/11/contagious-interview-malware-delivered-through-fake-developer-job-interviews/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/11/contagious-interview-malware-delivered-through-fake-developer-job-interviews/</guid>
-      <pubDate>Wed, 11 Mar 2026 21:00:50 +0000</pubDate>
-    </item>
-    <item>
-      <title>Secure agentic AI for your Frontier Transformation</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/03/09/secure-agentic-ai-for-your-frontier-transformation/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/09/secure-agentic-ai-for-your-frontier-transformation/</guid>
-      <pubDate>Mon, 09 Mar 2026 13:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
