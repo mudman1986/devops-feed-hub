@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 23 Mar 2026 01:14:17 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 23 Mar 2026 12:40:04 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Introducing the Chinese Workday Plugin</title>
@@ -13,6 +13,13 @@
       <guid isPermaLink="true">https:/www.jenkins.io/blog/2026/03/22/introducing-chinese-workday-plugin/</guid>
       <pubDate>Sun, 22 Mar 2026 00:00:00 +0000</pubDate>
       <source>Jenkins Blog</source>
+    </item>
+    <item>
+      <title>Agentic runtime security: Solving agentic AI identity and access gaps</title>
+      <link>https://www.hashicorp.com/blog/agentic-runtime-security-solving-agentic-ai-identity-and-access-gaps</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/agentic-runtime-security-solving-agentic-ai-identity-and-access-gaps</guid>
+      <pubDate>Fri, 20 Mar 2026 20:30:00 +0000</pubDate>
+      <source>HashiCorp Blog</source>
     </item>
     <item>
       <title>[In preview] Public Preview: Azure SQL updates for mid-March 2026</title>
@@ -1532,13 +1539,6 @@
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=550164</guid>
       <pubDate>Wed, 28 Jan 2026 17:00:53 +0000</pubDate>
       <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>The top 5 sources of secret sprawl, and how attackers exploit them</title>
-      <link>https://www.hashicorp.com/blog/the-top-5-sources-of-secret-sprawl-and-how-attackers-exploit-them</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/the-top-5-sources-of-secret-sprawl-and-how-attackers-exploit-them</guid>
-      <pubDate>Wed, 28 Jan 2026 17:00:00 +0000</pubDate>
-      <source>HashiCorp Blog</source>
     </item>
     <item>
       <title>Issue #259 - Everything as Code (incl. DNS), Terragrunt at Scale, Cloudflare v4 to v5 Migration, Self-Hosted GitLab Runners, CloudSlash for AWS Cost Optimization, Terraform Skill</title>

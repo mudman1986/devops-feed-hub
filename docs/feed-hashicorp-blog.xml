@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-hashicorp-blog.xml</link>
     <description>Articles from HashiCorp Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-hashicorp-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 23 Mar 2026 01:14:17 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 23 Mar 2026 12:40:04 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Agentic runtime security: Solving agentic AI identity and access gaps</title>
+      <link>https://www.hashicorp.com/blog/agentic-runtime-security-solving-agentic-ai-identity-and-access-gaps</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/agentic-runtime-security-solving-agentic-ai-identity-and-access-gaps</guid>
+      <pubDate>Fri, 20 Mar 2026 20:30:00 +0000</pubDate>
+    </item>
     <item>
       <title>HCP Vault Dedicated now available in additional AWS and Azure regions</title>
       <link>https://www.hashicorp.com/blog/hcp-vault-dedicated-now-available-in-additional-aws-and-azure-regions</link>
@@ -120,12 +126,6 @@
       <link>https://www.hashicorp.com/blog/hcp-vault-performance-replication-at-global-scale-better-than-diy</link>
       <guid isPermaLink="true">https://www.hashicorp.com/blog/hcp-vault-performance-replication-at-global-scale-better-than-diy</guid>
       <pubDate>Fri, 30 Jan 2026 18:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>The top 5 sources of secret sprawl, and how attackers exploit them</title>
-      <link>https://www.hashicorp.com/blog/the-top-5-sources-of-secret-sprawl-and-how-attackers-exploit-them</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/the-top-5-sources-of-secret-sprawl-and-how-attackers-exploit-them</guid>
-      <pubDate>Wed, 28 Jan 2026 17:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
