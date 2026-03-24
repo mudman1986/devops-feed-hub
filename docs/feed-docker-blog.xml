@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-docker-blog.xml</link>
     <description>Articles from Docker Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-docker-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 23 Mar 2026 12:40:04 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 24 Mar 2026 01:06:42 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Trivy supply chain compromise: What Docker Hub users should know</title>
+      <link>https://www.docker.com/blog/trivy-supply-chain-compromise-what-docker-hub-users-should-know/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/trivy-supply-chain-compromise-what-docker-hub-users-should-know/</guid>
+      <pubDate>Mon, 23 Mar 2026 23:25:14 +0000</pubDate>
+    </item>
     <item>
       <title>From the Captain’s Chair: Naga Santhosh Reddy Vootukuri</title>
       <link>https://www.docker.com/blog/from-the-captains-chair-naga-santhosh-reddy-vootukuri/</link>
@@ -60,12 +66,6 @@
       <link>https://www.docker.com/blog/announcing-docker-hardened-system-packages/</link>
       <guid isPermaLink="true">https://www.docker.com/blog/announcing-docker-hardened-system-packages/</guid>
       <pubDate>Tue, 03 Mar 2026 20:30:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Docker Model Runner Brings vLLM to macOS with Apple Silicon</title>
-      <link>https://www.docker.com/blog/docker-model-runner-vllm-metal-macos/</link>
-      <guid isPermaLink="true">https://www.docker.com/blog/docker-model-runner-vllm-metal-macos/</guid>
-      <pubDate>Thu, 26 Feb 2026 14:42:57 +0000</pubDate>
     </item>
   </channel>
 </rss>

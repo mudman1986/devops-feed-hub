@@ -5,8 +5,20 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml</link>
     <description>Articles from GitHub Changelog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 23 Mar 2026 12:40:04 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 24 Mar 2026 01:06:42 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Gemini 3.1 Pro is now available in JetBrains IDEs, Xcode, and Eclipse</title>
+      <link>https://github.blog/changelog/2026-03-23-gemini-3-1-pro-is-now-available-in-jetbrains-ides-xcode-and-eclipse</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-23-gemini-3-1-pro-is-now-available-in-jetbrains-ides-xcode-and-eclipse</guid>
+      <pubDate>Mon, 23 Mar 2026 21:11:48 +0000</pubDate>
+    </item>
+    <item>
+      <title>Push protection exemptions from repository settings</title>
+      <link>https://github.blog/changelog/2026-03-23-push-protection-exemptions-from-repository-settings</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-23-push-protection-exemptions-from-repository-settings</guid>
+      <pubDate>Mon, 23 Mar 2026 20:36:39 +0000</pubDate>
+    </item>
     <item>
       <title>Copilot usage metrics now resolve auto model selection to actual models</title>
       <link>https://github.blog/changelog/2026-03-20-copilot-usage-metrics-now-resolve-auto-model-selection-to-actual-models</link>
@@ -54,18 +66,6 @@
       <link>https://github.blog/changelog/2026-03-19-copilot-coding-agent-now-starts-work-50-faster</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-03-19-copilot-coding-agent-now-starts-work-50-faster</guid>
       <pubDate>Thu, 19 Mar 2026 19:04:28 +0000</pubDate>
-    </item>
-    <item>
-      <title>Codespaces with data residency now available in Japan</title>
-      <link>https://github.blog/changelog/2026-03-19-codespaces-with-data-residency-now-available-in-japan</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-19-codespaces-with-data-residency-now-available-in-japan</guid>
-      <pubDate>Thu, 19 Mar 2026 17:32:44 +0000</pubDate>
-    </item>
-    <item>
-      <title>View code and comments side-by-side in pull request Files changed page</title>
-      <link>https://github.blog/changelog/2026-03-19-view-code-and-comments-side-by-side-in-pull-request-files-changed-page</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-19-view-code-and-comments-side-by-side-in-pull-request-files-changed-page</guid>
-      <pubDate>Thu, 19 Mar 2026 16:25:45 +0000</pubDate>
     </item>
   </channel>
 </rss>

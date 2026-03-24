@@ -5,8 +5,57 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 23 Mar 2026 12:40:04 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 24 Mar 2026 01:06:42 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Trivy supply chain compromise: What Docker Hub users should know</title>
+      <link>https://www.docker.com/blog/trivy-supply-chain-compromise-what-docker-hub-users-should-know/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/trivy-supply-chain-compromise-what-docker-hub-users-should-know/</guid>
+      <pubDate>Mon, 23 Mar 2026 23:25:14 +0000</pubDate>
+      <source>Docker Blog</source>
+    </item>
+    <item>
+      <title>Gemini 3.1 Pro is now available in JetBrains IDEs, Xcode, and Eclipse</title>
+      <link>https://github.blog/changelog/2026-03-23-gemini-3-1-pro-is-now-available-in-jetbrains-ides-xcode-and-eclipse</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-23-gemini-3-1-pro-is-now-available-in-jetbrains-ides-xcode-and-eclipse</guid>
+      <pubDate>Mon, 23 Mar 2026 21:11:48 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Push protection exemptions from repository settings</title>
+      <link>https://github.blog/changelog/2026-03-23-push-protection-exemptions-from-repository-settings</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-23-push-protection-exemptions-from-repository-settings</guid>
+      <pubDate>Mon, 23 Mar 2026 20:36:39 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Microsoft Entra innovations announced at RSAC 2026</title>
+      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-innovations-announced-at-rsac-2026/ba-p/4502146</link>
+      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-innovations-announced-at-rsac-2026/ba-p/4502146</guid>
+      <pubDate>Mon, 23 Mar 2026 16:23:57 +0000</pubDate>
+      <source>Microsoft Entra Blog</source>
+    </item>
+    <item>
+      <title>GitHub expands application security coverage with AI‑powered detections</title>
+      <link>https://github.blog/security/application-security/github-expands-application-security-coverage-with-ai-powered-detections/</link>
+      <guid isPermaLink="true">https://github.blog/security/application-security/github-expands-application-security-coverage-with-ai-powered-detections/</guid>
+      <pubDate>Mon, 23 Mar 2026 16:00:00 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
+    <item>
+      <title>Case study: How predictive shielding in Defender stopped GPO-based ransomware before it started</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/03/23/case-study-predictive-shielding-defender-stopped-gpo-based-ransomware-before-started/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/23/case-study-predictive-shielding-defender-stopped-gpo-based-ransomware-before-started/</guid>
+      <pubDate>Mon, 23 Mar 2026 16:00:00 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>Agile planning gets a boost from new features in GitLab 18.10</title>
+      <link>https://about.gitlab.com/blog/agile-planning-gets-a-boost-from-new-features-in-gitlab-18-10/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/agile-planning-gets-a-boost-from-new-features-in-gitlab-18-10/</guid>
+      <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
+      <source>GitLab Blog</source>
+    </item>
     <item>
       <title>Introducing the Chinese Workday Plugin</title>
       <link>https:/www.jenkins.io/blog/2026/03/22/introducing-chinese-workday-plugin/</link>
@@ -55,13 +104,6 @@
       <guid isPermaLink="true">https://kubernetes.io/blog/2026/03/20/running-agents-on-kubernetes-with-agent-sandbox/</guid>
       <pubDate>Fri, 20 Mar 2026 18:00:00 +0000</pubDate>
       <source>Kubernetes Blog</source>
-    </item>
-    <item>
-      <title>Microsoft Entra innovations announced at RSAC 2026</title>
-      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-innovations-announced-at-rsac-2026/ba-p/4502146</link>
-      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-innovations-announced-at-rsac-2026/ba-p/4502146</guid>
-      <pubDate>Fri, 20 Mar 2026 17:38:44 +0000</pubDate>
-      <source>Microsoft Entra Blog</source>
     </item>
     <item>
       <title>Retirement: Azure Sphere will be retired on July 31, 2031</title>
@@ -162,13 +204,6 @@
       <source>Microsoft DevOps Blog</source>
     </item>
     <item>
-      <title>Codespaces with data residency now available in Japan</title>
-      <link>https://github.blog/changelog/2026-03-19-codespaces-with-data-residency-now-available-in-japan</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-19-codespaces-with-data-residency-now-available-in-japan</guid>
-      <pubDate>Thu, 19 Mar 2026 17:32:44 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>[In preview] Public Preview: Azure Databricks OneLake Catalog Federation</title>
       <link>https://azure.microsoft.com/updates?id=558927</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558927</guid>
@@ -195,13 +230,6 @@
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=548497</guid>
       <pubDate>Thu, 19 Mar 2026 16:30:27 +0000</pubDate>
       <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>View code and comments side-by-side in pull request Files changed page</title>
-      <link>https://github.blog/changelog/2026-03-19-view-code-and-comments-side-by-side-in-pull-request-files-changed-page</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-19-view-code-and-comments-side-by-side-in-pull-request-files-changed-page</guid>
-      <pubDate>Thu, 19 Mar 2026 16:25:45 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>How Squad runs coordinated AI agents inside your repository</title>
@@ -547,13 +575,6 @@
       <source>Microsoft Security</source>
     </item>
     <item>
-      <title>Detecting and analyzing prompt abuse in AI tools</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/03/12/detecting-analyzing-prompt-abuse-in-ai-tools/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/12/detecting-analyzing-prompt-abuse-in-ai-tools/</guid>
-      <pubDate>Thu, 12 Mar 2026 14:00:00 +0000</pubDate>
-      <source>Microsoft Security</source>
-    </item>
-    <item>
       <title>Flexibility Over Lock-In: The Enterprise Shift in Agent Strategy</title>
       <link>https://www.docker.com/blog/enterprise-shift-in-agent-strategy/</link>
       <guid isPermaLink="true">https://www.docker.com/blog/enterprise-shift-in-agent-strategy/</guid>
@@ -699,13 +720,6 @@
       <guid isPermaLink="true">https:/www.jenkins.io/blog/2026/03/09/contributor-summit-part-2/</guid>
       <pubDate>Mon, 09 Mar 2026 00:00:00 +0000</pubDate>
       <source>Jenkins Blog</source>
-    </item>
-    <item>
-      <title>How to scan for vulnerabilities with GitHub Security Lab’s open source AI-powered framework</title>
-      <link>https://github.blog/security/how-to-scan-for-vulnerabilities-with-github-security-labs-open-source-ai-powered-framework/</link>
-      <guid isPermaLink="true">https://github.blog/security/how-to-scan-for-vulnerabilities-with-github-security-labs-open-source-ai-powered-framework/</guid>
-      <pubDate>Fri, 06 Mar 2026 21:09:04 +0000</pubDate>
-      <source>GitHub Blog</source>
     </item>
     <item>
       <title>Celebrating Women in AI: 3 Questions with Cecilia Liu on Leading Docker’s MCP Strategy</title>
@@ -897,13 +911,6 @@
       <source>Azure Updates</source>
     </item>
     <item>
-      <title>Docker Model Runner Brings vLLM to macOS with Apple Silicon</title>
-      <link>https://www.docker.com/blog/docker-model-runner-vllm-metal-macos/</link>
-      <guid isPermaLink="true">https://www.docker.com/blog/docker-model-runner-vllm-metal-macos/</guid>
-      <pubDate>Thu, 26 Feb 2026 14:42:57 +0000</pubDate>
-      <source>Docker Blog</source>
-    </item>
-    <item>
       <title>[In preview] Public Preview: Secure ingestion and pod placement for Azure Monitor pipeline</title>
       <link>https://azure.microsoft.com/updates?id=552808</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=552808</guid>
@@ -1070,13 +1077,6 @@
       <guid isPermaLink="true">https://circleci.com/blog/getting-started-with-amazon-q-developer-and-circleci/</guid>
       <pubDate>Thu, 19 Feb 2026 16:00:00 +0000</pubDate>
       <source>CircleCI Blog</source>
-    </item>
-    <item>
-      <title>Track vulnerability remediation with the updated GitLab Security Dashboard</title>
-      <link>https://about.gitlab.com/blog/track-vulnerability-remediation-with-the-updated-gitlab-security-dashboard/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/track-vulnerability-remediation-with-the-updated-gitlab-security-dashboard/</guid>
-      <pubDate>Thu, 19 Feb 2026 00:00:00 +0000</pubDate>
-      <source>GitLab Blog</source>
     </item>
     <item>
       <title>Jenkins accepted as mentoring org for Google Summer of Code (GSoC) 2026</title>

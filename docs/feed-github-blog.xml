@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-blog.xml</link>
     <description>Articles from GitHub Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 23 Mar 2026 12:40:04 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 24 Mar 2026 01:06:42 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>GitHub expands application security coverage with AI‑powered detections</title>
+      <link>https://github.blog/security/application-security/github-expands-application-security-coverage-with-ai-powered-detections/</link>
+      <guid isPermaLink="true">https://github.blog/security/application-security/github-expands-application-security-coverage-with-ai-powered-detections/</guid>
+      <pubDate>Mon, 23 Mar 2026 16:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Rethinking open source mentorship in the AI era</title>
       <link>https://github.blog/open-source/maintainers/rethinking-open-source-mentorship-in-the-ai-era/</link>
@@ -60,12 +66,6 @@
       <link>https://github.blog/ai-and-ml/generative-ai/under-the-hood-security-architecture-of-github-agentic-workflows/</link>
       <guid isPermaLink="true">https://github.blog/ai-and-ml/generative-ai/under-the-hood-security-architecture-of-github-agentic-workflows/</guid>
       <pubDate>Mon, 09 Mar 2026 16:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>How to scan for vulnerabilities with GitHub Security Lab’s open source AI-powered framework</title>
-      <link>https://github.blog/security/how-to-scan-for-vulnerabilities-with-github-security-labs-open-source-ai-powered-framework/</link>
-      <guid isPermaLink="true">https://github.blog/security/how-to-scan-for-vulnerabilities-with-github-security-labs-open-source-ai-powered-framework/</guid>
-      <pubDate>Fri, 06 Mar 2026 21:09:04 +0000</pubDate>
     </item>
   </channel>
 </rss>
