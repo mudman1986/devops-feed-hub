@@ -5,8 +5,20 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-microsoft-entra-blog.xml</link>
     <description>Articles from Microsoft Entra Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-microsoft-entra-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 24 Mar 2026 12:44:29 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 25 Mar 2026 01:12:02 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Strengthen Identity Resilience: Recover with Confidence using Microsoft Entra Backup and Recovery</title>
+      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/strengthen-identity-resilience-recover-with-confidence-using/ba-p/4462426</link>
+      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/strengthen-identity-resilience-recover-with-confidence-using/ba-p/4462426</guid>
+      <pubDate>Tue, 24 Mar 2026 16:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>External MFA in Microsoft Entra ID is now Generally Available</title>
+      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/external-mfa-in-microsoft-entra-id-is-now-generally-available/ba-p/4488926</link>
+      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/external-mfa-in-microsoft-entra-id-is-now-generally-available/ba-p/4488926</guid>
+      <pubDate>Tue, 24 Mar 2026 16:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Microsoft Entra innovations announced at RSAC 2026</title>
       <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-innovations-announced-at-rsac-2026/ba-p/4502146</link>
@@ -114,18 +126,6 @@
       <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/11-days-remaining-support-for-microsoft-entra-permissions/ba-p/4462424</link>
       <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/11-days-remaining-support-for-microsoft-entra-permissions/ba-p/4462424</guid>
       <pubDate>Mon, 20 Oct 2025 16:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Your shortcut to Microsoft Entra deployment success</title>
-      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/your-shortcut-to-microsoft-entra-deployment-success/ba-p/4460533</link>
-      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/your-shortcut-to-microsoft-entra-deployment-success/ba-p/4460533</guid>
-      <pubDate>Fri, 10 Oct 2025 17:36:11 +0000</pubDate>
-    </item>
-    <item>
-      <title>The Microsoft Entra agent for smarter access governance: Access Review Agent</title>
-      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/the-microsoft-entra-agent-for-smarter-access-governance-access/ba-p/4279689</link>
-      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/the-microsoft-entra-agent-for-smarter-access-governance-access/ba-p/4279689</guid>
-      <pubDate>Tue, 30 Sep 2025 13:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

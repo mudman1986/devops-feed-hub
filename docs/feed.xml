@@ -5,8 +5,141 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 24 Mar 2026 12:44:29 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 25 Mar 2026 01:12:02 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Guidance for detecting, investigating, and defending against the Trivy supply chain compromise</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/03/24/detecting-investigating-defending-against-trivy-supply-chain-compromise/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/24/detecting-investigating-defending-against-trivy-supply-chain-compromise/</guid>
+      <pubDate>Wed, 25 Mar 2026 00:03:03 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Container network metrics filtering for AKS</title>
+      <link>https://azure.microsoft.com/updates?id=557902</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557902</guid>
+      <pubDate>Tue, 24 Mar 2026 23:00:18 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: AI Agent for container networking troubleshooting</title>
+      <link>https://azure.microsoft.com/updates?id=557887</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557887</guid>
+      <pubDate>Tue, 24 Mar 2026 21:45:26 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>Ask @copilot to make changes to any pull request</title>
+      <link>https://github.blog/changelog/2026-03-24-ask-copilot-to-make-changes-to-any-pull-request</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-24-ask-copilot-to-make-changes-to-any-pull-request</guid>
+      <pubDate>Tue, 24 Mar 2026 20:08:03 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Manage Copilot coding agent repository access via the API</title>
+      <link>https://github.blog/changelog/2026-03-24-manage-copilot-coding-agent-repository-access-via-the-api</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-24-manage-copilot-coding-agent-repository-access-via-the-api</guid>
+      <pubDate>Tue, 24 Mar 2026 20:07:01 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: AKS managed GPU metrics in Azure Monitor</title>
+      <link>https://azure.microsoft.com/updates?id=557882</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557882</guid>
+      <pubDate>Tue, 24 Mar 2026 18:30:36 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Cross-cluster networking in Azure Kubernetes Fleet Manager</title>
+      <link>https://azure.microsoft.com/updates?id=557877</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557877</guid>
+      <pubDate>Tue, 24 Mar 2026 18:30:36 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Azure Container Storage v2.1.0 now with Elastic SAN integration and on demand installation</title>
+      <link>https://azure.microsoft.com/updates?id=557912</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557912</guid>
+      <pubDate>Tue, 24 Mar 2026 18:15:48 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Container network logs in AKS</title>
+      <link>https://azure.microsoft.com/updates?id=557892</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557892</guid>
+      <pubDate>Tue, 24 Mar 2026 18:15:48 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Azure Monitor Prometheus community recommended alerts for Azure Arc-enabled Kubernetes</title>
+      <link>https://azure.microsoft.com/updates?id=558825</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558825</guid>
+      <pubDate>Tue, 24 Mar 2026 17:30:29 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Application routing with meshless Istio in AKS</title>
+      <link>https://azure.microsoft.com/updates?id=557927</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557927</guid>
+      <pubDate>Tue, 24 Mar 2026 17:30:29 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Microsoft Azure Kubernetes Application Network</title>
+      <link>https://azure.microsoft.com/updates?id=557922</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557922</guid>
+      <pubDate>Tue, 24 Mar 2026 17:30:29 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Ingest OTLP data into Azure Monitor with the OpenTelemetry Collector</title>
+      <link>https://azure.microsoft.com/updates?id=559273</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=559273</guid>
+      <pubDate>Tue, 24 Mar 2026 17:15:45 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>Governing AI agent behavior: Aligning user, developer, role, and organizational intent</title>
+      <link>https://techcommunity.microsoft.com/blog/microsoft-security-blog/governing-ai-agent-behavior-aligning-user-developer-role-and-organizational-inte/4503551</link>
+      <guid isPermaLink="true">https://techcommunity.microsoft.com/blog/microsoft-security-blog/governing-ai-agent-behavior-aligning-user-developer-role-and-organizational-inte/4503551</guid>
+      <pubDate>Tue, 24 Mar 2026 17:00:00 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>Building AI-powered GitHub issue triage with the Copilot SDK</title>
+      <link>https://github.blog/ai-and-ml/github-copilot/building-ai-powered-github-issue-triage-with-the-copilot-sdk/</link>
+      <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/building-ai-powered-github-issue-triage-with-the-copilot-sdk/</guid>
+      <pubDate>Tue, 24 Mar 2026 16:00:00 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
+    <item>
+      <title>Strengthen Identity Resilience: Recover with Confidence using Microsoft Entra Backup and Recovery</title>
+      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/strengthen-identity-resilience-recover-with-confidence-using/ba-p/4462426</link>
+      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/strengthen-identity-resilience-recover-with-confidence-using/ba-p/4462426</guid>
+      <pubDate>Tue, 24 Mar 2026 16:00:00 +0000</pubDate>
+      <source>Microsoft Entra Blog</source>
+    </item>
+    <item>
+      <title>External MFA in Microsoft Entra ID is now Generally Available</title>
+      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/external-mfa-in-microsoft-entra-id-is-now-generally-available/ba-p/4488926</link>
+      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/external-mfa-in-microsoft-entra-id-is-now-generally-available/ba-p/4488926</guid>
+      <pubDate>Tue, 24 Mar 2026 16:00:00 +0000</pubDate>
+      <source>Microsoft Entra Blog</source>
+    </item>
+    <item>
+      <title>Deployment strategies: Types, trade-offs, and how to choose</title>
+      <link>https://circleci.com/blog/deployment-strategies-types-trade-offs-and-how-to-choose/</link>
+      <guid isPermaLink="true">https://circleci.com/blog/deployment-strategies-types-trade-offs-and-how-to-choose/</guid>
+      <pubDate>Tue, 24 Mar 2026 15:00:00 +0000</pubDate>
+      <source>CircleCI Blog</source>
+    </item>
+    <item>
+      <title>Faster incremental analysis with CodeQL in pull requests</title>
+      <link>https://github.blog/changelog/2026-03-24-faster-incremental-analysis-with-codeql-in-pull-requests</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-24-faster-incremental-analysis-with-codeql-in-pull-requests</guid>
+      <pubDate>Tue, 24 Mar 2026 13:25:15 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
     <item>
       <title>Trivy supply chain compromise: What Docker Hub users should know</title>
       <link>https://www.docker.com/blog/trivy-supply-chain-compromise-what-docker-hub-users-should-know/</link>
@@ -152,27 +285,6 @@
       <link>https://github.blog/changelog/2026-03-19-more-visibility-into-copilot-coding-agent-sessions</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-03-19-more-visibility-into-copilot-coding-agent-sessions</guid>
       <pubDate>Thu, 19 Mar 2026 22:26:33 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>GitHub Actions: Late March 2026 updates</title>
-      <link>https://github.blog/changelog/2026-03-19-github-actions-late-march-2026-updates</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-19-github-actions-late-march-2026-updates</guid>
-      <pubDate>Thu, 19 Mar 2026 20:41:58 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>Actions Runner Controller release 0.14.0</title>
-      <link>https://github.blog/changelog/2026-03-19-actions-runner-controller-release-0-14-0</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-19-actions-runner-controller-release-0-14-0</guid>
-      <pubDate>Thu, 19 Mar 2026 19:17:41 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>Copilot coding agent now starts work 50% faster</title>
-      <link>https://github.blog/changelog/2026-03-19-copilot-coding-agent-now-starts-work-50-faster</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-19-copilot-coding-agent-now-starts-work-50-faster</guid>
-      <pubDate>Thu, 19 Mar 2026 19:04:28 +0000</pubDate>
       <source>GitHub Changelog</source>
     </item>
     <item>
@@ -554,25 +666,11 @@
       <source>Azure Updates</source>
     </item>
     <item>
-      <title>Storm-2561 uses SEO poisoning to distribute fake VPN clients for credential theft</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/03/12/storm-2561-uses-seo-poisoning-to-distribute-fake-vpn-clients-for-credential-theft/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/12/storm-2561-uses-seo-poisoning-to-distribute-fake-vpn-clients-for-credential-theft/</guid>
-      <pubDate>Thu, 12 Mar 2026 17:00:00 +0000</pubDate>
-      <source>Microsoft Security</source>
-    </item>
-    <item>
       <title>Continuous AI for accessibility: How GitHub transforms feedback into inclusion</title>
       <link>https://github.blog/ai-and-ml/github-copilot/continuous-ai-for-accessibility-how-github-transforms-feedback-into-inclusion/</link>
       <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/continuous-ai-for-accessibility-how-github-transforms-feedback-into-inclusion/</guid>
       <pubDate>Thu, 12 Mar 2026 16:00:00 +0000</pubDate>
       <source>GitHub Blog</source>
-    </item>
-    <item>
-      <title>From transparency to action: What the latest Microsoft email security benchmark reveals</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/03/12/from-transparency-to-action-what-the-latest-microsoft-email-security-benchmark-reveals/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/12/from-transparency-to-action-what-the-latest-microsoft-email-security-benchmark-reveals/</guid>
-      <pubDate>Thu, 12 Mar 2026 16:00:00 +0000</pubDate>
-      <source>Microsoft Security</source>
     </item>
     <item>
       <title>Flexibility Over Lock-In: The Enterprise Shift in Agent Strategy</title>
@@ -699,13 +797,6 @@
       <guid isPermaLink="true">https://kubernetes.io/blog/2026/03/09/announcing-ai-gateway-wg/</guid>
       <pubDate>Mon, 09 Mar 2026 18:00:00 +0000</pubDate>
       <source>Kubernetes Blog</source>
-    </item>
-    <item>
-      <title>Under the hood: Security architecture of GitHub Agentic Workflows</title>
-      <link>https://github.blog/ai-and-ml/generative-ai/under-the-hood-security-architecture-of-github-agentic-workflows/</link>
-      <guid isPermaLink="true">https://github.blog/ai-and-ml/generative-ai/under-the-hood-security-architecture-of-github-agentic-workflows/</guid>
-      <pubDate>Mon, 09 Mar 2026 16:00:00 +0000</pubDate>
-      <source>GitHub Blog</source>
     </item>
     <item>
       <title>Navigate repositories faster with the file tree browser</title>
@@ -1167,13 +1258,6 @@
       <link>https://circleci.com/blog/build-and-test-your-first-kubernetes-operator-with-go-kubebuilder/</link>
       <guid isPermaLink="true">https://circleci.com/blog/build-and-test-your-first-kubernetes-operator-with-go-kubebuilder/</guid>
       <pubDate>Wed, 18 Feb 2026 16:00:00 +0000</pubDate>
-      <source>CircleCI Blog</source>
-    </item>
-    <item>
-      <title>5 key takeaways from the 2026 State of Software Delivery</title>
-      <link>https://circleci.com/blog/five-takeaways-2026-software-delivery-report/</link>
-      <guid isPermaLink="true">https://circleci.com/blog/five-takeaways-2026-software-delivery-report/</guid>
-      <pubDate>Wed, 18 Feb 2026 14:00:00 +0000</pubDate>
       <source>CircleCI Blog</source>
     </item>
     <item>
@@ -2703,76 +2787,6 @@
       <source>Azure Updates</source>
     </item>
     <item>
-      <title>[Launched] Generally Available: Azure Functions enables OpenTelemetry support</title>
-      <link>https://azure.microsoft.com/updates?id=525479</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525479</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Azure Container Apps adds support for agentic Docker Compose</title>
-      <link>https://azure.microsoft.com/updates?id=525470</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525470</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Azure Container Apps introduces flexible workload profile</title>
-      <link>https://azure.microsoft.com/updates?id=525465</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525465</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Azure Container Apps serverless GPUs in additional regions</title>
-      <link>https://azure.microsoft.com/updates?id=525460</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525460</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Confidential computing in Azure Container Apps</title>
-      <link>https://azure.microsoft.com/updates?id=525455</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525455</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Standard V2 NAT Gateway and StandardV2 Public IPs</title>
-      <link>https://azure.microsoft.com/updates?id=525405</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525405</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: SQL database in Microsoft Fabric</title>
-      <link>https://azure.microsoft.com/updates?id=525388</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525388</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Support for Italian and Portuguese in Azure Cosmos DB for NoSQL full-text search</title>
-      <link>https://azure.microsoft.com/updates?id=523824</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523824</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Azure Cosmos DB MCP ToolKit for Microsoft Foundry Agent Service</title>
-      <link>https://azure.microsoft.com/updates?id=523814</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523814</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Fuzzy search in Azure Cosmos DB for NoSQL full-text search</title>
-      <link>https://azure.microsoft.com/updates?id=523809</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523809</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
       <title>Microsoft Entra at Ignite 2025: November 17-21</title>
       <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-at-ignite-2025-november-17-21/ba-p/4400194</link>
       <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-at-ignite-2025-november-17-21/ba-p/4400194</guid>
@@ -2920,25 +2934,11 @@
       <source>Terraform weekly</source>
     </item>
     <item>
-      <title>Your shortcut to Microsoft Entra deployment success</title>
-      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/your-shortcut-to-microsoft-entra-deployment-success/ba-p/4460533</link>
-      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/your-shortcut-to-microsoft-entra-deployment-success/ba-p/4460533</guid>
-      <pubDate>Fri, 10 Oct 2025 17:36:11 +0000</pubDate>
-      <source>Microsoft Entra Blog</source>
-    </item>
-    <item>
       <title>Introducing Headlamp Plugin for Karpenter - Scaling and Visibility</title>
       <link>https://kubernetes.io/blog/2025/10/06/introducing-headlamp-plugin-for-karpenter/</link>
       <guid isPermaLink="true">https://kubernetes.io/blog/2025/10/06/introducing-headlamp-plugin-for-karpenter/</guid>
       <pubDate>Mon, 06 Oct 2025 00:00:00 +0000</pubDate>
       <source>Kubernetes Blog</source>
-    </item>
-    <item>
-      <title>The Microsoft Entra agent for smarter access governance: Access Review Agent</title>
-      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/the-microsoft-entra-agent-for-smarter-access-governance-access/ba-p/4279689</link>
-      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/the-microsoft-entra-agent-for-smarter-access-governance-access/ba-p/4279689</guid>
-      <pubDate>Tue, 30 Sep 2025 13:00:00 +0000</pubDate>
-      <source>Microsoft Entra Blog</source>
     </item>
     <item>
       <title>Announcing Changed Block Tracking API support (alpha)</title>

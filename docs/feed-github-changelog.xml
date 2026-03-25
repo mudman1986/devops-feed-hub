@@ -5,8 +5,26 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml</link>
     <description>Articles from GitHub Changelog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 24 Mar 2026 12:44:29 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 25 Mar 2026 01:12:02 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Ask @copilot to make changes to any pull request</title>
+      <link>https://github.blog/changelog/2026-03-24-ask-copilot-to-make-changes-to-any-pull-request</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-24-ask-copilot-to-make-changes-to-any-pull-request</guid>
+      <pubDate>Tue, 24 Mar 2026 20:08:03 +0000</pubDate>
+    </item>
+    <item>
+      <title>Manage Copilot coding agent repository access via the API</title>
+      <link>https://github.blog/changelog/2026-03-24-manage-copilot-coding-agent-repository-access-via-the-api</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-24-manage-copilot-coding-agent-repository-access-via-the-api</guid>
+      <pubDate>Tue, 24 Mar 2026 20:07:01 +0000</pubDate>
+    </item>
+    <item>
+      <title>Faster incremental analysis with CodeQL in pull requests</title>
+      <link>https://github.blog/changelog/2026-03-24-faster-incremental-analysis-with-codeql-in-pull-requests</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-24-faster-incremental-analysis-with-codeql-in-pull-requests</guid>
+      <pubDate>Tue, 24 Mar 2026 13:25:15 +0000</pubDate>
+    </item>
     <item>
       <title>Gemini 3.1 Pro is now available in JetBrains IDEs, Xcode, and Eclipse</title>
       <link>https://github.blog/changelog/2026-03-23-gemini-3-1-pro-is-now-available-in-jetbrains-ides-xcode-and-eclipse</link>
@@ -48,24 +66,6 @@
       <link>https://github.blog/changelog/2026-03-19-more-visibility-into-copilot-coding-agent-sessions</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-03-19-more-visibility-into-copilot-coding-agent-sessions</guid>
       <pubDate>Thu, 19 Mar 2026 22:26:33 +0000</pubDate>
-    </item>
-    <item>
-      <title>GitHub Actions: Late March 2026 updates</title>
-      <link>https://github.blog/changelog/2026-03-19-github-actions-late-march-2026-updates</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-19-github-actions-late-march-2026-updates</guid>
-      <pubDate>Thu, 19 Mar 2026 20:41:58 +0000</pubDate>
-    </item>
-    <item>
-      <title>Actions Runner Controller release 0.14.0</title>
-      <link>https://github.blog/changelog/2026-03-19-actions-runner-controller-release-0-14-0</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-19-actions-runner-controller-release-0-14-0</guid>
-      <pubDate>Thu, 19 Mar 2026 19:17:41 +0000</pubDate>
-    </item>
-    <item>
-      <title>Copilot coding agent now starts work 50% faster</title>
-      <link>https://github.blog/changelog/2026-03-19-copilot-coding-agent-now-starts-work-50-faster</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-19-copilot-coding-agent-now-starts-work-50-faster</guid>
-      <pubDate>Thu, 19 Mar 2026 19:04:28 +0000</pubDate>
     </item>
   </channel>
 </rss>

@@ -5,8 +5,68 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml</link>
     <description>Articles from Azure Updates</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 24 Mar 2026 12:44:29 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 25 Mar 2026 01:12:02 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>[Launched] Generally Available: Container network metrics filtering for AKS</title>
+      <link>https://azure.microsoft.com/updates?id=557902</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557902</guid>
+      <pubDate>Tue, 24 Mar 2026 23:00:18 +0000</pubDate>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: AI Agent for container networking troubleshooting</title>
+      <link>https://azure.microsoft.com/updates?id=557887</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557887</guid>
+      <pubDate>Tue, 24 Mar 2026 21:45:26 +0000</pubDate>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: AKS managed GPU metrics in Azure Monitor</title>
+      <link>https://azure.microsoft.com/updates?id=557882</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557882</guid>
+      <pubDate>Tue, 24 Mar 2026 18:30:36 +0000</pubDate>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Cross-cluster networking in Azure Kubernetes Fleet Manager</title>
+      <link>https://azure.microsoft.com/updates?id=557877</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557877</guid>
+      <pubDate>Tue, 24 Mar 2026 18:30:36 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Azure Container Storage v2.1.0 now with Elastic SAN integration and on demand installation</title>
+      <link>https://azure.microsoft.com/updates?id=557912</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557912</guid>
+      <pubDate>Tue, 24 Mar 2026 18:15:48 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Container network logs in AKS</title>
+      <link>https://azure.microsoft.com/updates?id=557892</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557892</guid>
+      <pubDate>Tue, 24 Mar 2026 18:15:48 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Azure Monitor Prometheus community recommended alerts for Azure Arc-enabled Kubernetes</title>
+      <link>https://azure.microsoft.com/updates?id=558825</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558825</guid>
+      <pubDate>Tue, 24 Mar 2026 17:30:29 +0000</pubDate>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Application routing with meshless Istio in AKS</title>
+      <link>https://azure.microsoft.com/updates?id=557927</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557927</guid>
+      <pubDate>Tue, 24 Mar 2026 17:30:29 +0000</pubDate>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Microsoft Azure Kubernetes Application Network</title>
+      <link>https://azure.microsoft.com/updates?id=557922</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557922</guid>
+      <pubDate>Tue, 24 Mar 2026 17:30:29 +0000</pubDate>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Ingest OTLP data into Azure Monitor with the OpenTelemetry Collector</title>
+      <link>https://azure.microsoft.com/updates?id=559273</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=559273</guid>
+      <pubDate>Tue, 24 Mar 2026 17:15:45 +0000</pubDate>
+    </item>
     <item>
       <title>[In preview] Public Preview: Azure SQL updates for mid-March 2026</title>
       <link>https://azure.microsoft.com/updates?id=558116</link>
@@ -1139,66 +1199,6 @@
       <title>[Launched] Announcing: Resources for migrating to Azure Functions Flex Consumption</title>
       <link>https://azure.microsoft.com/updates?id=525500</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525500</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Azure Functions enables OpenTelemetry support</title>
-      <link>https://azure.microsoft.com/updates?id=525479</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525479</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Azure Container Apps adds support for agentic Docker Compose</title>
-      <link>https://azure.microsoft.com/updates?id=525470</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525470</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Azure Container Apps introduces flexible workload profile</title>
-      <link>https://azure.microsoft.com/updates?id=525465</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525465</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Azure Container Apps serverless GPUs in additional regions</title>
-      <link>https://azure.microsoft.com/updates?id=525460</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525460</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Confidential computing in Azure Container Apps</title>
-      <link>https://azure.microsoft.com/updates?id=525455</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525455</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Standard V2 NAT Gateway and StandardV2 Public IPs</title>
-      <link>https://azure.microsoft.com/updates?id=525405</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525405</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: SQL database in Microsoft Fabric</title>
-      <link>https://azure.microsoft.com/updates?id=525388</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525388</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Support for Italian and Portuguese in Azure Cosmos DB for NoSQL full-text search</title>
-      <link>https://azure.microsoft.com/updates?id=523824</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523824</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Azure Cosmos DB MCP ToolKit for Microsoft Foundry Agent Service</title>
-      <link>https://azure.microsoft.com/updates?id=523814</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523814</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Fuzzy search in Azure Cosmos DB for NoSQL full-text search</title>
-      <link>https://azure.microsoft.com/updates?id=523809</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523809</guid>
       <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
     </item>
     <item>

@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-circleci-blog.xml</link>
     <description>Articles from CircleCI Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-circleci-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 24 Mar 2026 12:44:29 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 25 Mar 2026 01:12:02 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Deployment strategies: Types, trade-offs, and how to choose</title>
+      <link>https://circleci.com/blog/deployment-strategies-types-trade-offs-and-how-to-choose/</link>
+      <guid isPermaLink="true">https://circleci.com/blog/deployment-strategies-types-trade-offs-and-how-to-choose/</guid>
+      <pubDate>Tue, 24 Mar 2026 15:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>What are test hooks in AI-native development?</title>
       <link>https://circleci.com/blog/test-hooks-ai-development/</link>
@@ -60,12 +66,6 @@
       <link>https://circleci.com/blog/build-and-test-your-first-kubernetes-operator-with-go-kubebuilder/</link>
       <guid isPermaLink="true">https://circleci.com/blog/build-and-test-your-first-kubernetes-operator-with-go-kubebuilder/</guid>
       <pubDate>Wed, 18 Feb 2026 16:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>5 key takeaways from the 2026 State of Software Delivery</title>
-      <link>https://circleci.com/blog/five-takeaways-2026-software-delivery-report/</link>
-      <guid isPermaLink="true">https://circleci.com/blog/five-takeaways-2026-software-delivery-report/</guid>
-      <pubDate>Wed, 18 Feb 2026 14:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
