@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml</link>
     <description>Articles from Microsoft Security</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 25 Mar 2026 12:41:32 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 26 Mar 2026 01:17:54 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Identity security is the new pressure point for modern cyberattacks</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/03/25/identity-security-is-the-new-pressure-point-for-modern-cyberattacks/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/25/identity-security-is-the-new-pressure-point-for-modern-cyberattacks/</guid>
+      <pubDate>Wed, 25 Mar 2026 16:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Guidance for detecting, investigating, and defending against the Trivy supply chain compromise</title>
       <link>https://www.microsoft.com/en-us/security/blog/2026/03/24/detecting-investigating-defending-against-trivy-supply-chain-compromise/</link>
@@ -60,12 +66,6 @@
       <link>https://techcommunity.microsoft.com/blog/microsoft-security-blog/new-microsoft-purview-innovations-for-fabric-to-safely-accelerate-your-ai-transf/4502156</link>
       <guid isPermaLink="true">https://techcommunity.microsoft.com/blog/microsoft-security-blog/new-microsoft-purview-innovations-for-fabric-to-safely-accelerate-your-ai-transf/4502156</guid>
       <pubDate>Mon, 16 Mar 2026 17:10:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Help on the line: How a Microsoft Teams support call led to compromise</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/03/16/help-on-the-line-how-a-microsoft-teams-support-call-led-to-compromise/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/16/help-on-the-line-how-a-microsoft-teams-support-call-led-to-compromise/</guid>
-      <pubDate>Mon, 16 Mar 2026 16:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

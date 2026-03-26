@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-gitlab-blog.xml</link>
     <description>Articles from GitLab Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-gitlab-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 25 Mar 2026 12:41:32 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 26 Mar 2026 01:17:54 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Manage vulnerability noise at scale with auto-dismiss policies</title>
+      <link>https://about.gitlab.com/blog/auto-dismiss-vulnerability-management-policy/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/auto-dismiss-vulnerability-management-policy/</guid>
+      <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Agile planning gets a boost from new features in GitLab 18.10</title>
       <link>https://about.gitlab.com/blog/agile-planning-gets-a-boost-from-new-features-in-gitlab-18-10/</link>
@@ -120,12 +126,6 @@
       <link>https://about.gitlab.com/blog/agentic-sdlc-gitlab-and-tcs-deliver-intelligent-orchestration-across-the-enterprise/</link>
       <guid isPermaLink="true">https://about.gitlab.com/blog/agentic-sdlc-gitlab-and-tcs-deliver-intelligent-orchestration-across-the-enterprise/</guid>
       <pubDate>Tue, 24 Feb 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>GitLab extends Omnibus package signing key expiration to 2028</title>
-      <link>https://about.gitlab.com/blog/gitlab-extends-omnibus-package-signing-key-expiration-to-2028/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/gitlab-extends-omnibus-package-signing-key-expiration-to-2028/</guid>
-      <pubDate>Fri, 20 Feb 2026 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

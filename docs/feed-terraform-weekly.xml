@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-terraform-weekly.xml</link>
     <description>Articles from Terraform weekly</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-terraform-weekly.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 25 Mar 2026 12:41:32 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 26 Mar 2026 01:17:54 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Issue #267 - Terraform MCP Meets Local LLMs for Air-Gapped IaC, GitHub Actions Drift Detection, 5 Dev Tips, InfraKitchen, Terravision, and AWS Lambda VPC Compliance Explained</title>
+      <link>https://www.weekly.tf/p/issue-267-terraform-mcp-meets-local-llms-for-air-gapped-iac-github-actions-drift-detection-5-dev-tip</link>
+      <guid isPermaLink="true">https://www.weekly.tf/p/issue-267-terraform-mcp-meets-local-llms-for-air-gapped-iac-github-actions-drift-detection-5-dev-tip</guid>
+      <pubDate>Wed, 25 Mar 2026 16:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Issue #266 - AWS ECS Explained, Guard Hook Workarounds, Pulumi as State Backend, and 90% Faster Terraform Testing with AI</title>
       <link>https://www.weekly.tf/p/issue-266-aws-ecs-explained-guard-hook-workarounds-pulumi-as-state-backend-and-90-faster-terraform</link>
@@ -120,12 +126,6 @@
       <link>https://www.weekly.tf/p/issue-248-terraform-state-locking-explained-rightsize-terraform-modules-terraform-with-ai-and-github</link>
       <guid isPermaLink="true">https://www.weekly.tf/p/issue-248-terraform-state-locking-explained-rightsize-terraform-modules-terraform-with-ai-and-github</guid>
       <pubDate>Wed, 22 Oct 2025 15:00:42 +0000</pubDate>
-    </item>
-    <item>
-      <title>Issue #247 - Ephemeral Resources, Automating Hub &amp; Spoke Secure Azure Networks, AWS SES to Gmail, Semgrep with Terraform, Slack and  Bedrock Agents, Azure TFE</title>
-      <link>https://www.weekly.tf/p/issue-247-ephemeral-resources-automating-hub-spoke-secure-azure-networks-aws-ses-to-gmail-semgrep</link>
-      <guid isPermaLink="true">https://www.weekly.tf/p/issue-247-ephemeral-resources-automating-hub-spoke-secure-azure-networks-aws-ses-to-gmail-semgrep</guid>
-      <pubDate>Wed, 15 Oct 2025 15:01:19 +0000</pubDate>
     </item>
   </channel>
 </rss>

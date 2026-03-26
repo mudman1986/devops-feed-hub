@@ -5,14 +5,133 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 25 Mar 2026 12:41:32 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 26 Mar 2026 01:17:54 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>GitHub Copilot for Jira — Public preview enhancements</title>
+      <link>https://github.blog/changelog/2026-03-25-github-copilot-for-jira-public-preview-enhancements</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-25-github-copilot-for-jira-public-preview-enhancements</guid>
+      <pubDate>Wed, 25 Mar 2026 21:09:35 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Cosmos DB Mirroring in Microsoft Fabric with private endpoints</title>
+      <link>https://azure.microsoft.com/updates?id=558836</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558836</guid>
+      <pubDate>Wed, 25 Mar 2026 20:00:39 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Blue-green agent pool upgrade in AKS</title>
+      <link>https://azure.microsoft.com/updates?id=557862</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557862</guid>
+      <pubDate>Wed, 25 Mar 2026 20:00:39 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>Updates to GitHub Copilot interaction data usage policy</title>
+      <link>https://github.blog/news-insights/company-news/updates-to-github-copilot-interaction-data-usage-policy/</link>
+      <guid isPermaLink="true">https://github.blog/news-insights/company-news/updates-to-github-copilot-interaction-data-usage-policy/</guid>
+      <pubDate>Wed, 25 Mar 2026 19:02:29 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
+    <item>
+      <title>Updates to our Privacy Statement and Terms of Service: How we use your data</title>
+      <link>https://github.blog/changelog/2026-03-25-updates-to-our-privacy-statement-and-terms-of-service-how-we-use-your-data</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-25-updates-to-our-privacy-statement-and-terms-of-service-how-we-use-your-data</guid>
+      <pubDate>Wed, 25 Mar 2026 18:56:45 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Copilot usage metrics now identify active Copilot coding agent users</title>
+      <link>https://github.blog/changelog/2026-03-25-copilot-usage-metrics-now-identify-active-copilot-coding-agent-users</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-25-copilot-usage-metrics-now-identify-active-copilot-coding-agent-users</guid>
+      <pubDate>Wed, 25 Mar 2026 18:49:10 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Fabric Mirroring integration for Azure Database for MySQL</title>
+      <link>https://azure.microsoft.com/updates?id=558841</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558841</guid>
+      <pubDate>Wed, 25 Mar 2026 17:45:33 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>[Launched] Public Preview: Azure SQL Managed Instance change event streaming</title>
+      <link>https://azure.microsoft.com/updates?id=558884</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558884</guid>
+      <pubDate>Wed, 25 Mar 2026 17:30:45 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Custom time zone support for pg_cron via cron.timezone in Azure Database for PostgreSQL</title>
+      <link>https://azure.microsoft.com/updates?id=558870</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558870</guid>
+      <pubDate>Wed, 25 Mar 2026 17:30:45 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: PostgreSQL migration service supports compatible EDB workloads into Azure Database for PostgreSQL</title>
+      <link>https://azure.microsoft.com/updates?id=558865</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558865</guid>
+      <pubDate>Wed, 25 Mar 2026 17:30:45 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: PostgreSQL migration service supports for Google AlloyDB into Azure Database for PostgreSQL</title>
+      <link>https://azure.microsoft.com/updates?id=558851</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558851</guid>
+      <pubDate>Wed, 25 Mar 2026 17:30:45 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Online migration now uses the pgoutput plugin</title>
+      <link>https://azure.microsoft.com/updates?id=558846</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558846</guid>
+      <pubDate>Wed, 25 Mar 2026 17:30:45 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>Disable comments on individual commits</title>
+      <link>https://github.blog/changelog/2026-03-25-disable-comments-on-individual-commits</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-25-disable-comments-on-individual-commits</guid>
+      <pubDate>Wed, 25 Mar 2026 17:07:52 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Microsoft Entra Tenant Governance: Secure and Manage Multi-Tenant Environments at Scale</title>
+      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-tenant-governance-secure-and-manage-multi-tenant/ba-p/4462427</link>
+      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-tenant-governance-secure-and-manage-multi-tenant/ba-p/4462427</guid>
+      <pubDate>Wed, 25 Mar 2026 16:00:00 +0000</pubDate>
+      <source>Microsoft Entra Blog</source>
+    </item>
+    <item>
+      <title>Identity security is the new pressure point for modern cyberattacks</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/03/25/identity-security-is-the-new-pressure-point-for-modern-cyberattacks/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/25/identity-security-is-the-new-pressure-point-for-modern-cyberattacks/</guid>
+      <pubDate>Wed, 25 Mar 2026 16:00:00 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>Issue #267 - Terraform MCP Meets Local LLMs for Air-Gapped IaC, GitHub Actions Drift Detection, 5 Dev Tips, InfraKitchen, Terravision, and AWS Lambda VPC Compliance Explained</title>
+      <link>https://www.weekly.tf/p/issue-267-terraform-mcp-meets-local-llms-for-air-gapped-iac-github-actions-drift-detection-5-dev-tip</link>
+      <guid isPermaLink="true">https://www.weekly.tf/p/issue-267-terraform-mcp-meets-local-llms-for-air-gapped-iac-github-actions-drift-detection-5-dev-tip</guid>
+      <pubDate>Wed, 25 Mar 2026 16:00:00 +0000</pubDate>
+      <source>Terraform weekly</source>
+    </item>
     <item>
       <title>Guidance for detecting, investigating, and defending against the Trivy supply chain compromise</title>
       <link>https://www.microsoft.com/en-us/security/blog/2026/03/24/detecting-investigating-defending-against-trivy-supply-chain-compromise/</link>
       <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/24/detecting-investigating-defending-against-trivy-supply-chain-compromise/</guid>
       <pubDate>Wed, 25 Mar 2026 00:03:03 +0000</pubDate>
       <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>Manage vulnerability noise at scale with auto-dismiss policies</title>
+      <link>https://about.gitlab.com/blog/auto-dismiss-vulnerability-management-policy/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/auto-dismiss-vulnerability-management-policy/</guid>
+      <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
+      <source>GitLab Blog</source>
     </item>
     <item>
       <title>[Launched] Generally Available: Container network metrics filtering for AKS</title>
@@ -29,7 +148,7 @@
       <source>Azure Updates</source>
     </item>
     <item>
-      <title>Ask @copilot to make changes to any pull request</title>
+      <title>Ask @copilot to make changes to a pull request</title>
       <link>https://github.blog/changelog/2026-03-24-ask-copilot-to-make-changes-to-any-pull-request</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-03-24-ask-copilot-to-make-changes-to-any-pull-request</guid>
       <pubDate>Tue, 24 Mar 2026 20:08:03 +0000</pubDate>
@@ -258,34 +377,6 @@
       <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/20/secure-agentic-ai-end-to-end/</guid>
       <pubDate>Fri, 20 Mar 2026 16:00:00 +0000</pubDate>
       <source>Microsoft Security</source>
-    </item>
-    <item>
-      <title>Trace any Copilot coding agent commit to its session logs</title>
-      <link>https://github.blog/changelog/2026-03-20-trace-any-copilot-coding-agent-commit-to-its-session-logs</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-20-trace-any-copilot-coding-agent-commit-to-its-session-logs</guid>
-      <pubDate>Fri, 20 Mar 2026 12:21:49 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>Monitor Copilot coding agent logs live in Raycast</title>
-      <link>https://github.blog/changelog/2026-03-20-monitor-copilot-coding-agent-logs-live-in-raycast</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-20-monitor-copilot-coding-agent-logs-live-in-raycast</guid>
-      <pubDate>Fri, 20 Mar 2026 12:21:30 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>A smoother navigation experience in GitHub Mobile for Android</title>
-      <link>https://github.blog/changelog/2026-03-20-a-smoother-navigation-experience-in-github-mobile-for-android</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-20-a-smoother-navigation-experience-in-github-mobile-for-android</guid>
-      <pubDate>Fri, 20 Mar 2026 10:45:48 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>More visibility into Copilot coding agent sessions</title>
-      <link>https://github.blog/changelog/2026-03-19-more-visibility-into-copilot-coding-agent-sessions</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-19-more-visibility-into-copilot-coding-agent-sessions</guid>
-      <pubDate>Thu, 19 Mar 2026 22:26:33 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>Secure access in the age of AI: Key findings from our 2026 Report</title>
@@ -603,13 +694,6 @@
       <source>GitHub Blog</source>
     </item>
     <item>
-      <title>Help on the line: How a Microsoft Teams support call led to compromise</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/03/16/help-on-the-line-how-a-microsoft-teams-support-call-led-to-compromise/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/16/help-on-the-line-how-a-microsoft-teams-support-call-led-to-compromise/</guid>
-      <pubDate>Mon, 16 Mar 2026 16:00:00 +0000</pubDate>
-      <source>Microsoft Security</source>
-    </item>
-    <item>
       <title>Introducing the Jenkins Plugin of the Month</title>
       <link>https:/www.jenkins.io/blog/2026/03/16/plugin-of-the-month/</link>
       <guid isPermaLink="true">https:/www.jenkins.io/blog/2026/03/16/plugin-of-the-month/</guid>
@@ -762,13 +846,6 @@
       <guid isPermaLink="true">https://www.docker.com/blog/building-ai-teams-docker-sandboxes-agent/</guid>
       <pubDate>Wed, 11 Mar 2026 13:00:00 +0000</pubDate>
       <source>Docker Blog</source>
-    </item>
-    <item>
-      <title>The era of “AI as text” is over. Execution is the new interface.</title>
-      <link>https://github.blog/ai-and-ml/github-copilot/the-era-of-ai-as-text-is-over-execution-is-the-new-interface/</link>
-      <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/the-era-of-ai-as-text-is-over-execution-is-the-new-interface/</guid>
-      <pubDate>Tue, 10 Mar 2026 20:16:01 +0000</pubDate>
-      <source>GitHub Blog</source>
     </item>
     <item>
       <title>HCP Vault Dedicated now available in additional AWS and Azure regions</title>
@@ -1140,13 +1217,6 @@
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557623</guid>
       <pubDate>Fri, 20 Feb 2026 19:00:04 +0000</pubDate>
       <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>GitLab extends Omnibus package signing key expiration to 2028</title>
-      <link>https://about.gitlab.com/blog/gitlab-extends-omnibus-package-signing-key-expiration-to-2028/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/gitlab-extends-omnibus-package-signing-key-expiration-to-2028/</guid>
-      <pubDate>Fri, 20 Feb 2026 00:00:00 +0000</pubDate>
-      <source>GitLab Blog</source>
     </item>
     <item>
       <title>Saving banks from technical debt: How Atruvia built secure, self-service infrastructure</title>
@@ -2731,62 +2801,6 @@
       <source>Azure Updates</source>
     </item>
     <item>
-      <title>[In preview] Public Preview: Azure Functions support for Java 25</title>
-      <link>https://azure.microsoft.com/updates?id=526072</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=526072</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Application Gateway for Containers – Slow start</title>
-      <link>https://azure.microsoft.com/updates?id=525893</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525893</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Application Gateway for Containers Istio Service Mesh integration</title>
-      <link>https://azure.microsoft.com/updates?id=525874</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525874</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Azure DocumentDB high-performance storage</title>
-      <link>https://azure.microsoft.com/updates?id=525549</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525549</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Model Context Protocol (MCP) tool trigger for Azure Functions</title>
-      <link>https://azure.microsoft.com/updates?id=525523</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525523</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Azure Functions durable task scheduler Dedicated SKU (GA) &amp; Consumption SKU (Public Preview)</title>
-      <link>https://azure.microsoft.com/updates?id=525518</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525518</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Self-hosted remote MCP servers on Azure Functions</title>
-      <link>https://azure.microsoft.com/updates?id=525505</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525505</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[Launched] Announcing: Resources for migrating to Azure Functions Flex Consumption</title>
-      <link>https://azure.microsoft.com/updates?id=525500</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525500</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
       <title>Microsoft Entra at Ignite 2025: November 17-21</title>
       <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-at-ignite-2025-november-17-21/ba-p/4400194</link>
       <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-at-ignite-2025-november-17-21/ba-p/4400194</guid>
@@ -2820,13 +2834,6 @@
       <guid isPermaLink="true">https://kubernetes.io/blog/2025/11/09/steering-committee-results-2025/</guid>
       <pubDate>Sun, 09 Nov 2025 20:10:00 +0000</pubDate>
       <source>Kubernetes Blog</source>
-    </item>
-    <item>
-      <title>The Conditional Access Optimization Agent keeps getting better—and making your life easier</title>
-      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/the-conditional-access-optimization-agent-keeps-getting-better/ba-p/4460535</link>
-      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/the-conditional-access-optimization-agent-keeps-getting-better/ba-p/4460535</guid>
-      <pubDate>Sun, 09 Nov 2025 18:04:33 +0000</pubDate>
-      <source>Microsoft Entra Blog</source>
     </item>
     <item>
       <title>Partner with Atlassian and unlock your next wave of growth</title>
@@ -2925,13 +2932,6 @@
       <guid isPermaLink="true">https:/www.jenkins.io/blog/2025/10/16/revamped-tests-in-jenkins/</guid>
       <pubDate>Thu, 16 Oct 2025 00:00:00 +0000</pubDate>
       <source>Jenkins Blog</source>
-    </item>
-    <item>
-      <title>Issue #247 - Ephemeral Resources, Automating Hub &amp; Spoke Secure Azure Networks, AWS SES to Gmail, Semgrep with Terraform, Slack and  Bedrock Agents, Azure TFE</title>
-      <link>https://www.weekly.tf/p/issue-247-ephemeral-resources-automating-hub-spoke-secure-azure-networks-aws-ses-to-gmail-semgrep</link>
-      <guid isPermaLink="true">https://www.weekly.tf/p/issue-247-ephemeral-resources-automating-hub-spoke-secure-azure-networks-aws-ses-to-gmail-semgrep</guid>
-      <pubDate>Wed, 15 Oct 2025 15:01:19 +0000</pubDate>
-      <source>Terraform weekly</source>
     </item>
     <item>
       <title>Introducing Headlamp Plugin for Karpenter - Scaling and Visibility</title>
@@ -3197,13 +3197,6 @@
       <link>https:/www.jenkins.io/blog/2025/05/02/pipeline-graph-view/</link>
       <guid isPermaLink="true">https:/www.jenkins.io/blog/2025/05/02/pipeline-graph-view/</guid>
       <pubDate>Fri, 02 May 2025 00:00:00 +0000</pubDate>
-      <source>Jenkins Blog</source>
-    </item>
-    <item>
-      <title>Redesigning Jenkins (Part One)</title>
-      <link>https:/www.jenkins.io/blog/2025/03/26/design-post/</link>
-      <guid isPermaLink="true">https:/www.jenkins.io/blog/2025/03/26/design-post/</guid>
-      <pubDate>Wed, 26 Mar 2025 00:00:00 +0000</pubDate>
       <source>Jenkins Blog</source>
     </item>
   </channel>

@@ -5,8 +5,56 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml</link>
     <description>Articles from Azure Updates</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 25 Mar 2026 12:41:32 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 26 Mar 2026 01:17:54 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>[Launched] Generally Available: Cosmos DB Mirroring in Microsoft Fabric with private endpoints</title>
+      <link>https://azure.microsoft.com/updates?id=558836</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558836</guid>
+      <pubDate>Wed, 25 Mar 2026 20:00:39 +0000</pubDate>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Blue-green agent pool upgrade in AKS</title>
+      <link>https://azure.microsoft.com/updates?id=557862</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557862</guid>
+      <pubDate>Wed, 25 Mar 2026 20:00:39 +0000</pubDate>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Fabric Mirroring integration for Azure Database for MySQL</title>
+      <link>https://azure.microsoft.com/updates?id=558841</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558841</guid>
+      <pubDate>Wed, 25 Mar 2026 17:45:33 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Launched] Public Preview: Azure SQL Managed Instance change event streaming</title>
+      <link>https://azure.microsoft.com/updates?id=558884</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558884</guid>
+      <pubDate>Wed, 25 Mar 2026 17:30:45 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Custom time zone support for pg_cron via cron.timezone in Azure Database for PostgreSQL</title>
+      <link>https://azure.microsoft.com/updates?id=558870</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558870</guid>
+      <pubDate>Wed, 25 Mar 2026 17:30:45 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: PostgreSQL migration service supports compatible EDB workloads into Azure Database for PostgreSQL</title>
+      <link>https://azure.microsoft.com/updates?id=558865</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558865</guid>
+      <pubDate>Wed, 25 Mar 2026 17:30:45 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: PostgreSQL migration service supports for Google AlloyDB into Azure Database for PostgreSQL</title>
+      <link>https://azure.microsoft.com/updates?id=558851</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558851</guid>
+      <pubDate>Wed, 25 Mar 2026 17:30:45 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Online migration now uses the pgoutput plugin</title>
+      <link>https://azure.microsoft.com/updates?id=558846</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558846</guid>
+      <pubDate>Wed, 25 Mar 2026 17:30:45 +0000</pubDate>
+    </item>
     <item>
       <title>[Launched] Generally Available: Container network metrics filtering for AKS</title>
       <link>https://azure.microsoft.com/updates?id=557902</link>
@@ -1151,54 +1199,6 @@
       <title>[In preview] Public Preview: Azure Functions support for Node.js 24</title>
       <link>https://azure.microsoft.com/updates?id=526077</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=526077</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Azure Functions support for Java 25</title>
-      <link>https://azure.microsoft.com/updates?id=526072</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=526072</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Application Gateway for Containers – Slow start</title>
-      <link>https://azure.microsoft.com/updates?id=525893</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525893</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Application Gateway for Containers Istio Service Mesh integration</title>
-      <link>https://azure.microsoft.com/updates?id=525874</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525874</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Azure DocumentDB high-performance storage</title>
-      <link>https://azure.microsoft.com/updates?id=525549</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525549</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Model Context Protocol (MCP) tool trigger for Azure Functions</title>
-      <link>https://azure.microsoft.com/updates?id=525523</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525523</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Azure Functions durable task scheduler Dedicated SKU (GA) &amp; Consumption SKU (Public Preview)</title>
-      <link>https://azure.microsoft.com/updates?id=525518</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525518</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Self-hosted remote MCP servers on Azure Functions</title>
-      <link>https://azure.microsoft.com/updates?id=525505</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525505</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Launched] Announcing: Resources for migrating to Azure Functions Flex Consumption</title>
-      <link>https://azure.microsoft.com/updates?id=525500</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525500</guid>
       <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
     </item>
     <item>

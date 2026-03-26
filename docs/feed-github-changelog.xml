@@ -5,10 +5,34 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml</link>
     <description>Articles from GitHub Changelog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 25 Mar 2026 12:41:32 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 26 Mar 2026 01:17:54 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
-      <title>Ask @copilot to make changes to any pull request</title>
+      <title>GitHub Copilot for Jira — Public preview enhancements</title>
+      <link>https://github.blog/changelog/2026-03-25-github-copilot-for-jira-public-preview-enhancements</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-25-github-copilot-for-jira-public-preview-enhancements</guid>
+      <pubDate>Wed, 25 Mar 2026 21:09:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>Updates to our Privacy Statement and Terms of Service: How we use your data</title>
+      <link>https://github.blog/changelog/2026-03-25-updates-to-our-privacy-statement-and-terms-of-service-how-we-use-your-data</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-25-updates-to-our-privacy-statement-and-terms-of-service-how-we-use-your-data</guid>
+      <pubDate>Wed, 25 Mar 2026 18:56:45 +0000</pubDate>
+    </item>
+    <item>
+      <title>Copilot usage metrics now identify active Copilot coding agent users</title>
+      <link>https://github.blog/changelog/2026-03-25-copilot-usage-metrics-now-identify-active-copilot-coding-agent-users</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-25-copilot-usage-metrics-now-identify-active-copilot-coding-agent-users</guid>
+      <pubDate>Wed, 25 Mar 2026 18:49:10 +0000</pubDate>
+    </item>
+    <item>
+      <title>Disable comments on individual commits</title>
+      <link>https://github.blog/changelog/2026-03-25-disable-comments-on-individual-commits</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-25-disable-comments-on-individual-commits</guid>
+      <pubDate>Wed, 25 Mar 2026 17:07:52 +0000</pubDate>
+    </item>
+    <item>
+      <title>Ask @copilot to make changes to a pull request</title>
       <link>https://github.blog/changelog/2026-03-24-ask-copilot-to-make-changes-to-any-pull-request</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-03-24-ask-copilot-to-make-changes-to-any-pull-request</guid>
       <pubDate>Tue, 24 Mar 2026 20:08:03 +0000</pubDate>
@@ -42,30 +66,6 @@
       <link>https://github.blog/changelog/2026-03-20-copilot-usage-metrics-now-resolve-auto-model-selection-to-actual-models</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-03-20-copilot-usage-metrics-now-resolve-auto-model-selection-to-actual-models</guid>
       <pubDate>Fri, 20 Mar 2026 18:37:18 +0000</pubDate>
-    </item>
-    <item>
-      <title>Trace any Copilot coding agent commit to its session logs</title>
-      <link>https://github.blog/changelog/2026-03-20-trace-any-copilot-coding-agent-commit-to-its-session-logs</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-20-trace-any-copilot-coding-agent-commit-to-its-session-logs</guid>
-      <pubDate>Fri, 20 Mar 2026 12:21:49 +0000</pubDate>
-    </item>
-    <item>
-      <title>Monitor Copilot coding agent logs live in Raycast</title>
-      <link>https://github.blog/changelog/2026-03-20-monitor-copilot-coding-agent-logs-live-in-raycast</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-20-monitor-copilot-coding-agent-logs-live-in-raycast</guid>
-      <pubDate>Fri, 20 Mar 2026 12:21:30 +0000</pubDate>
-    </item>
-    <item>
-      <title>A smoother navigation experience in GitHub Mobile for Android</title>
-      <link>https://github.blog/changelog/2026-03-20-a-smoother-navigation-experience-in-github-mobile-for-android</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-20-a-smoother-navigation-experience-in-github-mobile-for-android</guid>
-      <pubDate>Fri, 20 Mar 2026 10:45:48 +0000</pubDate>
-    </item>
-    <item>
-      <title>More visibility into Copilot coding agent sessions</title>
-      <link>https://github.blog/changelog/2026-03-19-more-visibility-into-copilot-coding-agent-sessions</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-19-more-visibility-into-copilot-coding-agent-sessions</guid>
-      <pubDate>Thu, 19 Mar 2026 22:26:33 +0000</pubDate>
     </item>
   </channel>
 </rss>
