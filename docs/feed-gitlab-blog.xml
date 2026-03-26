@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-gitlab-blog.xml</link>
     <description>Articles from GitLab Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-gitlab-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 26 Mar 2026 09:03:16 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 26 Mar 2026 12:49:36 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Getting started with GitLab feature flags in Python</title>
+      <link>https://about.gitlab.com/blog/getting-started-with-gitlab-feature-flags-in-python/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/getting-started-with-gitlab-feature-flags-in-python/</guid>
+      <pubDate>Thu, 26 Mar 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Manage vulnerability noise at scale with auto-dismiss policies</title>
       <link>https://about.gitlab.com/blog/auto-dismiss-vulnerability-management-policy/</link>
@@ -119,12 +125,6 @@
       <title>GPG key used to sign GitLab package repositories' metadata has been extended</title>
       <link>https://about.gitlab.com/blog/gpg-key-used-to-sign-gitlab-package-repositories-metadata-has-been-extended/</link>
       <guid isPermaLink="true">https://about.gitlab.com/blog/gpg-key-used-to-sign-gitlab-package-repositories-metadata-has-been-extended/</guid>
-      <pubDate>Tue, 24 Feb 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Agentic SDLC: GitLab and TCS deliver Intelligent Orchestration across the enterprise</title>
-      <link>https://about.gitlab.com/blog/agentic-sdlc-gitlab-and-tcs-deliver-intelligent-orchestration-across-the-enterprise/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/agentic-sdlc-gitlab-and-tcs-deliver-intelligent-orchestration-across-the-enterprise/</guid>
       <pubDate>Tue, 24 Feb 2026 00:00:00 +0000</pubDate>
     </item>
   </channel>
