@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-terraform-weekly.xml</link>
     <description>Articles from Terraform weekly</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-terraform-weekly.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 26 Mar 2026 01:17:54 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 26 Mar 2026 09:03:16 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Issue #267 - Terraform MCP Meets Local LLMs for Air-Gapped IaC, GitHub Actions Drift Detection, 5 Dev Tips, InfraKitchen, Terravision, and AWS Lambda VPC Compliance Explained</title>

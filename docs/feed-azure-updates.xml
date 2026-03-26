@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml</link>
     <description>Articles from Azure Updates</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 26 Mar 2026 01:17:54 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 26 Mar 2026 09:03:16 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>[Launched] Generally Available: Cosmos DB Mirroring in Microsoft Fabric with private endpoints</title>
