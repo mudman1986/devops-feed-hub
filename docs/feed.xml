@@ -5,8 +5,92 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 26 Mar 2026 12:49:36 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 27 Mar 2026 01:17:36 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Gemini 3 Pro deprecated</title>
+      <link>https://github.blog/changelog/2026-03-26-gemini-3-pro-deprecated</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-26-gemini-3-pro-deprecated</guid>
+      <pubDate>Thu, 26 Mar 2026 18:46:54 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Credential revocation API now supports GitHub OAuth and GitHub app credentials</title>
+      <link>https://github.blog/changelog/2026-03-26-credential-revocation-api-now-supports-github-oauth-and-github-app-credentials</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-26-credential-revocation-api-now-supports-github-oauth-and-github-app-credentials</guid>
+      <pubDate>Thu, 26 Mar 2026 18:08:13 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Microsoft Entra Tenant Governance: Secure and Manage Multi-Tenant Environments at Scale</title>
+      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-tenant-governance-secure-and-manage-multi-tenant/ba-p/4462427</link>
+      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-tenant-governance-secure-and-manage-multi-tenant/ba-p/4462427</guid>
+      <pubDate>Thu, 26 Mar 2026 17:51:02 +0000</pubDate>
+      <source>Microsoft Entra Blog</source>
+    </item>
+    <item>
+      <title>Evolving Identity Security: How the Conditional Access Optimization Agent Helps You Adapt</title>
+      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/evolving-identity-security-how-the-conditional-access/ba-p/4488927</link>
+      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/evolving-identity-security-how-the-conditional-access/ba-p/4488927</guid>
+      <pubDate>Thu, 26 Mar 2026 17:46:34 +0000</pubDate>
+      <source>Microsoft Entra Blog</source>
+    </item>
+    <item>
+      <title>Ask @copilot to resolve merge conflicts on pull requests</title>
+      <link>https://github.blog/changelog/2026-03-26-ask-copilot-to-resolve-merge-conflicts-on-pull-requests</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-26-ask-copilot-to-resolve-merge-conflicts-on-pull-requests</guid>
+      <pubDate>Thu, 26 Mar 2026 17:32:22 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>New pull requests dashboard is in public preview</title>
+      <link>https://github.blog/changelog/2026-03-26-new-pull-requests-dashboard-is-in-public-preview</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-26-new-pull-requests-dashboard-is-in-public-preview</guid>
+      <pubDate>Thu, 26 Mar 2026 17:00:33 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>View Agentic Workflow configs in the Actions run summary</title>
+      <link>https://github.blog/changelog/2026-03-26-view-agentic-workflow-configs-in-the-actions-run-summary</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-26-view-agentic-workflow-configs-in-the-actions-run-summary</guid>
+      <pubDate>Thu, 26 Mar 2026 17:00:12 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Agent activity in GitHub Issues and Projects</title>
+      <link>https://github.blog/changelog/2026-03-26-agent-activity-in-github-issues-and-projects</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-26-agent-activity-in-github-issues-and-projects</guid>
+      <pubDate>Thu, 26 Mar 2026 16:59:45 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>What&amp;#8217;s coming to our GitHub Actions 2026 security roadmap</title>
+      <link>https://github.blog/news-insights/product-news/whats-coming-to-our-github-actions-2026-security-roadmap/</link>
+      <guid isPermaLink="true">https://github.blog/news-insights/product-news/whats-coming-to-our-github-actions-2026-security-roadmap/</guid>
+      <pubDate>Thu, 26 Mar 2026 16:49:14 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Azure SQL updates for late-March 2026</title>
+      <link>https://azure.microsoft.com/updates?id=558879</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558879</guid>
+      <pubDate>Thu, 26 Mar 2026 16:00:10 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>A year of open source vulnerability trends: CVEs, advisories, and malware</title>
+      <link>https://github.blog/security/supply-chain-security/a-year-of-open-source-vulnerability-trends-cves-advisories-and-malware/</link>
+      <guid isPermaLink="true">https://github.blog/security/supply-chain-security/a-year-of-open-source-vulnerability-trends-cves-advisories-and-malware/</guid>
+      <pubDate>Thu, 26 Mar 2026 16:00:00 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
+    <item>
+      <title>Custom images for GitHub-hosted runners are now generally available</title>
+      <link>https://github.blog/changelog/2026-03-26-custom-images-for-github-hosted-runners-are-now-generally-available</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-26-custom-images-for-github-hosted-runners-are-now-generally-available</guid>
+      <pubDate>Thu, 26 Mar 2026 14:30:13 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
     <item>
       <title>Getting started with GitLab feature flags in Python</title>
       <link>https://about.gitlab.com/blog/getting-started-with-gitlab-feature-flags-in-python/</link>
@@ -99,20 +183,6 @@
       <source>Azure Updates</source>
     </item>
     <item>
-      <title>Disable comments on individual commits</title>
-      <link>https://github.blog/changelog/2026-03-25-disable-comments-on-individual-commits</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-25-disable-comments-on-individual-commits</guid>
-      <pubDate>Wed, 25 Mar 2026 17:07:52 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>Microsoft Entra Tenant Governance: Secure and Manage Multi-Tenant Environments at Scale</title>
-      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-tenant-governance-secure-and-manage-multi-tenant/ba-p/4462427</link>
-      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-tenant-governance-secure-and-manage-multi-tenant/ba-p/4462427</guid>
-      <pubDate>Wed, 25 Mar 2026 16:00:00 +0000</pubDate>
-      <source>Microsoft Entra Blog</source>
-    </item>
-    <item>
       <title>Identity security is the new pressure point for modern cyberattacks</title>
       <link>https://www.microsoft.com/en-us/security/blog/2026/03/25/identity-security-is-the-new-pressure-point-for-modern-cyberattacks/</link>
       <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/25/identity-security-is-the-new-pressure-point-for-modern-cyberattacks/</guid>
@@ -153,20 +223,6 @@
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557887</guid>
       <pubDate>Tue, 24 Mar 2026 21:45:26 +0000</pubDate>
       <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>Ask @copilot to make changes to a pull request</title>
-      <link>https://github.blog/changelog/2026-03-24-ask-copilot-to-make-changes-to-any-pull-request</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-24-ask-copilot-to-make-changes-to-any-pull-request</guid>
-      <pubDate>Tue, 24 Mar 2026 20:08:03 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>Manage Copilot coding agent repository access via the API</title>
-      <link>https://github.blog/changelog/2026-03-24-manage-copilot-coding-agent-repository-access-via-the-api</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-24-manage-copilot-coding-agent-repository-access-via-the-api</guid>
-      <pubDate>Tue, 24 Mar 2026 20:07:01 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>[In preview] Public Preview: AKS managed GPU metrics in Azure Monitor</title>
@@ -260,32 +316,11 @@
       <source>CircleCI Blog</source>
     </item>
     <item>
-      <title>Faster incremental analysis with CodeQL in pull requests</title>
-      <link>https://github.blog/changelog/2026-03-24-faster-incremental-analysis-with-codeql-in-pull-requests</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-24-faster-incremental-analysis-with-codeql-in-pull-requests</guid>
-      <pubDate>Tue, 24 Mar 2026 13:25:15 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>Trivy supply chain compromise: What Docker Hub users should know</title>
       <link>https://www.docker.com/blog/trivy-supply-chain-compromise-what-docker-hub-users-should-know/</link>
       <guid isPermaLink="true">https://www.docker.com/blog/trivy-supply-chain-compromise-what-docker-hub-users-should-know/</guid>
       <pubDate>Mon, 23 Mar 2026 23:25:14 +0000</pubDate>
       <source>Docker Blog</source>
-    </item>
-    <item>
-      <title>Gemini 3.1 Pro is now available in JetBrains IDEs, Xcode, and Eclipse</title>
-      <link>https://github.blog/changelog/2026-03-23-gemini-3-1-pro-is-now-available-in-jetbrains-ides-xcode-and-eclipse</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-23-gemini-3-1-pro-is-now-available-in-jetbrains-ides-xcode-and-eclipse</guid>
-      <pubDate>Mon, 23 Mar 2026 21:11:48 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>Push protection exemptions from repository settings</title>
-      <link>https://github.blog/changelog/2026-03-23-push-protection-exemptions-from-repository-settings</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-23-push-protection-exemptions-from-repository-settings</guid>
-      <pubDate>Mon, 23 Mar 2026 20:36:39 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>Microsoft Entra innovations announced at RSAC 2026</title>
@@ -349,13 +384,6 @@
       <guid isPermaLink="true">https://kubernetes.io/blog/2026/03/20/ingress2gateway-1-0-release/</guid>
       <pubDate>Fri, 20 Mar 2026 19:00:00 +0000</pubDate>
       <source>Kubernetes Blog</source>
-    </item>
-    <item>
-      <title>Copilot usage metrics now resolve auto model selection to actual models</title>
-      <link>https://github.blog/changelog/2026-03-20-copilot-usage-metrics-now-resolve-auto-model-selection-to-actual-models</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-20-copilot-usage-metrics-now-resolve-auto-model-selection-to-actual-models</guid>
-      <pubDate>Fri, 20 Mar 2026 18:37:18 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>Running Agents on Kubernetes with Agent Sandbox</title>
@@ -771,13 +799,6 @@
       <source>Docker Blog</source>
     </item>
     <item>
-      <title>GitHub availability report: February 2026</title>
-      <link>https://github.blog/news-insights/company-news/github-availability-report-february-2026/</link>
-      <guid isPermaLink="true">https://github.blog/news-insights/company-news/github-availability-report-february-2026/</guid>
-      <pubDate>Thu, 12 Mar 2026 03:23:54 +0000</pubDate>
-      <source>GitHub Blog</source>
-    </item>
-    <item>
       <title>How to use GitLab Container Virtual Registry with Docker Hardened Images</title>
       <link>https://about.gitlab.com/blog/using-gitlab-container-virtual-registry-with-docker-hardened-images/</link>
       <guid isPermaLink="true">https://about.gitlab.com/blog/using-gitlab-container-virtual-registry-with-docker-hardened-images/</guid>
@@ -790,13 +811,6 @@
       <guid isPermaLink="true">https://devblogs.microsoft.com/devops/temporary-rollback-build-identities-can-access-advanced-security-read-alerts-again/</guid>
       <pubDate>Wed, 11 Mar 2026 23:46:28 +0000</pubDate>
       <source>Microsoft DevOps Blog</source>
-    </item>
-    <item>
-      <title>Addressing GitHub’s recent availability issues</title>
-      <link>https://github.blog/news-insights/company-news/addressing-githubs-recent-availability-issues-2/</link>
-      <guid isPermaLink="true">https://github.blog/news-insights/company-news/addressing-githubs-recent-availability-issues-2/</guid>
-      <pubDate>Wed, 11 Mar 2026 21:41:51 +0000</pubDate>
-      <source>GitHub Blog</source>
     </item>
     <item>
       <title>MCP vs. CLI for AI-native development</title>
@@ -2794,13 +2808,6 @@
       <source>Azure Updates</source>
     </item>
     <item>
-      <title>[In preview] Public Preview: Azure Functions support for Node.js 24</title>
-      <link>https://azure.microsoft.com/updates?id=526077</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=526077</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
       <title>Microsoft Entra at Ignite 2025: November 17-21</title>
       <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-at-ignite-2025-november-17-21/ba-p/4400194</link>
       <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-at-ignite-2025-november-17-21/ba-p/4400194</guid>
@@ -2876,13 +2883,6 @@
       <guid isPermaLink="true">https://www.weekly.tf/p/issue-249-terraform-testing-and-tdd-version-switcher-tool-ai-code-with-copilot-mcp-s3-content-modera</guid>
       <pubDate>Wed, 29 Oct 2025 16:01:53 +0000</pubDate>
       <source>Terraform weekly</source>
-    </item>
-    <item>
-      <title>What’s new in Microsoft Entra – September 2025</title>
-      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/what-s-new-in-microsoft-entra-september-2025/ba-p/4352576</link>
-      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/what-s-new-in-microsoft-entra-september-2025/ba-p/4352576</guid>
-      <pubDate>Fri, 24 Oct 2025 15:14:18 +0000</pubDate>
-      <source>Microsoft Entra Blog</source>
     </item>
     <item>
       <title>Issue #248 - Terraform State Locking Explained, Rightsize Terraform modules, Terraform with AI and GitHub Copilot, Terratags, Terramaid</title>

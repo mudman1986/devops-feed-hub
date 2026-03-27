@@ -5,8 +5,50 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml</link>
     <description>Articles from GitHub Changelog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 26 Mar 2026 12:49:36 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 27 Mar 2026 01:17:36 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Gemini 3 Pro deprecated</title>
+      <link>https://github.blog/changelog/2026-03-26-gemini-3-pro-deprecated</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-26-gemini-3-pro-deprecated</guid>
+      <pubDate>Thu, 26 Mar 2026 18:46:54 +0000</pubDate>
+    </item>
+    <item>
+      <title>Credential revocation API now supports GitHub OAuth and GitHub app credentials</title>
+      <link>https://github.blog/changelog/2026-03-26-credential-revocation-api-now-supports-github-oauth-and-github-app-credentials</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-26-credential-revocation-api-now-supports-github-oauth-and-github-app-credentials</guid>
+      <pubDate>Thu, 26 Mar 2026 18:08:13 +0000</pubDate>
+    </item>
+    <item>
+      <title>Ask @copilot to resolve merge conflicts on pull requests</title>
+      <link>https://github.blog/changelog/2026-03-26-ask-copilot-to-resolve-merge-conflicts-on-pull-requests</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-26-ask-copilot-to-resolve-merge-conflicts-on-pull-requests</guid>
+      <pubDate>Thu, 26 Mar 2026 17:32:22 +0000</pubDate>
+    </item>
+    <item>
+      <title>New pull requests dashboard is in public preview</title>
+      <link>https://github.blog/changelog/2026-03-26-new-pull-requests-dashboard-is-in-public-preview</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-26-new-pull-requests-dashboard-is-in-public-preview</guid>
+      <pubDate>Thu, 26 Mar 2026 17:00:33 +0000</pubDate>
+    </item>
+    <item>
+      <title>View Agentic Workflow configs in the Actions run summary</title>
+      <link>https://github.blog/changelog/2026-03-26-view-agentic-workflow-configs-in-the-actions-run-summary</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-26-view-agentic-workflow-configs-in-the-actions-run-summary</guid>
+      <pubDate>Thu, 26 Mar 2026 17:00:12 +0000</pubDate>
+    </item>
+    <item>
+      <title>Agent activity in GitHub Issues and Projects</title>
+      <link>https://github.blog/changelog/2026-03-26-agent-activity-in-github-issues-and-projects</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-26-agent-activity-in-github-issues-and-projects</guid>
+      <pubDate>Thu, 26 Mar 2026 16:59:45 +0000</pubDate>
+    </item>
+    <item>
+      <title>Custom images for GitHub-hosted runners are now generally available</title>
+      <link>https://github.blog/changelog/2026-03-26-custom-images-for-github-hosted-runners-are-now-generally-available</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-26-custom-images-for-github-hosted-runners-are-now-generally-available</guid>
+      <pubDate>Thu, 26 Mar 2026 14:30:13 +0000</pubDate>
+    </item>
     <item>
       <title>GitHub Copilot for Jira — Public preview enhancements</title>
       <link>https://github.blog/changelog/2026-03-25-github-copilot-for-jira-public-preview-enhancements</link>
@@ -24,48 +66,6 @@
       <link>https://github.blog/changelog/2026-03-25-copilot-usage-metrics-now-identify-active-copilot-coding-agent-users</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-03-25-copilot-usage-metrics-now-identify-active-copilot-coding-agent-users</guid>
       <pubDate>Wed, 25 Mar 2026 18:49:10 +0000</pubDate>
-    </item>
-    <item>
-      <title>Disable comments on individual commits</title>
-      <link>https://github.blog/changelog/2026-03-25-disable-comments-on-individual-commits</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-25-disable-comments-on-individual-commits</guid>
-      <pubDate>Wed, 25 Mar 2026 17:07:52 +0000</pubDate>
-    </item>
-    <item>
-      <title>Ask @copilot to make changes to a pull request</title>
-      <link>https://github.blog/changelog/2026-03-24-ask-copilot-to-make-changes-to-any-pull-request</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-24-ask-copilot-to-make-changes-to-any-pull-request</guid>
-      <pubDate>Tue, 24 Mar 2026 20:08:03 +0000</pubDate>
-    </item>
-    <item>
-      <title>Manage Copilot coding agent repository access via the API</title>
-      <link>https://github.blog/changelog/2026-03-24-manage-copilot-coding-agent-repository-access-via-the-api</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-24-manage-copilot-coding-agent-repository-access-via-the-api</guid>
-      <pubDate>Tue, 24 Mar 2026 20:07:01 +0000</pubDate>
-    </item>
-    <item>
-      <title>Faster incremental analysis with CodeQL in pull requests</title>
-      <link>https://github.blog/changelog/2026-03-24-faster-incremental-analysis-with-codeql-in-pull-requests</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-24-faster-incremental-analysis-with-codeql-in-pull-requests</guid>
-      <pubDate>Tue, 24 Mar 2026 13:25:15 +0000</pubDate>
-    </item>
-    <item>
-      <title>Gemini 3.1 Pro is now available in JetBrains IDEs, Xcode, and Eclipse</title>
-      <link>https://github.blog/changelog/2026-03-23-gemini-3-1-pro-is-now-available-in-jetbrains-ides-xcode-and-eclipse</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-23-gemini-3-1-pro-is-now-available-in-jetbrains-ides-xcode-and-eclipse</guid>
-      <pubDate>Mon, 23 Mar 2026 21:11:48 +0000</pubDate>
-    </item>
-    <item>
-      <title>Push protection exemptions from repository settings</title>
-      <link>https://github.blog/changelog/2026-03-23-push-protection-exemptions-from-repository-settings</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-23-push-protection-exemptions-from-repository-settings</guid>
-      <pubDate>Mon, 23 Mar 2026 20:36:39 +0000</pubDate>
-    </item>
-    <item>
-      <title>Copilot usage metrics now resolve auto model selection to actual models</title>
-      <link>https://github.blog/changelog/2026-03-20-copilot-usage-metrics-now-resolve-auto-model-selection-to-actual-models</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-20-copilot-usage-metrics-now-resolve-auto-model-selection-to-actual-models</guid>
-      <pubDate>Fri, 20 Mar 2026 18:37:18 +0000</pubDate>
     </item>
   </channel>
 </rss>

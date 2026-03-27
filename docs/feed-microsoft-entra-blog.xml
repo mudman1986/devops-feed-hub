@@ -5,13 +5,19 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-microsoft-entra-blog.xml</link>
     <description>Articles from Microsoft Entra Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-microsoft-entra-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 26 Mar 2026 12:49:36 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 27 Mar 2026 01:17:36 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Microsoft Entra Tenant Governance: Secure and Manage Multi-Tenant Environments at Scale</title>
       <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-tenant-governance-secure-and-manage-multi-tenant/ba-p/4462427</link>
       <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-tenant-governance-secure-and-manage-multi-tenant/ba-p/4462427</guid>
-      <pubDate>Wed, 25 Mar 2026 16:00:00 +0000</pubDate>
+      <pubDate>Thu, 26 Mar 2026 17:51:02 +0000</pubDate>
+    </item>
+    <item>
+      <title>Evolving Identity Security: How the Conditional Access Optimization Agent Helps You Adapt</title>
+      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/evolving-identity-security-how-the-conditional-access/ba-p/4488927</link>
+      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/evolving-identity-security-how-the-conditional-access/ba-p/4488927</guid>
+      <pubDate>Thu, 26 Mar 2026 17:46:34 +0000</pubDate>
     </item>
     <item>
       <title>Strengthen Identity Resilience: Recover with Confidence using Microsoft Entra Backup and Recovery</title>
@@ -114,12 +120,6 @@
       <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/driving-cloud-first-identity-user-soa-is-now-public-preview-and/ba-p/4462425</link>
       <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/driving-cloud-first-identity-user-soa-is-now-public-preview-and/ba-p/4462425</guid>
       <pubDate>Tue, 04 Nov 2025 16:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>What’s new in Microsoft Entra – September 2025</title>
-      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/what-s-new-in-microsoft-entra-september-2025/ba-p/4352576</link>
-      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/what-s-new-in-microsoft-entra-september-2025/ba-p/4352576</guid>
-      <pubDate>Fri, 24 Oct 2025 15:14:18 +0000</pubDate>
     </item>
     <item>
       <title>11 days remaining: Support for Microsoft Entra Permissions Management ends November 1, 2025</title>
