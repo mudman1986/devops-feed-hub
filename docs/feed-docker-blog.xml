@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-docker-blog.xml</link>
     <description>Articles from Docker Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-docker-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 27 Mar 2026 12:38:47 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 28 Mar 2026 01:11:07 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Building a News Roundup with Docker Agent, Docker Model Runner, and Skill</title>
+      <link>https://www.docker.com/blog/building-a-news-roundup-with-docker-agent-docker-model-runner-and-skill/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/building-a-news-roundup-with-docker-agent-docker-model-runner-and-skill/</guid>
+      <pubDate>Fri, 27 Mar 2026 14:24:40 +0000</pubDate>
+    </item>
     <item>
       <title>Trivy supply chain compromise: What Docker Hub users should know</title>
       <link>https://www.docker.com/blog/trivy-supply-chain-compromise-what-docker-hub-users-should-know/</link>
@@ -60,12 +66,6 @@
       <link>https://www.docker.com/blog/women-in-ai-cecilia-liu-docker-mcp-strategy/</link>
       <guid isPermaLink="true">https://www.docker.com/blog/women-in-ai-cecilia-liu-docker-mcp-strategy/</guid>
       <pubDate>Fri, 06 Mar 2026 12:59:30 +0000</pubDate>
-    </item>
-    <item>
-      <title>Announcing Docker Hardened System Packages</title>
-      <link>https://www.docker.com/blog/announcing-docker-hardened-system-packages/</link>
-      <guid isPermaLink="true">https://www.docker.com/blog/announcing-docker-hardened-system-packages/</guid>
-      <pubDate>Tue, 03 Mar 2026 20:30:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

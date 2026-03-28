@@ -5,8 +5,20 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-hashicorp-blog.xml</link>
     <description>Articles from HashiCorp Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-hashicorp-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 27 Mar 2026 12:38:47 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 28 Mar 2026 01:11:07 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Modernizing governance on HCP with multi-owner and global automation</title>
+      <link>https://www.hashicorp.com/blog/modernizing-governance-on-hcp-with-multi-owner-and-global-automation</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/modernizing-governance-on-hcp-with-multi-owner-and-global-automation</guid>
+      <pubDate>Fri, 27 Mar 2026 07:12:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>LAB3 accelerates cloud modernization with HashiCorp-powered unified workflows</title>
+      <link>https://www.hashicorp.com/blog/lab3-accelerates-cloud-modernization-with-hashicorp-powered-unified-workflows</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/lab3-accelerates-cloud-modernization-with-hashicorp-powered-unified-workflows</guid>
+      <pubDate>Thu, 26 Mar 2026 17:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Agentic runtime security: Solving agentic AI identity and access gaps</title>
       <link>https://www.hashicorp.com/blog/agentic-runtime-security-solving-agentic-ai-identity-and-access-gaps</link>
@@ -114,18 +126,6 @@
       <link>https://www.hashicorp.com/blog/pci-dss-4-compliance-with-hashicorp-vault-and-vault-radar</link>
       <guid isPermaLink="true">https://www.hashicorp.com/blog/pci-dss-4-compliance-with-hashicorp-vault-and-vault-radar</guid>
       <pubDate>Tue, 03 Feb 2026 17:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Introducing HashiCorp Agent Skills</title>
-      <link>https://www.hashicorp.com/blog/introducing-hashicorp-agent-skills</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/introducing-hashicorp-agent-skills</guid>
-      <pubDate>Mon, 02 Feb 2026 17:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>HCP Vault performance replication at global scale: Better than DIY</title>
-      <link>https://www.hashicorp.com/blog/hcp-vault-performance-replication-at-global-scale-better-than-diy</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/hcp-vault-performance-replication-at-global-scale-better-than-diy</guid>
-      <pubDate>Fri, 30 Jan 2026 18:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

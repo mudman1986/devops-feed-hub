@@ -5,8 +5,36 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 27 Mar 2026 12:38:47 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 28 Mar 2026 01:11:07 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Microsoft Entra innovations announced at RSAC 2026</title>
+      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-innovations-announced-at-rsac-2026/ba-p/4502146</link>
+      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-innovations-announced-at-rsac-2026/ba-p/4502146</guid>
+      <pubDate>Sat, 28 Mar 2026 00:00:03 +0000</pubDate>
+      <source>Microsoft Entra Blog</source>
+    </item>
+    <item>
+      <title>How Microsoft Defender protects high-value assets in real-world attack scenarios</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/03/27/microsoft-defender-protects-high-value-assets/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/27/microsoft-defender-protects-high-value-assets/</guid>
+      <pubDate>Fri, 27 Mar 2026 19:53:53 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>Building a News Roundup with Docker Agent, Docker Model Runner, and Skill</title>
+      <link>https://www.docker.com/blog/building-a-news-roundup-with-docker-agent-docker-model-runner-and-skill/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/building-a-news-roundup-with-docker-agent-docker-model-runner-and-skill/</guid>
+      <pubDate>Fri, 27 Mar 2026 14:24:40 +0000</pubDate>
+      <source>Docker Blog</source>
+    </item>
+    <item>
+      <title>Modernizing governance on HCP with multi-owner and global automation</title>
+      <link>https://www.hashicorp.com/blog/modernizing-governance-on-hcp-with-multi-owner-and-global-automation</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/modernizing-governance-on-hcp-with-multi-owner-and-global-automation</guid>
+      <pubDate>Fri, 27 Mar 2026 07:12:00 +0000</pubDate>
+      <source>HashiCorp Blog</source>
+    </item>
     <item>
       <title>Gemini 3 Pro deprecated</title>
       <link>https://github.blog/changelog/2026-03-26-gemini-3-pro-deprecated</link>
@@ -55,6 +83,13 @@
       <guid isPermaLink="true">https://github.blog/changelog/2026-03-26-view-agentic-workflow-configs-in-the-actions-run-summary</guid>
       <pubDate>Thu, 26 Mar 2026 17:00:12 +0000</pubDate>
       <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>LAB3 accelerates cloud modernization with HashiCorp-powered unified workflows</title>
+      <link>https://www.hashicorp.com/blog/lab3-accelerates-cloud-modernization-with-hashicorp-powered-unified-workflows</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/lab3-accelerates-cloud-modernization-with-hashicorp-powered-unified-workflows</guid>
+      <pubDate>Thu, 26 Mar 2026 17:00:00 +0000</pubDate>
+      <source>HashiCorp Blog</source>
     </item>
     <item>
       <title>Agent activity in GitHub Issues and Projects</title>
@@ -321,13 +356,6 @@
       <guid isPermaLink="true">https://www.docker.com/blog/trivy-supply-chain-compromise-what-docker-hub-users-should-know/</guid>
       <pubDate>Mon, 23 Mar 2026 23:25:14 +0000</pubDate>
       <source>Docker Blog</source>
-    </item>
-    <item>
-      <title>Microsoft Entra innovations announced at RSAC 2026</title>
-      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-innovations-announced-at-rsac-2026/ba-p/4502146</link>
-      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-innovations-announced-at-rsac-2026/ba-p/4502146</guid>
-      <pubDate>Mon, 23 Mar 2026 16:23:57 +0000</pubDate>
-      <source>Microsoft Entra Blog</source>
     </item>
     <item>
       <title>GitHub expands application security coverage with AI‑powered detections</title>
@@ -708,13 +736,6 @@
       <source>Azure Updates</source>
     </item>
     <item>
-      <title>New Microsoft Purview innovations for Fabric to safely accelerate your AI transformation</title>
-      <link>https://techcommunity.microsoft.com/blog/microsoft-security-blog/new-microsoft-purview-innovations-for-fabric-to-safely-accelerate-your-ai-transf/4502156</link>
-      <guid isPermaLink="true">https://techcommunity.microsoft.com/blog/microsoft-security-blog/new-microsoft-purview-innovations-for-fabric-to-safely-accelerate-your-ai-transf/4502156</guid>
-      <pubDate>Mon, 16 Mar 2026 17:10:00 +0000</pubDate>
-      <source>Microsoft Security</source>
-    </item>
-    <item>
       <title>Simplify your identity landscape, reduce risk, and modernize access for any identity</title>
       <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/simplify-your-identity-landscape-reduce-risk-and-modernize/ba-p/4486059</link>
       <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/simplify-your-identity-landscape-reduce-risk-and-modernize/ba-p/4486059</guid>
@@ -988,13 +1009,6 @@
       <source>GitLab Blog</source>
     </item>
     <item>
-      <title>Announcing Docker Hardened System Packages</title>
-      <link>https://www.docker.com/blog/announcing-docker-hardened-system-packages/</link>
-      <guid isPermaLink="true">https://www.docker.com/blog/announcing-docker-hardened-system-packages/</guid>
-      <pubDate>Tue, 03 Mar 2026 20:30:00 +0000</pubDate>
-      <source>Docker Blog</source>
-    </item>
-    <item>
       <title>[Launched] Generally Available: Draft &amp; Deploy on Azure Firewall</title>
       <link>https://azure.microsoft.com/updates?id=558072</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558072</guid>
@@ -1030,7 +1044,7 @@
       <source>Jenkins Blog</source>
     </item>
     <item>
-      <title>[Launched] Generally Available: Azure Premium SSD v2 Disk Storage is now available in a third Availability Zone in New Zealan North</title>
+      <title>[Launched] Generally Available: Azure Premium SSD v2 Disk Storage is now available in a third Availability Zone in New Zealand North</title>
       <link>https://azure.microsoft.com/updates?id=558078</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558078</guid>
       <pubDate>Fri, 27 Feb 2026 23:15:13 +0000</pubDate>
@@ -1632,25 +1646,11 @@
       <source>Azure Updates</source>
     </item>
     <item>
-      <title>Introducing HashiCorp Agent Skills</title>
-      <link>https://www.hashicorp.com/blog/introducing-hashicorp-agent-skills</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/introducing-hashicorp-agent-skills</guid>
-      <pubDate>Mon, 02 Feb 2026 17:00:00 +0000</pubDate>
-      <source>HashiCorp Blog</source>
-    </item>
-    <item>
       <title>Retirement: "Send data to Event Hubs &amp; Storage (Preview)" retiring July 31, 2026</title>
       <link>https://azure.microsoft.com/updates?id=551523</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=551523</guid>
       <pubDate>Fri, 30 Jan 2026 18:30:02 +0000</pubDate>
       <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>HCP Vault performance replication at global scale: Better than DIY</title>
-      <link>https://www.hashicorp.com/blog/hcp-vault-performance-replication-at-global-scale-better-than-diy</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/hcp-vault-performance-replication-at-global-scale-better-than-diy</guid>
-      <pubDate>Fri, 30 Jan 2026 18:00:00 +0000</pubDate>
-      <source>HashiCorp Blog</source>
     </item>
     <item>
       <title>New Conversion from cgroup v1 CPU Shares to v2 CPU Weight</title>
