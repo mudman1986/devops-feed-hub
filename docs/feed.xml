@@ -5,8 +5,15 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 31 Mar 2026 00:12:29 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 31 Mar 2026 12:13:16 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>EU data residency region expanding to include EFTA countries</title>
+      <link>https://github.blog/changelog/2026-03-31-eu-data-residency-region-expanding-to-include-efta-countries</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-31-eu-data-residency-region-expanding-to-include-efta-countries</guid>
+      <pubDate>Tue, 31 Mar 2026 07:00:25 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
     <item>
       <title>[In preview] Public Preview: Ephemeral OS Disk with full caching for VM/VMSS</title>
       <link>https://azure.microsoft.com/updates?id=559322</link>
@@ -223,13 +230,6 @@
       <guid isPermaLink="true">https://github.blog/news-insights/company-news/updates-to-github-copilot-interaction-data-usage-policy/</guid>
       <pubDate>Wed, 25 Mar 2026 19:02:29 +0000</pubDate>
       <source>GitHub Blog</source>
-    </item>
-    <item>
-      <title>Updates to our Privacy Statement and Terms of Service: How we use your data</title>
-      <link>https://github.blog/changelog/2026-03-25-updates-to-our-privacy-statement-and-terms-of-service-how-we-use-your-data</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-25-updates-to-our-privacy-statement-and-terms-of-service-how-we-use-your-data</guid>
-      <pubDate>Wed, 25 Mar 2026 18:56:45 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>[In preview] Public Preview: Fabric Mirroring integration for Azure Database for MySQL</title>
