@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml</link>
     <description>Articles from Microsoft Security</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 30 Mar 2026 12:13:14 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 31 Mar 2026 00:12:29 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Addressing the OWASP Top 10 Risks in Agentic AI with Microsoft Copilot Studio</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/03/30/addressing-the-owasp-top-10-risks-in-agentic-ai-with-microsoft-copilot-studio/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/30/addressing-the-owasp-top-10-risks-in-agentic-ai-with-microsoft-copilot-studio/</guid>
+      <pubDate>Mon, 30 Mar 2026 16:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>How Microsoft Defender protects high-value assets in real-world attack scenarios</title>
       <link>https://www.microsoft.com/en-us/security/blog/2026/03/27/microsoft-defender-protects-high-value-assets/</link>
@@ -60,12 +66,6 @@
       <link>https://www.microsoft.com/en-us/security/blog/2026/03/19/when-tax-season-becomes-cyberattack-season-phishing-and-malware-campaigns-using-tax-related-lures/</link>
       <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/19/when-tax-season-becomes-cyberattack-season-phishing-and-malware-campaigns-using-tax-related-lures/</guid>
       <pubDate>Thu, 19 Mar 2026 15:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Observability for AI Systems: Strengthening visibility for proactive risk detection</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/03/18/observability-ai-systems-strengthening-visibility-proactive-risk-detection/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/18/observability-ai-systems-strengthening-visibility-proactive-risk-detection/</guid>
-      <pubDate>Wed, 18 Mar 2026 16:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

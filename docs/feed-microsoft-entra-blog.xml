@@ -5,19 +5,19 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-microsoft-entra-blog.xml</link>
     <description>Articles from Microsoft Entra Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-microsoft-entra-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 30 Mar 2026 12:13:14 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 31 Mar 2026 00:12:29 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
-    <item>
-      <title>Microsoft Entra innovations announced at RSAC 2026</title>
-      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-innovations-announced-at-rsac-2026/ba-p/4502146</link>
-      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-innovations-announced-at-rsac-2026/ba-p/4502146</guid>
-      <pubDate>Sat, 28 Mar 2026 00:00:03 +0000</pubDate>
-    </item>
     <item>
       <title>Microsoft Entra Tenant Governance: Secure and Manage Multi-Tenant Environments at Scale</title>
       <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-tenant-governance-secure-and-manage-multi-tenant/ba-p/4462427</link>
       <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-tenant-governance-secure-and-manage-multi-tenant/ba-p/4462427</guid>
-      <pubDate>Thu, 26 Mar 2026 17:51:02 +0000</pubDate>
+      <pubDate>Mon, 30 Mar 2026 20:45:22 +0000</pubDate>
+    </item>
+    <item>
+      <title>Microsoft Entra innovations announced at RSAC 2026</title>
+      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-innovations-announced-at-rsac-2026/ba-p/4502146</link>
+      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-innovations-announced-at-rsac-2026/ba-p/4502146</guid>
+      <pubDate>Mon, 30 Mar 2026 15:54:53 +0000</pubDate>
     </item>
     <item>
       <title>Evolving Identity Security: How the Conditional Access Optimization Agent Helps You Adapt</title>

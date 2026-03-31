@@ -5,14 +5,84 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 30 Mar 2026 12:13:14 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 31 Mar 2026 00:12:29 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>[In preview] Public Preview: Ephemeral OS Disk with full caching for VM/VMSS</title>
+      <link>https://azure.microsoft.com/updates?id=559322</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=559322</guid>
+      <pubDate>Mon, 30 Mar 2026 21:45:47 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Azure Red Hat OpenShift in Indonesia Central</title>
+      <link>https://azure.microsoft.com/updates?id=559552</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=559552</guid>
+      <pubDate>Mon, 30 Mar 2026 21:30:50 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>Retirement: Deprecation of sidecar for remote-write for Azure Monitor managed service for Prometheus</title>
+      <link>https://azure.microsoft.com/updates?id=550519</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=550519</guid>
+      <pubDate>Mon, 30 Mar 2026 21:30:50 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>Microsoft Entra Tenant Governance: Secure and Manage Multi-Tenant Environments at Scale</title>
+      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-tenant-governance-secure-and-manage-multi-tenant/ba-p/4462427</link>
+      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-tenant-governance-secure-and-manage-multi-tenant/ba-p/4462427</guid>
+      <pubDate>Mon, 30 Mar 2026 20:45:22 +0000</pubDate>
+      <source>Microsoft Entra Blog</source>
+    </item>
+    <item>
+      <title>Retirement: Azure Cosmos DB for PostgreSQL will retire on March 31, 2029</title>
+      <link>https://azure.microsoft.com/updates?id=556085</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=556085</guid>
+      <pubDate>Mon, 30 Mar 2026 17:45:08 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Azure Premium SSD v2 Disk is now available in South India</title>
+      <link>https://azure.microsoft.com/updates?id=559526</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=559526</guid>
+      <pubDate>Mon, 30 Mar 2026 16:30:50 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>GitHub for Beginners: Getting started with GitHub security</title>
+      <link>https://github.blog/developer-skills/github/github-for-beginners-getting-started-with-github-security/</link>
+      <guid isPermaLink="true">https://github.blog/developer-skills/github/github-for-beginners-getting-started-with-github-security/</guid>
+      <pubDate>Mon, 30 Mar 2026 16:00:00 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
+    <item>
+      <title>Addressing the OWASP Top 10 Risks in Agentic AI with Microsoft Copilot Studio</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/03/30/addressing-the-owasp-top-10-risks-in-agentic-ai-with-microsoft-copilot-studio/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/30/addressing-the-owasp-top-10-risks-in-agentic-ai-with-microsoft-copilot-studio/</guid>
+      <pubDate>Mon, 30 Mar 2026 16:00:00 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
     <item>
       <title>Microsoft Entra innovations announced at RSAC 2026</title>
       <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-innovations-announced-at-rsac-2026/ba-p/4502146</link>
       <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-innovations-announced-at-rsac-2026/ba-p/4502146</guid>
-      <pubDate>Sat, 28 Mar 2026 00:00:03 +0000</pubDate>
+      <pubDate>Mon, 30 Mar 2026 15:54:53 +0000</pubDate>
       <source>Microsoft Entra Blog</source>
+    </item>
+    <item>
+      <title>Create issues from Slack with Copilot</title>
+      <link>https://github.blog/changelog/2026-03-30-create-issues-from-slack-with-copilot</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-30-create-issues-from-slack-with-copilot</guid>
+      <pubDate>Mon, 30 Mar 2026 09:32:07 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Kubernetes v1.36 Sneak Peek</title>
+      <link>https://kubernetes.io/blog/2026/03/30/kubernetes-v1-36-sneak-peek/</link>
+      <guid isPermaLink="true">https://kubernetes.io/blog/2026/03/30/kubernetes-v1-36-sneak-peek/</guid>
+      <pubDate>Mon, 30 Mar 2026 00:00:00 +0000</pubDate>
+      <source>Kubernetes Blog</source>
     </item>
     <item>
       <title>How Microsoft Defender protects high-value assets in real-world attack scenarios</title>
@@ -48,13 +118,6 @@
       <guid isPermaLink="true">https://github.blog/changelog/2026-03-26-credential-revocation-api-now-supports-github-oauth-and-github-app-credentials</guid>
       <pubDate>Thu, 26 Mar 2026 18:08:13 +0000</pubDate>
       <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>Microsoft Entra Tenant Governance: Secure and Manage Multi-Tenant Environments at Scale</title>
-      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-tenant-governance-secure-and-manage-multi-tenant/ba-p/4462427</link>
-      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-tenant-governance-secure-and-manage-multi-tenant/ba-p/4462427</guid>
-      <pubDate>Thu, 26 Mar 2026 17:51:02 +0000</pubDate>
-      <source>Microsoft Entra Blog</source>
     </item>
     <item>
       <title>Evolving Identity Security: How the Conditional Access Optimization Agent Helps You Adapt</title>
@@ -166,13 +229,6 @@
       <link>https://github.blog/changelog/2026-03-25-updates-to-our-privacy-statement-and-terms-of-service-how-we-use-your-data</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-03-25-updates-to-our-privacy-statement-and-terms-of-service-how-we-use-your-data</guid>
       <pubDate>Wed, 25 Mar 2026 18:56:45 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>Copilot usage metrics now identify active Copilot coding agent users</title>
-      <link>https://github.blog/changelog/2026-03-25-copilot-usage-metrics-now-identify-active-copilot-coding-agent-users</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-25-copilot-usage-metrics-now-identify-active-copilot-coding-agent-users</guid>
-      <pubDate>Wed, 25 Mar 2026 18:49:10 +0000</pubDate>
       <source>GitHub Changelog</source>
     </item>
     <item>
@@ -638,13 +694,6 @@
       <source>Docker Blog</source>
     </item>
     <item>
-      <title>Observability for AI Systems: Strengthening visibility for proactive risk detection</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/03/18/observability-ai-systems-strengthening-visibility-proactive-risk-detection/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/18/observability-ai-systems-strengthening-visibility-proactive-risk-detection/</guid>
-      <pubDate>Wed, 18 Mar 2026 16:00:00 +0000</pubDate>
-      <source>Microsoft Security</source>
-    </item>
-    <item>
       <title>Issue #266 - AWS ECS Explained, Guard Hook Workarounds, Pulumi as State Backend, and 90% Faster Terraform Testing with AI</title>
       <link>https://www.weekly.tf/p/issue-266-aws-ecs-explained-guard-hook-workarounds-pulumi-as-state-backend-and-90-faster-terraform</link>
       <guid isPermaLink="true">https://www.weekly.tf/p/issue-266-aws-ecs-explained-guard-hook-workarounds-pulumi-as-state-backend-and-90-faster-terraform</guid>
@@ -804,13 +853,6 @@
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558651</guid>
       <pubDate>Thu, 12 Mar 2026 21:15:25 +0000</pubDate>
       <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>Continuous AI for accessibility: How GitHub transforms feedback into inclusion</title>
-      <link>https://github.blog/ai-and-ml/github-copilot/continuous-ai-for-accessibility-how-github-transforms-feedback-into-inclusion/</link>
-      <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/continuous-ai-for-accessibility-how-github-transforms-feedback-into-inclusion/</guid>
-      <pubDate>Thu, 12 Mar 2026 16:00:00 +0000</pubDate>
-      <source>GitHub Blog</source>
     </item>
     <item>
       <title>Flexibility Over Lock-In: The Enterprise Shift in Agent Strategy</title>
@@ -2773,41 +2815,6 @@
       <source>Azure Updates</source>
     </item>
     <item>
-      <title>[Launched] Generally Available: AKS Automatic pod readiness SLA</title>
-      <link>https://azure.microsoft.com/updates?id=526208</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=526208</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: AKS Automatic managed system node pools</title>
-      <link>https://azure.microsoft.com/updates?id=526203</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=526203</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Add durability to AI agents in Azure Functions using Microsoft Agent Framework</title>
-      <link>https://azure.microsoft.com/updates?id=526179</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=526179</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Cross region pool association support for Azure Virtual Network Manager IP address management</title>
-      <link>https://azure.microsoft.com/updates?id=526174</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=526174</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Azure Virtual Network Manager address overlap prevention in mesh</title>
-      <link>https://azure.microsoft.com/updates?id=526169</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=526169</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
       <title>Microsoft Entra at Ignite 2025: November 17-21</title>
       <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-at-ignite-2025-november-17-21/ba-p/4400194</link>
       <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-at-ignite-2025-november-17-21/ba-p/4400194</guid>
@@ -3029,13 +3036,6 @@
       <link>https://kubernetes.io/blog/2025/09/08/kubernetes-v1-34-volume-attributes-class/</link>
       <guid isPermaLink="true">https://kubernetes.io/blog/2025/09/08/kubernetes-v1-34-volume-attributes-class/</guid>
       <pubDate>Mon, 08 Sep 2025 18:30:00 +0000</pubDate>
-      <source>Kubernetes Blog</source>
-    </item>
-    <item>
-      <title>Kubernetes v1.34: Pod Replacement Policy for Jobs Goes GA</title>
-      <link>https://kubernetes.io/blog/2025/09/05/kubernetes-v1-34-pod-replacement-policy-for-jobs-goes-ga/</link>
-      <guid isPermaLink="true">https://kubernetes.io/blog/2025/09/05/kubernetes-v1-34-pod-replacement-policy-for-jobs-goes-ga/</guid>
-      <pubDate>Fri, 05 Sep 2025 18:30:00 +0000</pubDate>
       <source>Kubernetes Blog</source>
     </item>
     <item>

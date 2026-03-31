@@ -5,8 +5,38 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml</link>
     <description>Articles from Azure Updates</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 30 Mar 2026 12:13:14 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 31 Mar 2026 00:12:29 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>[In preview] Public Preview: Ephemeral OS Disk with full caching for VM/VMSS</title>
+      <link>https://azure.microsoft.com/updates?id=559322</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=559322</guid>
+      <pubDate>Mon, 30 Mar 2026 21:45:47 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Azure Red Hat OpenShift in Indonesia Central</title>
+      <link>https://azure.microsoft.com/updates?id=559552</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=559552</guid>
+      <pubDate>Mon, 30 Mar 2026 21:30:50 +0000</pubDate>
+    </item>
+    <item>
+      <title>Retirement: Deprecation of sidecar for remote-write for Azure Monitor managed service for Prometheus</title>
+      <link>https://azure.microsoft.com/updates?id=550519</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=550519</guid>
+      <pubDate>Mon, 30 Mar 2026 21:30:50 +0000</pubDate>
+    </item>
+    <item>
+      <title>Retirement: Azure Cosmos DB for PostgreSQL will retire on March 31, 2029</title>
+      <link>https://azure.microsoft.com/updates?id=556085</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=556085</guid>
+      <pubDate>Mon, 30 Mar 2026 17:45:08 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Azure Premium SSD v2 Disk is now available in South India</title>
+      <link>https://azure.microsoft.com/updates?id=559526</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=559526</guid>
+      <pubDate>Mon, 30 Mar 2026 16:30:50 +0000</pubDate>
+    </item>
     <item>
       <title>[Launched] Generally Available: Azure SQL updates for late-March 2026</title>
       <link>https://azure.microsoft.com/updates?id=558879</link>
@@ -1169,36 +1199,6 @@
       <title>[In preview] Public Preview: Windows Server 2025 on AKS</title>
       <link>https://azure.microsoft.com/updates?id=526213</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=526213</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: AKS Automatic pod readiness SLA</title>
-      <link>https://azure.microsoft.com/updates?id=526208</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=526208</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: AKS Automatic managed system node pools</title>
-      <link>https://azure.microsoft.com/updates?id=526203</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=526203</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Add durability to AI agents in Azure Functions using Microsoft Agent Framework</title>
-      <link>https://azure.microsoft.com/updates?id=526179</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=526179</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Cross region pool association support for Azure Virtual Network Manager IP address management</title>
-      <link>https://azure.microsoft.com/updates?id=526174</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=526174</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Azure Virtual Network Manager address overlap prevention in mesh</title>
-      <link>https://azure.microsoft.com/updates?id=526169</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=526169</guid>
       <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
     </item>
     <item>

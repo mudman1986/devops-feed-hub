@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml</link>
     <description>Articles from GitHub Changelog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 30 Mar 2026 12:13:14 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 31 Mar 2026 00:12:29 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Create issues from Slack with Copilot</title>
+      <link>https://github.blog/changelog/2026-03-30-create-issues-from-slack-with-copilot</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-30-create-issues-from-slack-with-copilot</guid>
+      <pubDate>Mon, 30 Mar 2026 09:32:07 +0000</pubDate>
+    </item>
     <item>
       <title>Gemini 3 Pro deprecated</title>
       <link>https://github.blog/changelog/2026-03-26-gemini-3-pro-deprecated</link>
@@ -60,12 +66,6 @@
       <link>https://github.blog/changelog/2026-03-25-updates-to-our-privacy-statement-and-terms-of-service-how-we-use-your-data</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-03-25-updates-to-our-privacy-statement-and-terms-of-service-how-we-use-your-data</guid>
       <pubDate>Wed, 25 Mar 2026 18:56:45 +0000</pubDate>
-    </item>
-    <item>
-      <title>Copilot usage metrics now identify active Copilot coding agent users</title>
-      <link>https://github.blog/changelog/2026-03-25-copilot-usage-metrics-now-identify-active-copilot-coding-agent-users</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-25-copilot-usage-metrics-now-identify-active-copilot-coding-agent-users</guid>
-      <pubDate>Wed, 25 Mar 2026 18:49:10 +0000</pubDate>
     </item>
   </channel>
 </rss>
