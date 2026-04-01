@@ -5,37 +5,49 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-microsoft-entra-blog.xml</link>
     <description>Articles from Microsoft Entra Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-microsoft-entra-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 31 Mar 2026 12:13:16 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 01 Apr 2026 00:12:46 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
-      <title>Microsoft Entra Tenant Governance: Secure and Manage Multi-Tenant Environments at Scale</title>
+      <title>Microsoft Entra: What’s new in secure access on the AI frontier</title>
+      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-what-s-new-in-secure-access-on-the-ai-frontier/ba-p/4468732</link>
+      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-what-s-new-in-secure-access-on-the-ai-frontier/ba-p/4468732</guid>
+      <pubDate>Tue, 31 Mar 2026 20:36:21 +0000</pubDate>
+    </item>
+    <item>
+      <title>Surfing the AI Wave: Manage, govern, and protect AI agents with Microsoft Entra Agent ID</title>
+      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/surfing-the-ai-wave-manage-govern-and-protect-ai-agents-with/ba-p/2464407</link>
+      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/surfing-the-ai-wave-manage-govern-and-protect-ai-agents-with/ba-p/2464407</guid>
+      <pubDate>Tue, 31 Mar 2026 20:34:52 +0000</pubDate>
+    </item>
+    <item>
+      <title>External MFA in Microsoft Entra ID is now generally available</title>
+      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/external-mfa-in-microsoft-entra-id-is-now-generally-available/ba-p/4488926</link>
+      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/external-mfa-in-microsoft-entra-id-is-now-generally-available/ba-p/4488926</guid>
+      <pubDate>Tue, 31 Mar 2026 20:33:33 +0000</pubDate>
+    </item>
+    <item>
+      <title>Strengthen identity resilience: Recover with confidence using Microsoft Entra Backup and Recovery</title>
+      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/strengthen-identity-resilience-recover-with-confidence-using/ba-p/4462426</link>
+      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/strengthen-identity-resilience-recover-with-confidence-using/ba-p/4462426</guid>
+      <pubDate>Tue, 31 Mar 2026 20:31:16 +0000</pubDate>
+    </item>
+    <item>
+      <title>Microsoft Entra Tenant Governance: Secure and manage multi-tenant environments at scale</title>
       <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-tenant-governance-secure-and-manage-multi-tenant/ba-p/4462427</link>
       <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-tenant-governance-secure-and-manage-multi-tenant/ba-p/4462427</guid>
-      <pubDate>Mon, 30 Mar 2026 20:45:22 +0000</pubDate>
+      <pubDate>Tue, 31 Mar 2026 20:18:20 +0000</pubDate>
+    </item>
+    <item>
+      <title>Evolving identity security: How the Conditional Access Optimization Agent helps you adapt</title>
+      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/evolving-identity-security-how-the-conditional-access/ba-p/4488927</link>
+      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/evolving-identity-security-how-the-conditional-access/ba-p/4488927</guid>
+      <pubDate>Tue, 31 Mar 2026 20:17:05 +0000</pubDate>
     </item>
     <item>
       <title>Microsoft Entra innovations announced at RSAC 2026</title>
       <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-innovations-announced-at-rsac-2026/ba-p/4502146</link>
       <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-innovations-announced-at-rsac-2026/ba-p/4502146</guid>
       <pubDate>Mon, 30 Mar 2026 15:54:53 +0000</pubDate>
-    </item>
-    <item>
-      <title>Evolving Identity Security: How the Conditional Access Optimization Agent Helps You Adapt</title>
-      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/evolving-identity-security-how-the-conditional-access/ba-p/4488927</link>
-      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/evolving-identity-security-how-the-conditional-access/ba-p/4488927</guid>
-      <pubDate>Thu, 26 Mar 2026 17:46:34 +0000</pubDate>
-    </item>
-    <item>
-      <title>Strengthen Identity Resilience: Recover with Confidence using Microsoft Entra Backup and Recovery</title>
-      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/strengthen-identity-resilience-recover-with-confidence-using/ba-p/4462426</link>
-      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/strengthen-identity-resilience-recover-with-confidence-using/ba-p/4462426</guid>
-      <pubDate>Tue, 24 Mar 2026 16:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>External MFA in Microsoft Entra ID is now Generally Available</title>
-      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/external-mfa-in-microsoft-entra-id-is-now-generally-available/ba-p/4488926</link>
-      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/external-mfa-in-microsoft-entra-id-is-now-generally-available/ba-p/4488926</guid>
-      <pubDate>Tue, 24 Mar 2026 16:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Secure access in the age of AI: Key findings from our 2026 Report</title>
@@ -60,12 +72,6 @@
       <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/securing-the-ai-era-starts-with-identity/ba-p/4478952</link>
       <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/securing-the-ai-era-starts-with-identity/ba-p/4478952</guid>
       <pubDate>Fri, 19 Dec 2025 16:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Surfing the AI Wave: Manage, Govern, and Protect AI Agents with Microsoft Entra Agent ID</title>
-      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/surfing-the-ai-wave-manage-govern-and-protect-ai-agents-with/ba-p/2464407</link>
-      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/surfing-the-ai-wave-manage-govern-and-protect-ai-agents-with/ba-p/2464407</guid>
-      <pubDate>Wed, 17 Dec 2025 16:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Synced passkeys and high assurance account recovery</title>
@@ -96,12 +102,6 @@
       <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/enhance-protection-of-microsoft-entra-id-authentication-by/ba-p/4435200</link>
       <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/enhance-protection-of-microsoft-entra-id-authentication-by/ba-p/4435200</guid>
       <pubDate>Tue, 25 Nov 2025 16:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Microsoft Entra: What’s New in Secure Access on the AI Frontier</title>
-      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-what-s-new-in-secure-access-on-the-ai-frontier/ba-p/4468732</link>
-      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-what-s-new-in-secure-access-on-the-ai-frontier/ba-p/4468732</guid>
-      <pubDate>Wed, 19 Nov 2025 22:19:53 +0000</pubDate>
     </item>
     <item>
       <title>Microsoft Entra at Ignite 2025: November 17-21</title>

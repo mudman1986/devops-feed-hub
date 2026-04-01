@@ -5,8 +5,26 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml</link>
     <description>Articles from Microsoft Security</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 31 Mar 2026 12:13:16 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 01 Apr 2026 00:12:46 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>The threat to critical infrastructure has changed. Has your readiness?</title>
+      <link>https://www.microsoft.com/en-us/security/security-insider/threat-landscape/threat-to-critical-infrastructure-has-changed</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/security-insider/threat-landscape/threat-to-critical-infrastructure-has-changed</guid>
+      <pubDate>Tue, 31 Mar 2026 17:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Applying security fundamentals to AI: Practical advice for CISOs</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/03/31/applying-security-fundamentals-to-ai-practical-advice-for-cisos/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/31/applying-security-fundamentals-to-ai-practical-advice-for-cisos/</guid>
+      <pubDate>Tue, 31 Mar 2026 16:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>WhatsApp malware campaign delivers VBScript and MSI backdoors</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/03/31/whatsapp-malware-campaign-delivers-vbs-payloads-msi-backdoors/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/31/whatsapp-malware-campaign-delivers-vbs-payloads-msi-backdoors/</guid>
+      <pubDate>Tue, 31 Mar 2026 13:43:05 +0000</pubDate>
+    </item>
     <item>
       <title>Addressing the OWASP Top 10 Risks in Agentic AI with Microsoft Copilot Studio</title>
       <link>https://www.microsoft.com/en-us/security/blog/2026/03/30/addressing-the-owasp-top-10-risks-in-agentic-ai-with-microsoft-copilot-studio/</link>
@@ -48,24 +66,6 @@
       <link>https://www.microsoft.com/en-us/security/blog/2026/03/20/cti-realm-a-new-benchmark-for-end-to-end-detection-rule-generation-with-ai-agents/</link>
       <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/20/cti-realm-a-new-benchmark-for-end-to-end-detection-rule-generation-with-ai-agents/</guid>
       <pubDate>Fri, 20 Mar 2026 16:19:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Secure agentic AI end-to-end</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/03/20/secure-agentic-ai-end-to-end/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/20/secure-agentic-ai-end-to-end/</guid>
-      <pubDate>Fri, 20 Mar 2026 16:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>New tools and guidance: Announcing Zero Trust for AI</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/03/19/new-tools-and-guidance-announcing-zero-trust-for-ai/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/19/new-tools-and-guidance-announcing-zero-trust-for-ai/</guid>
-      <pubDate>Thu, 19 Mar 2026 19:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>When tax season becomes cyberattack season: Phishing and malware campaigns using tax-related lures</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/03/19/when-tax-season-becomes-cyberattack-season-phishing-and-malware-campaigns-using-tax-related-lures/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/19/when-tax-season-becomes-cyberattack-season-phishing-and-malware-campaigns-using-tax-related-lures/</guid>
-      <pubDate>Thu, 19 Mar 2026 15:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-aws-devops-blog.xml</link>
     <description>Articles from AWS DevOps Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-aws-devops-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 31 Mar 2026 12:13:16 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 01 Apr 2026 00:12:46 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Leverage Agentic AI for Autonomous Incident Response with AWS DevOps Agent</title>
+      <link>https://aws.amazon.com/blogs/devops/leverage-agentic-ai-for-autonomous-incident-response-with-aws-devops-agent/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/leverage-agentic-ai-for-autonomous-incident-response-with-aws-devops-agent/</guid>
+      <pubDate>Tue, 31 Mar 2026 22:58:13 +0000</pubDate>
+    </item>
     <item>
       <title>Standardizing construct properties with AWS CDK Property Injection</title>
       <link>https://aws.amazon.com/blogs/devops/standardizing-construct-properties-with-aws-cdk-property-injection/</link>
@@ -120,12 +126,6 @@
       <link>https://aws.amazon.com/blogs/devops/take-fine-grained-control-of-your-aws-cloudformation-stacksets-deployment-with-stackset-dependencies/</link>
       <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/take-fine-grained-control-of-your-aws-cloudformation-stacksets-deployment-with-stackset-dependencies/</guid>
       <pubDate>Fri, 21 Nov 2025 22:22:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Announcing CloudFormation IDE Experience: End-to-End Development in Your IDE</title>
-      <link>https://aws.amazon.com/blogs/devops/announcing-cloudformation-ide-experience-end-to-end-development-in-your-ide/</link>
-      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/announcing-cloudformation-ide-experience-end-to-end-development-in-your-ide/</guid>
-      <pubDate>Wed, 19 Nov 2025 19:01:49 +0000</pubDate>
     </item>
   </channel>
 </rss>

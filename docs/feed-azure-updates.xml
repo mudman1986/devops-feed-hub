@@ -5,8 +5,56 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml</link>
     <description>Articles from Azure Updates</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 31 Mar 2026 12:13:16 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 01 Apr 2026 00:12:46 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Retirement: External Data Import &amp; Data Connections in Azure Machine Learning will be retired on September 30, 2026</title>
+      <link>https://azure.microsoft.com/updates?id=557406</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557406</guid>
+      <pubDate>Tue, 31 Mar 2026 20:00:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Azure DevOps March 2026 updates</title>
+      <link>https://azure.microsoft.com/updates?id=559660</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=559660</guid>
+      <pubDate>Tue, 31 Mar 2026 18:15:10 +0000</pubDate>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Azure Event Grid provides new capabilities for smarter, more secure event-driven architectures</title>
+      <link>https://azure.microsoft.com/updates?id=559695</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=559695</guid>
+      <pubDate>Tue, 31 Mar 2026 17:45:46 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: User delegation SAS for Azure Tables, Azure Files, and Azure Queues</title>
+      <link>https://azure.microsoft.com/updates?id=559535</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=559535</guid>
+      <pubDate>Tue, 31 Mar 2026 17:30:08 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Azure Event Grid provides new capabilities for smarter, more secure event-driven architectures</title>
+      <link>https://azure.microsoft.com/updates?id=492542</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=492542</guid>
+      <pubDate>Tue, 31 Mar 2026 17:30:08 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Microsoft Azure now available from new cloud region in Denmark</title>
+      <link>https://azure.microsoft.com/updates?id=559406</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=559406</guid>
+      <pubDate>Tue, 31 Mar 2026 17:15:56 +0000</pubDate>
+    </item>
+    <item>
+      <title>Retirement: Manually registered Azure VPN Clients for ​Azure Government and ​Microsoft Azure operated by 21Vianet clouds will be retired on March 31, 2029</title>
+      <link>https://azure.microsoft.com/updates?id=557395</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557395</guid>
+      <pubDate>Tue, 31 Mar 2026 16:45:33 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Azure Premium SSD v2 Disk is now available in US Gov Arizona</title>
+      <link>https://azure.microsoft.com/updates?id=559677</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=559677</guid>
+      <pubDate>Tue, 31 Mar 2026 16:30:51 +0000</pubDate>
+    </item>
     <item>
       <title>[In preview] Public Preview: Ephemeral OS Disk with full caching for VM/VMSS</title>
       <link>https://azure.microsoft.com/updates?id=559322</link>
@@ -1151,54 +1199,6 @@
       <title>[In preview] Public Preview: Azure Network Watcher Topology – AKS Visualization</title>
       <link>https://azure.microsoft.com/updates?id=527810</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=527810</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Azure VNet Flow Log - Filtering</title>
-      <link>https://azure.microsoft.com/updates?id=527805</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=527805</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: ExpressRoute Scalable Gateway</title>
-      <link>https://azure.microsoft.com/updates?id=526729</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=526729</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Azure Container Registry Repository Permissions with Attribute-based Access Control (ABAC)</title>
-      <link>https://azure.microsoft.com/updates?id=526644</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=526644</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Azure Kubernetes Service desktop</title>
-      <link>https://azure.microsoft.com/updates?id=526242</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=526242</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Pod sandboxing on AKS</title>
-      <link>https://azure.microsoft.com/updates?id=526237</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=526237</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Managed namespaces on AKS</title>
-      <link>https://azure.microsoft.com/updates?id=526232</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=526232</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Azure Kubernetes Fleet Manager for Arc-enabled clusters</title>
-      <link>https://azure.microsoft.com/updates?id=526227</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=526227</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Windows Server 2025 on AKS</title>
-      <link>https://azure.microsoft.com/updates?id=526213</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=526213</guid>
       <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
     </item>
     <item>
