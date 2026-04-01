@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml</link>
     <description>Articles from Azure Updates</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 01 Apr 2026 00:12:46 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 01 Apr 2026 12:13:10 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Retirement: External Data Import &amp; Data Connections in Azure Machine Learning will be retired on September 30, 2026</title>

@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml</link>
     <description>Articles from GitHub Changelog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 01 Apr 2026 00:12:46 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 01 Apr 2026 12:13:10 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Upcoming deprecation of Claude Sonnet 4 in GitHub Copilot</title>
+      <link>https://github.blog/changelog/2026-03-31-upcoming-deprecation-of-claude-sonnet-4-in-github-copilot</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-31-upcoming-deprecation-of-claude-sonnet-4-in-github-copilot</guid>
+      <pubDate>Wed, 01 Apr 2026 00:14:43 +0000</pubDate>
+    </item>
     <item>
       <title>GitHub secret scanning — coverage update</title>
       <link>https://github.blog/changelog/2026-03-31-github-secret-scanning-nine-new-types-and-more</link>
@@ -60,12 +66,6 @@
       <link>https://github.blog/changelog/2026-03-26-new-pull-requests-dashboard-is-in-public-preview</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-03-26-new-pull-requests-dashboard-is-in-public-preview</guid>
       <pubDate>Thu, 26 Mar 2026 17:00:33 +0000</pubDate>
-    </item>
-    <item>
-      <title>View Agentic Workflow configs in the Actions run summary</title>
-      <link>https://github.blog/changelog/2026-03-26-view-agentic-workflow-configs-in-the-actions-run-summary</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-26-view-agentic-workflow-configs-in-the-actions-run-summary</guid>
-      <pubDate>Thu, 26 Mar 2026 17:00:12 +0000</pubDate>
     </item>
   </channel>
 </rss>
