@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml</link>
     <description>Articles from Microsoft Security</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 01 Apr 2026 12:13:10 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 02 Apr 2026 00:10:25 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Mitigating the Axios npm supply chain compromise</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/04/01/mitigating-the-axios-npm-supply-chain-compromise/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/04/01/mitigating-the-axios-npm-supply-chain-compromise/</guid>
+      <pubDate>Wed, 01 Apr 2026 21:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>The threat to critical infrastructure has changed. Has your readiness?</title>
       <link>https://www.microsoft.com/en-us/security/security-insider/threat-landscape/threat-to-critical-infrastructure-has-changed</link>
@@ -60,12 +66,6 @@
       <link>https://www.microsoft.com/en-us/security/blog/2026/03/23/case-study-predictive-shielding-defender-stopped-gpo-based-ransomware-before-started/</link>
       <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/23/case-study-predictive-shielding-defender-stopped-gpo-based-ransomware-before-started/</guid>
       <pubDate>Mon, 23 Mar 2026 16:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>CTI-REALM: A new benchmark for end-to-end detection rule generation with AI agents</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/03/20/cti-realm-a-new-benchmark-for-end-to-end-detection-rule-generation-with-ai-agents/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/20/cti-realm-a-new-benchmark-for-end-to-end-detection-rule-generation-with-ai-agents/</guid>
-      <pubDate>Fri, 20 Mar 2026 16:19:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

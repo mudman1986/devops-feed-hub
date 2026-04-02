@@ -5,8 +5,148 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 01 Apr 2026 12:13:10 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 02 Apr 2026 00:10:25 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Retirement: Service Fabric support for Windows Server 2022 ends on March 31, 2027 - upgrade to Windows Server 2025</title>
+      <link>https://azure.microsoft.com/updates?id=558247</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558247</guid>
+      <pubDate>Wed, 01 Apr 2026 21:00:19 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>Mitigating the Axios npm supply chain compromise</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/04/01/mitigating-the-axios-npm-supply-chain-compromise/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/04/01/mitigating-the-axios-npm-supply-chain-compromise/</guid>
+      <pubDate>Wed, 01 Apr 2026 21:00:00 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>Retirement: Service Fabric support for Windows Server 2019 ends on March 31, 2027 - upgrade to Windows Server 2025</title>
+      <link>https://azure.microsoft.com/updates?id=558246</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558246</guid>
+      <pubDate>Wed, 01 Apr 2026 20:30:41 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>Securing the open source supply chain across GitHub</title>
+      <link>https://github.blog/security/supply-chain-security/securing-the-open-source-supply-chain-across-github/</link>
+      <guid isPermaLink="true">https://github.blog/security/supply-chain-security/securing-the-open-source-supply-chain-across-github/</guid>
+      <pubDate>Wed, 01 Apr 2026 19:20:12 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Unlock Client-Side Configuration at Scale with Azure App Configuration and Azure Front Door</title>
+      <link>https://azure.microsoft.com/updates?id=537234</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=537234</guid>
+      <pubDate>Wed, 01 Apr 2026 19:00:05 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>Research, plan, and code with Copilot cloud agent</title>
+      <link>https://github.blog/changelog/2026-04-01-research-plan-and-code-with-copilot-cloud-agent</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-01-research-plan-and-code-with-copilot-cloud-agent</guid>
+      <pubDate>Wed, 01 Apr 2026 18:36:08 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Azure Data Box enhances compliance with automatic Secure Erasure Certificates</title>
+      <link>https://azure.microsoft.com/updates?id=559772</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=559772</guid>
+      <pubDate>Wed, 01 Apr 2026 18:30:16 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Azure Data Box now supports Azure Files Provisioned v2</title>
+      <link>https://azure.microsoft.com/updates?id=559767</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=559767</guid>
+      <pubDate>Wed, 01 Apr 2026 18:15:44 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>[In development] Public Preview: Azure NetApp Files storage with cool access enhancement</title>
+      <link>https://azure.microsoft.com/updates?id=559504</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=559504</guid>
+      <pubDate>Wed, 01 Apr 2026 18:15:44 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>Retirement: Select Azure AI Language Features</title>
+      <link>https://azure.microsoft.com/updates?id=557394</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557394</guid>
+      <pubDate>Wed, 01 Apr 2026 18:00:10 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>Improving the Markdown Editor for Work Items</title>
+      <link>https://devblogs.microsoft.com/devops/improving-the-markdown-editor-for-work-items/</link>
+      <guid isPermaLink="true">https://devblogs.microsoft.com/devops/improving-the-markdown-editor-for-work-items/</guid>
+      <pubDate>Wed, 01 Apr 2026 17:17:11 +0000</pubDate>
+      <source>Microsoft DevOps Blog</source>
+    </item>
+    <item>
+      <title>Codespaces is now generally available for GitHub Enterprise with data residency</title>
+      <link>https://github.blog/changelog/2026-04-01-codespaces-is-now-generally-available-for-github-enterprise-with-data-residency</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-01-codespaces-is-now-generally-available-for-github-enterprise-with-data-residency</guid>
+      <pubDate>Wed, 01 Apr 2026 17:16:57 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>AWS permission delegation now generally available in HCP Terraform</title>
+      <link>https://www.hashicorp.com/blog/aws-permission-delegation-now-generally-available-in-hcp-terraform</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/aws-permission-delegation-now-generally-available-in-hcp-terraform</guid>
+      <pubDate>Wed, 01 Apr 2026 17:00:00 +0000</pubDate>
+      <source>HashiCorp Blog</source>
+    </item>
+    <item>
+      <title>GPT-5.4 mini is now available in Copilot Student auto model selection</title>
+      <link>https://github.blog/changelog/2026-04-01-gpt-5-4-mini-is-now-available-in-copilot-student-auto-model-selection</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-01-gpt-5-4-mini-is-now-available-in-copilot-student-auto-model-selection</guid>
+      <pubDate>Wed, 01 Apr 2026 16:46:07 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>GitHub Mobile: Stay in flow with a refreshed Copilot tab and native session logs</title>
+      <link>https://github.blog/changelog/2026-04-01-github-mobile-stay-in-flow-with-a-refreshed-copilot-tab-and-native-session-logs</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-01-github-mobile-stay-in-flow-with-a-refreshed-copilot-tab-and-native-session-logs</guid>
+      <pubDate>Wed, 01 Apr 2026 16:36:10 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>GitHub Mobile: Faster, more flexible agent assignment from issues</title>
+      <link>https://github.blog/changelog/2026-04-01-github-mobile-faster-more-flexible-agent-assignment-from-issues</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-01-github-mobile-faster-more-flexible-agent-assignment-from-issues</guid>
+      <pubDate>Wed, 01 Apr 2026 16:34:58 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>HCP Terraform adds IP allow list for Terraform resources</title>
+      <link>https://www.hashicorp.com/blog/hcp-terraform-adds-ip-allow-list-for-terraform-resources</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/hcp-terraform-adds-ip-allow-list-for-terraform-resources</guid>
+      <pubDate>Wed, 01 Apr 2026 16:00:00 +0000</pubDate>
+      <source>HashiCorp Blog</source>
+    </item>
+    <item>
+      <title>Securely connect AWS DevOps Agent to private services in your VPCs</title>
+      <link>https://aws.amazon.com/blogs/devops/securely-connect-aws-devops-agent-to-private-services-in-your-vpcs/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/securely-connect-aws-devops-agent-to-private-services-in-your-vpcs/</guid>
+      <pubDate>Wed, 01 Apr 2026 15:37:03 +0000</pubDate>
+      <source>AWS DevOps Blog</source>
+    </item>
+    <item>
+      <title>Run multiple agents at once with /fleet in Copilot CLI</title>
+      <link>https://github.blog/ai-and-ml/github-copilot/run-multiple-agents-at-once-with-fleet-in-copilot-cli/</link>
+      <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/run-multiple-agents-at-once-with-fleet-in-copilot-cli/</guid>
+      <pubDate>Wed, 01 Apr 2026 15:00:00 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
+    <item>
+      <title>Issue #268 - AWS Lightsail AI Agents, Faster Terraform Applies, Local RAG for IaC, Lifecycle Rules Without Forks, and Combining Argo CD With Terraform</title>
+      <link>https://www.weekly.tf/p/issue-268-aws-lightsail-ai-agents-faster-terraform-applies-local-rag-for-iac-lifecycle-rules-without</link>
+      <guid isPermaLink="true">https://www.weekly.tf/p/issue-268-aws-lightsail-ai-agents-faster-terraform-applies-local-rag-for-iac-lifecycle-rules-without</guid>
+      <pubDate>Wed, 01 Apr 2026 15:00:00 +0000</pubDate>
+      <source>Terraform weekly</source>
+    </item>
     <item>
       <title>Upcoming deprecation of Claude Sonnet 4 in GitHub Copilot</title>
       <link>https://github.blog/changelog/2026-03-31-upcoming-deprecation-of-claude-sonnet-4-in-github-copilot</link>
@@ -90,6 +230,13 @@
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=559695</guid>
       <pubDate>Tue, 31 Mar 2026 17:45:46 +0000</pubDate>
       <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>Dependabot now supports Xcode projects using SwiftPM with .xcodeproj manifests</title>
+      <link>https://github.blog/changelog/2026-03-31-dependabot-now-supports-xcode-projects-using-swiftpm-with-xcodeproj-manifests</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-31-dependabot-now-supports-xcode-projects-using-swiftpm-with-xcodeproj-manifests</guid>
+      <pubDate>Tue, 31 Mar 2026 17:34:41 +0000</pubDate>
+      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>[Launched] Generally Available: User delegation SAS for Azure Tables, Azure Files, and Azure Queues</title>
@@ -183,13 +330,6 @@
       <source>GitHub Changelog</source>
     </item>
     <item>
-      <title>EU data residency region expanding to include EFTA countries</title>
-      <link>https://github.blog/changelog/2026-03-31-eu-data-residency-region-expanding-to-include-efta-countries</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-31-eu-data-residency-region-expanding-to-include-efta-countries</guid>
-      <pubDate>Tue, 31 Mar 2026 07:00:25 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>Changes to packages.gitlab.com: What you need to know</title>
       <link>https://about.gitlab.com/blog/changes-to-packages-gitlab-com-what-you-need-to-know/</link>
       <guid isPermaLink="true">https://about.gitlab.com/blog/changes-to-packages-gitlab-com-what-you-need-to-know/</guid>
@@ -253,13 +393,6 @@
       <source>Microsoft Entra Blog</source>
     </item>
     <item>
-      <title>Create issues from Slack with Copilot</title>
-      <link>https://github.blog/changelog/2026-03-30-create-issues-from-slack-with-copilot</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-30-create-issues-from-slack-with-copilot</guid>
-      <pubDate>Mon, 30 Mar 2026 09:32:07 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>Kubernetes v1.36 Sneak Peek</title>
       <link>https://kubernetes.io/blog/2026/03/30/kubernetes-v1-36-sneak-peek/</link>
       <guid isPermaLink="true">https://kubernetes.io/blog/2026/03/30/kubernetes-v1-36-sneak-peek/</guid>
@@ -286,34 +419,6 @@
       <guid isPermaLink="true">https://www.hashicorp.com/blog/modernizing-governance-on-hcp-with-multi-owner-and-global-automation</guid>
       <pubDate>Fri, 27 Mar 2026 07:12:00 +0000</pubDate>
       <source>HashiCorp Blog</source>
-    </item>
-    <item>
-      <title>Gemini 3 Pro deprecated</title>
-      <link>https://github.blog/changelog/2026-03-26-gemini-3-pro-deprecated</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-26-gemini-3-pro-deprecated</guid>
-      <pubDate>Thu, 26 Mar 2026 18:46:54 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>Credential revocation API now supports GitHub OAuth and GitHub app credentials</title>
-      <link>https://github.blog/changelog/2026-03-26-credential-revocation-api-now-supports-github-oauth-and-github-app-credentials</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-26-credential-revocation-api-now-supports-github-oauth-and-github-app-credentials</guid>
-      <pubDate>Thu, 26 Mar 2026 18:08:13 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>Ask @copilot to resolve merge conflicts on pull requests</title>
-      <link>https://github.blog/changelog/2026-03-26-ask-copilot-to-resolve-merge-conflicts-on-pull-requests</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-26-ask-copilot-to-resolve-merge-conflicts-on-pull-requests</guid>
-      <pubDate>Thu, 26 Mar 2026 17:32:22 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>New pull requests dashboard is in public preview</title>
-      <link>https://github.blog/changelog/2026-03-26-new-pull-requests-dashboard-is-in-public-preview</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-26-new-pull-requests-dashboard-is-in-public-preview</guid>
-      <pubDate>Thu, 26 Mar 2026 17:00:33 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>LAB3 accelerates cloud modernization with HashiCorp-powered unified workflows</title>
@@ -610,13 +715,6 @@
       <source>Azure Updates</source>
     </item>
     <item>
-      <title>CTI-REALM: A new benchmark for end-to-end detection rule generation with AI agents</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/03/20/cti-realm-a-new-benchmark-for-end-to-end-detection-rule-generation-with-ai-agents/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/20/cti-realm-a-new-benchmark-for-end-to-end-detection-rule-generation-with-ai-agents/</guid>
-      <pubDate>Fri, 20 Mar 2026 16:19:00 +0000</pubDate>
-      <source>Microsoft Security</source>
-    </item>
-    <item>
       <title>Secure access in the age of AI: Key findings from our 2026 Report</title>
       <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/secure-access-in-the-age-of-ai-key-findings-from-our-2026-report/ba-p/4486060</link>
       <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/secure-access-in-the-age-of-ai-key-findings-from-our-2026-report/ba-p/4486060</guid>
@@ -664,13 +762,6 @@
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=548497</guid>
       <pubDate>Thu, 19 Mar 2026 16:30:27 +0000</pubDate>
       <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>How Squad runs coordinated AI agents inside your repository</title>
-      <link>https://github.blog/ai-and-ml/github-copilot/how-squad-runs-coordinated-ai-agents-inside-your-repository/</link>
-      <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/how-squad-runs-coordinated-ai-agents-inside-your-repository/</guid>
-      <pubDate>Thu, 19 Mar 2026 16:09:50 +0000</pubDate>
-      <source>GitHub Blog</source>
     </item>
     <item>
       <title>GitLab 18.10 brings AI-native triage and remediation</title>
@@ -832,13 +923,6 @@
       <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/upcoming-conditional-access-change-improved-enforcement-for/ba-p/4488925</guid>
       <pubDate>Tue, 17 Mar 2026 17:10:54 +0000</pubDate>
       <source>Microsoft Entra Blog</source>
-    </item>
-    <item>
-      <title>Investing in the people shaping open source and securing the future together</title>
-      <link>https://github.blog/security/supply-chain-security/investing-in-the-people-shaping-open-source-and-securing-the-future-together/</link>
-      <guid isPermaLink="true">https://github.blog/security/supply-chain-security/investing-in-the-people-shaping-open-source-and-securing-the-future-together/</guid>
-      <pubDate>Tue, 17 Mar 2026 16:00:00 +0000</pubDate>
-      <source>GitHub Blog</source>
     </item>
     <item>
       <title>Azure DevOps Remote MCP Server (public preview)</title>
@@ -1688,20 +1772,6 @@
       <source>Azure Updates</source>
     </item>
     <item>
-      <title>Azure Boards integration with GitHub Copilot includes custom agent support</title>
-      <link>https://devblogs.microsoft.com/devops/azure-boards-integration-with-github-copilot-includes-custom-agent-support/</link>
-      <guid isPermaLink="true">https://devblogs.microsoft.com/devops/azure-boards-integration-with-github-copilot-includes-custom-agent-support/</guid>
-      <pubDate>Wed, 04 Feb 2026 18:33:03 +0000</pubDate>
-      <source>Microsoft DevOps Blog</source>
-    </item>
-    <item>
-      <title>5 lessons from banking &amp; finance: Why we need zero trust secrets management</title>
-      <link>https://www.hashicorp.com/blog/5-lessons-from-banking-finance-why-we-need-zero-trust-secrets-management</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/5-lessons-from-banking-finance-why-we-need-zero-trust-secrets-management</guid>
-      <pubDate>Wed, 04 Feb 2026 17:00:00 +0000</pubDate>
-      <source>HashiCorp Blog</source>
-    </item>
-    <item>
       <title>Issue #260 - Preply's IaC Setup with Atlantis, Version Control with ASDF, Governance at Scale, ALB DNS Automation, and Graft's Module Overlay Pattern</title>
       <link>https://www.weekly.tf/p/issue-260-preply-s-iac-setup-with-atlantis-version-control-with-asdf-governance-at-scale-alb-dns</link>
       <guid isPermaLink="true">https://www.weekly.tf/p/issue-260-preply-s-iac-setup-with-atlantis-version-control-with-asdf-governance-at-scale-alb-dns</guid>
@@ -1728,13 +1798,6 @@
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=548198</guid>
       <pubDate>Tue, 03 Feb 2026 20:30:31 +0000</pubDate>
       <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>PCI DSS 4.0.1 compliance with Vault, Boundary &amp; Vault Radar</title>
-      <link>https://www.hashicorp.com/blog/pci-dss-4-compliance-with-hashicorp-vault-and-vault-radar</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/pci-dss-4-compliance-with-hashicorp-vault-and-vault-radar</guid>
-      <pubDate>Tue, 03 Feb 2026 17:00:00 +0000</pubDate>
-      <source>HashiCorp Blog</source>
     </item>
     <item>
       <title>Introducing Node Readiness Controller</title>
@@ -2521,13 +2584,6 @@
       <source>AWS DevOps Blog</source>
     </item>
     <item>
-      <title>Take fine-grained control of your AWS CloudFormation StackSets Deployment with StackSet Dependencies</title>
-      <link>https://aws.amazon.com/blogs/devops/take-fine-grained-control-of-your-aws-cloudformation-stacksets-deployment-with-stackset-dependencies/</link>
-      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/take-fine-grained-control-of-your-aws-cloudformation-stacksets-deployment-with-stackset-dependencies/</guid>
-      <pubDate>Fri, 21 Nov 2025 22:22:00 +0000</pubDate>
-      <source>AWS DevOps Blog</source>
-    </item>
-    <item>
       <title>[Launched] Generally Available: Custom handler support in Azure Functions Flex consumption</title>
       <link>https://azure.microsoft.com/updates?id=512413</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=512413</guid>
@@ -2766,55 +2822,6 @@
       <source>Azure Updates</source>
     </item>
     <item>
-      <title>[In preview] Public Preview: Microsoft HTTP DDoS Ruleset 1.0 on Application Gateway WAF v2</title>
-      <link>https://azure.microsoft.com/updates?id=530609</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=530609</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[In development] Private Preview: Azure Boost remote storage throughput and network bandwidth enhancements</title>
-      <link>https://azure.microsoft.com/updates?id=530287</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=530287</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: NCv6 Virtual Machines</title>
-      <link>https://azure.microsoft.com/updates?id=530208</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=530208</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: New integration and extensibility capabilities to Azure SRE Agent</title>
-      <link>https://azure.microsoft.com/updates?id=529944</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=529944</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Advanced sampling and richer data collection in Azure Monitor OpenTelemetry Distro</title>
-      <link>https://azure.microsoft.com/updates?id=529519</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=529519</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Azure Network Watcher – Agentless Connection Troubleshoot</title>
-      <link>https://azure.microsoft.com/updates?id=527815</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=527815</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Azure Network Watcher Topology – AKS Visualization</title>
-      <link>https://azure.microsoft.com/updates?id=527810</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=527810</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
       <title>Microsoft Entra at Ignite 2025: November 17-21</title>
       <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-at-ignite-2025-november-17-21/ba-p/4400194</link>
       <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-at-ignite-2025-november-17-21/ba-p/4400194</guid>
@@ -2889,13 +2896,6 @@
       <link>https://www.weekly.tf/p/issue-249-terraform-testing-and-tdd-version-switcher-tool-ai-code-with-copilot-mcp-s3-content-modera</link>
       <guid isPermaLink="true">https://www.weekly.tf/p/issue-249-terraform-testing-and-tdd-version-switcher-tool-ai-code-with-copilot-mcp-s3-content-modera</guid>
       <pubDate>Wed, 29 Oct 2025 16:01:53 +0000</pubDate>
-      <source>Terraform weekly</source>
-    </item>
-    <item>
-      <title>Issue #248 - Terraform State Locking Explained, Rightsize Terraform modules, Terraform with AI and GitHub Copilot, Terratags, Terramaid</title>
-      <link>https://www.weekly.tf/p/issue-248-terraform-state-locking-explained-rightsize-terraform-modules-terraform-with-ai-and-github</link>
-      <guid isPermaLink="true">https://www.weekly.tf/p/issue-248-terraform-state-locking-explained-rightsize-terraform-modules-terraform-with-ai-and-github</guid>
-      <pubDate>Wed, 22 Oct 2025 15:00:42 +0000</pubDate>
       <source>Terraform weekly</source>
     </item>
     <item>

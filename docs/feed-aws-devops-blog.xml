@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-aws-devops-blog.xml</link>
     <description>Articles from AWS DevOps Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-aws-devops-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 01 Apr 2026 12:13:10 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 02 Apr 2026 00:10:25 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Securely connect AWS DevOps Agent to private services in your VPCs</title>
+      <link>https://aws.amazon.com/blogs/devops/securely-connect-aws-devops-agent-to-private-services-in-your-vpcs/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/securely-connect-aws-devops-agent-to-private-services-in-your-vpcs/</guid>
+      <pubDate>Wed, 01 Apr 2026 15:37:03 +0000</pubDate>
+    </item>
     <item>
       <title>Leverage Agentic AI for Autonomous Incident Response with AWS DevOps Agent</title>
       <link>https://aws.amazon.com/blogs/devops/leverage-agentic-ai-for-autonomous-incident-response-with-aws-devops-agent/</link>
@@ -120,12 +126,6 @@
       <link>https://aws.amazon.com/blogs/devops/introducing-aws-cloudformation-stack-refactoring-reorganize-your-infrastructure-without-disruption/</link>
       <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/introducing-aws-cloudformation-stack-refactoring-reorganize-your-infrastructure-without-disruption/</guid>
       <pubDate>Sat, 22 Nov 2025 00:50:47 +0000</pubDate>
-    </item>
-    <item>
-      <title>Take fine-grained control of your AWS CloudFormation StackSets Deployment with StackSet Dependencies</title>
-      <link>https://aws.amazon.com/blogs/devops/take-fine-grained-control-of-your-aws-cloudformation-stacksets-deployment-with-stackset-dependencies/</link>
-      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/take-fine-grained-control-of-your-aws-cloudformation-stacksets-deployment-with-stackset-dependencies/</guid>
-      <pubDate>Fri, 21 Nov 2025 22:22:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

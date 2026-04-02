@@ -5,13 +5,49 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml</link>
     <description>Articles from GitHub Changelog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 01 Apr 2026 12:13:10 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 02 Apr 2026 00:10:25 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Research, plan, and code with Copilot cloud agent</title>
+      <link>https://github.blog/changelog/2026-04-01-research-plan-and-code-with-copilot-cloud-agent</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-01-research-plan-and-code-with-copilot-cloud-agent</guid>
+      <pubDate>Wed, 01 Apr 2026 18:36:08 +0000</pubDate>
+    </item>
+    <item>
+      <title>Codespaces is now generally available for GitHub Enterprise with data residency</title>
+      <link>https://github.blog/changelog/2026-04-01-codespaces-is-now-generally-available-for-github-enterprise-with-data-residency</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-01-codespaces-is-now-generally-available-for-github-enterprise-with-data-residency</guid>
+      <pubDate>Wed, 01 Apr 2026 17:16:57 +0000</pubDate>
+    </item>
+    <item>
+      <title>GPT-5.4 mini is now available in Copilot Student auto model selection</title>
+      <link>https://github.blog/changelog/2026-04-01-gpt-5-4-mini-is-now-available-in-copilot-student-auto-model-selection</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-01-gpt-5-4-mini-is-now-available-in-copilot-student-auto-model-selection</guid>
+      <pubDate>Wed, 01 Apr 2026 16:46:07 +0000</pubDate>
+    </item>
+    <item>
+      <title>GitHub Mobile: Stay in flow with a refreshed Copilot tab and native session logs</title>
+      <link>https://github.blog/changelog/2026-04-01-github-mobile-stay-in-flow-with-a-refreshed-copilot-tab-and-native-session-logs</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-01-github-mobile-stay-in-flow-with-a-refreshed-copilot-tab-and-native-session-logs</guid>
+      <pubDate>Wed, 01 Apr 2026 16:36:10 +0000</pubDate>
+    </item>
+    <item>
+      <title>GitHub Mobile: Faster, more flexible agent assignment from issues</title>
+      <link>https://github.blog/changelog/2026-04-01-github-mobile-faster-more-flexible-agent-assignment-from-issues</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-01-github-mobile-faster-more-flexible-agent-assignment-from-issues</guid>
+      <pubDate>Wed, 01 Apr 2026 16:34:58 +0000</pubDate>
+    </item>
     <item>
       <title>Upcoming deprecation of Claude Sonnet 4 in GitHub Copilot</title>
       <link>https://github.blog/changelog/2026-03-31-upcoming-deprecation-of-claude-sonnet-4-in-github-copilot</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-03-31-upcoming-deprecation-of-claude-sonnet-4-in-github-copilot</guid>
       <pubDate>Wed, 01 Apr 2026 00:14:43 +0000</pubDate>
+    </item>
+    <item>
+      <title>Dependabot now supports Xcode projects using SwiftPM with .xcodeproj manifests</title>
+      <link>https://github.blog/changelog/2026-03-31-dependabot-now-supports-xcode-projects-using-swiftpm-with-xcodeproj-manifests</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-03-31-dependabot-now-supports-xcode-projects-using-swiftpm-with-xcodeproj-manifests</guid>
+      <pubDate>Tue, 31 Mar 2026 17:34:41 +0000</pubDate>
     </item>
     <item>
       <title>GitHub secret scanning — coverage update</title>
@@ -30,42 +66,6 @@
       <link>https://github.blog/changelog/2026-03-31-codeql-pull-requests-insights-on-security-overview-now-cover-all-protected-branches</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-03-31-codeql-pull-requests-insights-on-security-overview-now-cover-all-protected-branches</guid>
       <pubDate>Tue, 31 Mar 2026 12:07:49 +0000</pubDate>
-    </item>
-    <item>
-      <title>EU data residency region expanding to include EFTA countries</title>
-      <link>https://github.blog/changelog/2026-03-31-eu-data-residency-region-expanding-to-include-efta-countries</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-31-eu-data-residency-region-expanding-to-include-efta-countries</guid>
-      <pubDate>Tue, 31 Mar 2026 07:00:25 +0000</pubDate>
-    </item>
-    <item>
-      <title>Create issues from Slack with Copilot</title>
-      <link>https://github.blog/changelog/2026-03-30-create-issues-from-slack-with-copilot</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-30-create-issues-from-slack-with-copilot</guid>
-      <pubDate>Mon, 30 Mar 2026 09:32:07 +0000</pubDate>
-    </item>
-    <item>
-      <title>Gemini 3 Pro deprecated</title>
-      <link>https://github.blog/changelog/2026-03-26-gemini-3-pro-deprecated</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-26-gemini-3-pro-deprecated</guid>
-      <pubDate>Thu, 26 Mar 2026 18:46:54 +0000</pubDate>
-    </item>
-    <item>
-      <title>Credential revocation API now supports GitHub OAuth and GitHub app credentials</title>
-      <link>https://github.blog/changelog/2026-03-26-credential-revocation-api-now-supports-github-oauth-and-github-app-credentials</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-26-credential-revocation-api-now-supports-github-oauth-and-github-app-credentials</guid>
-      <pubDate>Thu, 26 Mar 2026 18:08:13 +0000</pubDate>
-    </item>
-    <item>
-      <title>Ask @copilot to resolve merge conflicts on pull requests</title>
-      <link>https://github.blog/changelog/2026-03-26-ask-copilot-to-resolve-merge-conflicts-on-pull-requests</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-26-ask-copilot-to-resolve-merge-conflicts-on-pull-requests</guid>
-      <pubDate>Thu, 26 Mar 2026 17:32:22 +0000</pubDate>
-    </item>
-    <item>
-      <title>New pull requests dashboard is in public preview</title>
-      <link>https://github.blog/changelog/2026-03-26-new-pull-requests-dashboard-is-in-public-preview</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-03-26-new-pull-requests-dashboard-is-in-public-preview</guid>
-      <pubDate>Thu, 26 Mar 2026 17:00:33 +0000</pubDate>
     </item>
   </channel>
 </rss>

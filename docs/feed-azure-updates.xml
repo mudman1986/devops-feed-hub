@@ -5,8 +5,50 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml</link>
     <description>Articles from Azure Updates</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 01 Apr 2026 12:13:10 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 02 Apr 2026 00:10:25 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Retirement: Service Fabric support for Windows Server 2022 ends on March 31, 2027 - upgrade to Windows Server 2025</title>
+      <link>https://azure.microsoft.com/updates?id=558247</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558247</guid>
+      <pubDate>Wed, 01 Apr 2026 21:00:19 +0000</pubDate>
+    </item>
+    <item>
+      <title>Retirement: Service Fabric support for Windows Server 2019 ends on March 31, 2027 - upgrade to Windows Server 2025</title>
+      <link>https://azure.microsoft.com/updates?id=558246</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558246</guid>
+      <pubDate>Wed, 01 Apr 2026 20:30:41 +0000</pubDate>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Unlock Client-Side Configuration at Scale with Azure App Configuration and Azure Front Door</title>
+      <link>https://azure.microsoft.com/updates?id=537234</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=537234</guid>
+      <pubDate>Wed, 01 Apr 2026 19:00:05 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Azure Data Box enhances compliance with automatic Secure Erasure Certificates</title>
+      <link>https://azure.microsoft.com/updates?id=559772</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=559772</guid>
+      <pubDate>Wed, 01 Apr 2026 18:30:16 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Azure Data Box now supports Azure Files Provisioned v2</title>
+      <link>https://azure.microsoft.com/updates?id=559767</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=559767</guid>
+      <pubDate>Wed, 01 Apr 2026 18:15:44 +0000</pubDate>
+    </item>
+    <item>
+      <title>[In development] Public Preview: Azure NetApp Files storage with cool access enhancement</title>
+      <link>https://azure.microsoft.com/updates?id=559504</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=559504</guid>
+      <pubDate>Wed, 01 Apr 2026 18:15:44 +0000</pubDate>
+    </item>
+    <item>
+      <title>Retirement: Select Azure AI Language Features</title>
+      <link>https://azure.microsoft.com/updates?id=557394</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557394</guid>
+      <pubDate>Wed, 01 Apr 2026 18:00:10 +0000</pubDate>
+    </item>
     <item>
       <title>Retirement: External Data Import &amp; Data Connections in Azure Machine Learning will be retired on September 30, 2026</title>
       <link>https://azure.microsoft.com/updates?id=557406</link>
@@ -1157,48 +1199,6 @@
       <title>[In development] Private Preview: Azure Boost confidential device</title>
       <link>https://azure.microsoft.com/updates?id=530661</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=530661</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Microsoft HTTP DDoS Ruleset 1.0 on Application Gateway WAF v2</title>
-      <link>https://azure.microsoft.com/updates?id=530609</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=530609</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In development] Private Preview: Azure Boost remote storage throughput and network bandwidth enhancements</title>
-      <link>https://azure.microsoft.com/updates?id=530287</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=530287</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: NCv6 Virtual Machines</title>
-      <link>https://azure.microsoft.com/updates?id=530208</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=530208</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: New integration and extensibility capabilities to Azure SRE Agent</title>
-      <link>https://azure.microsoft.com/updates?id=529944</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=529944</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Advanced sampling and richer data collection in Azure Monitor OpenTelemetry Distro</title>
-      <link>https://azure.microsoft.com/updates?id=529519</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=529519</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Azure Network Watcher – Agentless Connection Troubleshoot</title>
-      <link>https://azure.microsoft.com/updates?id=527815</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=527815</guid>
-      <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Azure Network Watcher Topology – AKS Visualization</title>
-      <link>https://azure.microsoft.com/updates?id=527810</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=527810</guid>
       <pubDate>Tue, 18 Nov 2025 17:01:02 +0000</pubDate>
     </item>
     <item>
