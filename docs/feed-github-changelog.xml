@@ -5,8 +5,32 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml</link>
     <description>Articles from GitHub Changelog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 03 Apr 2026 12:08:29 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 04 Apr 2026 00:10:10 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Organization runner controls for Copilot cloud agent</title>
+      <link>https://github.blog/changelog/2026-04-03-organization-runner-controls-for-copilot-cloud-agent</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-03-organization-runner-controls-for-copilot-cloud-agent</guid>
+      <pubDate>Fri, 03 Apr 2026 19:15:11 +0000</pubDate>
+    </item>
+    <item>
+      <title>GPT-5.1 Codex, GPT-5.1-Codex-Max, and GPT-5.1-Codex-Mini deprecated</title>
+      <link>https://github.blog/changelog/2026-04-03-gpt-5-1-codex-gpt-5-1-codex-max-and-gpt-5-1-codex-mini-deprecated</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-03-gpt-5-1-codex-gpt-5-1-codex-max-and-gpt-5-1-codex-mini-deprecated</guid>
+      <pubDate>Fri, 03 Apr 2026 17:11:31 +0000</pubDate>
+    </item>
+    <item>
+      <title>Organization firewall settings for Copilot cloud agent</title>
+      <link>https://github.blog/changelog/2026-04-03-organization-firewall-settings-for-copilot-cloud-agent</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-03-organization-firewall-settings-for-copilot-cloud-agent</guid>
+      <pubDate>Fri, 03 Apr 2026 14:12:27 +0000</pubDate>
+    </item>
+    <item>
+      <title>Copilot cloud agent signs its commits</title>
+      <link>https://github.blog/changelog/2026-04-03-copilot-cloud-agent-signs-its-commits</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-03-copilot-cloud-agent-signs-its-commits</guid>
+      <pubDate>Fri, 03 Apr 2026 12:05:23 +0000</pubDate>
+    </item>
     <item>
       <title>Copilot SDK in public preview</title>
       <link>https://github.blog/changelog/2026-04-02-copilot-sdk-in-public-preview</link>
@@ -42,30 +66,6 @@
       <link>https://github.blog/changelog/2026-04-02-improved-search-for-github-issues-is-now-generally-available</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-04-02-improved-search-for-github-issues-is-now-generally-available</guid>
       <pubDate>Thu, 02 Apr 2026 13:11:31 +0000</pubDate>
-    </item>
-    <item>
-      <title>Copilot organization custom instructions are generally available</title>
-      <link>https://github.blog/changelog/2026-04-02-copilot-organization-custom-instructions-are-generally-available</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-02-copilot-organization-custom-instructions-are-generally-available</guid>
-      <pubDate>Thu, 02 Apr 2026 13:03:32 +0000</pubDate>
-    </item>
-    <item>
-      <title>Research, plan, and code with Copilot cloud agent</title>
-      <link>https://github.blog/changelog/2026-04-01-research-plan-and-code-with-copilot-cloud-agent</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-01-research-plan-and-code-with-copilot-cloud-agent</guid>
-      <pubDate>Wed, 01 Apr 2026 18:36:08 +0000</pubDate>
-    </item>
-    <item>
-      <title>Codespaces is now generally available for GitHub Enterprise with data residency</title>
-      <link>https://github.blog/changelog/2026-04-01-codespaces-is-now-generally-available-for-github-enterprise-with-data-residency</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-01-codespaces-is-now-generally-available-for-github-enterprise-with-data-residency</guid>
-      <pubDate>Wed, 01 Apr 2026 17:16:57 +0000</pubDate>
-    </item>
-    <item>
-      <title>GPT-5.4 mini is now available in Copilot Student auto model selection</title>
-      <link>https://github.blog/changelog/2026-04-01-gpt-5-4-mini-is-now-available-in-copilot-student-auto-model-selection</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-01-gpt-5-4-mini-is-now-available-in-copilot-student-auto-model-selection</guid>
-      <pubDate>Wed, 01 Apr 2026 16:46:07 +0000</pubDate>
     </item>
   </channel>
 </rss>
