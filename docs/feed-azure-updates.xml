@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml</link>
     <description>Articles from Azure Updates</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sun, 05 Apr 2026 00:11:12 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 05 Apr 2026 12:05:56 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Retirement: Python support for Azure App Service and Azure Functions on Windows will be retired on March 31, 2027</title>
