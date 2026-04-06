@@ -5,8 +5,20 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-jenkins-blog.xml</link>
     <description>Articles from Jenkins Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-jenkins-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 06 Apr 2026 00:12:15 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 06 Apr 2026 12:11:56 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Plugin of the Month – April 2026: Pipeline Graph View</title>
+      <link>https://www.jenkins.io/blog/2026/04/06/plugin-of-the-month/</link>
+      <guid isPermaLink="true">https://www.jenkins.io/blog/2026/04/06/plugin-of-the-month/</guid>
+      <pubDate>Mon, 06 Apr 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>JetBrains Report Highlights Jenkins as a Popular CI/CD Tool in 2026</title>
+      <link>https://www.jenkins.io/blog/2026/04/06/jetbrains-report-highlights-jenkins-as-a-popular-tool-in-2026/</link>
+      <guid isPermaLink="true">https://www.jenkins.io/blog/2026/04/06/jetbrains-report-highlights-jenkins-as-a-popular-tool-in-2026/</guid>
+      <pubDate>Mon, 06 Apr 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Redesigned Credentials in Jenkins</title>
       <link>https://www.jenkins.io/blog/2026/04/02/redesigned-credentials-plugin/</link>
