@@ -5,8 +5,20 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml</link>
     <description>Articles from Azure Updates</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 06 Apr 2026 00:12:15 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 07 Apr 2026 00:12:39 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>[Launched] Generally Available: Network Security Perimeter for Azure Service Bus</title>
+      <link>https://azure.microsoft.com/updates?id=559899</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=559899</guid>
+      <pubDate>Mon, 06 Apr 2026 18:00:04 +0000</pubDate>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Rule impact analysis on Azure Network Watcher</title>
+      <link>https://azure.microsoft.com/updates?id=559876</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=559876</guid>
+      <pubDate>Mon, 06 Apr 2026 16:15:40 +0000</pubDate>
+    </item>
     <item>
       <title>Retirement: Python support for Azure App Service and Azure Functions on Windows will be retired on March 31, 2027</title>
       <link>https://azure.microsoft.com/updates?id=558027</link>
@@ -1187,18 +1199,6 @@
       <title>[In preview] Public Preview: Microsoft Defender for Cloud + GitHub Advanced Security</title>
       <link>https://azure.microsoft.com/updates?id=526876</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=526876</guid>
-      <pubDate>Tue, 18 Nov 2025 18:00:28 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Smart Tier account level tiering (Azure Blob Storage and ADLS)</title>
-      <link>https://azure.microsoft.com/updates?id=526188</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=526188</guid>
-      <pubDate>Tue, 18 Nov 2025 18:00:28 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Managed Instance on Azure App Service</title>
-      <link>https://azure.microsoft.com/updates?id=523623</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523623</guid>
       <pubDate>Tue, 18 Nov 2025 18:00:28 +0000</pubDate>
     </item>
     <item>
