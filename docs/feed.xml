@@ -5,14 +5,35 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 07 Apr 2026 00:12:39 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 07 Apr 2026 12:13:15 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Code scanning: Batch apply security alert suggestions on pull requests</title>
+      <link>https://github.blog/changelog/2026-04-07-code-scanning-batch-apply-security-alert-suggestions-on-pull-requests</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-07-code-scanning-batch-apply-security-alert-suggestions-on-pull-requests</guid>
+      <pubDate>Tue, 07 Apr 2026 10:22:33 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Streamline test management with the SmartBear QMetry GitLab component</title>
+      <link>https://about.gitlab.com/blog/streamline-test-management-with-the-smartbear-qmetry-gitlab-component/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/streamline-test-management-with-the-smartbear-qmetry-gitlab-component/</guid>
+      <pubDate>Tue, 07 Apr 2026 00:00:00 +0000</pubDate>
+      <source>GitLab Blog</source>
+    </item>
     <item>
       <title>Copilot usage metrics now identify active and passive Copilot code review users</title>
       <link>https://github.blog/changelog/2026-04-06-copilot-usage-metrics-now-identify-active-and-passive-copilot-code-review-users</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-04-06-copilot-usage-metrics-now-identify-active-and-passive-copilot-code-review-users</guid>
       <pubDate>Mon, 06 Apr 2026 23:20:14 +0000</pubDate>
       <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>GitHub Copilot CLI combines model families for a second opinion</title>
+      <link>https://github.blog/ai-and-ml/github-copilot/github-copilot-cli-combines-model-families-for-a-second-opinion/</link>
+      <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/github-copilot-cli-combines-model-families-for-a-second-opinion/</guid>
+      <pubDate>Mon, 06 Apr 2026 21:53:49 +0000</pubDate>
+      <source>GitHub Blog</source>
     </item>
     <item>
       <title>[Launched] Generally Available: Network Security Perimeter for Azure Service Bus</title>
@@ -173,13 +194,6 @@
       <link>https://github.blog/changelog/2026-04-02-github-copilot-in-visual-studio-march-update</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-04-02-github-copilot-in-visual-studio-march-update</guid>
       <pubDate>Thu, 02 Apr 2026 15:00:31 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>The Security tab is now Security &amp; quality</title>
-      <link>https://github.blog/changelog/2026-04-02-the-security-tab-is-now-security-quality</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-02-the-security-tab-is-now-security-quality</guid>
-      <pubDate>Thu, 02 Apr 2026 13:57:45 +0000</pubDate>
       <source>GitHub Changelog</source>
     </item>
     <item>
@@ -741,13 +755,6 @@
       <guid isPermaLink="true">https://www.docker.com/blog/trivy-supply-chain-compromise-what-docker-hub-users-should-know/</guid>
       <pubDate>Mon, 23 Mar 2026 23:25:14 +0000</pubDate>
       <source>Docker Blog</source>
-    </item>
-    <item>
-      <title>GitHub expands application security coverage with AI‑powered detections</title>
-      <link>https://github.blog/security/application-security/github-expands-application-security-coverage-with-ai-powered-detections/</link>
-      <guid isPermaLink="true">https://github.blog/security/application-security/github-expands-application-security-coverage-with-ai-powered-detections/</guid>
-      <pubDate>Mon, 23 Mar 2026 16:00:00 +0000</pubDate>
-      <source>GitHub Blog</source>
     </item>
     <item>
       <title>Agile planning gets a boost from new features in GitLab 18.10</title>
@@ -1460,13 +1467,6 @@
       <title>Passkeys now available for passwordless sign-in and 2FA on GitLab</title>
       <link>https://about.gitlab.com/blog/passkeys-now-available-for-passwordless-sign-in-and-2fa-on-gitlab/</link>
       <guid isPermaLink="true">https://about.gitlab.com/blog/passkeys-now-available-for-passwordless-sign-in-and-2fa-on-gitlab/</guid>
-      <pubDate>Wed, 25 Feb 2026 00:00:00 +0000</pubDate>
-      <source>GitLab Blog</source>
-    </item>
-    <item>
-      <title>New GitLab metrics and registry features help reduce CI/CD bottlenecks</title>
-      <link>https://about.gitlab.com/blog/new-gitlab-metrics-and-registry-features-help-reduce-ci-cd-bottlenecks/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/new-gitlab-metrics-and-registry-features-help-reduce-ci-cd-bottlenecks/</guid>
       <pubDate>Wed, 25 Feb 2026 00:00:00 +0000</pubDate>
       <source>GitLab Blog</source>
     </item>
