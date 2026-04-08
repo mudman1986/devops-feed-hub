@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml</link>
     <description>Articles from Microsoft Security</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 07 Apr 2026 12:13:15 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 08 Apr 2026 12:13:40 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>SOHO router compromise leads to DNS hijacking and adversary-in-the-middle attacks</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/04/07/soho-router-compromise-leads-to-dns-hijacking-and-adversary-in-the-middle-attacks/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/04/07/soho-router-compromise-leads-to-dns-hijacking-and-adversary-in-the-middle-attacks/</guid>
+      <pubDate>Tue, 07 Apr 2026 14:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Inside an AI‑enabled device code phishing campaign</title>
       <link>https://www.microsoft.com/en-us/security/blog/2026/04/06/ai-enabled-device-code-phishing-campaign-april-2026/</link>
@@ -60,12 +66,6 @@
       <link>https://www.microsoft.com/en-us/security/blog/2026/03/30/addressing-the-owasp-top-10-risks-in-agentic-ai-with-microsoft-copilot-studio/</link>
       <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/30/addressing-the-owasp-top-10-risks-in-agentic-ai-with-microsoft-copilot-studio/</guid>
       <pubDate>Mon, 30 Mar 2026 16:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>How Microsoft Defender protects high-value assets in real-world attack scenarios</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/03/27/microsoft-defender-protects-high-value-assets/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/27/microsoft-defender-protects-high-value-assets/</guid>
-      <pubDate>Fri, 27 Mar 2026 19:53:53 +0000</pubDate>
     </item>
   </channel>
 </rss>
