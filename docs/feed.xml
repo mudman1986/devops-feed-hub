@@ -5,8 +5,64 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 07 Apr 2026 12:13:15 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 08 Apr 2026 00:13:34 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>[Launched] Generally Available: Azure Red Hat OpenShift adds NVIDIA H100 and H200 GPU support</title>
+      <link>https://azure.microsoft.com/updates?id=559547</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=559547</guid>
+      <pubDate>Tue, 07 Apr 2026 19:30:53 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Disable HTTP proxy in AKS</title>
+      <link>https://azure.microsoft.com/updates?id=557857</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557857</guid>
+      <pubDate>Tue, 07 Apr 2026 17:45:41 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Azure Functions now supports MCP resource triggers</title>
+      <link>https://azure.microsoft.com/updates?id=559981</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=559981</guid>
+      <pubDate>Tue, 07 Apr 2026 17:15:12 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Pod CIDR expansion in AKS</title>
+      <link>https://azure.microsoft.com/updates?id=557907</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557907</guid>
+      <pubDate>Tue, 07 Apr 2026 17:00:23 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>Prioritize security alerts with runtime context from Dynatrace</title>
+      <link>https://github.blog/changelog/2026-04-07-prioritize-security-alerts-with-runtime-context-from-dynatrace</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-07-prioritize-security-alerts-with-runtime-context-from-dynatrace</guid>
+      <pubDate>Tue, 07 Apr 2026 15:15:24 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Copilot CLI now supports BYOK and local models</title>
+      <link>https://github.blog/changelog/2026-04-07-copilot-cli-now-supports-byok-and-local-models</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-07-copilot-cli-now-supports-byok-and-local-models</guid>
+      <pubDate>Tue, 07 Apr 2026 14:53:34 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Dependabot alerts are now assignable to AI agents for remediation</title>
+      <link>https://github.blog/changelog/2026-04-07-dependabot-alerts-are-now-assignable-to-ai-agents-for-remediation</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-07-dependabot-alerts-are-now-assignable-to-ai-agents-for-remediation</guid>
+      <pubDate>Tue, 07 Apr 2026 14:22:51 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Dependabot version updates now support the Nix ecosystem</title>
+      <link>https://github.blog/changelog/2026-04-07-dependabot-version-updates-now-support-the-nix-ecosystem</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-07-dependabot-version-updates-now-support-the-nix-ecosystem</guid>
+      <pubDate>Tue, 07 Apr 2026 14:14:49 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
     <item>
       <title>Code scanning: Batch apply security alert suggestions on pull requests</title>
       <link>https://github.blog/changelog/2026-04-07-code-scanning-batch-apply-security-alert-suggestions-on-pull-requests</link>
@@ -15,9 +71,30 @@
       <source>GitHub Changelog</source>
     </item>
     <item>
+      <title>npm trusted publishing now supports CircleCI</title>
+      <link>https://github.blog/changelog/2026-04-06-npm-trusted-publishing-now-supports-circleci</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-06-npm-trusted-publishing-now-supports-circleci</guid>
+      <pubDate>Tue, 07 Apr 2026 00:20:50 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
       <title>Streamline test management with the SmartBear QMetry GitLab component</title>
       <link>https://about.gitlab.com/blog/streamline-test-management-with-the-smartbear-qmetry-gitlab-component/</link>
       <guid isPermaLink="true">https://about.gitlab.com/blog/streamline-test-management-with-the-smartbear-qmetry-gitlab-component/</guid>
+      <pubDate>Tue, 07 Apr 2026 00:00:00 +0000</pubDate>
+      <source>GitLab Blog</source>
+    </item>
+    <item>
+      <title>Pipeline security lessons from March supply chain incidents</title>
+      <link>https://about.gitlab.com/blog/pipeline-security-lessons-from-march-supply-chain-incidents/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/pipeline-security-lessons-from-march-supply-chain-incidents/</guid>
+      <pubDate>Tue, 07 Apr 2026 00:00:00 +0000</pubDate>
+      <source>GitLab Blog</source>
+    </item>
+    <item>
+      <title>GitLab Duo CLI: Agentic AI for the development lifecycle, now in the terminal</title>
+      <link>https://about.gitlab.com/blog/gitlab-duo-cli/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/gitlab-duo-cli/</guid>
       <pubDate>Tue, 07 Apr 2026 00:00:00 +0000</pubDate>
       <source>GitLab Blog</source>
     </item>
@@ -43,25 +120,11 @@
       <source>Azure Updates</source>
     </item>
     <item>
-      <title>Inside an AI‑enabled device code phishing campaign</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/04/06/ai-enabled-device-code-phishing-campaign-april-2026/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/04/06/ai-enabled-device-code-phishing-campaign-april-2026/</guid>
-      <pubDate>Mon, 06 Apr 2026 16:34:17 +0000</pubDate>
-      <source>Microsoft Security</source>
-    </item>
-    <item>
       <title>[In preview] Public Preview: Rule impact analysis on Azure Network Watcher</title>
       <link>https://azure.microsoft.com/updates?id=559876</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=559876</guid>
       <pubDate>Mon, 06 Apr 2026 16:15:40 +0000</pubDate>
       <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>Storm-1175 focuses gaze on vulnerable web-facing assets in high-tempo Medusa ransomware operations</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/04/06/storm-1175-focuses-gaze-on-vulnerable-web-facing-assets-in-high-tempo-medusa-ransomware-operations/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/04/06/storm-1175-focuses-gaze-on-vulnerable-web-facing-assets-in-high-tempo-medusa-ransomware-operations/</guid>
-      <pubDate>Mon, 06 Apr 2026 16:00:00 +0000</pubDate>
-      <source>Microsoft Security</source>
     </item>
     <item>
       <title>Plugin of the Month – April 2026: Pipeline Graph View</title>
@@ -113,20 +176,6 @@
       <source>GitHub Changelog</source>
     </item>
     <item>
-      <title>Copilot cloud agent signs its commits</title>
-      <link>https://github.blog/changelog/2026-04-03-copilot-cloud-agent-signs-its-commits</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-03-copilot-cloud-agent-signs-its-commits</guid>
-      <pubDate>Fri, 03 Apr 2026 12:05:23 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>Copilot SDK in public preview</title>
-      <link>https://github.blog/changelog/2026-04-02-copilot-sdk-in-public-preview</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-02-copilot-sdk-in-public-preview</guid>
-      <pubDate>Thu, 02 Apr 2026 21:26:37 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>Microsoft Entra expands SCIM support with new SCIM 2.0 APIs for identity lifecycle operations</title>
       <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-expands-scim-support-with-new-scim-2-0-apis-for/ba-p/4507465</link>
       <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-expands-scim-support-with-new-scim-2-0-apis-for/ba-p/4507465</guid>
@@ -139,20 +188,6 @@
       <guid isPermaLink="true">https://www.docker.com/blog/defending-your-software-supply-chain-what-every-engineering-team-should-do-now/</guid>
       <pubDate>Thu, 02 Apr 2026 18:14:40 +0000</pubDate>
       <source>Docker Blog</source>
-    </item>
-    <item>
-      <title>Copilot usage metrics now includes per-user GitHub Copilot CLI activity in organization reports</title>
-      <link>https://github.blog/changelog/2026-04-02-copilot-usage-metrics-now-includes-per-user-github-copilot-cli-activity-in-organization-reports</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-02-copilot-usage-metrics-now-includes-per-user-github-copilot-cli-activity-in-organization-reports</guid>
-      <pubDate>Thu, 02 Apr 2026 17:27:35 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>GitHub Actions: Early April 2026 updates</title>
-      <link>https://github.blog/changelog/2026-04-02-github-actions-early-april-2026-updates</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-02-github-actions-early-april-2026-updates</guid>
-      <pubDate>Thu, 02 Apr 2026 17:11:45 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>Retirement: Python support for Azure App Service and Azure Functions on Windows will be retired on March 31, 2027</title>
@@ -176,27 +211,6 @@
       <source>Docker Blog</source>
     </item>
     <item>
-      <title>Threat actor abuse of AI accelerates from tool to cyberattack surface</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/04/02/threat-actor-abuse-of-ai-accelerates-from-tool-to-cyberattack-surface/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/04/02/threat-actor-abuse-of-ai-accelerates-from-tool-to-cyberattack-surface/</guid>
-      <pubDate>Thu, 02 Apr 2026 16:00:00 +0000</pubDate>
-      <source>Microsoft Security</source>
-    </item>
-    <item>
-      <title>Cookie-controlled PHP webshells: A stealthy tradecraft in Linux hosting environments</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/04/02/cookie-controlled-php-webshells-tradecraft-linux-hosting-environments/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/04/02/cookie-controlled-php-webshells-tradecraft-linux-hosting-environments/</guid>
-      <pubDate>Thu, 02 Apr 2026 15:37:22 +0000</pubDate>
-      <source>Microsoft Security</source>
-    </item>
-    <item>
-      <title>GitHub Copilot in Visual Studio — March update</title>
-      <link>https://github.blog/changelog/2026-04-02-github-copilot-in-visual-studio-march-update</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-02-github-copilot-in-visual-studio-march-update</guid>
-      <pubDate>Thu, 02 Apr 2026 15:00:31 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>Docker Offload now Generally Available: The Full Power of Docker, for Every Developer, Everywhere.</title>
       <link>https://www.docker.com/blog/docker-offload-now-generally-available-the-full-power-of-docker-for-every-developer-everywhere/</link>
       <guid isPermaLink="true">https://www.docker.com/blog/docker-offload-now-generally-available-the-full-power-of-docker-for-every-developer-everywhere/</guid>
@@ -216,13 +230,6 @@
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558247</guid>
       <pubDate>Wed, 01 Apr 2026 21:00:19 +0000</pubDate>
       <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>Mitigating the Axios npm supply chain compromise</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/04/01/mitigating-the-axios-npm-supply-chain-compromise/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/04/01/mitigating-the-axios-npm-supply-chain-compromise/</guid>
-      <pubDate>Wed, 01 Apr 2026 21:00:00 +0000</pubDate>
-      <source>Microsoft Security</source>
     </item>
     <item>
       <title>Retirement: Service Fabric support for Windows Server 2019 ends on March 31, 2027 - upgrade to Windows Server 2025</title>
@@ -414,13 +421,6 @@
       <source>Azure Updates</source>
     </item>
     <item>
-      <title>The threat to critical infrastructure has changed. Has your readiness?</title>
-      <link>https://www.microsoft.com/en-us/security/security-insider/threat-landscape/threat-to-critical-infrastructure-has-changed</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/security-insider/threat-landscape/threat-to-critical-infrastructure-has-changed</guid>
-      <pubDate>Tue, 31 Mar 2026 17:00:00 +0000</pubDate>
-      <source>Microsoft Security</source>
-    </item>
-    <item>
       <title>Retirement: Manually registered Azure VPN Clients for ​Azure Government and ​Microsoft Azure operated by 21Vianet clouds will be retired on March 31, 2029</title>
       <link>https://azure.microsoft.com/updates?id=557395</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557395</guid>
@@ -447,20 +447,6 @@
       <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/agent-driven-development-in-copilot-applied-science/</guid>
       <pubDate>Tue, 31 Mar 2026 16:00:00 +0000</pubDate>
       <source>GitHub Blog</source>
-    </item>
-    <item>
-      <title>Applying security fundamentals to AI: Practical advice for CISOs</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/03/31/applying-security-fundamentals-to-ai-practical-advice-for-cisos/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/31/applying-security-fundamentals-to-ai-practical-advice-for-cisos/</guid>
-      <pubDate>Tue, 31 Mar 2026 16:00:00 +0000</pubDate>
-      <source>Microsoft Security</source>
-    </item>
-    <item>
-      <title>WhatsApp malware campaign delivers VBScript and MSI backdoors</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/03/31/whatsapp-malware-campaign-delivers-vbs-payloads-msi-backdoors/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/31/whatsapp-malware-campaign-delivers-vbs-payloads-msi-backdoors/</guid>
-      <pubDate>Tue, 31 Mar 2026 13:43:05 +0000</pubDate>
-      <source>Microsoft Security</source>
     </item>
     <item>
       <title>Changes to packages.gitlab.com: What you need to know</title>
@@ -512,13 +498,6 @@
       <source>GitHub Blog</source>
     </item>
     <item>
-      <title>Addressing the OWASP Top 10 Risks in Agentic AI with Microsoft Copilot Studio</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/03/30/addressing-the-owasp-top-10-risks-in-agentic-ai-with-microsoft-copilot-studio/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/30/addressing-the-owasp-top-10-risks-in-agentic-ai-with-microsoft-copilot-studio/</guid>
-      <pubDate>Mon, 30 Mar 2026 16:00:00 +0000</pubDate>
-      <source>Microsoft Security</source>
-    </item>
-    <item>
       <title>Microsoft Entra innovations announced at RSAC 2026</title>
       <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-innovations-announced-at-rsac-2026/ba-p/4502146</link>
       <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-innovations-announced-at-rsac-2026/ba-p/4502146</guid>
@@ -531,13 +510,6 @@
       <guid isPermaLink="true">https://kubernetes.io/blog/2026/03/30/kubernetes-v1-36-sneak-peek/</guid>
       <pubDate>Mon, 30 Mar 2026 00:00:00 +0000</pubDate>
       <source>Kubernetes Blog</source>
-    </item>
-    <item>
-      <title>How Microsoft Defender protects high-value assets in real-world attack scenarios</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/03/27/microsoft-defender-protects-high-value-assets/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/27/microsoft-defender-protects-high-value-assets/</guid>
-      <pubDate>Fri, 27 Mar 2026 19:53:53 +0000</pubDate>
-      <source>Microsoft Security</source>
     </item>
     <item>
       <title>Building a News Roundup with Docker Agent, Docker Model Runner, and Skill</title>
@@ -1415,13 +1387,6 @@
       <source>GitLab Blog</source>
     </item>
     <item>
-      <title>GitLab Duo Agent Platform with Claude accelerates development</title>
-      <link>https://about.gitlab.com/blog/gitlab-duo-agent-platform-with-claude-accelerates-development/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/gitlab-duo-agent-platform-with-claude-accelerates-development/</guid>
-      <pubDate>Thu, 26 Feb 2026 00:00:00 +0000</pubDate>
-      <source>GitLab Blog</source>
-    </item>
-    <item>
       <title>[Launched] Generally Available: Azure SQL updates for late-February 2026</title>
       <link>https://azure.microsoft.com/updates?id=557517</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557517</guid>
@@ -1462,13 +1427,6 @@
       <guid isPermaLink="true">https://www.weekly.tf/p/issue-263-gemini-cli-review-agents-reliable-databricks-deployments-s3-lifecycle-automation-hcp</guid>
       <pubDate>Wed, 25 Feb 2026 16:00:00 +0000</pubDate>
       <source>Terraform weekly</source>
-    </item>
-    <item>
-      <title>Passkeys now available for passwordless sign-in and 2FA on GitLab</title>
-      <link>https://about.gitlab.com/blog/passkeys-now-available-for-passwordless-sign-in-and-2fa-on-gitlab/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/passkeys-now-available-for-passwordless-sign-in-and-2fa-on-gitlab/</guid>
-      <pubDate>Wed, 25 Feb 2026 00:00:00 +0000</pubDate>
-      <source>GitLab Blog</source>
     </item>
     <item>
       <title>Terraform Enterprise 1.2 upgrades workflows, visibility, and brownfield migration</title>
@@ -2819,34 +2777,6 @@
       <link>https://azure.microsoft.com/updates?id=532303</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=532303</guid>
       <pubDate>Wed, 19 Nov 2025 00:00:31 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Azure Copilot agents - a closer look at the deployment agent</title>
-      <link>https://azure.microsoft.com/updates?id=526751</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=526751</guid>
-      <pubDate>Tue, 18 Nov 2025 20:15:19 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[In development] Private Preview: Azure HorizonDB</title>
-      <link>https://azure.microsoft.com/updates?id=529806</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=529806</guid>
-      <pubDate>Tue, 18 Nov 2025 18:00:28 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Private Marketplace for VS Code</title>
-      <link>https://azure.microsoft.com/updates?id=526909</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=526909</guid>
-      <pubDate>Tue, 18 Nov 2025 18:00:28 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Microsoft Defender for Cloud + GitHub Advanced Security</title>
-      <link>https://azure.microsoft.com/updates?id=526876</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=526876</guid>
-      <pubDate>Tue, 18 Nov 2025 18:00:28 +0000</pubDate>
       <source>Azure Updates</source>
     </item>
     <item>

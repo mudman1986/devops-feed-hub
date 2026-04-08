@@ -5,12 +5,24 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-gitlab-blog.xml</link>
     <description>Articles from GitLab Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-gitlab-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 07 Apr 2026 12:13:15 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 08 Apr 2026 00:13:34 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Streamline test management with the SmartBear QMetry GitLab component</title>
       <link>https://about.gitlab.com/blog/streamline-test-management-with-the-smartbear-qmetry-gitlab-component/</link>
       <guid isPermaLink="true">https://about.gitlab.com/blog/streamline-test-management-with-the-smartbear-qmetry-gitlab-component/</guid>
+      <pubDate>Tue, 07 Apr 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Pipeline security lessons from March supply chain incidents</title>
+      <link>https://about.gitlab.com/blog/pipeline-security-lessons-from-march-supply-chain-incidents/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/pipeline-security-lessons-from-march-supply-chain-incidents/</guid>
+      <pubDate>Tue, 07 Apr 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>GitLab Duo CLI: Agentic AI for the development lifecycle, now in the terminal</title>
+      <link>https://about.gitlab.com/blog/gitlab-duo-cli/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/gitlab-duo-cli/</guid>
       <pubDate>Tue, 07 Apr 2026 00:00:00 +0000</pubDate>
     </item>
     <item>
@@ -114,18 +126,6 @@
       <link>https://about.gitlab.com/blog/introducing-the-gitlab-managed-service-provider-msp-partner-program/</link>
       <guid isPermaLink="true">https://about.gitlab.com/blog/introducing-the-gitlab-managed-service-provider-msp-partner-program/</guid>
       <pubDate>Thu, 26 Feb 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>GitLab Duo Agent Platform with Claude accelerates development</title>
-      <link>https://about.gitlab.com/blog/gitlab-duo-agent-platform-with-claude-accelerates-development/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/gitlab-duo-agent-platform-with-claude-accelerates-development/</guid>
-      <pubDate>Thu, 26 Feb 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Passkeys now available for passwordless sign-in and 2FA on GitLab</title>
-      <link>https://about.gitlab.com/blog/passkeys-now-available-for-passwordless-sign-in-and-2fa-on-gitlab/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/passkeys-now-available-for-passwordless-sign-in-and-2fa-on-gitlab/</guid>
-      <pubDate>Wed, 25 Feb 2026 00:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
