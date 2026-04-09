@@ -5,8 +5,99 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 08 Apr 2026 12:13:40 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 09 Apr 2026 00:10:20 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Copilot-reviewed pull request merge metrics now in the usage metrics API</title>
+      <link>https://github.blog/changelog/2026-04-08-copilot-reviewed-pull-request-merge-metrics-now-in-the-usage-metrics-api</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-08-copilot-reviewed-pull-request-merge-metrics-now-in-the-usage-metrics-api</guid>
+      <pubDate>Wed, 08 Apr 2026 23:21:50 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Secret scanning improvements to alert APIs, webhooks, and delegated workflows</title>
+      <link>https://github.blog/changelog/2026-04-08-secret-scanning-improvements-to-alert-apis-webhooks-and-delegated-workflows</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-08-secret-scanning-improvements-to-alert-apis-webhooks-and-delegated-workflows</guid>
+      <pubDate>Wed, 08 Apr 2026 19:56:31 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>GitHub Mobile: Research and code with Copilot cloud agent anywhere</title>
+      <link>https://github.blog/changelog/2026-04-08-github-mobile-research-and-code-with-copilot-cloud-agent-anywhere</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-08-github-mobile-research-and-code-with-copilot-cloud-agent-anywhere</guid>
+      <pubDate>Wed, 08 Apr 2026 19:37:15 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Reclaim Developer Hours through Smarter Vulnerability Prioritization with Docker and Mend.io</title>
+      <link>https://www.docker.com/blog/reclaim-developer-hours-through-smarter-vulnerability-prioritization-with-docker-and-mend-io/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/reclaim-developer-hours-through-smarter-vulnerability-prioritization-with-docker-and-mend-io/</guid>
+      <pubDate>Wed, 08 Apr 2026 18:23:51 +0000</pubDate>
+      <source>Docker Blog</source>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Enhancements to maintenance notifications in Azure Service Health</title>
+      <link>https://azure.microsoft.com/updates?id=559628</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=559628</guid>
+      <pubDate>Wed, 08 Apr 2026 17:45:09 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: PgBouncer 1.25.1 support in Azure Database for PostgreSQL – Flexible Server</title>
+      <link>https://azure.microsoft.com/updates?id=559623</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=559623</guid>
+      <pubDate>Wed, 08 Apr 2026 17:45:09 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Observability in AKS Namespace and Workload Views</title>
+      <link>https://azure.microsoft.com/updates?id=560039</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=560039</guid>
+      <pubDate>Wed, 08 Apr 2026 17:30:02 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Azure Files assessments are now available using Azure Migrate</title>
+      <link>https://azure.microsoft.com/updates?id=560025</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=560025</guid>
+      <pubDate>Wed, 08 Apr 2026 17:30:02 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>Code Security risk assessment available for organizations</title>
+      <link>https://github.blog/changelog/2026-04-08-code-security-risk-assessment-available-for-organizations</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-08-code-security-risk-assessment-available-for-organizations</guid>
+      <pubDate>Wed, 08 Apr 2026 16:52:15 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>GitHub Universe is back: We want you to take the stage</title>
+      <link>https://github.blog/news-insights/company-news/github-universe-is-back-we-want-you-to-take-the-stage/</link>
+      <guid isPermaLink="true">https://github.blog/news-insights/company-news/github-universe-is-back-we-want-you-to-take-the-stage/</guid>
+      <pubDate>Wed, 08 Apr 2026 16:35:46 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
+    <item>
+      <title>New PGP signing key for GitHub CLI Linux packages</title>
+      <link>https://github.blog/changelog/2026-04-08-new-pgp-signing-key-for-github-cli-linux-packages</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-08-new-pgp-signing-key-for-github-cli-linux-packages</guid>
+      <pubDate>Wed, 08 Apr 2026 16:13:36 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Issue #269 - EKS Auto Mode Unpacked, Terraform Tips From the Trenches, Managing DNS and Domains With IaC, and a New Watchdog for Infrastructure Drift</title>
+      <link>https://www.weekly.tf/p/issue-269-eks-auto-mode-unpacked-terraform-tips-from-the-trenches-managing-dns-and-domains-with-iac</link>
+      <guid isPermaLink="true">https://www.weekly.tf/p/issue-269-eks-auto-mode-unpacked-terraform-tips-from-the-trenches-managing-dns-and-domains-with-iac</guid>
+      <pubDate>Wed, 08 Apr 2026 15:00:00 +0000</pubDate>
+      <source>Terraform weekly</source>
+    </item>
+    <item>
+      <title>GitHub Copilot in Visual Studio Code, March Releases</title>
+      <link>https://github.blog/changelog/2026-04-08-github-copilot-in-visual-studio-code-march-releases</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-08-github-copilot-in-visual-studio-code-march-releases</guid>
+      <pubDate>Wed, 08 Apr 2026 13:44:52 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
     <item>
       <title>[Launched] Generally Available: Azure Red Hat OpenShift adds NVIDIA H100 and H200 GPU support</title>
       <link>https://azure.microsoft.com/updates?id=559547</link>
@@ -71,20 +162,6 @@
       <source>Microsoft Security</source>
     </item>
     <item>
-      <title>Code scanning: Batch apply security alert suggestions on pull requests</title>
-      <link>https://github.blog/changelog/2026-04-07-code-scanning-batch-apply-security-alert-suggestions-on-pull-requests</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-07-code-scanning-batch-apply-security-alert-suggestions-on-pull-requests</guid>
-      <pubDate>Tue, 07 Apr 2026 10:22:33 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>npm trusted publishing now supports CircleCI</title>
-      <link>https://github.blog/changelog/2026-04-06-npm-trusted-publishing-now-supports-circleci</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-06-npm-trusted-publishing-now-supports-circleci</guid>
-      <pubDate>Tue, 07 Apr 2026 00:20:50 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>Streamline test management with the SmartBear QMetry GitLab component</title>
       <link>https://about.gitlab.com/blog/streamline-test-management-with-the-smartbear-qmetry-gitlab-component/</link>
       <guid isPermaLink="true">https://about.gitlab.com/blog/streamline-test-management-with-the-smartbear-qmetry-gitlab-component/</guid>
@@ -104,13 +181,6 @@
       <guid isPermaLink="true">https://about.gitlab.com/blog/gitlab-duo-cli/</guid>
       <pubDate>Tue, 07 Apr 2026 00:00:00 +0000</pubDate>
       <source>GitLab Blog</source>
-    </item>
-    <item>
-      <title>Copilot usage metrics now identify active and passive Copilot code review users</title>
-      <link>https://github.blog/changelog/2026-04-06-copilot-usage-metrics-now-identify-active-and-passive-copilot-code-review-users</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-06-copilot-usage-metrics-now-identify-active-and-passive-copilot-code-review-users</guid>
-      <pubDate>Mon, 06 Apr 2026 23:20:14 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>GitHub Copilot CLI combines model families for a second opinion</title>
@@ -162,13 +232,6 @@
       <source>Jenkins Blog</source>
     </item>
     <item>
-      <title>Organization runner controls for Copilot cloud agent</title>
-      <link>https://github.blog/changelog/2026-04-03-organization-runner-controls-for-copilot-cloud-agent</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-03-organization-runner-controls-for-copilot-cloud-agent</guid>
-      <pubDate>Fri, 03 Apr 2026 19:15:11 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>Streamlining Cloud Compliance at GoDaddy Using CDK Aspects</title>
       <link>https://aws.amazon.com/blogs/devops/streamlining-cloud-compliance-at-godaddy-using-cdk-aspects/</link>
       <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/streamlining-cloud-compliance-at-godaddy-using-cdk-aspects/</guid>
@@ -176,25 +239,11 @@
       <source>AWS DevOps Blog</source>
     </item>
     <item>
-      <title>GPT-5.1 Codex, GPT-5.1-Codex-Max, and GPT-5.1-Codex-Mini deprecated</title>
-      <link>https://github.blog/changelog/2026-04-03-gpt-5-1-codex-gpt-5-1-codex-max-and-gpt-5-1-codex-mini-deprecated</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-03-gpt-5-1-codex-gpt-5-1-codex-max-and-gpt-5-1-codex-mini-deprecated</guid>
-      <pubDate>Fri, 03 Apr 2026 17:11:31 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>The uphill climb of making diff lines performant</title>
       <link>https://github.blog/engineering/architecture-optimization/the-uphill-climb-of-making-diff-lines-performant/</link>
       <guid isPermaLink="true">https://github.blog/engineering/architecture-optimization/the-uphill-climb-of-making-diff-lines-performant/</guid>
       <pubDate>Fri, 03 Apr 2026 16:00:00 +0000</pubDate>
       <source>GitHub Blog</source>
-    </item>
-    <item>
-      <title>Organization firewall settings for Copilot cloud agent</title>
-      <link>https://github.blog/changelog/2026-04-03-organization-firewall-settings-for-copilot-cloud-agent</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-03-organization-firewall-settings-for-copilot-cloud-agent</guid>
-      <pubDate>Fri, 03 Apr 2026 14:12:27 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>Microsoft Entra expands SCIM support with new SCIM 2.0 APIs for identity lifecycle operations</title>
@@ -778,13 +827,6 @@
       <source>Azure Updates</source>
     </item>
     <item>
-      <title>Building AI-powered GitHub issue triage with the Copilot SDK</title>
-      <link>https://github.blog/ai-and-ml/github-copilot/building-ai-powered-github-issue-triage-with-the-copilot-sdk/</link>
-      <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/building-ai-powered-github-issue-triage-with-the-copilot-sdk/</guid>
-      <pubDate>Tue, 24 Mar 2026 16:00:00 +0000</pubDate>
-      <source>GitHub Blog</source>
-    </item>
-    <item>
       <title>Deployment strategies: Types, trade-offs, and how to choose</title>
       <link>https://circleci.com/blog/deployment-strategies-types-trade-offs-and-how-to-choose/</link>
       <guid isPermaLink="true">https://circleci.com/blog/deployment-strategies-types-trade-offs-and-how-to-choose/</guid>
@@ -1132,13 +1174,6 @@
       <link>https://www.docker.com/blog/native-e2e-test-reliability/</link>
       <guid isPermaLink="true">https://www.docker.com/blog/native-e2e-test-reliability/</guid>
       <pubDate>Fri, 13 Mar 2026 13:00:00 +0000</pubDate>
-      <source>Docker Blog</source>
-    </item>
-    <item>
-      <title>How to Run Claude Code with Docker: Local Models, MCP Servers, and Secure Sandboxes</title>
-      <link>https://www.docker.com/blog/run-claude-code-with-docker/</link>
-      <guid isPermaLink="true">https://www.docker.com/blog/run-claude-code-with-docker/</guid>
-      <pubDate>Fri, 13 Mar 2026 12:17:54 +0000</pubDate>
       <source>Docker Blog</source>
     </item>
     <item>
@@ -2815,39 +2850,11 @@
       <source>Azure Updates</source>
     </item>
     <item>
-      <title>[In preview] Public Preview: Microsoft Foundry data connection for Azure Databricks</title>
-      <link>https://azure.microsoft.com/updates?id=527678</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=527678</guid>
-      <pubDate>Wed, 19 Nov 2025 17:00:30 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Azure Databricks Genie in Copilot Studio</title>
-      <link>https://azure.microsoft.com/updates?id=527668</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=527668</guid>
-      <pubDate>Wed, 19 Nov 2025 17:00:30 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Azure API Management adds support for A2A Agent APIs</title>
-      <link>https://azure.microsoft.com/updates?id=527635</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=527635</guid>
-      <pubDate>Wed, 19 Nov 2025 17:00:30 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
       <title>Issue #252 - Secure Lambda Deployments, Team Workflows, AWS Control Tower Implementation, and OverlayFS Caching Techniques</title>
       <link>https://www.weekly.tf/p/issue-252-secure-lambda-deployments-team-workflows-aws-control-tower-implementation-and-overlayfs</link>
       <guid isPermaLink="true">https://www.weekly.tf/p/issue-252-secure-lambda-deployments-team-workflows-aws-control-tower-implementation-and-overlayfs</guid>
       <pubDate>Wed, 19 Nov 2025 16:00:31 +0000</pubDate>
       <source>Terraform weekly</source>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Claude in Microsoft Foundry</title>
-      <link>https://azure.microsoft.com/updates?id=532303</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=532303</guid>
-      <pubDate>Wed, 19 Nov 2025 00:00:31 +0000</pubDate>
-      <source>Azure Updates</source>
     </item>
     <item>
       <title>Microsoft Entra at Ignite 2025: November 17-21</title>
@@ -2918,13 +2925,6 @@
       <guid isPermaLink="true">https://www.jenkins.io/blog/2025/10/31/automating-jenkins-on-android/</guid>
       <pubDate>Fri, 31 Oct 2025 00:00:00 +0000</pubDate>
       <source>Jenkins Blog</source>
-    </item>
-    <item>
-      <title>Issue #249 - Terraform Testing and TDD, Version Switcher Tool, AI Code with Copilot MCP, S3 Content Moderation, Secure EC2 Runners on AWS</title>
-      <link>https://www.weekly.tf/p/issue-249-terraform-testing-and-tdd-version-switcher-tool-ai-code-with-copilot-mcp-s3-content-modera</link>
-      <guid isPermaLink="true">https://www.weekly.tf/p/issue-249-terraform-testing-and-tdd-version-switcher-tool-ai-code-with-copilot-mcp-s3-content-modera</guid>
-      <pubDate>Wed, 29 Oct 2025 16:01:53 +0000</pubDate>
-      <source>Terraform weekly</source>
     </item>
     <item>
       <title>7 Common Kubernetes Pitfalls (and How I Learned to Avoid Them)</title>

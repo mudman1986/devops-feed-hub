@@ -5,8 +5,32 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml</link>
     <description>Articles from Azure Updates</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 08 Apr 2026 12:13:40 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 09 Apr 2026 00:10:20 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>[Launched] Generally Available: Enhancements to maintenance notifications in Azure Service Health</title>
+      <link>https://azure.microsoft.com/updates?id=559628</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=559628</guid>
+      <pubDate>Wed, 08 Apr 2026 17:45:09 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: PgBouncer 1.25.1 support in Azure Database for PostgreSQL – Flexible Server</title>
+      <link>https://azure.microsoft.com/updates?id=559623</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=559623</guid>
+      <pubDate>Wed, 08 Apr 2026 17:45:09 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Observability in AKS Namespace and Workload Views</title>
+      <link>https://azure.microsoft.com/updates?id=560039</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=560039</guid>
+      <pubDate>Wed, 08 Apr 2026 17:30:02 +0000</pubDate>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Azure Files assessments are now available using Azure Migrate</title>
+      <link>https://azure.microsoft.com/updates?id=560025</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=560025</guid>
+      <pubDate>Wed, 08 Apr 2026 17:30:02 +0000</pubDate>
+    </item>
     <item>
       <title>[Launched] Generally Available: Azure Red Hat OpenShift adds NVIDIA H100 and H200 GPU support</title>
       <link>https://azure.microsoft.com/updates?id=559547</link>
@@ -1176,30 +1200,6 @@
       <link>https://azure.microsoft.com/updates?id=532202</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=532202</guid>
       <pubDate>Wed, 19 Nov 2025 17:00:30 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Microsoft Foundry data connection for Azure Databricks</title>
-      <link>https://azure.microsoft.com/updates?id=527678</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=527678</guid>
-      <pubDate>Wed, 19 Nov 2025 17:00:30 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Azure Databricks Genie in Copilot Studio</title>
-      <link>https://azure.microsoft.com/updates?id=527668</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=527668</guid>
-      <pubDate>Wed, 19 Nov 2025 17:00:30 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Azure API Management adds support for A2A Agent APIs</title>
-      <link>https://azure.microsoft.com/updates?id=527635</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=527635</guid>
-      <pubDate>Wed, 19 Nov 2025 17:00:30 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Claude in Microsoft Foundry</title>
-      <link>https://azure.microsoft.com/updates?id=532303</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=532303</guid>
-      <pubDate>Wed, 19 Nov 2025 00:00:31 +0000</pubDate>
     </item>
     <item>
       <title>[Launched] Generally Available: Model Context Protocol support in Azure API Management and Azure API Center</title>

@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-terraform-weekly.xml</link>
     <description>Articles from Terraform weekly</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-terraform-weekly.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 08 Apr 2026 12:13:40 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 09 Apr 2026 00:10:20 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Issue #269 - EKS Auto Mode Unpacked, Terraform Tips From the Trenches, Managing DNS and Domains With IaC, and a New Watchdog for Infrastructure Drift</title>
+      <link>https://www.weekly.tf/p/issue-269-eks-auto-mode-unpacked-terraform-tips-from-the-trenches-managing-dns-and-domains-with-iac</link>
+      <guid isPermaLink="true">https://www.weekly.tf/p/issue-269-eks-auto-mode-unpacked-terraform-tips-from-the-trenches-managing-dns-and-domains-with-iac</guid>
+      <pubDate>Wed, 08 Apr 2026 15:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Issue #268 - AWS Lightsail AI Agents, Faster Terraform Applies, Local RAG for IaC, Lifecycle Rules Without Forks, and Combining Argo CD With Terraform</title>
       <link>https://www.weekly.tf/p/issue-268-aws-lightsail-ai-agents-faster-terraform-applies-local-rag-for-iac-lifecycle-rules-without</link>
@@ -120,12 +126,6 @@
       <link>https://www.weekly.tf/p/issue-250-plugin-framework-actions-tutorial-multi-cloud-drift-scanning-tools-compared-atlantis-custo</link>
       <guid isPermaLink="true">https://www.weekly.tf/p/issue-250-plugin-framework-actions-tutorial-multi-cloud-drift-scanning-tools-compared-atlantis-custo</guid>
       <pubDate>Wed, 05 Nov 2025 16:01:35 +0000</pubDate>
-    </item>
-    <item>
-      <title>Issue #249 - Terraform Testing and TDD, Version Switcher Tool, AI Code with Copilot MCP, S3 Content Moderation, Secure EC2 Runners on AWS</title>
-      <link>https://www.weekly.tf/p/issue-249-terraform-testing-and-tdd-version-switcher-tool-ai-code-with-copilot-mcp-s3-content-modera</link>
-      <guid isPermaLink="true">https://www.weekly.tf/p/issue-249-terraform-testing-and-tdd-version-switcher-tool-ai-code-with-copilot-mcp-s3-content-modera</guid>
-      <pubDate>Wed, 29 Oct 2025 16:01:53 +0000</pubDate>
     </item>
   </channel>
 </rss>
