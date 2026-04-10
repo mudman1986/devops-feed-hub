@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-circleci-blog.xml</link>
     <description>Articles from CircleCI Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-circleci-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 09 Apr 2026 12:14:44 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 10 Apr 2026 00:13:02 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>7 AI productivity lessons from the CTO of Superhuman</title>
+      <link>https://circleci.com/blog/ai-productivity-lessons-superhuman-cto/</link>
+      <guid isPermaLink="true">https://circleci.com/blog/ai-productivity-lessons-superhuman-cto/</guid>
+      <pubDate>Thu, 09 Apr 2026 19:30:00 +0000</pubDate>
+    </item>
     <item>
       <title>Deployment strategies: Types, trade-offs, and how to choose</title>
       <link>https://circleci.com/blog/deployment-strategies-types-trade-offs-and-how-to-choose/</link>
@@ -60,12 +66,6 @@
       <link>https://circleci.com/blog/getting-started-with-amazon-q-developer-and-circleci/</link>
       <guid isPermaLink="true">https://circleci.com/blog/getting-started-with-amazon-q-developer-and-circleci/</guid>
       <pubDate>Thu, 19 Feb 2026 16:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Build and test your first Kubernetes operator with Go, Kubebuilder, and CircleCI</title>
-      <link>https://circleci.com/blog/build-and-test-your-first-kubernetes-operator-with-go-kubebuilder/</link>
-      <guid isPermaLink="true">https://circleci.com/blog/build-and-test-your-first-kubernetes-operator-with-go-kubebuilder/</guid>
-      <pubDate>Wed, 18 Feb 2026 16:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

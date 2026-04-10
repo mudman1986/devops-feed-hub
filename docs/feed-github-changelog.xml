@@ -5,8 +5,38 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml</link>
     <description>Articles from GitHub Changelog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 09 Apr 2026 12:14:44 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 10 Apr 2026 00:13:02 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Ask Copilot in security assessments now available</title>
+      <link>https://github.blog/changelog/2026-04-09-ask-copilot-in-security-assessments-now-available</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-09-ask-copilot-in-security-assessments-now-available</guid>
+      <pubDate>Thu, 09 Apr 2026 19:33:16 +0000</pubDate>
+    </item>
+    <item>
+      <title>New Low Quality option in the Hide comment menu</title>
+      <link>https://github.blog/changelog/2026-04-09-new-low-quality-option-in-the-hide-comment-menu</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-09-new-low-quality-option-in-the-hide-comment-menu</guid>
+      <pubDate>Thu, 09 Apr 2026 17:40:09 +0000</pubDate>
+    </item>
+    <item>
+      <title>New Sort by control added to Notifications</title>
+      <link>https://github.blog/changelog/2026-04-09-new-sort-by-control-added-to-notifications</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-09-new-sort-by-control-added-to-notifications</guid>
+      <pubDate>Thu, 09 Apr 2026 17:27:51 +0000</pubDate>
+    </item>
+    <item>
+      <title>Repository member role labels now in pull request list view</title>
+      <link>https://github.blog/changelog/2026-04-09-repository-member-role-labels-now-in-pull-request-list-view</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-09-repository-member-role-labels-now-in-pull-request-list-view</guid>
+      <pubDate>Thu, 09 Apr 2026 17:15:16 +0000</pubDate>
+    </item>
+    <item>
+      <title>Release information in issue sidebar and default values for project fields</title>
+      <link>https://github.blog/changelog/2026-04-09-release-info-in-issue-sidebar-and-project-defaults</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-09-release-info-in-issue-sidebar-and-project-defaults</guid>
+      <pubDate>Thu, 09 Apr 2026 16:15:32 +0000</pubDate>
+    </item>
     <item>
       <title>Copilot-reviewed pull request merge metrics now in the usage metrics API</title>
       <link>https://github.blog/changelog/2026-04-08-copilot-reviewed-pull-request-merge-metrics-now-in-the-usage-metrics-api</link>
@@ -36,36 +66,6 @@
       <link>https://github.blog/changelog/2026-04-08-new-pgp-signing-key-for-github-cli-linux-packages</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-04-08-new-pgp-signing-key-for-github-cli-linux-packages</guid>
       <pubDate>Wed, 08 Apr 2026 16:13:36 +0000</pubDate>
-    </item>
-    <item>
-      <title>GitHub Copilot in Visual Studio Code, March Releases</title>
-      <link>https://github.blog/changelog/2026-04-08-github-copilot-in-visual-studio-code-march-releases</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-08-github-copilot-in-visual-studio-code-march-releases</guid>
-      <pubDate>Wed, 08 Apr 2026 13:44:52 +0000</pubDate>
-    </item>
-    <item>
-      <title>Prioritize security alerts with runtime context from Dynatrace</title>
-      <link>https://github.blog/changelog/2026-04-07-prioritize-security-alerts-with-runtime-context-from-dynatrace</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-07-prioritize-security-alerts-with-runtime-context-from-dynatrace</guid>
-      <pubDate>Tue, 07 Apr 2026 15:15:24 +0000</pubDate>
-    </item>
-    <item>
-      <title>Copilot CLI now supports BYOK and local models</title>
-      <link>https://github.blog/changelog/2026-04-07-copilot-cli-now-supports-byok-and-local-models</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-07-copilot-cli-now-supports-byok-and-local-models</guid>
-      <pubDate>Tue, 07 Apr 2026 14:53:34 +0000</pubDate>
-    </item>
-    <item>
-      <title>Dependabot alerts are now assignable to AI agents for remediation</title>
-      <link>https://github.blog/changelog/2026-04-07-dependabot-alerts-are-now-assignable-to-ai-agents-for-remediation</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-07-dependabot-alerts-are-now-assignable-to-ai-agents-for-remediation</guid>
-      <pubDate>Tue, 07 Apr 2026 14:22:51 +0000</pubDate>
-    </item>
-    <item>
-      <title>Dependabot version updates now support the Nix ecosystem</title>
-      <link>https://github.blog/changelog/2026-04-07-dependabot-version-updates-now-support-the-nix-ecosystem</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-07-dependabot-version-updates-now-support-the-nix-ecosystem</guid>
-      <pubDate>Tue, 07 Apr 2026 14:14:49 +0000</pubDate>
     </item>
   </channel>
 </rss>

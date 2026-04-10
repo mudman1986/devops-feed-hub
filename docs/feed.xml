@@ -5,14 +5,105 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 09 Apr 2026 12:14:44 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 10 Apr 2026 00:13:02 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Ask Copilot in security assessments now available</title>
+      <link>https://github.blog/changelog/2026-04-09-ask-copilot-in-security-assessments-now-available</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-09-ask-copilot-in-security-assessments-now-available</guid>
+      <pubDate>Thu, 09 Apr 2026 19:33:16 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>7 AI productivity lessons from the CTO of Superhuman</title>
+      <link>https://circleci.com/blog/ai-productivity-lessons-superhuman-cto/</link>
+      <guid isPermaLink="true">https://circleci.com/blog/ai-productivity-lessons-superhuman-cto/</guid>
+      <pubDate>Thu, 09 Apr 2026 19:30:00 +0000</pubDate>
+      <source>CircleCI Blog</source>
+    </item>
+    <item>
+      <title>The agentic SOC—Rethinking SecOps for the next decade</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/04/09/the-agentic-soc-rethinking-secops-for-the-next-decade/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/04/09/the-agentic-soc-rethinking-secops-for-the-next-decade/</guid>
+      <pubDate>Thu, 09 Apr 2026 19:00:00 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>Microsoft Entra expands SCIM support with new SCIM 2.0 APIs for identity lifecycle operations</title>
+      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-expands-scim-support-with-new-scim-2-0-apis-for/ba-p/4507465</link>
+      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-expands-scim-support-with-new-scim-2-0-apis-for/ba-p/4507465</guid>
+      <pubDate>Thu, 09 Apr 2026 18:38:08 +0000</pubDate>
+      <source>Microsoft Entra Blog</source>
+    </item>
+    <item>
+      <title>New Low Quality option in the Hide comment menu</title>
+      <link>https://github.blog/changelog/2026-04-09-new-low-quality-option-in-the-hide-comment-menu</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-09-new-low-quality-option-in-the-hide-comment-menu</guid>
+      <pubDate>Thu, 09 Apr 2026 17:40:09 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>New Sort by control added to Notifications</title>
+      <link>https://github.blog/changelog/2026-04-09-new-sort-by-control-added-to-notifications</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-09-new-sort-by-control-added-to-notifications</guid>
+      <pubDate>Thu, 09 Apr 2026 17:27:51 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Repository member role labels now in pull request list view</title>
+      <link>https://github.blog/changelog/2026-04-09-repository-member-role-labels-now-in-pull-request-list-view</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-09-repository-member-role-labels-now-in-pull-request-list-view</guid>
+      <pubDate>Thu, 09 Apr 2026 17:15:16 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>As AI adoption scales, is your access strategy still viable?</title>
+      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/as-ai-adoption-scales-is-your-access-strategy-still-viable/ba-p/4486060</link>
+      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/as-ai-adoption-scales-is-your-access-strategy-still-viable/ba-p/4486060</guid>
+      <pubDate>Thu, 09 Apr 2026 16:19:33 +0000</pubDate>
+      <source>Microsoft Entra Blog</source>
+    </item>
+    <item>
+      <title>Release information in issue sidebar and default values for project fields</title>
+      <link>https://github.blog/changelog/2026-04-09-release-info-in-issue-sidebar-and-project-defaults</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-09-release-info-in-issue-sidebar-and-project-defaults</guid>
+      <pubDate>Thu, 09 Apr 2026 16:15:32 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Investigating Storm-2755: “Payroll pirate” attacks targeting Canadian employees</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/04/09/investigating-storm-2755-payroll-pirate-attacks-targeting-canadian-employees/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/04/09/investigating-storm-2755-payroll-pirate-attacks-targeting-canadian-employees/</guid>
+      <pubDate>Thu, 09 Apr 2026 15:00:00 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>Intent redirection vulnerability in third-party SDK exposed millions of Android wallets to potential risk</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/04/09/intent-redirection-vulnerability-third-party-sdk-android/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/04/09/intent-redirection-vulnerability-third-party-sdk-android/</guid>
+      <pubDate>Thu, 09 Apr 2026 13:21:18 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>Simplifying Terraform dynamic credentials on AWS with native OIDC integration</title>
+      <link>https://www.hashicorp.com/blog/simplifying-terraform-dynamic-credentials-on-aws-with-native-oidc-integration</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/simplifying-terraform-dynamic-credentials-on-aws-with-native-oidc-integration</guid>
+      <pubDate>Thu, 09 Apr 2026 07:00:00 +0000</pubDate>
+      <source>HashiCorp Blog</source>
+    </item>
     <item>
       <title>GitHub availability report: March 2026</title>
       <link>https://github.blog/news-insights/company-news/github-availability-report-march-2026/</link>
       <guid isPermaLink="true">https://github.blog/news-insights/company-news/github-availability-report-march-2026/</guid>
       <pubDate>Thu, 09 Apr 2026 02:21:17 +0000</pubDate>
       <source>GitHub Blog</source>
+    </item>
+    <item>
+      <title>5 ways GitLab pipeline logic solves real engineering problems</title>
+      <link>https://about.gitlab.com/blog/5-ways-gitlab-pipeline-logic-solves-real-engineering-problems/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/5-ways-gitlab-pipeline-logic-solves-real-engineering-problems/</guid>
+      <pubDate>Thu, 09 Apr 2026 00:00:00 +0000</pubDate>
+      <source>GitLab Blog</source>
     </item>
     <item>
       <title>Copilot-reviewed pull request merge metrics now in the usage metrics API</title>
@@ -99,13 +190,6 @@
       <source>Terraform weekly</source>
     </item>
     <item>
-      <title>GitHub Copilot in Visual Studio Code, March Releases</title>
-      <link>https://github.blog/changelog/2026-04-08-github-copilot-in-visual-studio-code-march-releases</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-08-github-copilot-in-visual-studio-code-march-releases</guid>
-      <pubDate>Wed, 08 Apr 2026 13:44:52 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>[Launched] Generally Available: Azure Red Hat OpenShift adds NVIDIA H100 and H200 GPU support</title>
       <link>https://azure.microsoft.com/updates?id=559547</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=559547</guid>
@@ -132,34 +216,6 @@
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557907</guid>
       <pubDate>Tue, 07 Apr 2026 17:00:23 +0000</pubDate>
       <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>Prioritize security alerts with runtime context from Dynatrace</title>
-      <link>https://github.blog/changelog/2026-04-07-prioritize-security-alerts-with-runtime-context-from-dynatrace</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-07-prioritize-security-alerts-with-runtime-context-from-dynatrace</guid>
-      <pubDate>Tue, 07 Apr 2026 15:15:24 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>Copilot CLI now supports BYOK and local models</title>
-      <link>https://github.blog/changelog/2026-04-07-copilot-cli-now-supports-byok-and-local-models</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-07-copilot-cli-now-supports-byok-and-local-models</guid>
-      <pubDate>Tue, 07 Apr 2026 14:53:34 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>Dependabot alerts are now assignable to AI agents for remediation</title>
-      <link>https://github.blog/changelog/2026-04-07-dependabot-alerts-are-now-assignable-to-ai-agents-for-remediation</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-07-dependabot-alerts-are-now-assignable-to-ai-agents-for-remediation</guid>
-      <pubDate>Tue, 07 Apr 2026 14:22:51 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>Dependabot version updates now support the Nix ecosystem</title>
-      <link>https://github.blog/changelog/2026-04-07-dependabot-version-updates-now-support-the-nix-ecosystem</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-07-dependabot-version-updates-now-support-the-nix-ecosystem</guid>
-      <pubDate>Tue, 07 Apr 2026 14:14:49 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>SOHO router compromise leads to DNS hijacking and adversary-in-the-middle attacks</title>
@@ -251,13 +307,6 @@
       <guid isPermaLink="true">https://github.blog/engineering/architecture-optimization/the-uphill-climb-of-making-diff-lines-performant/</guid>
       <pubDate>Fri, 03 Apr 2026 16:00:00 +0000</pubDate>
       <source>GitHub Blog</source>
-    </item>
-    <item>
-      <title>Microsoft Entra expands SCIM support with new SCIM 2.0 APIs for identity lifecycle operations</title>
-      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-expands-scim-support-with-new-scim-2-0-apis-for/ba-p/4507465</link>
-      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-expands-scim-support-with-new-scim-2-0-apis-for/ba-p/4507465</guid>
-      <pubDate>Thu, 02 Apr 2026 20:40:48 +0000</pubDate>
-      <source>Microsoft Entra Blog</source>
     </item>
     <item>
       <title>Defending Your Software Supply Chain: What Every Engineering Team Should Do Now</title>
@@ -554,20 +603,6 @@
       <source>GitHub Blog</source>
     </item>
     <item>
-      <title>Applying security fundamentals to AI: Practical advice for CISOs</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/03/31/applying-security-fundamentals-to-ai-practical-advice-for-cisos/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/31/applying-security-fundamentals-to-ai-practical-advice-for-cisos/</guid>
-      <pubDate>Tue, 31 Mar 2026 16:00:00 +0000</pubDate>
-      <source>Microsoft Security</source>
-    </item>
-    <item>
-      <title>WhatsApp malware campaign delivers VBScript and MSI backdoors</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/03/31/whatsapp-malware-campaign-delivers-vbs-payloads-msi-backdoors/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/31/whatsapp-malware-campaign-delivers-vbs-payloads-msi-backdoors/</guid>
-      <pubDate>Tue, 31 Mar 2026 13:43:05 +0000</pubDate>
-      <source>Microsoft Security</source>
-    </item>
-    <item>
       <title>Changes to packages.gitlab.com: What you need to know</title>
       <link>https://about.gitlab.com/blog/changes-to-packages-gitlab-com-what-you-need-to-know/</link>
       <guid isPermaLink="true">https://about.gitlab.com/blog/changes-to-packages-gitlab-com-what-you-need-to-know/</guid>
@@ -615,13 +650,6 @@
       <guid isPermaLink="true">https://github.blog/developer-skills/github/github-for-beginners-getting-started-with-github-security/</guid>
       <pubDate>Mon, 30 Mar 2026 16:00:00 +0000</pubDate>
       <source>GitHub Blog</source>
-    </item>
-    <item>
-      <title>Addressing the OWASP Top 10 Risks in Agentic AI with Microsoft Copilot Studio</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/03/30/addressing-the-owasp-top-10-risks-in-agentic-ai-with-microsoft-copilot-studio/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/30/addressing-the-owasp-top-10-risks-in-agentic-ai-with-microsoft-copilot-studio/</guid>
-      <pubDate>Mon, 30 Mar 2026 16:00:00 +0000</pubDate>
-      <source>Microsoft Security</source>
     </item>
     <item>
       <title>Microsoft Entra innovations announced at RSAC 2026</title>
@@ -895,13 +923,6 @@
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557123</guid>
       <pubDate>Fri, 20 Mar 2026 17:15:50 +0000</pubDate>
       <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>Secure access in the age of AI: Key findings from our 2026 Report</title>
-      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/secure-access-in-the-age-of-ai-key-findings-from-our-2026-report/ba-p/4486060</link>
-      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/secure-access-in-the-age-of-ai-key-findings-from-our-2026-report/ba-p/4486060</guid>
-      <pubDate>Thu, 19 Mar 2026 19:00:00 +0000</pubDate>
-      <source>Microsoft Entra Blog</source>
     </item>
     <item>
       <title>Remote MCP Server preview in Microsoft Foundry</title>
@@ -1485,13 +1506,6 @@
       <source>GitLab Blog</source>
     </item>
     <item>
-      <title>Introducing the GitLab Managed Service Provider (MSP) Partner Program</title>
-      <link>https://about.gitlab.com/blog/introducing-the-gitlab-managed-service-provider-msp-partner-program/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/introducing-the-gitlab-managed-service-provider-msp-partner-program/</guid>
-      <pubDate>Thu, 26 Feb 2026 00:00:00 +0000</pubDate>
-      <source>GitLab Blog</source>
-    </item>
-    <item>
       <title>[Launched] Generally Available: Azure SQL updates for late-February 2026</title>
       <link>https://azure.microsoft.com/updates?id=557517</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557517</guid>
@@ -1681,13 +1695,6 @@
       <source>Terraform weekly</source>
     </item>
     <item>
-      <title>Build and test your first Kubernetes operator with Go, Kubebuilder, and CircleCI</title>
-      <link>https://circleci.com/blog/build-and-test-your-first-kubernetes-operator-with-go-kubebuilder/</link>
-      <guid isPermaLink="true">https://circleci.com/blog/build-and-test-your-first-kubernetes-operator-with-go-kubebuilder/</guid>
-      <pubDate>Wed, 18 Feb 2026 16:00:00 +0000</pubDate>
-      <source>CircleCI Blog</source>
-    </item>
-    <item>
       <title>HCP Packer adds SBOM vulnerability scanning</title>
       <link>https://www.hashicorp.com/blog/hcp-packer-adds-sbom-vulnerability-scanning</link>
       <guid isPermaLink="true">https://www.hashicorp.com/blog/hcp-packer-adds-sbom-vulnerability-scanning</guid>
@@ -1875,13 +1882,6 @@
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=555870</guid>
       <pubDate>Thu, 05 Feb 2026 18:30:32 +0000</pubDate>
       <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>How to control session routing for multi-IP hosts in Boundary</title>
-      <link>https://www.hashicorp.com/blog/how-to-control-session-routing-for-multi-ip-hosts-in-boundary</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/how-to-control-session-routing-for-multi-ip-hosts-in-boundary</guid>
-      <pubDate>Thu, 05 Feb 2026 18:30:00 +0000</pubDate>
-      <source>HashiCorp Blog</source>
     </item>
     <item>
       <title>AWS Transform custom: AI-driven Java modernization to reduce tech debt</title>

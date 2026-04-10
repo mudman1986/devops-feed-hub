@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-gitlab-blog.xml</link>
     <description>Articles from GitLab Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-gitlab-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 09 Apr 2026 12:14:44 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 10 Apr 2026 00:13:02 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>5 ways GitLab pipeline logic solves real engineering problems</title>
+      <link>https://about.gitlab.com/blog/5-ways-gitlab-pipeline-logic-solves-real-engineering-problems/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/5-ways-gitlab-pipeline-logic-solves-real-engineering-problems/</guid>
+      <pubDate>Thu, 09 Apr 2026 00:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Streamline test management with the SmartBear QMetry GitLab component</title>
       <link>https://about.gitlab.com/blog/streamline-test-management-with-the-smartbear-qmetry-gitlab-component/</link>
@@ -119,12 +125,6 @@
       <title>Secure and fast deployments to Google Agent Engine with GitLab</title>
       <link>https://about.gitlab.com/blog/secure-and-fast-deployments-to-google-agent-engine-with-gitlab/</link>
       <guid isPermaLink="true">https://about.gitlab.com/blog/secure-and-fast-deployments-to-google-agent-engine-with-gitlab/</guid>
-      <pubDate>Thu, 26 Feb 2026 00:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Introducing the GitLab Managed Service Provider (MSP) Partner Program</title>
-      <link>https://about.gitlab.com/blog/introducing-the-gitlab-managed-service-provider-msp-partner-program/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/introducing-the-gitlab-managed-service-provider-msp-partner-program/</guid>
       <pubDate>Thu, 26 Feb 2026 00:00:00 +0000</pubDate>
     </item>
   </channel>

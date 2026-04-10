@@ -5,8 +5,26 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml</link>
     <description>Articles from Microsoft Security</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 09 Apr 2026 12:14:44 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 10 Apr 2026 00:13:02 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>The agentic SOC—Rethinking SecOps for the next decade</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/04/09/the-agentic-soc-rethinking-secops-for-the-next-decade/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/04/09/the-agentic-soc-rethinking-secops-for-the-next-decade/</guid>
+      <pubDate>Thu, 09 Apr 2026 19:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Investigating Storm-2755: “Payroll pirate” attacks targeting Canadian employees</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/04/09/investigating-storm-2755-payroll-pirate-attacks-targeting-canadian-employees/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/04/09/investigating-storm-2755-payroll-pirate-attacks-targeting-canadian-employees/</guid>
+      <pubDate>Thu, 09 Apr 2026 15:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Intent redirection vulnerability in third-party SDK exposed millions of Android wallets to potential risk</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/04/09/intent-redirection-vulnerability-third-party-sdk-android/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/04/09/intent-redirection-vulnerability-third-party-sdk-android/</guid>
+      <pubDate>Thu, 09 Apr 2026 13:21:18 +0000</pubDate>
+    </item>
     <item>
       <title>SOHO router compromise leads to DNS hijacking and adversary-in-the-middle attacks</title>
       <link>https://www.microsoft.com/en-us/security/blog/2026/04/07/soho-router-compromise-leads-to-dns-hijacking-and-adversary-in-the-middle-attacks/</link>
@@ -48,24 +66,6 @@
       <link>https://www.microsoft.com/en-us/security/security-insider/threat-landscape/threat-to-critical-infrastructure-has-changed</link>
       <guid isPermaLink="true">https://www.microsoft.com/en-us/security/security-insider/threat-landscape/threat-to-critical-infrastructure-has-changed</guid>
       <pubDate>Tue, 31 Mar 2026 17:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Applying security fundamentals to AI: Practical advice for CISOs</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/03/31/applying-security-fundamentals-to-ai-practical-advice-for-cisos/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/31/applying-security-fundamentals-to-ai-practical-advice-for-cisos/</guid>
-      <pubDate>Tue, 31 Mar 2026 16:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>WhatsApp malware campaign delivers VBScript and MSI backdoors</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/03/31/whatsapp-malware-campaign-delivers-vbs-payloads-msi-backdoors/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/31/whatsapp-malware-campaign-delivers-vbs-payloads-msi-backdoors/</guid>
-      <pubDate>Tue, 31 Mar 2026 13:43:05 +0000</pubDate>
-    </item>
-    <item>
-      <title>Addressing the OWASP Top 10 Risks in Agentic AI with Microsoft Copilot Studio</title>
-      <link>https://www.microsoft.com/en-us/security/blog/2026/03/30/addressing-the-owasp-top-10-risks-in-agentic-ai-with-microsoft-copilot-studio/</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/03/30/addressing-the-owasp-top-10-risks-in-agentic-ai-with-microsoft-copilot-studio/</guid>
-      <pubDate>Mon, 30 Mar 2026 16:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

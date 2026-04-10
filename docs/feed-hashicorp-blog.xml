@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-hashicorp-blog.xml</link>
     <description>Articles from HashiCorp Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-hashicorp-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 09 Apr 2026 12:14:44 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 10 Apr 2026 00:13:02 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Simplifying Terraform dynamic credentials on AWS with native OIDC integration</title>
+      <link>https://www.hashicorp.com/blog/simplifying-terraform-dynamic-credentials-on-aws-with-native-oidc-integration</link>
+      <guid isPermaLink="true">https://www.hashicorp.com/blog/simplifying-terraform-dynamic-credentials-on-aws-with-native-oidc-integration</guid>
+      <pubDate>Thu, 09 Apr 2026 07:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>AWS permission delegation now generally available in HCP Terraform</title>
       <link>https://www.hashicorp.com/blog/aws-permission-delegation-now-generally-available-in-hcp-terraform</link>
@@ -120,12 +126,6 @@
       <link>https://www.hashicorp.com/blog/how-duke-energy-enforces-cloud-security-at-scale-with-terraform-vault-6-lessons</link>
       <guid isPermaLink="true">https://www.hashicorp.com/blog/how-duke-energy-enforces-cloud-security-at-scale-with-terraform-vault-6-lessons</guid>
       <pubDate>Mon, 09 Feb 2026 17:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>How to control session routing for multi-IP hosts in Boundary</title>
-      <link>https://www.hashicorp.com/blog/how-to-control-session-routing-for-multi-ip-hosts-in-boundary</link>
-      <guid isPermaLink="true">https://www.hashicorp.com/blog/how-to-control-session-routing-for-multi-ip-hosts-in-boundary</guid>
-      <pubDate>Thu, 05 Feb 2026 18:30:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

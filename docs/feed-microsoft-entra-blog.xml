@@ -5,13 +5,19 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-microsoft-entra-blog.xml</link>
     <description>Articles from Microsoft Entra Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-microsoft-entra-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 09 Apr 2026 12:14:44 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 10 Apr 2026 00:13:02 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Microsoft Entra expands SCIM support with new SCIM 2.0 APIs for identity lifecycle operations</title>
       <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-expands-scim-support-with-new-scim-2-0-apis-for/ba-p/4507465</link>
       <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-expands-scim-support-with-new-scim-2-0-apis-for/ba-p/4507465</guid>
-      <pubDate>Thu, 02 Apr 2026 20:40:48 +0000</pubDate>
+      <pubDate>Thu, 09 Apr 2026 18:38:08 +0000</pubDate>
+    </item>
+    <item>
+      <title>As AI adoption scales, is your access strategy still viable?</title>
+      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/as-ai-adoption-scales-is-your-access-strategy-still-viable/ba-p/4486060</link>
+      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/as-ai-adoption-scales-is-your-access-strategy-still-viable/ba-p/4486060</guid>
+      <pubDate>Thu, 09 Apr 2026 16:19:33 +0000</pubDate>
     </item>
     <item>
       <title>Microsoft Entra: What’s new in secure access on the AI frontier</title>
@@ -54,12 +60,6 @@
       <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-innovations-announced-at-rsac-2026/ba-p/4502146</link>
       <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-innovations-announced-at-rsac-2026/ba-p/4502146</guid>
       <pubDate>Mon, 30 Mar 2026 15:54:53 +0000</pubDate>
-    </item>
-    <item>
-      <title>Secure access in the age of AI: Key findings from our 2026 Report</title>
-      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/secure-access-in-the-age-of-ai-key-findings-from-our-2026-report/ba-p/4486060</link>
-      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/secure-access-in-the-age-of-ai-key-findings-from-our-2026-report/ba-p/4486060</guid>
-      <pubDate>Thu, 19 Mar 2026 19:00:00 +0000</pubDate>
     </item>
     <item>
       <title>Upcoming Conditional Access change: Improved enforcement for policies with resource exclusions</title>
