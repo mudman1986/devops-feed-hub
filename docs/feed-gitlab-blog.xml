@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-gitlab-blog.xml</link>
     <description>Articles from GitLab Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-gitlab-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sat, 11 Apr 2026 20:36:15 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 11 Apr 2026 21:43:59 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>5 ways GitLab pipeline logic solves real engineering problems</title>
