@@ -490,16 +490,28 @@
         }
 
         /**
-         * Create an SVG element from path data (XSS-safe)
+         * Create an SVG element from path data
+         * @param {number} width - Rendered SVG width
+         * @param {number} height - Rendered SVG height
+         * @param {string} content - SVG inner content (paths, lines, etc.) - MUST be from trusted static strings only
+         * @param {number} [viewBoxWidth=24] - Internal SVG viewBox width
+         * @param {number} [viewBoxHeight=24] - Internal SVG viewBox height
+         * @returns {SVGElement} - SVG element
          */
-        function createSVG(width, height, content) {
+        function createSVG(
+          width,
+          height,
+          content,
+          viewBoxWidth = 24,
+          viewBoxHeight = 24,
+        ) {
           const svg = document.createElementNS(
             "http://www.w3.org/2000/svg",
             "svg",
           );
           svg.setAttribute("width", width.toString());
           svg.setAttribute("height", height.toString());
-          svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
+          svg.setAttribute("viewBox", `0 0 ${viewBoxWidth} ${viewBoxHeight}`);
           svg.setAttribute("fill", "none");
           svg.setAttribute("stroke", "currentColor");
           svg.setAttribute("stroke-width", "2");
@@ -507,6 +519,7 @@
           svg.setAttribute("stroke-linejoin", "round");
 
           // Parse and create SVG elements from content string
+          // WARNING: content MUST be from trusted static strings only to avoid XSS
           const temp = document.createElementNS(
             "http://www.w3.org/2000/svg",
             "svg",
@@ -1004,9 +1017,8 @@
               const sunPath =
                 '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
               const svg = createSVG(24, 24, sunPath);
-              Array.from(svg.attributes).forEach((attr) => {
-                iconSVG.setAttribute(attr.name, attr.value);
-              });
+              // Only update viewBox to match the icon coordinates, preserve existing width/height
+              iconSVG.setAttribute("viewBox", "0 0 24 24");
               while (svg.firstChild) {
                 iconSVG.appendChild(svg.firstChild);
               }
@@ -1015,9 +1027,8 @@
               const moonPath =
                 '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
               const svg = createSVG(24, 24, moonPath);
-              Array.from(svg.attributes).forEach((attr) => {
-                iconSVG.setAttribute(attr.name, attr.value);
-              });
+              // Only update viewBox to match the icon coordinates, preserve existing width/height
+              iconSVG.setAttribute("viewBox", "0 0 24 24");
               while (svg.firstChild) {
                 iconSVG.appendChild(svg.firstChild);
               }

@@ -227,16 +227,24 @@ function removeLocalStorage(key) {
 
 /**
  * Create an SVG element from path data
- * @param {number} width - SVG width
- * @param {number} height - SVG height
- * @param {string} content - SVG inner content (paths, lines, etc.)
+ * @param {number} width - Rendered SVG width
+ * @param {number} height - Rendered SVG height
+ * @param {string} content - SVG inner content (paths, lines, etc.) - MUST be from trusted static strings only
+ * @param {number} [viewBoxWidth=24] - Internal SVG viewBox width
+ * @param {number} [viewBoxHeight=24] - Internal SVG viewBox height
  * @returns {SVGElement} - SVG element
  */
-function createSVG(width, height, content) {
+function createSVG(
+  width,
+  height,
+  content,
+  viewBoxWidth = 24,
+  viewBoxHeight = 24,
+) {
   const svg = document.createElementNS("http://www.w3.org/2000/svg", "svg");
   svg.setAttribute("width", width.toString());
   svg.setAttribute("height", height.toString());
-  svg.setAttribute("viewBox", `0 0 ${width} ${height}`);
+  svg.setAttribute("viewBox", `0 0 ${viewBoxWidth} ${viewBoxHeight}`);
   svg.setAttribute("fill", "none");
   svg.setAttribute("stroke", "currentColor");
   svg.setAttribute("stroke-width", "2");
@@ -244,6 +252,7 @@ function createSVG(width, height, content) {
   svg.setAttribute("stroke-linejoin", "round");
 
   // Parse and create SVG elements from content string
+  // WARNING: content MUST be from trusted static strings only to avoid XSS
   const temp = document.createElementNS("http://www.w3.org/2000/svg", "svg");
   temp.innerHTML = content;
   while (temp.firstChild) {
