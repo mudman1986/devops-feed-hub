@@ -491,12 +491,15 @@
 
         /**
          * Create an SVG element from path data
-         * @param {number} width - Rendered SVG width
-         * @param {number} height - Rendered SVG height
+         * @param {number} width - Rendered SVG width (e.g., 16, 24)
+         * @param {number} height - Rendered SVG height (e.g., 16, 24)
          * @param {string} content - SVG inner content (paths, lines, etc.) - MUST be from trusted static strings only
-         * @param {number} [viewBoxWidth=24] - Internal SVG viewBox width
-         * @param {number} [viewBoxHeight=24] - Internal SVG viewBox height
+         * @param {number} [viewBoxWidth=24] - Internal SVG coordinate system width (defaults to 24 for icon paths)
+         * @param {number} [viewBoxHeight=24] - Internal SVG coordinate system height (defaults to 24 for icon paths)
          * @returns {SVGElement} - SVG element
+         * @example
+         * // Render a 16x16 icon using 24x24 coordinate paths
+         * const icon = createSVG(16, 16, '<path d="...24x24 coordinates..."/>');
          */
         function createSVG(
           width,
