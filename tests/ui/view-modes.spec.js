@@ -375,7 +375,7 @@ test.describe("Timeframe Filtering in Different Views", () => {
     expect(visibleAfter7Days).toBeGreaterThanOrEqual(visibleAfter1Day);
   });
 
-  test("should handle switching from empty timeframe to non-empty in List view", async ({
+  test("should handle switching from narrower timeframe to broader timeframe in List view", async ({
     page,
   }) => {
     const viewSelect = page.locator("#view-select");
@@ -389,8 +389,8 @@ test.describe("Timeframe Filtering in Different Views", () => {
     await timeframeSelect.selectOption("1day");
     await page.waitForTimeout(100);
 
-    // Then select 30 days (should have more)
-    await timeframeSelect.selectOption("30days");
+    // Then select 1 year to ensure the static fixture still contains articles
+    await timeframeSelect.selectOption("1year");
     await page.waitForTimeout(100);
 
     // Verify articles are visible
