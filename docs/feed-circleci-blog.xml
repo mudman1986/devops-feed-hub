@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-circleci-blog.xml</link>
     <description>Articles from CircleCI Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-circleci-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 10 Apr 2026 12:12:18 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 11 Apr 2026 00:11:35 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Cirrus CI is shutting down: upgrade to a scalable, AI-ready alternative</title>
+      <link>https://circleci.com/blog/cirrus-ci-alternative/</link>
+      <guid isPermaLink="true">https://circleci.com/blog/cirrus-ci-alternative/</guid>
+      <pubDate>Fri, 10 Apr 2026 21:10:00 +0000</pubDate>
+    </item>
     <item>
       <title>7 AI productivity lessons from the CTO of Superhuman</title>
       <link>https://circleci.com/blog/ai-productivity-lessons-superhuman-cto/</link>
@@ -59,12 +65,6 @@
       <title>Simultaneous multi-cloud deployment to AWS and GCP with CircleCI</title>
       <link>https://circleci.com/blog/simultaneous-multi-cloud-deployment-to-aws-and-gcp/</link>
       <guid isPermaLink="true">https://circleci.com/blog/simultaneous-multi-cloud-deployment-to-aws-and-gcp/</guid>
-      <pubDate>Thu, 19 Feb 2026 16:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Getting started with Amazon Q Developer and CircleCI</title>
-      <link>https://circleci.com/blog/getting-started-with-amazon-q-developer-and-circleci/</link>
-      <guid isPermaLink="true">https://circleci.com/blog/getting-started-with-amazon-q-developer-and-circleci/</guid>
       <pubDate>Thu, 19 Feb 2026 16:00:00 +0000</pubDate>
     </item>
   </channel>

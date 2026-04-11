@@ -5,8 +5,78 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 10 Apr 2026 12:12:18 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 11 Apr 2026 00:11:35 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Enforcing new limits and retiring Opus 4.6 Fast from Copilot Pro+</title>
+      <link>https://github.blog/changelog/2026-04-10-enforcing-new-limits-and-retiring-opus-4-6-fast-from-copilot-pro</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-10-enforcing-new-limits-and-retiring-opus-4-6-fast-from-copilot-pro</guid>
+      <pubDate>Fri, 10 Apr 2026 22:56:46 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Copilot usage metrics now aggregate Copilot cloud agent active user counts</title>
+      <link>https://github.blog/changelog/2026-04-10-copilot-usage-metrics-now-aggregate-copilot-cloud-agent-active-user-counts</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-10-copilot-usage-metrics-now-aggregate-copilot-cloud-agent-active-user-counts</guid>
+      <pubDate>Fri, 10 Apr 2026 21:42:47 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Cirrus CI is shutting down: upgrade to a scalable, AI-ready alternative</title>
+      <link>https://circleci.com/blog/cirrus-ci-alternative/</link>
+      <guid isPermaLink="true">https://circleci.com/blog/cirrus-ci-alternative/</guid>
+      <pubDate>Fri, 10 Apr 2026 21:10:00 +0000</pubDate>
+      <source>CircleCI Blog</source>
+    </item>
+    <item>
+      <title>Pausing new GitHub Copilot Pro trials</title>
+      <link>https://github.blog/changelog/2026-04-10-pausing-new-github-copilot-pro-trials</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-10-pausing-new-github-copilot-pro-trials</guid>
+      <pubDate>Fri, 10 Apr 2026 20:25:32 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Actions workflows are limited to 50 reruns</title>
+      <link>https://github.blog/changelog/2026-04-10-actions-workflows-are-limited-to-50-reruns</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-10-actions-workflows-are-limited-to-50-reruns</guid>
+      <pubDate>Fri, 10 Apr 2026 20:03:29 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Copilot CLI activity now included in usage metrics totals and feature breakdowns</title>
+      <link>https://github.blog/changelog/2026-04-10-copilot-cli-activity-now-included-in-usage-metrics-totals-and-feature-breakdowns</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-10-copilot-cli-activity-now-included-in-usage-metrics-totals-and-feature-breakdowns</guid>
+      <pubDate>Fri, 10 Apr 2026 20:03:28 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Event Grid as a destination for Stripe events now in Public Preview</title>
+      <link>https://azure.microsoft.com/updates?id=559836</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=559836</guid>
+      <pubDate>Fri, 10 Apr 2026 17:00:41 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>GitHub Copilot CLI for Beginners: Getting started with GitHub Copilot CLI</title>
+      <link>https://github.blog/ai-and-ml/github-copilot/github-copilot-cli-for-beginners-getting-started-with-github-copilot-cli/</link>
+      <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/github-copilot-cli-for-beginners-getting-started-with-github-copilot-cli/</guid>
+      <pubDate>Fri, 10 Apr 2026 16:00:00 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
+    <item>
+      <title>Copilot cloud agent’s validation tools are now 20% faster</title>
+      <link>https://github.blog/changelog/2026-04-10-copilot-cloud-agents-validation-tools-are-now-20-faster</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-10-copilot-cloud-agents-validation-tools-are-now-20-faster</guid>
+      <pubDate>Fri, 10 Apr 2026 12:19:17 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Supporting Open Source Maintainers: A German Petition for Better Legal Frameworks</title>
+      <link>https://www.jenkins.io/blog/2026/04/10/open-source-ehrenamt/</link>
+      <guid isPermaLink="true">https://www.jenkins.io/blog/2026/04/10/open-source-ehrenamt/</guid>
+      <pubDate>Fri, 10 Apr 2026 00:00:00 +0000</pubDate>
+      <source>Jenkins Blog</source>
+    </item>
     <item>
       <title>Ask Copilot in security assessments now available</title>
       <link>https://github.blog/changelog/2026-04-09-ask-copilot-in-security-assessments-now-available</link>
@@ -64,13 +134,6 @@
       <source>Microsoft Entra Blog</source>
     </item>
     <item>
-      <title>Release information in issue sidebar and default values for project fields</title>
-      <link>https://github.blog/changelog/2026-04-09-release-info-in-issue-sidebar-and-project-defaults</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-09-release-info-in-issue-sidebar-and-project-defaults</guid>
-      <pubDate>Thu, 09 Apr 2026 16:15:32 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>Investigating Storm-2755: “Payroll pirate” attacks targeting Canadian employees</title>
       <link>https://www.microsoft.com/en-us/security/blog/2026/04/09/investigating-storm-2755-payroll-pirate-attacks-targeting-canadian-employees/</link>
       <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/04/09/investigating-storm-2755-payroll-pirate-attacks-targeting-canadian-employees/</guid>
@@ -104,27 +167,6 @@
       <guid isPermaLink="true">https://about.gitlab.com/blog/5-ways-gitlab-pipeline-logic-solves-real-engineering-problems/</guid>
       <pubDate>Thu, 09 Apr 2026 00:00:00 +0000</pubDate>
       <source>GitLab Blog</source>
-    </item>
-    <item>
-      <title>Copilot-reviewed pull request merge metrics now in the usage metrics API</title>
-      <link>https://github.blog/changelog/2026-04-08-copilot-reviewed-pull-request-merge-metrics-now-in-the-usage-metrics-api</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-08-copilot-reviewed-pull-request-merge-metrics-now-in-the-usage-metrics-api</guid>
-      <pubDate>Wed, 08 Apr 2026 23:21:50 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>Secret scanning improvements to alert APIs, webhooks, and delegated workflows</title>
-      <link>https://github.blog/changelog/2026-04-08-secret-scanning-improvements-to-alert-apis-webhooks-and-delegated-workflows</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-08-secret-scanning-improvements-to-alert-apis-webhooks-and-delegated-workflows</guid>
-      <pubDate>Wed, 08 Apr 2026 19:56:31 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>GitHub Mobile: Research and code with Copilot cloud agent anywhere</title>
-      <link>https://github.blog/changelog/2026-04-08-github-mobile-research-and-code-with-copilot-cloud-agent-anywhere</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-08-github-mobile-research-and-code-with-copilot-cloud-agent-anywhere</guid>
-      <pubDate>Wed, 08 Apr 2026 19:37:15 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>Reclaim Developer Hours through Smarter Vulnerability Prioritization with Docker and Mend.io</title>
@@ -162,25 +204,11 @@
       <source>Azure Updates</source>
     </item>
     <item>
-      <title>Code Security risk assessment available for organizations</title>
-      <link>https://github.blog/changelog/2026-04-08-code-security-risk-assessment-available-for-organizations</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-08-code-security-risk-assessment-available-for-organizations</guid>
-      <pubDate>Wed, 08 Apr 2026 16:52:15 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>GitHub Universe is back: We want you to take the stage</title>
       <link>https://github.blog/news-insights/company-news/github-universe-is-back-we-want-you-to-take-the-stage/</link>
       <guid isPermaLink="true">https://github.blog/news-insights/company-news/github-universe-is-back-we-want-you-to-take-the-stage/</guid>
       <pubDate>Wed, 08 Apr 2026 16:35:46 +0000</pubDate>
       <source>GitHub Blog</source>
-    </item>
-    <item>
-      <title>New PGP signing key for GitHub CLI Linux packages</title>
-      <link>https://github.blog/changelog/2026-04-08-new-pgp-signing-key-for-github-cli-linux-packages</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-08-new-pgp-signing-key-for-github-cli-linux-packages</guid>
-      <pubDate>Wed, 08 Apr 2026 16:13:36 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>Issue #269 - EKS Auto Mode Unpacked, Terraform Tips From the Trenches, Managing DNS and Domains With IaC, and a New Watchdog for Infrastructure Drift</title>
@@ -699,13 +727,6 @@
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558879</guid>
       <pubDate>Thu, 26 Mar 2026 16:00:10 +0000</pubDate>
       <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>A year of open source vulnerability trends: CVEs, advisories, and malware</title>
-      <link>https://github.blog/security/supply-chain-security/a-year-of-open-source-vulnerability-trends-cves-advisories-and-malware/</link>
-      <guid isPermaLink="true">https://github.blog/security/supply-chain-security/a-year-of-open-source-vulnerability-trends-cves-advisories-and-malware/</guid>
-      <pubDate>Thu, 26 Mar 2026 16:00:00 +0000</pubDate>
-      <source>GitHub Blog</source>
     </item>
     <item>
       <title>Getting started with GitLab feature flags in Python</title>
@@ -1600,13 +1621,6 @@
       <title>Simultaneous multi-cloud deployment to AWS and GCP with CircleCI</title>
       <link>https://circleci.com/blog/simultaneous-multi-cloud-deployment-to-aws-and-gcp/</link>
       <guid isPermaLink="true">https://circleci.com/blog/simultaneous-multi-cloud-deployment-to-aws-and-gcp/</guid>
-      <pubDate>Thu, 19 Feb 2026 16:00:00 +0000</pubDate>
-      <source>CircleCI Blog</source>
-    </item>
-    <item>
-      <title>Getting started with Amazon Q Developer and CircleCI</title>
-      <link>https://circleci.com/blog/getting-started-with-amazon-q-developer-and-circleci/</link>
-      <guid isPermaLink="true">https://circleci.com/blog/getting-started-with-amazon-q-developer-and-circleci/</guid>
       <pubDate>Thu, 19 Feb 2026 16:00:00 +0000</pubDate>
       <source>CircleCI Blog</source>
     </item>
@@ -2840,13 +2854,6 @@
       <link>https://azure.microsoft.com/updates?id=532188</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=532188</guid>
       <pubDate>Wed, 19 Nov 2025 17:30:18 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: TLS and TCP termination on Azure Application Gateway</title>
-      <link>https://azure.microsoft.com/updates?id=532202</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=532202</guid>
-      <pubDate>Wed, 19 Nov 2025 17:00:30 +0000</pubDate>
       <source>Azure Updates</source>
     </item>
     <item>

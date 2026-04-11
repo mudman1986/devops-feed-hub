@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml</link>
     <description>Articles from Azure Updates</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 10 Apr 2026 12:12:18 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 11 Apr 2026 00:11:35 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>[In preview] Public Preview: Event Grid as a destination for Stripe events now in Public Preview</title>
+      <link>https://azure.microsoft.com/updates?id=559836</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=559836</guid>
+      <pubDate>Fri, 10 Apr 2026 17:00:41 +0000</pubDate>
+    </item>
     <item>
       <title>[Launched] Generally Available: Enhancements to maintenance notifications in Azure Service Health</title>
       <link>https://azure.microsoft.com/updates?id=559628</link>
@@ -1194,12 +1200,6 @@
       <link>https://azure.microsoft.com/updates?id=532188</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=532188</guid>
       <pubDate>Wed, 19 Nov 2025 17:30:18 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: TLS and TCP termination on Azure Application Gateway</title>
-      <link>https://azure.microsoft.com/updates?id=532202</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=532202</guid>
-      <pubDate>Wed, 19 Nov 2025 17:00:30 +0000</pubDate>
     </item>
     <item>
       <title>[Launched] Generally Available: Model Context Protocol support in Azure API Management and Azure API Center</title>
