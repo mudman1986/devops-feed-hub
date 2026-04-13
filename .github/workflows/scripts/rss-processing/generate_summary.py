@@ -188,6 +188,36 @@ def format_publish_date(iso_date_str: str) -> str:
         return iso_date_str
 
 
+def inject_website_urls(data: Dict[str, Any], feeds_config_path: str) -> None:
+    """
+    Inject website_url from a feeds config JSON file into feed data.
+
+    Reads the feeds config (e.g. rss-feeds.json) and adds the ``website_url``
+    field to each matching feed entry in ``data["feeds"]``.  Feeds that
+    already carry a ``website_url`` value are left unchanged so that embedded
+    test fixtures take precedence.
+
+    Args:
+        data: RSS feed collection data dictionary (modified in place)
+        feeds_config_path: Path to the feeds configuration JSON file
+    """
+    try:
+        with open(feeds_config_path, "r", encoding="utf-8") as f:
+            config = json.load(f)
+    except (FileNotFoundError, json.JSONDecodeError):
+        return
+
+    url_map = {
+        feed["name"]: feed.get("website_url")
+        for feed in config.get("feeds", [])
+        if feed.get("website_url")
+    }
+
+    for feed_name, feed_data in data.get("feeds", {}).items():
+        if "website_url" not in feed_data and feed_name in url_map:
+            feed_data["website_url"] = url_map[feed_name]
+
+
 def generate_feed_articles_content(feeds_to_display: Dict[str, Any]) -> str:
     """
     Generate HTML content for feed articles section
@@ -206,9 +236,18 @@ def generate_feed_articles_content(feeds_to_display: Dict[str, Any]) -> str:
         article_count = feed_data["count"]
         escaped_feed_name = html_escape(feed_name)
         article_plural = "s" if article_count != 1 else ""
+        website_url = feed_data.get("website_url")
+        if website_url:
+            escaped_website_url = html_escape(website_url)
+            title_html = (
+                f'<a href="{escaped_website_url}" class="feed-title-link"'
+                f' target="_blank" rel="noopener noreferrer">{escaped_feed_name}</a>'
+            )
+        else:
+            title_html = escaped_feed_name
         content += f"""
         <div class="feed-section">
-            <h2>{escaped_feed_name}
+            <h2>{title_html}
                 <span class="feed-count">
                     {article_count} article{article_plural}
                 </span>
@@ -574,6 +613,11 @@ def main():
         "--output-dir",
         help="Output directory for multi-page HTML (generates index + feed pages)",
     )
+    parser.add_argument(
+        "--feeds-config",
+        help="Path to the feeds config JSON (e.g. .github/rss-feeds.json) used to "
+        "inject website_url into feed data for feed-title hyperlinks",
+    )
 
     args = parser.parse_args()
 
@@ -587,6 +631,10 @@ def main():
     except json.JSONDecodeError as e:
         print(f"Error: Invalid JSON in {args.input}: {e}")
         return 1
+
+    # Inject website URLs from feeds config if provided
+    if args.feeds_config:
+        inject_website_urls(data, args.feeds_config)
 
     # Generate markdown if requested
     if args.markdown:

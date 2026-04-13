@@ -18,10 +18,12 @@ sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 # Import the functions we want to test
 from generate_summary import (
     generate_all_pages,
+    generate_feed_articles_content,
     generate_feed_nav,
     generate_feed_slug,
     generate_html_page,
     generate_markdown_summary,
+    inject_website_urls,
 )
 
 
@@ -1237,3 +1239,198 @@ class TestDeploymentScriptIssues(unittest.TestCase):
             feed_html = generate_html_page(data, current_feed=feed_name)
             self.assertIsNotNone(feed_html)
             self.assertIn(feed_name, feed_html)
+
+
+class TestFeedTitleLinks(unittest.TestCase):
+    """Test feed title hyperlink functionality"""
+
+    def _make_feed_data(self, website_url=None):
+        """Helper to create minimal feed data with optional website_url."""
+        feed = {
+            "url": "https://example.com/feed",
+            "count": 1,
+            "articles": [
+                {
+                    "title": "Test Article",
+                    "link": "https://example.com/article1",
+                    "published": "2024-01-15T09:00:00Z",
+                }
+            ],
+        }
+        if website_url is not None:
+            feed["website_url"] = website_url
+        return feed
+
+    def test_feed_title_is_link_when_website_url_present(self):
+        """Feed h2 title should be a hyperlink when website_url is in feed data."""
+        feeds = {"My Blog": self._make_feed_data("https://myblog.example.com/")}
+        html = generate_feed_articles_content(feeds)
+
+        self.assertIn('class="feed-title-link"', html)
+        self.assertIn('href="https://myblog.example.com/"', html)
+        self.assertIn('target="_blank"', html)
+        self.assertIn('rel="noopener noreferrer"', html)
+        self.assertIn(">My Blog<", html)
+
+    def test_feed_title_is_plain_text_when_no_website_url(self):
+        """Feed h2 title should be plain text when website_url is absent."""
+        feeds = {"My Blog": self._make_feed_data()}
+        html = generate_feed_articles_content(feeds)
+
+        self.assertNotIn('class="feed-title-link"', html)
+        self.assertNotIn("feed-title-link", html)
+        # Title text should still appear
+        self.assertIn("My Blog", html)
+
+    def test_feed_title_link_website_url_is_escaped(self):
+        """website_url with special HTML characters should be properly escaped."""
+        feeds = {
+            "My Blog": self._make_feed_data('https://example.com/?a=1&b=2')
+        }
+        html = generate_feed_articles_content(feeds)
+
+        self.assertIn("&amp;", html)
+        self.assertNotIn('"https://example.com/?a=1&b=2"', html)
+
+    def test_feed_title_link_xss_in_website_url(self):
+        """Malicious website_url should be HTML-escaped so no raw attribute injection."""
+        feeds = {
+            "My Blog": self._make_feed_data(
+                'https://example.com/" onmouseover="alert(1)'
+            )
+        }
+        html = generate_feed_articles_content(feeds)
+
+        # The raw unescaped injection must not appear in the HTML
+        self.assertNotIn('" onmouseover="alert(1)', html)
+        # The quotes should be HTML-escaped
+        self.assertIn("&quot;", html)
+
+    def test_inject_website_urls_from_config(self):
+        """inject_website_urls reads website_url from a config file."""
+        config = {
+            "feeds": [
+                {
+                    "name": "Test Blog",
+                    "url": "https://example.com/feed",
+                    "website_url": "https://example.com/",
+                }
+            ]
+        }
+        data = {
+            "feeds": {
+                "Test Blog": {
+                    "url": "https://example.com/feed",
+                    "count": 0,
+                    "articles": [],
+                }
+            }
+        }
+
+        with tempfile.NamedTemporaryFile(
+            mode="w", delete=False, suffix=".json", encoding="utf-8"
+        ) as f:
+            json_path = f.name
+            import json  # pylint: disable=import-outside-toplevel
+
+            json.dump(config, f)
+
+        try:
+            inject_website_urls(data, json_path)
+            self.assertEqual(
+                data["feeds"]["Test Blog"].get("website_url"), "https://example.com/"
+            )
+        finally:
+            os.remove(json_path)
+
+    def test_inject_website_urls_does_not_overwrite_existing(self):
+        """inject_website_urls must not overwrite an existing website_url in feed data."""
+        config = {
+            "feeds": [
+                {
+                    "name": "Test Blog",
+                    "url": "https://example.com/feed",
+                    "website_url": "https://config-url.example.com/",
+                }
+            ]
+        }
+        data = {
+            "feeds": {
+                "Test Blog": {
+                    "url": "https://example.com/feed",
+                    "website_url": "https://fixture-url.example.com/",
+                    "count": 0,
+                    "articles": [],
+                }
+            }
+        }
+
+        with tempfile.NamedTemporaryFile(
+            mode="w", delete=False, suffix=".json", encoding="utf-8"
+        ) as f:
+            json_path = f.name
+            import json  # pylint: disable=import-outside-toplevel
+
+            json.dump(config, f)
+
+        try:
+            inject_website_urls(data, json_path)
+            # Existing value should be preserved
+            self.assertEqual(
+                data["feeds"]["Test Blog"]["website_url"],
+                "https://fixture-url.example.com/",
+            )
+        finally:
+            os.remove(json_path)
+
+    def test_inject_website_urls_missing_file(self):
+        """inject_website_urls silently skips when config file is missing."""
+        data = {
+            "feeds": {
+                "Test Blog": {
+                    "url": "https://example.com/feed",
+                    "count": 0,
+                    "articles": [],
+                }
+            }
+        }
+        # Should not raise; feed data should be unchanged
+        inject_website_urls(data, "/nonexistent/path/feeds.json")
+        self.assertNotIn("website_url", data["feeds"]["Test Blog"])
+
+    def test_feed_title_link_in_full_html_page(self):
+        """Full HTML page should contain the feed title hyperlink."""
+        sample_data = {
+            "metadata": {
+                "collected_at": "2024-01-15T10:30:00Z",
+                "since": "2024-01-14T10:30:00Z",
+                "hours": 24,
+            },
+            "summary": {
+                "total_feeds": 1,
+                "successful_feeds": 1,
+                "failed_feeds": 0,
+                "total_articles": 1,
+            },
+            "feeds": {
+                "My Blog": {
+                    "url": "https://example.com/feed",
+                    "website_url": "https://myblog.example.com/",
+                    "count": 1,
+                    "articles": [
+                        {
+                            "title": "Test Article",
+                            "link": "https://example.com/article1",
+                            "published": "2024-01-15T09:00:00Z",
+                        }
+                    ],
+                }
+            },
+            "failed_feeds": [],
+        }
+
+        html = generate_html_page(sample_data)
+
+        self.assertIn('class="feed-title-link"', html)
+        self.assertIn('href="https://myblog.example.com/"', html)
+

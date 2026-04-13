@@ -2,75 +2,93 @@
   "feeds": [
     {
       "name": "Microsoft DevOps Blog",
-      "url": "https://devblogs.microsoft.com/devops/feed/"
+      "url": "https://devblogs.microsoft.com/devops/feed/",
+      "website_url": "https://devblogs.microsoft.com/devops/"
     },
     {
       "name": "GitHub Blog",
-      "url": "https://github.com/blog/all.atom"
+      "url": "https://github.com/blog/all.atom",
+      "website_url": "https://github.blog/"
     },
     {
       "name": "Microsoft Entra Blog",
-      "url": "https://techcommunity.microsoft.com/t5/s/gxcuf89792/rss/board?board.id=microsoft-entra-blog"
+      "url": "https://techcommunity.microsoft.com/t5/s/gxcuf89792/rss/board?board.id=microsoft-entra-blog",
+      "website_url": "https://techcommunity.microsoft.com/t5/microsoft-entra-blog/bg-p/microsoft-entra-blog"
     },
     {
       "name": "Microsoft Azure Blog",
-      "url": "https://azurecomcdn.azureedge.net/en-us/blog/feed/"
+      "url": "https://azurecomcdn.azureedge.net/en-us/blog/feed/",
+      "website_url": "https://azure.microsoft.com/en-us/blog/"
     },
     {
       "name": "Azure Updates",
-      "url": "https://www.microsoft.com/releasecommunications/api/v2/azure/rss"
+      "url": "https://www.microsoft.com/releasecommunications/api/v2/azure/rss",
+      "website_url": "https://azure.microsoft.com/en-us/updates/"
     },
     {
       "name": "GitHub Changelog",
-      "url": "https://github.blog/changelog/feed/"
+      "url": "https://github.blog/changelog/feed/",
+      "website_url": "https://github.blog/changelog/"
     },
     {
       "name": "HashiCorp Blog",
-      "url": "https://www.hashicorp.com/blog/feed.xml"
+      "url": "https://www.hashicorp.com/blog/feed.xml",
+      "website_url": "https://www.hashicorp.com/blog"
     },
     {
       "name": "Microsoft Security",
-      "url": "https://www.microsoft.com/security/blog/feed/"
+      "url": "https://www.microsoft.com/security/blog/feed/",
+      "website_url": "https://www.microsoft.com/security/blog/"
     },
     {
       "name": "Docker Blog",
-      "url": "https://www.docker.com/blog/feed/"
+      "url": "https://www.docker.com/blog/feed/",
+      "website_url": "https://www.docker.com/blog/"
     },
     {
       "name": "Kubernetes Blog",
-      "url": "https://kubernetes.io/feed.xml"
+      "url": "https://kubernetes.io/feed.xml",
+      "website_url": "https://kubernetes.io/blog/"
     },
     {
       "name": "AWS DevOps Blog",
-      "url": "https://aws.amazon.com/blogs/devops/feed/"
+      "url": "https://aws.amazon.com/blogs/devops/feed/",
+      "website_url": "https://aws.amazon.com/blogs/devops/"
     },
     {
       "name": "GitLab Blog",
-      "url": "https://about.gitlab.com/atom.xml"
+      "url": "https://about.gitlab.com/atom.xml",
+      "website_url": "https://about.gitlab.com/blog/"
     },
     {
       "name": "Jenkins Blog",
-      "url": "https://feeds.feedburner.com/ContinuousBlog"
+      "url": "https://feeds.feedburner.com/ContinuousBlog",
+      "website_url": "https://www.jenkins.io/blog/"
     },
     {
       "name": "Red Hat Developer",
-      "url": "https://developers.redhat.com/blog/feed/"
+      "url": "https://developers.redhat.com/blog/feed/",
+      "website_url": "https://developers.redhat.com/blog"
     },
     {
       "name": "CircleCI Blog",
-      "url": "https://circleci.com/blog/feed.xml"
+      "url": "https://circleci.com/blog/feed.xml",
+      "website_url": "https://circleci.com/blog/"
     },
     {
       "name": "Atlassian DevOps",
-      "url": "https://www.atlassian.com/blog/devops/feed"
+      "url": "https://www.atlassian.com/blog/devops/feed",
+      "website_url": "https://www.atlassian.com/blog/devops"
     },
     {
       "name": "Opensource.com",
-      "url": "https://opensource.com/feed"
+      "url": "https://opensource.com/feed",
+      "website_url": "https://opensource.com/"
     },
     {
       "name": "Terraform weekly",
-      "url": "https://rss.beehiiv.com/feeds/4FnlUFPRgf.xml"
+      "url": "https://rss.beehiiv.com/feeds/4FnlUFPRgf.xml",
+      "website_url": "https://www.tfir.io/terraform-weekly/"
     }
   ]
 }
