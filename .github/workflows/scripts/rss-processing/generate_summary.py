@@ -204,13 +204,14 @@ def inject_website_urls(data: Dict[str, Any], feeds_config_path: str) -> None:
     try:
         with open(feeds_config_path, "r", encoding="utf-8") as f:
             config = json.load(f)
-    except (FileNotFoundError, json.JSONDecodeError):
+    except (FileNotFoundError, OSError, json.JSONDecodeError):
         return
 
     url_map = {
-        feed["name"]: feed.get("website_url")
+        feed_name: website_url
         for feed in config.get("feeds", [])
-        if feed.get("website_url")
+        for feed_name, website_url in [(feed.get("name"), feed.get("website_url"))]
+        if feed_name and website_url
     }
 
     for feed_name, feed_data in data.get("feeds", {}).items():

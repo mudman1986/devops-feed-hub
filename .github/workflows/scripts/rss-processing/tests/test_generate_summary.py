@@ -1397,6 +1397,45 @@ class TestFeedTitleLinks(unittest.TestCase):
         inject_website_urls(data, "/nonexistent/path/feeds.json")
         self.assertNotIn("website_url", data["feeds"]["Test Blog"])
 
+    def test_inject_website_urls_skips_entries_without_name(self):
+        """inject_website_urls must not raise when a config entry has no 'name' key."""
+        config = {
+            "feeds": [
+                # Entry with no name should be silently skipped
+                {"url": "https://example.com/feed", "website_url": "https://example.com/"},
+                {
+                    "name": "Named Blog",
+                    "url": "https://named.example.com/feed",
+                    "website_url": "https://named.example.com/",
+                },
+            ]
+        }
+        data = {
+            "feeds": {
+                "Named Blog": {
+                    "url": "https://named.example.com/feed",
+                    "count": 0,
+                    "articles": [],
+                }
+            }
+        }
+
+        with tempfile.NamedTemporaryFile(
+            mode="w", delete=False, suffix=".json", encoding="utf-8"
+        ) as f:
+            json_path = f.name
+            json.dump(config, f)
+
+        try:
+            inject_website_urls(data, json_path)
+            # Named entry should get its website_url
+            self.assertEqual(
+                data["feeds"]["Named Blog"]["website_url"],
+                "https://named.example.com/",
+            )
+        finally:
+            os.remove(json_path)
+
     def test_feed_title_link_in_full_html_page(self):
         """Full HTML page should contain the feed title hyperlink."""
         sample_data = {
