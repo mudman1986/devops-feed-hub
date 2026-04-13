@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml</link>
     <description>Articles from Azure Updates</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Sun, 12 Apr 2026 12:07:00 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 13 Apr 2026 00:13:33 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>[In preview] Public Preview: Event Grid as a destination for Stripe events now in Public Preview</title>
