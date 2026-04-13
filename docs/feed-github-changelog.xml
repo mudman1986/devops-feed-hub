@@ -5,8 +5,20 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml</link>
     <description>Articles from GitHub Changelog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 13 Apr 2026 12:17:30 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 13 Apr 2026 20:50:39 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Fix merge conflicts in three clicks with Copilot cloud agent</title>
+      <link>https://github.blog/changelog/2026-04-13-fix-merge-conflicts-in-three-clicks-with-copilot-cloud-agent</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-13-fix-merge-conflicts-in-three-clicks-with-copilot-cloud-agent</guid>
+      <pubDate>Mon, 13 Apr 2026 19:36:26 +0000</pubDate>
+    </item>
+    <item>
+      <title>Remote control CLI sessions on web and mobile in public preview</title>
+      <link>https://github.blog/changelog/2026-04-13-remote-control-cli-sessions-on-web-and-mobile-in-public-preview</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-13-remote-control-cli-sessions-on-web-and-mobile-in-public-preview</guid>
+      <pubDate>Mon, 13 Apr 2026 14:15:43 +0000</pubDate>
+    </item>
     <item>
       <title>Enforcing new limits and retiring Opus 4.6 Fast from Copilot Pro+</title>
       <link>https://github.blog/changelog/2026-04-10-enforcing-new-limits-and-retiring-opus-4-6-fast-from-copilot-pro</link>
@@ -54,18 +66,6 @@
       <link>https://github.blog/changelog/2026-04-09-new-low-quality-option-in-the-hide-comment-menu</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-04-09-new-low-quality-option-in-the-hide-comment-menu</guid>
       <pubDate>Thu, 09 Apr 2026 17:40:09 +0000</pubDate>
-    </item>
-    <item>
-      <title>New Sort by control added to Notifications</title>
-      <link>https://github.blog/changelog/2026-04-09-new-sort-by-control-added-to-notifications</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-09-new-sort-by-control-added-to-notifications</guid>
-      <pubDate>Thu, 09 Apr 2026 17:27:51 +0000</pubDate>
-    </item>
-    <item>
-      <title>Repository member role labels now in pull request list view</title>
-      <link>https://github.blog/changelog/2026-04-09-repository-member-role-labels-now-in-pull-request-list-view</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-09-repository-member-role-labels-now-in-pull-request-list-view</guid>
-      <pubDate>Thu, 09 Apr 2026 17:15:16 +0000</pubDate>
     </item>
   </channel>
 </rss>

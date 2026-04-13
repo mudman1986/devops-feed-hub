@@ -5,8 +5,92 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 13 Apr 2026 12:17:30 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 13 Apr 2026 20:50:39 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Fix merge conflicts in three clicks with Copilot cloud agent</title>
+      <link>https://github.blog/changelog/2026-04-13-fix-merge-conflicts-in-three-clicks-with-copilot-cloud-agent</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-13-fix-merge-conflicts-in-three-clicks-with-copilot-cloud-agent</guid>
+      <pubDate>Mon, 13 Apr 2026 19:36:26 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Troubleshooting environment with AI analysis in AWS Elastic Beanstalk</title>
+      <link>https://aws.amazon.com/blogs/devops/troubleshooting-environment-with-ai-analysis-in-aws-elastic-beanstalk/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/troubleshooting-environment-with-ai-analysis-in-aws-elastic-beanstalk/</guid>
+      <pubDate>Mon, 13 Apr 2026 18:55:00 +0000</pubDate>
+      <source>AWS DevOps Blog</source>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Managed identity support for graphical session recording</title>
+      <link>https://azure.microsoft.com/updates?id=560162</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=560162</guid>
+      <pubDate>Mon, 13 Apr 2026 18:45:30 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Azure Storage Mover now available in Azure Government (US)</title>
+      <link>https://azure.microsoft.com/updates?id=560198</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=560198</guid>
+      <pubDate>Mon, 13 Apr 2026 18:00:56 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Monitor AKS applications with OpenTelemetry and Azure Monitor</title>
+      <link>https://azure.microsoft.com/updates?id=560119</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=560119</guid>
+      <pubDate>Mon, 13 Apr 2026 17:45:02 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Granular Encryption-in-Transit Controls for SMB and NFS on Azure Files</title>
+      <link>https://azure.microsoft.com/updates?id=560001</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=560001</guid>
+      <pubDate>Mon, 13 Apr 2026 17:45:02 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>Retirement: Azure Managed Grafana Essential SKU will retire on March 30, 2027</title>
+      <link>https://azure.microsoft.com/updates?id=559395</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=559395</guid>
+      <pubDate>Mon, 13 Apr 2026 17:15:23 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>[Launched] Public Preview: StandardV2 NAT Gateway as an outbound type for AKS</title>
+      <link>https://azure.microsoft.com/updates?id=560207</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=560207</guid>
+      <pubDate>Mon, 13 Apr 2026 16:00:36 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>How to Analyze Hugging Face for Arm64 Readiness</title>
+      <link>https://www.docker.com/blog/how-to-analyze-hugging-face-for-arm64-readiness/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/how-to-analyze-hugging-face-for-arm64-readiness/</guid>
+      <pubDate>Mon, 13 Apr 2026 15:59:37 +0000</pubDate>
+      <source>Docker Blog</source>
+    </item>
+    <item>
+      <title>GitHub for Beginners: Getting started with GitHub Pages</title>
+      <link>https://github.blog/developer-skills/github/github-for-beginners-getting-started-with-github-pages/</link>
+      <guid isPermaLink="true">https://github.blog/developer-skills/github/github-for-beginners-getting-started-with-github-pages/</guid>
+      <pubDate>Mon, 13 Apr 2026 15:00:00 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
+    <item>
+      <title>Remote control CLI sessions on web and mobile in public preview</title>
+      <link>https://github.blog/changelog/2026-04-13-remote-control-cli-sessions-on-web-and-mobile-in-public-preview</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-13-remote-control-cli-sessions-on-web-and-mobile-in-public-preview</guid>
+      <pubDate>Mon, 13 Apr 2026 14:15:43 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>GitLab named a 2026 Omdia Universe Leader</title>
+      <link>https://about.gitlab.com/blog/gitlab-named-a-2026-omdia-universe-leader/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/gitlab-named-a-2026-omdia-universe-leader/</guid>
+      <pubDate>Mon, 13 Apr 2026 00:00:00 +0000</pubDate>
+      <source>GitLab Blog</source>
+    </item>
     <item>
       <title>Enforcing new limits and retiring Opus 4.6 Fast from Copilot Pro+</title>
       <link>https://github.blog/changelog/2026-04-10-enforcing-new-limits-and-retiring-opus-4-6-fast-from-copilot-pro</link>
@@ -110,20 +194,6 @@
       <link>https://github.blog/changelog/2026-04-09-new-low-quality-option-in-the-hide-comment-menu</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-04-09-new-low-quality-option-in-the-hide-comment-menu</guid>
       <pubDate>Thu, 09 Apr 2026 17:40:09 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>New Sort by control added to Notifications</title>
-      <link>https://github.blog/changelog/2026-04-09-new-sort-by-control-added-to-notifications</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-09-new-sort-by-control-added-to-notifications</guid>
-      <pubDate>Thu, 09 Apr 2026 17:27:51 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>Repository member role labels now in pull request list view</title>
-      <link>https://github.blog/changelog/2026-04-09-repository-member-role-labels-now-in-pull-request-list-view</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-09-repository-member-role-labels-now-in-pull-request-list-view</guid>
-      <pubDate>Thu, 09 Apr 2026 17:15:16 +0000</pubDate>
       <source>GitHub Changelog</source>
     </item>
     <item>
@@ -715,13 +785,6 @@
       <source>HashiCorp Blog</source>
     </item>
     <item>
-      <title>What&amp;#8217;s coming to our GitHub Actions 2026 security roadmap</title>
-      <link>https://github.blog/news-insights/product-news/whats-coming-to-our-github-actions-2026-security-roadmap/</link>
-      <guid isPermaLink="true">https://github.blog/news-insights/product-news/whats-coming-to-our-github-actions-2026-security-roadmap/</guid>
-      <pubDate>Thu, 26 Mar 2026 16:49:14 +0000</pubDate>
-      <source>GitHub Blog</source>
-    </item>
-    <item>
       <title>[Launched] Generally Available: Azure SQL updates for late-March 2026</title>
       <link>https://azure.microsoft.com/updates?id=558879</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558879</guid>
@@ -1212,13 +1275,6 @@
       <source>Microsoft DevOps Blog</source>
     </item>
     <item>
-      <title>Achieving Test Reliability for Native E2E Testing: Beyond Fixing Broken Tests</title>
-      <link>https://www.docker.com/blog/native-e2e-test-reliability/</link>
-      <guid isPermaLink="true">https://www.docker.com/blog/native-e2e-test-reliability/</guid>
-      <pubDate>Fri, 13 Mar 2026 13:00:00 +0000</pubDate>
-      <source>Docker Blog</source>
-    </item>
-    <item>
       <title>Developer experience is a blueprint for enterprise productivity</title>
       <link>https://www.atlassian.com/blog/devops/developer-experience-is-a-blueprint-for-enterprise-productivity</link>
       <guid isPermaLink="true">https://www.atlassian.com/blog/devops/developer-experience-is-a-blueprint-for-enterprise-productivity</guid>
@@ -1518,13 +1574,6 @@
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=552808</guid>
       <pubDate>Thu, 26 Feb 2026 00:30:50 +0000</pubDate>
       <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>Secure and fast deployments to Google Agent Engine with GitLab</title>
-      <link>https://about.gitlab.com/blog/secure-and-fast-deployments-to-google-agent-engine-with-gitlab/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/secure-and-fast-deployments-to-google-agent-engine-with-gitlab/</guid>
-      <pubDate>Thu, 26 Feb 2026 00:00:00 +0000</pubDate>
-      <source>GitLab Blog</source>
     </item>
     <item>
       <title>[Launched] Generally Available: Azure SQL updates for late-February 2026</title>
@@ -2703,13 +2752,6 @@
       <source>Azure Updates</source>
     </item>
     <item>
-      <title>Your Guide to the Developer Tools Track at AWS re:Invent 2025</title>
-      <link>https://aws.amazon.com/blogs/devops/your-guide-to-the-developer-tools-track-at-aws-reinvent-2025/</link>
-      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/your-guide-to-the-developer-tools-track-at-aws-reinvent-2025/</guid>
-      <pubDate>Mon, 24 Nov 2025 12:27:35 +0000</pubDate>
-      <source>AWS DevOps Blog</source>
-    </item>
-    <item>
       <title>Rovo Dev agent, now available in the CLI</title>
       <link>https://www.atlassian.com/blog/announcements/rovo-dev-command-line-interface</link>
       <guid isPermaLink="true">https://www.atlassian.com/blog/announcements/rovo-dev-command-line-interface</guid>
@@ -2812,48 +2854,6 @@
       <link>https://azure.microsoft.com/updates?id=530174</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=530174</guid>
       <pubDate>Thu, 20 Nov 2025 08:00:32 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Azure Managed Lustre Support for Azure MCP Server</title>
-      <link>https://azure.microsoft.com/updates?id=529381</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=529381</guid>
-      <pubDate>Wed, 19 Nov 2025 21:00:38 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: CSI Dynamic Provisioning for Azure Managed Lustre</title>
-      <link>https://azure.microsoft.com/updates?id=529368</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=529368</guid>
-      <pubDate>Wed, 19 Nov 2025 21:00:38 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: 20 MB/s/TiB Performance Tier for Azure Managed Lustre</title>
-      <link>https://azure.microsoft.com/updates?id=529359</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=529359</guid>
-      <pubDate>Wed, 19 Nov 2025 21:00:38 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Auto-import for Azure Managed Lustre</title>
-      <link>https://azure.microsoft.com/updates?id=529342</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=529342</guid>
-      <pubDate>Wed, 19 Nov 2025 20:00:49 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Recommended alerts for Azure Monitor Workspace</title>
-      <link>https://azure.microsoft.com/updates?id=515505</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=515505</guid>
-      <pubDate>Wed, 19 Nov 2025 17:45:05 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Azure Managed Redis integration with Microsoft Foundry</title>
-      <link>https://azure.microsoft.com/updates?id=532188</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=532188</guid>
-      <pubDate>Wed, 19 Nov 2025 17:30:18 +0000</pubDate>
       <source>Azure Updates</source>
     </item>
     <item>

@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-blog.xml</link>
     <description>Articles from GitHub Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 13 Apr 2026 12:17:30 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 13 Apr 2026 20:50:39 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>GitHub for Beginners: Getting started with GitHub Pages</title>
+      <link>https://github.blog/developer-skills/github/github-for-beginners-getting-started-with-github-pages/</link>
+      <guid isPermaLink="true">https://github.blog/developer-skills/github/github-for-beginners-getting-started-with-github-pages/</guid>
+      <pubDate>Mon, 13 Apr 2026 15:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>GitHub Copilot CLI for Beginners: Getting started with GitHub Copilot CLI</title>
       <link>https://github.blog/ai-and-ml/github-copilot/github-copilot-cli-for-beginners-getting-started-with-github-copilot-cli/</link>
@@ -60,12 +66,6 @@
       <link>https://github.blog/developer-skills/github/github-for-beginners-getting-started-with-github-security/</link>
       <guid isPermaLink="true">https://github.blog/developer-skills/github/github-for-beginners-getting-started-with-github-security/</guid>
       <pubDate>Mon, 30 Mar 2026 16:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>What&amp;#8217;s coming to our GitHub Actions 2026 security roadmap</title>
-      <link>https://github.blog/news-insights/product-news/whats-coming-to-our-github-actions-2026-security-roadmap/</link>
-      <guid isPermaLink="true">https://github.blog/news-insights/product-news/whats-coming-to-our-github-actions-2026-security-roadmap/</guid>
-      <pubDate>Thu, 26 Mar 2026 16:49:14 +0000</pubDate>
     </item>
   </channel>
 </rss>

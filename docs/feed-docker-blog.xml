@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-docker-blog.xml</link>
     <description>Articles from Docker Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-docker-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 13 Apr 2026 12:17:30 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 13 Apr 2026 20:50:39 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>How to Analyze Hugging Face for Arm64 Readiness</title>
+      <link>https://www.docker.com/blog/how-to-analyze-hugging-face-for-arm64-readiness/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/how-to-analyze-hugging-face-for-arm64-readiness/</guid>
+      <pubDate>Mon, 13 Apr 2026 15:59:37 +0000</pubDate>
+    </item>
     <item>
       <title>Reclaim Developer Hours through Smarter Vulnerability Prioritization with Docker and Mend.io</title>
       <link>https://www.docker.com/blog/reclaim-developer-hours-through-smarter-vulnerability-prioritization-with-docker-and-mend-io/</link>
@@ -60,12 +66,6 @@
       <link>https://www.docker.com/blog/from-the-captains-chair-naga-santhosh-reddy-vootukuri/</link>
       <guid isPermaLink="true">https://www.docker.com/blog/from-the-captains-chair-naga-santhosh-reddy-vootukuri/</guid>
       <pubDate>Wed, 18 Mar 2026 16:00:12 +0000</pubDate>
-    </item>
-    <item>
-      <title>Achieving Test Reliability for Native E2E Testing: Beyond Fixing Broken Tests</title>
-      <link>https://www.docker.com/blog/native-e2e-test-reliability/</link>
-      <guid isPermaLink="true">https://www.docker.com/blog/native-e2e-test-reliability/</guid>
-      <pubDate>Fri, 13 Mar 2026 13:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

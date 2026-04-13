@@ -5,8 +5,44 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml</link>
     <description>Articles from Azure Updates</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 13 Apr 2026 12:17:30 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 13 Apr 2026 20:50:39 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>[In preview] Public Preview: Managed identity support for graphical session recording</title>
+      <link>https://azure.microsoft.com/updates?id=560162</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=560162</guid>
+      <pubDate>Mon, 13 Apr 2026 18:45:30 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Azure Storage Mover now available in Azure Government (US)</title>
+      <link>https://azure.microsoft.com/updates?id=560198</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=560198</guid>
+      <pubDate>Mon, 13 Apr 2026 18:00:56 +0000</pubDate>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Monitor AKS applications with OpenTelemetry and Azure Monitor</title>
+      <link>https://azure.microsoft.com/updates?id=560119</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=560119</guid>
+      <pubDate>Mon, 13 Apr 2026 17:45:02 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Granular Encryption-in-Transit Controls for SMB and NFS on Azure Files</title>
+      <link>https://azure.microsoft.com/updates?id=560001</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=560001</guid>
+      <pubDate>Mon, 13 Apr 2026 17:45:02 +0000</pubDate>
+    </item>
+    <item>
+      <title>Retirement: Azure Managed Grafana Essential SKU will retire on March 30, 2027</title>
+      <link>https://azure.microsoft.com/updates?id=559395</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=559395</guid>
+      <pubDate>Mon, 13 Apr 2026 17:15:23 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Launched] Public Preview: StandardV2 NAT Gateway as an outbound type for AKS</title>
+      <link>https://azure.microsoft.com/updates?id=560207</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=560207</guid>
+      <pubDate>Mon, 13 Apr 2026 16:00:36 +0000</pubDate>
+    </item>
     <item>
       <title>[In preview] Public Preview: Event Grid as a destination for Stripe events now in Public Preview</title>
       <link>https://azure.microsoft.com/updates?id=559836</link>
@@ -1164,42 +1200,6 @@
       <link>https://azure.microsoft.com/updates?id=530174</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=530174</guid>
       <pubDate>Thu, 20 Nov 2025 08:00:32 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Azure Managed Lustre Support for Azure MCP Server</title>
-      <link>https://azure.microsoft.com/updates?id=529381</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=529381</guid>
-      <pubDate>Wed, 19 Nov 2025 21:00:38 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: CSI Dynamic Provisioning for Azure Managed Lustre</title>
-      <link>https://azure.microsoft.com/updates?id=529368</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=529368</guid>
-      <pubDate>Wed, 19 Nov 2025 21:00:38 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: 20 MB/s/TiB Performance Tier for Azure Managed Lustre</title>
-      <link>https://azure.microsoft.com/updates?id=529359</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=529359</guid>
-      <pubDate>Wed, 19 Nov 2025 21:00:38 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Auto-import for Azure Managed Lustre</title>
-      <link>https://azure.microsoft.com/updates?id=529342</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=529342</guid>
-      <pubDate>Wed, 19 Nov 2025 20:00:49 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Recommended alerts for Azure Monitor Workspace</title>
-      <link>https://azure.microsoft.com/updates?id=515505</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=515505</guid>
-      <pubDate>Wed, 19 Nov 2025 17:45:05 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Azure Managed Redis integration with Microsoft Foundry</title>
-      <link>https://azure.microsoft.com/updates?id=532188</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=532188</guid>
-      <pubDate>Wed, 19 Nov 2025 17:30:18 +0000</pubDate>
     </item>
     <item>
       <title>[Launched] Generally Available: Model Context Protocol support in Azure API Management and Azure API Center</title>
