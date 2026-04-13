@@ -5,6 +5,7 @@ Tests the summary generation functionality for RSS feed collection
 """
 
 # pylint: disable=wrong-import-position,too-many-lines
+import json
 import os
 import sys
 import tempfile
@@ -1291,6 +1292,8 @@ class TestFeedTitleLinks(unittest.TestCase):
 
         self.assertIn("&amp;", html)
         self.assertNotIn('"https://example.com/?a=1&b=2"', html)
+        # Full escaped URL should appear in the href
+        self.assertIn('href="https://example.com/?a=1&amp;b=2"', html)
 
     def test_feed_title_link_xss_in_website_url(self):
         """Malicious website_url should be HTML-escaped so no raw attribute injection."""
@@ -1331,8 +1334,6 @@ class TestFeedTitleLinks(unittest.TestCase):
             mode="w", delete=False, suffix=".json", encoding="utf-8"
         ) as f:
             json_path = f.name
-            import json  # pylint: disable=import-outside-toplevel
-
             json.dump(config, f)
 
         try:
@@ -1369,8 +1370,6 @@ class TestFeedTitleLinks(unittest.TestCase):
             mode="w", delete=False, suffix=".json", encoding="utf-8"
         ) as f:
             json_path = f.name
-            import json  # pylint: disable=import-outside-toplevel
-
             json.dump(config, f)
 
         try:
