@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 13 Apr 2026 03:26:26 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 13 Apr 2026 03:26:58 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Enforcing new limits and retiring Opus 4.6 Fast from Copilot Pro+</title>
@@ -55,6 +55,13 @@
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=559836</guid>
       <pubDate>Fri, 10 Apr 2026 17:00:41 +0000</pubDate>
       <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>GitHub Copilot CLI for Beginners: Getting started with GitHub Copilot CLI</title>
+      <link>https://github.blog/ai-and-ml/github-copilot/github-copilot-cli-for-beginners-getting-started-with-github-copilot-cli/</link>
+      <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/github-copilot-cli-for-beginners-getting-started-with-github-copilot-cli/</guid>
+      <pubDate>Fri, 10 Apr 2026 16:00:00 +0000</pubDate>
+      <source>GitHub Blog</source>
     </item>
     <item>
       <title>Copilot cloud agent’s validation tools are now 20% faster</title>
@@ -148,6 +155,13 @@
       <source>HashiCorp Blog</source>
     </item>
     <item>
+      <title>GitHub availability report: March 2026</title>
+      <link>https://github.blog/news-insights/company-news/github-availability-report-march-2026/</link>
+      <guid isPermaLink="true">https://github.blog/news-insights/company-news/github-availability-report-march-2026/</guid>
+      <pubDate>Thu, 09 Apr 2026 02:21:17 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
+    <item>
       <title>5 ways GitLab pipeline logic solves real engineering problems</title>
       <link>https://about.gitlab.com/blog/5-ways-gitlab-pipeline-logic-solves-real-engineering-problems/</link>
       <guid isPermaLink="true">https://about.gitlab.com/blog/5-ways-gitlab-pipeline-logic-solves-real-engineering-problems/</guid>
@@ -188,6 +202,13 @@
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=560025</guid>
       <pubDate>Wed, 08 Apr 2026 17:30:02 +0000</pubDate>
       <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>GitHub Universe is back: We want you to take the stage</title>
+      <link>https://github.blog/news-insights/company-news/github-universe-is-back-we-want-you-to-take-the-stage/</link>
+      <guid isPermaLink="true">https://github.blog/news-insights/company-news/github-universe-is-back-we-want-you-to-take-the-stage/</guid>
+      <pubDate>Wed, 08 Apr 2026 16:35:46 +0000</pubDate>
+      <source>GitHub Blog</source>
     </item>
     <item>
       <title>Issue #269 - EKS Auto Mode Unpacked, Terraform Tips From the Trenches, Managing DNS and Domains With IaC, and a New Watchdog for Infrastructure Drift</title>
@@ -253,6 +274,13 @@
       <source>GitLab Blog</source>
     </item>
     <item>
+      <title>GitHub Copilot CLI combines model families for a second opinion</title>
+      <link>https://github.blog/ai-and-ml/github-copilot/github-copilot-cli-combines-model-families-for-a-second-opinion/</link>
+      <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/github-copilot-cli-combines-model-families-for-a-second-opinion/</guid>
+      <pubDate>Mon, 06 Apr 2026 21:53:49 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
+    <item>
       <title>[Launched] Generally Available: Network Security Perimeter for Azure Service Bus</title>
       <link>https://azure.microsoft.com/updates?id=559899</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=559899</guid>
@@ -300,6 +328,13 @@
       <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/streamlining-cloud-compliance-at-godaddy-using-cdk-aspects/</guid>
       <pubDate>Fri, 03 Apr 2026 18:06:03 +0000</pubDate>
       <source>AWS DevOps Blog</source>
+    </item>
+    <item>
+      <title>The uphill climb of making diff lines performant</title>
+      <link>https://github.blog/engineering/architecture-optimization/the-uphill-climb-of-making-diff-lines-performant/</link>
+      <guid isPermaLink="true">https://github.blog/engineering/architecture-optimization/the-uphill-climb-of-making-diff-lines-performant/</guid>
+      <pubDate>Fri, 03 Apr 2026 16:00:00 +0000</pubDate>
+      <source>GitHub Blog</source>
     </item>
     <item>
       <title>Defending Your Software Supply Chain: What Every Engineering Team Should Do Now</title>
@@ -379,6 +414,13 @@
       <source>Azure Updates</source>
     </item>
     <item>
+      <title>Securing the open source supply chain across GitHub</title>
+      <link>https://github.blog/security/supply-chain-security/securing-the-open-source-supply-chain-across-github/</link>
+      <guid isPermaLink="true">https://github.blog/security/supply-chain-security/securing-the-open-source-supply-chain-across-github/</guid>
+      <pubDate>Wed, 01 Apr 2026 19:20:12 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
+    <item>
       <title>[In preview] Public Preview: Unlock Client-Side Configuration at Scale with Azure App Configuration and Azure Front Door</title>
       <link>https://azure.microsoft.com/updates?id=537234</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=537234</guid>
@@ -440,6 +482,13 @@
       <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/securely-connect-aws-devops-agent-to-private-services-in-your-vpcs/</guid>
       <pubDate>Wed, 01 Apr 2026 15:37:03 +0000</pubDate>
       <source>AWS DevOps Blog</source>
+    </item>
+    <item>
+      <title>Run multiple agents at once with /fleet in Copilot CLI</title>
+      <link>https://github.blog/ai-and-ml/github-copilot/run-multiple-agents-at-once-with-fleet-in-copilot-cli/</link>
+      <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/run-multiple-agents-at-once-with-fleet-in-copilot-cli/</guid>
+      <pubDate>Wed, 01 Apr 2026 15:00:00 +0000</pubDate>
+      <source>GitHub Blog</source>
     </item>
     <item>
       <title>Issue #268 - AWS Lightsail AI Agents, Faster Terraform Applies, Local RAG for IaC, Lifecycle Rules Without Forks, and Combining Argo CD With Terraform</title>
@@ -575,6 +624,13 @@
       <source>Azure Updates</source>
     </item>
     <item>
+      <title>Agent-driven development in Copilot Applied Science</title>
+      <link>https://github.blog/ai-and-ml/github-copilot/agent-driven-development-in-copilot-applied-science/</link>
+      <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/agent-driven-development-in-copilot-applied-science/</guid>
+      <pubDate>Tue, 31 Mar 2026 16:00:00 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
+    <item>
       <title>Changes to packages.gitlab.com: What you need to know</title>
       <link>https://about.gitlab.com/blog/changes-to-packages-gitlab-com-what-you-need-to-know/</link>
       <guid isPermaLink="true">https://about.gitlab.com/blog/changes-to-packages-gitlab-com-what-you-need-to-know/</guid>
@@ -617,6 +673,13 @@
       <source>Azure Updates</source>
     </item>
     <item>
+      <title>GitHub for Beginners: Getting started with GitHub security</title>
+      <link>https://github.blog/developer-skills/github/github-for-beginners-getting-started-with-github-security/</link>
+      <guid isPermaLink="true">https://github.blog/developer-skills/github/github-for-beginners-getting-started-with-github-security/</guid>
+      <pubDate>Mon, 30 Mar 2026 16:00:00 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
+    <item>
       <title>Microsoft Entra innovations announced at RSAC 2026</title>
       <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-innovations-announced-at-rsac-2026/ba-p/4502146</link>
       <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-innovations-announced-at-rsac-2026/ba-p/4502146</guid>
@@ -650,6 +713,13 @@
       <guid isPermaLink="true">https://www.hashicorp.com/blog/lab3-accelerates-cloud-modernization-with-hashicorp-powered-unified-workflows</guid>
       <pubDate>Thu, 26 Mar 2026 17:00:00 +0000</pubDate>
       <source>HashiCorp Blog</source>
+    </item>
+    <item>
+      <title>What&amp;#8217;s coming to our GitHub Actions 2026 security roadmap</title>
+      <link>https://github.blog/news-insights/product-news/whats-coming-to-our-github-actions-2026-security-roadmap/</link>
+      <guid isPermaLink="true">https://github.blog/news-insights/product-news/whats-coming-to-our-github-actions-2026-security-roadmap/</guid>
+      <pubDate>Thu, 26 Mar 2026 16:49:14 +0000</pubDate>
+      <source>GitHub Blog</source>
     </item>
     <item>
       <title>[Launched] Generally Available: Azure SQL updates for late-March 2026</title>
