@@ -408,12 +408,6 @@ def generate_html_content(
         content += generate_failed_feeds_content(data.get("failed_feeds", []))
         return content
 
-    # If showing a single feed, show feed name as h2
-    if current_feed:
-        content += f"""
-        <h2>{html_escape(current_feed)}</h2>
-"""
-
     # Determine which feeds to display
     feeds_to_display = {}
     if current_feed:

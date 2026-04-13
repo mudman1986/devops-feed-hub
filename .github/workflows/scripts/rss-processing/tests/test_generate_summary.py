@@ -739,6 +739,14 @@ class TestMultiPageGeneration(unittest.TestCase):
         self.assertIn("Article 1", result)
         self.assertIn("Article 2", result)
 
+    def test_feed_page_title_appears_only_once(self):
+        """Test that individual feed pages show the feed title exactly once (not twice)"""
+        result = generate_html_page(self.sample_data, current_feed="Test Feed 1")
+
+        # The feed name should appear exactly once as an h2 heading in the content area
+        h2_count = result.count("<h2>Test Feed 1")
+        self.assertEqual(h2_count, 1, "Feed title should appear exactly once as h2")
+
     def test_feed_page_title_escaping(self):
         """Test that feed names with special characters are escaped in page title"""
         special_data = self.sample_data.copy()
