@@ -11,12 +11,12 @@
     "test:ui:debug": "playwright test --debug"
   },
   "devDependencies": {
-    "@playwright/test": "^1.57.0",
+    "@playwright/test": "^1.59.1",
     "@types/jest": "^30.0.0",
     "http-server": "^14.1.1",
-    "jest": "^30.2.0",
-    "jest-environment-jsdom": "^30.2.0",
-    "playwright": "^1.57.0"
+    "jest": "^30.3.0",
+    "jest-environment-jsdom": "^30.3.0",
+    "playwright": "^1.59.1"
   },
   "jest": {
     "projects": [
