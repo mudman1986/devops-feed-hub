@@ -173,3 +173,22 @@ teardown() {
 	run git cat-file -e github-pages:docs/preview/feature-preview-path/feed-old.html
 	[ "$status" -ne 0 ]
 }
+
+@test "script supports nested preview deploys on the current branch" {
+	cd "$TEST_DIR" || exit 1
+
+	mkdir -p docs
+	echo "preview current" >docs/index.html
+
+	run bash commit-github-pages.sh "docs" "current" "docs/preview/feature-preview-path"
+
+	[ "$status" -eq 0 ]
+
+	run cat docs/index.html
+	[ "$status" -eq 0 ]
+	[ "$output" = "preview current" ]
+
+	run cat docs/preview/feature-preview-path/index.html
+	[ "$status" -eq 0 ]
+	[ "$output" = "preview current" ]
+}

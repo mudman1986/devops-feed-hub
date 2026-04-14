@@ -22,9 +22,26 @@ sync_content_files() {
 	local source_dir="$1"
 	local deploy_dir="$2"
 
+	if [ -z "$deploy_dir" ] || [ "$deploy_dir" = "." ] || [ "$deploy_dir" = "/" ]; then
+		echo "Invalid deploy directory: $deploy_dir" >&2
+		exit 1
+	fi
+
 	rm -rf "$deploy_dir"
 	mkdir -p "$deploy_dir"
 	cp -r "$source_dir"/. "$deploy_dir"/
+}
+
+# Copy content through a temporary directory so nested deploy paths are safe
+sync_content_files_via_temp() {
+	local source_dir="$1"
+	local deploy_dir="$2"
+	local temp_dir
+
+	temp_dir=$(mktemp -d)
+	cp -r "$source_dir" "$temp_dir/"
+	sync_content_files "$temp_dir/$(basename "$source_dir")" "$deploy_dir"
+	rm -rf "$temp_dir"
 }
 
 # Add deploy directory and force-add generated files
@@ -72,7 +89,7 @@ configure_git
 if [ "$TARGET_BRANCH" = "current" ] || [ -z "$TARGET_BRANCH" ]; then
 	echo "Committing to current branch" >&2
 	if [ "$DEPLOY_DIR" != "$CONTENT_DIR" ]; then
-		sync_content_files "$CONTENT_DIR" "$DEPLOY_DIR"
+		sync_content_files_via_temp "$CONTENT_DIR" "$DEPLOY_DIR"
 	fi
 	add_content_files "$DEPLOY_DIR"
 	commit_and_push ""
