@@ -1,13 +1,15 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Script to commit and push GitHub Pages content
-# Usage: commit-github-pages.sh <content-directory> [target-branch]
+# Usage: commit-github-pages.sh <content-directory> [target-branch] [deploy-directory]
 # If target-branch is not specified or is "current", commits to current branch
+# If deploy-directory is not specified, the content directory is used as-is
 # If target-branch is specified, commits to that branch
 
-set -e
+set -euo pipefail
 
 CONTENT_DIR="${1:-docs}"
 TARGET_BRANCH="${2:-current}"
+DEPLOY_DIR="${3:-$CONTENT_DIR}"
 
 # Configure git for GitHub Actions bot
 configure_git() {
@@ -15,21 +17,26 @@ configure_git() {
 	git config --local user.name "github-actions[bot]"
 }
 
-# Add content directory and force-add generated files
+# Sync generated content into the deploy directory
+sync_content_files() {
+	local source_dir="$1"
+	local deploy_dir="$2"
+
+	rm -rf "$deploy_dir"
+	mkdir -p "$deploy_dir"
+	cp -r "$source_dir"/. "$deploy_dir"/
+}
+
+# Add deploy directory and force-add generated files
 add_content_files() {
-	local content_dir="$1"
+	local deploy_dir="$1"
 
-	# Add the content directory
-	git add "$content_dir/"
+	# Add the deploy directory
+	git add -A "$deploy_dir/"
 
-	# Force add ALL HTML files that might be ignored by .gitignore
+	# Force add ALL files that might be ignored by .gitignore
 	# The github-pages branch has docs/*.html in .gitignore, but we need to deploy them
-	git add -f "$content_dir"/*.html 2>/dev/null || true
-
-	# Also force add other static source files
-	git add -f "$content_dir/styles.css" 2>/dev/null || true
-	git add -f "$content_dir/script.js" 2>/dev/null || true
-	git add -f "$content_dir/favicon.svg" 2>/dev/null || true
+	git add -f -A "$deploy_dir/"
 }
 
 # Commit and push if there are changes
@@ -64,7 +71,10 @@ configure_git
 # If target branch is "current" or empty, just commit to current branch
 if [ "$TARGET_BRANCH" = "current" ] || [ -z "$TARGET_BRANCH" ]; then
 	echo "Committing to current branch" >&2
-	add_content_files "$CONTENT_DIR"
+	if [ "$DEPLOY_DIR" != "$CONTENT_DIR" ]; then
+		sync_content_files "$CONTENT_DIR" "$DEPLOY_DIR"
+	fi
+	add_content_files "$DEPLOY_DIR"
 	commit_and_push ""
 else
 	# Commit to a different branch
@@ -112,12 +122,11 @@ else
 	# Copy generated content back from temp location
 	if [ -d "$TEMP_DIR/$CONTENT_DIR" ]; then
 		echo "Restoring generated content from temporary location" >&2
-		mkdir -p "$CONTENT_DIR"
-		cp -r "$TEMP_DIR/$CONTENT_DIR"/* "$CONTENT_DIR/"
+		sync_content_files "$TEMP_DIR/$CONTENT_DIR" "$DEPLOY_DIR"
 		rm -rf "$TEMP_DIR"
 	fi
 
-	add_content_files "$CONTENT_DIR"
+	add_content_files "$DEPLOY_DIR"
 	commit_and_push "$TARGET_BRANCH"
 
 	# Switch back to original branch

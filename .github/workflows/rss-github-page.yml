@@ -44,8 +44,47 @@ jobs:
           echo "- Successful feeds: $SUCCESSFUL_FEEDS"
           echo "- Failed feeds: $FAILED_FEEDS"
 
+      - name: Determine GitHub Pages publish target
+        id: publish-target
+        env:
+          REPOSITORY_NAME: ${{ github.event.repository.name }}
+          SOURCE_BRANCH: ${{ github.ref_name }}
+          TARGET_BRANCH_INPUT: ${{ github.event.inputs.target-branch }}
+        run: |
+          TARGET_BRANCH="github-pages"
+          if [ -n "$TARGET_BRANCH_INPUT" ]; then
+            TARGET_BRANCH="$TARGET_BRANCH_INPUT"
+          fi
+
+          DEPLOY_DIR="docs"
+          BASE_URL="https://${{ github.repository_owner }}.github.io/$REPOSITORY_NAME"
+          SITE_LABEL="Production"
+
+          if [ "$SOURCE_BRANCH" != "main" ]; then
+            PREVIEW_SLUG=$(printf '%s' "$SOURCE_BRANCH" | tr '[:upper:]' '[:lower:]' | sed 's/[^a-z0-9._-]/-/g')
+            DEPLOY_DIR="docs/preview/$PREVIEW_SLUG"
+            BASE_URL="$BASE_URL/preview/$PREVIEW_SLUG"
+            SITE_LABEL="Preview"
+          fi
+
+          {
+            echo "target_branch=$TARGET_BRANCH"
+            echo "deploy_dir=$DEPLOY_DIR"
+            echo "base_url=$BASE_URL"
+          } >> "$GITHUB_OUTPUT"
+
+          {
+            echo "## GitHub Pages publish target"
+            echo "- Source branch: \`$SOURCE_BRANCH\`"
+            echo "- Target branch: \`$TARGET_BRANCH\`"
+            echo "- Deploy directory: \`$DEPLOY_DIR\`"
+            echo "- $SITE_LABEL URL: ${BASE_URL}/"
+          } >> "$GITHUB_STEP_SUMMARY"
+
       - name: Generate GitHub Pages content
         if: success()
+        env:
+          FEED_HUB_BASE_URL: ${{ steps.publish-target.outputs.base_url }}
         run: |
           # Create docs directory if it doesn't exist
           mkdir -p docs
@@ -74,11 +113,7 @@ jobs:
       - name: Commit and push GitHub Pages content
         if: success()
         env:
-          TARGET_BRANCH_INPUT: ${{ github.event.inputs.target-branch }}
+          DEPLOY_DIR: ${{ steps.publish-target.outputs.deploy_dir }}
+          TARGET_BRANCH: ${{ steps.publish-target.outputs.target_branch }}
         run: |
-          # Default to 'github-pages' branch, override with workflow_dispatch input if provided
-          TARGET_BRANCH="github-pages"
-          if [ -n "$TARGET_BRANCH_INPUT" ]; then
-            TARGET_BRANCH="$TARGET_BRANCH_INPUT"
-          fi
-          bash .github/workflows/scripts/commit-github-pages.sh "docs" "$TARGET_BRANCH"
+          bash .github/workflows/scripts/commit-github-pages.sh "docs" "$TARGET_BRANCH" "$DEPLOY_DIR"
