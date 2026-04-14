@@ -120,7 +120,7 @@ jobs:
 
       - name: Upload test results
         if: always()
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: playwright-report-${{ matrix.shardIndex }}
           path: playwright-report/
@@ -128,7 +128,7 @@ jobs:
 
       - name: Upload test result JSON
         if: always()
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: test-results-json-${{ matrix.shardIndex }}
           path: test-results.json
@@ -136,7 +136,7 @@ jobs:
 
       - name: Upload test screenshots
         if: failure()
-        uses: actions/upload-artifact@v6
+        uses: actions/upload-artifact@v7
         with:
           name: playwright-screenshots-${{ matrix.shardIndex }}
           path: test-results/
@@ -153,7 +153,7 @@ jobs:
 
     steps:
       - name: Download all test result JSONs
-        uses: actions/download-artifact@v6
+        uses: actions/download-artifact@v8
         with:
           pattern: test-results-json-*
           path: all-test-results
