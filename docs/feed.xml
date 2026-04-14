@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 14 Apr 2026 19:42:35 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 14 Apr 2026 19:45:50 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>April Patches for Azure DevOps Server</title>
@@ -20,6 +20,13 @@
       <guid isPermaLink="true">https://github.blog/changelog/2026-04-14-link-code-scanning-alerts-to-github-issues</guid>
       <pubDate>Tue, 14 Apr 2026 18:28:02 +0000</pubDate>
       <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Hack the AI agent: Build agentic AI security skills with the GitHub Secure Code Game</title>
+      <link>https://github.blog/security/hack-the-ai-agent-build-agentic-ai-security-skills-with-the-github-secure-code-game/</link>
+      <guid isPermaLink="true">https://github.blog/security/hack-the-ai-agent-build-agentic-ai-security-skills-with-the-github-secure-code-game/</guid>
+      <pubDate>Tue, 14 Apr 2026 18:17:59 +0000</pubDate>
+      <source>GitHub Blog</source>
     </item>
     <item>
       <title>Secret scanning pattern updates and product improvements</title>
@@ -720,13 +727,6 @@
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=559677</guid>
       <pubDate>Tue, 31 Mar 2026 16:30:51 +0000</pubDate>
       <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>Agent-driven development in Copilot Applied Science</title>
-      <link>https://github.blog/ai-and-ml/github-copilot/agent-driven-development-in-copilot-applied-science/</link>
-      <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/agent-driven-development-in-copilot-applied-science/</guid>
-      <pubDate>Tue, 31 Mar 2026 16:00:00 +0000</pubDate>
-      <source>GitHub Blog</source>
     </item>
     <item>
       <title>Changes to packages.gitlab.com: What you need to know</title>
