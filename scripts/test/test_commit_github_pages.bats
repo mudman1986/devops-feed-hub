@@ -27,7 +27,7 @@ setup() {
 	git commit -m "Initial commit"
 
 	# Create and configure a bare remote so target-branch tests can fetch/push
-	git init --bare "$REMOTE_DIR/origin.git"
+	git init --bare --initial-branch=main "$REMOTE_DIR/origin.git"
 	git remote add origin "$REMOTE_DIR/origin.git"
 	git push -u origin main
 }
@@ -191,4 +191,16 @@ teardown() {
 	run cat docs/preview/feature-preview-path/index.html
 	[ "$status" -eq 0 ]
 	[ "$output" = "preview current" ]
+}
+
+@test "script rejects deploy paths outside the content directory" {
+	cd "$TEST_DIR" || exit 1
+
+	mkdir -p docs
+	echo "preview current" >docs/index.html
+
+	run bash commit-github-pages.sh "docs" "current" "../outside"
+
+	[ "$status" -ne 0 ]
+	[[ "$output" =~ "cannot contain parent path segments" ]]
 }

@@ -61,7 +61,10 @@ jobs:
           SITE_LABEL="Production"
 
           if [ "$SOURCE_BRANCH" != "main" ]; then
-            PREVIEW_SLUG=$(printf '%s' "$SOURCE_BRANCH" | tr '[:upper:]' '[:lower:]' | sed -e 's#/#--#g' -e 's/[^a-z0-9._-]/-/g')
+            PREVIEW_SLUG=$(printf '%s' "$SOURCE_BRANCH" | tr '[:upper:]' '[:lower:]' | sed -e 's#/#--#g' -e 's/[^a-z0-9-]/-/g' -e 's/^-*//' -e 's/-*$//')
+            if [ -z "$PREVIEW_SLUG" ]; then
+              PREVIEW_SLUG="preview"
+            fi
             DEPLOY_DIR="docs/preview/$PREVIEW_SLUG"
             BASE_URL="$BASE_URL/preview/$PREVIEW_SLUG"
             SITE_LABEL="Preview"

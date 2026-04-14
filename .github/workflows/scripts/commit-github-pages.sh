@@ -17,9 +17,9 @@ configure_git() {
 	git config --local user.name "github-actions[bot]"
 }
 
-# Sync generated content into the deploy directory
-sync_content_files() {
-	local source_dir="$1"
+# Validate deploy directory is safe and stays within the content directory tree
+validate_deploy_dir() {
+	local content_dir="$1"
 	local deploy_dir="$2"
 
 	if [ -z "$deploy_dir" ] || [ "$deploy_dir" = "." ] || [ "$deploy_dir" = "/" ]; then
@@ -27,6 +27,28 @@ sync_content_files() {
 		exit 1
 	fi
 
+	case "$deploy_dir" in
+	../* | */../* | */..)
+		echo "Deploy directory cannot contain parent path segments: $deploy_dir" >&2
+		exit 1
+		;;
+	esac
+
+	case "$deploy_dir" in
+	"$content_dir" | "$content_dir"/*) ;;
+	*)
+		echo "Deploy directory must stay within $content_dir: $deploy_dir" >&2
+		exit 1
+		;;
+	esac
+}
+
+# Sync generated content into the deploy directory
+sync_content_files() {
+	local source_dir="$1"
+	local deploy_dir="$2"
+
+	validate_deploy_dir "$CONTENT_DIR" "$deploy_dir"
 	rm -rf "$deploy_dir"
 	mkdir -p "$deploy_dir"
 	cp -r "$source_dir"/. "$deploy_dir"/
@@ -39,8 +61,10 @@ sync_content_files_via_temp() {
 	local temp_dir
 
 	temp_dir=$(mktemp -d)
+	trap 'rm -rf "$temp_dir"' RETURN
 	cp -r "$source_dir" "$temp_dir/"
 	sync_content_files "$temp_dir/$(basename "$source_dir")" "$deploy_dir"
+	trap - RETURN
 	rm -rf "$temp_dir"
 }
 
@@ -49,10 +73,6 @@ add_content_files() {
 	local deploy_dir="$1"
 
 	# Add the deploy directory
-	git add -A "$deploy_dir/"
-
-	# Force add ALL files that might be ignored by .gitignore
-	# The github-pages branch has docs/*.html in .gitignore, but we need to deploy them
 	git add -f -A "$deploy_dir/"
 }
 
