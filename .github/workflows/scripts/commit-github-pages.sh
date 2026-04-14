@@ -64,8 +64,6 @@ sync_content_files_via_temp() {
 	trap 'rm -rf -- "$temp_dir"' RETURN
 	cp -r "$source_dir" "$temp_dir/"
 	sync_content_files "$temp_dir/$(basename "$source_dir")" "$deploy_dir"
-	trap - RETURN
-	rm -rf "$temp_dir"
 }
 
 # Add deploy directory and force-add generated files
