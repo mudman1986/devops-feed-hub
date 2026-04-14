@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-hashicorp-blog.xml</link>
     <description>Articles from HashiCorp Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-hashicorp-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 14 Apr 2026 12:15:49 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 14 Apr 2026 18:50:35 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Simplifying Terraform dynamic credentials on AWS with native OIDC integration</title>

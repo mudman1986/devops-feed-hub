@@ -5,8 +5,50 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 14 Apr 2026 12:15:49 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 14 Apr 2026 18:50:35 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Hack the AI agent: Build agentic AI security skills with the GitHub Secure Code Game</title>
+      <link>https://github.blog/security/hack-the-ai-agent-build-agentic-ai-security-skills-with-the-github-secure-code-game/</link>
+      <guid isPermaLink="true">https://github.blog/security/hack-the-ai-agent-build-agentic-ai-security-skills-with-the-github-secure-code-game/</guid>
+      <pubDate>Tue, 14 Apr 2026 18:17:59 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
+    <item>
+      <title>Secret scanning pattern updates and product improvements</title>
+      <link>https://github.blog/changelog/2026-04-14-secret-scanning-pattern-updates-and-product-improvements</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-14-secret-scanning-pattern-updates-and-product-improvements</guid>
+      <pubDate>Tue, 14 Apr 2026 17:17:45 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Smart tier (Azure Blob and Data Lake Storage)</title>
+      <link>https://azure.microsoft.com/updates?id=559746</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=559746</guid>
+      <pubDate>Tue, 14 Apr 2026 17:15:47 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>SBOM exports are now computed asynchronously</title>
+      <link>https://github.blog/changelog/2026-04-14-sbom-exports-are-now-computed-asynchronously</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-14-sbom-exports-are-now-computed-asynchronously</guid>
+      <pubDate>Tue, 14 Apr 2026 16:00:14 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Model selection for Claude and Codex agents on github.com</title>
+      <link>https://github.blog/changelog/2026-04-14-model-selection-for-claude-and-codex-agents-on-github-com</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-14-model-selection-for-claude-and-codex-agents-on-github-com</guid>
+      <pubDate>Tue, 14 Apr 2026 15:21:52 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>How exposed is your code? Find out in minutes—for free</title>
+      <link>https://github.blog/security/application-security/how-exposed-is-your-code-find-out-in-minutes-for-free/</link>
+      <guid isPermaLink="true">https://github.blog/security/application-security/how-exposed-is-your-code-find-out-in-minutes-for-free/</guid>
+      <pubDate>Tue, 14 Apr 2026 15:00:00 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
     <item>
       <title>GitHub Code Quality: Improvements to standard findings in public preview</title>
       <link>https://github.blog/changelog/2026-04-14-github-code-quality-improvements-to-standard-findings-in-public-preview</link>
@@ -141,20 +183,6 @@
       <source>GitHub Changelog</source>
     </item>
     <item>
-      <title>Actions workflows are limited to 50 reruns</title>
-      <link>https://github.blog/changelog/2026-04-10-actions-workflows-are-limited-to-50-reruns</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-10-actions-workflows-are-limited-to-50-reruns</guid>
-      <pubDate>Fri, 10 Apr 2026 20:03:29 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>Copilot CLI activity now included in usage metrics totals and feature breakdowns</title>
-      <link>https://github.blog/changelog/2026-04-10-copilot-cli-activity-now-included-in-usage-metrics-totals-and-feature-breakdowns</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-10-copilot-cli-activity-now-included-in-usage-metrics-totals-and-feature-breakdowns</guid>
-      <pubDate>Fri, 10 Apr 2026 20:03:28 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>[In preview] Public Preview: Event Grid as a destination for Stripe events now in Public Preview</title>
       <link>https://azure.microsoft.com/updates?id=559836</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=559836</guid>
@@ -167,13 +195,6 @@
       <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/github-copilot-cli-for-beginners-getting-started-with-github-copilot-cli/</guid>
       <pubDate>Fri, 10 Apr 2026 16:00:00 +0000</pubDate>
       <source>GitHub Blog</source>
-    </item>
-    <item>
-      <title>Copilot cloud agent’s validation tools are now 20% faster</title>
-      <link>https://github.blog/changelog/2026-04-10-copilot-cloud-agents-validation-tools-are-now-20-faster</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-10-copilot-cloud-agents-validation-tools-are-now-20-faster</guid>
-      <pubDate>Fri, 10 Apr 2026 12:19:17 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>Supporting Open Source Maintainers: A German Petition for Better Legal Frameworks</title>
@@ -701,13 +722,6 @@
       <source>Azure Updates</source>
     </item>
     <item>
-      <title>Agent-driven development in Copilot Applied Science</title>
-      <link>https://github.blog/ai-and-ml/github-copilot/agent-driven-development-in-copilot-applied-science/</link>
-      <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/agent-driven-development-in-copilot-applied-science/</guid>
-      <pubDate>Tue, 31 Mar 2026 16:00:00 +0000</pubDate>
-      <source>GitHub Blog</source>
-    </item>
-    <item>
       <title>Changes to packages.gitlab.com: What you need to know</title>
       <link>https://about.gitlab.com/blog/changes-to-packages-gitlab-com-what-you-need-to-know/</link>
       <guid isPermaLink="true">https://about.gitlab.com/blog/changes-to-packages-gitlab-com-what-you-need-to-know/</guid>
@@ -748,13 +762,6 @@
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=559526</guid>
       <pubDate>Mon, 30 Mar 2026 16:30:50 +0000</pubDate>
       <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>GitHub for Beginners: Getting started with GitHub security</title>
-      <link>https://github.blog/developer-skills/github/github-for-beginners-getting-started-with-github-security/</link>
-      <guid isPermaLink="true">https://github.blog/developer-skills/github/github-for-beginners-getting-started-with-github-security/</guid>
-      <pubDate>Mon, 30 Mar 2026 16:00:00 +0000</pubDate>
-      <source>GitHub Blog</source>
     </item>
     <item>
       <title>Microsoft Entra innovations announced at RSAC 2026</title>
@@ -2846,13 +2853,6 @@
       <title>[In preview] Public Preview: Azure NetApp Files migration assistant (portal support)</title>
       <link>https://azure.microsoft.com/updates?id=525620</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525620</guid>
-      <pubDate>Thu, 20 Nov 2025 13:45:47 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Azure NetApp Files cache volumes</title>
-      <link>https://azure.microsoft.com/updates?id=523917</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523917</guid>
       <pubDate>Thu, 20 Nov 2025 13:45:47 +0000</pubDate>
       <source>Azure Updates</source>
     </item>

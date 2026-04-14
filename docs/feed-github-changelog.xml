@@ -5,8 +5,26 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml</link>
     <description>Articles from GitHub Changelog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 14 Apr 2026 12:15:49 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 14 Apr 2026 18:50:35 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Secret scanning pattern updates and product improvements</title>
+      <link>https://github.blog/changelog/2026-04-14-secret-scanning-pattern-updates-and-product-improvements</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-14-secret-scanning-pattern-updates-and-product-improvements</guid>
+      <pubDate>Tue, 14 Apr 2026 17:17:45 +0000</pubDate>
+    </item>
+    <item>
+      <title>SBOM exports are now computed asynchronously</title>
+      <link>https://github.blog/changelog/2026-04-14-sbom-exports-are-now-computed-asynchronously</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-14-sbom-exports-are-now-computed-asynchronously</guid>
+      <pubDate>Tue, 14 Apr 2026 16:00:14 +0000</pubDate>
+    </item>
+    <item>
+      <title>Model selection for Claude and Codex agents on github.com</title>
+      <link>https://github.blog/changelog/2026-04-14-model-selection-for-claude-and-codex-agents-on-github-com</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-14-model-selection-for-claude-and-codex-agents-on-github-com</guid>
+      <pubDate>Tue, 14 Apr 2026 15:21:52 +0000</pubDate>
+    </item>
     <item>
       <title>GitHub Code Quality: Improvements to standard findings in public preview</title>
       <link>https://github.blog/changelog/2026-04-14-github-code-quality-improvements-to-standard-findings-in-public-preview</link>
@@ -48,24 +66,6 @@
       <link>https://github.blog/changelog/2026-04-10-pausing-new-github-copilot-pro-trials</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-04-10-pausing-new-github-copilot-pro-trials</guid>
       <pubDate>Fri, 10 Apr 2026 20:25:32 +0000</pubDate>
-    </item>
-    <item>
-      <title>Actions workflows are limited to 50 reruns</title>
-      <link>https://github.blog/changelog/2026-04-10-actions-workflows-are-limited-to-50-reruns</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-10-actions-workflows-are-limited-to-50-reruns</guid>
-      <pubDate>Fri, 10 Apr 2026 20:03:29 +0000</pubDate>
-    </item>
-    <item>
-      <title>Copilot CLI activity now included in usage metrics totals and feature breakdowns</title>
-      <link>https://github.blog/changelog/2026-04-10-copilot-cli-activity-now-included-in-usage-metrics-totals-and-feature-breakdowns</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-10-copilot-cli-activity-now-included-in-usage-metrics-totals-and-feature-breakdowns</guid>
-      <pubDate>Fri, 10 Apr 2026 20:03:28 +0000</pubDate>
-    </item>
-    <item>
-      <title>Copilot cloud agent’s validation tools are now 20% faster</title>
-      <link>https://github.blog/changelog/2026-04-10-copilot-cloud-agents-validation-tools-are-now-20-faster</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-10-copilot-cloud-agents-validation-tools-are-now-20-faster</guid>
-      <pubDate>Fri, 10 Apr 2026 12:19:17 +0000</pubDate>
     </item>
   </channel>
 </rss>

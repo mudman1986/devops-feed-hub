@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml</link>
     <description>Articles from Azure Updates</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 14 Apr 2026 12:15:49 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 14 Apr 2026 18:50:35 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>[Launched] Generally Available: Smart tier (Azure Blob and Data Lake Storage)</title>
+      <link>https://azure.microsoft.com/updates?id=559746</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=559746</guid>
+      <pubDate>Tue, 14 Apr 2026 17:15:47 +0000</pubDate>
+    </item>
     <item>
       <title>[Launched] Generally Available: Azure File Sync in Belgium Central, Malaysia West, and Indonesia Central</title>
       <link>https://azure.microsoft.com/updates?id=557828</link>
@@ -1193,12 +1199,6 @@
       <title>[In preview] Public Preview: Azure NetApp Files migration assistant (portal support)</title>
       <link>https://azure.microsoft.com/updates?id=525620</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525620</guid>
-      <pubDate>Thu, 20 Nov 2025 13:45:47 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Azure NetApp Files cache volumes</title>
-      <link>https://azure.microsoft.com/updates?id=523917</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=523917</guid>
       <pubDate>Thu, 20 Nov 2025 13:45:47 +0000</pubDate>
     </item>
     <item>
