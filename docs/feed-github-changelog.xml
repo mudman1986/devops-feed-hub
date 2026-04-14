@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml</link>
     <description>Articles from GitHub Changelog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 14 Apr 2026 00:17:29 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 14 Apr 2026 12:15:49 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>GitHub Code Quality: Improvements to standard findings in public preview</title>
+      <link>https://github.blog/changelog/2026-04-14-github-code-quality-improvements-to-standard-findings-in-public-preview</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-14-github-code-quality-improvements-to-standard-findings-in-public-preview</guid>
+      <pubDate>Tue, 14 Apr 2026 11:31:43 +0000</pubDate>
+    </item>
     <item>
       <title>Copilot data residency in US + EU and FedRAMP compliance now available</title>
       <link>https://github.blog/changelog/2026-04-13-copilot-data-residency-in-us-eu-and-fedramp-compliance-now-available</link>
@@ -60,12 +66,6 @@
       <link>https://github.blog/changelog/2026-04-10-copilot-cloud-agents-validation-tools-are-now-20-faster</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-04-10-copilot-cloud-agents-validation-tools-are-now-20-faster</guid>
       <pubDate>Fri, 10 Apr 2026 12:19:17 +0000</pubDate>
-    </item>
-    <item>
-      <title>Ask Copilot in security assessments now available</title>
-      <link>https://github.blog/changelog/2026-04-09-ask-copilot-in-security-assessments-now-available</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-09-ask-copilot-in-security-assessments-now-available</guid>
-      <pubDate>Thu, 09 Apr 2026 19:33:16 +0000</pubDate>
     </item>
   </channel>
 </rss>
