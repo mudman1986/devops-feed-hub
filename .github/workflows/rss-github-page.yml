@@ -53,7 +53,8 @@ jobs:
           # Generate multi-page HTML (main index + individual feed pages)
           python3 .github/workflows/scripts/rss-processing/generate_summary.py \
             --input rss-feeds-output.json \
-            --output-dir docs
+            --output-dir docs \
+            --feeds-config .github/rss-feeds.json
 
           echo "✓ GitHub Pages content generated (multi-page)"
 
