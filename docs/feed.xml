@@ -5,8 +5,15 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 13 Apr 2026 21:36:51 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 14 Apr 2026 00:17:29 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Copilot data residency in US + EU and FedRAMP compliance now available</title>
+      <link>https://github.blog/changelog/2026-04-13-copilot-data-residency-in-us-eu-and-fedramp-compliance-now-available</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-13-copilot-data-residency-in-us-eu-and-fedramp-compliance-now-available</guid>
+      <pubDate>Mon, 13 Apr 2026 23:03:01 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
     <item>
       <title>Fix merge conflicts in three clicks with Copilot cloud agent</title>
       <link>https://github.blog/changelog/2026-04-13-fix-merge-conflicts-in-three-clicks-with-copilot-cloud-agent</link>
@@ -188,13 +195,6 @@
       <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-expands-scim-support-with-new-scim-2-0-apis-for/ba-p/4507465</guid>
       <pubDate>Thu, 09 Apr 2026 18:38:08 +0000</pubDate>
       <source>Microsoft Entra Blog</source>
-    </item>
-    <item>
-      <title>New Low Quality option in the Hide comment menu</title>
-      <link>https://github.blog/changelog/2026-04-09-new-low-quality-option-in-the-hide-comment-menu</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-09-new-low-quality-option-in-the-hide-comment-menu</guid>
-      <pubDate>Thu, 09 Apr 2026 17:40:09 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>As AI adoption scales, is your access strategy still viable?</title>

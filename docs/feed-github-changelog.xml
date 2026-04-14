@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml</link>
     <description>Articles from GitHub Changelog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Mon, 13 Apr 2026 21:36:51 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 14 Apr 2026 00:17:29 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Copilot data residency in US + EU and FedRAMP compliance now available</title>
+      <link>https://github.blog/changelog/2026-04-13-copilot-data-residency-in-us-eu-and-fedramp-compliance-now-available</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-13-copilot-data-residency-in-us-eu-and-fedramp-compliance-now-available</guid>
+      <pubDate>Mon, 13 Apr 2026 23:03:01 +0000</pubDate>
+    </item>
     <item>
       <title>Fix merge conflicts in three clicks with Copilot cloud agent</title>
       <link>https://github.blog/changelog/2026-04-13-fix-merge-conflicts-in-three-clicks-with-copilot-cloud-agent</link>
@@ -60,12 +66,6 @@
       <link>https://github.blog/changelog/2026-04-09-ask-copilot-in-security-assessments-now-available</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-04-09-ask-copilot-in-security-assessments-now-available</guid>
       <pubDate>Thu, 09 Apr 2026 19:33:16 +0000</pubDate>
-    </item>
-    <item>
-      <title>New Low Quality option in the Hide comment menu</title>
-      <link>https://github.blog/changelog/2026-04-09-new-low-quality-option-in-the-hide-comment-menu</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-09-new-low-quality-option-in-the-hide-comment-menu</guid>
-      <pubDate>Thu, 09 Apr 2026 17:40:09 +0000</pubDate>
     </item>
   </channel>
 </rss>

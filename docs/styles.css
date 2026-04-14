@@ -519,16 +519,6 @@ h2::before {
   border-radius: 2px;
 }
 
-.feed-title-link {
-  color: inherit;
-  text-decoration: none;
-}
-
-.feed-title-link:hover {
-  text-decoration: underline;
-  text-underline-offset: 3px;
-}
-
 h3 {
   color: var(--text-primary);
   margin-top: 1.5rem;
