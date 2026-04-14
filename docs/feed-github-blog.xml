@@ -5,14 +5,8 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-blog.xml</link>
     <description>Articles from GitHub Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 14 Apr 2026 19:29:37 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 14 Apr 2026 19:42:35 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
-    <item>
-      <title>Hack the AI agent: Build agentic AI security skills with the GitHub Secure Code Game</title>
-      <link>https://github.blog/security/hack-the-ai-agent-build-agentic-ai-security-skills-with-the-github-secure-code-game/</link>
-      <guid isPermaLink="true">https://github.blog/security/hack-the-ai-agent-build-agentic-ai-security-skills-with-the-github-secure-code-game/</guid>
-      <pubDate>Tue, 14 Apr 2026 18:17:59 +0000</pubDate>
-    </item>
     <item>
       <title>How exposed is your code? Find out in minutes—for free</title>
       <link>https://github.blog/security/application-security/how-exposed-is-your-code-find-out-in-minutes-for-free/</link>
@@ -66,6 +60,12 @@
       <link>https://github.blog/ai-and-ml/github-copilot/run-multiple-agents-at-once-with-fleet-in-copilot-cli/</link>
       <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/run-multiple-agents-at-once-with-fleet-in-copilot-cli/</guid>
       <pubDate>Wed, 01 Apr 2026 15:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Agent-driven development in Copilot Applied Science</title>
+      <link>https://github.blog/ai-and-ml/github-copilot/agent-driven-development-in-copilot-applied-science/</link>
+      <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/agent-driven-development-in-copilot-applied-science/</guid>
+      <pubDate>Tue, 31 Mar 2026 16:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>
