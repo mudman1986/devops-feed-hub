@@ -114,6 +114,7 @@ teardown() {
 
 @test "script deploys preview content without overwriting production docs" {
 	cd "$TEST_DIR" || exit 1
+	local preview_deploy_dir="docs/preview/feature-preview-path"
 
 	mkdir -p docs
 	echo "production" >docs/index.html
@@ -127,7 +128,7 @@ teardown() {
 	echo "preview" >docs/index.html
 	echo "preview summary" >docs/summary.html
 
-	run bash commit-github-pages.sh "docs" "github-pages" "docs/preview/feature-preview-path"
+	run bash commit-github-pages.sh "docs" "github-pages" "$preview_deploy_dir"
 
 	[ "$status" -eq 0 ]
 	[ "$(git branch --show-current)" = "feature/preview-path" ]
@@ -140,11 +141,11 @@ teardown() {
 	[ "$status" -eq 0 ]
 	[ "$output" = "production summary" ]
 
-	run git show github-pages:docs/preview/feature-preview-path/index.html
+	run git show "github-pages:$preview_deploy_dir/index.html"
 	[ "$status" -eq 0 ]
 	[ "$output" = "preview" ]
 
-	run git show github-pages:docs/preview/feature-preview-path/summary.html
+	run git show "github-pages:$preview_deploy_dir/summary.html"
 	[ "$status" -eq 0 ]
 	[ "$output" = "preview summary" ]
 }

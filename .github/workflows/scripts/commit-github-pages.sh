@@ -23,7 +23,7 @@ validate_deploy_dir() {
 	local deploy_dir="$2"
 
 	if [ -z "$deploy_dir" ] || [ "$deploy_dir" = "." ] || [ "$deploy_dir" = "/" ]; then
-		echo "Invalid deploy directory: $deploy_dir" >&2
+		echo "Deploy directory cannot be empty, '.', or '/': $deploy_dir" >&2
 		exit 1
 	fi
 
@@ -46,12 +46,12 @@ validate_deploy_dir() {
 # Sync generated content into the deploy directory
 sync_content_files() {
 	local source_dir="$1"
-	local deploy_dir="$2"
+	local target_dir="$2"
 
-	validate_deploy_dir "$CONTENT_DIR" "$deploy_dir"
-	rm -rf "$deploy_dir"
-	mkdir -p "$deploy_dir"
-	cp -r "$source_dir"/. "$deploy_dir"/
+	validate_deploy_dir "$CONTENT_DIR" "$target_dir"
+	rm -rf "$target_dir"
+	mkdir -p "$target_dir"
+	cp -r "$source_dir"/. "$target_dir"/
 }
 
 # Copy content through a temporary directory so nested deploy paths are safe
@@ -61,7 +61,7 @@ sync_content_files_via_temp() {
 	local temp_dir
 
 	temp_dir=$(mktemp -d)
-	trap 'rm -rf "$temp_dir"' RETURN
+	trap 'rm -rf -- "$temp_dir"' RETURN
 	cp -r "$source_dir" "$temp_dir/"
 	sync_content_files "$temp_dir/$(basename "$source_dir")" "$deploy_dir"
 	trap - RETURN
