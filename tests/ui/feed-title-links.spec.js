@@ -11,9 +11,7 @@ test.beforeEach(async ({ page }) => {
   await page.waitForLoadState("load");
   await page.evaluate(() => localStorage.clear());
   // Use 1year timeframe to ensure all test articles are visible
-  await page.evaluate(() =>
-    localStorage.setItem("selectedTimeframe", "1year"),
-  );
+  await page.evaluate(() => localStorage.setItem("selectedTimeframe", "1year"));
   await page.reload();
   await page.waitForSelector(".feed-section", { timeout: 10000 });
 });
