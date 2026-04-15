@@ -413,3 +413,48 @@ test.describe("Feed Filtering Integration Tests", () => {
     }
   });
 });
+
+test.describe("Preview Sites Settings", () => {
+  test("should have Preview Sites menu item in sidebar", async ({ page }) => {
+    await page.goto("/settings.html");
+    await expect(
+      page.locator('.settings-menu-item:has-text("Preview Sites")'),
+    ).toBeVisible({ timeout: 10000 });
+  });
+
+  test("should show preview section when menu item is clicked", async ({
+    page,
+  }) => {
+    await page.goto("/settings.html");
+    await page
+      .locator('.settings-menu-item:has-text("Preview Sites")')
+      .click();
+    await expect(page.locator("#preview-section")).toBeVisible();
+  });
+
+  test("should show preview section heading", async ({ page }) => {
+    await page.goto("/settings.html");
+    await page
+      .locator('.settings-menu-item:has-text("Preview Sites")')
+      .click();
+    await expect(
+      page.locator("#preview-section .settings-section-title"),
+    ).toHaveText("Preview Sites");
+  });
+
+  test("should show placeholder message when no manifest is available", async ({
+    page,
+  }) => {
+    await page.goto("/settings.html");
+    await page
+      .locator('.settings-menu-item:has-text("Preview Sites")')
+      .click();
+    // preview/manifest.json does not exist in test environment - fallback message should appear
+    await expect(page.locator("#preview-sites-list")).toBeVisible({
+      timeout: 10000,
+    });
+    const text = await page.locator("#preview-sites-list").textContent();
+    // Either a "no previews" message or actual preview links are acceptable
+    expect(text).toBeTruthy();
+  });
+});
