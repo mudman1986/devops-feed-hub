@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DevOps Feed Hub - GitHub Changelog</title>
+    <link>https://mudman1986.github.io/devops-feed-hub/preview/copilot--add-preview-site-feature/feed-github-changelog.xml</link>
+    <description>Articles from GitHub Changelog</description>
+    <atom:link href="https://mudman1986.github.io/devops-feed-hub/preview/copilot--add-preview-site-feature/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 15 Apr 2026 20:42:20 +0000</lastBuildDate>
+    <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Enable Copilot cloud agent via custom properties</title>
+      <link>https://github.blog/changelog/2026-04-15-enable-copilot-cloud-agent-via-custom-properties</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-15-enable-copilot-cloud-agent-via-custom-properties</guid>
+      <pubDate>Wed, 15 Apr 2026 18:30:28 +0000</pubDate>
+    </item>
+    <item>
+      <title>OIDC support for Dependabot and code scanning</title>
+      <link>https://github.blog/changelog/2026-04-14-oidc-support-for-dependabot-and-code-scanning</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-14-oidc-support-for-dependabot-and-code-scanning</guid>
+      <pubDate>Tue, 14 Apr 2026 20:29:03 +0000</pubDate>
+    </item>
+    <item>
+      <title>Deployment context in repository properties and alerts</title>
+      <link>https://github.blog/changelog/2026-04-14-deployment-context-in-repository-properties-and-alerts</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-14-deployment-context-in-repository-properties-and-alerts</guid>
+      <pubDate>Tue, 14 Apr 2026 20:26:26 +0000</pubDate>
+    </item>
+    <item>
+      <title>Link code scanning alerts to GitHub Issues</title>
+      <link>https://github.blog/changelog/2026-04-14-link-code-scanning-alerts-to-github-issues</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-14-link-code-scanning-alerts-to-github-issues</guid>
+      <pubDate>Tue, 14 Apr 2026 18:28:02 +0000</pubDate>
+    </item>
+    <item>
+      <title>Dependabot and code scanning: Org-level private registries</title>
+      <link>https://github.blog/changelog/2026-04-14-dependabot-and-code-scanning-org-level-private-registries</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-14-dependabot-and-code-scanning-org-level-private-registries</guid>
+      <pubDate>Tue, 14 Apr 2026 18:16:23 +0000</pubDate>
+    </item>
+    <item>
+      <title>Secret scanning pattern updates and product improvements</title>
+      <link>https://github.blog/changelog/2026-04-14-secret-scanning-pattern-updates-and-product-improvements</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-14-secret-scanning-pattern-updates-and-product-improvements</guid>
+      <pubDate>Tue, 14 Apr 2026 17:17:45 +0000</pubDate>
+    </item>
+    <item>
+      <title>SBOM exports are now computed asynchronously</title>
+      <link>https://github.blog/changelog/2026-04-14-sbom-exports-are-now-computed-asynchronously</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-14-sbom-exports-are-now-computed-asynchronously</guid>
+      <pubDate>Tue, 14 Apr 2026 16:00:14 +0000</pubDate>
+    </item>
+    <item>
+      <title>Model selection for Claude and Codex agents on github.com</title>
+      <link>https://github.blog/changelog/2026-04-14-model-selection-for-claude-and-codex-agents-on-github-com</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-14-model-selection-for-claude-and-codex-agents-on-github-com</guid>
+      <pubDate>Tue, 14 Apr 2026 15:21:52 +0000</pubDate>
+    </item>
+    <item>
+      <title>GitHub Code Quality: Improvements to standard findings in public preview</title>
+      <link>https://github.blog/changelog/2026-04-14-github-code-quality-improvements-to-standard-findings-in-public-preview</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-14-github-code-quality-improvements-to-standard-findings-in-public-preview</guid>
+      <pubDate>Tue, 14 Apr 2026 11:31:43 +0000</pubDate>
+    </item>
+    <item>
+      <title>Copilot data residency in US + EU and FedRAMP compliance now available</title>
+      <link>https://github.blog/changelog/2026-04-13-copilot-data-residency-in-us-eu-and-fedramp-compliance-now-available</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-13-copilot-data-residency-in-us-eu-and-fedramp-compliance-now-available</guid>
+      <pubDate>Mon, 13 Apr 2026 23:03:01 +0000</pubDate>
+    </item>
+  </channel>
+</rss>
