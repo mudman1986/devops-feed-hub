@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-docker-blog.xml</link>
     <description>Articles from Docker Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-docker-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 14 Apr 2026 19:45:50 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 15 Apr 2026 00:17:34 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Why We Chose the Harder Path: Docker Hardened Images, One Year Later</title>
+      <link>https://www.docker.com/blog/why-we-chose-the-harder-path-docker-hardened-images-one-year-later/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/why-we-chose-the-harder-path-docker-hardened-images-one-year-later/</guid>
+      <pubDate>Tue, 14 Apr 2026 21:48:03 +0000</pubDate>
+    </item>
     <item>
       <title>How to Analyze Hugging Face for Arm64 Readiness</title>
       <link>https://www.docker.com/blog/how-to-analyze-hugging-face-for-arm64-readiness/</link>
@@ -60,12 +66,6 @@
       <link>https://www.docker.com/blog/trivy-supply-chain-compromise-what-docker-hub-users-should-know/</link>
       <guid isPermaLink="true">https://www.docker.com/blog/trivy-supply-chain-compromise-what-docker-hub-users-should-know/</guid>
       <pubDate>Mon, 23 Mar 2026 23:25:14 +0000</pubDate>
-    </item>
-    <item>
-      <title>From the Captain’s Chair: Naga Santhosh Reddy Vootukuri</title>
-      <link>https://www.docker.com/blog/from-the-captains-chair-naga-santhosh-reddy-vootukuri/</link>
-      <guid isPermaLink="true">https://www.docker.com/blog/from-the-captains-chair-naga-santhosh-reddy-vootukuri/</guid>
-      <pubDate>Wed, 18 Mar 2026 16:00:12 +0000</pubDate>
     </item>
   </channel>
 </rss>

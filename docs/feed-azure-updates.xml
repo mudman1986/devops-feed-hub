@@ -5,8 +5,20 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml</link>
     <description>Articles from Azure Updates</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-azure-updates.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 14 Apr 2026 19:45:50 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 15 Apr 2026 00:17:34 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>[In preview] Public Preview: Azure Site Recovery support for Windows Azure VMs with NVMe disk controllers.</title>
+      <link>https://azure.microsoft.com/updates?id=560241</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=560241</guid>
+      <pubDate>Tue, 14 Apr 2026 21:15:15 +0000</pubDate>
+    </item>
+    <item>
+      <title>[Launched] Announcing: Minimum billable object size for cooler storage tiers</title>
+      <link>https://azure.microsoft.com/updates?id=559756</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=559756</guid>
+      <pubDate>Tue, 14 Apr 2026 21:15:15 +0000</pubDate>
+    </item>
     <item>
       <title>[Launched] Generally Available: Smart Tier (Azure Blob and Data Lake Storage)</title>
       <link>https://azure.microsoft.com/updates?id=559746</link>
@@ -1188,18 +1200,6 @@
       <link>https://azure.microsoft.com/updates?id=522390</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=522390</guid>
       <pubDate>Thu, 20 Nov 2025 16:00:12 +0000</pubDate>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Trusted Launch is now supported for Arm64 Marketplace Images</title>
-      <link>https://azure.microsoft.com/updates?id=529797</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=529797</guid>
-      <pubDate>Thu, 20 Nov 2025 15:00:59 +0000</pubDate>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Azure NetApp Files migration assistant (portal support)</title>
-      <link>https://azure.microsoft.com/updates?id=525620</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525620</guid>
-      <pubDate>Thu, 20 Nov 2025 13:45:47 +0000</pubDate>
     </item>
     <item>
       <title>[Launched] Generally Available: Model Context Protocol support in Azure API Management and Azure API Center</title>

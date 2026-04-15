@@ -5,8 +5,43 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 14 Apr 2026 19:45:50 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 15 Apr 2026 00:17:34 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Why We Chose the Harder Path: Docker Hardened Images, One Year Later</title>
+      <link>https://www.docker.com/blog/why-we-chose-the-harder-path-docker-hardened-images-one-year-later/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/why-we-chose-the-harder-path-docker-hardened-images-one-year-later/</guid>
+      <pubDate>Tue, 14 Apr 2026 21:48:03 +0000</pubDate>
+      <source>Docker Blog</source>
+    </item>
+    <item>
+      <title>[In preview] Public Preview: Azure Site Recovery support for Windows Azure VMs with NVMe disk controllers.</title>
+      <link>https://azure.microsoft.com/updates?id=560241</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=560241</guid>
+      <pubDate>Tue, 14 Apr 2026 21:15:15 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>[Launched] Announcing: Minimum billable object size for cooler storage tiers</title>
+      <link>https://azure.microsoft.com/updates?id=559756</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=559756</guid>
+      <pubDate>Tue, 14 Apr 2026 21:15:15 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>OIDC support for Dependabot and code scanning</title>
+      <link>https://github.blog/changelog/2026-04-14-oidc-support-for-dependabot-and-code-scanning</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-14-oidc-support-for-dependabot-and-code-scanning</guid>
+      <pubDate>Tue, 14 Apr 2026 20:29:03 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Deployment context in repository properties and alerts</title>
+      <link>https://github.blog/changelog/2026-04-14-deployment-context-in-repository-properties-and-alerts</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-14-deployment-context-in-repository-properties-and-alerts</guid>
+      <pubDate>Tue, 14 Apr 2026 20:26:26 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
     <item>
       <title>April Patches for Azure DevOps Server</title>
       <link>https://devblogs.microsoft.com/devops/april-patches-for-azure-devops-server/</link>
@@ -69,6 +104,20 @@
       <guid isPermaLink="true">https://github.blog/changelog/2026-04-14-github-code-quality-improvements-to-standard-findings-in-public-preview</guid>
       <pubDate>Tue, 14 Apr 2026 11:31:43 +0000</pubDate>
       <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Building an agentic content production system with Claude Code</title>
+      <link>https://circleci.com/blog/claude-marketing-folder/</link>
+      <guid isPermaLink="true">https://circleci.com/blog/claude-marketing-folder/</guid>
+      <pubDate>Tue, 14 Apr 2026 07:00:00 +0000</pubDate>
+      <source>CircleCI Blog</source>
+    </item>
+    <item>
+      <title>GitLab and Vertex AI on Google Cloud: Advancing agentic software development</title>
+      <link>https://about.gitlab.com/blog/gitlab-and-vertex-ai-on-google-cloud/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/gitlab-and-vertex-ai-on-google-cloud/</guid>
+      <pubDate>Tue, 14 Apr 2026 00:00:00 +0000</pubDate>
+      <source>GitLab Blog</source>
     </item>
     <item>
       <title>[Launched] Generally Available: Azure File Sync in Belgium Central, Malaysia West, and Indonesia Central</title>
@@ -167,20 +216,6 @@
       <guid isPermaLink="true">https://about.gitlab.com/blog/gitlab-named-a-2026-omdia-universe-leader/</guid>
       <pubDate>Mon, 13 Apr 2026 00:00:00 +0000</pubDate>
       <source>GitLab Blog</source>
-    </item>
-    <item>
-      <title>Enforcing new limits and retiring Opus 4.6 Fast from Copilot Pro+</title>
-      <link>https://github.blog/changelog/2026-04-10-enforcing-new-limits-and-retiring-opus-4-6-fast-from-copilot-pro</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-10-enforcing-new-limits-and-retiring-opus-4-6-fast-from-copilot-pro</guid>
-      <pubDate>Fri, 10 Apr 2026 22:56:46 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
-      <title>Copilot usage metrics now aggregate Copilot cloud agent active user counts</title>
-      <link>https://github.blog/changelog/2026-04-10-copilot-usage-metrics-now-aggregate-copilot-cloud-agent-active-user-counts</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-10-copilot-usage-metrics-now-aggregate-copilot-cloud-agent-active-user-counts</guid>
-      <pubDate>Fri, 10 Apr 2026 21:42:47 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>Cirrus CI is shutting down: upgrade to a scalable, AI-ready alternative</title>
@@ -1184,13 +1219,6 @@
       <source>CircleCI Blog</source>
     </item>
     <item>
-      <title>From the Captain’s Chair: Naga Santhosh Reddy Vootukuri</title>
-      <link>https://www.docker.com/blog/from-the-captains-chair-naga-santhosh-reddy-vootukuri/</link>
-      <guid isPermaLink="true">https://www.docker.com/blog/from-the-captains-chair-naga-santhosh-reddy-vootukuri/</guid>
-      <pubDate>Wed, 18 Mar 2026 16:00:12 +0000</pubDate>
-      <source>Docker Blog</source>
-    </item>
-    <item>
       <title>Issue #266 - AWS ECS Explained, Guard Hook Workarounds, Pulumi as State Backend, and 90% Faster Terraform Testing with AI</title>
       <link>https://www.weekly.tf/p/issue-266-aws-ecs-explained-guard-hook-workarounds-pulumi-as-state-backend-and-90-faster-terraform</link>
       <guid isPermaLink="true">https://www.weekly.tf/p/issue-266-aws-ecs-explained-guard-hook-workarounds-pulumi-as-state-backend-and-90-faster-terraform</guid>
@@ -1569,13 +1597,6 @@
       <source>Kubernetes Blog</source>
     </item>
     <item>
-      <title>AI can detect vulnerabilities, but who governs risk?</title>
-      <link>https://about.gitlab.com/blog/ai-can-detect-vulnerabilities-but-who-governs-risk/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/ai-can-detect-vulnerabilities-but-who-governs-risk/</guid>
-      <pubDate>Fri, 27 Feb 2026 00:00:00 +0000</pubDate>
-      <source>GitLab Blog</source>
-    </item>
-    <item>
       <title>Building Day 2 ops guardrails with Terraform and Packer</title>
       <link>https://www.hashicorp.com/blog/building-day-2-ops-guardrails-with-terraform-and-packer</link>
       <guid isPermaLink="true">https://www.hashicorp.com/blog/building-day-2-ops-guardrails-with-terraform-and-packer</guid>
@@ -1686,13 +1707,6 @@
       <guid isPermaLink="true">https://www.hashicorp.com/blog/saving-banks-from-technical-debt-how-atruvia-built-secure-self-service-infrastructure</guid>
       <pubDate>Thu, 19 Feb 2026 17:00:00 +0000</pubDate>
       <source>HashiCorp Blog</source>
-    </item>
-    <item>
-      <title>Simultaneous multi-cloud deployment to AWS and GCP with CircleCI</title>
-      <link>https://circleci.com/blog/simultaneous-multi-cloud-deployment-to-aws-and-gcp/</link>
-      <guid isPermaLink="true">https://circleci.com/blog/simultaneous-multi-cloud-deployment-to-aws-and-gcp/</guid>
-      <pubDate>Thu, 19 Feb 2026 16:00:00 +0000</pubDate>
-      <source>CircleCI Blog</source>
     </item>
     <item>
       <title>Jenkins accepted as mentoring org for Google Summer of Code (GSoC) 2026</title>
@@ -2840,20 +2854,6 @@
       <link>https://azure.microsoft.com/updates?id=522390</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=522390</guid>
       <pubDate>Thu, 20 Nov 2025 16:00:12 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Trusted Launch is now supported for Arm64 Marketplace Images</title>
-      <link>https://azure.microsoft.com/updates?id=529797</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=529797</guid>
-      <pubDate>Thu, 20 Nov 2025 15:00:59 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[In preview] Public Preview: Azure NetApp Files migration assistant (portal support)</title>
-      <link>https://azure.microsoft.com/updates?id=525620</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=525620</guid>
-      <pubDate>Thu, 20 Nov 2025 13:45:47 +0000</pubDate>
       <source>Azure Updates</source>
     </item>
     <item>

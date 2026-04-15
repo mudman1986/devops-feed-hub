@@ -5,8 +5,20 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml</link>
     <description>Articles from GitHub Changelog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-github-changelog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Tue, 14 Apr 2026 19:45:50 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 15 Apr 2026 00:17:34 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>OIDC support for Dependabot and code scanning</title>
+      <link>https://github.blog/changelog/2026-04-14-oidc-support-for-dependabot-and-code-scanning</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-14-oidc-support-for-dependabot-and-code-scanning</guid>
+      <pubDate>Tue, 14 Apr 2026 20:29:03 +0000</pubDate>
+    </item>
+    <item>
+      <title>Deployment context in repository properties and alerts</title>
+      <link>https://github.blog/changelog/2026-04-14-deployment-context-in-repository-properties-and-alerts</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-14-deployment-context-in-repository-properties-and-alerts</guid>
+      <pubDate>Tue, 14 Apr 2026 20:26:26 +0000</pubDate>
+    </item>
     <item>
       <title>Link code scanning alerts to GitHub Issues</title>
       <link>https://github.blog/changelog/2026-04-14-link-code-scanning-alerts-to-github-issues</link>
@@ -54,18 +66,6 @@
       <link>https://github.blog/changelog/2026-04-13-remote-control-cli-sessions-on-web-and-mobile-in-public-preview</link>
       <guid isPermaLink="true">https://github.blog/changelog/2026-04-13-remote-control-cli-sessions-on-web-and-mobile-in-public-preview</guid>
       <pubDate>Mon, 13 Apr 2026 14:15:43 +0000</pubDate>
-    </item>
-    <item>
-      <title>Enforcing new limits and retiring Opus 4.6 Fast from Copilot Pro+</title>
-      <link>https://github.blog/changelog/2026-04-10-enforcing-new-limits-and-retiring-opus-4-6-fast-from-copilot-pro</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-10-enforcing-new-limits-and-retiring-opus-4-6-fast-from-copilot-pro</guid>
-      <pubDate>Fri, 10 Apr 2026 22:56:46 +0000</pubDate>
-    </item>
-    <item>
-      <title>Copilot usage metrics now aggregate Copilot cloud agent active user counts</title>
-      <link>https://github.blog/changelog/2026-04-10-copilot-usage-metrics-now-aggregate-copilot-cloud-agent-active-user-counts</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-10-copilot-usage-metrics-now-aggregate-copilot-cloud-agent-active-user-counts</guid>
-      <pubDate>Fri, 10 Apr 2026 21:42:47 +0000</pubDate>
     </item>
   </channel>
 </rss>
