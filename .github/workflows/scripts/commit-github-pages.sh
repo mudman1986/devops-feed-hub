@@ -158,10 +158,24 @@ else
 	if [ -d "$TEMP_DIR/$CONTENT_DIR" ]; then
 		echo "Restoring generated content from temporary location" >&2
 		sync_content_files "$TEMP_DIR/$CONTENT_DIR" "$DEPLOY_DIR"
+
+		# When publishing a preview, also commit the updated preview manifest
+		if [ "$DEPLOY_DIR" != "$CONTENT_DIR" ] && [ -f "$TEMP_DIR/$CONTENT_DIR/preview/manifest.json" ]; then
+			echo "Restoring preview manifest" >&2
+			mkdir -p "$CONTENT_DIR/preview"
+			cp "$TEMP_DIR/$CONTENT_DIR/preview/manifest.json" "$CONTENT_DIR/preview/manifest.json"
+		fi
+
 		rm -rf "$TEMP_DIR"
 	fi
 
 	add_content_files "$DEPLOY_DIR"
+
+	# Stage manifest alongside the preview content
+	if [ "$DEPLOY_DIR" != "$CONTENT_DIR" ] && [ -f "$CONTENT_DIR/preview/manifest.json" ]; then
+		git add -f "$CONTENT_DIR/preview/manifest.json"
+	fi
+
 	commit_and_push "$TARGET_BRANCH"
 
 	# Switch back to original branch

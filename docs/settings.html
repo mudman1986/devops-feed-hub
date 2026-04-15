@@ -190,6 +190,28 @@
             </svg>
             <span>RSS Feeds</span>
           </div>
+          <div
+            class="settings-menu-item"
+            data-section="preview"
+            role="button"
+            tabindex="0"
+            aria-label="Preview site deployments"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+            <span>Preview Sites</span>
+          </div>
         </div>
       </nav>
       <main class="settings-content" id="settings-content">
@@ -342,6 +364,21 @@
             </div>
           </div>
         </section>
+
+        <section class="settings-section" id="preview-section">
+          <h2 class="settings-section-title">Preview Sites</h2>
+          <div class="settings-group">
+            <p class="settings-group-description">
+              Preview deployments are built from feature branches so you can
+              review changes without touching the live site. Each branch gets
+              its own isolated URL under
+              <code>preview/&lt;branch-name&gt;/</code>.
+            </p>
+            <div id="preview-sites-list">
+              <!-- Preview sites dynamically loaded here -->
+            </div>
+          </div>
+        </section>
       </main>
     </div>
 
@@ -400,6 +437,9 @@
 
           // Load and display RSS feed links
           loadRSSFeedLinks();
+
+          // Load and display preview deployments
+          loadPreviewSites();
         }
 
         // List of base experimental themes (without -light/-dark suffixes)
@@ -959,6 +999,81 @@
             // Add text
             const text = document.createTextNode(" Subscribe");
             link.appendChild(text);
+
+            controlDiv.appendChild(link);
+            item.appendChild(labelDiv);
+            item.appendChild(controlDiv);
+            container.appendChild(item);
+          });
+        }
+
+        function loadPreviewSites() {
+          const container = document.getElementById("preview-sites-list");
+          if (!container) return;
+
+          fetch("preview/manifest.json")
+            .then((response) => {
+              if (!response.ok) throw new Error("No previews available");
+              return response.json();
+            })
+            .then((manifest) => {
+              const previews = manifest.previews || [];
+              if (previews.length === 0) {
+                renderNoPreviewsMessage(container);
+              } else {
+                renderPreviewList(previews, container);
+              }
+            })
+            .catch(() => {
+              renderNoPreviewsMessage(container);
+            });
+        }
+
+        function renderNoPreviewsMessage(container) {
+          const msg = document.createElement("p");
+          msg.className = "settings-group-description";
+          msg.textContent =
+            "No preview deployments available yet. Previews are published automatically when changes are pushed to any branch other than main.";
+          container.appendChild(msg);
+        }
+
+        function renderPreviewList(previews, container) {
+          previews.forEach((preview) => {
+            const item = document.createElement("div");
+            item.className = "settings-item";
+
+            const labelDiv = document.createElement("div");
+            labelDiv.className = "settings-item-label";
+
+            const label = document.createElement("label");
+            label.textContent = preview.branch;
+
+            const desc = document.createElement("p");
+            desc.className = "settings-item-description";
+            const updated = preview.updated_at
+              ? new Date(preview.updated_at).toLocaleString()
+              : "unknown";
+            desc.textContent = `Last updated: ${updated}`;
+
+            labelDiv.appendChild(label);
+            labelDiv.appendChild(desc);
+
+            const controlDiv = document.createElement("div");
+            controlDiv.className = "settings-item-control";
+
+            const link = document.createElement("a");
+            link.href = preview.url;
+            link.className = "settings-button";
+            link.target = "_blank";
+            link.rel = "noopener noreferrer";
+
+            const eyeSvg = createSVG(
+              16,
+              16,
+              '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle>',
+            );
+            link.appendChild(eyeSvg);
+            link.appendChild(document.createTextNode(" Open Preview"));
 
             controlDiv.appendChild(link);
             item.appendChild(labelDiv);
