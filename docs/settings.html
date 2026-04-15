@@ -372,7 +372,10 @@
               Preview deployments are built from feature branches so you can
               review changes without touching the live site. Each branch gets
               its own isolated URL under
-              <code>preview/&lt;branch-name&gt;/</code>.
+              <code>preview/&lt;preview-slug&gt;/</code>, where the preview slug
+              is the branch name converted to lowercase, with
+              <code>/</code> replaced by <code>--</code> and other
+              non-alphanumeric characters replaced by <code>-</code>.
             </p>
             <div id="preview-sites-list">
               <!-- Preview sites dynamically loaded here -->

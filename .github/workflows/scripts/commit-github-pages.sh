@@ -47,10 +47,26 @@ validate_deploy_dir() {
 sync_content_files() {
 	local source_dir="$1"
 	local target_dir="$2"
+	local path
 
 	validate_deploy_dir "$CONTENT_DIR" "$target_dir"
-	rm -rf "$target_dir"
-	mkdir -p "$target_dir"
+
+	if [ "$target_dir" = "$CONTENT_DIR" ]; then
+		mkdir -p "$target_dir"
+		# Preserve branch previews stored under the preview/ subdirectory.
+		# Use dotglob+nullglob in a subshell to safely iterate all entries (incl. hidden).
+		(
+			shopt -s dotglob nullglob
+			for path in "$target_dir"/*; do
+				if [ "$path" != "$target_dir/preview" ]; then
+					rm -rf -- "$path"
+				fi
+			done
+		)
+	else
+		rm -rf "$target_dir"
+		mkdir -p "$target_dir"
+	fi
 	cp -r "$source_dir"/. "$target_dir"/
 }
 

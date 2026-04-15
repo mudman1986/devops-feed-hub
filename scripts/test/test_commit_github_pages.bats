@@ -205,3 +205,36 @@ teardown() {
 	[ "$status" -ne 0 ]
 	[[ "$output" =~ "cannot contain parent path segments" ]]
 }
+
+@test "production publish preserves existing preview directory on github-pages branch" {
+	cd "$TEST_DIR" || exit 1
+
+	# Set up github-pages branch with production content AND an existing preview
+	mkdir -p docs/preview/feature-branch
+	echo "production v1" >docs/index.html
+	echo "preview content" >docs/preview/feature-branch/index.html
+	git add docs/
+	git commit -m "Add production and preview docs"
+	git push origin main
+
+	# Now publish new production content (no preview directory in source)
+	mkdir -p docs
+	echo "production v2" >docs/index.html
+	# Publish production content without a preview/ directory in the source
+	# to verify that any existing previews on the target branch are preserved.
+
+	run bash commit-github-pages.sh "docs" "github-pages" "docs"
+
+	[ "$status" -eq 0 ]
+	[ "$(git branch --show-current)" = "main" ]
+
+	# Production content was updated
+	run git show github-pages:docs/index.html
+	[ "$status" -eq 0 ]
+	[ "$output" = "production v2" ]
+
+	# Existing preview content was NOT wiped by the production deploy
+	run git show github-pages:docs/preview/feature-branch/index.html
+	[ "$status" -eq 0 ]
+	[ "$output" = "preview content" ]
+}
