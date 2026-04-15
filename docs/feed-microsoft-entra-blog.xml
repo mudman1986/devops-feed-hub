@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-microsoft-entra-blog.xml</link>
     <description>Articles from Microsoft Entra Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-microsoft-entra-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 15 Apr 2026 12:15:09 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 15 Apr 2026 21:06:41 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>What’s new in Microsoft Entra – March 2026</title>
+      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/what-s-new-in-microsoft-entra-march-2026/ba-p/4502150</link>
+      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/what-s-new-in-microsoft-entra-march-2026/ba-p/4502150</guid>
+      <pubDate>Wed, 15 Apr 2026 17:13:19 +0000</pubDate>
+    </item>
     <item>
       <title>Microsoft Entra expands SCIM support with new SCIM 2.0 APIs for identity lifecycle operations</title>
       <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-expands-scim-support-with-new-scim-2-0-apis-for/ba-p/4507465</link>
@@ -108,12 +114,6 @@
       <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/enhance-protection-of-microsoft-entra-id-authentication-by/ba-p/4435200</link>
       <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/enhance-protection-of-microsoft-entra-id-authentication-by/ba-p/4435200</guid>
       <pubDate>Tue, 25 Nov 2025 16:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Microsoft Entra at Ignite 2025: November 17-21</title>
-      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-at-ignite-2025-november-17-21/ba-p/4400194</link>
-      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-at-ignite-2025-november-17-21/ba-p/4400194</guid>
-      <pubDate>Fri, 14 Nov 2025 19:20:09 +0000</pubDate>
     </item>
     <item>
       <title>Riding the AI Wave: How Microsoft Entra is Evolving for the Agentic Era</title>

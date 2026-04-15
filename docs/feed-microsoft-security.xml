@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml</link>
     <description>Articles from Microsoft Security</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-microsoft-security.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 15 Apr 2026 12:15:09 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 15 Apr 2026 21:06:41 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Incident response for AI: Same fire, different fuel</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/04/15/incident-response-for-ai-same-fire-different-fuel/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/04/15/incident-response-for-ai-same-fire-different-fuel/</guid>
+      <pubDate>Wed, 15 Apr 2026 16:00:45 +0000</pubDate>
+    </item>
     <item>
       <title>The agentic SOC—Rethinking SecOps for the next decade</title>
       <link>https://www.microsoft.com/en-us/security/blog/2026/04/09/the-agentic-soc-rethinking-secops-for-the-next-decade/</link>
@@ -60,12 +66,6 @@
       <link>https://www.microsoft.com/en-us/security/blog/2026/04/01/mitigating-the-axios-npm-supply-chain-compromise/</link>
       <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/04/01/mitigating-the-axios-npm-supply-chain-compromise/</guid>
       <pubDate>Wed, 01 Apr 2026 21:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>The threat to critical infrastructure has changed. Has your readiness?</title>
-      <link>https://www.microsoft.com/en-us/security/security-insider/threat-landscape/threat-to-critical-infrastructure-has-changed</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/security-insider/threat-landscape/threat-to-critical-infrastructure-has-changed</guid>
-      <pubDate>Tue, 31 Mar 2026 17:00:00 +0000</pubDate>
     </item>
   </channel>
 </rss>

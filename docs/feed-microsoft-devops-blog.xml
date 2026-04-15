@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-microsoft-devops-blog.xml</link>
     <description>Articles from Microsoft DevOps Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-microsoft-devops-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 15 Apr 2026 12:15:09 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 15 Apr 2026 21:06:41 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>One-click security scanning and org-wide alert triage come to Advanced Security</title>
+      <link>https://devblogs.microsoft.com/devops/one-click-security-scanning-and-org-wide-alert-triage-come-to-advanced-security/</link>
+      <guid isPermaLink="true">https://devblogs.microsoft.com/devops/one-click-security-scanning-and-org-wide-alert-triage-come-to-advanced-security/</guid>
+      <pubDate>Wed, 15 Apr 2026 15:06:53 +0000</pubDate>
+    </item>
     <item>
       <title>April Patches for Azure DevOps Server</title>
       <link>https://devblogs.microsoft.com/devops/april-patches-for-azure-devops-server/</link>
@@ -60,12 +66,6 @@
       <link>https://devblogs.microsoft.com/devops/tfvc-remove-existing-obsolete-policies-asap/</link>
       <guid isPermaLink="true">https://devblogs.microsoft.com/devops/tfvc-remove-existing-obsolete-policies-asap/</guid>
       <pubDate>Wed, 18 Feb 2026 16:35:23 +0000</pubDate>
-    </item>
-    <item>
-      <title>Condensed views on Kanban and Sprint boards</title>
-      <link>https://devblogs.microsoft.com/devops/condensed-views-on-kanban-and-sprint-boards/</link>
-      <guid isPermaLink="true">https://devblogs.microsoft.com/devops/condensed-views-on-kanban-and-sprint-boards/</guid>
-      <pubDate>Mon, 16 Feb 2026 20:53:30 +0000</pubDate>
     </item>
   </channel>
 </rss>

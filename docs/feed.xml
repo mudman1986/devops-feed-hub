@@ -5,8 +5,78 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 15 Apr 2026 12:15:09 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 15 Apr 2026 21:06:41 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Enable Copilot cloud agent via custom properties</title>
+      <link>https://github.blog/changelog/2026-04-15-enable-copilot-cloud-agent-via-custom-properties</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-15-enable-copilot-cloud-agent-via-custom-properties</guid>
+      <pubDate>Wed, 15 Apr 2026 18:30:28 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
+    <item>
+      <title>Retirement: End of lift reminder of HBv2/HC-Series/NP-Series Azure Virtual Machine in Azure Batch Pool</title>
+      <link>https://azure.microsoft.com/updates?id=559751</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=559751</guid>
+      <pubDate>Wed, 15 Apr 2026 17:30:33 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>[Launched] Generally Available: Encrypt Premium SSD v2 and Ultra Disks with Cross Tenant Customer Managed Keys</title>
+      <link>https://azure.microsoft.com/updates?id=559761</link>
+      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=559761</guid>
+      <pubDate>Wed, 15 Apr 2026 17:15:38 +0000</pubDate>
+      <source>Azure Updates</source>
+    </item>
+    <item>
+      <title>What’s new in Microsoft Entra – March 2026</title>
+      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/what-s-new-in-microsoft-entra-march-2026/ba-p/4502150</link>
+      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/what-s-new-in-microsoft-entra-march-2026/ba-p/4502150</guid>
+      <pubDate>Wed, 15 Apr 2026 17:13:19 +0000</pubDate>
+      <source>Microsoft Entra Blog</source>
+    </item>
+    <item>
+      <title>Build a personal organization command center with GitHub Copilot CLI</title>
+      <link>https://github.blog/ai-and-ml/github-copilot/build-a-personal-organization-command-center-with-github-copilot-cli/</link>
+      <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/build-a-personal-organization-command-center-with-github-copilot-cli/</guid>
+      <pubDate>Wed, 15 Apr 2026 17:00:00 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
+    <item>
+      <title>Incident response for AI: Same fire, different fuel</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/04/15/incident-response-for-ai-same-fire-different-fuel/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/04/15/incident-response-for-ai-same-fire-different-fuel/</guid>
+      <pubDate>Wed, 15 Apr 2026 16:00:45 +0000</pubDate>
+      <source>Microsoft Security</source>
+    </item>
+    <item>
+      <title>One-click security scanning and org-wide alert triage come to Advanced Security</title>
+      <link>https://devblogs.microsoft.com/devops/one-click-security-scanning-and-org-wide-alert-triage-come-to-advanced-security/</link>
+      <guid isPermaLink="true">https://devblogs.microsoft.com/devops/one-click-security-scanning-and-org-wide-alert-triage-come-to-advanced-security/</guid>
+      <pubDate>Wed, 15 Apr 2026 15:06:53 +0000</pubDate>
+      <source>Microsoft DevOps Blog</source>
+    </item>
+    <item>
+      <title>Developer policy update: Intermediary liability, copyright, and transparency</title>
+      <link>https://github.blog/news-insights/policy-news-and-insights/developer-policy-update-intermediary-liability-copyright-and-transparency/</link>
+      <guid isPermaLink="true">https://github.blog/news-insights/policy-news-and-insights/developer-policy-update-intermediary-liability-copyright-and-transparency/</guid>
+      <pubDate>Wed, 15 Apr 2026 15:00:00 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
+    <item>
+      <title>Issue #270 - ISO 27001 on AWS with Terraform, S3 Files Kills SFTP, Terragrunt 1.0 Is Here, Claude Code for DevSecOps, and Compliance Resources</title>
+      <link>https://www.weekly.tf/p/issue-270-iso-27001-on-aws-with-terraform-s3-files-kills-sftp-terragrunt-1-0-is-here-claude-code-for</link>
+      <guid isPermaLink="true">https://www.weekly.tf/p/issue-270-iso-27001-on-aws-with-terraform-s3-files-kills-sftp-terragrunt-1-0-is-here-claude-code-for</guid>
+      <pubDate>Wed, 15 Apr 2026 15:00:00 +0000</pubDate>
+      <source>Terraform weekly</source>
+    </item>
+    <item>
+      <title>A guide to the breaking changes in GitLab 19.0</title>
+      <link>https://about.gitlab.com/blog/a-guide-to-the-breaking-changes-in-gitlab-19-0/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/a-guide-to-the-breaking-changes-in-gitlab-19-0/</guid>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
+      <source>GitLab Blog</source>
+    </item>
     <item>
       <title>Why We Chose the Harder Path: Docker Hardened Images, One Year Later</title>
       <link>https://www.docker.com/blog/why-we-chose-the-harder-path-docker-hardened-images-one-year-later/</link>
@@ -62,6 +132,13 @@
       <guid isPermaLink="true">https://github.blog/security/hack-the-ai-agent-build-agentic-ai-security-skills-with-the-github-secure-code-game/</guid>
       <pubDate>Tue, 14 Apr 2026 18:17:59 +0000</pubDate>
       <source>GitHub Blog</source>
+    </item>
+    <item>
+      <title>Dependabot and code scanning: Org-level private registries</title>
+      <link>https://github.blog/changelog/2026-04-14-dependabot-and-code-scanning-org-level-private-registries</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-14-dependabot-and-code-scanning-org-level-private-registries</guid>
+      <pubDate>Tue, 14 Apr 2026 18:16:23 +0000</pubDate>
+      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>Secret scanning pattern updates and product improvements</title>
@@ -134,13 +211,6 @@
       <source>GitHub Changelog</source>
     </item>
     <item>
-      <title>Fix merge conflicts in three clicks with Copilot cloud agent</title>
-      <link>https://github.blog/changelog/2026-04-13-fix-merge-conflicts-in-three-clicks-with-copilot-cloud-agent</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-13-fix-merge-conflicts-in-three-clicks-with-copilot-cloud-agent</guid>
-      <pubDate>Mon, 13 Apr 2026 19:36:26 +0000</pubDate>
-      <source>GitHub Changelog</source>
-    </item>
-    <item>
       <title>Troubleshooting environment with AI analysis in AWS Elastic Beanstalk</title>
       <link>https://aws.amazon.com/blogs/devops/troubleshooting-environment-with-ai-analysis-in-aws-elastic-beanstalk/</link>
       <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/troubleshooting-environment-with-ai-analysis-in-aws-elastic-beanstalk/</guid>
@@ -202,13 +272,6 @@
       <guid isPermaLink="true">https://github.blog/developer-skills/github/github-for-beginners-getting-started-with-github-pages/</guid>
       <pubDate>Mon, 13 Apr 2026 15:00:00 +0000</pubDate>
       <source>GitHub Blog</source>
-    </item>
-    <item>
-      <title>Remote control CLI sessions on web and mobile in public preview</title>
-      <link>https://github.blog/changelog/2026-04-13-remote-control-cli-sessions-on-web-and-mobile-in-public-preview</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-13-remote-control-cli-sessions-on-web-and-mobile-in-public-preview</guid>
-      <pubDate>Mon, 13 Apr 2026 14:15:43 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>GitLab named a 2026 Omdia Universe Leader</title>
@@ -554,13 +617,6 @@
       <source>Azure Updates</source>
     </item>
     <item>
-      <title>Securing the open source supply chain across GitHub</title>
-      <link>https://github.blog/security/supply-chain-security/securing-the-open-source-supply-chain-across-github/</link>
-      <guid isPermaLink="true">https://github.blog/security/supply-chain-security/securing-the-open-source-supply-chain-across-github/</guid>
-      <pubDate>Wed, 01 Apr 2026 19:20:12 +0000</pubDate>
-      <source>GitHub Blog</source>
-    </item>
-    <item>
       <title>[In preview] Public Preview: Unlock Client-Side Configuration at Scale with Azure App Configuration and Azure Front Door</title>
       <link>https://azure.microsoft.com/updates?id=537234</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=537234</guid>
@@ -622,13 +678,6 @@
       <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/securely-connect-aws-devops-agent-to-private-services-in-your-vpcs/</guid>
       <pubDate>Wed, 01 Apr 2026 15:37:03 +0000</pubDate>
       <source>AWS DevOps Blog</source>
-    </item>
-    <item>
-      <title>Run multiple agents at once with /fleet in Copilot CLI</title>
-      <link>https://github.blog/ai-and-ml/github-copilot/run-multiple-agents-at-once-with-fleet-in-copilot-cli/</link>
-      <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/run-multiple-agents-at-once-with-fleet-in-copilot-cli/</guid>
-      <pubDate>Wed, 01 Apr 2026 15:00:00 +0000</pubDate>
-      <source>GitHub Blog</source>
     </item>
     <item>
       <title>Issue #268 - AWS Lightsail AI Agents, Faster Terraform Applies, Local RAG for IaC, Lifecycle Rules Without Forks, and Combining Argo CD With Terraform</title>
@@ -734,13 +783,6 @@
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=559406</guid>
       <pubDate>Tue, 31 Mar 2026 17:15:56 +0000</pubDate>
       <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>The threat to critical infrastructure has changed. Has your readiness?</title>
-      <link>https://www.microsoft.com/en-us/security/security-insider/threat-landscape/threat-to-critical-infrastructure-has-changed</link>
-      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/security-insider/threat-landscape/threat-to-critical-infrastructure-has-changed</guid>
-      <pubDate>Tue, 31 Mar 2026 17:00:00 +0000</pubDate>
-      <source>Microsoft Security</source>
     </item>
     <item>
       <title>Retirement: Manually registered Azure VPN Clients for ​Azure Government and ​Microsoft Azure operated by 21Vianet clouds will be retired on March 31, 2029</title>
@@ -1506,13 +1548,6 @@
       <source>GitLab Blog</source>
     </item>
     <item>
-      <title>10 AI prompts to speed your team’s software delivery</title>
-      <link>https://about.gitlab.com/blog/10-ai-prompts-to-speed-your-teams-software-delivery/</link>
-      <guid isPermaLink="true">https://about.gitlab.com/blog/10-ai-prompts-to-speed-your-teams-software-delivery/</guid>
-      <pubDate>Wed, 04 Mar 2026 00:00:00 +0000</pubDate>
-      <source>GitLab Blog</source>
-    </item>
-    <item>
       <title>[Launched] Generally Available: Draft &amp; Deploy on Azure Firewall</title>
       <link>https://azure.microsoft.com/updates?id=558072</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=558072</guid>
@@ -1805,13 +1840,6 @@
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=545784</guid>
       <pubDate>Tue, 17 Feb 2026 17:00:32 +0000</pubDate>
       <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>Condensed views on Kanban and Sprint boards</title>
-      <link>https://devblogs.microsoft.com/devops/condensed-views-on-kanban-and-sprint-boards/</link>
-      <guid isPermaLink="true">https://devblogs.microsoft.com/devops/condensed-views-on-kanban-and-sprint-boards/</guid>
-      <pubDate>Mon, 16 Feb 2026 20:53:30 +0000</pubDate>
-      <source>Microsoft DevOps Blog</source>
     </item>
     <item>
       <title>Vault Radar 2025 recap: Expanding visibility, deepening integration, and simplifying security</title>
@@ -2843,32 +2871,11 @@
       <source>Azure Updates</source>
     </item>
     <item>
-      <title>[Launched] Generally Available: DNS security policy Threat Intelligence feed</title>
-      <link>https://azure.microsoft.com/updates?id=530183</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=530183</guid>
-      <pubDate>Thu, 20 Nov 2025 17:00:13 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>[Launched] Generally Available: Azure Sphere OS version 25.10 is now available</title>
-      <link>https://azure.microsoft.com/updates?id=522390</link>
-      <guid isPermaLink="true">https://azure.microsoft.com/updates?id=522390</guid>
-      <pubDate>Thu, 20 Nov 2025 16:00:12 +0000</pubDate>
-      <source>Azure Updates</source>
-    </item>
-    <item>
       <title>Issue #252 - Secure Lambda Deployments, Team Workflows, AWS Control Tower Implementation, and OverlayFS Caching Techniques</title>
       <link>https://www.weekly.tf/p/issue-252-secure-lambda-deployments-team-workflows-aws-control-tower-implementation-and-overlayfs</link>
       <guid isPermaLink="true">https://www.weekly.tf/p/issue-252-secure-lambda-deployments-team-workflows-aws-control-tower-implementation-and-overlayfs</guid>
       <pubDate>Wed, 19 Nov 2025 16:00:31 +0000</pubDate>
       <source>Terraform weekly</source>
-    </item>
-    <item>
-      <title>Microsoft Entra at Ignite 2025: November 17-21</title>
-      <link>https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-at-ignite-2025-november-17-21/ba-p/4400194</link>
-      <guid isPermaLink="true">https://techcommunity.microsoft.com/t5/microsoft-entra-blog/microsoft-entra-at-ignite-2025-november-17-21/ba-p/4400194</guid>
-      <pubDate>Fri, 14 Nov 2025 19:20:09 +0000</pubDate>
-      <source>Microsoft Entra Blog</source>
     </item>
     <item>
       <title>Issue #251 - Harness, Terraform Security Scanning, SSM Parameter Management, Athena State Queries, AWS Backup vs Lambda, and ECS Fargate Deployment</title>
@@ -2911,13 +2918,6 @@
       <guid isPermaLink="true">https://kubernetes.io/blog/2025/11/06/gateway-api-v1-4/</guid>
       <pubDate>Thu, 06 Nov 2025 17:00:00 +0000</pubDate>
       <source>Kubernetes Blog</source>
-    </item>
-    <item>
-      <title>Issue #250 - Plugin Framework Actions Tutorial, Multi-Cloud Drift Scanning Tools Compared, Atlantis Custom Workflows, Lock Files and EC2 Backups</title>
-      <link>https://www.weekly.tf/p/issue-250-plugin-framework-actions-tutorial-multi-cloud-drift-scanning-tools-compared-atlantis-custo</link>
-      <guid isPermaLink="true">https://www.weekly.tf/p/issue-250-plugin-framework-actions-tutorial-multi-cloud-drift-scanning-tools-compared-atlantis-custo</guid>
-      <pubDate>Wed, 05 Nov 2025 16:01:35 +0000</pubDate>
-      <source>Terraform weekly</source>
     </item>
     <item>
       <title>Driving cloud-first identity: User SOA is now Public Preview and Group SOA is Generally Available</title>
