@@ -426,17 +426,13 @@ test.describe("Preview Sites Settings", () => {
     page,
   }) => {
     await page.goto("/settings.html");
-    await page
-      .locator('.settings-menu-item:has-text("Preview Sites")')
-      .click();
+    await page.locator('.settings-menu-item:has-text("Preview Sites")').click();
     await expect(page.locator("#preview-section")).toBeVisible();
   });
 
   test("should show preview section heading", async ({ page }) => {
     await page.goto("/settings.html");
-    await page
-      .locator('.settings-menu-item:has-text("Preview Sites")')
-      .click();
+    await page.locator('.settings-menu-item:has-text("Preview Sites")').click();
     await expect(
       page.locator("#preview-section .settings-section-title"),
     ).toHaveText("Preview Sites");
@@ -446,9 +442,7 @@ test.describe("Preview Sites Settings", () => {
     page,
   }) => {
     await page.goto("/settings.html");
-    await page
-      .locator('.settings-menu-item:has-text("Preview Sites")')
-      .click();
+    await page.locator('.settings-menu-item:has-text("Preview Sites")').click();
     // preview/manifest.json does not exist in test environment - fallback message should appear
     await expect(page.locator("#preview-sites-list")).toBeVisible({
       timeout: 10000,
