@@ -324,14 +324,16 @@ class TestGenerateSummary(unittest.TestCase):
             mode="w", delete=False, suffix=".html", encoding="utf-8"
         ) as f:
             custom_template = f.name
-            f.write("""<!doctype html>
+            f.write(
+                """<!doctype html>
 <html>
 <head><title>Custom Template</title></head>
 <body>
 <!-- CONTENT_PLACEHOLDER -->
 <footer>Updated: <!-- TIMESTAMP_PLACEHOLDER --></footer>
 </body>
-</html>""")
+</html>"""
+            )
 
         try:
             result = generate_html_page(self.sample_data, custom_template)
@@ -362,14 +364,16 @@ class TestGenerateSummary(unittest.TestCase):
             mode="w", delete=False, suffix=".html", encoding="utf-8"
         ) as f:
             utf8_template = f.name
-            f.write("""<!doctype html>
+            f.write(
+                """<!doctype html>
 <html>
 <head><title>Test 🌙☀️</title></head>
 <body>
 <!-- CONTENT_PLACEHOLDER -->
 <footer><!-- TIMESTAMP_PLACEHOLDER --></footer>
 </body>
-</html>""")
+</html>"""
+            )
 
         try:
             result = generate_html_page(self.sample_data, utf8_template)
@@ -1281,9 +1285,7 @@ class TestFeedTitleLinks(unittest.TestCase):
 
     def test_feed_title_link_website_url_is_escaped(self):
         """website_url with special HTML characters should be properly escaped."""
-        feeds = {
-            "My Blog": self._make_feed_data('https://example.com/?a=1&b=2')
-        }
+        feeds = {"My Blog": self._make_feed_data("https://example.com/?a=1&b=2")}
         html = generate_feed_articles_content(feeds)
 
         self.assertIn("&amp;", html)
@@ -1398,7 +1400,10 @@ class TestFeedTitleLinks(unittest.TestCase):
         config = {
             "feeds": [
                 # Entry with no name should be silently skipped
-                {"url": "https://example.com/feed", "website_url": "https://example.com/"},
+                {
+                    "url": "https://example.com/feed",
+                    "website_url": "https://example.com/",
+                },
                 {
                     "name": "Named Blog",
                     "url": "https://named.example.com/feed",
@@ -1467,4 +1472,3 @@ class TestFeedTitleLinks(unittest.TestCase):
 
         self.assertIn('class="feed-title-link"', html)
         self.assertIn('href="https://myblog.example.com/"', html)
-
