@@ -93,7 +93,7 @@ def main() -> None:
         for branch in os.environ.get("ACTIVE_BRANCHES", "").splitlines()
         if branch
     }
-    preview_dir = os.path.join("site", "preview")
+    preview_dir = os.path.dirname(manifest_path)
 
     manifest = update_manifest(
         manifest_json,

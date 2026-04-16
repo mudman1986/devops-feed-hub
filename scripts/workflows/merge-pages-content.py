@@ -26,7 +26,7 @@ def validate_deploy_subdir(deploy_subdir: str) -> Path:
 
 
 def copy_directory_contents(source_dir: Path, destination_dir: Path) -> None:
-    """Copy all files from source_dir into destination_dir."""
+    """Copy all files and directories from source_dir into destination_dir."""
     destination_dir.mkdir(parents=True, exist_ok=True)
     for item in source_dir.iterdir():
         destination_path = destination_dir / item.name
@@ -39,6 +39,8 @@ def copy_directory_contents(source_dir: Path, destination_dir: Path) -> None:
 def remove_directory_contents(directory: Path, preserve_names: set[str] | None = None) -> None:
     """Remove all contents from a directory, preserving named entries when requested."""
     preserve_names = preserve_names or set()
+    if not directory.exists():
+        return
     for item in directory.iterdir():
         if item.name in preserve_names:
             continue

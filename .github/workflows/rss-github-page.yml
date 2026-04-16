@@ -140,7 +140,7 @@ jobs:
           mkdir -p pages-state
           git fetch origin github-pages:refs/remotes/origin/github-pages 2>/dev/null || true
 
-          if git cat-file -e "origin/github-pages:site/index.html" 2>/dev/null; then
+          if git cat-file -e "origin/github-pages:site" 2>/dev/null; then
             git archive --format=tar origin/github-pages site | tar -xf - -C pages-state
             echo "existing_dir=pages-state/site" >> "$GITHUB_OUTPUT"
             echo "✓ Bootstrapped previous Pages state from github-pages branch"
@@ -187,8 +187,11 @@ jobs:
           MERGE_ARGS=(
             --build-dir site-build
             --output-dir site
-            --deploy-subdir "$DEPLOY_SUBDIR"
           )
+
+          if [ -n "$DEPLOY_SUBDIR" ]; then
+            MERGE_ARGS+=(--deploy-subdir "$DEPLOY_SUBDIR")
+          fi
 
           if [ -n "$EXISTING_DIR" ]; then
             MERGE_ARGS+=(--existing-dir "$EXISTING_DIR")
@@ -202,11 +205,14 @@ jobs:
           SOURCE_BRANCH: ${{ github.ref_name }}
           PREVIEW_SLUG: ${{ steps.publish-target.outputs.preview_slug }}
           BASE_URL: ${{ steps.publish-target.outputs.base_url }}
+          EXISTING_DIR: ${{ steps.restore-state.outputs.existing_dir || steps.bootstrap-state.outputs.existing_dir }}
         run: |
           MANIFEST='{"previews":[]}'
           ACTIVE_BRANCHES=$(git ls-remote --heads origin | awk '{sub("refs/heads/","",$2); print $2}')
           if [ -f site/preview/manifest.json ]; then
             MANIFEST=$(cat site/preview/manifest.json)
+          elif [ -n "$EXISTING_DIR" ] && [ -f "$EXISTING_DIR/preview/manifest.json" ]; then
+            MANIFEST=$(cat "$EXISTING_DIR/preview/manifest.json")
           fi
 
           export ACTIVE_BRANCHES
