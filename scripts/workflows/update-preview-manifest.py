@@ -6,6 +6,7 @@
 
 import json
 import os
+import shutil
 import sys
 from datetime import datetime, timezone
 
@@ -17,6 +18,7 @@ def update_manifest(
     base_url: str,
     manifest_path: str,
     active_branches: set[str] | None = None,
+    preview_dir: str | None = None,
 ) -> dict:
     """Merge a preview entry into the manifest and write it to disk.
 
@@ -26,6 +28,8 @@ def update_manifest(
         preview_slug: URL-safe slug derived from the branch name
         base_url: Base URL for the preview deployment (without trailing slash)
         manifest_path: Filesystem path where the manifest will be written
+        active_branches: Active branches whose preview entries should be retained
+        preview_dir: Optional preview directory to prune against the manifest
 
     Returns:
         The updated manifest dict.
@@ -63,6 +67,17 @@ def update_manifest(
         json.dump(manifest, f, indent=2)
         f.write("\n")
 
+    if preview_dir:
+        preview_root = os.path.abspath(preview_dir)
+        if os.path.isdir(preview_root):
+            active_slugs = {
+                preview.get("slug") for preview in previews if preview.get("slug")
+            }
+            for entry_name in os.listdir(preview_root):
+                entry_path = os.path.join(preview_root, entry_name)
+                if os.path.isdir(entry_path) and entry_name not in active_slugs:
+                    shutil.rmtree(entry_path)
+
     return manifest
 
 
@@ -78,6 +93,7 @@ def main() -> None:
         for branch in os.environ.get("ACTIVE_BRANCHES", "").splitlines()
         if branch
     }
+    preview_dir = os.path.join("site", "preview")
 
     manifest = update_manifest(
         manifest_json,
@@ -86,6 +102,7 @@ def main() -> None:
         base_url,
         manifest_path,
         active_branches or None,
+        preview_dir,
     )
     print(
         f"✓ Preview manifest updated ({len(manifest['previews'])} entries)",
