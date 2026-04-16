@@ -214,6 +214,12 @@ class TestGenerateSummary(unittest.TestCase):
         self.assertIn(">1</div>", result)  # failed_feeds
         self.assertIn(">5</div>", result)  # total_articles
 
+    def test_generate_summary_page_does_not_emit_python_comments(self):
+        """Test that summary page HTML does not include stray source comments."""
+        result = generate_html_page(self.sample_data, current_feed="summary")
+
+        self.assertNotIn("# noqa", result)
+
     def test_generate_html_page_responsive(self):
         """Test that HTML page includes responsive design"""
         result = generate_html_page(self.sample_data)
