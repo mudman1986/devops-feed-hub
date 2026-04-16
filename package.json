@@ -24,10 +24,10 @@
         "displayName": "browser",
         "testEnvironment": "jsdom",
         "testMatch": [
-          "**/docs/**/*.test.js"
+          "**/tests/js/**/*.test.js"
         ],
         "collectCoverageFrom": [
-          "docs/script.js"
+          "src/site/script.js"
         ]
       }
     ]

@@ -63,20 +63,20 @@ jobs:
           # consistent tests. This ensures tests always run against
           # known data regardless of external feeds
           echo "Using static test fixture for consistent UI tests"
-          cp .github/workflows/test-fixtures/ui-test-data.json \
+          cp tests/fixtures/ui-test-data.json \
             rss-feeds-output.json
           # Generate multi-page HTML (main index + individual
           # feed pages)
-          python3 .github/workflows/scripts/rss-processing/generate_summary.py \
+          python3 scripts/workflows/rss-processing/generate_summary.py \
             --input rss-feeds-output.json \
-            --output-dir docs
+            --output-dir site
 
           echo "Generated HTML files:"
-          ls -la docs/*.html
+          ls -la site/*.html
 
           # Show article count for debugging
           echo "Article counts:"
-          grep -h "feed-count" docs/index.html || \
+          grep -h "feed-count" site/index.html || \
             echo "No count found"
 
       - name: >-
