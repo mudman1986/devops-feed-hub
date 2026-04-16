@@ -302,6 +302,40 @@ describe("parseIssueData", () => {
     expect(parsed.hasSubIssues).toBe(false);
     expect(parsed.isSubIssue).toBe(false);
   });
+
+  test("should handle missing labels and assignees", () => {
+    const rawIssue = {
+      id: "issue-2",
+      number: 200,
+      title: "Issue missing optional nested fields",
+      url: "https://github.com/test/repo/issues/200",
+      trackedIssues: { totalCount: 0 },
+      trackedInIssues: { totalCount: 0 },
+    };
+    const parsed = parseIssueData(rawIssue);
+    expect(parsed.isAssigned).toBe(false);
+    expect(parsed.isRefactorIssue).toBe(false);
+    expect(parsed.labels).toEqual([]);
+  });
+
+  test("should support flattened labels structure", () => {
+    const rawIssue = {
+      id: "issue-3",
+      number: 201,
+      title: "Issue with flattened labels",
+      url: "https://github.com/test/repo/issues/201",
+      assignees: { nodes: [] },
+      trackedIssues: { totalCount: 0 },
+      trackedInIssues: { totalCount: 0 },
+      labels: [{ name: "refactor" }, { name: "enhancement" }],
+    };
+    const parsed = parseIssueData(rawIssue);
+    expect(parsed.isRefactorIssue).toBe(true);
+    expect(parsed.labels).toEqual([
+      { name: "refactor" },
+      { name: "enhancement" },
+    ]);
+  });
 });
 
 describe("findAssignableIssue", () => {

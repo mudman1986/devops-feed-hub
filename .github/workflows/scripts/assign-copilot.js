@@ -108,20 +108,23 @@ function shouldAssignNewIssue(assignedIssues, mode, force) {
  * @returns {Object} - Parsed issue with boolean flags
  */
 function parseIssueData(issue) {
+  const labels = normalizeIssueLabels(issue);
+  const assignees = issue.assignees?.nodes || [];
+
   return {
     id: issue.id,
     number: issue.number,
     title: issue.title,
     url: issue.url,
     body: issue.body || "",
-    isAssigned: issue.assignees.nodes.length > 0,
+    isAssigned: assignees.length > 0,
     // Check for ANY sub-issues (open or closed) - parent issues should not be assigned
     hasSubIssues: !!(issue.trackedIssues && issue.trackedIssues.totalCount > 0),
     isSubIssue: !!(
       issue.trackedInIssues && issue.trackedInIssues.totalCount > 0
     ),
-    isRefactorIssue: issue.labels.nodes.some((l) => l.name === "refactor"),
-    labels: issue.labels.nodes,
+    isRefactorIssue: labels.some((l) => l.name === "refactor"),
+    labels,
   };
 }
 
