@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DevOps Feed Hub - GitLab Blog</title>
+    <link>https://mudman1986.github.io/devops-feed-hub/preview/copilot--cache-playwright-browser-install/feed-gitlab-blog.xml</link>
+    <description>Articles from GitLab Blog</description>
+    <atom:link href="https://mudman1986.github.io/devops-feed-hub/preview/copilot--cache-playwright-browser-install/feed-gitlab-blog.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Apr 2026 12:01:18 +0000</lastBuildDate>
+    <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>A guide to the breaking changes in GitLab 19.0</title>
+      <link>https://about.gitlab.com/blog/a-guide-to-the-breaking-changes-in-gitlab-19-0/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/a-guide-to-the-breaking-changes-in-gitlab-19-0/</guid>
+      <pubDate>Wed, 15 Apr 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>GitLab and Vertex AI on Google Cloud: Advancing agentic software development</title>
+      <link>https://about.gitlab.com/blog/gitlab-and-vertex-ai-on-google-cloud/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/gitlab-and-vertex-ai-on-google-cloud/</guid>
+      <pubDate>Tue, 14 Apr 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>GitLab named a 2026 Omdia Universe Leader</title>
+      <link>https://about.gitlab.com/blog/gitlab-named-a-2026-omdia-universe-leader/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/gitlab-named-a-2026-omdia-universe-leader/</guid>
+      <pubDate>Mon, 13 Apr 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>5 ways GitLab pipeline logic solves real engineering problems</title>
+      <link>https://about.gitlab.com/blog/5-ways-gitlab-pipeline-logic-solves-real-engineering-problems/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/5-ways-gitlab-pipeline-logic-solves-real-engineering-problems/</guid>
+      <pubDate>Thu, 09 Apr 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Streamline test management with the SmartBear QMetry GitLab component</title>
+      <link>https://about.gitlab.com/blog/streamline-test-management-with-the-smartbear-qmetry-gitlab-component/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/streamline-test-management-with-the-smartbear-qmetry-gitlab-component/</guid>
+      <pubDate>Tue, 07 Apr 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Pipeline security lessons from March supply chain incidents</title>
+      <link>https://about.gitlab.com/blog/pipeline-security-lessons-from-march-supply-chain-incidents/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/pipeline-security-lessons-from-march-supply-chain-incidents/</guid>
+      <pubDate>Tue, 07 Apr 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>GitLab Duo CLI: Agentic AI for the development lifecycle, now in the terminal</title>
+      <link>https://about.gitlab.com/blog/gitlab-duo-cli/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/gitlab-duo-cli/</guid>
+      <pubDate>Tue, 07 Apr 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Changes to packages.gitlab.com: What you need to know</title>
+      <link>https://about.gitlab.com/blog/changes-to-packages-gitlab-com-what-you-need-to-know/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/changes-to-packages-gitlab-com-what-you-need-to-know/</guid>
+      <pubDate>Tue, 31 Mar 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Getting started with GitLab feature flags in Python</title>
+      <link>https://about.gitlab.com/blog/getting-started-with-gitlab-feature-flags-in-python/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/getting-started-with-gitlab-feature-flags-in-python/</guid>
+      <pubDate>Thu, 26 Mar 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Manage vulnerability noise at scale with auto-dismiss policies</title>
+      <link>https://about.gitlab.com/blog/auto-dismiss-vulnerability-management-policy/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/auto-dismiss-vulnerability-management-policy/</guid>
+      <pubDate>Wed, 25 Mar 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Agile planning gets a boost from new features in GitLab 18.10</title>
+      <link>https://about.gitlab.com/blog/agile-planning-gets-a-boost-from-new-features-in-gitlab-18-10/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/agile-planning-gets-a-boost-from-new-features-in-gitlab-18-10/</guid>
+      <pubDate>Mon, 23 Mar 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>GitLab 18.10 brings AI-native triage and remediation</title>
+      <link>https://about.gitlab.com/blog/gitlab-18-10-brings-ai-native-triage-and-remediation/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/gitlab-18-10-brings-ai-native-triage-and-remediation/</guid>
+      <pubDate>Thu, 19 Mar 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>GitLab 18.10: Agentic AI now open to even more teams on GitLab</title>
+      <link>https://about.gitlab.com/blog/gitlab-18-10-agentic-ai-now-open-to-even-more-teams-on-gitlab/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/gitlab-18-10-agentic-ai-now-open-to-even-more-teams-on-gitlab/</guid>
+      <pubDate>Thu, 19 Mar 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Agentic code reviews for $0.25 each</title>
+      <link>https://about.gitlab.com/blog/agentic-code-reviews-with-flat-rate-pricing/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/agentic-code-reviews-with-flat-rate-pricing/</guid>
+      <pubDate>Thu, 19 Mar 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>How to use GitLab Container Virtual Registry with Docker Hardened Images</title>
+      <link>https://about.gitlab.com/blog/using-gitlab-container-virtual-registry-with-docker-hardened-images/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/using-gitlab-container-virtual-registry-with-docker-hardened-images/</guid>
+      <pubDate>Thu, 12 Mar 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Automating detection gap analysis with GitLab Duo Agent Platform</title>
+      <link>https://about.gitlab.com/blog/automating-detection-gap-analysis-with-gitlab-duo-agent-platform/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/automating-detection-gap-analysis-with-gitlab-duo-agent-platform/</guid>
+      <pubDate>Tue, 10 Mar 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Navigate repositories faster with the file tree browser</title>
+      <link>https://about.gitlab.com/blog/navigate-repositories-faster-with-the-file-tree-browser/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/navigate-repositories-faster-with-the-file-tree-browser/</guid>
+      <pubDate>Mon, 09 Mar 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Extend GitLab Duo Agent Platform: Connect any tool with MCP</title>
+      <link>https://about.gitlab.com/blog/extend-gitlab-duo-agent-platform-connect-any-tool-with-mcp/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/extend-gitlab-duo-agent-platform-connect-any-tool-with-mcp/</guid>
+      <pubDate>Thu, 05 Mar 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>A complete guide to GitLab Container Scanning</title>
+      <link>https://about.gitlab.com/blog/complete-guide-to-gitlab-container-scanning/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/complete-guide-to-gitlab-container-scanning/</guid>
+      <pubDate>Thu, 05 Mar 2026 00:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>How GitLab built a security control framework from scratch</title>
+      <link>https://about.gitlab.com/blog/how-gitlab-built-a-security-control-framework-from-scratch/</link>
+      <guid isPermaLink="true">https://about.gitlab.com/blog/how-gitlab-built-a-security-control-framework-from-scratch/</guid>
+      <pubDate>Wed, 04 Mar 2026 00:00:00 +0000</pubDate>
+    </item>
+  </channel>
+</rss>

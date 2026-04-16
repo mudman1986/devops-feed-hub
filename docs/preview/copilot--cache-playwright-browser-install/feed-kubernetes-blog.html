@@ -1,0 +1,657 @@
+<!doctype html>
+<!-- @generated - This file is auto-generated. Do not edit manually. -->
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="DevOps Feed Hub - Centralized RSS feed aggregator for DevOps and tech news"
+    />
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>Kubernetes Blog - DevOps Feed Hub</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="favicon-192x192.png"
+    />
+    <link rel="apple-touch-icon" sizes="192x192" href="favicon-192x192.png" />
+    <link rel="stylesheet" href="styles.css?v=April 16, 2026 at 12:01 PM UTC" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="DevOps Feed Hub - All Articles"
+      href="feed.xml"
+    />
+  </head>
+  <body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+
+    <div class="header">
+      <h1 class="header-title">
+        <svg
+          width="40"
+          height="40"
+          viewBox="0 0 100 100"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <linearGradient
+              id="header-grad"
+              x1="0%"
+              y1="0%"
+              x2="100%"
+              y2="100%"
+            >
+              <stop offset="0%" style="stop-color: #667eea; stop-opacity: 1" />
+              <stop
+                offset="100%"
+                style="stop-color: #764ba2; stop-opacity: 1"
+              />
+            </linearGradient>
+          </defs>
+          <g fill="url(#header-grad)">
+            <circle cx="50" cy="50" r="18" fill="url(#header-grad)" />
+            <path d="M 50,10 L 45,22 L 55,22 Z" />
+            <path d="M 78,28 L 71,34 L 77,40 Z" />
+            <path d="M 90,50 L 78,45 L 78,55 Z" />
+            <path d="M 78,72 L 77,60 L 71,66 Z" />
+            <path d="M 50,90 L 55,78 L 45,78 Z" />
+            <path d="M 22,72 L 29,66 L 23,60 Z" />
+            <path d="M 10,50 L 22,55 L 22,45 Z" />
+            <path d="M 22,28 L 23,40 L 29,34 Z" />
+          </g>
+          <circle cx="50" cy="50" r="8" fill="#ffffff" />
+        </svg>
+        DevOps Feed Hub
+      </h1>
+      <div class="header-controls">
+        <div class="timeframe-selector">
+          <select
+            class="timeframe-select"
+            id="timeframe-select"
+            aria-label="Select time range"
+          >
+            <option value="1day">Last 24 hours</option>
+            <option value="3days">Last 3 days</option>
+            <option value="7days">Last 7 days</option>
+            <option value="30days">Last 30 days</option>
+            <option value="1year">Last year</option>
+          </select>
+        </div>
+        <button
+          class="reset-read-button"
+          id="reset-read-button"
+          aria-label="Clear all read articles"
+        >
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polyline points="23 4 23 10 17 10"></polyline>
+            <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+          </svg>
+          <span>Clear All Read</span>
+        </button>
+        <button
+          class="theme-toggle"
+          id="theme-toggle"
+          aria-label="Toggle theme"
+        >
+          <svg
+            id="theme-icon"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+
+        <button
+          class="settings-button"
+          id="settings-button"
+          aria-label="Settings"
+          onclick="window.location.href = 'settings.html'"
+        >
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+            <path
+              d="M8 0a8.2 8.2 0 0 1 .701.031C9.444.095 9.99.645 10.16 1.29l.288 1.107c.018.066.079.158.212.224.231.114.454.243.668.386.123.082.233.09.299.071l1.103-.303c.644-.176 1.392.021 1.82.63.27.385.506.792.704 1.218.315.675.111 1.422-.364 1.891l-.814.806c-.049.048-.098.147-.088.294.016.257.016.515 0 .772-.01.147.038.246.088.294l.814.806c.475.469.679 1.216.364 1.891a7.977 7.977 0 0 1-.704 1.217c-.428.61-1.176.807-1.82.63l-1.102-.302c-.067-.019-.177-.011-.3.071a5.909 5.909 0 0 1-.668.386c-.133.066-.194.158-.211.224l-.29 1.106c-.168.646-.715 1.196-1.458 1.26a8.006 8.006 0 0 1-1.402 0c-.743-.064-1.289-.614-1.458-1.26l-.289-1.106c-.018-.066-.079-.158-.212-.224a5.738 5.738 0 0 1-.668-.386c-.123-.082-.233-.09-.299-.071l-1.103.303c-.644.176-1.392-.021-1.82-.63a8.12 8.12 0 0 1-.704-1.218c-.315-.675-.111-1.422.363-1.891l.815-.806c.05-.048.098-.147.088-.294a6.214 6.214 0 0 1 0-.772c.01-.147-.038-.246-.088-.294l-.815-.806C.635 6.045.431 5.298.746 4.623a7.92 7.92 0 0 1 .704-1.217c.428-.61 1.176-.807 1.82-.63l1.102.302c.067.019.177.011.3-.071.214-.143.437-.272.668-.386.133-.066.194-.158.211-.224l.29-1.106C6.009.645 6.556.095 7.299.03 7.53.01 7.764 0 8 0Zm-.571 1.525c-.036.003-.108.036-.137.146l-.289 1.105c-.147.561-.549.967-.998 1.189-.173.086-.34.183-.5.29-.417.278-.97.423-1.529.27l-1.103-.303c-.109-.03-.175.016-.195.045-.22.312-.412.644-.573.99-.014.031-.021.11.059.19l.815.806c.411.406.562.957.53 1.456a4.709 4.709 0 0 0 0 .582c.032.499-.119 1.05-.53 1.456l-.815.806c-.081.08-.073.159-.059.19.162.346.353.677.573.989.02.03.085.076.195.046l1.102-.303c.56-.153 1.113-.008 1.53.27.161.107.328.204.501.29.447.222.85.629.997 1.189l.289 1.105c.029.109.101.143.137.146a6.6 6.6 0 0 0 1.142 0c.036-.003.108-.036.137-.146l.289-1.105c.147-.561.549-.967.998-1.189.173-.086.34-.183.5-.29.417-.278.97-.423 1.529-.27l1.103.303c.109.029.175-.016.195-.045.22-.313.411-.644.573-.99.014-.031.021-.11-.059-.19l-.815-.806c-.411-.406-.562-.957-.53-1.456a4.709 4.709 0 0 0 0-.582c-.032-.499.119-1.05.53-1.456l.815-.806c.081-.08.073-.159.059-.19a6.464 6.464 0 0 0-.573-.989c-.02-.03-.085-.076-.195-.046l-1.102.303c-.56.153-1.113.008-1.53-.27a4.44 4.44 0 0 0-.501-.29c-.447-.222-.85-.629-.997-1.189l-.289-1.105c-.029-.11-.101-.143-.137-.146a6.6 6.6 0 0 0-1.142 0ZM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM9.5 8a1.5 1.5 0 1 0-3.001.001A1.5 1.5 0 0 0 9.5 8Z"
+            ></path>
+          </svg>
+        </button>
+        <button
+          class="nav-toggle"
+          id="nav-toggle"
+          aria-label="Toggle navigation"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="container">
+      <div class="main-content" id="main-content" role="main">
+        
+        <div class="feed-section">
+            <h2><a href="https://kubernetes.io/blog/" class="feed-title-link" target="_blank" rel="noopener noreferrer">Kubernetes Blog</a>
+                <span class="feed-count">
+                    50 articles
+                </span>
+            </h2>
+
+            <ul class="article-list">
+
+                <li class="article-item" data-published="2026-03-30T00:00:00+00:00">
+                    <a href="https://kubernetes.io/blog/2026/03/30/kubernetes-v1-36-sneak-peek/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Kubernetes v1.36 Sneak Peek
+                    </a>
+                    <div class="article-meta">Mar 30, 2026 at 12:00 AM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-20T19:00:00+00:00">
+                    <a href="https://kubernetes.io/blog/2026/03/20/ingress2gateway-1-0-release/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Announcing Ingress2Gateway 1.0: Your Path to Gateway API
+                    </a>
+                    <div class="article-meta">Mar 20, 2026 at 07:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-20T18:00:00+00:00">
+                    <a href="https://kubernetes.io/blog/2026/03/20/running-agents-on-kubernetes-with-agent-sandbox/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Running Agents on Kubernetes with Agent Sandbox
+                    </a>
+                    <div class="article-meta">Mar 20, 2026 at 06:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-18T18:00:00+00:00">
+                    <a href="https://kubernetes.io/blog/2026/03/18/securing-production-debugging-in-kubernetes/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Securing Production Debugging in Kubernetes
+                    </a>
+                    <div class="article-meta">Mar 18, 2026 at 06:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-17T00:00:00+00:00">
+                    <a href="https://kubernetes.io/blog/2026/03/17/image-promoter-rewrite/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        The Invisible Rewrite: Modernizing the Kubernetes Image Promoter
+                    </a>
+                    <div class="article-meta">Mar 17, 2026 at 12:00 AM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-09T18:00:00+00:00">
+                    <a href="https://kubernetes.io/blog/2026/03/09/announcing-ai-gateway-wg/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Announcing the AI Gateway Working Group
+                    </a>
+                    <div class="article-meta">Mar 09, 2026 at 06:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-02-27T15:30:00+00:00">
+                    <a href="https://kubernetes.io/blog/2026/02/27/ingress-nginx-before-you-migrate/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Before You Migrate: Five Surprising Ingress-NGINX Behaviors You Need to Know
+                    </a>
+                    <div class="article-meta">Feb 27, 2026 at 03:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-02-12T00:00:00+00:00">
+                    <a href="https://kubernetes.io/blog/2026/02/12/sig-architecture-api-spotlight/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Spotlight on SIG Architecture: API Governance
+                    </a>
+                    <div class="article-meta">Feb 12, 2026 at 12:00 AM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-02-03T02:00:00+00:00">
+                    <a href="https://kubernetes.io/blog/2026/02/03/introducing-node-readiness-controller/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Introducing Node Readiness Controller
+                    </a>
+                    <div class="article-meta">Feb 03, 2026 at 02:00 AM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-01-30T16:00:00+00:00">
+                    <a href="https://kubernetes.io/blog/2026/01/30/new-cgroup-v1-to-v2-cpu-conversion-formula/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        New Conversion from cgroup v1 CPU Shares to v2 CPU Weight
+                    </a>
+                    <div class="article-meta">Jan 30, 2026 at 04:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-01-29T00:00:00+00:00">
+                    <a href="https://kubernetes.io/blog/2026/01/29/ingress-nginx-statement/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Ingress NGINX: Statement from the Kubernetes Steering and Security Response Committees
+                    </a>
+                    <div class="article-meta">Jan 29, 2026 at 12:00 AM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-01-28T00:00:00+00:00">
+                    <a href="https://kubernetes.io/blog/2026/01/28/experimenting-gateway-api-with-kind/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Experimenting with Gateway API using kind
+                    </a>
+                    <div class="article-meta">Jan 28, 2026 at 12:00 AM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-01-27T16:00:00+00:00">
+                    <a href="https://kubernetes.io/blog/2026/01/27/cluster-api-v1-12-release/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Cluster API v1.12: Introducing In-place Updates and Chained Upgrades
+                    </a>
+                    <div class="article-meta">Jan 27, 2026 at 04:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-01-22T02:00:00+00:00">
+                    <a href="https://kubernetes.io/blog/2026/01/22/headlamp-in-2025-project-highlights/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Headlamp in 2025: Project Highlights
+                    </a>
+                    <div class="article-meta">Jan 22, 2026 at 02:00 AM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-01-21T18:00:00+00:00">
+                    <a href="https://kubernetes.io/blog/2026/01/21/introducing-checkpoint-restore-wg/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Announcing the Checkpoint/Restore Working Group
+                    </a>
+                    <div class="article-meta">Jan 21, 2026 at 06:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-01-19T18:00:00+00:00">
+                    <a href="https://kubernetes.io/blog/2026/01/19/clientcmd-apiserver-access/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Uniform API server access using clientcmd
+                    </a>
+                    <div class="article-meta">Jan 19, 2026 at 06:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-01-09T18:30:00+00:00">
+                    <a href="https://kubernetes.io/blog/2026/01/09/kubernetes-v1-35-kuberc-credential-plugin-allowlist/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Kubernetes v1.35: Restricting executables invoked by kubeconfigs via exec plugin allowList added to kuberc
+                    </a>
+                    <div class="article-meta">Jan 09, 2026 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-01-08T18:30:00+00:00">
+                    <a href="https://kubernetes.io/blog/2026/01/08/kubernetes-v1-35-mutable-pv-nodeaffinity/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Kubernetes v1.35: Mutable PersistentVolume Node Affinity (alpha)
+                    </a>
+                    <div class="article-meta">Jan 08, 2026 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-01-07T18:30:00+00:00">
+                    <a href="https://kubernetes.io/blog/2026/01/07/kubernetes-v1-35-csi-sa-tokens-secrets-field-beta/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Kubernetes v1.35: A Better Way to Pass Service Account Tokens to CSI Drivers
+                    </a>
+                    <div class="article-meta">Jan 07, 2026 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-01-05T18:30:00+00:00">
+                    <a href="https://kubernetes.io/blog/2026/01/05/kubernetes-v1-35-numeric-toleration-operators/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Kubernetes v1.35: Extended Toleration Operators to Support Numeric Comparisons (Alpha)
+                    </a>
+                    <div class="article-meta">Jan 05, 2026 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-01-02T18:30:00+00:00">
+                    <a href="https://kubernetes.io/blog/2026/01/02/kubernetes-v1-35-restart-all-containers/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Kubernetes v1.35: New level of efficiency with in-place Pod restart
+                    </a>
+                    <div class="article-meta">Jan 02, 2026 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-31T18:30:00+00:00">
+                    <a href="https://kubernetes.io/blog/2025/12/31/kubernetes-v1-35-structured-zpages/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Kubernetes 1.35: Enhanced Debugging with Versioned z-pages APIs
+                    </a>
+                    <div class="article-meta">Dec 31, 2025 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-30T18:30:00+00:00">
+                    <a href="https://kubernetes.io/blog/2025/12/30/kubernetes-v1-35-watch-based-route-reconciliation-in-ccm/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Kubernetes v1.35: Watch Based Route Reconciliation in the Cloud Controller Manager
+                    </a>
+                    <div class="article-meta">Dec 30, 2025 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-29T18:30:00+00:00">
+                    <a href="https://kubernetes.io/blog/2025/12/29/kubernetes-v1-35-introducing-workload-aware-scheduling/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Kubernetes v1.35: Introducing Workload Aware Scheduling
+                    </a>
+                    <div class="article-meta">Dec 29, 2025 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-23T18:30:00+00:00">
+                    <a href="https://kubernetes.io/blog/2025/12/23/kubernetes-v1-35-fine-grained-supplementalgroups-control-ga/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Kubernetes v1.35: Fine-grained Supplemental Groups Control Graduates to GA
+                    </a>
+                    <div class="article-meta">Dec 23, 2025 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-22T18:30:00+00:00">
+                    <a href="https://kubernetes.io/blog/2025/12/22/kubernetes-v1-35-kubelet-config-drop-in-directory-ga/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Kubernetes v1.35: Kubelet Configuration Drop-in Directory Graduates to GA
+                    </a>
+                    <div class="article-meta">Dec 22, 2025 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-21T00:00:00+00:00">
+                    <a href="https://kubernetes.io/blog/2025/12/21/preventing-etcd-zombies/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Avoiding Zombie Cluster Members When Upgrading to etcd v3.6
+                    </a>
+                    <div class="article-meta">Dec 21, 2025 at 12:00 AM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-19T18:30:00+00:00">
+                    <a href="https://kubernetes.io/blog/2025/12/19/kubernetes-v1-35-in-place-pod-resize-ga/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Kubernetes 1.35: In-Place Pod Resize Graduates to Stable
+                    </a>
+                    <div class="article-meta">Dec 19, 2025 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-18T18:30:00+00:00">
+                    <a href="https://kubernetes.io/blog/2025/12/18/kubernetes-v1-35-job-managedby-for-jobs-goes-ga/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Kubernetes v1.35: Job Managed By Goes GA
+                    </a>
+                    <div class="article-meta">Dec 18, 2025 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-17T18:30:00+00:00">
+                    <a href="https://kubernetes.io/blog/2025/12/17/kubernetes-v1-35-release/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Kubernetes v1.35: Timbernetes (The World Tree Release)
+                    </a>
+                    <div class="article-meta">Dec 17, 2025 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-11-26T00:00:00+00:00">
+                    <a href="https://kubernetes.io/blog/2025/11/26/kubernetes-v1-35-sneak-peek/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Kubernetes v1.35 Sneak Peek
+                    </a>
+                    <div class="article-meta">Nov 26, 2025 at 12:00 AM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-11-25T00:00:00+00:00">
+                    <a href="https://kubernetes.io/blog/2025/11/25/configuration-good-practices/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Kubernetes Configuration Good Practices
+                    </a>
+                    <div class="article-meta">Nov 25, 2025 at 12:00 AM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-11-11T18:30:00+00:00">
+                    <a href="https://kubernetes.io/blog/2025/11/11/ingress-nginx-retirement/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Ingress NGINX Retirement: What You Need to Know
+                    </a>
+                    <div class="article-meta">Nov 11, 2025 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-11-09T20:10:00+00:00">
+                    <a href="https://kubernetes.io/blog/2025/11/09/steering-committee-results-2025/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Announcing the 2025 Steering Committee Election Results
+                    </a>
+                    <div class="article-meta">Nov 09, 2025 at 08:10 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-11-06T17:00:00+00:00">
+                    <a href="https://kubernetes.io/blog/2025/11/06/gateway-api-v1-4/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Gateway API 1.4: New Features
+                    </a>
+                    <div class="article-meta">Nov 06, 2025 at 05:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-10-20T15:30:00+00:00">
+                    <a href="https://kubernetes.io/blog/2025/10/20/seven-kubernetes-pitfalls-and-how-to-avoid/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        7 Common Kubernetes Pitfalls (and How I Learned to Avoid Them)
+                    </a>
+                    <div class="article-meta">Oct 20, 2025 at 03:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-10-18T00:00:00+00:00">
+                    <a href="https://kubernetes.io/blog/2025/10/18/wg-policy-spotlight-2025/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Spotlight on Policy Working Group
+                    </a>
+                    <div class="article-meta">Oct 18, 2025 at 12:00 AM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-10-06T00:00:00+00:00">
+                    <a href="https://kubernetes.io/blog/2025/10/06/introducing-headlamp-plugin-for-karpenter/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Introducing Headlamp Plugin for Karpenter - Scaling and Visibility
+                    </a>
+                    <div class="article-meta">Oct 06, 2025 at 12:00 AM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-09-25T13:00:00+00:00">
+                    <a href="https://kubernetes.io/blog/2025/09/25/csi-changed-block-tracking/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Announcing Changed Block Tracking API support (alpha)
+                    </a>
+                    <div class="article-meta">Sep 25, 2025 at 01:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-09-22T18:30:00+00:00">
+                    <a href="https://kubernetes.io/blog/2025/09/22/kubernetes-v1-34-pod-level-resources/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Kubernetes v1.34: Pod Level Resources Graduated to Beta
+                    </a>
+                    <div class="article-meta">Sep 22, 2025 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-09-19T18:30:00+00:00">
+                    <a href="https://kubernetes.io/blog/2025/09/19/kubernetes-v1-34-recover-expansion-failure/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Kubernetes v1.34: Recovery From Volume Expansion Failure (GA)
+                    </a>
+                    <div class="article-meta">Sep 19, 2025 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-09-18T18:30:00+00:00">
+                    <a href="https://kubernetes.io/blog/2025/09/18/kubernetes-v1-34-dra-consumable-capacity/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Kubernetes v1.34: DRA Consumable Capacity
+                    </a>
+                    <div class="article-meta">Sep 18, 2025 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-09-17T18:30:00+00:00">
+                    <a href="https://kubernetes.io/blog/2025/09/17/kubernetes-v1-34-pods-report-dra-resource-health/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Kubernetes v1.34: Pods Report DRA Resource Health
+                    </a>
+                    <div class="article-meta">Sep 17, 2025 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-09-16T18:30:00+00:00">
+                    <a href="https://kubernetes.io/blog/2025/09/16/kubernetes-v1-34-volume-group-snapshot-beta-2/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Kubernetes v1.34: Moving Volume Group Snapshots to v1beta2
+                    </a>
+                    <div class="article-meta">Sep 16, 2025 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-09-15T18:30:00+00:00">
+                    <a href="https://kubernetes.io/blog/2025/09/15/kubernetes-v1-34-decoupled-taint-manager-is-now-stable/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Kubernetes v1.34: Decoupled Taint Manager Is Now Stable
+                    </a>
+                    <div class="article-meta">Sep 15, 2025 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-09-12T18:30:00+00:00">
+                    <a href="https://kubernetes.io/blog/2025/09/12/kubernetes-v1-34-cri-cgroup-driver-lookup-now-ga/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Kubernetes v1.34: Autoconfiguration for Node Cgroup Driver Goes GA
+                    </a>
+                    <div class="article-meta">Sep 12, 2025 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-09-11T18:30:00+00:00">
+                    <a href="https://kubernetes.io/blog/2025/09/11/kubernetes-v1-34-mutable-csi-node-allocatable-count/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Kubernetes v1.34: Mutable CSI Node Allocatable Graduates to Beta
+                    </a>
+                    <div class="article-meta">Sep 11, 2025 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-09-10T18:30:00+00:00">
+                    <a href="https://kubernetes.io/blog/2025/09/10/kubernetes-v1-34-env-files/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Kubernetes v1.34: Use An Init Container To Define App Environment Variables
+                    </a>
+                    <div class="article-meta">Sep 10, 2025 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-09-09T18:30:00+00:00">
+                    <a href="https://kubernetes.io/blog/2025/09/09/kubernetes-v1-34-snapshottable-api-server-cache/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Kubernetes v1.34: Snapshottable API server cache
+                    </a>
+                    <div class="article-meta">Sep 09, 2025 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-09-08T18:30:00+00:00">
+                    <a href="https://kubernetes.io/blog/2025/09/08/kubernetes-v1-34-volume-attributes-class/" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Kubernetes v1.34: VolumeAttributesClass for Volume Modification GA
+                    </a>
+                    <div class="article-meta">Sep 08, 2025 at 06:30 PM</div>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="footer">
+          Generated by RSS Feed Collector | Last updated:
+          April 16, 2026 at 12:01 PM UTC
+        </div>
+      </div>
+      <aside
+        class="sidebar"
+        id="sidebar"
+        role="complementary"
+        aria-label="Feed filters and navigation"
+      >
+        <div class="sidebar-content">
+          <div class="sidebar-header">Navigation</div>
+          <nav class="feed-nav" aria-label="Feed navigation">
+  <script type="application/json" id="feed-list-data">[&quot;AWS DevOps Blog&quot;, &quot;Atlassian DevOps&quot;, &quot;Azure Updates&quot;, &quot;CircleCI Blog&quot;, &quot;Docker Blog&quot;, &quot;GitHub Blog&quot;, &quot;GitHub Changelog&quot;, &quot;GitLab Blog&quot;, &quot;HashiCorp Blog&quot;, &quot;Jenkins Blog&quot;, &quot;Kubernetes Blog&quot;, &quot;Microsoft DevOps Blog&quot;, &quot;Microsoft Entra Blog&quot;, &quot;Microsoft Security&quot;, &quot;Opensource.com&quot;, &quot;Terraform weekly&quot;]</script>
+  <a href="index.html" class="nav-link">All Feeds</a>
+  <a href="feed-aws-devops-blog.html" class="nav-link">AWS DevOps Blog</a>
+  <a href="feed-atlassian-devops.html" class="nav-link">Atlassian DevOps</a>
+  <a href="feed-azure-updates.html" class="nav-link">Azure Updates</a>
+  <a href="feed-circleci-blog.html" class="nav-link">CircleCI Blog</a>
+  <a href="feed-docker-blog.html" class="nav-link">Docker Blog</a>
+  <a href="feed-github-blog.html" class="nav-link">GitHub Blog</a>
+  <a href="feed-github-changelog.html" class="nav-link">GitHub Changelog</a>
+  <a href="feed-gitlab-blog.html" class="nav-link">GitLab Blog</a>
+  <a href="feed-hashicorp-blog.html" class="nav-link">HashiCorp Blog</a>
+  <a href="feed-jenkins-blog.html" class="nav-link">Jenkins Blog</a>
+  <a href="feed-kubernetes-blog.html" class="nav-link active">Kubernetes Blog</a>
+  <a href="feed-microsoft-devops-blog.html" class="nav-link">Microsoft DevOps Blog</a>
+  <a href="feed-microsoft-entra-blog.html" class="nav-link">Microsoft Entra Blog</a>
+  <a href="feed-microsoft-security.html" class="nav-link">Microsoft Security</a>
+  <a href="feed-opensourcecom.html" class="nav-link">Opensource.com</a>
+  <a href="feed-terraform-weekly.html" class="nav-link">Terraform weekly</a>
+  <a href="summary.html" class="nav-link">Summary</a>
+</nav>
+
+        </div>
+        <div class="sidebar-footer">
+          <div class="view-selector">
+            <label for="view-select" class="view-label">View</label>
+            <select
+              class="view-select"
+              id="view-select"
+              aria-label="Select site view"
+            >
+              <option value="list">List</option>
+              <option value="card">Card</option>
+              <option value="horizontal-scroll">
+                Beta - Horizontal Scroll
+              </option>
+              <option value="masonry-grid">Beta - Masonry Grid</option>
+              <option value="floating-panels">Beta - Floating Panels</option>
+              <option value="center-stage">Beta - Center Stage</option>
+              <option value="top-strip">Beta - Top Strip</option>
+              <option value="list-dense">Beta - List Dense</option>
+              <option value="timeline-vertical">
+                Beta - Timeline Vertical
+              </option>
+            </select>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

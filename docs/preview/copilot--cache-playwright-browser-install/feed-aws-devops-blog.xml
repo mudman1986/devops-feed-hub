@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DevOps Feed Hub - AWS DevOps Blog</title>
+    <link>https://mudman1986.github.io/devops-feed-hub/preview/copilot--cache-playwright-browser-install/feed-aws-devops-blog.xml</link>
+    <description>Articles from AWS DevOps Blog</description>
+    <atom:link href="https://mudman1986.github.io/devops-feed-hub/preview/copilot--cache-playwright-browser-install/feed-aws-devops-blog.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Apr 2026 12:01:18 +0000</lastBuildDate>
+    <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Troubleshooting environment with AI analysis in AWS Elastic Beanstalk</title>
+      <link>https://aws.amazon.com/blogs/devops/troubleshooting-environment-with-ai-analysis-in-aws-elastic-beanstalk/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/troubleshooting-environment-with-ai-analysis-in-aws-elastic-beanstalk/</guid>
+      <pubDate>Mon, 13 Apr 2026 18:55:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Streamlining Cloud Compliance at GoDaddy Using CDK Aspects</title>
+      <link>https://aws.amazon.com/blogs/devops/streamlining-cloud-compliance-at-godaddy-using-cdk-aspects/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/streamlining-cloud-compliance-at-godaddy-using-cdk-aspects/</guid>
+      <pubDate>Fri, 03 Apr 2026 18:06:03 +0000</pubDate>
+    </item>
+    <item>
+      <title>Securely connect AWS DevOps Agent to private services in your VPCs</title>
+      <link>https://aws.amazon.com/blogs/devops/securely-connect-aws-devops-agent-to-private-services-in-your-vpcs/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/securely-connect-aws-devops-agent-to-private-services-in-your-vpcs/</guid>
+      <pubDate>Wed, 01 Apr 2026 15:37:03 +0000</pubDate>
+    </item>
+    <item>
+      <title>Leverage Agentic AI for Autonomous Incident Response with AWS DevOps Agent</title>
+      <link>https://aws.amazon.com/blogs/devops/leverage-agentic-ai-for-autonomous-incident-response-with-aws-devops-agent/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/leverage-agentic-ai-for-autonomous-incident-response-with-aws-devops-agent/</guid>
+      <pubDate>Tue, 31 Mar 2026 22:58:13 +0000</pubDate>
+    </item>
+    <item>
+      <title>Standardizing construct properties with AWS CDK Property Injection</title>
+      <link>https://aws.amazon.com/blogs/devops/standardizing-construct-properties-with-aws-cdk-property-injection/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/standardizing-construct-properties-with-aws-cdk-property-injection/</guid>
+      <pubDate>Thu, 05 Mar 2026 17:39:48 +0000</pubDate>
+    </item>
+    <item>
+      <title>Automate AWS Lambda Runtime Upgrades with AWS Transform custom</title>
+      <link>https://aws.amazon.com/blogs/devops/automate-aws-lambda-runtime-upgrades-with-aws-transform-custom/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/automate-aws-lambda-runtime-upgrades-with-aws-transform-custom/</guid>
+      <pubDate>Mon, 02 Mar 2026 11:54:36 +0000</pubDate>
+    </item>
+    <item>
+      <title>Choosing between Amazon ECS Blue/Green Native or AWS CodeDeploy in AWS CDK</title>
+      <link>https://aws.amazon.com/blogs/devops/choosing-between-amazon-ecs-blue-green-native-or-aws-codedeploy-in-aws-cdk/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/choosing-between-amazon-ecs-blue-green-native-or-aws-codedeploy-in-aws-cdk/</guid>
+      <pubDate>Wed, 11 Feb 2026 18:59:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Building a scalable code modernization solution with AWS Transform custom</title>
+      <link>https://aws.amazon.com/blogs/devops/building-a-scalable-code-modernization-solution-with-aws-transform-custom/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/building-a-scalable-code-modernization-solution-with-aws-transform-custom/</guid>
+      <pubDate>Fri, 06 Feb 2026 22:53:29 +0000</pubDate>
+    </item>
+    <item>
+      <title>AWS Transform custom: AI-driven Java modernization to reduce tech debt</title>
+      <link>https://aws.amazon.com/blogs/devops/aws-transform-custom-ai-driven-java-modernization-to-reduce-tech-debt/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/aws-transform-custom-ai-driven-java-modernization-to-reduce-tech-debt/</guid>
+      <pubDate>Thu, 05 Feb 2026 03:00:42 +0000</pubDate>
+    </item>
+    <item>
+      <title>Best Practices for Deploying AWS DevOps Agent in Production</title>
+      <link>https://aws.amazon.com/blogs/devops/best-practices-for-deploying-aws-devops-agent-in-production/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/best-practices-for-deploying-aws-devops-agent-in-production/</guid>
+      <pubDate>Wed, 28 Jan 2026 22:36:18 +0000</pubDate>
+    </item>
+    <item>
+      <title>AWS CloudFormation 2025 Year In Review</title>
+      <link>https://aws.amazon.com/blogs/devops/aws-cloudformation-2025-year-in-review/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/aws-cloudformation-2025-year-in-review/</guid>
+      <pubDate>Wed, 28 Jan 2026 01:08:08 +0000</pubDate>
+    </item>
+    <item>
+      <title>From AI agent prototype to product: Lessons from building AWS DevOps Agent</title>
+      <link>https://aws.amazon.com/blogs/devops/from-ai-agent-prototype-to-product-lessons-from-building-aws-devops-agent/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/from-ai-agent-prototype-to-product-lessons-from-building-aws-devops-agent/</guid>
+      <pubDate>Thu, 15 Jan 2026 17:03:50 +0000</pubDate>
+    </item>
+    <item>
+      <title>Automating AWS SDK for Java v1 to v2 Upgrades with AWS Transform</title>
+      <link>https://aws.amazon.com/blogs/devops/automating-aws-sdk-for-java-v1-to-v2-upgrades-with-aws-transform/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/automating-aws-sdk-for-java-v1-to-v2-upgrades-with-aws-transform/</guid>
+      <pubDate>Thu, 08 Jan 2026 20:40:13 +0000</pubDate>
+    </item>
+    <item>
+      <title>How Kaltura Accelerates CI/CD Using AWS CodeBuild-hosted Runners</title>
+      <link>https://aws.amazon.com/blogs/devops/how-kaltura-accelerates-ci-cd-using-aws-codebuild-hosted-runners/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/how-kaltura-accelerates-ci-cd-using-aws-codebuild-hosted-runners/</guid>
+      <pubDate>Thu, 18 Dec 2025 14:54:45 +0000</pubDate>
+    </item>
+    <item>
+      <title>Resolve and prevent operational incidents with AWS DevOps Agent and New Relic</title>
+      <link>https://aws.amazon.com/blogs/devops/resolve-and-prevent-operational-incidents-with-aws-devops-agent-and-new-relic/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/resolve-and-prevent-operational-incidents-with-aws-devops-agent-and-new-relic/</guid>
+      <pubDate>Wed, 10 Dec 2025 22:03:04 +0000</pubDate>
+    </item>
+    <item>
+      <title>Accelerate autonomous incident resolutions using the Datadog MCP server and AWS DevOps agent (in preview)</title>
+      <link>https://aws.amazon.com/blogs/devops/accelerate-autonomous-incident-resolutions-using-the-datadog-mcp-server-and-aws-devops-agent-in-preview/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/accelerate-autonomous-incident-resolutions-using-the-datadog-mcp-server-and-aws-devops-agent-in-preview/</guid>
+      <pubDate>Thu, 04 Dec 2025 16:55:21 +0000</pubDate>
+    </item>
+    <item>
+      <title>Building with AI-DLC using Amazon Q Developer</title>
+      <link>https://aws.amazon.com/blogs/devops/building-with-ai-dlc-using-amazon-q-developer/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/building-with-ai-dlc-using-amazon-q-developer/</guid>
+      <pubDate>Sat, 29 Nov 2025 21:07:21 +0000</pubDate>
+    </item>
+    <item>
+      <title>Open-Sourcing Adaptive Workflows for AI-Driven Development Life Cycle (AI-DLC)</title>
+      <link>https://aws.amazon.com/blogs/devops/open-sourcing-adaptive-workflows-for-ai-driven-development-life-cycle-ai-dlc/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/open-sourcing-adaptive-workflows-for-ai-driven-development-life-cycle-ai-dlc/</guid>
+      <pubDate>Sat, 29 Nov 2025 20:54:04 +0000</pubDate>
+    </item>
+    <item>
+      <title>Introducing the AWS Infrastructure as Code MCP Server: AI-Powered CDK and CloudFormation Assistance</title>
+      <link>https://aws.amazon.com/blogs/devops/introducing-the-aws-infrastructure-as-code-mcp-server-ai-powered-cdk-and-cloudformation-assistance/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/introducing-the-aws-infrastructure-as-code-mcp-server-ai-powered-cdk-and-cloudformation-assistance/</guid>
+      <pubDate>Fri, 28 Nov 2025 22:52:07 +0000</pubDate>
+    </item>
+    <item>
+      <title>The Future of AWS CodeCommit</title>
+      <link>https://aws.amazon.com/blogs/devops/aws-codecommit-returns-to-general-availability/</link>
+      <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/aws-codecommit-returns-to-general-availability/</guid>
+      <pubDate>Mon, 24 Nov 2025 19:56:45 +0000</pubDate>
+    </item>
+  </channel>
+</rss>
