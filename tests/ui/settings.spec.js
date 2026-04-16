@@ -415,6 +415,45 @@ test.describe("Feed Filtering Integration Tests", () => {
 });
 
 test.describe("Preview Sites Settings", () => {
+  test("should render active preview branches from the manifest", async ({
+    page,
+  }) => {
+    await page.route("**/preview/manifest.json", async (route) => {
+      await route.fulfill({
+        contentType: "application/json",
+        body: JSON.stringify({
+          previews: [
+            {
+              branch: "feature/latest-preview",
+              slug: "feature--latest-preview",
+              url: "https://example.com/preview/feature--latest-preview/",
+              updated_at: "2026-01-11T09:15:00Z",
+            },
+            {
+              branch: "feature/older-preview",
+              slug: "feature--older-preview",
+              url: "https://example.com/preview/feature--older-preview/",
+              updated_at: "2026-01-10T08:00:00Z",
+            },
+          ],
+        }),
+      });
+    });
+
+    await page.goto("/settings.html");
+    await page.locator('.settings-menu-item:has-text("Preview Sites")').click();
+
+    const items = page.locator("#preview-sites-list .settings-item");
+    await expect(items).toHaveCount(2);
+    await expect(items.nth(0)).toContainText("feature/latest-preview");
+    await expect(items.nth(0)).toContainText("Last updated:");
+    await expect(items.nth(1)).toContainText("feature/older-preview");
+    await expect(items.nth(0).locator("a.settings-button")).toHaveAttribute(
+      "href",
+      "https://example.com/preview/feature--latest-preview/",
+    );
+  });
+
   test("should have Preview Sites menu item in sidebar", async ({ page }) => {
     await page.goto("/settings.html");
     await expect(

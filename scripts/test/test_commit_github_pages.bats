@@ -238,3 +238,40 @@ teardown() {
 	[ "$status" -eq 0 ]
 	[ "$output" = "preview content" ]
 }
+
+@test "production publish removes preview directories missing from the manifest" {
+	cd "$TEST_DIR" || exit 1
+
+	mkdir -p docs/preview/active-branch docs/preview/stale-branch
+	echo "production v1" >docs/index.html
+	echo "active preview" >docs/preview/active-branch/index.html
+	echo "stale preview" >docs/preview/stale-branch/index.html
+	cat <<'EOF' >docs/preview/manifest.json
+{
+  "previews": [
+    {
+      "branch": "feature/active-branch",
+      "slug": "active-branch",
+      "url": "https://example.com/preview/active-branch/",
+      "updated_at": "2026-01-01T00:00:00Z"
+    }
+  ]
+}
+EOF
+	git add docs/
+	git commit -m "Add production and preview docs"
+	git push origin main
+
+	echo "production v2" >docs/index.html
+
+	run bash commit-github-pages.sh "docs" "github-pages" "docs"
+
+	[ "$status" -eq 0 ]
+
+	run git show github-pages:docs/preview/active-branch/index.html
+	[ "$status" -eq 0 ]
+	[ "$output" = "active preview" ]
+
+	run git cat-file -e github-pages:docs/preview/stale-branch/index.html
+	[ "$status" -ne 0 ]
+}
