@@ -10,7 +10,18 @@ import sys
 import tempfile
 from xml.etree import ElementTree as ET
 
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", "..", "scripts", "workflows", "rss-processing"))
+sys.path.insert(
+    0,
+    os.path.join(
+        os.path.dirname(__file__),
+        "..",
+        "..",
+        "..",
+        "scripts",
+        "workflows",
+        "rss-processing",
+    ),
+)
 
 from generate_rss import (  # noqa: E402 # pylint: disable=wrong-import-position
     create_rss_feed,

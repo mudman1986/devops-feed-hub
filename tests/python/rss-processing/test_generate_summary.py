@@ -12,7 +12,18 @@ import tempfile
 import unittest
 
 # Add parent directory to path for imports
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", "..", "scripts", "workflows", "rss-processing"))
+sys.path.insert(
+    0,
+    os.path.join(
+        os.path.dirname(__file__),
+        "..",
+        "..",
+        "..",
+        "scripts",
+        "workflows",
+        "rss-processing",
+    ),
+)
 
 # pylint: disable=wrong-import-position
 # flake8: noqa: E402
@@ -324,16 +335,14 @@ class TestGenerateSummary(unittest.TestCase):
             mode="w", delete=False, suffix=".html", encoding="utf-8"
         ) as f:
             custom_template = f.name
-            f.write(
-                """<!doctype html>
+            f.write("""<!doctype html>
 <html>
 <head><title>Custom Template</title></head>
 <body>
 <!-- CONTENT_PLACEHOLDER -->
 <footer>Updated: <!-- TIMESTAMP_PLACEHOLDER --></footer>
 </body>
-</html>"""
-            )
+</html>""")
 
         try:
             result = generate_html_page(self.sample_data, custom_template)
@@ -364,16 +373,14 @@ class TestGenerateSummary(unittest.TestCase):
             mode="w", delete=False, suffix=".html", encoding="utf-8"
         ) as f:
             utf8_template = f.name
-            f.write(
-                """<!doctype html>
+            f.write("""<!doctype html>
 <html>
 <head><title>Test 🌙☀️</title></head>
 <body>
 <!-- CONTENT_PLACEHOLDER -->
 <footer><!-- TIMESTAMP_PLACEHOLDER --></footer>
 </body>
-</html>"""
-            )
+</html>""")
 
         try:
             result = generate_html_page(self.sample_data, utf8_template)
