@@ -42,7 +42,7 @@ The `generate-test-data.sh` script:
 
 1. Uses test data from `tests/fixtures/ui-test-data.json`
 2. Generates HTML files: `index.html`, `summary.html`, `feed-*.html`
-3. Places them in `docs/` directory for Playwright to access
+3. Places them in `site/` directory for Playwright to access
 
 ### Running Tests
 
@@ -141,7 +141,7 @@ UI tests depend on generated HTML containing:
 ## Key Files
 
 - **Test fixtures**: `tests/fixtures/ui-test-data.json`
-- **Setup script**: `.github/scripts/generate-test-data.sh`
+- **Setup script**: `scripts/generate-test-data.sh`
 - **Test files**: `tests/ui/*.spec.js`
 - **Config**: `playwright.config.js`
 

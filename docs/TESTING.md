@@ -30,7 +30,7 @@ Tests: RSS parsing, HTML generation, RSS feed generation, feed ordering, configu
 
 ### ⚠️ Important: UI Test Prerequisites
 
-**Playwright UI tests require generated HTML files to run.** The tests navigate to pages like `index.html`, `settings.html`, and `feed-*.html` which must exist in the `docs/` directory.
+**Playwright UI tests require generated HTML files to run.** The tests navigate to pages like `index.html`, `settings.html`, and `feed-*.html` which must exist in the `site/` directory.
 
 ### Quick Setup (Recommended)
 
@@ -54,10 +54,10 @@ If you need to generate test data manually:
 # Generate HTML pages from existing test fixtures
 python3 scripts/workflows/rss-processing/generate_summary.py \
   --input tests/fixtures/ui-test-data.json \
-  --output-dir docs
+  --output-dir site
 
 # Verify files were created
-ls docs/*.html
+ls site/*.html
 
 # Run UI tests
 npm run test:ui
@@ -132,10 +132,10 @@ bash scripts/generate-test-data.sh
 ```
 
 **Problem**: Tests timeout waiting for elements  
-**Solution**: Ensure `docs/index.html` exists and contains valid HTML:
+**Solution**: Ensure `site/index.html` exists and contains valid HTML:
 
 ```bash
-ls -la docs/index.html
+ls -la site/index.html
 ```
 
 **Problem**: "`http://localhost:8080` is already used"  

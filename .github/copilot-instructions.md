@@ -247,7 +247,7 @@ Before completing any task and presenting work as finished, verify **IN THIS ORD
 - `.github/workflows/` - GitHub Actions workflows
 - `scripts/workflows/` - Scripts used by workflows
 - `scripts/` - Test utilities and helpers
-- `docs/` - GitHub Pages content (HTML, CSS, JavaScript)
+- `site/` - GitHub Pages content (HTML, CSS, JavaScript)
 - `tests/` - Playwright UI tests
 - `.github/agents/` - Custom agent instructions (read-only)
 

@@ -68,7 +68,7 @@ def update_manifest(
 
 def main() -> None:
     """Entry point: reads configuration from environment variables."""
-    manifest_path = os.path.join("docs", "preview", "manifest.json")
+    manifest_path = os.path.join("site", "preview", "manifest.json")
     source_branch = os.environ["SOURCE_BRANCH"]
     preview_slug = os.environ.get("PREVIEW_SLUG", "")
     base_url = os.environ["BASE_URL"]

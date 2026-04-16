@@ -60,7 +60,7 @@ jobs:
             TARGET_BRANCH="$TARGET_BRANCH_INPUT"
           fi
 
-          DEPLOY_DIR="docs"
+          DEPLOY_DIR="site"
           BASE_URL="https://${{ github.repository_owner }}.github.io/$REPOSITORY_NAME"
           SITE_LABEL="Production"
 
@@ -69,7 +69,7 @@ jobs:
             if [ -z "$PREVIEW_SLUG" ]; then
               PREVIEW_SLUG="preview"
             fi
-            DEPLOY_DIR="docs/preview/$PREVIEW_SLUG"
+            DEPLOY_DIR="site/preview/$PREVIEW_SLUG"
             BASE_URL="$BASE_URL/preview/$PREVIEW_SLUG"
             SITE_LABEL="Preview"
           fi
@@ -94,13 +94,13 @@ jobs:
         env:
           FEED_HUB_BASE_URL: ${{ steps.publish-target.outputs.base_url }}
         run: |
-          # Create docs directory if it doesn't exist
-          mkdir -p docs
+          # Create site directory if it doesn't exist
+          mkdir -p site
 
           # Generate multi-page HTML (main index + individual feed pages)
           python3 scripts/workflows/rss-processing/generate_summary.py \
             --input rss-feeds-output.json \
-            --output-dir docs \
+            --output-dir site \
             --feeds-config config/rss-feeds.json
 
           echo "✓ GitHub Pages content generated (multi-page)"
@@ -108,7 +108,7 @@ jobs:
           # Generate RSS feeds (master + individual feeds)
           python3 scripts/workflows/rss-processing/generate_rss.py \
             --input rss-feeds-output.json \
-            --output-dir docs
+            --output-dir site
 
           echo "✓ RSS feeds generated"
 
@@ -120,14 +120,14 @@ jobs:
           BASE_URL: ${{ steps.publish-target.outputs.base_url }}
           TARGET_BRANCH: ${{ steps.publish-target.outputs.target_branch }}
         run: |
-          mkdir -p docs/preview
+          mkdir -p site/preview
 
           # Fetch existing manifest from the target branch if it exists
           MANIFEST='{"previews":[]}'
           ACTIVE_BRANCHES=$(git ls-remote --heads origin | awk '{sub("refs/heads/","",$2); print $2}')
           git fetch origin "$TARGET_BRANCH:refs/remotes/origin/$TARGET_BRANCH" 2>/dev/null || true
-          if git cat-file -e "origin/$TARGET_BRANCH:docs/preview/manifest.json" 2>/dev/null; then
-            MANIFEST=$(git show "origin/$TARGET_BRANCH:docs/preview/manifest.json")
+          if git cat-file -e "origin/$TARGET_BRANCH:site/preview/manifest.json" 2>/dev/null; then
+            MANIFEST=$(git show "origin/$TARGET_BRANCH:site/preview/manifest.json")
           fi
 
           export ACTIVE_BRANCHES
@@ -138,7 +138,7 @@ jobs:
       - name: Format HTML files
         if: success()
         run: |
-          npx prettier --write docs/*.html
+          npx prettier --write site/*.html
           echo "✓ HTML files formatted with Prettier"
 
       - name: Commit and push GitHub Pages content
@@ -147,4 +147,4 @@ jobs:
           DEPLOY_DIR: ${{ steps.publish-target.outputs.deploy_dir }}
           TARGET_BRANCH: ${{ steps.publish-target.outputs.target_branch }}
         run: |
-          bash scripts/workflows/commit-github-pages.sh "docs" "$TARGET_BRANCH" "$DEPLOY_DIR"
+          bash scripts/workflows/commit-github-pages.sh "site" "$TARGET_BRANCH" "$DEPLOY_DIR"

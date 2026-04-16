@@ -7,10 +7,26 @@ Generates both markdown (for GitHub workflow summary) and HTML (for GitHub Pages
 import argparse
 import json
 import os
+import shutil
 from html import escape as html_escape
 from typing import Any, Dict, Optional
 
 from utils import generate_feed_slug, parse_iso_timestamp
+
+STATIC_SITE_DIR = os.path.abspath(
+    os.path.join(os.path.dirname(__file__), "..", "..", "..", "src", "site")
+)
+STATIC_SITE_FILES = (
+    "favicon-16x16.png",
+    "favicon-192x192.png",
+    "favicon-32x32.png",
+    "favicon-48x48.png",
+    "favicon.png",
+    "favicon.svg",
+    "script.js",
+    "settings.html",
+    "styles.css",
+)
 
 
 def generate_markdown_summary(data: Dict[str, Any]) -> str:
@@ -217,6 +233,33 @@ def inject_website_urls(data: Dict[str, Any], feeds_config_path: str) -> None:
     for feed_name, feed_data in data.get("feeds", {}).items():
         if "website_url" not in feed_data and feed_name in url_map:
             feed_data["website_url"] = url_map[feed_name]
+
+
+def copy_static_site_assets(output_dir: str) -> None:
+    """
+    Copy authored static site assets into the generated output directory.
+
+    Args:
+        output_dir: Directory that will contain the generated site.
+
+    Raises:
+        FileNotFoundError: If any required source asset is missing.
+    """
+    missing_assets = [
+        asset_name
+        for asset_name in STATIC_SITE_FILES
+        if not os.path.isfile(os.path.join(STATIC_SITE_DIR, asset_name))
+    ]
+    if missing_assets:
+        missing_list = ", ".join(sorted(missing_assets))
+        raise FileNotFoundError(
+            f"Static site assets not found in '{STATIC_SITE_DIR}': {missing_list}"
+        )
+
+    for asset_name in STATIC_SITE_FILES:
+        source_path = os.path.join(STATIC_SITE_DIR, asset_name)
+        target_path = os.path.join(output_dir, asset_name)
+        shutil.copy2(source_path, target_path)
 
 
 def generate_feed_articles_content(feeds_to_display: Dict[str, Any]) -> str:
@@ -568,6 +611,7 @@ def generate_all_pages(data: Dict[str, Any], output_dir: str) -> None:
     """
     # Ensure output directory exists
     os.makedirs(output_dir, exist_ok=True)
+    copy_static_site_assets(output_dir)
 
     # Generate main index page (all feeds)
     index_path = os.path.join(output_dir, "index.html")

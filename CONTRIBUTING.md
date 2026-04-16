@@ -25,7 +25,7 @@ DevOps Feed Hub is a static RSS feed aggregator that uses GitHub Actions to auto
 
 - `.github/workflows/` - GitHub Actions workflow definitions
 - `.github/scripts/` - Shell scripts used by workflows
-- `docs/` - GitHub Pages content (HTML, CSS, JavaScript)
+- `site/` - GitHub Pages content (HTML, CSS, JavaScript)
 - `tests/` - Playwright UI tests
 
 ## Development Setup

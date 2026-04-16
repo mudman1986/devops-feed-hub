@@ -1,5 +1,5 @@
 ---
-applyTo: "docs/**/*.js,docs/**/*.html,docs/**/*.css"
+applyTo: "src/site/**/*.js,src/site/**/*.html,src/site/**/*.css"
 ---
 
 # Frontend/UI Development

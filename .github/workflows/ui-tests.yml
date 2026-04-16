@@ -69,14 +69,14 @@ jobs:
           # feed pages)
           python3 scripts/workflows/rss-processing/generate_summary.py \
             --input rss-feeds-output.json \
-            --output-dir docs
+            --output-dir site
 
           echo "Generated HTML files:"
-          ls -la docs/*.html
+          ls -la site/*.html
 
           # Show article count for debugging
           echo "Article counts:"
-          grep -h "feed-count" docs/index.html || \
+          grep -h "feed-count" site/index.html || \
             echo "No count found"
 
       - name: >-

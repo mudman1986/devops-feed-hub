@@ -5,8 +5,8 @@
     "**/.git/**",
     "**/node_modules/**",
     "**/*test*.py",
-    ".github/actions/collect-rss-feeds/template.html",
-    "docs/**/*.html"
+    "scripts/workflows/rss-processing/template.html",
+    "site/**/*.html"
   ],
   "format": ["markup", "python", "css"],
   "minLines": 10,
