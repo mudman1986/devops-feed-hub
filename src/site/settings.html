@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-theme="dark">
+<html lang="en" data-theme="dracula">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -234,7 +234,7 @@
                   <option value="arctic-blue">Beta - Arctic Blue</option>
                   <option value="high-contrast">Beta - High Contrast</option>
                   <option value="monochrome">Beta - Monochrome</option>
-                  <option value="dracula">Beta - Dracula</option>
+                  <option value="dracula">Dracula</option>
                   <option value="minimalist">Beta - Minimalist</option>
                   <option value="terminal">Beta - Terminal</option>
                   <option value="retro">Beta - Retro</option>
@@ -600,12 +600,14 @@
             themeName !== "dark" &&
             themeName !== "light"
           ) {
-            console.warn(`Invalid theme: ${themeName}. Falling back to dark.`);
-            themeName = "dark";
+            console.warn(
+              `Invalid theme: ${themeName}. Falling back to dracula.`,
+            );
+            themeName = "dracula";
           }
           document.documentElement.setAttribute(
             "data-theme",
-            themeName || "dark",
+            themeName || "dracula",
           );
         }
 
@@ -673,13 +675,13 @@
               LoadingState.show(themeSelect, "Applying theme");
               try {
                 if (selectedTheme === "default") {
-                  // Clear experimental theme and use current mode (dark/light)
+                  // Apply Dracula as the default theme while preserving current mode
                   localStorage.removeItem("experimentalTheme");
                   const mode = localStorage.getItem("themeMode") || "dark";
-                  const defaultTheme = mode;
+                  const defaultTheme = applyModeToTheme("dracula", mode);
                   localStorage.setItem("theme", defaultTheme);
                   applyTheme(defaultTheme);
-                  showToast("Theme changed to Default", "success");
+                  showToast("Theme changed to Default (Dracula)", "success");
                 } else {
                   // Apply theme in its natural mode (not forcing current themeMode)
                   const naturalMode = getNaturalThemeMode(selectedTheme);

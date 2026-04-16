@@ -245,9 +245,9 @@ describe("Theme Toggle", () => {
     expect(localStorage.getItem("theme")).toBe("dark");
   });
 
-  test("should default to dark theme if no preference saved", () => {
-    const savedTheme = localStorage.getItem("theme") || "dark";
-    expect(savedTheme).toBe("dark");
+  test("should default to dracula theme if no preference saved", () => {
+    const savedTheme = localStorage.getItem("theme") || "dracula";
+    expect(savedTheme).toBe("dracula");
   });
 
   test("should toggle between light and dark themes", () => {

@@ -56,7 +56,7 @@ test.describe("Experimental Themes - Consolidated", () => {
       expect(count).toBe(12);
     });
 
-    test("should display beta themes with 'Beta - ' prefix", async ({
+    test("should display beta themes with 'Beta - ' prefix except Dracula", async ({
       page,
     }) => {
       await page.goto("/settings.html");
@@ -74,6 +74,11 @@ test.describe("Experimental Themes - Consolidated", () => {
       const oceanDeepOption = themeSelect.locator('option[value="ocean-deep"]');
       const oceanDeepText = await oceanDeepOption.textContent();
       expect(oceanDeepText).toContain("Beta - Ocean Deep");
+
+      const draculaOption = themeSelect.locator('option[value="dracula"]');
+      const draculaText = await draculaOption.textContent();
+      expect(draculaText).toContain("Dracula");
+      expect(draculaText).not.toContain("Beta -");
     });
   });
 
@@ -216,11 +221,11 @@ test.describe("Experimental Themes - Consolidated", () => {
       );
       expect(experimentalTheme).toBeNull();
 
-      // Should revert to standard theme
+      // Should revert to default Dracula theme variants
       const dataTheme = await page.evaluate(() =>
         document.documentElement.getAttribute("data-theme"),
       );
-      expect(["dark", "light"]).toContain(dataTheme);
+      expect(["dracula", "dracula-light"]).toContain(dataTheme);
     });
   });
 
@@ -497,38 +502,38 @@ test.describe("Theme Mode Toggle - Home Page Only", () => {
     expect(dataTheme).toBe("ocean-deep");
   });
 
-  test("should toggle default theme between dark and light", async ({
+  test("should toggle default theme between Dracula and Dracula Light", async ({
     page,
   }) => {
     // Start with default theme
     await page.goto("/");
     await page.waitForLoadState("load");
 
-    // Default should be dark
+    // Default should be dracula
     let dataTheme = await page.evaluate(() =>
       document.documentElement.getAttribute("data-theme"),
     );
-    expect(dataTheme).toBe("dark");
+    expect(dataTheme).toBe("dracula");
 
     // Click theme toggle
     await page.locator("#theme-toggle").click();
     await page.waitForTimeout(300);
 
-    // Should switch to light
+    // Should switch to dracula-light
     dataTheme = await page.evaluate(() =>
       document.documentElement.getAttribute("data-theme"),
     );
-    expect(dataTheme).toBe("light");
+    expect(dataTheme).toBe("dracula-light");
 
     // Click theme toggle again and wait for theme change
     await page.locator("#theme-toggle").click();
-    await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+    await expect(page.locator("html")).toHaveAttribute("data-theme", "dracula");
 
-    // Verify dark theme is applied
+    // Verify dracula theme is applied
     dataTheme = await page.evaluate(() =>
       document.documentElement.getAttribute("data-theme"),
     );
-    expect(dataTheme).toBe("dark");
+    expect(dataTheme).toBe("dracula");
   });
 });
 

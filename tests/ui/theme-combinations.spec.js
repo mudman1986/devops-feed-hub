@@ -44,12 +44,12 @@ test.describe("Theme Combinations - All Settings", () => {
         let dataTheme = await page.evaluate(() =>
           document.documentElement.getAttribute("data-theme"),
         );
-        // Default theme is just "dark" initially
+        // Default theme is Dracula initially
         if (theme !== "default") {
           // For experimental themes, should have theme name (might have -light or no suffix for dark)
           expect(dataTheme).toContain(theme.split("-")[0]); // Check base theme name is present
         } else {
-          expect(dataTheme).toBe("dark");
+          expect(dataTheme).toBe("dracula");
         }
 
         // Click the theme toggle button to switch modes
@@ -63,8 +63,8 @@ test.describe("Theme Combinations - All Settings", () => {
         );
 
         if (theme === "default") {
-          // Default theme should just be "light" after toggle
-          expect(dataTheme).toBe("light");
+          // Default theme should switch to Dracula Light after toggle
+          expect(dataTheme).toBe("dracula-light");
         } else {
           // Experimental theme should still contain the base theme name
           expect(dataTheme).toContain(theme.split("-")[0]);
@@ -79,7 +79,7 @@ test.describe("Theme Combinations - All Settings", () => {
         );
 
         if (theme === "default") {
-          expect(dataTheme).toBe("light");
+          expect(dataTheme).toBe("dracula-light");
         } else {
           expect(dataTheme).toContain(theme.split("-")[0]);
         }
@@ -118,7 +118,7 @@ test.describe("Theme Combinations - All Settings", () => {
             document.documentElement.getAttribute("data-theme"),
           );
           if (theme === "default") {
-            expect(["dark", "light"]).toContain(dataTheme);
+            expect(["dracula", "dracula-light"]).toContain(dataTheme);
           } else {
             expect(dataTheme).toContain(theme.split("-")[0]);
           }
