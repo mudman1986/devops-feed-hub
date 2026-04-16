@@ -4,17 +4,17 @@
 import importlib.util
 import json
 import os
-import sys
-import tempfile
 from typing import Any
 
-import pytest
+# pylint: disable=missing-class-docstring,missing-function-docstring,too-few-public-methods
 
 # Load the script as a module without executing its __main__ block
 SCRIPT_PATH = os.path.join(
     os.path.dirname(os.path.dirname(__file__)), "update-preview-manifest.py"
 )
 spec = importlib.util.spec_from_file_location("update_preview_manifest", SCRIPT_PATH)
+if spec is None or spec.loader is None:
+    raise ImportError(f"Unable to load module spec for {SCRIPT_PATH}")
 _module = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(_module)
 update_manifest = _module.update_manifest

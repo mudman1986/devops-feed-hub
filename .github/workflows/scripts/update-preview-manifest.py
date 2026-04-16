@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Update the preview/manifest.json with the latest preview deployment entry."""
 
+# pylint: disable=invalid-name
+
 import json
 import os
 import sys
