@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DevOps Feed Hub - Docker Blog</title>
+    <link>https://mudman1986.github.io/devops-feed-hub/preview/copilot--refactor-codebase-improvements/feed-docker-blog.xml</link>
+    <description>Articles from Docker Blog</description>
+    <atom:link href="https://mudman1986.github.io/devops-feed-hub/preview/copilot--refactor-codebase-improvements/feed-docker-blog.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Apr 2026 12:36:22 +0000</lastBuildDate>
+    <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Why We Chose the Harder Path: Docker Hardened Images, One Year Later</title>
+      <link>https://www.docker.com/blog/why-we-chose-the-harder-path-docker-hardened-images-one-year-later/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/why-we-chose-the-harder-path-docker-hardened-images-one-year-later/</guid>
+      <pubDate>Tue, 14 Apr 2026 21:48:03 +0000</pubDate>
+    </item>
+    <item>
+      <title>How to Analyze Hugging Face for Arm64 Readiness</title>
+      <link>https://www.docker.com/blog/how-to-analyze-hugging-face-for-arm64-readiness/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/how-to-analyze-hugging-face-for-arm64-readiness/</guid>
+      <pubDate>Mon, 13 Apr 2026 15:59:37 +0000</pubDate>
+    </item>
+    <item>
+      <title>Reclaim Developer Hours through Smarter Vulnerability Prioritization with Docker and Mend.io</title>
+      <link>https://www.docker.com/blog/reclaim-developer-hours-through-smarter-vulnerability-prioritization-with-docker-and-mend-io/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/reclaim-developer-hours-through-smarter-vulnerability-prioritization-with-docker-and-mend-io/</guid>
+      <pubDate>Wed, 08 Apr 2026 18:23:51 +0000</pubDate>
+    </item>
+    <item>
+      <title>Defending Your Software Supply Chain: What Every Engineering Team Should Do Now</title>
+      <link>https://www.docker.com/blog/defending-your-software-supply-chain-what-every-engineering-team-should-do-now/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/defending-your-software-supply-chain-what-every-engineering-team-should-do-now/</guid>
+      <pubDate>Thu, 02 Apr 2026 18:14:40 +0000</pubDate>
+    </item>
+    <item>
+      <title>Gemma 4 is Here: Now Available on Docker Hub</title>
+      <link>https://www.docker.com/blog/gemma4-dockerhub/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/gemma4-dockerhub/</guid>
+      <pubDate>Thu, 02 Apr 2026 16:16:56 +0000</pubDate>
+    </item>
+    <item>
+      <title>Docker Offload now Generally Available: The Full Power of Docker, for Every Developer, Everywhere.</title>
+      <link>https://www.docker.com/blog/docker-offload-now-generally-available-the-full-power-of-docker-for-every-developer-everywhere/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/docker-offload-now-generally-available-the-full-power-of-docker-for-every-developer-everywhere/</guid>
+      <pubDate>Thu, 02 Apr 2026 13:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Run and Iterate on LLMs Faster with Docker Model Runner on DGX Station</title>
+      <link>https://www.docker.com/blog/blog-docker-model-runner-new-nvidia-dgx-station/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/blog-docker-model-runner-new-nvidia-dgx-station/</guid>
+      <pubDate>Tue, 31 Mar 2026 17:57:17 +0000</pubDate>
+    </item>
+    <item>
+      <title>Docker Sandboxes: Run Agents in YOLO Mode, Safely</title>
+      <link>https://www.docker.com/blog/docker-sandboxes-run-agents-in-yolo-mode-safely/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/docker-sandboxes-run-agents-in-yolo-mode-safely/</guid>
+      <pubDate>Tue, 31 Mar 2026 16:39:16 +0000</pubDate>
+    </item>
+    <item>
+      <title>Building a News Roundup with Docker Agent, Docker Model Runner, and Skill</title>
+      <link>https://www.docker.com/blog/building-a-news-roundup-with-docker-agent-docker-model-runner-and-skill/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/building-a-news-roundup-with-docker-agent-docker-model-runner-and-skill/</guid>
+      <pubDate>Fri, 27 Mar 2026 14:24:40 +0000</pubDate>
+    </item>
+    <item>
+      <title>Trivy supply chain compromise: What Docker Hub users should know</title>
+      <link>https://www.docker.com/blog/trivy-supply-chain-compromise-what-docker-hub-users-should-know/</link>
+      <guid isPermaLink="true">https://www.docker.com/blog/trivy-supply-chain-compromise-what-docker-hub-users-should-know/</guid>
+      <pubDate>Mon, 23 Mar 2026 23:25:14 +0000</pubDate>
+    </item>
+  </channel>
+</rss>
