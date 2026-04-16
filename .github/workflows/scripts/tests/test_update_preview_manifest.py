@@ -21,11 +21,23 @@ update_manifest = _module.update_manifest
 
 
 def _run(
-    manifest_json: str, branch: str, slug: str, url: str, tmp_path: str
+    manifest_json: str,
+    branch: str,
+    slug: str,
+    url: str,
+    tmp_path: str,
+    active_branches: set[str] | None = None,
 ) -> tuple[dict[str, Any], dict[str, Any]]:
     """Helper: call update_manifest and return (returned dict, written dict)."""
     manifest_file = os.path.join(tmp_path, "manifest.json")
-    result = update_manifest(manifest_json, branch, slug, url, manifest_file)
+    result = update_manifest(
+        manifest_json,
+        branch,
+        slug,
+        url,
+        manifest_file,
+        active_branches,
+    )
     with open(manifest_file, encoding="utf-8") as f:
         written = json.load(f)
     return result, written
@@ -178,6 +190,62 @@ class TestUpdateManifestSorting:
         )
         # The freshly added entry has a newer timestamp so should be first
         assert written["previews"][0]["slug"] == "new-branch"
+
+
+class TestUpdateManifestPruning:
+    """Tests for pruning previews that no longer map to active branches."""
+
+    def test_prunes_previews_for_removed_branches(self, tmp_path):
+        existing = json.dumps(
+            {
+                "previews": [
+                    {
+                        "branch": "feature/stale",
+                        "slug": "feature--stale",
+                        "url": "https://example.com/preview/feature--stale/",
+                        "updated_at": "2026-01-01T00:00:00Z",
+                    },
+                    {
+                        "branch": "feature/live",
+                        "slug": "feature--live",
+                        "url": "https://example.com/preview/feature--live/",
+                        "updated_at": "2026-01-02T00:00:00Z",
+                    },
+                ]
+            }
+        )
+        _, written = _run(
+            existing,
+            "feature/live",
+            "",
+            "https://example.com",
+            str(tmp_path),
+            {"feature/live", "main"},
+        )
+        assert [preview["slug"] for preview in written["previews"]] == ["feature--live"]
+
+    def test_main_build_prunes_without_adding_new_preview(self, tmp_path):
+        existing = json.dumps(
+            {
+                "previews": [
+                    {
+                        "branch": "feature/live",
+                        "slug": "feature--live",
+                        "url": "https://example.com/preview/feature--live/",
+                        "updated_at": "2026-01-02T00:00:00Z",
+                    }
+                ]
+            }
+        )
+        _, written = _run(
+            existing,
+            "main",
+            "",
+            "https://example.com",
+            str(tmp_path),
+            {"main"},
+        )
+        assert written["previews"] == []
 
 
 class TestUpdateManifestFileOutput:

@@ -15,6 +15,7 @@ def update_manifest(
     preview_slug: str,
     base_url: str,
     manifest_path: str,
+    active_branches: set[str] | None = None
 ) -> dict:
     """Merge a preview entry into the manifest and write it to disk.
 
@@ -39,16 +40,20 @@ def update_manifest(
 
     previews = manifest.get("previews", [])
 
-    # Remove any stale entry for this slug then add updated one
-    previews = [p for p in previews if p.get("slug") != preview_slug]
-    previews.append(
-        {
-            "branch": source_branch,
-            "slug": preview_slug,
-            "url": base_url + "/",
-            "updated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-        }
-    )
+    if active_branches is not None:
+        previews = [p for p in previews if p.get("branch") in active_branches]
+
+    if preview_slug:
+        # Remove any stale entry for this slug then add updated one
+        previews = [p for p in previews if p.get("slug") != preview_slug]
+        previews.append(
+            {
+                "branch": source_branch,
+                "slug": preview_slug,
+                "url": base_url.rstrip("/") + "/",
+                "updated_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+            }
+        )
     previews.sort(key=lambda p: p.get("updated_at", ""), reverse=True)
     manifest["previews"] = previews
 
@@ -64,12 +69,20 @@ def main() -> None:
     """Entry point: reads configuration from environment variables."""
     manifest_path = os.path.join("docs", "preview", "manifest.json")
     source_branch = os.environ["SOURCE_BRANCH"]
-    preview_slug = os.environ["PREVIEW_SLUG"]
+    preview_slug = os.environ.get("PREVIEW_SLUG", "")
     base_url = os.environ["BASE_URL"]
     manifest_json = os.environ.get("MANIFEST", '{"previews":[]}')
+    active_branches = {
+        branch for branch in os.environ.get("ACTIVE_BRANCHES", "").splitlines() if branch
+    }
 
     manifest = update_manifest(
-        manifest_json, source_branch, preview_slug, base_url, manifest_path
+        manifest_json,
+        source_branch,
+        preview_slug,
+        base_url,
+        manifest_path,
+        active_branches or None
     )
     print(
         f"✓ Preview manifest updated ({len(manifest['previews'])} entries)",
