@@ -13,7 +13,7 @@ setup() {
 	export REMOTE_DIR
 
 	# Copy the script to test directory
-	cp "$BATS_TEST_DIRNAME/../../.github/workflows/scripts/commit-github-pages.sh" "$TEST_DIR/"
+	cp "$BATS_TEST_DIRNAME/../../scripts/workflows/commit-github-pages.sh" "$TEST_DIR/"
 
 	# Create a mock git repository
 	cd "$TEST_DIR" || exit 1
@@ -44,8 +44,8 @@ teardown() {
 }
 
 @test "script exists and is executable" {
-	[ -f "$BATS_TEST_DIRNAME/../../.github/workflows/scripts/commit-github-pages.sh" ]
-	[ -x "$BATS_TEST_DIRNAME/../../.github/workflows/scripts/commit-github-pages.sh" ]
+	[ -f "$BATS_TEST_DIRNAME/../../scripts/workflows/commit-github-pages.sh" ]
+	[ -x "$BATS_TEST_DIRNAME/../../scripts/workflows/commit-github-pages.sh" ]
 }
 
 @test "script validates content directory parameter" {

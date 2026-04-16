@@ -33,7 +33,7 @@ jobs:
         uses: mudman1986/rss-feed-collector-action@main
         with:
           hours: "8760"
-          config-path: ".github/rss-feeds.json"
+          config-path: "config/rss-feeds.json"
           output-path: "rss-feeds-output.json"
 
       - name: Display collection stats
@@ -98,15 +98,15 @@ jobs:
           mkdir -p docs
 
           # Generate multi-page HTML (main index + individual feed pages)
-          python3 .github/workflows/scripts/rss-processing/generate_summary.py \
+          python3 scripts/workflows/rss-processing/generate_summary.py \
             --input rss-feeds-output.json \
             --output-dir docs \
-            --feeds-config .github/rss-feeds.json
+            --feeds-config config/rss-feeds.json
 
           echo "✓ GitHub Pages content generated (multi-page)"
 
           # Generate RSS feeds (master + individual feeds)
-          python3 .github/workflows/scripts/rss-processing/generate_rss.py \
+          python3 scripts/workflows/rss-processing/generate_rss.py \
             --input rss-feeds-output.json \
             --output-dir docs
 
@@ -132,7 +132,7 @@ jobs:
 
           export ACTIVE_BRANCHES
           export MANIFEST
-          python3 .github/workflows/scripts/update-preview-manifest.py
+          python3 scripts/workflows/update-preview-manifest.py
           echo "✓ Preview manifest ready"
 
       - name: Format HTML files
@@ -147,4 +147,4 @@ jobs:
           DEPLOY_DIR: ${{ steps.publish-target.outputs.deploy_dir }}
           TARGET_BRANCH: ${{ steps.publish-target.outputs.target_branch }}
         run: |
-          bash .github/workflows/scripts/commit-github-pages.sh "docs" "$TARGET_BRANCH" "$DEPLOY_DIR"
+          bash scripts/workflows/commit-github-pages.sh "docs" "$TARGET_BRANCH" "$DEPLOY_DIR"

@@ -139,7 +139,7 @@ This repository is maintained primarily by GitHub Copilot. Path-specific instruc
 
 1. **UI Tests** (PRIMARY - MOST IMPORTANT)
    - **ALWAYS run FIRST after any UI change**
-   - **Generate test data**: `bash scripts/test/generate-test-data.sh`
+   - **Generate test data**: `bash scripts/generate-test-data.sh`
    - **Run UI tests**: `npm run test:ui`
    - **CRITICAL**: These tests validate the actual site functionality
    - **Fix ALL failures immediately** - UI test failures mean the site is broken
@@ -150,23 +150,23 @@ This repository is maintained primarily by GitHub Copilot. Path-specific instruc
    - All tests must pass
 
 3. **Python Tests** (REQUIRED)
-   - Run: `python3 -m pytest .github/workflows/scripts/rss-processing/tests/ -v`
+   - Run: `python3 -m pytest tests/python/rss-processing/ -v`
    - All tests must pass
 
 4. **Shell Script Tests** (REQUIRED)
-   - Run: `bats scripts/test/test_*.bats`
+   - Run: `bats tests/shell/test_*.bats`
    - All tests must pass
 
 #### UI Testing Requirements
 
 **BEFORE making any changes that affect the site:**
 
-1. Generate test HTML: `bash scripts/test/generate-test-data.sh`
+1. Generate test HTML: `bash scripts/generate-test-data.sh`
 2. Run baseline UI tests to ensure they pass: `npm run test:ui`
 
 **AFTER making any changes that affect the site:**
 
-1. Regenerate test HTML: `bash scripts/test/generate-test-data.sh`
+1. Regenerate test HTML: `bash scripts/generate-test-data.sh`
 2. Run UI tests: `npm run test:ui`
 3. Fix ALL failures immediately
 4. Re-run until 100% pass
@@ -186,7 +186,7 @@ Before completing any task and presenting work as finished, verify **IN THIS ORD
 ### 1. UI Tests (HIGHEST PRIORITY - site PROJECT)
 
 - [ ] **UI tests MUST pass FIRST** - This validates the actual site works
-  - Generate test data: `bash scripts/test/generate-test-data.sh`
+  - Generate test data: `bash scripts/generate-test-data.sh`
   - Run UI tests: `npm run test:ui`
   - **ALL UI tests must pass** - No exceptions
   - Take screenshots to verify visual correctness
@@ -196,8 +196,8 @@ Before completing any task and presenting work as finished, verify **IN THIS ORD
 ### 2. Other Tests (All Must Pass)
 
 - [ ] **JavaScript tests pass**: `npm test`
-- [ ] **Python tests pass**: `python3 -m pytest .github/workflows/scripts/rss-processing/tests/ -v`
-- [ ] **Shell script tests pass**: `bats scripts/test/test_*.bats`
+- [ ] **Python tests pass**: `python3 -m pytest tests/python/rss-processing/ -v`
+- [ ] **Shell script tests pass**: `bats tests/shell/test_*.bats`
 - [ ] **MANDATORY: Run tests after every fix to verify** - Never assume a fix works
 
 ### 3. Code Quality & Security
@@ -245,15 +245,15 @@ Before completing any task and presenting work as finished, verify **IN THIS ORD
 
 - `actions/` - Reusable composite actions (e.g., RSS feed collector)
 - `.github/workflows/` - GitHub Actions workflows
-- `.github/workflows/scripts/` - Scripts used by workflows
-- `scripts/test/` - Test utilities and helpers
+- `scripts/workflows/` - Scripts used by workflows
+- `scripts/` - Test utilities and helpers
 - `docs/` - GitHub Pages content (HTML, CSS, JavaScript)
 - `tests/` - Playwright UI tests
 - `.github/agents/` - Custom agent instructions (read-only)
 
 ### Important Files
 
-- `.github/rss-feeds.json` - RSS feed configuration
+- `config/rss-feeds.json` - RSS feed configuration
 - `.github/workflows/copilot-setup-steps.yml` - Environment setup automation
 - `package.json` - JavaScript dependencies and test scripts
 - `pyproject.toml` - Python project configuration

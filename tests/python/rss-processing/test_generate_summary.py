@@ -12,7 +12,7 @@ import tempfile
 import unittest
 
 # Add parent directory to path for imports
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
+sys.path.insert(0, os.path.join(os.path.dirname(__file__), "..", "..", "..", "scripts", "workflows", "rss-processing"))
 
 # pylint: disable=wrong-import-position
 # flake8: noqa: E402

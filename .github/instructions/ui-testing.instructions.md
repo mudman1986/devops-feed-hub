@@ -23,7 +23,7 @@ This is a **site project** - the deliverable is a functioning web page displayed
 
 ```bash
 # Generate test HTML from existing test fixtures
-bash scripts/test/generate-test-data.sh
+bash scripts/generate-test-data.sh
 
 # Then run UI tests
 npm run test:ui
@@ -40,7 +40,7 @@ npm run test:ui
 
 The `generate-test-data.sh` script:
 
-1. Uses test data from `.github/workflows/test-fixtures/rss-test-data.json`
+1. Uses test data from `tests/fixtures/ui-test-data.json`
 2. Generates HTML files: `index.html`, `summary.html`, `feed-*.html`
 3. Places them in `docs/` directory for Playwright to access
 
@@ -75,7 +75,7 @@ npx playwright test --debug
 
 ## Test Data
 
-**Location**: `.github/workflows/test-fixtures/rss-test-data.json`
+**Location**: `tests/fixtures/ui-test-data.json`
 
 This file contains:
 
@@ -90,7 +90,7 @@ This file contains:
 ### Error: "data-theme is null"
 
 **Cause**: Missing `index.html`  
-**Fix**: Run `bash scripts/test/generate-test-data.sh`
+**Fix**: Run `bash scripts/generate-test-data.sh`
 
 ### Error: "`http://localhost:8080` is already used"
 
@@ -140,7 +140,7 @@ UI tests depend on generated HTML containing:
 
 ## Key Files
 
-- **Test fixtures**: `.github/workflows/test-fixtures/rss-test-data.json`
+- **Test fixtures**: `tests/fixtures/ui-test-data.json`
 - **Setup script**: `.github/scripts/generate-test-data.sh`
 - **Test files**: `tests/ui/*.spec.js`
 - **Config**: `playwright.config.js`
@@ -151,7 +151,7 @@ In workflow files, always generate test data before running tests:
 
 ```yaml
 - name: Generate test HTML for UI tests
-  run: bash scripts/test/generate-test-data.sh
+  run: bash scripts/generate-test-data.sh
 
 - name: Run Playwright tests
   run: npm run test:ui
@@ -171,7 +171,7 @@ In workflow files, always generate test data before running tests:
 
 **YOU MUST:**
 
-1. Generate test data: `bash scripts/test/generate-test-data.sh`
+1. Generate test data: `bash scripts/generate-test-data.sh`
 2. Run UI tests: `npm run test:ui`
 3. Ensure 100% pass rate
 4. Take screenshots to verify visual correctness
