@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DevOps Feed Hub - Microsoft Security</title>
+    <link>https://mudman1986.github.io/devops-feed-hub/preview/copilot--chore-cleanup-codebase/feed-microsoft-security.xml</link>
+    <description>Articles from Microsoft Security</description>
+    <atom:link href="https://mudman1986.github.io/devops-feed-hub/preview/copilot--chore-cleanup-codebase/feed-microsoft-security.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Apr 2026 19:52:22 +0000</lastBuildDate>
+    <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>Building your cryptographic inventory: A customer strategy for cryptographic posture management</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/04/16/building-your-cryptographic-inventory-a-customer-strategy-for-cryptographic-posture-management/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/04/16/building-your-cryptographic-inventory-a-customer-strategy-for-cryptographic-posture-management/</guid>
+      <pubDate>Thu, 16 Apr 2026 16:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Dissecting Sapphire Sleet’s macOS intrusion from lure to compromise</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/04/16/dissecting-sapphire-sleets-macos-intrusion-from-lure-to-compromise/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/04/16/dissecting-sapphire-sleets-macos-intrusion-from-lure-to-compromise/</guid>
+      <pubDate>Thu, 16 Apr 2026 15:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Incident response for AI: Same fire, different fuel</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/04/15/incident-response-for-ai-same-fire-different-fuel/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/04/15/incident-response-for-ai-same-fire-different-fuel/</guid>
+      <pubDate>Wed, 15 Apr 2026 16:00:45 +0000</pubDate>
+    </item>
+    <item>
+      <title>The agentic SOC—Rethinking SecOps for the next decade</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/04/09/the-agentic-soc-rethinking-secops-for-the-next-decade/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/04/09/the-agentic-soc-rethinking-secops-for-the-next-decade/</guid>
+      <pubDate>Thu, 09 Apr 2026 19:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Investigating Storm-2755: “Payroll pirate” attacks targeting Canadian employees</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/04/09/investigating-storm-2755-payroll-pirate-attacks-targeting-canadian-employees/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/04/09/investigating-storm-2755-payroll-pirate-attacks-targeting-canadian-employees/</guid>
+      <pubDate>Thu, 09 Apr 2026 15:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Intent redirection vulnerability in third-party SDK exposed millions of Android wallets to potential risk</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/04/09/intent-redirection-vulnerability-third-party-sdk-android/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/04/09/intent-redirection-vulnerability-third-party-sdk-android/</guid>
+      <pubDate>Thu, 09 Apr 2026 13:21:18 +0000</pubDate>
+    </item>
+    <item>
+      <title>SOHO router compromise leads to DNS hijacking and adversary-in-the-middle attacks</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/04/07/soho-router-compromise-leads-to-dns-hijacking-and-adversary-in-the-middle-attacks/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/04/07/soho-router-compromise-leads-to-dns-hijacking-and-adversary-in-the-middle-attacks/</guid>
+      <pubDate>Tue, 07 Apr 2026 14:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Inside an AI‑enabled device code phishing campaign</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/04/06/ai-enabled-device-code-phishing-campaign-april-2026/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/04/06/ai-enabled-device-code-phishing-campaign-april-2026/</guid>
+      <pubDate>Mon, 06 Apr 2026 16:34:17 +0000</pubDate>
+    </item>
+    <item>
+      <title>Storm-1175 focuses gaze on vulnerable web-facing assets in high-tempo Medusa ransomware operations</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/04/06/storm-1175-focuses-gaze-on-vulnerable-web-facing-assets-in-high-tempo-medusa-ransomware-operations/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/04/06/storm-1175-focuses-gaze-on-vulnerable-web-facing-assets-in-high-tempo-medusa-ransomware-operations/</guid>
+      <pubDate>Mon, 06 Apr 2026 16:00:00 +0000</pubDate>
+    </item>
+    <item>
+      <title>Threat actor abuse of AI accelerates from tool to cyberattack surface</title>
+      <link>https://www.microsoft.com/en-us/security/blog/2026/04/02/threat-actor-abuse-of-ai-accelerates-from-tool-to-cyberattack-surface/</link>
+      <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/04/02/threat-actor-abuse-of-ai-accelerates-from-tool-to-cyberattack-surface/</guid>
+      <pubDate>Thu, 02 Apr 2026 16:00:00 +0000</pubDate>
+    </item>
+  </channel>
+</rss>
