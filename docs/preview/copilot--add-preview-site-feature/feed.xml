@@ -5,8 +5,15 @@
     <link>https://mudman1986.github.io/devops-feed-hub/preview/copilot--add-preview-site-feature/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/preview/copilot--add-preview-site-feature/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Wed, 15 Apr 2026 21:12:38 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 16 Apr 2026 06:17:09 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>CodeQL 2.25.2 adds Kotlin 2.3.20 support and other updates</title>
+      <link>https://github.blog/changelog/2026-04-15-codeql-2-25-2-adds-kotlin-2-3-20-support-and-other-updates</link>
+      <guid isPermaLink="true">https://github.blog/changelog/2026-04-15-codeql-2-25-2-adds-kotlin-2-3-20-support-and-other-updates</guid>
+      <pubDate>Wed, 15 Apr 2026 22:05:52 +0000</pubDate>
+      <source>GitHub Changelog</source>
+    </item>
     <item>
       <title>Enable Copilot cloud agent via custom properties</title>
       <link>https://github.blog/changelog/2026-04-15-enable-copilot-cloud-agent-via-custom-properties</link>
@@ -36,6 +43,13 @@
       <source>Microsoft Entra Blog</source>
     </item>
     <item>
+      <title>Build a personal organization command center with GitHub Copilot CLI</title>
+      <link>https://github.blog/ai-and-ml/github-copilot/build-a-personal-organization-command-center-with-github-copilot-cli/</link>
+      <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/build-a-personal-organization-command-center-with-github-copilot-cli/</guid>
+      <pubDate>Wed, 15 Apr 2026 17:00:00 +0000</pubDate>
+      <source>GitHub Blog</source>
+    </item>
+    <item>
       <title>Incident response for AI: Same fire, different fuel</title>
       <link>https://www.microsoft.com/en-us/security/blog/2026/04/15/incident-response-for-ai-same-fire-different-fuel/</link>
       <guid isPermaLink="true">https://www.microsoft.com/en-us/security/blog/2026/04/15/incident-response-for-ai-same-fire-different-fuel/</guid>
@@ -48,6 +62,13 @@
       <guid isPermaLink="true">https://devblogs.microsoft.com/devops/one-click-security-scanning-and-org-wide-alert-triage-come-to-advanced-security/</guid>
       <pubDate>Wed, 15 Apr 2026 15:06:53 +0000</pubDate>
       <source>Microsoft DevOps Blog</source>
+    </item>
+    <item>
+      <title>Developer policy update: Intermediary liability, copyright, and transparency</title>
+      <link>https://github.blog/news-insights/policy-news-and-insights/developer-policy-update-intermediary-liability-copyright-and-transparency/</link>
+      <guid isPermaLink="true">https://github.blog/news-insights/policy-news-and-insights/developer-policy-update-intermediary-liability-copyright-and-transparency/</guid>
+      <pubDate>Wed, 15 Apr 2026 15:00:00 +0000</pubDate>
+      <source>GitHub Blog</source>
     </item>
     <item>
       <title>Issue #270 - ISO 27001 on AWS with Terraform, S3 Files Kills SFTP, Terragrunt 1.0 Is Here, Claude Code for DevSecOps, and Compliance Resources</title>
@@ -188,13 +209,6 @@
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=557828</guid>
       <pubDate>Mon, 13 Apr 2026 23:45:31 +0000</pubDate>
       <source>Azure Updates</source>
-    </item>
-    <item>
-      <title>Copilot data residency in US + EU and FedRAMP compliance now available</title>
-      <link>https://github.blog/changelog/2026-04-13-copilot-data-residency-in-us-eu-and-fedramp-compliance-now-available</link>
-      <guid isPermaLink="true">https://github.blog/changelog/2026-04-13-copilot-data-residency-in-us-eu-and-fedramp-compliance-now-available</guid>
-      <pubDate>Mon, 13 Apr 2026 23:03:01 +0000</pubDate>
-      <source>GitHub Changelog</source>
     </item>
     <item>
       <title>Troubleshooting environment with AI analysis in AWS Elastic Beanstalk</title>
@@ -603,13 +617,6 @@
       <source>Azure Updates</source>
     </item>
     <item>
-      <title>Securing the open source supply chain across GitHub</title>
-      <link>https://github.blog/security/supply-chain-security/securing-the-open-source-supply-chain-across-github/</link>
-      <guid isPermaLink="true">https://github.blog/security/supply-chain-security/securing-the-open-source-supply-chain-across-github/</guid>
-      <pubDate>Wed, 01 Apr 2026 19:20:12 +0000</pubDate>
-      <source>GitHub Blog</source>
-    </item>
-    <item>
       <title>[In preview] Public Preview: Unlock Client-Side Configuration at Scale with Azure App Configuration and Azure Front Door</title>
       <link>https://azure.microsoft.com/updates?id=537234</link>
       <guid isPermaLink="true">https://azure.microsoft.com/updates?id=537234</guid>
@@ -671,13 +678,6 @@
       <guid isPermaLink="true">https://aws.amazon.com/blogs/devops/securely-connect-aws-devops-agent-to-private-services-in-your-vpcs/</guid>
       <pubDate>Wed, 01 Apr 2026 15:37:03 +0000</pubDate>
       <source>AWS DevOps Blog</source>
-    </item>
-    <item>
-      <title>Run multiple agents at once with /fleet in Copilot CLI</title>
-      <link>https://github.blog/ai-and-ml/github-copilot/run-multiple-agents-at-once-with-fleet-in-copilot-cli/</link>
-      <guid isPermaLink="true">https://github.blog/ai-and-ml/github-copilot/run-multiple-agents-at-once-with-fleet-in-copilot-cli/</guid>
-      <pubDate>Wed, 01 Apr 2026 15:00:00 +0000</pubDate>
-      <source>GitHub Blog</source>
     </item>
     <item>
       <title>Issue #268 - AWS Lightsail AI Agents, Faster Terraform Applies, Local RAG for IaC, Lifecycle Rules Without Forks, and Combining Argo CD With Terraform</title>
