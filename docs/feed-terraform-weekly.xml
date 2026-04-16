@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-terraform-weekly.xml</link>
     <description>Articles from Terraform weekly</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-terraform-weekly.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 16 Apr 2026 12:16:48 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 16 Apr 2026 12:30:02 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>Issue #270 - ISO 27001 on AWS with Terraform, S3 Files Kills SFTP, Terragrunt 1.0 Is Here, Claude Code for DevSecOps, and Compliance Resources</title>
