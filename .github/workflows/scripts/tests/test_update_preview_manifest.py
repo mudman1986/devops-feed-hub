@@ -7,6 +7,7 @@ import os
 from typing import Any
 
 # pylint: disable=missing-function-docstring,too-few-public-methods
+# pylint: disable=too-many-arguments,too-many-positional-arguments
 
 # Load the script as a module without executing its __main__ block
 SCRIPT_PATH = os.path.join(

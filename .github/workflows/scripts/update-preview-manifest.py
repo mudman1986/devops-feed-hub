@@ -2,6 +2,7 @@
 """Update the preview/manifest.json with the latest preview deployment entry."""
 
 # pylint: disable=invalid-name
+# pylint: disable=too-many-arguments,too-many-positional-arguments
 
 import json
 import os
@@ -15,7 +16,7 @@ def update_manifest(
     preview_slug: str,
     base_url: str,
     manifest_path: str,
-    active_branches: set[str] | None = None
+    active_branches: set[str] | None = None,
 ) -> dict:
     """Merge a preview entry into the manifest and write it to disk.
 
@@ -73,7 +74,9 @@ def main() -> None:
     base_url = os.environ["BASE_URL"]
     manifest_json = os.environ.get("MANIFEST", '{"previews":[]}')
     active_branches = {
-        branch for branch in os.environ.get("ACTIVE_BRANCHES", "").splitlines() if branch
+        branch
+        for branch in os.environ.get("ACTIVE_BRANCHES", "").splitlines()
+        if branch
     }
 
     manifest = update_manifest(
@@ -82,7 +85,7 @@ def main() -> None:
         preview_slug,
         base_url,
         manifest_path,
-        active_branches or None
+        active_branches or None,
     )
     print(
         f"✓ Preview manifest updated ({len(manifest['previews'])} entries)",
