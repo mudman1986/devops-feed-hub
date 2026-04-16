@@ -1,0 +1,1857 @@
+<!doctype html>
+<!-- @generated - This file is auto-generated. Do not edit manually. -->
+<html lang="en" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="DevOps Feed Hub - Centralized RSS feed aggregator for DevOps and tech news"
+    />
+    <meta
+      http-equiv="Cache-Control"
+      content="no-cache, no-store, must-revalidate"
+    />
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <title>Azure Updates - DevOps Feed Hub</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="favicon-192x192.png"
+    />
+    <link rel="apple-touch-icon" sizes="192x192" href="favicon-192x192.png" />
+    <link rel="stylesheet" href="styles.css?v=April 16, 2026 at 04:23 PM UTC" />
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="DevOps Feed Hub - All Articles"
+      href="feed.xml"
+    />
+  </head>
+  <body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-to-main">Skip to main content</a>
+
+    <div class="header">
+      <h1 class="header-title">
+        <svg
+          width="40"
+          height="40"
+          viewBox="0 0 100 100"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <linearGradient
+              id="header-grad"
+              x1="0%"
+              y1="0%"
+              x2="100%"
+              y2="100%"
+            >
+              <stop offset="0%" style="stop-color: #667eea; stop-opacity: 1" />
+              <stop
+                offset="100%"
+                style="stop-color: #764ba2; stop-opacity: 1"
+              />
+            </linearGradient>
+          </defs>
+          <g fill="url(#header-grad)">
+            <circle cx="50" cy="50" r="18" fill="url(#header-grad)" />
+            <path d="M 50,10 L 45,22 L 55,22 Z" />
+            <path d="M 78,28 L 71,34 L 77,40 Z" />
+            <path d="M 90,50 L 78,45 L 78,55 Z" />
+            <path d="M 78,72 L 77,60 L 71,66 Z" />
+            <path d="M 50,90 L 55,78 L 45,78 Z" />
+            <path d="M 22,72 L 29,66 L 23,60 Z" />
+            <path d="M 10,50 L 22,55 L 22,45 Z" />
+            <path d="M 22,28 L 23,40 L 29,34 Z" />
+          </g>
+          <circle cx="50" cy="50" r="8" fill="#ffffff" />
+        </svg>
+        DevOps Feed Hub
+      </h1>
+      <div class="header-controls">
+        <div class="timeframe-selector">
+          <select
+            class="timeframe-select"
+            id="timeframe-select"
+            aria-label="Select time range"
+          >
+            <option value="1day">Last 24 hours</option>
+            <option value="3days">Last 3 days</option>
+            <option value="7days">Last 7 days</option>
+            <option value="30days">Last 30 days</option>
+            <option value="1year">Last year</option>
+          </select>
+        </div>
+        <button
+          class="reset-read-button"
+          id="reset-read-button"
+          aria-label="Clear all read articles"
+        >
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <polyline points="23 4 23 10 17 10"></polyline>
+            <path d="M20.49 15a9 9 0 1 1-2.12-9.36L23 10"></path>
+          </svg>
+          <span>Clear All Read</span>
+        </button>
+        <button
+          class="theme-toggle"
+          id="theme-toggle"
+          aria-label="Toggle theme"
+        >
+          <svg
+            id="theme-icon"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+
+        <button
+          class="settings-button"
+          id="settings-button"
+          aria-label="Settings"
+          onclick="window.location.href = 'settings.html'"
+        >
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+            <path
+              d="M8 0a8.2 8.2 0 0 1 .701.031C9.444.095 9.99.645 10.16 1.29l.288 1.107c.018.066.079.158.212.224.231.114.454.243.668.386.123.082.233.09.299.071l1.103-.303c.644-.176 1.392.021 1.82.63.27.385.506.792.704 1.218.315.675.111 1.422-.364 1.891l-.814.806c-.049.048-.098.147-.088.294.016.257.016.515 0 .772-.01.147.038.246.088.294l.814.806c.475.469.679 1.216.364 1.891a7.977 7.977 0 0 1-.704 1.217c-.428.61-1.176.807-1.82.63l-1.102-.302c-.067-.019-.177-.011-.3.071a5.909 5.909 0 0 1-.668.386c-.133.066-.194.158-.211.224l-.29 1.106c-.168.646-.715 1.196-1.458 1.26a8.006 8.006 0 0 1-1.402 0c-.743-.064-1.289-.614-1.458-1.26l-.289-1.106c-.018-.066-.079-.158-.212-.224a5.738 5.738 0 0 1-.668-.386c-.123-.082-.233-.09-.299-.071l-1.103.303c-.644.176-1.392-.021-1.82-.63a8.12 8.12 0 0 1-.704-1.218c-.315-.675-.111-1.422.363-1.891l.815-.806c.05-.048.098-.147.088-.294a6.214 6.214 0 0 1 0-.772c.01-.147-.038-.246-.088-.294l-.815-.806C.635 6.045.431 5.298.746 4.623a7.92 7.92 0 0 1 .704-1.217c.428-.61 1.176-.807 1.82-.63l1.102.302c.067.019.177.011.3-.071.214-.143.437-.272.668-.386.133-.066.194-.158.211-.224l.29-1.106C6.009.645 6.556.095 7.299.03 7.53.01 7.764 0 8 0Zm-.571 1.525c-.036.003-.108.036-.137.146l-.289 1.105c-.147.561-.549.967-.998 1.189-.173.086-.34.183-.5.29-.417.278-.97.423-1.529.27l-1.103-.303c-.109-.03-.175.016-.195.045-.22.312-.412.644-.573.99-.014.031-.021.11.059.19l.815.806c.411.406.562.957.53 1.456a4.709 4.709 0 0 0 0 .582c.032.499-.119 1.05-.53 1.456l-.815.806c-.081.08-.073.159-.059.19.162.346.353.677.573.989.02.03.085.076.195.046l1.102-.303c.56-.153 1.113-.008 1.53.27.161.107.328.204.501.29.447.222.85.629.997 1.189l.289 1.105c.029.109.101.143.137.146a6.6 6.6 0 0 0 1.142 0c.036-.003.108-.036.137-.146l.289-1.105c.147-.561.549-.967.998-1.189.173-.086.34-.183.5-.29.417-.278.97-.423 1.529-.27l1.103.303c.109.029.175-.016.195-.045.22-.313.411-.644.573-.99.014-.031.021-.11-.059-.19l-.815-.806c-.411-.406-.562-.957-.53-1.456a4.709 4.709 0 0 0 0-.582c-.032-.499.119-1.05.53-1.456l.815-.806c.081-.08.073-.159.059-.19a6.464 6.464 0 0 0-.573-.989c-.02-.03-.085-.076-.195-.046l-1.102.303c-.56.153-1.113.008-1.53-.27a4.44 4.44 0 0 0-.501-.29c-.447-.222-.85-.629-.997-1.189l-.289-1.105c-.029-.11-.101-.143-.137-.146a6.6 6.6 0 0 0-1.142 0ZM11 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0ZM9.5 8a1.5 1.5 0 1 0-3.001.001A1.5 1.5 0 0 0 9.5 8Z"
+            ></path>
+          </svg>
+        </button>
+        <button
+          class="nav-toggle"
+          id="nav-toggle"
+          aria-label="Toggle navigation"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="container">
+      <div class="main-content" id="main-content" role="main">
+        
+        <div class="feed-section">
+            <h2><a href="https://azure.microsoft.com/en-us/updates/" class="feed-title-link" target="_blank" rel="noopener noreferrer">Azure Updates</a>
+                <span class="feed-count">
+                    200 articles
+                </span>
+            </h2>
+
+            <ul class="article-list">
+
+                <li class="article-item" data-published="2026-04-15T17:30:33+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=559751" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Retirement: End of lift reminder of HBv2/HC-Series/NP-Series Azure Virtual Machine in Azure Batch Pool
+                    </a>
+                    <div class="article-meta">Apr 15, 2026 at 05:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-04-15T17:15:38+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=559761" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Encrypt Premium SSD v2 and Ultra Disks with Cross Tenant Customer Managed Keys
+                    </a>
+                    <div class="article-meta">Apr 15, 2026 at 05:15 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-04-14T21:15:15+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=560241" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Azure Site Recovery support for Windows Azure VMs with NVMe disk controllers.
+                    </a>
+                    <div class="article-meta">Apr 14, 2026 at 09:15 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-04-14T21:15:15+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=559756" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Announcing: Minimum billable object size for cooler storage tiers
+                    </a>
+                    <div class="article-meta">Apr 14, 2026 at 09:15 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-04-14T17:15:47+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=559746" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Smart Tier (Azure Blob and Data Lake Storage)
+                    </a>
+                    <div class="article-meta">Apr 14, 2026 at 05:15 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-04-13T23:45:31+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=557828" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Azure File Sync in Belgium Central, Malaysia West, and Indonesia Central
+                    </a>
+                    <div class="article-meta">Apr 13, 2026 at 11:45 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-04-13T18:45:30+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=560162" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Managed identity support for graphical session recording
+                    </a>
+                    <div class="article-meta">Apr 13, 2026 at 06:45 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-04-13T18:00:56+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=560198" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Azure Storage Mover now available in Azure Government (US)
+                    </a>
+                    <div class="article-meta">Apr 13, 2026 at 06:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-04-13T17:45:02+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=560119" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Monitor AKS applications with OpenTelemetry and Azure Monitor
+                    </a>
+                    <div class="article-meta">Apr 13, 2026 at 05:45 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-04-13T17:45:02+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=560001" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Granular Encryption-in-Transit Controls for SMB and NFS on Azure Files
+                    </a>
+                    <div class="article-meta">Apr 13, 2026 at 05:45 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-04-13T17:15:23+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=559395" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Retirement: Azure Managed Grafana Essential SKU will retire on March 30, 2027
+                    </a>
+                    <div class="article-meta">Apr 13, 2026 at 05:15 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-04-13T16:00:36+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=560207" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Public Preview: StandardV2 NAT Gateway as an outbound type for AKS
+                    </a>
+                    <div class="article-meta">Apr 13, 2026 at 04:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-04-10T17:00:41+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=559836" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Event Grid as a destination for Stripe events now in Public Preview
+                    </a>
+                    <div class="article-meta">Apr 10, 2026 at 05:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-04-08T17:45:09+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=559628" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Enhancements to maintenance notifications in Azure Service Health
+                    </a>
+                    <div class="article-meta">Apr 08, 2026 at 05:45 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-04-08T17:45:09+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=559623" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: PgBouncer 1.25.1 support in Azure Database for PostgreSQL – Flexible Server
+                    </a>
+                    <div class="article-meta">Apr 08, 2026 at 05:45 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-04-08T17:30:02+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=560039" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Observability in AKS Namespace and Workload Views
+                    </a>
+                    <div class="article-meta">Apr 08, 2026 at 05:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-04-08T17:30:02+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=560025" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Azure Files assessments are now available using Azure Migrate
+                    </a>
+                    <div class="article-meta">Apr 08, 2026 at 05:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-04-07T19:30:53+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=559547" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Azure Red Hat OpenShift adds NVIDIA H100 and H200 GPU support
+                    </a>
+                    <div class="article-meta">Apr 07, 2026 at 07:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-04-07T17:45:41+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=557857" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Disable HTTP proxy in AKS
+                    </a>
+                    <div class="article-meta">Apr 07, 2026 at 05:45 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-04-07T17:15:12+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=559981" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Azure Functions now supports MCP resource triggers
+                    </a>
+                    <div class="article-meta">Apr 07, 2026 at 05:15 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-04-07T17:00:23+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=557907" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Pod CIDR expansion in AKS
+                    </a>
+                    <div class="article-meta">Apr 07, 2026 at 05:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-04-06T18:00:04+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=559899" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Network Security Perimeter for Azure Service Bus
+                    </a>
+                    <div class="article-meta">Apr 06, 2026 at 06:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-04-06T16:15:40+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=559876" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Rule impact analysis on Azure Network Watcher
+                    </a>
+                    <div class="article-meta">Apr 06, 2026 at 04:15 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-04-02T16:45:52+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=558027" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Retirement: Python support for Azure App Service and Azure Functions on Windows will be retired on March 31, 2027
+                    </a>
+                    <div class="article-meta">Apr 02, 2026 at 04:45 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-04-02T16:30:09+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=558276" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Retirement: AzureDnsEndpoints for Azure storage accounts will be retired March 2027
+                    </a>
+                    <div class="article-meta">Apr 02, 2026 at 04:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-04-01T21:00:19+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=558247" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Retirement: Service Fabric support for Windows Server 2022 ends on March 31, 2027 - upgrade to Windows Server 2025
+                    </a>
+                    <div class="article-meta">Apr 01, 2026 at 09:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-04-01T20:30:41+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=558246" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Retirement: Service Fabric support for Windows Server 2019 ends on March 31, 2027 - upgrade to Windows Server 2025
+                    </a>
+                    <div class="article-meta">Apr 01, 2026 at 08:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-04-01T19:00:05+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=537234" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Unlock Client-Side Configuration at Scale with Azure App Configuration and Azure Front Door
+                    </a>
+                    <div class="article-meta">Apr 01, 2026 at 07:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-04-01T18:30:16+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=559772" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Azure Data Box enhances compliance with automatic Secure Erasure Certificates
+                    </a>
+                    <div class="article-meta">Apr 01, 2026 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-04-01T18:15:44+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=559767" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Azure Data Box now supports Azure Files Provisioned v2
+                    </a>
+                    <div class="article-meta">Apr 01, 2026 at 06:15 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-04-01T18:15:44+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=559504" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In development] Public Preview: Azure NetApp Files storage with cool access enhancement
+                    </a>
+                    <div class="article-meta">Apr 01, 2026 at 06:15 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-04-01T18:00:10+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=557394" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Retirement: Select Azure AI Language Features
+                    </a>
+                    <div class="article-meta">Apr 01, 2026 at 06:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-31T20:00:35+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=557406" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Retirement: External Data Import &amp; Data Connections in Azure Machine Learning will be retired on September 30, 2026
+                    </a>
+                    <div class="article-meta">Mar 31, 2026 at 08:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-31T18:15:10+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=559660" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Azure DevOps March 2026 updates
+                    </a>
+                    <div class="article-meta">Mar 31, 2026 at 06:15 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-31T17:45:46+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=559695" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Azure Event Grid provides new capabilities for smarter, more secure event-driven architectures
+                    </a>
+                    <div class="article-meta">Mar 31, 2026 at 05:45 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-31T17:30:08+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=559535" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: User delegation SAS for Azure Tables, Azure Files, and Azure Queues
+                    </a>
+                    <div class="article-meta">Mar 31, 2026 at 05:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-31T17:30:08+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=492542" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Azure Event Grid provides new capabilities for smarter, more secure event-driven architectures
+                    </a>
+                    <div class="article-meta">Mar 31, 2026 at 05:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-31T17:15:56+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=559406" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Microsoft Azure now available from new cloud region in Denmark
+                    </a>
+                    <div class="article-meta">Mar 31, 2026 at 05:15 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-31T16:45:33+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=557395" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Retirement: Manually registered Azure VPN Clients for ​Azure Government and ​Microsoft Azure operated by 21Vianet clouds will be retired on March 31, 2029
+                    </a>
+                    <div class="article-meta">Mar 31, 2026 at 04:45 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-31T16:30:51+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=559677" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Azure Premium SSD v2 Disk is now available in US Gov Arizona
+                    </a>
+                    <div class="article-meta">Mar 31, 2026 at 04:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-30T21:45:47+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=559322" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Ephemeral OS Disk with full caching for VM/VMSS
+                    </a>
+                    <div class="article-meta">Mar 30, 2026 at 09:45 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-30T21:30:50+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=559552" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Azure Red Hat OpenShift in Indonesia Central
+                    </a>
+                    <div class="article-meta">Mar 30, 2026 at 09:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-30T21:30:50+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=550519" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Retirement: Deprecation of sidecar for remote-write for Azure Monitor managed service for Prometheus
+                    </a>
+                    <div class="article-meta">Mar 30, 2026 at 09:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-30T17:45:08+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=556085" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Retirement: Azure Cosmos DB for PostgreSQL will retire on March 31, 2029
+                    </a>
+                    <div class="article-meta">Mar 30, 2026 at 05:45 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-30T16:30:50+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=559526" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Azure Premium SSD v2 Disk is now available in South India
+                    </a>
+                    <div class="article-meta">Mar 30, 2026 at 04:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-26T16:00:10+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=558879" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Azure SQL updates for late-March 2026
+                    </a>
+                    <div class="article-meta">Mar 26, 2026 at 04:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-25T20:00:39+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=558836" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Cosmos DB Mirroring in Microsoft Fabric with private endpoints
+                    </a>
+                    <div class="article-meta">Mar 25, 2026 at 08:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-25T20:00:39+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=557862" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Blue-green agent pool upgrade in AKS
+                    </a>
+                    <div class="article-meta">Mar 25, 2026 at 08:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-25T17:45:33+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=558841" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Fabric Mirroring integration for Azure Database for MySQL
+                    </a>
+                    <div class="article-meta">Mar 25, 2026 at 05:45 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-25T17:30:45+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=558884" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Public Preview: Azure SQL Managed Instance change event streaming
+                    </a>
+                    <div class="article-meta">Mar 25, 2026 at 05:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-25T17:30:45+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=558870" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Custom time zone support for pg_cron via cron.timezone in Azure Database for PostgreSQL
+                    </a>
+                    <div class="article-meta">Mar 25, 2026 at 05:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-25T17:30:45+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=558865" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: PostgreSQL migration service supports compatible EDB workloads into Azure Database for PostgreSQL
+                    </a>
+                    <div class="article-meta">Mar 25, 2026 at 05:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-25T17:30:45+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=558851" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: PostgreSQL migration service supports for Google AlloyDB into Azure Database for PostgreSQL
+                    </a>
+                    <div class="article-meta">Mar 25, 2026 at 05:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-25T17:30:45+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=558846" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Online migration now uses the pgoutput plugin
+                    </a>
+                    <div class="article-meta">Mar 25, 2026 at 05:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-24T23:00:18+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=557902" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Container network metrics filtering for AKS
+                    </a>
+                    <div class="article-meta">Mar 24, 2026 at 11:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-24T21:45:26+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=557887" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: AI Agent for container networking troubleshooting
+                    </a>
+                    <div class="article-meta">Mar 24, 2026 at 09:45 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-24T18:30:36+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=557882" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: AKS managed GPU metrics in Azure Monitor
+                    </a>
+                    <div class="article-meta">Mar 24, 2026 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-24T18:30:36+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=557877" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Cross-cluster networking in Azure Kubernetes Fleet Manager
+                    </a>
+                    <div class="article-meta">Mar 24, 2026 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-24T18:15:48+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=557912" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Azure Container Storage v2.1.0 now with Elastic SAN integration and on demand installation
+                    </a>
+                    <div class="article-meta">Mar 24, 2026 at 06:15 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-24T18:15:48+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=557892" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Container network logs in AKS
+                    </a>
+                    <div class="article-meta">Mar 24, 2026 at 06:15 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-24T17:30:29+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=558825" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Azure Monitor Prometheus community recommended alerts for Azure Arc-enabled Kubernetes
+                    </a>
+                    <div class="article-meta">Mar 24, 2026 at 05:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-24T17:30:29+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=557927" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Application routing with meshless Istio in AKS
+                    </a>
+                    <div class="article-meta">Mar 24, 2026 at 05:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-24T17:30:29+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=557922" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Microsoft Azure Kubernetes Application Network
+                    </a>
+                    <div class="article-meta">Mar 24, 2026 at 05:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-24T17:15:45+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=559273" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Ingest OTLP data into Azure Monitor with the OpenTelemetry Collector
+                    </a>
+                    <div class="article-meta">Mar 24, 2026 at 05:15 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-20T19:15:35+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=558116" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Azure SQL updates for mid-March 2026
+                    </a>
+                    <div class="article-meta">Mar 20, 2026 at 07:15 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-20T19:00:50+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=558086" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Retirement: Azure SQL Elastic query - Shard_Map_Manager mode
+                    </a>
+                    <div class="article-meta">Mar 20, 2026 at 07:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-20T17:15:50+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=557123" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Retirement: Azure Sphere will be retired on July 31, 2031
+                    </a>
+                    <div class="article-meta">Mar 20, 2026 at 05:15 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-19T17:00:53+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=558927" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Azure Databricks OneLake Catalog Federation
+                    </a>
+                    <div class="article-meta">Mar 19, 2026 at 05:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-19T16:30:27+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=548543" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Retirement: HC-series Azure Virtual Machines will be retired on May 31, 2027
+                    </a>
+                    <div class="article-meta">Mar 19, 2026 at 04:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-19T16:30:27+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=548525" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Retirement: HBv2-series Azure Virtual Machines will be retired on May 31, 2027
+                    </a>
+                    <div class="article-meta">Mar 19, 2026 at 04:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-19T16:30:27+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=548497" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Retirement: NP-series Azure Virtual Machines will be retired on May 31, 2027
+                    </a>
+                    <div class="article-meta">Mar 19, 2026 at 04:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-18T18:45:54+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=558278" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Retirement: Emissions Impact Dashboard for Azure
+                    </a>
+                    <div class="article-meta">Mar 18, 2026 at 06:45 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-18T18:30:05+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=558121" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] General availability: Azure SQL updates for mid-March 2026
+                    </a>
+                    <div class="article-meta">Mar 18, 2026 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-18T18:30:05+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=557917" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Azure Red Hat OpenShift Managed Identity and Workload Identity
+                    </a>
+                    <div class="article-meta">Mar 18, 2026 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-18T18:15:04+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=558169" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public preview: GitHub Copilot integration in Schema Designer for the MSSQL extension
+                    </a>
+                    <div class="article-meta">Mar 18, 2026 at 06:15 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-18T18:15:04+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=558155" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Database DevOps in SSMS powered by SQL projects
+                    </a>
+                    <div class="article-meta">Mar 18, 2026 at 06:15 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-18T18:15:04+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=558150" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: SQL MCP Server
+                    </a>
+                    <div class="article-meta">Mar 18, 2026 at 06:15 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-18T18:15:04+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=558134" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: GitHub Copilot in SQL Server Management Studio 22
+                    </a>
+                    <div class="article-meta">Mar 18, 2026 at 06:15 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-18T17:00:05+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=558810" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Lakeflow Connect Free Tier now available in Azure Databricks
+                    </a>
+                    <div class="article-meta">Mar 18, 2026 at 05:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-18T17:00:05+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=558183" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Versionless key support for transparent data encryption in Azure SQL Database
+                    </a>
+                    <div class="article-meta">Mar 18, 2026 at 05:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-18T17:00:05+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=558178" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Data API builder with built-in GitHub Copilot in MSSQL extension
+                    </a>
+                    <div class="article-meta">Mar 18, 2026 at 05:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-17T17:45:45+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=558016" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Default Rule Set 2.2 and updates to ruleset support policy
+                    </a>
+                    <div class="article-meta">Mar 17, 2026 at 05:45 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-17T17:45:45+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=557141" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Foundry Agent Service
+                    </a>
+                    <div class="article-meta">Mar 17, 2026 at 05:45 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-17T17:30:11+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=557094" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Retirement: Azure VMware Solution AV36P and AV52 node retirement on June 30, 2029
+                    </a>
+                    <div class="article-meta">Mar 17, 2026 at 05:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-16T18:45:11+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=549077" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Retirement: Support for Windows Server 2016 Marketplace images on Azure Batch pools will end on January 12, 2027
+                    </a>
+                    <div class="article-meta">Mar 16, 2026 at 06:45 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-16T18:45:11+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=543279" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Retirement: Migration of Azure Batch Low-Priority VMs to Spot VMs in early March
+                    </a>
+                    <div class="article-meta">Mar 16, 2026 at 06:45 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-16T18:30:34+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=558662" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Entra ID-Based Access for Azure Blob Storage SFTP
+                    </a>
+                    <div class="article-meta">Mar 16, 2026 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-16T18:30:34+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=516070" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Retirement: End of life reminder of NVv3 and NVv4-series Azure virtual machine in Azure Batch pools
+                    </a>
+                    <div class="article-meta">Mar 16, 2026 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-16T18:15:54+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=557929" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Retirement: Flatcar Container Linux for AKS (preview)
+                    </a>
+                    <div class="article-meta">Mar 16, 2026 at 06:15 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-12T21:15:25+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=558656" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Summary rules in Log Analytics workspace now support manual “Retry bin”
+                    </a>
+                    <div class="article-meta">Mar 12, 2026 at 09:15 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-12T21:15:25+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=558651" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Azure Storage Mover enables private data transfers from AWS S3 to Azure Blob
+                    </a>
+                    <div class="article-meta">Mar 12, 2026 at 09:15 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-11T18:00:35+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=558145" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Terraform, Bicep, Ansible support for elastic clusters on Azure Database for PostgreSQL
+                    </a>
+                    <div class="article-meta">Mar 11, 2026 at 06:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-11T18:00:35+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=558140" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Azure Database for PostgreSQL dashboards with Grafana
+                    </a>
+                    <div class="article-meta">Mar 11, 2026 at 06:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-11T18:00:35+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=557527" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Customer‑managed encryption keys now supported on Premium SSD v2 disks for Azure Database for PostgreSQL
+                    </a>
+                    <div class="article-meta">Mar 11, 2026 at 06:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-11T17:45:49+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=558321" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Azure SRE Agent with new capabilities
+                    </a>
+                    <div class="article-meta">Mar 11, 2026 at 05:45 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-11T17:45:49+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=558164" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Query Profiler in MSSQL extension for Visual Studio Code
+                    </a>
+                    <div class="article-meta">Mar 11, 2026 at 05:45 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-04T21:15:02+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=558102" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Retirement: Azure Policy faster enforcement and retirement of login/logout workaround
+                    </a>
+                    <div class="article-meta">Mar 04, 2026 at 09:15 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-03T01:00:04+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=558072" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Draft &amp; Deploy on Azure Firewall
+                    </a>
+                    <div class="article-meta">Mar 03, 2026 at 01:00 AM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-02T19:15:14+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=558060" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Azure Databricks update workspace network configuration
+                    </a>
+                    <div class="article-meta">Mar 02, 2026 at 07:15 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-03-02T19:15:14+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=557991" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Azure Databricks Lakebase
+                    </a>
+                    <div class="article-meta">Mar 02, 2026 at 07:15 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-02-27T23:15:13+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=558078" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Azure Premium SSD v2 Disk Storage is now available in a third Availability Zone in New Zealand North
+                    </a>
+                    <div class="article-meta">Feb 27, 2026 at 11:15 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-02-27T23:15:13+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=558051" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: DCesv6, DCedsv6, ECesv6, and ECedsv6 confidential VMs
+                    </a>
+                    <div class="article-meta">Feb 27, 2026 at 11:15 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-02-27T21:45:03+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=555839" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Retirement: Managed NGINX Ingress with Application Routing Add-on Retiring November 2026
+                    </a>
+                    <div class="article-meta">Feb 27, 2026 at 09:45 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-02-27T17:30:41+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=557897" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Azure Red Hat OpenShift is now available in Malaysia West, New Zealand North, and Mexico Central
+                    </a>
+                    <div class="article-meta">Feb 27, 2026 at 05:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-02-26T19:45:06+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=557694" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Restrict usage of user delegation SAS to an Entra ID identity
+                    </a>
+                    <div class="article-meta">Feb 26, 2026 at 07:45 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-02-26T00:30:50+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=552808" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Secure ingestion and pod placement for Azure Monitor pipeline
+                    </a>
+                    <div class="article-meta">Feb 26, 2026 at 12:30 AM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-02-25T19:00:32+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=557517" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Azure SQL updates for late-February 2026
+                    </a>
+                    <div class="article-meta">Feb 25, 2026 at 07:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-02-25T18:45:40+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=557522" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Azure SQL updates for late-February 2026
+                    </a>
+                    <div class="article-meta">Feb 25, 2026 at 06:45 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-02-25T18:30:06+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=557532" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Geo‑redundant backups for Premium SSD v2 in Azure Database for PostgreSQL
+                    </a>
+                    <div class="article-meta">Feb 25, 2026 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-02-23T18:15:17+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=557224" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Retirement: Windows Server Annual Channel (preview)
+                    </a>
+                    <div class="article-meta">Feb 23, 2026 at 06:15 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-02-23T16:15:47+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=557416" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: WAF Insights for Application Gateway
+                    </a>
+                    <div class="article-meta">Feb 23, 2026 at 04:15 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-02-20T19:00:04+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=557623" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Azure Premium SSD v2 Disk is now available in Brazil Southeast, and in a third Availability Zone in Malaysia West and Indonesia Central
+                    </a>
+                    <div class="article-meta">Feb 20, 2026 at 07:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-02-18T18:00:55+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=557595" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Anthropic Claude Sonnet 4.6 is now available on Azure Databricks
+                    </a>
+                    <div class="article-meta">Feb 18, 2026 at 06:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-02-18T18:00:55+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=557223" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Unified tooling in the AKS MCP server
+                    </a>
+                    <div class="article-meta">Feb 18, 2026 at 06:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-02-18T18:00:55+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=557218" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Cluster mode for the agentic CLI for AKS
+                    </a>
+                    <div class="article-meta">Feb 18, 2026 at 06:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-02-18T18:00:55+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=556008" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Quota and deployment troubleshooting tools for Azure Functions Flex Consumption
+                    </a>
+                    <div class="article-meta">Feb 18, 2026 at 06:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-02-18T18:00:55+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=556003" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Azure Functions .NET 10 support
+                    </a>
+                    <div class="article-meta">Feb 18, 2026 at 06:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-02-18T17:15:17+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=557208" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Node auto-provisioning support in Sovereign Cloud
+                    </a>
+                    <div class="article-meta">Feb 18, 2026 at 05:15 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-02-18T16:45:58+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=557203" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Node auto-provisioning enabled clusters in AKS now support LocalDNS
+                    </a>
+                    <div class="article-meta">Feb 18, 2026 at 04:45 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-02-18T16:30:06+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=557213" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Encryption at host &amp; disk encryption sets support in node auto-provisioning
+                    </a>
+                    <div class="article-meta">Feb 18, 2026 at 04:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-02-17T17:00:32+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=545784" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Instant access support for incremental snapshots of Azure Premium SSD v2 and Ultra Disk
+                    </a>
+                    <div class="article-meta">Feb 17, 2026 at 05:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-02-13T00:30:15+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=548114" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: AKS support for Kubernetes version 1.34
+                    </a>
+                    <div class="article-meta">Feb 13, 2026 at 12:30 AM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-02-11T23:15:55+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=550159" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Azure SQL updates for mid-February 2026
+                    </a>
+                    <div class="article-meta">Feb 11, 2026 at 11:15 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-02-10T21:15:47+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=556282" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Azure Front Door Premium now supports Azure Private Link origins in UAE North
+                    </a>
+                    <div class="article-meta">Feb 10, 2026 at 09:15 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-02-10T18:00:43+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=557081" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available:  Azure Databricks Supervisor Agent
+                    </a>
+                    <div class="article-meta">Feb 10, 2026 at 06:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-02-09T19:45:45+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=555603" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Application Gateway for Containers - AKS managed add-on
+                    </a>
+                    <div class="article-meta">Feb 09, 2026 at 07:45 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-02-06T23:00:02+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=555184" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In development] Private Preview: Vaulted Backups for Azure Disk
+                    </a>
+                    <div class="article-meta">Feb 06, 2026 at 11:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-02-06T22:45:47+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=555488" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Azure Monitor pipeline transformations
+                    </a>
+                    <div class="article-meta">Feb 06, 2026 at 10:45 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-02-06T19:00:01+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=555981" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] ​Generally Available: Claude Opus 4.6 now available on Azure Databricks
+                    </a>
+                    <div class="article-meta">Feb 06, 2026 at 07:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-02-06T19:00:01+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=553999" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In development] Private Preview: New planned datacenter region in Thailand (Thailand South)
+                    </a>
+                    <div class="article-meta">Feb 06, 2026 at 07:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-02-06T01:00:02+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=553966" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: AMD v6 confidential VMs in new regions for January 2026
+                    </a>
+                    <div class="article-meta">Feb 06, 2026 at 01:00 AM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-02-05T21:45:03+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=555944" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Azure virtual network routing appliance
+                    </a>
+                    <div class="article-meta">Feb 05, 2026 at 09:45 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-02-05T18:30:32+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=555870" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Claude Opus 4.6, Available on Microsoft Foundry
+                    </a>
+                    <div class="article-meta">Feb 05, 2026 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-02-04T20:00:42+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=550863" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Azure NetApp Files Elastic zone-redundant service level
+                    </a>
+                    <div class="article-meta">Feb 04, 2026 at 08:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-02-03T20:30:31+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=555205" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In development] Public Preview: X-Forwarded-For (XFF) grouping for rate limiting on Application Gateway WAF v2
+                    </a>
+                    <div class="article-meta">Feb 03, 2026 at 08:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-02-03T20:30:31+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=553917" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Azure Container Storage v2.1.0 now with Elastic SAN integration and on demand installation
+                    </a>
+                    <div class="article-meta">Feb 03, 2026 at 08:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-02-03T20:30:31+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=548198" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Azure Kubernetes Fleet Manager namespace-scoped resource placement
+                    </a>
+                    <div class="article-meta">Feb 03, 2026 at 08:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-02-02T18:15:39+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=553527" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Retirement: Azure Front Door and Azure CDN profiles will end support for DHE cipher suites on April 1, 2026
+                    </a>
+                    <div class="article-meta">Feb 02, 2026 at 06:15 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-02-02T18:15:39+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=550845" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Serverless workspaces in Azure Databricks
+                    </a>
+                    <div class="article-meta">Feb 02, 2026 at 06:15 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-02-02T17:45:01+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=553532" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Default Ruleset 2.2 in WAF for Azure Application Gateway
+                    </a>
+                    <div class="article-meta">Feb 02, 2026 at 05:45 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-01-30T18:30:02+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=551523" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Retirement: &quot;Send data to Event Hubs &amp; Storage (Preview)&quot; retiring July 31, 2026
+                    </a>
+                    <div class="article-meta">Jan 30, 2026 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-01-28T23:15:47+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=545771" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Retirement: Support for Python 3.10 ends on October 1, 2026 – upgrade your Azure Functions apps to Python 3.13
+                    </a>
+                    <div class="article-meta">Jan 28, 2026 at 11:15 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-01-28T19:15:24+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=552318" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Azure AMD Turin Dasv7, Easv7, and Fasv7-series Virtual Machines
+                    </a>
+                    <div class="article-meta">Jan 28, 2026 at 07:15 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-01-28T18:45:08+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=542455" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Azure Databricks Agent Bricks Knowledge Assistant
+                    </a>
+                    <div class="article-meta">Jan 28, 2026 at 06:45 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-01-28T17:00:53+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=550164" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Latest PostgreSQL minor versions supported by Azure Database for PostgreSQL – Flexible Server
+                    </a>
+                    <div class="article-meta">Jan 28, 2026 at 05:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-01-27T17:00:06+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=550466" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Azure NetApp Files support in OpenShift Virtualization
+                    </a>
+                    <div class="article-meta">Jan 27, 2026 at 05:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-01-27T17:00:06+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=529407" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: 7th generation Intel-based VMs – Dlsv7/Dsv7/Esv7
+                    </a>
+                    <div class="article-meta">Jan 27, 2026 at 05:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-01-27T14:00:07+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=543994" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Azure Command Launcher for Java
+                    </a>
+                    <div class="article-meta">Jan 27, 2026 at 02:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-01-22T22:30:50+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=548101" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Deployment safeguards – pod security standard support in AKS
+                    </a>
+                    <div class="article-meta">Jan 22, 2026 at 10:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-01-22T17:30:31+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=547772" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: StandardV2 NAT Gateway with zone-redundancy and StandardV2 public IPs
+                    </a>
+                    <div class="article-meta">Jan 22, 2026 at 05:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-01-22T17:00:03+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=550379" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Reporting in Playwright Workspaces (part of Azure App Testing)
+                    </a>
+                    <div class="article-meta">Jan 22, 2026 at 05:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-01-22T00:00:08+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=550685" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Azure Load Testing in Switzerland North
+                    </a>
+                    <div class="article-meta">Jan 22, 2026 at 12:00 AM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-01-22T00:00:08+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=548066" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Application volume group for Oracle create data protection volume group (API)
+                    </a>
+                    <div class="article-meta">Jan 22, 2026 at 12:00 AM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-01-21T22:15:11+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=548974" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Azure File Sync in Israel Central
+                    </a>
+                    <div class="article-meta">Jan 21, 2026 at 10:15 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-01-21T18:00:07+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=548096" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Ubuntu 24.04 support in AKS
+                    </a>
+                    <div class="article-meta">Jan 21, 2026 at 06:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-01-16T17:00:49+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=548987" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: User delegation SAS for Azure Tables, Azure Files, and Azure Queues
+                    </a>
+                    <div class="article-meta">Jan 16, 2026 at 05:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-01-14T22:45:12+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=536550" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Ubuntu 24.04 support in AKS
+                    </a>
+                    <div class="article-meta">Jan 14, 2026 at 10:45 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2026-01-09T14:30:36+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=543086" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Azure Cosmos DB Mirroring with Private Endpoints
+                    </a>
+                    <div class="article-meta">Jan 09, 2026 at 02:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-31T21:00:35+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=536560" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Cloud-native apps on Kubernetes pricing calculator scenario
+                    </a>
+                    <div class="article-meta">Dec 31, 2025 at 09:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-31T21:00:35+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=490149" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Geo-Replication for Azure Service Bus Premium
+                    </a>
+                    <div class="article-meta">Dec 31, 2025 at 09:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-31T20:45:49+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=544080" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Azure Premium SSD v2 Disk is now available in Austria East and in a second Availability Zone in Japan West
+                    </a>
+                    <div class="article-meta">Dec 31, 2025 at 08:45 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-29T17:30:40+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=513892" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Retirement: Deprecation of Custom Resource Providers
+                    </a>
+                    <div class="article-meta">Dec 29, 2025 at 05:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-18T18:45:03+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=542813" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Azure Blob-to-Blob migration made simple with Azure Storage Mover
+                    </a>
+                    <div class="article-meta">Dec 18, 2025 at 06:45 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-17T18:45:01+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=541427" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Service Bus SDK type bindings in Azure Functions for Node.js
+                    </a>
+                    <div class="article-meta">Dec 17, 2025 at 06:45 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-17T18:30:05+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=541818" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Avaailable: Azure SQL updates for early December 2025
+                    </a>
+                    <div class="article-meta">Dec 17, 2025 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-17T18:30:05+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=541813" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Use Azure SRE Agent with Azure Cosmos DB
+                    </a>
+                    <div class="article-meta">Dec 17, 2025 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-16T15:45:45+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=537106" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Generally Available: Azure NetApp Files cross-zone-region replication (CZRR)
+                    </a>
+                    <div class="article-meta">Dec 16, 2025 at 03:45 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-16T15:45:45+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=536699" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Azure NetApp Files advanced ransomware protection
+                    </a>
+                    <div class="article-meta">Dec 16, 2025 at 03:45 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-12T11:30:27+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=515484" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Update: The retirement date for default outbound access has been extended to March 31, 2026.
+                    </a>
+                    <div class="article-meta">Dec 12, 2025 at 11:30 AM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-11T20:30:24+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=536907" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Azure Databricks Dashboard subscriptions now support Microsoft Teams
+                    </a>
+                    <div class="article-meta">Dec 11, 2025 at 08:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-11T18:00:36+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=541784" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Azure Sphere OS version 25.12 is now available for evaluation
+                    </a>
+                    <div class="article-meta">Dec 11, 2025 at 06:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-09T13:15:11+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=536712" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: FIPS compliant mode for Application Gateway V2 SKUs
+                    </a>
+                    <div class="article-meta">Dec 09, 2025 at 01:15 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-05T21:45:02+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=541410" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Zonal placement for Azure file shares Azure Files Premium LRS in select regions.
+                    </a>
+                    <div class="article-meta">Dec 05, 2025 at 09:45 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-04T22:30:44+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=536937" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Mistral Large 3 in Foundry
+                    </a>
+                    <div class="article-meta">Dec 04, 2025 at 10:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-04T17:00:18+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=531889" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Availaible: Azure MCP Server support for Azure confidential ledger
+                    </a>
+                    <div class="article-meta">Dec 04, 2025 at 05:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-04T16:15:01+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=536721" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Serverless workspaces in Azure Databricks
+                    </a>
+                    <div class="article-meta">Dec 04, 2025 at 04:15 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-04T12:00:46+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=499438" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Azure Blob Storage SFTP - Resumable Uploads
+                    </a>
+                    <div class="article-meta">Dec 04, 2025 at 12:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-03T21:00:12+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=501668" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Retirement: Remove dependency on these Azure ML SDKs before June 30, 2026
+                    </a>
+                    <div class="article-meta">Dec 03, 2025 at 09:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-03T17:30:15+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=534523" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Azure Database for PostgreSQL Flexible Server in Belgium Central
+                    </a>
+                    <div class="article-meta">Dec 03, 2025 at 05:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-03T17:30:15+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=534518" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Update pg_squeeze to version 1.9.1 in Azure Database for PostgreSQL Flexible Server
+                    </a>
+                    <div class="article-meta">Dec 03, 2025 at 05:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-03T17:30:15+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=534509" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: The ip4r extension in Azure Database for PostgreSQL Flexible Server
+                    </a>
+                    <div class="article-meta">Dec 03, 2025 at 05:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-03T17:30:15+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=534504" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: The credcheck extension in Azure Database for PostgreSQL Flexible Server
+                    </a>
+                    <div class="article-meta">Dec 03, 2025 at 05:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-03T17:00:27+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=536747" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Azure Load Balancer bandwidth metrics now support Protocol dimension
+                    </a>
+                    <div class="article-meta">Dec 03, 2025 at 05:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-12-01T17:30:38+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=535363" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Perth - Azure Extended Zones
+                    </a>
+                    <div class="article-meta">Dec 01, 2025 at 05:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-05-23T15:00:30+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=491990" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Model Context Protocol support in Azure API Management and Azure API Center
+                    </a>
+                    <div class="article-meta">May 23, 2025 at 03:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-11-25T16:45:50+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=534482" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Managed Identity support in Network Watcher VNET flow log, traffic analytics and packet capture
+                    </a>
+                    <div class="article-meta">Nov 25, 2025 at 04:45 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-11-24T20:30:10+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=534541" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Claude Opus 4.5 Available in Microsoft Foundry
+                    </a>
+                    <div class="article-meta">Nov 24, 2025 at 08:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-11-24T18:00:42+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=533437" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Azure File Sync in New Zealand North
+                    </a>
+                    <div class="article-meta">Nov 24, 2025 at 06:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-11-24T17:15:03+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=526018" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Entra ID support for RDP connections
+                    </a>
+                    <div class="article-meta">Nov 24, 2025 at 05:15 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-11-24T17:00:10+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=532481" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Azure Load Testing in Italy North
+                    </a>
+                    <div class="article-meta">Nov 24, 2025 at 05:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-11-24T17:00:10+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=532207" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Regex support in T-SQL
+                    </a>
+                    <div class="article-meta">Nov 24, 2025 at 05:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-11-24T17:00:10+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=532197" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Azure MCP Server for Azure Database for MySQL
+                    </a>
+                    <div class="article-meta">Nov 24, 2025 at 05:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-11-21T19:15:38+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=512413" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Custom handler support in Azure Functions Flex consumption
+                    </a>
+                    <div class="article-meta">Nov 21, 2025 at 07:15 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-11-21T18:45:18+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=501658" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        Retirement: Migrate to dedicated VM for your compute clusters
+                    </a>
+                    <div class="article-meta">Nov 21, 2025 at 06:45 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-11-20T20:00:10+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=523076" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [In preview] Public Preview: Container network metrics filtering in Advanced Container Networking Services for (ACNS) for AKS
+                    </a>
+                    <div class="article-meta">Nov 20, 2025 at 08:00 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-11-20T18:45:04+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=523152" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: MCP support for AI toolchain operator add-on in AKS
+                    </a>
+                    <div class="article-meta">Nov 20, 2025 at 06:45 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-11-20T18:30:02+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=523120" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Cluster-wide Cilium network policy with Azure CNI powered by Cilium for AKS
+                    </a>
+                    <div class="article-meta">Nov 20, 2025 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-11-20T18:30:02+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=523081" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Local redirect policy in Azure CNI powered by Cilium for AKS
+                    </a>
+                    <div class="article-meta">Nov 20, 2025 at 06:30 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-11-20T18:15:25+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=523115" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Layer 7 policy with Advanced Container Networking Services (ACNS) for AKS
+                    </a>
+                    <div class="article-meta">Nov 20, 2025 at 06:15 PM</div>
+                </li>
+
+                <li class="article-item" data-published="2025-11-20T18:15:25+00:00">
+                    <a href="https://azure.microsoft.com/updates?id=522077" class="article-title"
+                       target="_blank" rel="noopener noreferrer">
+                        [Launched] Generally Available: Azure NetApp Files single file restore from backup
+                    </a>
+                    <div class="article-meta">Nov 20, 2025 at 06:15 PM</div>
+                </li>
+
+            </ul>
+
+        </div>
+
+
+        <div class="footer">
+          Generated by RSS Feed Collector | Last updated:
+          April 16, 2026 at 04:23 PM UTC
+        </div>
+      </div>
+      <aside
+        class="sidebar"
+        id="sidebar"
+        role="complementary"
+        aria-label="Feed filters and navigation"
+      >
+        <div class="sidebar-content">
+          <div class="sidebar-header">Navigation</div>
+          <nav class="feed-nav" aria-label="Feed navigation">
+  <script type="application/json" id="feed-list-data">[&quot;AWS DevOps Blog&quot;, &quot;Atlassian DevOps&quot;, &quot;Azure Updates&quot;, &quot;CircleCI Blog&quot;, &quot;Docker Blog&quot;, &quot;GitHub Blog&quot;, &quot;GitHub Changelog&quot;, &quot;GitLab Blog&quot;, &quot;HashiCorp Blog&quot;, &quot;Jenkins Blog&quot;, &quot;Kubernetes Blog&quot;, &quot;Microsoft DevOps Blog&quot;, &quot;Microsoft Entra Blog&quot;, &quot;Microsoft Security&quot;, &quot;Opensource.com&quot;, &quot;Terraform weekly&quot;]</script>
+  <a href="index.html" class="nav-link">All Feeds</a>
+  <a href="feed-aws-devops-blog.html" class="nav-link">AWS DevOps Blog</a>
+  <a href="feed-atlassian-devops.html" class="nav-link">Atlassian DevOps</a>
+  <a href="feed-azure-updates.html" class="nav-link active">Azure Updates</a>
+  <a href="feed-circleci-blog.html" class="nav-link">CircleCI Blog</a>
+  <a href="feed-docker-blog.html" class="nav-link">Docker Blog</a>
+  <a href="feed-github-blog.html" class="nav-link">GitHub Blog</a>
+  <a href="feed-github-changelog.html" class="nav-link">GitHub Changelog</a>
+  <a href="feed-gitlab-blog.html" class="nav-link">GitLab Blog</a>
+  <a href="feed-hashicorp-blog.html" class="nav-link">HashiCorp Blog</a>
+  <a href="feed-jenkins-blog.html" class="nav-link">Jenkins Blog</a>
+  <a href="feed-kubernetes-blog.html" class="nav-link">Kubernetes Blog</a>
+  <a href="feed-microsoft-devops-blog.html" class="nav-link">Microsoft DevOps Blog</a>
+  <a href="feed-microsoft-entra-blog.html" class="nav-link">Microsoft Entra Blog</a>
+  <a href="feed-microsoft-security.html" class="nav-link">Microsoft Security</a>
+  <a href="feed-opensourcecom.html" class="nav-link">Opensource.com</a>
+  <a href="feed-terraform-weekly.html" class="nav-link">Terraform weekly</a>
+  <a href="summary.html" class="nav-link">Summary</a>
+</nav>
+
+        </div>
+        <div class="sidebar-footer">
+          <div class="view-selector">
+            <label for="view-select" class="view-label">View</label>
+            <select
+              class="view-select"
+              id="view-select"
+              aria-label="Select site view"
+            >
+              <option value="list">List</option>
+              <option value="card">Card</option>
+              <option value="horizontal-scroll">
+                Beta - Horizontal Scroll
+              </option>
+              <option value="masonry-grid">Beta - Masonry Grid</option>
+              <option value="floating-panels">Beta - Floating Panels</option>
+              <option value="center-stage">Beta - Center Stage</option>
+              <option value="top-strip">Beta - Top Strip</option>
+              <option value="list-dense">Beta - List Dense</option>
+              <option value="timeline-vertical">
+                Beta - Timeline Vertical
+              </option>
+            </select>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

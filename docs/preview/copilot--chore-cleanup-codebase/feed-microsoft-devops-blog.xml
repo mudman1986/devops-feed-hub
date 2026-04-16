@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>DevOps Feed Hub - Microsoft DevOps Blog</title>
+    <link>https://mudman1986.github.io/devops-feed-hub/preview/copilot--chore-cleanup-codebase/feed-microsoft-devops-blog.xml</link>
+    <description>Articles from Microsoft DevOps Blog</description>
+    <atom:link href="https://mudman1986.github.io/devops-feed-hub/preview/copilot--chore-cleanup-codebase/feed-microsoft-devops-blog.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 16 Apr 2026 16:23:54 +0000</lastBuildDate>
+    <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>One-click security scanning and org-wide alert triage come to Advanced Security</title>
+      <link>https://devblogs.microsoft.com/devops/one-click-security-scanning-and-org-wide-alert-triage-come-to-advanced-security/</link>
+      <guid isPermaLink="true">https://devblogs.microsoft.com/devops/one-click-security-scanning-and-org-wide-alert-triage-come-to-advanced-security/</guid>
+      <pubDate>Wed, 15 Apr 2026 15:06:53 +0000</pubDate>
+    </item>
+    <item>
+      <title>April Patches for Azure DevOps Server</title>
+      <link>https://devblogs.microsoft.com/devops/april-patches-for-azure-devops-server/</link>
+      <guid isPermaLink="true">https://devblogs.microsoft.com/devops/april-patches-for-azure-devops-server/</guid>
+      <pubDate>Tue, 14 Apr 2026 19:18:22 +0000</pubDate>
+    </item>
+    <item>
+      <title>Improving the Markdown Editor for Work Items</title>
+      <link>https://devblogs.microsoft.com/devops/improving-the-markdown-editor-for-work-items/</link>
+      <guid isPermaLink="true">https://devblogs.microsoft.com/devops/improving-the-markdown-editor-for-work-items/</guid>
+      <pubDate>Wed, 01 Apr 2026 17:17:11 +0000</pubDate>
+    </item>
+    <item>
+      <title>Remote MCP Server preview in Microsoft Foundry</title>
+      <link>https://devblogs.microsoft.com/devops/remote-mcp-server-preview-in-microsoft-foundry/</link>
+      <guid isPermaLink="true">https://devblogs.microsoft.com/devops/remote-mcp-server-preview-in-microsoft-foundry/</guid>
+      <pubDate>Thu, 19 Mar 2026 17:48:10 +0000</pubDate>
+    </item>
+    <item>
+      <title>Authentication Tokens Are Not a Data Contract</title>
+      <link>https://devblogs.microsoft.com/devops/authentication-tokens-are-not-a-data-contract/</link>
+      <guid isPermaLink="true">https://devblogs.microsoft.com/devops/authentication-tokens-are-not-a-data-contract/</guid>
+      <pubDate>Wed, 18 Mar 2026 18:46:49 +0000</pubDate>
+    </item>
+    <item>
+      <title>Azure DevOps Remote MCP Server (public preview)</title>
+      <link>https://devblogs.microsoft.com/devops/azure-devops-remote-mcp-server-public-preview/</link>
+      <guid isPermaLink="true">https://devblogs.microsoft.com/devops/azure-devops-remote-mcp-server-public-preview/</guid>
+      <pubDate>Tue, 17 Mar 2026 13:52:29 +0000</pubDate>
+    </item>
+    <item>
+      <title>March Patches for Azure DevOps Server</title>
+      <link>https://devblogs.microsoft.com/devops/march-patches-for-azure-devops-server-4/</link>
+      <guid isPermaLink="true">https://devblogs.microsoft.com/devops/march-patches-for-azure-devops-server-4/</guid>
+      <pubDate>Fri, 13 Mar 2026 21:41:24 +0000</pubDate>
+    </item>
+    <item>
+      <title>Temporary rollback: build identities can access Advanced Security: read alerts again</title>
+      <link>https://devblogs.microsoft.com/devops/temporary-rollback-build-identities-can-access-advanced-security-read-alerts-again/</link>
+      <guid isPermaLink="true">https://devblogs.microsoft.com/devops/temporary-rollback-build-identities-can-access-advanced-security-read-alerts-again/</guid>
+      <pubDate>Wed, 11 Mar 2026 23:46:28 +0000</pubDate>
+    </item>
+    <item>
+      <title>Updates to Team Calendar extension</title>
+      <link>https://devblogs.microsoft.com/devops/updates-to-team-calendar-extension/</link>
+      <guid isPermaLink="true">https://devblogs.microsoft.com/devops/updates-to-team-calendar-extension/</guid>
+      <pubDate>Fri, 27 Feb 2026 18:30:30 +0000</pubDate>
+    </item>
+    <item>
+      <title>TFVC Remove Existing Obsolete Policies ASAP</title>
+      <link>https://devblogs.microsoft.com/devops/tfvc-remove-existing-obsolete-policies-asap/</link>
+      <guid isPermaLink="true">https://devblogs.microsoft.com/devops/tfvc-remove-existing-obsolete-policies-asap/</guid>
+      <pubDate>Wed, 18 Feb 2026 16:35:23 +0000</pubDate>
+    </item>
+  </channel>
+</rss>
