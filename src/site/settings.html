@@ -228,13 +228,12 @@
               </div>
               <div class="settings-item-control">
                 <select id="theme-setting" class="settings-select">
-                  <option value="default">Default</option>
+                  <option value="default">Dracula (Default)</option>
                   <option value="purple-haze">Beta - Purple Haze</option>
                   <option value="ocean-deep">Beta - Ocean Deep</option>
                   <option value="arctic-blue">Beta - Arctic Blue</option>
                   <option value="high-contrast">Beta - High Contrast</option>
                   <option value="monochrome">Beta - Monochrome</option>
-                  <option value="dracula">Dracula</option>
                   <option value="minimalist">Beta - Minimalist</option>
                   <option value="terminal">Beta - Terminal</option>
                   <option value="retro">Beta - Retro</option>
@@ -681,7 +680,7 @@
                   const defaultTheme = applyModeToTheme("dracula", mode);
                   localStorage.setItem("theme", defaultTheme);
                   applyTheme(defaultTheme);
-                  showToast("Theme changed to Default (Dracula)", "success");
+                  showToast("Theme changed to Dracula (Default)", "success");
                 } else {
                   // Apply theme in its natural mode (not forcing current themeMode)
                   const naturalMode = getNaturalThemeMode(selectedTheme);

@@ -19,7 +19,7 @@ test.beforeEach(async ({ page }) => {
  */
 test.describe("Experimental Themes - Consolidated", () => {
   test.describe("Settings Page - Theme Dropdown", () => {
-    test("should display Theme dropdown with default and beta themes", async ({
+    test("should display Theme dropdown with Dracula default option and beta themes", async ({
       page,
     }) => {
       await page.goto("/settings.html");
@@ -29,9 +29,10 @@ test.describe("Experimental Themes - Consolidated", () => {
       const themeSelect = page.locator("#theme-setting");
       await expect(themeSelect).toBeVisible();
 
-      // Check for default option
+      // Check for Dracula default option
       const defaultOption = themeSelect.locator('option[value="default"]');
       await expect(defaultOption).toBeAttached();
+      await expect(defaultOption).toHaveText("Dracula (Default)");
 
       // Check for some beta themes
       const purpleHazeOption = themeSelect.locator(
@@ -42,7 +43,7 @@ test.describe("Experimental Themes - Consolidated", () => {
       await expect(oceanDeepOption).toBeAttached();
     });
 
-    test("should have 12 theme options (1 default + 11 beta themes)", async ({
+    test("should have 11 theme options (1 default Dracula + 10 beta themes)", async ({
       page,
     }) => {
       await page.goto("/settings.html");
@@ -51,12 +52,34 @@ test.describe("Experimental Themes - Consolidated", () => {
       const themeSelect = page.locator("#theme-setting");
       const options = themeSelect.locator("option");
 
-      // Count options: 1 default + 11 beta themes = 12
+      // Count options: 1 default Dracula + 10 beta themes = 11
       const count = await options.count();
-      expect(count).toBe(12);
+      expect(count).toBe(11);
     });
 
-    test("should display beta themes with 'Beta - ' prefix except Dracula", async ({
+    test("should place the Dracula default option above beta themes", async ({
+      page,
+    }) => {
+      await page.goto("/settings.html");
+      await page.waitForLoadState("load");
+
+      const options = await page
+        .locator("#theme-setting option")
+        .evaluateAll((elements) =>
+          elements.map((option) => ({
+            value: option.value,
+            text: option.textContent?.trim(),
+          })),
+        );
+
+      expect(options[0]).toEqual({
+        value: "default",
+        text: "Dracula (Default)",
+      });
+      expect(options[1]?.text).toContain("Beta -");
+    });
+
+    test("should display beta themes with 'Beta - ' prefix", async ({
       page,
     }) => {
       await page.goto("/settings.html");
@@ -75,10 +98,7 @@ test.describe("Experimental Themes - Consolidated", () => {
       const oceanDeepText = await oceanDeepOption.textContent();
       expect(oceanDeepText).toContain("Beta - Ocean Deep");
 
-      const draculaOption = themeSelect.locator('option[value="dracula"]');
-      const draculaText = await draculaOption.textContent();
-      expect(draculaText).toContain("Dracula");
-      expect(draculaText).not.toContain("Beta -");
+      await expect(themeSelect.locator('option[value="dracula"]')).toHaveCount(0);
     });
   });
 

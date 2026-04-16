@@ -9,7 +9,6 @@ const themes = [
   // Color variations (Beta themes)
   { name: "purple-haze", category: "theme" },
   { name: "ocean-deep", category: "theme" },
-  { name: "dracula", category: "theme" },
   { name: "monochrome", category: "theme" },
 
   // Themed styles (Beta themes)

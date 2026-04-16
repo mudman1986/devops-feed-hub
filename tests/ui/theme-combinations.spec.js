@@ -19,7 +19,6 @@ test.describe("Theme Combinations - All Settings", () => {
     "arctic-blue",
     "high-contrast",
     "monochrome",
-    "dracula",
     "minimalist",
     "terminal",
     "retro",
@@ -244,7 +243,7 @@ test.describe("Theme Combinations - All Settings", () => {
       await page.waitForTimeout(300);
 
       // Select a theme
-      await page.locator("#theme-setting").selectOption("dracula");
+      await page.locator("#theme-setting").selectOption("default");
       await page.waitForTimeout(300);
 
       // Navigate to home
@@ -261,7 +260,7 @@ test.describe("Theme Combinations - All Settings", () => {
       );
       expect(dataView).toBe("center-stage");
 
-      // Verify theme is still dracula (with mode suffix)
+      // Verify theme is still Dracula (with mode suffix)
       const dataTheme = await page.evaluate(() =>
         document.documentElement.getAttribute("data-theme"),
       );
@@ -326,7 +325,7 @@ test.describe("Theme Combinations - All Settings", () => {
       await page.goto("/settings.html");
 
       // Select theme
-      await page.locator("#theme-setting").selectOption("dracula");
+      await page.locator("#theme-setting").selectOption("default");
       await page.waitForTimeout(500);
 
       let dataTheme = await page.evaluate(() =>
@@ -358,7 +357,7 @@ test.describe("Theme Combinations - All Settings", () => {
       );
       console.log("Stored theme after toggle:", storedTheme);
 
-      // Theme should still be dracula
+      // Theme should still be Dracula
       expect(dataTheme).toContain("dracula");
     });
   });
