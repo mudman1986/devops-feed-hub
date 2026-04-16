@@ -40,7 +40,9 @@ def get_repo_root() -> Path:
     for parent in Path(__file__).resolve().parents:
         if (parent / "pyproject.toml").is_file():
             return parent
-    raise FileNotFoundError("Could not determine repository root from generate_summary.py")
+    raise FileNotFoundError(
+        "Could not determine repository root from generate_summary.py"
+    )
 
 
 def get_static_site_dir() -> Path:

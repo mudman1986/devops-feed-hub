@@ -1193,7 +1193,13 @@ class TestDeploymentScriptIssues(unittest.TestCase):
                 "failed_feeds": 0,
                 "total_articles": 0,
             },
-            "feeds": {"Test Feed": {"url": "https://example.com/feed", "count": 0, "articles": []}},
+            "feeds": {
+                "Test Feed": {
+                    "url": "https://example.com/feed",
+                    "count": 0,
+                    "articles": [],
+                }
+            },
             "failed_feeds": [],
         }
         with tempfile.TemporaryDirectory() as output_dir:

@@ -4,8 +4,8 @@
 import importlib.util
 import json
 import os
-from typing import Any
 from pathlib import Path
+from typing import Any
 
 # pylint: disable=missing-function-docstring,too-few-public-methods
 # pylint: disable=too-many-arguments,too-many-positional-arguments
