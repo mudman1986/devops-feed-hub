@@ -8,7 +8,7 @@ Comprehensive testing strategy for DevOps Feed Hub.
 
 #### JavaScript (Jest)
 
-- **Location**: `docs/script.test.js`
+- **Location**: `tests/js/script.test.js`
 - **Run**: `npm test`
 - **Coverage**: `npm run test:coverage`
 
@@ -16,21 +16,21 @@ Tests: Mark as Read, Theme toggle, Timeframe filtering
 
 #### Python (pytest)
 
-- **Location**: `.github/workflows/scripts/rss-processing/tests/`
-- **Run**: `python3 -m pytest .github/workflows/scripts/rss-processing/tests/ -v`
+- **Location**: `tests/python/rss-processing/`
+- **Run**: `python3 -m pytest tests/python/rss-processing/ -v`
 
 Tests: RSS parsing, HTML generation, RSS feed generation, feed ordering, configuration validation
 
 #### Shell Scripts (BATS)
 
-- **Location**: `scripts/test/test_commit_github_pages.bats`
-- **Run**: `bats scripts/test/test_commit_github_pages.bats`
+- **Location**: `tests/shell/test_commit_github_pages.bats`
+- **Run**: `bats tests/shell/test_commit_github_pages.bats`
 
 ## UI Tests (Playwright)
 
 ### ⚠️ Important: UI Test Prerequisites
 
-**Playwright UI tests require generated HTML files to run.** The tests navigate to pages like `index.html`, `settings.html`, and `feed-*.html` which must exist in the `docs/` directory.
+**Playwright UI tests require generated HTML files to run.** The tests navigate to pages like `index.html`, `settings.html`, and `feed-*.html` which must exist in the `site/` directory.
 
 ### Quick Setup (Recommended)
 
@@ -38,13 +38,13 @@ Use the provided script with existing test fixtures:
 
 ```bash
 # Generate test HTML files from test fixtures
-bash scripts/test/generate-test-data.sh
+bash scripts/generate-test-data.sh
 
 # Run UI tests
 npm run test:ui
 ```
 
-**Note**: This script uses test data from `.github/workflows/test-fixtures/rss-test-data.json` which is already in the repository.
+**Note**: This script uses test data from `tests/fixtures/ui-test-data.json` which is already in the repository.
 
 ### Manual Setup
 
@@ -52,12 +52,12 @@ If you need to generate test data manually:
 
 ```bash
 # Generate HTML pages from existing test fixtures
-python3 .github/workflows/scripts/rss-processing/generate_summary.py \
-  --input .github/workflows/test-fixtures/rss-test-data.json \
-  --output-dir docs
+python3 scripts/workflows/rss-processing/generate_summary.py \
+  --input tests/fixtures/ui-test-data.json \
+  --output-dir site
 
 # Verify files were created
-ls docs/*.html
+ls site/*.html
 
 # Run UI tests
 npm run test:ui
@@ -91,7 +91,7 @@ For automated testing in CI/CD, add this before running UI tests:
 
 ```yaml
 - name: Generate test data for UI tests
-  run: bash scripts/test/generate-test-data.sh
+  run: bash scripts/generate-test-data.sh
 
 - name: Run UI tests
   run: npm run test:ui
@@ -128,14 +128,14 @@ Each shard processes a subset of test files. The summary shows exactly which fil
 **Solution**: Generate HTML files first:
 
 ```bash
-bash scripts/test/generate-test-data.sh
+bash scripts/generate-test-data.sh
 ```
 
 **Problem**: Tests timeout waiting for elements  
-**Solution**: Ensure `docs/index.html` exists and contains valid HTML:
+**Solution**: Ensure `site/index.html` exists and contains valid HTML:
 
 ```bash
-ls -la docs/index.html
+ls -la site/index.html
 ```
 
 **Problem**: "`http://localhost:8080` is already used"  
@@ -151,10 +151,9 @@ npm run test:ui
 
 ### Test Data
 
-The UI tests use test fixtures located in `.github/workflows/test-fixtures/`:
+The UI tests use test fixtures located in `tests/fixtures/`:
 
-- `rss-test-data.json` - Complete test data with 3 feeds and 15 articles
-- `rss-empty-data.json` - Empty test data for edge case testing
+- `ui-test-data.json` - Complete test data with 3 feeds and 15 articles
 
 These fixtures are maintained in the repository and used by both the test suite and CI/CD workflows.
 

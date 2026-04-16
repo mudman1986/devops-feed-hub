@@ -7,12 +7,8 @@ Tests the summary generation functionality for RSS feed collection
 # pylint: disable=wrong-import-position,too-many-lines
 import json
 import os
-import sys
 import tempfile
 import unittest
-
-# Add parent directory to path for imports
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 # pylint: disable=wrong-import-position
 # flake8: noqa: E402
@@ -24,8 +20,12 @@ from generate_summary import (
     generate_feed_slug,
     generate_html_page,
     generate_markdown_summary,
+    get_static_site_dir,
+    get_template_path,
     inject_website_urls,
 )
+
+TEMPLATE_PATH = get_template_path()
 
 
 class TestGenerateSummary(unittest.TestCase):
@@ -324,16 +324,14 @@ class TestGenerateSummary(unittest.TestCase):
             mode="w", delete=False, suffix=".html", encoding="utf-8"
         ) as f:
             custom_template = f.name
-            f.write(
-                """<!doctype html>
+            f.write("""<!doctype html>
 <html>
 <head><title>Custom Template</title></head>
 <body>
 <!-- CONTENT_PLACEHOLDER -->
 <footer>Updated: <!-- TIMESTAMP_PLACEHOLDER --></footer>
 </body>
-</html>"""
-            )
+</html>""")
 
         try:
             result = generate_html_page(self.sample_data, custom_template)
@@ -364,16 +362,14 @@ class TestGenerateSummary(unittest.TestCase):
             mode="w", delete=False, suffix=".html", encoding="utf-8"
         ) as f:
             utf8_template = f.name
-            f.write(
-                """<!doctype html>
+            f.write("""<!doctype html>
 <html>
 <head><title>Test 🌙☀️</title></head>
 <body>
 <!-- CONTENT_PLACEHOLDER -->
 <footer><!-- TIMESTAMP_PLACEHOLDER --></footer>
 </body>
-</html>"""
-            )
+</html>""")
 
         try:
             result = generate_html_page(self.sample_data, utf8_template)
@@ -904,8 +900,7 @@ class TestMultiPageGeneration(unittest.TestCase):
         import re  # pylint: disable=import-outside-toplevel
 
         # Read the template file
-        template_path = os.path.join(os.path.dirname(__file__), "..", "template.html")
-        with open(template_path, "r", encoding="utf-8") as f:
+        with open(TEMPLATE_PATH, "r", encoding="utf-8") as f:
             template_content = f.read()
 
         # Check that there's no selected attribute in any option tag
@@ -1177,19 +1172,35 @@ class TestDeploymentScriptIssues(unittest.TestCase):
     """Test fixes for 404 issues and deployment problems"""
 
     def test_settings_html_exists(self):
-        """Test that settings.html exists as a static file"""
-        settings_path = os.path.join(
-            os.path.dirname(__file__), "..", "..", "..", "..", "docs", "settings.html"
-        )
-        # settings.html should exist in docs/ directory as a source file
-        # This is a sanity check that the file is committed
-        if os.path.exists(settings_path):
-            self.assertTrue(os.path.isfile(settings_path))
-            # Verify it has basic HTML structure
-            with open(settings_path, "r", encoding="utf-8") as f:
-                content = f.read()
-                self.assertIn("<!doctype html>", content.lower())
-                self.assertIn("settings", content.lower())
+        """Test that static settings.html is sourced and copied into site output."""
+        static_settings_path = get_static_site_dir() / "settings.html"
+        self.assertTrue(static_settings_path.is_file())
+
+        with open(static_settings_path, "r", encoding="utf-8") as f:
+            content = f.read()
+        self.assertIn("<!doctype html>", content.lower())
+        self.assertIn("settings", content.lower())
+
+        sample_data = {
+            "metadata": {
+                "collected_at": "2026-01-10T00:00:00Z",
+                "since": "2026-01-09T00:00:00Z",
+                "hours": 24,
+            },
+            "summary": {
+                "total_feeds": 1,
+                "successful_feeds": 1,
+                "failed_feeds": 0,
+                "total_articles": 0,
+            },
+            "feeds": {"Test Feed": {"url": "https://example.com/feed", "count": 0, "articles": []}},
+            "failed_feeds": [],
+        }
+        with tempfile.TemporaryDirectory() as output_dir:
+            generate_all_pages(sample_data, output_dir)
+            self.assertTrue(os.path.isfile(os.path.join(output_dir, "settings.html")))
+            self.assertTrue(os.path.isfile(os.path.join(output_dir, "styles.css")))
+            self.assertTrue(os.path.isfile(os.path.join(output_dir, "script.js")))
 
     def test_feed_pages_generation_with_new_feeds(self):
         """Test that feed pages can be generated for new DevOps feeds"""

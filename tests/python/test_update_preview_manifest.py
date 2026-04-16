@@ -5,15 +5,23 @@ import importlib.util
 import json
 import os
 from typing import Any
+from pathlib import Path
 
 # pylint: disable=missing-function-docstring,too-few-public-methods
 # pylint: disable=too-many-arguments,too-many-positional-arguments
 
+MANIFEST_FILENAME = "manifest.json"
+
 # Load the script as a module without executing its __main__ block
-SCRIPT_PATH = os.path.join(
-    os.path.dirname(os.path.dirname(__file__)), "update-preview-manifest.py"
+SCRIPT_PATH = (
+    Path(__file__).resolve().parents[2]
+    / "scripts"
+    / "workflows"
+    / "update-preview-manifest.py"
 )
-spec = importlib.util.spec_from_file_location("update_preview_manifest", SCRIPT_PATH)
+spec = importlib.util.spec_from_file_location(
+    "update_preview_manifest", str(SCRIPT_PATH)
+)
 if spec is None or spec.loader is None:
     raise ImportError(f"Unable to load module spec for {SCRIPT_PATH}")
 _module = importlib.util.module_from_spec(spec)
@@ -30,7 +38,7 @@ def _run(
     active_branches: set[str] | None = None,
 ) -> tuple[dict[str, Any], dict[str, Any]]:
     """Helper: call update_manifest and return (returned dict, written dict)."""
-    manifest_file = os.path.join(tmp_path, "manifest.json")
+    manifest_file = str(Path(tmp_path) / MANIFEST_FILENAME)
     result = update_manifest(
         manifest_json,
         branch,
@@ -253,7 +261,7 @@ class TestUpdateManifestFileOutput:
     """Tests for manifest file creation and serialized output."""
 
     def test_written_file_ends_with_newline(self, tmp_path):
-        manifest_file = os.path.join(str(tmp_path), "manifest.json")
+        manifest_file = os.path.join(str(tmp_path), MANIFEST_FILENAME)
         update_manifest(
             '{"previews":[]}',
             "branch",
@@ -266,7 +274,7 @@ class TestUpdateManifestFileOutput:
         assert content.endswith("\n")
 
     def test_written_file_is_valid_json(self, tmp_path):
-        manifest_file = os.path.join(str(tmp_path), "manifest.json")
+        manifest_file = os.path.join(str(tmp_path), MANIFEST_FILENAME)
         update_manifest(
             '{"previews":[]}',
             "branch",
@@ -279,7 +287,7 @@ class TestUpdateManifestFileOutput:
         assert "previews" in parsed
 
     def test_creates_parent_directories(self, tmp_path):
-        deep_path = os.path.join(str(tmp_path), "a", "b", "c", "manifest.json")
+        deep_path = os.path.join(str(tmp_path), "a", "b", "c", MANIFEST_FILENAME)
         update_manifest(
             '{"previews":[]}',
             "branch",
