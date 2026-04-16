@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/preview/copilot--update-preview-sites-logic/feed.xml</link>
     <description>Aggregated DevOps, cloud, and technology news from multiple sources</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/preview/copilot--update-preview-sites-logic/feed.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 16 Apr 2026 13:44:59 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 16 Apr 2026 15:09:21 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>CodeQL 2.25.2 adds Kotlin 2.3.20 support and other updates</title>
