@@ -24,10 +24,12 @@ https://mudman1986.github.io/devops-feed-hub/
 The page is automatically updated by the workflow:
 
 1. **On Schedule**: The workflow runs Monday-Friday at 9:00 AM UTC
-2. **On Push**: The workflow runs whenever code is pushed to the repository
+2. **On Push**:
+   - pushes to `main` update the live site
+   - pushes to other branches publish branch previews under `preview/<preview-slug>/`, where the preview slug is the branch name converted to lowercase with `/` replaced by `--` and other non-alphanumeric characters replaced by `-`
 3. **Manual**: You can trigger the workflow manually from the Actions tab
 
-When the workflow runs, it collects RSS feeds, generates updated HTML files, and commits them back to this directory. GitHub Pages automatically deploys the changes.
+When the workflow runs, it collects RSS feeds, generates updated HTML files, and commits them back to this directory. GitHub Pages automatically deploys the live site from `docs/`, while branch previews are isolated under `docs/preview/` so they cannot overwrite production.
 
 ## Customization
 
