@@ -385,6 +385,10 @@ def generate_html_content(
 
     # If showing summary page
     if current_feed == "summary":
+        failed_icon_path = (
+            "M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3"
+            "L13.71 3.86a2 2 0 0 0-3.42 0z"
+        )
         content += """
         <h2>Feed Collection Summary</h2>
         <div class="summary-intro">
@@ -432,7 +436,7 @@ def generate_html_content(
                 <div class="stat-label">Successful</div>
                 <div class="stat-value">"""
         content += f"{data['summary']['successful_feeds']}"
-        content += """</div>
+        content += f"""</div>
             </div>
             <div class="stat-card error">
                 <div class="stat-icon">
@@ -446,9 +450,7 @@ def generate_html_content(
                         stroke-linecap="round"
                         stroke-linejoin="round"
                     >
-                        <path
-                            d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"  # noqa: E501
-                        ></path>
+                        <path d="{failed_icon_path}"></path>
                         <line x1="12" y1="9" x2="12" y2="13"></line>
                         <line x1="12" y1="17" x2="12.01" y2="17"></line>
                     </svg>

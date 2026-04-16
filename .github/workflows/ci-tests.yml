@@ -29,9 +29,8 @@ jobs:
 
       - name: Run Python tests with coverage
         run: |
-          # Run workflow script tests
-          python3 -m pytest tests/python/rss-processing/ -v \
-            --cov=scripts/workflows/rss-processing \
+          python3 -m pytest tests/python/ -v \
+            --cov=scripts/workflows \
             --cov-report=html:htmlcov/workflow-scripts \
             --cov-report=term
 

@@ -214,6 +214,12 @@ class TestGenerateSummary(unittest.TestCase):
         self.assertIn(">1</div>", result)  # failed_feeds
         self.assertIn(">5</div>", result)  # total_articles
 
+    def test_generate_summary_page_does_not_emit_python_comments(self):
+        """Test that summary page HTML does not include stray source comments."""
+        result = generate_html_page(self.sample_data, current_feed="summary")
+
+        self.assertNotIn("# noqa", result)
+
     def test_generate_html_page_responsive(self):
         """Test that HTML page includes responsive design"""
         result = generate_html_page(self.sample_data)
@@ -324,14 +330,16 @@ class TestGenerateSummary(unittest.TestCase):
             mode="w", delete=False, suffix=".html", encoding="utf-8"
         ) as f:
             custom_template = f.name
-            f.write("""<!doctype html>
+            f.write(
+                """<!doctype html>
 <html>
 <head><title>Custom Template</title></head>
 <body>
 <!-- CONTENT_PLACEHOLDER -->
 <footer>Updated: <!-- TIMESTAMP_PLACEHOLDER --></footer>
 </body>
-</html>""")
+</html>"""
+            )
 
         try:
             result = generate_html_page(self.sample_data, custom_template)
@@ -362,14 +370,16 @@ class TestGenerateSummary(unittest.TestCase):
             mode="w", delete=False, suffix=".html", encoding="utf-8"
         ) as f:
             utf8_template = f.name
-            f.write("""<!doctype html>
+            f.write(
+                """<!doctype html>
 <html>
 <head><title>Test 🌙☀️</title></head>
 <body>
 <!-- CONTENT_PLACEHOLDER -->
 <footer><!-- TIMESTAMP_PLACEHOLDER --></footer>
 </body>
-</html>""")
+</html>"""
+            )
 
         try:
             result = generate_html_page(self.sample_data, utf8_template)
