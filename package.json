@@ -29,16 +29,6 @@
         "collectCoverageFrom": [
           "docs/script.js"
         ]
-      },
-      {
-        "displayName": "node",
-        "testEnvironment": "node",
-        "testMatch": [
-          "**/.github/workflows/scripts/**/*.test.js"
-        ],
-        "collectCoverageFrom": [
-          ".github/workflows/scripts/assign-copilot.js"
-        ]
       }
     ]
   },
@@ -50,8 +40,5 @@
       "test/**",
       "playwright.config.js"
     ]
-  },
-  "dependencies": {
-    "@octokit/core": "^7.0.6"
   }
 }
