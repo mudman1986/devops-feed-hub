@@ -113,7 +113,7 @@ jobs:
           echo "✓ RSS feeds generated"
 
       - name: Update preview manifest
-        if: success() && steps.publish-target.outputs.preview_slug != ''
+        if: success()
         env:
           SOURCE_BRANCH: ${{ github.ref_name }}
           PREVIEW_SLUG: ${{ steps.publish-target.outputs.preview_slug }}
@@ -124,12 +124,15 @@ jobs:
 
           # Fetch existing manifest from the target branch if it exists
           MANIFEST='{"previews":[]}'
-          git fetch origin "$TARGET_BRANCH" 2>/dev/null || true
+          ACTIVE_BRANCHES=$(git ls-remote --heads origin | awk '{sub("refs/heads/","",$2); print $2}')
+          git fetch origin "$TARGET_BRANCH:refs/remotes/origin/$TARGET_BRANCH" 2>/dev/null || true
           if git cat-file -e "origin/$TARGET_BRANCH:docs/preview/manifest.json" 2>/dev/null; then
             MANIFEST=$(git show "origin/$TARGET_BRANCH:docs/preview/manifest.json")
           fi
 
-          MANIFEST="$MANIFEST" python3 .github/workflows/scripts/update-preview-manifest.py
+          export ACTIVE_BRANCHES
+          export MANIFEST
+          python3 .github/workflows/scripts/update-preview-manifest.py
           echo "✓ Preview manifest ready"
 
       - name: Format HTML files

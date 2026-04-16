@@ -90,6 +90,45 @@ add_content_files() {
 	git add -f -A "$deploy_dir/"
 }
 
+# Remove preview directories that are no longer referenced by the manifest
+prune_stale_preview_directories() {
+	local preview_dir="$1/preview"
+	local manifest_path="$preview_dir/manifest.json"
+	local stale_dir
+
+	if [ ! -d "$preview_dir" ] || [ ! -f "$manifest_path" ]; then
+		return 0
+	fi
+
+	while IFS= read -r stale_dir; do
+		if [ -n "$stale_dir" ]; then
+			rm -rf -- "$stale_dir"
+		fi
+	done < <(
+		python3 - "$preview_dir" "$manifest_path" <<'PY'
+import json
+import pathlib
+import sys
+
+preview_dir = pathlib.Path(sys.argv[1])
+manifest_path = pathlib.Path(sys.argv[2])
+
+with manifest_path.open(encoding="utf-8") as manifest_file:
+    manifest = json.load(manifest_file)
+
+active_slugs = {
+    preview.get("slug")
+    for preview in manifest.get("previews", [])
+    if preview.get("slug")
+}
+
+for path in sorted(preview_dir.iterdir()):
+    if path.is_dir() and path.name not in active_slugs:
+        print(path)
+PY
+	)
+}
+
 # Commit and push if there are changes
 commit_and_push() {
 	local branch_name="$1"
@@ -185,11 +224,13 @@ else
 		rm -rf "$TEMP_DIR"
 	fi
 
+	prune_stale_preview_directories "$CONTENT_DIR"
+
 	add_content_files "$DEPLOY_DIR"
 
-	# Stage manifest alongside the preview content
-	if [ "$DEPLOY_DIR" != "$CONTENT_DIR" ] && [ -f "$CONTENT_DIR/preview/manifest.json" ]; then
-		git add -f "$CONTENT_DIR/preview/manifest.json"
+	# Stage preview metadata and any stale preview removals alongside the preview content
+	if [ -d "$CONTENT_DIR/preview" ]; then
+		git add -f -A "$CONTENT_DIR/preview/"
 	fi
 
 	commit_and_push "$TARGET_BRANCH"
