@@ -36,6 +36,7 @@ def _run(
     url: str,
     tmp_path: str,
     active_branches: set[str] | None = None,
+    preview_dir: str | None = None,
 ) -> tuple[dict[str, Any], dict[str, Any]]:
     """Helper: call update_manifest and return (returned dict, written dict)."""
     manifest_file = str(Path(tmp_path) / MANIFEST_FILENAME)
@@ -46,6 +47,7 @@ def _run(
         url,
         manifest_file,
         active_branches,
+        preview_dir,
     )
     with open(manifest_file, encoding="utf-8") as f:
         written = json.load(f)
@@ -255,6 +257,36 @@ class TestUpdateManifestPruning:
             {"main"},
         )
         assert written["previews"] == []
+
+    def test_prunes_preview_directories_missing_from_manifest(self, tmp_path):
+        preview_dir = Path(tmp_path) / "preview"
+        (preview_dir / "active").mkdir(parents=True)
+        (preview_dir / "stale").mkdir(parents=True)
+
+        _, written = _run(
+            json.dumps(
+                {
+                    "previews": [
+                        {
+                            "branch": "feature/active",
+                            "slug": "active",
+                            "url": "https://example.com/preview/active/",
+                            "updated_at": "2026-01-02T00:00:00Z",
+                        }
+                    ]
+                }
+            ),
+            "main",
+            "",
+            "https://example.com",
+            str(tmp_path),
+            {"feature/active", "main"},
+            str(preview_dir),
+        )
+
+        assert [preview["slug"] for preview in written["previews"]] == ["active"]
+        assert (preview_dir / "active").exists()
+        assert not (preview_dir / "stale").exists()
 
 
 class TestUpdateManifestFileOutput:
