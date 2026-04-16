@@ -52,9 +52,9 @@ def test_merge_root_build_preserves_existing_previews(tmp_path: Path) -> None:
     assert (output_dir / "index.html").read_text(encoding="utf-8") == "production v2"
     assert (output_dir / "summary.html").read_text(encoding="utf-8") == "summary"
     assert not (output_dir / "old.html").exists()
-    assert (
-        output_dir / "preview" / "feature-a" / "index.html"
-    ).read_text(encoding="utf-8") == "preview"
+    assert (output_dir / "preview" / "feature-a" / "index.html").read_text(
+        encoding="utf-8"
+    ) == "preview"
 
 
 def test_merge_preview_build_preserves_production_site(tmp_path: Path) -> None:
@@ -76,9 +76,9 @@ def test_merge_preview_build_preserves_production_site(tmp_path: Path) -> None:
 
     assert (output_dir / "index.html").read_text(encoding="utf-8") == "production"
     assert (output_dir / "summary.html").read_text(encoding="utf-8") == "summary"
-    assert (
-        output_dir / "preview" / "feature-a" / "index.html"
-    ).read_text(encoding="utf-8") == "preview"
+    assert (output_dir / "preview" / "feature-a" / "index.html").read_text(
+        encoding="utf-8"
+    ) == "preview"
     assert not (output_dir / "preview" / "feature-a" / "old.html").exists()
 
 
@@ -94,6 +94,6 @@ def test_merge_preview_build_creates_nested_directory(tmp_path: Path) -> None:
         deploy_subdir="preview/feature-branch",
     )
 
-    assert (
-        output_dir / "preview" / "feature-branch" / "index.html"
-    ).read_text(encoding="utf-8") == "preview"
+    assert (output_dir / "preview" / "feature-branch" / "index.html").read_text(
+        encoding="utf-8"
+    ) == "preview"

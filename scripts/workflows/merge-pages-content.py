@@ -36,7 +36,9 @@ def copy_directory_contents(source_dir: Path, destination_dir: Path) -> None:
             shutil.copy2(item, destination_path)
 
 
-def remove_directory_contents(directory: Path, preserve_names: set[str] | None = None) -> None:
+def remove_directory_contents(
+    directory: Path, preserve_names: set[str] | None = None
+) -> None:
     """Remove all contents from a directory, preserving named entries when requested."""
     preserve_names = preserve_names or set()
     if not directory.exists():
@@ -89,8 +91,12 @@ def main() -> None:
     parser = argparse.ArgumentParser(
         description="Merge generated Pages content into a deployable site directory."
     )
-    parser.add_argument("--build-dir", required=True, help="Directory with fresh build output")
-    parser.add_argument("--output-dir", required=True, help="Directory for merged site output")
+    parser.add_argument(
+        "--build-dir", required=True, help="Directory with fresh build output"
+    )
+    parser.add_argument(
+        "--output-dir", required=True, help="Directory for merged site output"
+    )
     parser.add_argument(
         "--deploy-subdir",
         default="",
