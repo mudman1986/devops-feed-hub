@@ -72,7 +72,7 @@ export default defineConfig({
   ],
 
   webServer: {
-    command: "npx http-server docs -p 8080 --silent",
+    command: "npx http-server site -p 8080 --silent",
     port: 8080,
     reuseExistingServer: !process.env.CI,
     timeout: 120000, // 120 seconds to allow server startup
