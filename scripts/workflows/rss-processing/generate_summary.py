@@ -616,7 +616,7 @@ def main():
     )
     parser.add_argument(
         "--feeds-config",
-        help="Path to the feeds config JSON (e.g. .github/rss-feeds.json) used to "
+        help="Path to the feeds config JSON (e.g. config/rss-feeds.json) used to "
         "inject website_url into feed data for feed-title hyperlinks",
     )
 

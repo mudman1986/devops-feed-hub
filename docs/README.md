@@ -36,11 +36,11 @@ When the workflow runs, it collects RSS feeds, generates updated HTML files, and
 To customize the feeds being collected, edit:
 
 ```text
-.github/rss-feeds.json
+config/rss-feeds.json
 ```
 
 The HTML styling can be customized by modifying the generation logic in:
 
 ```text
-.github/workflows/scripts/rss-processing/generate_summary.py
+scripts/workflows/rss-processing/generate_summary.py
 ```

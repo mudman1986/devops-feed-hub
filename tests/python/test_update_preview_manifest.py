@@ -11,7 +11,7 @@ from typing import Any
 
 # Load the script as a module without executing its __main__ block
 SCRIPT_PATH = os.path.join(
-    os.path.dirname(os.path.dirname(__file__)), "update-preview-manifest.py"
+    os.path.join(os.path.dirname(__file__), "..", "..", "scripts", "workflows"), "update-preview-manifest.py"
 )
 spec = importlib.util.spec_from_file_location("update_preview_manifest", SCRIPT_PATH)
 if spec is None or spec.loader is None:

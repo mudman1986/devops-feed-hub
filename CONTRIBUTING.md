@@ -83,7 +83,7 @@ DevOps Feed Hub is a static RSS feed aggregator that uses GitHub Actions to auto
 3. **Run Python unit tests**:
 
    ```bash
-   python3 -m pytest .github/workflows/scripts/rss-processing/tests/ -v
+   python3 -m pytest tests/python/rss-processing/ -v
    ```
 
 4. **Run UI tests**:
@@ -131,7 +131,7 @@ We welcome various types of contributions:
 
 To add a new RSS feed source:
 
-1. Edit `.github/rss-feeds.json`
+1. Edit `config/rss-feeds.json`
 2. Add your feed following the existing format:
 
    ```json
@@ -283,7 +283,7 @@ Include:
 ## Getting Help
 
 - **Questions?** Open a discussion or issue
-- **Stuck?** Check the [TESTING.md](TESTING.md) and [README.md](.github/README.md)
+- **Stuck?** Check the [TESTING.md](TESTING.md) and [README.md](README.md)
 - **Need clarification?** Ask in your pull request or issue
 
 ## Recognition
