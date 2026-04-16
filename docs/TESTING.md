@@ -153,7 +153,7 @@ npm run test:ui
 
 The UI tests use test fixtures located in `tests/fixtures/`:
 
-- `ui-test-data.json` - Complete test data with 3 feeds and 15 articles
+- `ui-test-data.json` - Complete test data with 9 feeds and 25 articles
 
 These fixtures are maintained in the repository and used by both the test suite and CI/CD workflows.
 
