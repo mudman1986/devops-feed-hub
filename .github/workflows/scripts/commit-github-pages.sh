@@ -1,13 +1,15 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # Script to commit and push GitHub Pages content
-# Usage: commit-github-pages.sh <content-directory> [target-branch]
+# Usage: commit-github-pages.sh <content-directory> [target-branch] [deploy-directory]
 # If target-branch is not specified or is "current", commits to current branch
+# If deploy-directory is not specified, the content directory is used as-is
 # If target-branch is specified, commits to that branch
 
-set -e
+set -euo pipefail
 
 CONTENT_DIR="${1:-docs}"
 TARGET_BRANCH="${2:-current}"
+DEPLOY_DIR="${3:-$CONTENT_DIR}"
 
 # Configure git for GitHub Actions bot
 configure_git() {
@@ -15,21 +17,77 @@ configure_git() {
 	git config --local user.name "github-actions[bot]"
 }
 
-# Add content directory and force-add generated files
-add_content_files() {
+# Validate deploy directory is safe and stays within the content directory tree
+validate_deploy_dir() {
 	local content_dir="$1"
+	local deploy_dir="$2"
 
-	# Add the content directory
-	git add "$content_dir/"
+	if [ -z "$deploy_dir" ] || [ "$deploy_dir" = "." ] || [ "$deploy_dir" = "/" ]; then
+		echo "Deploy directory cannot be empty, '.', or '/': $deploy_dir" >&2
+		exit 1
+	fi
 
-	# Force add ALL HTML files that might be ignored by .gitignore
-	# The github-pages branch has docs/*.html in .gitignore, but we need to deploy them
-	git add -f "$content_dir"/*.html 2>/dev/null || true
+	case "$deploy_dir" in
+	../* | */../* | */..)
+		echo "Deploy directory cannot contain parent path segments: $deploy_dir" >&2
+		exit 1
+		;;
+	esac
 
-	# Also force add other static source files
-	git add -f "$content_dir/styles.css" 2>/dev/null || true
-	git add -f "$content_dir/script.js" 2>/dev/null || true
-	git add -f "$content_dir/favicon.svg" 2>/dev/null || true
+	case "$deploy_dir" in
+	"$content_dir" | "$content_dir"/*) ;;
+	*)
+		echo "Deploy directory must stay within $content_dir: $deploy_dir" >&2
+		exit 1
+		;;
+	esac
+}
+
+# Sync generated content into the deploy directory
+sync_content_files() {
+	local source_dir="$1"
+	local target_dir="$2"
+	local path
+
+	validate_deploy_dir "$CONTENT_DIR" "$target_dir"
+
+	if [ "$target_dir" = "$CONTENT_DIR" ]; then
+		mkdir -p "$target_dir"
+		# Preserve branch previews stored under the preview/ subdirectory.
+		# Use dotglob+nullglob in a subshell to safely iterate all entries (incl. hidden).
+		(
+			shopt -s dotglob nullglob
+			for path in "$target_dir"/*; do
+				if [ "$path" != "$target_dir/preview" ]; then
+					rm -rf -- "$path"
+				fi
+			done
+		)
+	else
+		rm -rf "$target_dir"
+		mkdir -p "$target_dir"
+	fi
+	cp -r "$source_dir"/. "$target_dir"/
+}
+
+# Copy content through a temporary directory so nested deploy paths are safe
+sync_content_files_via_temp() {
+	local source_dir="$1"
+	local deploy_dir="$2"
+	local temp_dir
+
+	temp_dir=$(mktemp -d)
+	trap 'rm -rf -- "$temp_dir"' RETURN
+	cp -r "$source_dir" "$temp_dir/"
+	sync_content_files "$temp_dir/$(basename "$source_dir")" "$deploy_dir"
+}
+
+# Add deploy directory and force-add generated files
+add_content_files() {
+	local deploy_dir="$1"
+
+	# Add the deploy directory
+	git add -f -A "$deploy_dir/"
 }
 
 # Commit and push if there are changes
@@ -64,7 +122,10 @@ configure_git
 # If target branch is "current" or empty, just commit to current branch
 if [ "$TARGET_BRANCH" = "current" ] || [ -z "$TARGET_BRANCH" ]; then
 	echo "Committing to current branch" >&2
-	add_content_files "$CONTENT_DIR"
+	if [ "$DEPLOY_DIR" != "$CONTENT_DIR" ]; then
+		sync_content_files_via_temp "$CONTENT_DIR" "$DEPLOY_DIR"
+	fi
+	add_content_files "$DEPLOY_DIR"
 	commit_and_push ""
 else
 	# Commit to a different branch
@@ -112,12 +173,25 @@ else
 	# Copy generated content back from temp location
 	if [ -d "$TEMP_DIR/$CONTENT_DIR" ]; then
 		echo "Restoring generated content from temporary location" >&2
-		mkdir -p "$CONTENT_DIR"
-		cp -r "$TEMP_DIR/$CONTENT_DIR"/* "$CONTENT_DIR/"
+		sync_content_files "$TEMP_DIR/$CONTENT_DIR" "$DEPLOY_DIR"
+
+		# When publishing a preview, also commit the updated preview manifest
+		if [ "$DEPLOY_DIR" != "$CONTENT_DIR" ] && [ -f "$TEMP_DIR/$CONTENT_DIR/preview/manifest.json" ]; then
+			echo "Restoring preview manifest" >&2
+			mkdir -p "$CONTENT_DIR/preview"
+			cp "$TEMP_DIR/$CONTENT_DIR/preview/manifest.json" "$CONTENT_DIR/preview/manifest.json"
+		fi
+
 		rm -rf "$TEMP_DIR"
 	fi
 
-	add_content_files "$CONTENT_DIR"
+	add_content_files "$DEPLOY_DIR"
+
+	# Stage manifest alongside the preview content
+	if [ "$DEPLOY_DIR" != "$CONTENT_DIR" ] && [ -f "$CONTENT_DIR/preview/manifest.json" ]; then
+		git add -f "$CONTENT_DIR/preview/manifest.json"
+	fi
+
 	commit_and_push "$TARGET_BRANCH"
 
 	# Switch back to original branch
