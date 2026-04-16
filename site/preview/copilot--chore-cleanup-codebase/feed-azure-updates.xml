@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/preview/copilot--chore-cleanup-codebase/feed-azure-updates.xml</link>
     <description>Articles from Azure Updates</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/preview/copilot--chore-cleanup-codebase/feed-azure-updates.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 16 Apr 2026 19:52:22 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 16 Apr 2026 20:06:29 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>[In preview] Generally Available: User and group quota reports in Azure NetApp Files</title>
