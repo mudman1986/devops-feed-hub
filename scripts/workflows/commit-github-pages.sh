@@ -7,6 +7,7 @@
 
 set -euo pipefail
 
+# Default publish content to site/ because generated web output no longer lives in docs/.
 CONTENT_DIR="${1:-site}"
 TARGET_BRANCH="${2:-current}"
 DEPLOY_DIR="${3:-$CONTENT_DIR}"

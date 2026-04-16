@@ -20,8 +20,13 @@ from generate_summary import (
     generate_feed_slug,
     generate_html_page,
     generate_markdown_summary,
+    get_static_site_dir,
+    get_template_path,
     inject_website_urls,
 )
+
+TEMPLATE_PATH = get_template_path()
+STATIC_SETTINGS_PATH = get_static_site_dir() / "settings.html"
 
 
 class TestGenerateSummary(unittest.TestCase):
@@ -896,17 +901,7 @@ class TestMultiPageGeneration(unittest.TestCase):
         import re  # pylint: disable=import-outside-toplevel
 
         # Read the template file
-        template_path = os.path.join(
-            os.path.dirname(__file__),
-            "..",
-            "..",
-            "..",
-            "scripts",
-            "workflows",
-            "rss-processing",
-            "template.html",
-        )
-        with open(template_path, "r", encoding="utf-8") as f:
+        with open(TEMPLATE_PATH, "r", encoding="utf-8") as f:
             template_content = f.read()
 
         # Check that there's no selected attribute in any option tag
@@ -1179,12 +1174,9 @@ class TestDeploymentScriptIssues(unittest.TestCase):
 
     def test_settings_html_exists(self):
         """Test that static settings.html is sourced and copied into site output."""
-        settings_source_path = os.path.join(
-            os.path.dirname(__file__), "..", "..", "..", "src", "site", "settings.html"
-        )
-        self.assertTrue(os.path.isfile(settings_source_path))
+        self.assertTrue(STATIC_SETTINGS_PATH.is_file())
 
-        with open(settings_source_path, "r", encoding="utf-8") as f:
+        with open(STATIC_SETTINGS_PATH, "r", encoding="utf-8") as f:
             content = f.read()
         self.assertIn("<!doctype html>", content.lower())
         self.assertIn("settings", content.lower())

@@ -4,6 +4,7 @@
 
 set -euo pipefail
 
+# Default to the generated site/ output directory used by Playwright and publishing.
 OUTPUT_DIR="${1:-site}"
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 TEST_DATA="${SCRIPT_DIR}/../tests/fixtures/ui-test-data.json"

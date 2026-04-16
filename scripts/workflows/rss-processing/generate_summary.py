@@ -9,13 +9,11 @@ import json
 import os
 import shutil
 from html import escape as html_escape
+from pathlib import Path
 from typing import Any, Dict, Optional
 
 from utils import generate_feed_slug, parse_iso_timestamp
 
-STATIC_SITE_DIR = os.path.abspath(
-    os.path.join(os.path.dirname(__file__), "..", "..", "..", "src", "site")
-)
 STATIC_SITE_FILES = (
     "favicon-16x16.png",
     "favicon-192x192.png",
@@ -27,6 +25,45 @@ STATIC_SITE_FILES = (
     "settings.html",
     "styles.css",
 )
+
+
+def get_repo_root() -> Path:
+    """
+    Resolve the repository root from this module location.
+
+    Returns:
+        Repository root path.
+
+    Raises:
+        FileNotFoundError: If the repository root cannot be determined.
+    """
+    for parent in Path(__file__).resolve().parents:
+        if (parent / "pyproject.toml").is_file():
+            return parent
+    raise FileNotFoundError("Could not determine repository root from generate_summary.py")
+
+
+def get_static_site_dir() -> Path:
+    """
+    Return the directory containing authored static site assets.
+
+    Returns:
+        Path to the static site asset directory.
+    """
+    return get_repo_root() / "src" / "site"
+
+
+def get_template_path() -> Path:
+    """
+    Return the path to the HTML template file.
+
+    Returns:
+        Path to template.html.
+    """
+    return Path(__file__).resolve().with_name("template.html")
+
+
+STATIC_SITE_DIR = get_static_site_dir()
 
 
 def generate_markdown_summary(data: Dict[str, Any]) -> str:
@@ -248,7 +285,7 @@ def copy_static_site_assets(output_dir: str) -> None:
     missing_assets = [
         asset_name
         for asset_name in STATIC_SITE_FILES
-        if not os.path.isfile(os.path.join(STATIC_SITE_DIR, asset_name))
+        if not (STATIC_SITE_DIR / asset_name).is_file()
     ]
     if missing_assets:
         missing_list = ", ".join(sorted(missing_assets))
@@ -257,7 +294,7 @@ def copy_static_site_assets(output_dir: str) -> None:
         )
 
     for asset_name in STATIC_SITE_FILES:
-        source_path = os.path.join(STATIC_SITE_DIR, asset_name)
+        source_path = STATIC_SITE_DIR / asset_name
         target_path = os.path.join(output_dir, asset_name)
         shutil.copy2(source_path, target_path)
 
@@ -543,8 +580,7 @@ def generate_html_page(
     """
     # Get template path
     if template_path is None:
-        script_dir = os.path.dirname(os.path.abspath(__file__))
-        template_path = os.path.join(script_dir, "template.html")
+        template_path = str(get_template_path())
 
     # Read template with error handling and explicit UTF-8 encoding
     try:
