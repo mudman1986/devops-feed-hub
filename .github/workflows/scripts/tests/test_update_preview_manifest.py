@@ -6,7 +6,7 @@ import json
 import os
 from typing import Any
 
-# pylint: disable=missing-class-docstring,missing-function-docstring,too-few-public-methods
+# pylint: disable=missing-function-docstring,too-few-public-methods
 
 # Load the script as a module without executing its __main__ block
 SCRIPT_PATH = os.path.join(
@@ -32,6 +32,8 @@ def _run(
 
 
 class TestUpdateManifestFreshStart:
+    """Tests for creating a preview manifest from empty or invalid input."""
+
     def test_creates_entry_from_empty_manifest(self, tmp_path):
         _, written = _run(
             '{"previews":[]}',
@@ -68,6 +70,8 @@ class TestUpdateManifestFreshStart:
 
 
 class TestUpdateManifestUpdate:
+    """Tests for updating and deduplicating preview entries."""
+
     def test_updates_existing_slug(self, tmp_path):
         existing = json.dumps(
             {
@@ -150,6 +154,8 @@ class TestUpdateManifestUpdate:
 
 
 class TestUpdateManifestSorting:
+    """Tests for preview ordering by newest update timestamp."""
+
     def test_most_recently_updated_is_first(self, tmp_path):
         existing = json.dumps(
             {
@@ -175,6 +181,8 @@ class TestUpdateManifestSorting:
 
 
 class TestUpdateManifestFileOutput:
+    """Tests for manifest file creation and serialized output."""
+
     def test_written_file_ends_with_newline(self, tmp_path):
         manifest_file = os.path.join(str(tmp_path), "manifest.json")
         update_manifest(
