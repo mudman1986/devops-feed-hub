@@ -26,7 +26,6 @@ from generate_summary import (
 )
 
 TEMPLATE_PATH = get_template_path()
-STATIC_SETTINGS_PATH = get_static_site_dir() / "settings.html"
 
 
 class TestGenerateSummary(unittest.TestCase):
@@ -1174,9 +1173,10 @@ class TestDeploymentScriptIssues(unittest.TestCase):
 
     def test_settings_html_exists(self):
         """Test that static settings.html is sourced and copied into site output."""
-        self.assertTrue(STATIC_SETTINGS_PATH.is_file())
+        static_settings_path = get_static_site_dir() / "settings.html"
+        self.assertTrue(static_settings_path.is_file())
 
-        with open(STATIC_SETTINGS_PATH, "r", encoding="utf-8") as f:
+        with open(static_settings_path, "r", encoding="utf-8") as f:
             content = f.read()
         self.assertIn("<!doctype html>", content.lower())
         self.assertIn("settings", content.lower())
