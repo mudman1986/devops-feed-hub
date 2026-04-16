@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
 """Merge generated GitHub Pages content into a deployable site directory."""
 
+# pylint: disable=invalid-name
+
 from __future__ import annotations
 
 import argparse

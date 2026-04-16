@@ -28,11 +28,13 @@ def write_file(path: Path, content: str) -> None:
 
 
 def test_validate_deploy_subdir_rejects_parent_segments() -> None:
+    """Reject deploy subdirectories that traverse upward."""
     with pytest.raises(ValueError, match="parent path segments"):
         validate_deploy_subdir("../preview")
 
 
 def test_merge_root_build_preserves_existing_previews(tmp_path: Path) -> None:
+    """Keep existing previews while replacing production files."""
     existing_dir = tmp_path / "existing"
     build_dir = tmp_path / "build"
     output_dir = tmp_path / "site"
@@ -58,6 +60,7 @@ def test_merge_root_build_preserves_existing_previews(tmp_path: Path) -> None:
 
 
 def test_merge_preview_build_preserves_production_site(tmp_path: Path) -> None:
+    """Keep production content when updating one preview directory."""
     existing_dir = tmp_path / "existing"
     build_dir = tmp_path / "build"
     output_dir = tmp_path / "site"
@@ -83,6 +86,7 @@ def test_merge_preview_build_preserves_production_site(tmp_path: Path) -> None:
 
 
 def test_merge_preview_build_creates_nested_directory(tmp_path: Path) -> None:
+    """Create nested preview directories when no prior state exists."""
     build_dir = tmp_path / "build"
     output_dir = tmp_path / "site"
 
