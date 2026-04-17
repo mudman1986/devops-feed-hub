@@ -2,9 +2,6 @@ name: DevOps Feed Hub
 
 on:
   push:
-    branches:
-      - main
-  pull_request:
   workflow_dispatch:
   schedule:
     - cron: "0 */12 * * *"
