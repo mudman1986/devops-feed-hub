@@ -476,9 +476,7 @@ test.describe("Preview Sites Settings", () => {
   test("should load the shared preview manifest when viewing settings from a preview path", async ({
     page,
   }) => {
-    const settingsResponse = await page.request.get(
-      "http://localhost:8080/settings.html",
-    );
+    const settingsResponse = await page.request.get("/settings.html");
     const settingsHtml = await settingsResponse.text();
 
     await page.route("**/*", async (route) => {

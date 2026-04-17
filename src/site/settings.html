@@ -1004,19 +1004,25 @@
             return [];
           }
 
-          const candidates = [trimmedFeedList];
           const decodedFeedList = decodeHtmlEntities(trimmedFeedList);
+          const candidates = [decodedFeedList];
           if (decodedFeedList !== trimmedFeedList) {
-            candidates.push(decodedFeedList);
+            candidates.push(trimmedFeedList);
           }
+
+          let lastParseError = null;
 
           for (const candidate of candidates) {
             try {
               const parsedFeedList = JSON.parse(candidate);
               return Array.isArray(parsedFeedList) ? parsedFeedList : [];
             } catch (e) {
-              console.warn("Unable to parse feed list:", e);
+              lastParseError = e;
             }
+          }
+
+          if (lastParseError) {
+            console.warn("Unable to parse feed list:", lastParseError);
           }
 
           return [];
