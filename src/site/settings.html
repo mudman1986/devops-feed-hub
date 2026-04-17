@@ -623,6 +623,7 @@
               // It's a theme, get the base theme
               const baseTheme = getBaseTheme(experimentalTheme);
               if (themeSelect && baseTheme === "dracula") {
+                // Dracula is represented by the built-in default dropdown option
                 themeSelect.value = "default";
               } else if (
                 themeSelect &&
