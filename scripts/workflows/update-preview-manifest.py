@@ -34,9 +34,11 @@ def update_manifest(
     Returns:
         The updated manifest dict.
     """
+    parsed_manifest = True
     try:
         manifest = json.loads(manifest_json)
     except json.JSONDecodeError as exc:
+        parsed_manifest = False
         print(
             f"Warning: could not parse existing manifest ({exc}); starting fresh",
             file=sys.stderr,
@@ -67,7 +69,7 @@ def update_manifest(
         json.dump(manifest, f, indent=2)
         f.write("\n")
 
-    if preview_dir:
+    if preview_dir and parsed_manifest:
         preview_root = os.path.abspath(preview_dir)
         if os.path.isdir(preview_root):
             active_slugs = {

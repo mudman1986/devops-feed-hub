@@ -288,6 +288,27 @@ class TestUpdateManifestPruning:
         assert (preview_dir / "active").exists()
         assert not (preview_dir / "stale").exists()
 
+    def test_invalid_manifest_does_not_prune_preview_directories(self, tmp_path):
+        preview_dir = Path(tmp_path) / "preview"
+        (preview_dir / "feature--live").mkdir(parents=True)
+        (preview_dir / "feature--stale").mkdir(parents=True)
+
+        _, written = _run(
+            "NOT VALID JSON",
+            "feature/live",
+            "feature--live",
+            "https://example.com/preview/feature--live",
+            str(tmp_path),
+            {"feature/live", "main"},
+            str(preview_dir),
+        )
+
+        assert [preview["slug"] for preview in written["previews"]] == [
+            "feature--live"
+        ]
+        assert (preview_dir / "feature--live").exists()
+        assert (preview_dir / "feature--stale").exists()
+
 
 class TestUpdateManifestFileOutput:
     """Tests for manifest file creation and serialized output."""

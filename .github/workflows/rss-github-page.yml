@@ -98,7 +98,10 @@ jobs:
               },
             );
             const artifact = artifacts
-              .filter((candidate) => !candidate.expired)
+              .filter(
+                (candidate) =>
+                  candidate.name === artifactName && !candidate.expired,
+              )
               .sort(
                 (left, right) =>
                   new Date(right.created_at) - new Date(left.created_at),
