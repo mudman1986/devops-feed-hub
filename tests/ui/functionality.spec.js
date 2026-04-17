@@ -11,6 +11,40 @@ test.beforeEach(async ({ page }) => {
   });
 });
 
+async function mockPreviewPage(page, previewPath, sourcePath = "/") {
+  const [sourceResponse, scriptResponse] = await Promise.all([
+    page.request.get(sourcePath),
+    page.request.get("/script.js"),
+  ]);
+  const [html, script] = await Promise.all([
+    sourceResponse.text(),
+    scriptResponse.text(),
+  ]);
+  const previewDirectory = previewPath.replace(/\/[^/]*$/, "");
+
+  await page.route("**/*", async (route) => {
+    const url = new URL(route.request().url());
+
+    if (url.pathname === previewPath) {
+      await route.fulfill({
+        contentType: "text/html",
+        body: html,
+      });
+      return;
+    }
+
+    if (url.pathname === `${previewDirectory}/script.js`) {
+      await route.fulfill({
+        contentType: "application/javascript",
+        body: script,
+      });
+      return;
+    }
+
+    await route.continue();
+  });
+}
+
 /**
  * Theme Toggle Functionality Tests
  * Tests dark/light mode switching
@@ -388,6 +422,30 @@ test.describe("Navigation Tests", () => {
     const href = await firstLink.getAttribute("href");
     expect(href).toBeTruthy();
     expect(href).toMatch(/^https?:\/\//);
+  });
+
+  test("should not show return-to-production banner on production pages", async ({
+    page,
+  }) => {
+    await expect(page.locator("#preview-site-banner")).toHaveCount(0);
+  });
+
+  test("should show a return-to-production banner on preview pages", async ({
+    page,
+  }) => {
+    await mockPreviewPage(page, "/preview/test-branch/index.html");
+    await page.goto("/preview/test-branch/index.html?view=card#headline");
+
+    const banner = page.locator("#preview-site-banner");
+    const returnLink = page.locator("#return-to-production-link");
+
+    await expect(banner).toBeVisible();
+    await expect(banner).toContainText("Preview site");
+    await expect(banner).toContainText("not production");
+    await expect(returnLink).toHaveAttribute(
+      "href",
+      "http://localhost:8080/index.html?view=card#headline",
+    );
   });
 });
 

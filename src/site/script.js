@@ -205,6 +205,44 @@ function removeLocalStorage(key) {
   }
 }
 
+/**
+ * Get preview deployment context for the current page, if applicable
+ * @param {string} [currentHref=window.location.href] - URL to inspect
+ * @returns {{slug: string, productionUrl: string, manifestUrl: string}|null}
+ */
+function getPreviewSiteContext(currentHref = window.location.href) {
+  const currentUrl = new URL(currentHref, window.location.origin);
+  const pathSegments = currentUrl.pathname.split("/");
+  const previewIndex = pathSegments.findIndex(
+    (segment) => segment === "preview",
+  );
+  const previewSlug = pathSegments[previewIndex + 1];
+
+  if (previewIndex === -1 || !previewSlug) {
+    return null;
+  }
+
+  const baseSegments = pathSegments.slice(0, previewIndex);
+  const contentSegments = pathSegments.slice(previewIndex + 2);
+  const productionPathSegments = [...baseSegments, ...contentSegments];
+  const productionPath = productionPathSegments.join("/") || "/";
+  const previewBasePath = [...baseSegments, "preview"].join("/") || "/preview";
+  const productionUrl = new URL(productionPath, currentUrl.origin);
+  const manifestUrl = new URL(
+    `${previewBasePath}/manifest.json`,
+    currentUrl.origin,
+  );
+
+  productionUrl.search = currentUrl.search;
+  productionUrl.hash = currentUrl.hash;
+
+  return {
+    slug: previewSlug,
+    productionUrl: productionUrl.toString(),
+    manifestUrl: manifestUrl.toString(),
+  };
+}
+
 // ===== MIGRATION: Separate Theme and View Mode Storage =====
 // Migrate old data structure where view modes were stored in experimentalTheme
 (function migrateThemeViewModeStorage() {
@@ -1417,14 +1455,62 @@ function enhanceViewModeSelector() {
   }
 }
 
+/**
+ * Show a prominent return-to-production banner on preview deployments
+ */
+function initializePreviewReturnBanner() {
+  const previewContext = getPreviewSiteContext();
+  const header = document.querySelector(".header");
+
+  if (
+    !previewContext ||
+    !header ||
+    document.getElementById("preview-site-banner")
+  ) {
+    return;
+  }
+
+  const banner = document.createElement("div");
+  banner.className = "preview-site-banner";
+  banner.id = "preview-site-banner";
+  banner.setAttribute("role", "region");
+  banner.setAttribute("aria-label", "Preview deployment notice");
+  banner.setAttribute("aria-live", "polite");
+
+  const content = document.createElement("div");
+  content.className = "preview-site-banner-content";
+
+  const label = document.createElement("span");
+  label.className = "preview-site-banner-label";
+  label.textContent = "Preview site";
+
+  const message = document.createElement("p");
+  message.className = "preview-site-banner-text";
+  message.textContent = "You are viewing a preview deployment, not production.";
+
+  const link = document.createElement("a");
+  link.className = "preview-return-button";
+  link.id = "return-to-production-link";
+  link.href = previewContext.productionUrl;
+  link.textContent = "Return to Production";
+
+  content.appendChild(label);
+  content.appendChild(message);
+  banner.appendChild(content);
+  banner.appendChild(link);
+  header.parentNode.insertBefore(banner, header);
+}
+
 // Initialize accessibility features when DOM is ready
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", function () {
+    initializePreviewReturnBanner();
     initAccessibility();
     enhanceTimeframeSelector();
     enhanceViewModeSelector();
   });
 } else {
+  initializePreviewReturnBanner();
   initAccessibility();
   enhanceTimeframeSelector();
   enhanceViewModeSelector();

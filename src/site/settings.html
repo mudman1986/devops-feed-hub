@@ -1055,16 +1055,16 @@
         }
 
         function getPreviewManifestUrl() {
-          const currentUrl = new URL(window.location.href);
-          const previewMatch = currentUrl.pathname.match(
-            /^(.*\/preview)\/[^/]+(?:\/.*)?$/,
-          );
+          const previewContext = getPreviewSiteContext(window.location.href);
 
-          if (previewMatch) {
-            return `${currentUrl.origin}${previewMatch[1]}/manifest.json`;
+          if (previewContext) {
+            return previewContext.manifestUrl;
           }
 
-          return new URL("preview/manifest.json", currentUrl).toString();
+          return new URL(
+            "preview/manifest.json",
+            window.location.href,
+          ).toString();
         }
 
         function loadPreviewSites() {
