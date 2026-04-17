@@ -290,9 +290,7 @@ test.describe("Theme Toggle Bug - Experimental Themes Disappearing", () => {
     await page.waitForLoadState("load");
 
     // Before toggle
-    let storedTheme = await page.evaluate(() =>
-      localStorage.getItem("theme"),
-    );
+    let storedTheme = await page.evaluate(() => localStorage.getItem("theme"));
     expect(storedTheme).toBe("dracula");
 
     // After toggle
@@ -300,9 +298,7 @@ test.describe("Theme Toggle Bug - Experimental Themes Disappearing", () => {
     await toggleButton.click();
     await page.waitForTimeout(500);
 
-    storedTheme = await page.evaluate(() =>
-      localStorage.getItem("theme"),
-    );
+    storedTheme = await page.evaluate(() => localStorage.getItem("theme"));
     expect(storedTheme).toBe("dracula");
 
     const experimentalTheme = await page.evaluate(() =>

@@ -106,7 +106,9 @@ test.describe("Experimental Themes - Consolidated", () => {
       const oceanDeepText = await oceanDeepOption.textContent();
       expect(oceanDeepText).toContain("Beta - Ocean Deep");
 
-      await expect(themeSelect.locator('option[value="dracula"]')).toHaveCount(0);
+      await expect(themeSelect.locator('option[value="dracula"]')).toHaveCount(
+        0,
+      );
     });
 
     test("should apply the Classic theme using the light-dark toggle system", async ({
@@ -119,7 +121,9 @@ test.describe("Experimental Themes - Consolidated", () => {
 
       await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
 
-      const storedTheme = await page.evaluate(() => localStorage.getItem("theme"));
+      const storedTheme = await page.evaluate(() =>
+        localStorage.getItem("theme"),
+      );
       const experimentalTheme = await page.evaluate(() =>
         localStorage.getItem("experimentalTheme"),
       );
