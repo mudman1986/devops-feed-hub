@@ -19,7 +19,7 @@ test.beforeEach(async ({ page }) => {
  */
 test.describe("Experimental Themes - Consolidated", () => {
   test.describe("Settings Page - Theme Dropdown", () => {
-    test("should display Theme dropdown with Dracula default option and beta themes", async ({
+    test("should display Theme dropdown with Dracula default, Classic, and beta themes", async ({
       page,
     }) => {
       await page.goto("/settings.html");
@@ -34,6 +34,10 @@ test.describe("Experimental Themes - Consolidated", () => {
       await expect(defaultOption).toBeAttached();
       await expect(defaultOption).toHaveText("Dracula (Default)");
 
+      const classicOption = themeSelect.locator('option[value="classic"]');
+      await expect(classicOption).toBeAttached();
+      await expect(classicOption).toHaveText("Classic");
+
       // Check for some beta themes
       const purpleHazeOption = themeSelect.locator(
         'option[value="purple-haze"]',
@@ -43,7 +47,7 @@ test.describe("Experimental Themes - Consolidated", () => {
       await expect(oceanDeepOption).toBeAttached();
     });
 
-    test("should have 11 theme options (1 default Dracula + 10 beta themes)", async ({
+    test("should have 12 theme options (Dracula default + Classic + 10 beta themes)", async ({
       page,
     }) => {
       await page.goto("/settings.html");
@@ -52,12 +56,12 @@ test.describe("Experimental Themes - Consolidated", () => {
       const themeSelect = page.locator("#theme-setting");
       const options = themeSelect.locator("option");
 
-      // Count options: 1 default Dracula + 10 beta themes = 11
+      // Count options: 1 default Dracula + 1 Classic + 10 beta themes = 12
       const count = await options.count();
-      expect(count).toBe(11);
+      expect(count).toBe(12);
     });
 
-    test("should place the Dracula default option above beta themes", async ({
+    test("should place the Dracula default and Classic options above beta themes", async ({
       page,
     }) => {
       await page.goto("/settings.html");
@@ -76,7 +80,11 @@ test.describe("Experimental Themes - Consolidated", () => {
         value: "default",
         text: "Dracula (Default)",
       });
-      expect(options[1]?.text).toContain("Beta -");
+      expect(options[1]).toEqual({
+        value: "classic",
+        text: "Classic",
+      });
+      expect(options[2]?.text).toContain("Beta -");
     });
 
     test("should display beta themes with 'Beta - ' prefix", async ({
@@ -99,6 +107,41 @@ test.describe("Experimental Themes - Consolidated", () => {
       expect(oceanDeepText).toContain("Beta - Ocean Deep");
 
       await expect(themeSelect.locator('option[value="dracula"]')).toHaveCount(0);
+    });
+
+    test("should apply the Classic theme using the light-dark toggle system", async ({
+      page,
+    }) => {
+      await page.goto("/settings.html");
+      await page.waitForLoadState("load");
+
+      await page.locator("#theme-setting").selectOption("classic");
+
+      await expect(page.locator("html")).toHaveAttribute("data-theme", "dark");
+
+      const storedTheme = await page.evaluate(() => localStorage.getItem("theme"));
+      const experimentalTheme = await page.evaluate(() =>
+        localStorage.getItem("experimentalTheme"),
+      );
+
+      expect(storedTheme).toBe("dark");
+      expect(experimentalTheme).toBeNull();
+    });
+
+    test("should show Classic as selected when the plain light-dark theme is active", async ({
+      page,
+    }) => {
+      await page.goto("/");
+      await page.evaluate(() => {
+        localStorage.setItem("theme", "light");
+        localStorage.setItem("themeMode", "light");
+        localStorage.removeItem("experimentalTheme");
+      });
+
+      await page.goto("/settings.html");
+      await page.waitForLoadState("load");
+
+      await expect(page.locator("#theme-setting")).toHaveValue("classic");
     });
   });
 

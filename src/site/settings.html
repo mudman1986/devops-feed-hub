@@ -229,6 +229,7 @@
               <div class="settings-item-control">
                 <select id="theme-setting" class="settings-select">
                   <option value="default">Dracula (Default)</option>
+                  <option value="classic">Classic</option>
                   <option value="purple-haze">Beta - Purple Haze</option>
                   <option value="ocean-deep">Beta - Ocean Deep</option>
                   <option value="arctic-blue">Beta - Arctic Blue</option>
@@ -615,16 +616,24 @@
           try {
             const experimentalTheme =
               localStorage.getItem("experimentalTheme") || "";
+            const theme = localStorage.getItem("theme") || "dracula";
             const themeSelect = document.getElementById("theme-setting");
 
             if (experimentalTheme) {
               // It's a theme, get the base theme
               const baseTheme = getBaseTheme(experimentalTheme);
-              if (themeSelect && EXPERIMENTAL_BASE_THEMES.includes(baseTheme)) {
+              if (themeSelect && baseTheme === "dracula") {
+                themeSelect.value = "default";
+              } else if (
+                themeSelect &&
+                EXPERIMENTAL_BASE_THEMES.includes(baseTheme)
+              ) {
                 themeSelect.value = baseTheme;
               } else {
                 if (themeSelect) themeSelect.value = "default";
               }
+            } else if (theme === "light" || theme === "dark") {
+              if (themeSelect) themeSelect.value = "classic";
             } else {
               // No experimental theme, use default
               if (themeSelect) themeSelect.value = "default";
@@ -681,6 +690,14 @@
                   localStorage.setItem("theme", defaultTheme);
                   applyTheme(defaultTheme);
                   showToast("Theme changed to Dracula (Default)", "success");
+                } else if (selectedTheme === "classic") {
+                  // Apply the original plain light/dark theme while preserving current mode
+                  localStorage.removeItem("experimentalTheme");
+                  const mode = localStorage.getItem("themeMode") || "dark";
+                  localStorage.setItem("theme", mode);
+                  localStorage.setItem("themeMode", mode);
+                  applyTheme(mode);
+                  showToast("Theme changed to Classic", "success");
                 } else {
                   // Apply theme in its natural mode (not forcing current themeMode)
                   const naturalMode = getNaturalThemeMode(selectedTheme);

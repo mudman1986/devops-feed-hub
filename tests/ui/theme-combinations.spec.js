@@ -14,6 +14,7 @@ test.describe("Theme Combinations - All Settings", () => {
   // All themes to test
   const themes = [
     "default",
+    "classic",
     "purple-haze",
     "ocean-deep",
     "arctic-blue",
@@ -44,11 +45,13 @@ test.describe("Theme Combinations - All Settings", () => {
           document.documentElement.getAttribute("data-theme"),
         );
         // Default theme is Dracula initially
-        if (theme !== "default") {
+        if (theme === "default") {
+          expect(dataTheme).toBe("dracula");
+        } else if (theme === "classic") {
+          expect(dataTheme).toBe("dark");
+        } else {
           // For experimental themes, should have theme name (might have -light or no suffix for dark)
           expect(dataTheme).toContain(theme.split("-")[0]); // Check base theme name is present
-        } else {
-          expect(dataTheme).toBe("dracula");
         }
 
         // Click the theme toggle button to switch modes
@@ -64,6 +67,8 @@ test.describe("Theme Combinations - All Settings", () => {
         if (theme === "default") {
           // Default theme should switch to Dracula Light after toggle
           expect(dataTheme).toBe("dracula-light");
+        } else if (theme === "classic") {
+          expect(dataTheme).toBe("light");
         } else {
           // Experimental theme should still contain the base theme name
           expect(dataTheme).toContain(theme.split("-")[0]);
@@ -79,6 +84,8 @@ test.describe("Theme Combinations - All Settings", () => {
 
         if (theme === "default") {
           expect(dataTheme).toBe("dracula-light");
+        } else if (theme === "classic") {
+          expect(dataTheme).toBe("light");
         } else {
           expect(dataTheme).toContain(theme.split("-")[0]);
         }
@@ -87,7 +94,7 @@ test.describe("Theme Combinations - All Settings", () => {
   });
 
   test.describe("View Mode with Theme Combinations", () => {
-    const sampleThemes = ["default", "purple-haze", "terminal"]; // Test subset
+    const sampleThemes = ["default", "classic", "purple-haze", "terminal"]; // Test subset
     const sampleViewModes = ["card", "center-stage", "masonry-grid"]; // Test subset
 
     for (const theme of sampleThemes) {
@@ -118,6 +125,8 @@ test.describe("Theme Combinations - All Settings", () => {
           );
           if (theme === "default") {
             expect(["dracula", "dracula-light"]).toContain(dataTheme);
+          } else if (theme === "classic") {
+            expect(["dark", "light"]).toContain(dataTheme);
           } else {
             expect(dataTheme).toContain(theme.split("-")[0]);
           }

@@ -6,6 +6,7 @@ import { test } from "@playwright/test";
  */
 
 const themes = [
+  { name: "classic", category: "theme" },
   // Color variations (Beta themes)
   { name: "purple-haze", category: "theme" },
   { name: "ocean-deep", category: "theme" },

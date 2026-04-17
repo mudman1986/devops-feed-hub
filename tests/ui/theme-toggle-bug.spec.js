@@ -315,4 +315,36 @@ test.describe("Theme Toggle Bug - Experimental Themes Disappearing", () => {
     expect(storedTheme).toContain("dracula");
     expect(experimentalTheme).toContain("dracula");
   });
+
+  test("Scenario 7: Classic theme should persist as plain light and dark values when toggling", async ({
+    page,
+  }) => {
+    await page.goto("/settings.html");
+    await page.waitForLoadState("load");
+
+    const themeDropdown = page.locator("#theme-setting");
+    await themeDropdown.selectOption("classic");
+
+    await page.goto("/");
+    await page.waitForLoadState("load");
+
+    let storedTheme = await page.evaluate(() => localStorage.getItem("theme"));
+    let experimentalTheme = await page.evaluate(() =>
+      localStorage.getItem("experimentalTheme"),
+    );
+    expect(storedTheme).toBe("dark");
+    expect(experimentalTheme).toBeNull();
+
+    const toggleButton = page.locator("#theme-toggle");
+    await toggleButton.click();
+    await page.waitForTimeout(500);
+
+    storedTheme = await page.evaluate(() => localStorage.getItem("theme"));
+    experimentalTheme = await page.evaluate(() =>
+      localStorage.getItem("experimentalTheme"),
+    );
+
+    expect(storedTheme).toBe("light");
+    expect(experimentalTheme).toBeNull();
+  });
 });
