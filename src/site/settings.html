@@ -857,18 +857,7 @@
           fetch("index.html")
             .then((response) => response.text())
             .then((html) => {
-              const parser = new DOMParser();
-              const doc = parser.parseFromString(html, "text/html");
-              const feedListEl = doc.getElementById("feed-list-data");
-
-              let feeds = [];
-              if (feedListEl?.textContent) {
-                try {
-                  feeds = JSON.parse(feedListEl.textContent);
-                } catch (e) {
-                  console.warn("Unable to parse feed list:", e);
-                }
-              }
+              let feeds = extractFeedListFromHtml(html);
 
               // If fetch failed or no data, use default list
               if (feeds.length === 0) {
@@ -955,18 +944,7 @@
           fetch("index.html")
             .then((response) => response.text())
             .then((html) => {
-              const parser = new DOMParser();
-              const doc = parser.parseFromString(html, "text/html");
-              const feedListEl = doc.getElementById("feed-list-data");
-
-              let feeds = [];
-              if (feedListEl?.textContent) {
-                try {
-                  feeds = JSON.parse(feedListEl.textContent);
-                } catch (e) {
-                  console.warn("Unable to parse feed list:", e);
-                }
-              }
+              let feeds = extractFeedListFromHtml(html);
 
               // If fetch failed or no data, use default list
               if (feeds.length === 0) {
@@ -1029,11 +1007,71 @@
           });
         }
 
+        function decodeHtmlEntities(value) {
+          return value
+            .replaceAll("&quot;", '"')
+            .replaceAll("&#x27;", "'")
+            .replaceAll("&#x2F;", "/")
+            .replaceAll("&lt;", "<")
+            .replaceAll("&gt;", ">")
+            .replaceAll("&amp;", "&");
+        }
+
+        function parseFeedList(feedListText) {
+          const trimmedFeedList = feedListText?.trim();
+          if (!trimmedFeedList) {
+            return [];
+          }
+
+          const decodedFeedList = decodeHtmlEntities(trimmedFeedList);
+          const candidates = [decodedFeedList];
+          if (decodedFeedList !== trimmedFeedList) {
+            candidates.push(trimmedFeedList);
+          }
+
+          let lastParseError = null;
+
+          for (const candidate of candidates) {
+            try {
+              const parsedFeedList = JSON.parse(candidate);
+              return Array.isArray(parsedFeedList) ? parsedFeedList : [];
+            } catch (e) {
+              lastParseError = e;
+            }
+          }
+
+          if (lastParseError) {
+            console.warn("Unable to parse feed list:", lastParseError);
+          }
+
+          return [];
+        }
+
+        function extractFeedListFromHtml(html) {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, "text/html");
+          const feedListEl = doc.getElementById("feed-list-data");
+          return parseFeedList(feedListEl?.textContent);
+        }
+
+        function getPreviewManifestUrl() {
+          const currentUrl = new URL(window.location.href);
+          const previewMatch = currentUrl.pathname.match(
+            /^(.*\/preview)\/[^/]+(?:\/.*)?$/,
+          );
+
+          if (previewMatch) {
+            return `${currentUrl.origin}${previewMatch[1]}/manifest.json`;
+          }
+
+          return new URL("preview/manifest.json", currentUrl).toString();
+        }
+
         function loadPreviewSites() {
           const container = document.getElementById("preview-sites-list");
           if (!container) return;
 
-          fetch("preview/manifest.json")
+          fetch(getPreviewManifestUrl())
             .then((response) => {
               if (!response.ok) throw new Error("No previews available");
               return response.json();

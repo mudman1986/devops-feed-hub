@@ -402,6 +402,7 @@ describe("Article Reordering", () => {
 describe("Feed Filtering Functionality", () => {
   let getEnabledFeeds;
   let saveEnabledFeeds;
+  let extractFeedName;
 
   beforeEach(() => {
     localStorage.clear();
@@ -423,6 +424,26 @@ describe("Feed Filtering Functionality", () => {
       } catch (e) {
         console.warn("Unable to save enabled feeds:", e);
       }
+    };
+
+    extractFeedName = (section) => {
+      const heading = section.querySelector("h2");
+      if (!heading) {
+        return "";
+      }
+
+      const titleLink = heading.querySelector(".feed-title-link");
+      if (titleLink) {
+        return titleLink.textContent.trim();
+      }
+
+      const headingClone = heading.cloneNode(true);
+      const countBadge = headingClone.querySelector(".feed-count");
+      if (countBadge) {
+        countBadge.remove();
+      }
+
+      return headingClone.textContent.trim();
     };
   });
 
@@ -505,6 +526,38 @@ describe("Feed Filtering Functionality", () => {
       const result = getEnabledFeeds();
       expect(result).toEqual(["Docker Blog"]);
       expect(result).toHaveLength(1);
+    });
+  });
+
+  describe("extractFeedName", () => {
+    test("should ignore feed count text when heading uses a linked title", () => {
+      document.body.innerHTML = `
+        <section class="feed-section">
+          <h2>
+            <a href="https://example.com/feed" class="feed-title-link">Azure Updates</a>
+            <span class="feed-count">2 articles</span>
+          </h2>
+        </section>
+      `;
+
+      expect(extractFeedName(document.querySelector(".feed-section"))).toBe(
+        "Azure Updates",
+      );
+    });
+
+    test("should ignore feed count text when heading uses plain text", () => {
+      document.body.innerHTML = `
+        <section class="feed-section">
+          <h2>
+            AWS DevOps Blog
+            <span class="feed-count">20 articles</span>
+          </h2>
+        </section>
+      `;
+
+      expect(extractFeedName(document.querySelector(".feed-section"))).toBe(
+        "AWS DevOps Blog",
+      );
     });
   });
 });

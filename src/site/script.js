@@ -769,10 +769,22 @@ function getSectionElements(section) {
 function extractFeedName(section) {
   const cached = getSectionElements(section);
   const heading = cached.heading;
-  const feedNameElement = heading?.childNodes[0];
-  return feedNameElement
-    ? feedNameElement.textContent.trim()
-    : heading?.textContent.trim() || "";
+  if (!heading) {
+    return "";
+  }
+
+  const titleLink = heading.querySelector(".feed-title-link");
+  if (titleLink) {
+    return titleLink.textContent.trim();
+  }
+
+  const headingClone = heading.cloneNode(true);
+  const countBadge = headingClone.querySelector(".feed-count");
+  if (countBadge) {
+    countBadge.remove();
+  }
+
+  return headingClone.textContent.trim();
 }
 
 // Helper function to update count badge
@@ -1210,14 +1222,7 @@ function applyFeedFilter() {
 
   const feedSections = document.querySelectorAll(".feed-section");
   feedSections.forEach((section) => {
-    const cached = getSectionElements(section);
-    const heading = cached.heading;
-    if (!heading) return;
-
-    const feedNameElement = heading.childNodes[0];
-    const feedName = feedNameElement
-      ? feedNameElement.textContent.trim()
-      : heading.textContent.trim();
+    const feedName = extractFeedName(section);
 
     if (!enabledFeeds.includes(feedName)) {
       section.style.display = "none";
