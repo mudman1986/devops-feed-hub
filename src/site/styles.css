@@ -277,6 +277,8 @@ body {
     var(--bg-tertiary) 100%
   );
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
   padding: 0;
   transition:
     background 0.3s ease,
@@ -433,7 +435,9 @@ body {
 
 .container {
   display: flex;
-  min-height: calc(100vh - 80px);
+  flex: 1;
+  min-height: 0;
+  width: 100%;
   max-width: 1600px;
   margin: 0 auto;
   padding: 0;
@@ -1519,7 +1523,9 @@ h3 {
 /* Settings Page Styles */
 .settings-container {
   display: flex;
-  min-height: calc(100vh - 80px);
+  flex: 1;
+  min-height: 0;
+  width: 100%;
   max-width: 1600px;
   margin: 0 auto;
 }
@@ -3288,7 +3294,7 @@ h3 {
 }
 
 [data-theme="tiny-text"] .container {
-  min-height: calc(100vh - 40px);
+  min-height: 0;
 }
 
 [data-theme="tiny-text"] .main-content {
