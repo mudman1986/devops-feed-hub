@@ -11,6 +11,13 @@ test.beforeEach(async ({ page }) => {
   });
 });
 
+/**
+ * Serve an existing site page from a preview deployment path for UI tests
+ * @param {import("@playwright/test").Page} page - Playwright page under test
+ * @param {string} previewPath - Preview deployment URL pathname to fulfill
+ * @param {string} [sourcePath="/"] - Existing source page pathname to mirror
+ * @returns {Promise<void>}
+ */
 async function mockPreviewPage(page, previewPath, sourcePath = "/") {
   const [sourceResponse, scriptResponse] = await Promise.all([
     page.request.get(sourcePath),
@@ -44,6 +51,8 @@ async function mockPreviewPage(page, previewPath, sourcePath = "/") {
     await route.continue();
   });
 }
+
+const PREVIEW_INDEX_PATH = "/preview/test-branch/index.html";
 
 /**
  * Theme Toggle Functionality Tests
@@ -433,8 +442,8 @@ test.describe("Navigation Tests", () => {
   test("should show a return-to-production banner on preview pages", async ({
     page,
   }) => {
-    await mockPreviewPage(page, "/preview/test-branch/index.html");
-    await page.goto("/preview/test-branch/index.html?view=card#headline");
+    await mockPreviewPage(page, PREVIEW_INDEX_PATH);
+    await page.goto(`${PREVIEW_INDEX_PATH}?view=card#headline`);
 
     const banner = page.locator("#preview-site-banner");
     const returnLink = page.locator("#return-to-production-link");

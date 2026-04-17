@@ -210,6 +210,22 @@ function removeLocalStorage(key) {
  * @param {string} [currentHref=window.location.href] - URL to inspect
  * @returns {{slug: string, productionUrl: string, manifestUrl: string}|null}
  */
+function joinPathSegments(segments, trailingSlash = false) {
+  let normalizedPath = segments.join("/");
+
+  if (!normalizedPath.startsWith("/")) {
+    normalizedPath = `/${normalizedPath}`;
+  }
+
+  normalizedPath = normalizedPath.replace(/\/{2,}/g, "/");
+
+  if (trailingSlash && !normalizedPath.endsWith("/")) {
+    normalizedPath = `${normalizedPath}/`;
+  }
+
+  return normalizedPath || "/";
+}
+
 function getPreviewSiteContext(currentHref = window.location.href) {
   const currentUrl = new URL(currentHref, window.location.origin);
   const pathSegments = currentUrl.pathname.split("/");
@@ -224,9 +240,13 @@ function getPreviewSiteContext(currentHref = window.location.href) {
 
   const baseSegments = pathSegments.slice(0, previewIndex);
   const contentSegments = pathSegments.slice(previewIndex + 2);
-  const productionPathSegments = [...baseSegments, ...contentSegments];
-  const productionPath = productionPathSegments.join("/") || "/";
-  const previewBasePath = [...baseSegments, "preview"].join("/") || "/preview";
+  let productionPath = joinPathSegments(baseSegments, true);
+
+  if (contentSegments.length > 0) {
+    productionPath = joinPathSegments([...baseSegments, ...contentSegments]);
+  }
+
+  const previewBasePath = joinPathSegments([...baseSegments, "preview"]);
   const productionUrl = new URL(productionPath, currentUrl.origin);
   const manifestUrl = new URL(
     `${previewBasePath}/manifest.json`,
