@@ -14,12 +14,12 @@ test.describe("Theme Combinations - All Settings", () => {
   // All themes to test
   const themes = [
     "default",
+    "classic",
     "purple-haze",
     "ocean-deep",
     "arctic-blue",
     "high-contrast",
     "monochrome",
-    "dracula",
     "minimalist",
     "terminal",
     "retro",
@@ -44,12 +44,14 @@ test.describe("Theme Combinations - All Settings", () => {
         let dataTheme = await page.evaluate(() =>
           document.documentElement.getAttribute("data-theme"),
         );
-        // Default theme is just "dark" initially
-        if (theme !== "default") {
+        // Default theme is Dracula initially
+        if (theme === "default") {
+          expect(dataTheme).toBe("dracula");
+        } else if (theme === "classic") {
+          expect(dataTheme).toBe("dark");
+        } else {
           // For experimental themes, should have theme name (might have -light or no suffix for dark)
           expect(dataTheme).toContain(theme.split("-")[0]); // Check base theme name is present
-        } else {
-          expect(dataTheme).toBe("dark");
         }
 
         // Click the theme toggle button to switch modes
@@ -63,7 +65,9 @@ test.describe("Theme Combinations - All Settings", () => {
         );
 
         if (theme === "default") {
-          // Default theme should just be "light" after toggle
+          // Default theme should switch to Dracula Light after toggle
+          expect(dataTheme).toBe("dracula-light");
+        } else if (theme === "classic") {
           expect(dataTheme).toBe("light");
         } else {
           // Experimental theme should still contain the base theme name
@@ -79,6 +83,8 @@ test.describe("Theme Combinations - All Settings", () => {
         );
 
         if (theme === "default") {
+          expect(dataTheme).toBe("dracula-light");
+        } else if (theme === "classic") {
           expect(dataTheme).toBe("light");
         } else {
           expect(dataTheme).toContain(theme.split("-")[0]);
@@ -88,7 +94,7 @@ test.describe("Theme Combinations - All Settings", () => {
   });
 
   test.describe("View Mode with Theme Combinations", () => {
-    const sampleThemes = ["default", "purple-haze", "terminal"]; // Test subset
+    const sampleThemes = ["default", "classic", "purple-haze", "terminal"]; // Test subset
     const sampleViewModes = ["card", "center-stage", "masonry-grid"]; // Test subset
 
     for (const theme of sampleThemes) {
@@ -118,6 +124,8 @@ test.describe("Theme Combinations - All Settings", () => {
             document.documentElement.getAttribute("data-theme"),
           );
           if (theme === "default") {
+            expect(["dracula", "dracula-light"]).toContain(dataTheme);
+          } else if (theme === "classic") {
             expect(["dark", "light"]).toContain(dataTheme);
           } else {
             expect(dataTheme).toContain(theme.split("-")[0]);
@@ -244,7 +252,7 @@ test.describe("Theme Combinations - All Settings", () => {
       await page.waitForTimeout(300);
 
       // Select a theme
-      await page.locator("#theme-setting").selectOption("dracula");
+      await page.locator("#theme-setting").selectOption("default");
       await page.waitForTimeout(300);
 
       // Navigate to home
@@ -261,7 +269,7 @@ test.describe("Theme Combinations - All Settings", () => {
       );
       expect(dataView).toBe("center-stage");
 
-      // Verify theme is still dracula (with mode suffix)
+      // Verify theme is still Dracula (with mode suffix)
       const dataTheme = await page.evaluate(() =>
         document.documentElement.getAttribute("data-theme"),
       );
@@ -326,7 +334,7 @@ test.describe("Theme Combinations - All Settings", () => {
       await page.goto("/settings.html");
 
       // Select theme
-      await page.locator("#theme-setting").selectOption("dracula");
+      await page.locator("#theme-setting").selectOption("default");
       await page.waitForTimeout(500);
 
       let dataTheme = await page.evaluate(() =>
@@ -358,7 +366,7 @@ test.describe("Theme Combinations - All Settings", () => {
       );
       console.log("Stored theme after toggle:", storedTheme);
 
-      // Theme should still be dracula
+      // Theme should still be Dracula
       expect(dataTheme).toContain("dracula");
     });
   });
