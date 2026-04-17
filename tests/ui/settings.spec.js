@@ -476,8 +476,14 @@ test.describe("Preview Sites Settings", () => {
   test("should load the shared preview manifest when viewing settings from a preview path", async ({
     page,
   }) => {
-    const settingsResponse = await page.request.get("/settings.html");
-    const settingsHtml = await settingsResponse.text();
+    const [settingsResponse, scriptResponse] = await Promise.all([
+      page.request.get("/settings.html"),
+      page.request.get("/script.js"),
+    ]);
+    const [settingsHtml, scriptJs] = await Promise.all([
+      settingsResponse.text(),
+      scriptResponse.text(),
+    ]);
 
     await page.route("**/*", async (route) => {
       const url = new URL(route.request().url());
@@ -486,6 +492,14 @@ test.describe("Preview Sites Settings", () => {
         await route.fulfill({
           contentType: "text/html",
           body: settingsHtml,
+        });
+        return;
+      }
+
+      if (url.pathname === "/preview/test-branch/script.js") {
+        await route.fulfill({
+          contentType: "application/javascript",
+          body: scriptJs,
         });
         return;
       }
@@ -516,6 +530,11 @@ test.describe("Preview Sites Settings", () => {
     const items = page.locator("#preview-sites-list .settings-item");
     await expect(items).toHaveCount(1);
     await expect(items.nth(0)).toContainText("feature/current-preview");
+    await expect(page.locator("#preview-site-banner")).toBeVisible();
+    await expect(page.locator("#return-to-production-link")).toHaveAttribute(
+      "href",
+      "http://localhost:8080/settings.html",
+    );
   });
 
   test("should have Preview Sites menu item in sidebar", async ({ page }) => {

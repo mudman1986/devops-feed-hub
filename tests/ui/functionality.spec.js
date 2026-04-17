@@ -11,6 +11,49 @@ test.beforeEach(async ({ page }) => {
   });
 });
 
+const PREVIEW_INDEX_PATH = "/preview/test-branch/index.html";
+
+/**
+ * Serve an existing site page from a preview deployment path for UI tests
+ * @param {import("@playwright/test").Page} page - Playwright page under test
+ * @param {string} previewPath - Preview deployment URL pathname to fulfill
+ * @param {string} [sourcePath="/"] - Existing source page pathname to mirror
+ * @returns {Promise<void>}
+ */
+async function mockPreviewPage(page, previewPath, sourcePath = "/") {
+  const [sourceResponse, scriptResponse] = await Promise.all([
+    page.request.get(sourcePath),
+    page.request.get("/script.js"),
+  ]);
+  const [html, script] = await Promise.all([
+    sourceResponse.text(),
+    scriptResponse.text(),
+  ]);
+  const previewDirectory = previewPath.replace(/\/[^/]*$/, "");
+
+  await page.route("**/*", async (route) => {
+    const url = new URL(route.request().url());
+
+    if (url.pathname === previewPath) {
+      await route.fulfill({
+        contentType: "text/html",
+        body: html,
+      });
+      return;
+    }
+
+    if (url.pathname === `${previewDirectory}/script.js`) {
+      await route.fulfill({
+        contentType: "application/javascript",
+        body: script,
+      });
+      return;
+    }
+
+    await route.continue();
+  });
+}
+
 /**
  * Theme Toggle Functionality Tests
  * Tests dark/light mode switching
@@ -388,6 +431,30 @@ test.describe("Navigation Tests", () => {
     const href = await firstLink.getAttribute("href");
     expect(href).toBeTruthy();
     expect(href).toMatch(/^https?:\/\//);
+  });
+
+  test("should not show return-to-production banner on production pages", async ({
+    page,
+  }) => {
+    await expect(page.locator("#preview-site-banner")).toHaveCount(0);
+  });
+
+  test("should show a return-to-production banner on preview pages", async ({
+    page,
+  }) => {
+    await mockPreviewPage(page, PREVIEW_INDEX_PATH);
+    await page.goto(`${PREVIEW_INDEX_PATH}?view=card#headline`);
+
+    const banner = page.locator("#preview-site-banner");
+    const returnLink = page.locator("#return-to-production-link");
+
+    await expect(banner).toBeVisible();
+    await expect(banner).toContainText("Preview site");
+    await expect(banner).toContainText("not production");
+    await expect(returnLink).toHaveAttribute(
+      "href",
+      "http://localhost:8080/index.html?view=card#headline",
+    );
   });
 });
 
