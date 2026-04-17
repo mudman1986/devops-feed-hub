@@ -5,8 +5,14 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-circleci-blog.xml</link>
     <description>Articles from CircleCI Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-circleci-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Thu, 16 Apr 2026 20:09:08 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 17 Apr 2026 00:16:08 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
+    <item>
+      <title>CircleCI is now available as a Codex plugin</title>
+      <link>https://circleci.com/blog/circleci-codex-plugin/</link>
+      <guid isPermaLink="true">https://circleci.com/blog/circleci-codex-plugin/</guid>
+      <pubDate>Thu, 16 Apr 2026 07:00:00 +0000</pubDate>
+    </item>
     <item>
       <title>Building an agentic content production system with Claude Code</title>
       <link>https://circleci.com/blog/claude-marketing-folder/</link>
@@ -59,12 +65,6 @@
       <title>Getting started with Gemini and CircleCI</title>
       <link>https://circleci.com/blog/getting-started-with-gemini-and-circleci/</link>
       <guid isPermaLink="true">https://circleci.com/blog/getting-started-with-gemini-and-circleci/</guid>
-      <pubDate>Mon, 23 Feb 2026 16:00:00 +0000</pubDate>
-    </item>
-    <item>
-      <title>Getting started with Claude Code and CircleCI</title>
-      <link>https://circleci.com/blog/getting-started-with-claude-code-and-circleci/</link>
-      <guid isPermaLink="true">https://circleci.com/blog/getting-started-with-claude-code-and-circleci/</guid>
       <pubDate>Mon, 23 Feb 2026 16:00:00 +0000</pubDate>
     </item>
   </channel>
