@@ -5,7 +5,7 @@
     <link>https://mudman1986.github.io/devops-feed-hub/feed-circleci-blog.xml</link>
     <description>Articles from CircleCI Blog</description>
     <atom:link href="https://mudman1986.github.io/devops-feed-hub/feed-circleci-blog.xml" rel="self" type="application/rss+xml" />
-    <lastBuildDate>Fri, 17 Apr 2026 00:16:08 +0000</lastBuildDate>
+    <lastBuildDate>Fri, 17 Apr 2026 12:14:12 +0000</lastBuildDate>
     <generator>DevOps Feed Hub RSS Generator</generator>
     <item>
       <title>CircleCI is now available as a Codex plugin</title>
