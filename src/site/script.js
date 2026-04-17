@@ -491,7 +491,7 @@ const themeToggle = document.getElementById("theme-toggle");
 const htmlElement = document.documentElement;
 
 // Load theme and mode from localStorage
-let savedTheme = "dark";
+let savedTheme = "dracula";
 let currentMode = "dark";
 
 const experimentalTheme = getLocalStorage("experimentalTheme");
@@ -523,8 +523,8 @@ if (
     );
     removeLocalStorage("experimentalTheme");
   }
-  savedTheme = getLocalStorage("theme", "dark");
-  currentMode = savedTheme === "light" ? "light" : "dark";
+  savedTheme = getLocalStorage("theme", "dracula");
+  currentMode = getCurrentMode(savedTheme);
   setLocalStorage("themeMode", currentMode);
 }
 

@@ -276,37 +276,71 @@ test.describe("Theme Toggle Bug - Experimental Themes Disappearing", () => {
     expect(experimentalTheme).toContain("ocean-deep");
   });
 
-  test("Scenario 6: Toggling should update localStorage correctly for experimental themes", async ({
+  test("Scenario 6: Toggling should update localStorage correctly for the default Dracula theme", async ({
     page,
   }) => {
-    // Set up dracula theme
+    // Set up the default Dracula theme
     await page.goto("/settings.html");
     await page.waitForLoadState("load");
 
     const themeDropdown = page.locator("#theme-setting");
-    await themeDropdown.selectOption("dracula");
+    await themeDropdown.selectOption("default");
 
     await page.goto("/");
     await page.waitForLoadState("load");
 
     // Before toggle
-    let experimentalTheme = await page.evaluate(() =>
-      localStorage.getItem("experimentalTheme"),
-    );
-    expect(experimentalTheme).toBe("dracula");
+    let storedTheme = await page.evaluate(() => localStorage.getItem("theme"));
+    expect(storedTheme).toBe("dracula");
 
     // After toggle
     const toggleButton = page.locator("#theme-toggle");
     await toggleButton.click();
     await page.waitForTimeout(500);
 
-    experimentalTheme = await page.evaluate(() =>
+    storedTheme = await page.evaluate(() => localStorage.getItem("theme"));
+    expect(storedTheme).toBe("dracula");
+
+    const experimentalTheme = await page.evaluate(() =>
       localStorage.getItem("experimentalTheme"),
     );
     expect(experimentalTheme).toBe("dracula-light");
 
-    // Most importantly, experimentalTheme should be set and contain the theme name
-    expect(experimentalTheme).not.toBe("light");
+    // Most importantly, stored theme state should remain a Dracula variant
+    expect(storedTheme).not.toBe("light");
+    expect(storedTheme).toContain("dracula");
     expect(experimentalTheme).toContain("dracula");
+  });
+
+  test("Scenario 7: Classic theme should persist as plain light and dark values when toggling", async ({
+    page,
+  }) => {
+    await page.goto("/settings.html");
+    await page.waitForLoadState("load");
+
+    const themeDropdown = page.locator("#theme-setting");
+    await themeDropdown.selectOption("classic");
+
+    await page.goto("/");
+    await page.waitForLoadState("load");
+
+    let storedTheme = await page.evaluate(() => localStorage.getItem("theme"));
+    let experimentalTheme = await page.evaluate(() =>
+      localStorage.getItem("experimentalTheme"),
+    );
+    expect(storedTheme).toBe("dark");
+    expect(experimentalTheme).toBeNull();
+
+    const toggleButton = page.locator("#theme-toggle");
+    await toggleButton.click();
+    await page.waitForTimeout(500);
+
+    storedTheme = await page.evaluate(() => localStorage.getItem("theme"));
+    experimentalTheme = await page.evaluate(() =>
+      localStorage.getItem("experimentalTheme"),
+    );
+
+    expect(storedTheme).toBe("light");
+    expect(experimentalTheme).toBeNull();
   });
 });
