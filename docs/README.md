@@ -2,6 +2,10 @@
 
 This directory stores project documentation only.
 
+## Planning Documents
+
+- [GitHub Pages as a Service Plan](GITHUB_PAGES_AS_A_SERVICE_PLAN.md)
+
 ## Site Layout
 
 The live site is now generated outside this directory:
