@@ -415,6 +415,25 @@ test.describe("Feed Filtering Integration Tests", () => {
 });
 
 test.describe("Preview Sites Settings", () => {
+  test("should render feed selection from generated feed list data", async ({
+    page,
+  }) => {
+    await page.goto("/settings.html");
+    await page.locator('.settings-menu-item:has-text("Feed Selection")').click();
+
+    await expect(
+      page.locator('#feed-checkboxes label:has-text("Test Feed A")'),
+    ).toBeVisible();
+    await expect(
+      page.locator('#feed-checkboxes label:has-text("Test Feed B")'),
+    ).toBeVisible();
+    await expect(
+      page.locator(
+        '#feed-checkboxes label:has-text("Microsoft DevOps Blog")',
+      ),
+    ).toHaveCount(0);
+  });
+
   test("should render active preview branches from the manifest", async ({
     page,
   }) => {
@@ -452,6 +471,51 @@ test.describe("Preview Sites Settings", () => {
       "href",
       "https://example.com/preview/feature--latest-preview/",
     );
+  });
+
+  test("should load the shared preview manifest when viewing settings from a preview path", async ({
+    page,
+  }) => {
+    const settingsResponse = await page.request.get("http://localhost:8080/settings.html");
+    const settingsHtml = await settingsResponse.text();
+
+    await page.route("**/*", async (route) => {
+      const url = new URL(route.request().url());
+
+      if (url.pathname === "/preview/test-branch/settings.html") {
+        await route.fulfill({
+          contentType: "text/html",
+          body: settingsHtml,
+        });
+        return;
+      }
+
+      if (url.pathname === "/preview/manifest.json") {
+        await route.fulfill({
+          contentType: "application/json",
+          body: JSON.stringify({
+            previews: [
+              {
+                branch: "feature/current-preview",
+                slug: "feature--current-preview",
+                url: "https://example.com/preview/feature--current-preview/",
+                updated_at: "2026-01-11T09:15:00Z",
+              },
+            ],
+          }),
+        });
+        return;
+      }
+
+      await route.continue();
+    });
+
+    await page.goto("/preview/test-branch/settings.html");
+    await page.locator('.settings-menu-item:has-text("Preview Sites")').click();
+
+    const items = page.locator("#preview-sites-list .settings-item");
+    await expect(items).toHaveCount(1);
+    await expect(items.nth(0)).toContainText("feature/current-preview");
   });
 
   test("should have Preview Sites menu item in sidebar", async ({ page }) => {
