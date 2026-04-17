@@ -989,9 +989,13 @@
         }
 
         function decodeHtmlEntities(value) {
-          const textarea = document.createElement("textarea");
-          textarea.innerHTML = value;
-          return textarea.value;
+          return value
+            .replaceAll("&quot;", '"')
+            .replaceAll("&#x27;", "'")
+            .replaceAll("&#x2F;", "/")
+            .replaceAll("&lt;", "<")
+            .replaceAll("&gt;", ">")
+            .replaceAll("&amp;", "&");
         }
 
         function parseFeedList(feedListText) {
