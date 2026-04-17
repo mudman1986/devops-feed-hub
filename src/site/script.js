@@ -206,9 +206,10 @@ function removeLocalStorage(key) {
 }
 
 /**
- * Get preview deployment context for the current page, if applicable
- * @param {string} [currentHref=window.location.href] - URL to inspect
- * @returns {{slug: string, productionUrl: string, manifestUrl: string}|null}
+ * Join URL path segments into a normalized absolute path
+ * @param {string[]} segments - Path segments to join
+ * @param {boolean} [trailingSlash=false] - Whether to enforce a trailing slash
+ * @returns {string}
  */
 function joinPathSegments(segments, trailingSlash = false) {
   let normalizedPath = segments.join("/");
@@ -226,6 +227,11 @@ function joinPathSegments(segments, trailingSlash = false) {
   return normalizedPath || "/";
 }
 
+/**
+ * Get preview deployment context for the current page, if applicable
+ * @param {string} [currentHref=window.location.href] - URL to inspect
+ * @returns {{slug: string, productionUrl: string, manifestUrl: string}|null}
+ */
 function getPreviewSiteContext(currentHref = window.location.href) {
   const currentUrl = new URL(currentHref, window.location.origin);
   const pathSegments = currentUrl.pathname.split("/");

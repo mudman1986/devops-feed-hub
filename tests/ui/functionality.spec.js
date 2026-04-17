@@ -11,6 +11,8 @@ test.beforeEach(async ({ page }) => {
   });
 });
 
+const PREVIEW_INDEX_PATH = "/preview/test-branch/index.html";
+
 /**
  * Serve an existing site page from a preview deployment path for UI tests
  * @param {import("@playwright/test").Page} page - Playwright page under test
@@ -51,8 +53,6 @@ async function mockPreviewPage(page, previewPath, sourcePath = "/") {
     await route.continue();
   });
 }
-
-const PREVIEW_INDEX_PATH = "/preview/test-branch/index.html";
 
 /**
  * Theme Toggle Functionality Tests
