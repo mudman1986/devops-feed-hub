@@ -419,7 +419,9 @@ test.describe("Preview Sites Settings", () => {
     page,
   }) => {
     await page.goto("/settings.html");
-    await page.locator('.settings-menu-item:has-text("Feed Selection")').click();
+    await page
+      .locator('.settings-menu-item:has-text("Feed Selection")')
+      .click();
 
     await expect(
       page.locator('#feed-checkboxes label:has-text("Test Feed A")'),
@@ -428,9 +430,7 @@ test.describe("Preview Sites Settings", () => {
       page.locator('#feed-checkboxes label:has-text("Test Feed B")'),
     ).toBeVisible();
     await expect(
-      page.locator(
-        '#feed-checkboxes label:has-text("Microsoft DevOps Blog")',
-      ),
+      page.locator('#feed-checkboxes label:has-text("Microsoft DevOps Blog")'),
     ).toHaveCount(0);
   });
 
@@ -476,7 +476,9 @@ test.describe("Preview Sites Settings", () => {
   test("should load the shared preview manifest when viewing settings from a preview path", async ({
     page,
   }) => {
-    const settingsResponse = await page.request.get("http://localhost:8080/settings.html");
+    const settingsResponse = await page.request.get(
+      "http://localhost:8080/settings.html",
+    );
     const settingsHtml = await settingsResponse.text();
 
     await page.route("**/*", async (route) => {

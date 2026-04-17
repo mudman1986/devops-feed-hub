@@ -303,9 +303,7 @@ class TestUpdateManifestPruning:
             str(preview_dir),
         )
 
-        assert [preview["slug"] for preview in written["previews"]] == [
-            "feature--live"
-        ]
+        assert [preview["slug"] for preview in written["previews"]] == ["feature--live"]
         assert (preview_dir / "feature--live").exists()
         assert (preview_dir / "feature--stale").exists()
 
