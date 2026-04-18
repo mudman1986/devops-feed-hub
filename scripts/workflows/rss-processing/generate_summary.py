@@ -290,8 +290,8 @@ def render_site_metadata_placeholders(
     Args:
         content: Raw file content with placeholders.
         site_metadata: Site metadata dictionary.
-        page_title: Optional page title override.
-        page_description: Optional page description override.
+        page_title: Optional keyword-only page title override.
+        page_description: Optional keyword-only page description override.
 
     Returns:
         Content with branding placeholders replaced.

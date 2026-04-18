@@ -221,7 +221,7 @@ jobs:
       - name: Format HTML files
         if: success()
         run: |
-          npx --yes prettier@3 --write site-build/*.html
+          npx --yes prettier@3.8.3 --write site-build/*.html
           echo "✓ HTML files formatted with Prettier"
 
       - name: Merge Pages state with current build
