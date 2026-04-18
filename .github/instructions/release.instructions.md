@@ -1,5 +1,5 @@
 ---
-applyTo: ".github/workflows/create-release.yml,config/release.json,starter-sites/crypto-feed-hub/.github/workflows/publish.yml,starter-sites/crypto-feed-hub/README.md"
+applyTo: ".github/workflows/create-release.yml,config/release.json,scripts/workflows/resolve_release.py,starter-sites/crypto-feed-hub/.github/workflows/publish.yml,starter-sites/crypto-feed-hub/README.md"
 ---
 
 # Release Automation Development
@@ -7,8 +7,8 @@ applyTo: ".github/workflows/create-release.yml,config/release.json,starter-sites
 ## Source of Truth
 
 - Treat `config/release.json` as the only release-tag source of truth
-- Keep the starter workflow pin and starter README references aligned to `config/release.json`
-- Keep `package.json` and `package-lock.json` version fields aligned to the numeric part of the release tag
+- Keep the starter workflow pin and starter-doc references aligned to
+  `config/release.json`
 
 ## Workflow Behavior
 
@@ -20,4 +20,5 @@ applyTo: ".github/workflows/create-release.yml,config/release.json,starter-sites
 ## Validation
 
 - Validate release tags with the `vX.Y.Z` format
-- Fail fast when the committed release config, starter pin, starter README, or package versions disagree
+- Fail fast when the committed release config, starter pin, and starter-doc
+  references disagree

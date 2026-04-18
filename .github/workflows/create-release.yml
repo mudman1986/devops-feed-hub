@@ -8,9 +8,7 @@ on:
     paths:
       - .github/workflows/create-release.yml
       - config/release.json
-      - package.json
-      - package-lock.json
-      - scripts/workflows/resolve-release.py
+      - scripts/workflows/resolve_release.py
       - starter-sites/crypto-feed-hub/.github/workflows/publish.yml
       - starter-sites/crypto-feed-hub/README.md
 
@@ -35,13 +33,14 @@ jobs:
 
       - name: Resolve release metadata
         id: release
+        env:
+          STARTER_README_PATH: starter-sites/crypto-feed-hub/README.md
+          STARTER_WORKFLOW_PATH: starter-sites/crypto-feed-hub/.github/workflows/publish.yml
         run: |
-          python3 scripts/workflows/resolve-release.py \
+          python3 scripts/workflows/resolve_release.py \
             --config config/release.json \
-            --starter-workflow starter-sites/crypto-feed-hub/.github/workflows/publish.yml \
-            --starter-readme starter-sites/crypto-feed-hub/README.md \
-            --package-json package.json \
-            --package-lock package-lock.json \
+            --starter-workflow "$STARTER_WORKFLOW_PATH" \
+            --starter-readme "$STARTER_README_PATH" \
             --github-output "$GITHUB_OUTPUT"
 
       - name: Check whether tag already exists
@@ -83,9 +82,10 @@ jobs:
             echo "## Release automation"
             echo "- Configured tag: \`$RELEASE_TAG\`"
             if [ "$RELEASE_EXISTS" = "true" ]; then
-              echo "- Result: tag already exists, skipping tag and release creation"
+              echo "- Result: tag already exists, skipping release creation"
             else
-              echo "- Result: created tag and GitHub Release from the pushed \`main\` commit"
+              echo "- Result: created tag and GitHub Release from the pushed"
+              echo "  \`main\` commit"
               echo "- Starter bundle upload will run from the release event"
             fi
           } >> "$GITHUB_STEP_SUMMARY"

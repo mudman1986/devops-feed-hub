@@ -22,7 +22,8 @@ The repository already has most of the pieces needed for a shared platform:
 - `config/rss-feeds.json` is already configuration driven for the feed sources.
 - `config/site-metadata.json` now drives site branding and RSS metadata.
 - `starter-sites/crypto-feed-hub/` now contains a copyable consumer repository starter for a crypto-focused site.
-- `.github/workflows/create-release.yml` now automates release creation and updates the starter template tag before publishing.
+- `.github/workflows/create-release.yml` now creates releases from the
+  committed tag metadata in `config/release.json`.
 - `.github/workflows/publish-starter-bundle.yml` can attach the crypto starter bundle to tagged GitHub Releases.
 
 ## Actual Status

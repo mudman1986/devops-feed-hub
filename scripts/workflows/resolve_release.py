@@ -47,40 +47,6 @@ def load_release_tag(config_path: Path) -> str:
     return tag
 
 
-def load_package_version(package_path: Path) -> str:
-    """Return the package version from a package manifest."""
-    return _require_string(
-        _read_json(package_path).get("version"), f"{package_path}: version"
-    )
-
-
-def load_package_lock_version(package_lock_path: Path) -> str:
-    """Return the package version from the root package-lock entry."""
-    package_lock_data = _read_json(package_lock_path)
-    root_version = _require_string(
-        package_lock_data.get("version"), f"{package_lock_path}: version"
-    )
-    packages = package_lock_data.get("packages")
-
-    if not isinstance(packages, dict):
-        raise ValueError(f"{package_lock_path}: packages must be an object")
-
-    root_package = packages.get("")
-    if not isinstance(root_package, dict):
-        raise ValueError(f"{package_lock_path}: packages[''] must be an object")
-
-    nested_version = _require_string(
-        root_package.get("version"), f"{package_lock_path}: packages[''].version"
-    )
-
-    if root_version != nested_version:
-        raise ValueError(
-            f"{package_lock_path}: version and packages[''].version must match"
-        )
-
-    return root_version
-
-
 def load_starter_workflow_ref(workflow_path: Path) -> str:
     """Return the pinned reusable-workflow ref from the starter workflow."""
     workflow_text = workflow_path.read_text(encoding="utf-8")
@@ -112,12 +78,10 @@ def validate_release_metadata(
     config_path: Path,
     starter_workflow_path: Path,
     starter_readme_path: Path,
-    package_json_path: Path,
-    package_lock_path: Path,
 ) -> tuple[str, str]:
     """Validate committed release metadata and return (tag, version_number)."""
     tag = load_release_tag(config_path)
-    version_number = tag.removeprefix("v")
+    version_number = tag[1:]
 
     starter_workflow_ref = load_starter_workflow_ref(starter_workflow_path)
     if starter_workflow_ref != tag:
@@ -132,19 +96,6 @@ def validate_release_metadata(
         raise ValueError(
             f"{starter_readme_path}: reusable workflow refs [{refs_text}] must all "
             f"match {tag}"
-        )
-
-    package_version = load_package_version(package_json_path)
-    if package_version != version_number:
-        raise ValueError(
-            f"{package_json_path}: version {package_version} must match {version_number}"
-        )
-
-    package_lock_version = load_package_lock_version(package_lock_path)
-    if package_lock_version != version_number:
-        raise ValueError(
-            f"{package_lock_path}: version {package_lock_version} must match "
-            f"{version_number}"
         )
 
     return tag, version_number
@@ -165,8 +116,6 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--config", type=Path, required=True)
     parser.add_argument("--starter-workflow", type=Path, required=True)
     parser.add_argument("--starter-readme", type=Path, required=True)
-    parser.add_argument("--package-json", type=Path, required=True)
-    parser.add_argument("--package-lock", type=Path, required=True)
     parser.add_argument("--github-output", type=Path)
     return parser.parse_args()
 
@@ -180,17 +129,13 @@ def main() -> int:
             config_path=args.config,
             starter_workflow_path=args.starter_workflow,
             starter_readme_path=args.starter_readme,
-            package_json_path=args.package_json,
-            package_lock_path=args.package_lock,
         )
     except (json.JSONDecodeError, OSError, ValueError) as error:
         print(f"Release metadata validation failed: {error}", file=sys.stderr)
         return 1
 
     if args.github_output is not None:
-        write_github_outputs(
-            args.github_output, tag=tag, version_number=version_number
-        )
+        write_github_outputs(args.github_output, tag=tag, version_number=version_number)
 
     print(tag)
     return 0
