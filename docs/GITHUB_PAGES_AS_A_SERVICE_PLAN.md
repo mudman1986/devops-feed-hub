@@ -26,7 +26,7 @@ The repository already has most of the pieces needed for a shared platform:
 
 ## Actual Status
 
-### Phase 1: Parameterize branding in this repository
+### Phase 1 status: Parameterize branding in this repository
 
 ✅ Complete
 
@@ -34,7 +34,7 @@ Branding is now config driven via `config/site-metadata.json`, and the
 shared generators/templates read those values instead of hardcoding the
 DevOps Feed Hub identity.
 
-### Phase 2: Extract a reusable workflow
+### Phase 2 status: Extract a reusable workflow
 
 ✅ Complete
 
@@ -48,7 +48,7 @@ The repository's own publish workflow consumes it internally, which keeps
 the upstream repository on the same execution path as future consumer
 repositories.
 
-### Phase 3: Release and document the template
+### Phase 3 status: Release and document the template
 
 ✅ Implemented in the repository
 
@@ -72,12 +72,12 @@ The only remaining operational step is to publish the first stable release
 tag (for example `v1`) after these changes merge so external consumer
 repositories can pin to a released version immediately.
 
-### Phase 4: Create the second site from the template
+### Phase 4 status: Create the second site from the template
 
 ✅ Complete inside this repository
 
 The crypto-focused starter site now exists as a full copyable folder that
-contains the exact repository structure expected for a new consumer repo:
+contains the exact repository structure expected for a new consumer repository:
 
 ```text
 starter-sites/crypto-feed-hub/
@@ -235,7 +235,7 @@ If more files are required, the shared layer is still too coupled.
 Repository status:
 
 - ✅ crypto starter repository created in `starter-sites/crypto-feed-hub/`
-- ✅ starter repo changes only config and workflow reference
+- ✅ starter repository changes only config and workflow reference
 - ✅ no shared engine code is duplicated into the consumer template
 
 ## Why This Scales to 5+ Sites
