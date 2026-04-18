@@ -1,0 +1,68 @@
+---
+name: Publish Starter Bundle
+
+on:
+  release:
+    types:
+      - published
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing release tag that should receive the starter bundle
+        required: true
+        type: string
+
+permissions:
+  contents: write
+
+jobs:
+  upload-starter-bundle:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+
+      - name: Resolve release tag
+        id: release-tag
+        env:
+          INPUT_TAG: ${{ inputs.tag }}
+          RELEASE_TAG: ${{ github.event.release.tag_name }}
+        run: |
+          TAG="${RELEASE_TAG:-$INPUT_TAG}"
+
+          if [ -z "$TAG" ]; then
+            echo "Release tag is required" >&2
+            exit 1
+          fi
+
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+
+      - name: Create starter bundle archive
+        id: bundle
+        env:
+          RELEASE_TAG: ${{ steps.release-tag.outputs.tag }}
+        run: |
+          BUNDLE_NAME="crypto-feed-hub-starter-${RELEASE_TAG}.tar.gz"
+          tar -czf "$BUNDLE_NAME" -C starter-sites crypto-feed-hub
+          echo "bundle_name=$BUNDLE_NAME" >> "$GITHUB_OUTPUT"
+
+      - name: Upload starter bundle to GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ steps.release-tag.outputs.tag }}
+          BUNDLE_NAME: ${{ steps.bundle.outputs.bundle_name }}
+        run: |
+          gh release upload "$RELEASE_TAG" "$BUNDLE_NAME" --clobber
+
+      - name: Summarize starter bundle upload
+        env:
+          RELEASE_TAG: ${{ steps.release-tag.outputs.tag }}
+          BUNDLE_NAME: ${{ steps.bundle.outputs.bundle_name }}
+        run: |
+          {
+            echo "## Starter bundle published"
+            echo "- Release tag: \`$RELEASE_TAG\`"
+            echo "- Asset: \`$BUNDLE_NAME\`"
+            echo "- Template folder: \`starter-sites/crypto-feed-hub\`"
+          } >> "$GITHUB_STEP_SUMMARY"

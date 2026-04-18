@@ -1,0 +1,34 @@
+{
+  "feeds": [
+    {
+      "name": "CoinDesk",
+      "url": "https://www.coindesk.com/arc/outboundfeeds/rss/",
+      "website_url": "https://www.coindesk.com/"
+    },
+    {
+      "name": "Cointelegraph",
+      "url": "https://cointelegraph.com/rss",
+      "website_url": "https://cointelegraph.com/"
+    },
+    {
+      "name": "Decrypt",
+      "url": "https://decrypt.co/feed",
+      "website_url": "https://decrypt.co/"
+    },
+    {
+      "name": "Bitcoin Magazine",
+      "url": "https://bitcoinmagazine.com/.rss/full/",
+      "website_url": "https://bitcoinmagazine.com/"
+    },
+    {
+      "name": "Kraken Blog",
+      "url": "https://blog.kraken.com/feed",
+      "website_url": "https://blog.kraken.com/"
+    },
+    {
+      "name": "Chainalysis Blog",
+      "url": "https://www.chainalysis.com/blog/rss/",
+      "website_url": "https://www.chainalysis.com/blog/"
+    }
+  ]
+}

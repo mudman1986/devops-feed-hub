@@ -66,6 +66,7 @@ def test_create_rss_feed():
         description="Test feed description",
         articles=articles,
         last_build_date="2026-01-10T12:00:00Z",
+        generator_name="DevOps Feed Hub RSS Generator",
     )
 
     # Parse the XML to verify structure
@@ -110,6 +111,7 @@ def test_create_rss_feed_with_source():
         description="Test feed description",
         articles=articles,
         last_build_date="2026-01-10T12:00:00Z",
+        generator_name="DevOps Feed Hub RSS Generator",
     )
 
     root = ET.fromstring(rss_xml)
@@ -169,6 +171,31 @@ def test_generate_master_feed():
     assert items[1].find("title").text == "Article A1"
 
 
+def test_generate_master_feed_uses_site_metadata():
+    """Test master feed generation uses configurable metadata."""
+    data = {
+        "metadata": {"collected_at": "2026-01-10T12:00:00Z"},
+        "feeds": {"Feed A": {"articles": []}},
+    }
+
+    rss_xml = generate_master_feed(
+        data,
+        base_url="https://example.com/custom",
+        site_metadata={
+            "site_name": "Platform Feed Hub",
+            "rss_title": "Platform Feed Hub - All Articles",
+            "rss_description": "Platform engineering articles",
+            "rss_generator": "Platform Feed Hub RSS Generator",
+        },
+    )
+
+    channel = ET.fromstring(rss_xml).find("channel")
+    assert channel.find("title").text == "Platform Feed Hub - All Articles"
+    assert channel.find("description").text == "Platform engineering articles"
+    assert channel.find("generator").text == "Platform Feed Hub RSS Generator"
+    assert channel.find("link").text == "https://example.com/custom/feed.xml"
+
+
 def test_generate_individual_feed():
     """Test individual feed generation"""
     feed_data = {
@@ -203,6 +230,27 @@ def test_generate_individual_feed():
     assert len(items) == 2
     assert items[0].find("title").text == "Article 2"  # 11:00 is newer
     assert items[1].find("title").text == "Article 1"  # 10:00 is older
+
+
+def test_generate_individual_feed_uses_site_metadata():
+    """Test individual feed titles use configurable site metadata."""
+    feed_data = {"articles": []}
+
+    rss_xml = generate_individual_feed(
+        feed_name="Test Feed",
+        feed_data=feed_data,
+        collected_at="2026-01-10T12:00:00Z",
+        base_url="https://example.com/custom",
+        site_metadata={
+            "site_name": "Platform Feed Hub",
+            "rss_generator": "Platform Feed Hub RSS Generator",
+        },
+    )
+
+    channel = ET.fromstring(rss_xml).find("channel")
+    assert channel.find("title").text == "Platform Feed Hub - Test Feed"
+    assert channel.find("generator").text == "Platform Feed Hub RSS Generator"
+    assert channel.find("link").text == "https://example.com/custom/feed-test-feed.xml"
 
 
 def test_generate_all_feeds():
@@ -279,6 +327,7 @@ def test_rss_feed_handles_unknown_dates():
         description="Test feed",
         articles=articles,
         last_build_date="2026-01-10T12:00:00Z",
+        generator_name="DevOps Feed Hub RSS Generator",
     )
 
     root = ET.fromstring(rss_xml)
@@ -311,6 +360,7 @@ def test_rss_feed_xml_declaration():
         description="Test feed",
         articles=articles,
         last_build_date="2026-01-10T12:00:00Z",
+        generator_name="DevOps Feed Hub RSS Generator",
     )
 
     # Check XML declaration
@@ -327,6 +377,7 @@ def test_rss_feed_atom_namespace():
         description="Test feed",
         articles=articles,
         last_build_date="2026-01-10T12:00:00Z",
+        generator_name="DevOps Feed Hub RSS Generator",
     )
 
     # Check that xmlns:atom is in the XML string

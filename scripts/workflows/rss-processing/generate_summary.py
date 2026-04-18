@@ -12,7 +12,7 @@ from html import escape as html_escape
 from pathlib import Path
 from typing import Any, Dict, Optional
 
-from utils import generate_feed_slug, parse_iso_timestamp
+from utils import generate_feed_slug, load_site_metadata, parse_iso_timestamp
 
 STATIC_SITE_FILES = (
     "favicon-16x16.png",
@@ -68,7 +68,9 @@ def get_template_path() -> Path:
 STATIC_SITE_DIR = get_static_site_dir()
 
 
-def generate_markdown_summary(data: Dict[str, Any]) -> str:
+def generate_markdown_summary(
+    data: Dict[str, Any], site_metadata: Optional[Dict[str, str]] = None
+) -> str:
     """
     Generate markdown summary from RSS feed collection data
 
@@ -78,8 +80,9 @@ def generate_markdown_summary(data: Dict[str, Any]) -> str:
     Returns:
         Markdown formatted string
     """
+    metadata = site_metadata or load_site_metadata()
     summary = []
-    summary.append("# 📰 DevOps Feed Hub Summary\n")
+    summary.append(f"{metadata['summary_markdown_title']}\n")
     summary.append(f"**Collected at:** {data['metadata']['collected_at']}\n")
     hours = data["metadata"].get("hours", 24)
     summary.append(f"**Time range:** Last {hours} hours\n")
@@ -274,7 +277,48 @@ def inject_website_urls(data: Dict[str, Any], feeds_config_path: str) -> None:
             feed_data["website_url"] = url_map[feed_name]
 
 
-def copy_static_site_assets(output_dir: str) -> None:
+def render_site_metadata_placeholders(
+    content: str,
+    site_metadata: Dict[str, str],
+    *,
+    page_title: Optional[str] = None,
+    page_description: Optional[str] = None,
+) -> str:
+    """
+    Replace branding placeholders in generated HTML assets.
+
+    Args:
+        content: Raw file content with placeholders.
+        site_metadata: Site metadata dictionary.
+        page_title: Optional keyword-only page title override.
+        page_description: Optional keyword-only page description override.
+
+    Returns:
+        Content with branding placeholders replaced.
+    """
+    replacements = {
+        "__PAGE_TITLE__": html_escape(page_title or site_metadata["site_name"]),
+        "<!-- PAGE_DESCRIPTION_PLACEHOLDER -->": html_escape(
+            page_description or site_metadata["site_description"]
+        ),
+        "<!-- SITE_RSS_TITLE_PLACEHOLDER -->": html_escape(site_metadata["rss_title"]),
+        "<!-- HEADER_TITLE_PLACEHOLDER -->": html_escape(site_metadata["header_title"]),
+        "__SETTINGS_TITLE__": html_escape(site_metadata["settings_title"]),
+        "<!-- SETTINGS_DESCRIPTION_PLACEHOLDER -->": html_escape(
+            site_metadata["settings_description"]
+        ),
+    }
+
+    rendered = content
+    for placeholder, replacement in replacements.items():
+        rendered = rendered.replace(placeholder, replacement)
+
+    return rendered
+
+
+def copy_static_site_assets(
+    output_dir: str, site_metadata: Optional[Dict[str, str]] = None
+) -> None:
     """
     Copy authored static site assets into the generated output directory.
 
@@ -295,9 +339,22 @@ def copy_static_site_assets(output_dir: str) -> None:
             f"Static site assets not found in '{STATIC_SITE_DIR}': {missing_list}"
         )
 
+    metadata = site_metadata or load_site_metadata()
+
     for asset_name in STATIC_SITE_FILES:
         source_path = STATIC_SITE_DIR / asset_name
         target_path = os.path.join(output_dir, asset_name)
+        if asset_name == "settings.html":
+            settings_content = source_path.read_text(encoding="utf-8")
+            rendered_settings = render_site_metadata_placeholders(
+                settings_content,
+                metadata,
+                page_title=metadata["settings_title"],
+                page_description=metadata["settings_description"],
+            )
+            Path(target_path).write_text(rendered_settings, encoding="utf-8")
+            continue
+
         shutil.copy2(source_path, target_path)
 
 
@@ -564,6 +621,7 @@ def generate_html_page(
     data: Dict[str, Any],
     template_path: Optional[str] = None,
     current_feed: Optional[str] = None,
+    site_metadata: Optional[Dict[str, str]] = None,
 ) -> str:
     """
     Generate complete HTML page from RSS feed collection data using template.
@@ -600,6 +658,8 @@ def generate_html_page(
             f"Error reading HTML template file at '{template_path}': {exc}"
         ) from exc
 
+    metadata = site_metadata or load_site_metadata()
+
     # Generate content
     content = generate_html_content(data, current_feed)
 
@@ -613,16 +673,22 @@ def generate_html_page(
     cache_version = str(int(collected_time.timestamp()))
 
     # Update title if this is a feed-specific page
-    page_title = "DevOps Feed Hub"
+    page_title = metadata["site_name"]
     if current_feed == "summary":
-        page_title = "Summary - DevOps Feed Hub"
+        page_title = f"Summary - {metadata['site_name']}"
     elif current_feed == "failed":
-        page_title = "Failed Feeds - DevOps Feed Hub"
+        page_title = f"Failed Feeds - {metadata['site_name']}"
     elif current_feed:
-        page_title = f"{current_feed} - DevOps Feed Hub"
+        page_title = f"{current_feed} - {metadata['site_name']}"
 
     # Replace placeholders
-    html = template.replace("<!-- CONTENT_PLACEHOLDER -->", content)
+    html = render_site_metadata_placeholders(
+        template,
+        metadata,
+        page_title=page_title,
+        page_description=metadata["site_description"],
+    )
+    html = html.replace("<!-- CONTENT_PLACEHOLDER -->", content)
     html = html.replace("<!-- SIDEBAR_PLACEHOLDER -->", sidebar_content)
     html = html.replace("<!-- TIMESTAMP_PLACEHOLDER -->", formatted_time)
     # Replace timestamp in CSS link for cache busting
@@ -630,15 +696,14 @@ def generate_html_page(
         'href="styles.css?v=<!-- TIMESTAMP_PLACEHOLDER -->"',
         f'href="styles.css?v={cache_version}"',
     )
-    html = html.replace(
-        "<title>DevOps Feed Hub</title>",
-        f"<title>{html_escape(page_title)}</title>",
-    )
-
     return html
 
 
-def generate_all_pages(data: Dict[str, Any], output_dir: str) -> None:
+def generate_all_pages(
+    data: Dict[str, Any],
+    output_dir: str,
+    site_metadata: Optional[Dict[str, str]] = None,
+) -> None:
     """
     Generate all HTML pages (main index + individual feed pages + failed feeds page)
 
@@ -650,19 +715,22 @@ def generate_all_pages(data: Dict[str, Any], output_dir: str) -> None:
         None
     """
     # Ensure output directory exists
+    metadata = site_metadata or load_site_metadata()
     os.makedirs(output_dir, exist_ok=True)
-    copy_static_site_assets(output_dir)
+    copy_static_site_assets(output_dir, metadata)
 
     # Generate main index page (all feeds)
     index_path = os.path.join(output_dir, "index.html")
-    index_html = generate_html_page(data)
+    index_html = generate_html_page(data, site_metadata=metadata)
     with open(index_path, "w", encoding="utf-8") as f:
         f.write(index_html)
     print(f"✓ Main index page written to {index_path}")
 
     # Generate summary page
     summary_path = os.path.join(output_dir, "summary.html")
-    summary_html = generate_html_page(data, current_feed="summary")
+    summary_html = generate_html_page(
+        data, current_feed="summary", site_metadata=metadata
+    )
     with open(summary_path, "w", encoding="utf-8") as f:
         f.write(summary_html)
     print(f"✓ Summary page written to {summary_path}")
@@ -671,7 +739,9 @@ def generate_all_pages(data: Dict[str, Any], output_dir: str) -> None:
     for feed_name in sorted(data["feeds"].keys()):
         feed_slug = generate_feed_slug(feed_name)
         feed_path = os.path.join(output_dir, f"feed-{feed_slug}.html")
-        feed_html = generate_html_page(data, current_feed=feed_name)
+        feed_html = generate_html_page(
+            data, current_feed=feed_name, site_metadata=metadata
+        )
         with open(feed_path, "w", encoding="utf-8") as f:
             f.write(feed_html)
         print(f"✓ Feed page for '{feed_name}' written to {feed_path}")
@@ -703,6 +773,10 @@ def main():
         help="Path to the feeds config JSON (e.g. config/rss-feeds.json) used to "
         "inject website_url into feed data for feed-title hyperlinks",
     )
+    parser.add_argument(
+        "--site-metadata",
+        help="Path to the site metadata JSON used for site branding",
+    )
 
     args = parser.parse_args()
 
@@ -717,20 +791,26 @@ def main():
         print(f"Error: Invalid JSON in {args.input}: {e}")
         return 1
 
+    try:
+        site_metadata = load_site_metadata(args.site_metadata)
+    except ValueError as exc:
+        print(f"Error: {exc}")
+        return 1
+
     # Inject website URLs from feeds config if provided
     if args.feeds_config:
         inject_website_urls(data, args.feeds_config)
 
     # Generate markdown if requested
     if args.markdown:
-        markdown_content = generate_markdown_summary(data)
+        markdown_content = generate_markdown_summary(data, site_metadata)
         with open(args.markdown, "w", encoding="utf-8") as f:
             f.write(markdown_content)
         print(f"✓ Markdown summary written to {args.markdown}")
 
     # Generate multi-page HTML if output directory is specified
     if args.output_dir:
-        generate_all_pages(data, args.output_dir)
+        generate_all_pages(data, args.output_dir, site_metadata)
 
     return 0
 
