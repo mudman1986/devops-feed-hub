@@ -22,6 +22,7 @@ The repository already has most of the pieces needed for a shared platform:
 - `config/rss-feeds.json` is already configuration driven for the feed sources.
 - `config/site-metadata.json` now drives site branding and RSS metadata.
 - `starter-sites/crypto-feed-hub/` now contains a copyable consumer repository starter for a crypto-focused site.
+- `.github/workflows/create-release.yml` now automates release creation and updates the starter template tag before publishing.
 - `.github/workflows/publish-starter-bundle.yml` can attach the crypto starter bundle to tagged GitHub Releases.
 
 ## Actual Status
@@ -58,6 +59,12 @@ repositories.
   .github/workflows/publish-starter-bundle.yml
   ```
 
+- Automated release creation workflow:
+
+  ```text
+  .github/workflows/create-release.yml
+  ```
+
 - Copyable starter template:
 
   ```text
@@ -68,9 +75,10 @@ repositories.
   - documented in `starter-sites/crypto-feed-hub/README.md`
   - documented below in this plan
 
-The only remaining operational step is to publish the first stable release
-tag (for example `v1`) after these changes merge so external consumer
-repositories can pin to a released version immediately.
+The remaining operational step is to run the automated release workflow for the
+first stable release tag (for example `v1.0.0`). That workflow updates the
+starter template pin, creates the Git tag, publishes the GitHub Release, and
+then lets the starter bundle workflow attach the release asset.
 
 ### Phase 4 status: Create the second site from the template
 
@@ -132,10 +140,13 @@ This should be the primary distribution mechanism because it avoids duplicating 
 Current repository status:
 
 - The reusable workflow exists at `.github/workflows/publish-pages.yml`.
-- The starter consumer workflow already pins the upstream workflow by tag:
-  `mudman1986/devops-feed-hub/.github/workflows/publish-pages.yml@v1`
-- The release helper workflow can upload the starter bundle to a GitHub
-  Release once the tag exists.
+- The starter consumer workflow is updated automatically during release
+  creation so it pins the upstream workflow by the release tag prepared for
+  that release.
+- `.github/workflows/create-release.yml` automates version bumping, starter
+  template tag updates, Git tag creation, and GitHub Release publishing.
+- The release helper workflow uploads the starter bundle from the tagged
+  release contents.
 
 ### 4. Use GitHub Releases for bootstrap assets, not as the primary runtime
 
@@ -151,8 +162,10 @@ Releases are a good fit for versioned templates and examples. They are less usef
 Current repository status:
 
 - The starter bundle lives in `starter-sites/crypto-feed-hub/`.
+- The release creation workflow updates `starter-sites/crypto-feed-hub/` to
+  the exact release tag before tagging the repository.
 - The release workflow `.github/workflows/publish-starter-bundle.yml`
-  packages that folder as a `.tar.gz` archive and uploads it to an existing
+  packages that tagged folder as a `.tar.gz` archive and uploads it to the
   GitHub Release.
 
 ### 5. Treat GitHub Packages as optional
@@ -218,9 +231,11 @@ For each tagged release:
 
 Repository status:
 
+- ✅ automated release creation workflow added
+- ✅ starter template tag sync is automated during release creation
 - ✅ release starter bundle workflow added
 - ✅ starter bundle documentation added
-- ⏳ first stable release tag still needs to be published operationally
+- ⏳ first automated stable release still needs to be run operationally
 
 ### Phase 4: Create the second site from the template
 

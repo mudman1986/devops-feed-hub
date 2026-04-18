@@ -26,6 +26,9 @@ README.md
 4. Enable GitHub Pages for the repository.
 5. Push to the default branch or run the workflow manually.
 
+The pinned workflow tag in this starter is updated automatically by the
+upstream release workflow before each new release is published.
+
 ## What To Customize
 
 ### Site branding
@@ -53,13 +56,14 @@ Each entry supports:
 
 ## Upgrade Path
 
-This starter pins the shared workflow to `@v1`.
+This starter pins the shared workflow to the release reference shown in
+`.github/workflows/publish.yml`.
 
 When a newer release is available:
 
 1. Review the upstream release notes.
 2. Update `.github/workflows/publish.yml` to the new stable tag
-   (for example `@v1.1`).
+   (for example `@v1.0.1`).
 3. Commit and push the workflow change.
 
 ## Notes
