@@ -84,8 +84,8 @@ jobs:
             if [ "$RELEASE_EXISTS" = "true" ]; then
               echo "- Result: tag already exists, skipping release creation"
             else
-              echo "- Result: created tag and GitHub Release from the pushed"
-              echo "  \`main\` commit"
+              echo "- Result: created tag from the pushed \`main\` commit"
+              echo "- GitHub Release: published for \`$RELEASE_TAG\`"
               echo "- Starter bundle upload will run from the release event"
             fi
           } >> "$GITHUB_STEP_SUMMARY"

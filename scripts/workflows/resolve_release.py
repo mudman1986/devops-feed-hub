@@ -9,7 +9,7 @@ import re
 import sys
 from pathlib import Path
 
-SEMVER_TAG_PATTERN = re.compile(r"^v[0-9]+\.[0-9]+\.[0-9]+$")
+SEMVER_TAG_PATTERN = re.compile(r"^v(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)$")
 STARTER_WORKFLOW_REF_PATTERN = re.compile(
     r"uses:\s+mudman1986/devops-feed-hub/\.github/workflows/publish-pages\.yml@([^\s]+)"
 )
