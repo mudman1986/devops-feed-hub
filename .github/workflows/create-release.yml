@@ -1,0 +1,91 @@
+---
+name: Create Release
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/create-release.yml
+      - config/release.json
+      - scripts/workflows/resolve_release.py
+      - starter-sites/crypto-feed-hub/.github/workflows/publish.yml
+      - starter-sites/crypto-feed-hub/README.md
+
+permissions:
+  contents: write
+
+jobs:
+  create-release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          token: ${{ github.token }}
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+
+      - name: Resolve release metadata
+        id: release
+        env:
+          STARTER_README_PATH: starter-sites/crypto-feed-hub/README.md
+          STARTER_WORKFLOW_PATH: starter-sites/crypto-feed-hub/.github/workflows/publish.yml
+        run: |
+          python3 scripts/workflows/resolve_release.py \
+            --config config/release.json \
+            --starter-workflow "$STARTER_WORKFLOW_PATH" \
+            --starter-readme "$STARTER_README_PATH" \
+            --github-output "$GITHUB_OUTPUT"
+
+      - name: Check whether tag already exists
+        id: tag-check
+        env:
+          RELEASE_TAG: ${{ steps.release.outputs.tag }}
+        run: |
+          if git show-ref --verify --quiet "refs/tags/$RELEASE_TAG"; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          echo "exists=false" >> "$GITHUB_OUTPUT"
+
+      - name: Create release tag
+        if: steps.tag-check.outputs.exists != 'true'
+        env:
+          RELEASE_TAG: ${{ steps.release.outputs.tag }}
+        run: |
+          git tag -a "$RELEASE_TAG" "$GITHUB_SHA" -m "Release $RELEASE_TAG"
+          git push origin "refs/tags/$RELEASE_TAG"
+
+      - name: Publish GitHub release
+        if: steps.tag-check.outputs.exists != 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ steps.release.outputs.tag }}
+        run: |
+          gh release create "$RELEASE_TAG" \
+            --generate-notes \
+            --latest
+
+      - name: Summarize release
+        env:
+          RELEASE_TAG: ${{ steps.release.outputs.tag }}
+          RELEASE_EXISTS: ${{ steps.tag-check.outputs.exists }}
+        run: |
+          {
+            echo "## Release automation"
+            echo "- Configured tag: \`$RELEASE_TAG\`"
+            if [ "$RELEASE_EXISTS" = "true" ]; then
+              echo "- Result: tag already exists, skipping release creation"
+            else
+              echo "- Result: created tag from the pushed \`main\` commit"
+              echo "- GitHub Release: published for \`$RELEASE_TAG\`"
+              echo "- Starter bundle upload will run from the release event"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
