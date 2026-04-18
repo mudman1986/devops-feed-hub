@@ -140,11 +140,12 @@ This should be the primary distribution mechanism because it avoids duplicating 
 Current repository status:
 
 - The reusable workflow exists at `.github/workflows/publish-pages.yml`.
-- The starter consumer workflow is updated automatically during release
-  creation so it pins the upstream workflow by the release tag prepared for
-  that release.
-- `.github/workflows/create-release.yml` automates version bumping, starter
-  template tag updates, Git tag creation, and GitHub Release publishing.
+- The committed release source of truth lives in `config/release.json`.
+- The starter consumer workflow is updated in the feature branch so it already
+  pins the upstream workflow to the tag that will be released after merge.
+- `.github/workflows/create-release.yml` validates the committed release
+  metadata, creates a Git tag from the pushed `main` commit, and publishes the
+  GitHub Release without making commits on `main`.
 - The release helper workflow uploads the starter bundle from the tagged
   release contents.
 
@@ -162,8 +163,8 @@ Releases are a good fit for versioned templates and examples. They are less usef
 Current repository status:
 
 - The starter bundle lives in `starter-sites/crypto-feed-hub/`.
-- The release creation workflow updates `starter-sites/crypto-feed-hub/` to
-  the exact release tag before tagging the repository.
+- The release workflow validates that `starter-sites/crypto-feed-hub/` already
+  matches the committed release tag before creating the release.
 - The release workflow `.github/workflows/publish-starter-bundle.yml`
   packages that tagged folder as a `.tar.gz` archive and uploads it to the
   GitHub Release.

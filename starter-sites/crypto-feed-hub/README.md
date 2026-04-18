@@ -4,7 +4,7 @@ Copy the contents of this folder into a new repository to bootstrap a
 crypto-focused feed hub site that uses the shared Pages workflow from:
 
 ```text
-mudman1986/devops-feed-hub/.github/workflows/publish-pages.yml@v1
+mudman1986/devops-feed-hub/.github/workflows/publish-pages.yml@v1.0.0
 ```
 
 ## Included Files
@@ -26,8 +26,9 @@ README.md
 4. Enable GitHub Pages for the repository.
 5. Push to the default branch or run the workflow manually.
 
-The pinned workflow tag in this starter is updated automatically by the
-upstream release workflow before each new release is published.
+The pinned workflow tag in this starter is updated in the repository before a
+new upstream release is published, so the committed starter contents match the
+tagged release.
 
 ## What To Customize
 

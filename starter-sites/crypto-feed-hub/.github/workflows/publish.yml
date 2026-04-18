@@ -15,7 +15,7 @@ permissions:
 
 jobs:
   publish-pages:
-    uses: mudman1986/devops-feed-hub/.github/workflows/publish-pages.yml@v1
+    uses: mudman1986/devops-feed-hub/.github/workflows/publish-pages.yml@v1.0.0
     with:
       feeds-config-path: config/rss-feeds.json
       site-metadata-path: config/site-metadata.json

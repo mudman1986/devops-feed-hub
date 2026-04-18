@@ -2,12 +2,17 @@
 name: Create Release
 
 on:
-  workflow_dispatch:
-    inputs:
-      version:
-        description: Release tag to create, such as v1.0.0
-        required: true
-        type: string
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/create-release.yml
+      - config/release.json
+      - package.json
+      - package-lock.json
+      - scripts/workflows/resolve-release.py
+      - starter-sites/crypto-feed-hub/.github/workflows/publish.yml
+      - starter-sites/crypto-feed-hub/README.md
 
 permissions:
   contents: write
@@ -23,117 +28,64 @@ jobs:
           fetch-depth: 0
           token: ${{ github.token }}
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v6
+      - name: Set up Python
+        uses: actions/setup-python@v6
         with:
-          node-version: "20"
+          python-version: "3.12"
 
-      - name: Validate release request
-        env:
-          DEFAULT_BRANCH: ${{ github.event.repository.default_branch }}
-          RELEASE_VERSION: ${{ inputs.version }}
-          SOURCE_BRANCH: ${{ github.ref_name }}
+      - name: Resolve release metadata
+        id: release
         run: |
-          if [ "$SOURCE_BRANCH" != "$DEFAULT_BRANCH" ]; then
-            echo "Releases must be created from $DEFAULT_BRANCH" >&2
-            exit 1
+          python3 scripts/workflows/resolve-release.py \
+            --config config/release.json \
+            --starter-workflow starter-sites/crypto-feed-hub/.github/workflows/publish.yml \
+            --starter-readme starter-sites/crypto-feed-hub/README.md \
+            --package-json package.json \
+            --package-lock package-lock.json \
+            --github-output "$GITHUB_OUTPUT"
+
+      - name: Check whether tag already exists
+        id: tag-check
+        env:
+          RELEASE_TAG: ${{ steps.release.outputs.tag }}
+        run: |
+          if git show-ref --verify --quiet "refs/tags/$RELEASE_TAG"; then
+            echo "exists=true" >> "$GITHUB_OUTPUT"
+            exit 0
           fi
 
-          if ! printf '%s' "$RELEASE_VERSION" | \
-            grep -Eq '^v[0-9]+\.[0-9]+\.[0-9]+$'; then
-            echo "Version must match vX.Y.Z" >&2
-            exit 1
-          fi
-
-          if git show-ref --verify --quiet "refs/tags/$RELEASE_VERSION"; then
-            echo "Tag $RELEASE_VERSION already exists" >&2
-            exit 1
-          fi
-
-      - name: Update release-managed files
-        env:
-          RELEASE_VERSION: ${{ inputs.version }}
-        run: |
-          VERSION_NUMBER="${RELEASE_VERSION#v}"
-          npm version "$VERSION_NUMBER" --no-git-tag-version
-
-          python3 - <<'PY'
-          import os
-          import re
-          from pathlib import Path
-
-          version = os.environ["RELEASE_VERSION"]
-
-          starter_workflow = Path(
-              "starter-sites/crypto-feed-hub/.github/workflows/publish.yml"
-          )
-          workflow_text = starter_workflow.read_text(encoding="utf-8")
-          workflow_text = re.sub(
-              r"(@)[^ \n]+",
-              rf"\g<1>{version}",
-              workflow_text,
-              count=1,
-          )
-          starter_workflow.write_text(workflow_text, encoding="utf-8")
-
-          starter_readme = Path("starter-sites/crypto-feed-hub/README.md")
-          readme_text = starter_readme.read_text(encoding="utf-8")
-          readme_text = re.sub(
-              (
-                  r"(mudman1986/devops-feed-hub/"
-                  r"\.github/workflows/publish-pages\.yml@)[^\s`]+"
-              ),
-              rf"\g<1>{version}",
-              readme_text,
-          )
-          readme_text = re.sub(
-              r"(This starter pins the shared workflow to `@)[^`]+(`\.)",
-              rf"\g<1>{version}\g<2>",
-              readme_text,
-          )
-          readme_text = re.sub(
-              r"(\(for example `@)[^`]+(`\)\.)",
-              rf"\g<1>{version}\g<2>",
-              readme_text,
-          )
-          starter_readme.write_text(readme_text, encoding="utf-8")
-          PY
-
-      - name: Commit release preparation
-        env:
-          RELEASE_VERSION: ${{ inputs.version }}
-        run: |
-          git config user.name "github-actions[bot]"
-          git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add package.json package-lock.json \
-            starter-sites/crypto-feed-hub/.github/workflows/publish.yml \
-            starter-sites/crypto-feed-hub/README.md
-          git commit -m "chore: prepare release $RELEASE_VERSION"
-          git push origin "HEAD:${GITHUB_REF_NAME}"
+          echo "exists=false" >> "$GITHUB_OUTPUT"
 
       - name: Create release tag
+        if: steps.tag-check.outputs.exists != 'true'
         env:
-          RELEASE_VERSION: ${{ inputs.version }}
+          RELEASE_TAG: ${{ steps.release.outputs.tag }}
         run: |
-          git tag -a "$RELEASE_VERSION" -m "Release $RELEASE_VERSION"
-          git push origin "$RELEASE_VERSION"
+          git tag -a "$RELEASE_TAG" "$GITHUB_SHA" -m "Release $RELEASE_TAG"
+          git push origin "refs/tags/$RELEASE_TAG"
 
       - name: Publish GitHub release
+        if: steps.tag-check.outputs.exists != 'true'
         env:
           GH_TOKEN: ${{ github.token }}
-          RELEASE_VERSION: ${{ inputs.version }}
+          RELEASE_TAG: ${{ steps.release.outputs.tag }}
         run: |
-          gh release create "$RELEASE_VERSION" \
+          gh release create "$RELEASE_TAG" \
             --generate-notes \
             --latest
 
       - name: Summarize release
         env:
-          RELEASE_VERSION: ${{ inputs.version }}
+          RELEASE_TAG: ${{ steps.release.outputs.tag }}
+          RELEASE_EXISTS: ${{ steps.tag-check.outputs.exists }}
         run: |
           {
-            echo "## Release created"
-            echo "- Version: \`$RELEASE_VERSION\`"
-            echo "- Starter template pin updated to: \`@$RELEASE_VERSION\`"
-            echo "- Starter bundle upload will run from the release event"
+            echo "## Release automation"
+            echo "- Configured tag: \`$RELEASE_TAG\`"
+            if [ "$RELEASE_EXISTS" = "true" ]; then
+              echo "- Result: tag already exists, skipping tag and release creation"
+            else
+              echo "- Result: created tag and GitHub Release from the pushed \`main\` commit"
+              echo "- Starter bundle upload will run from the release event"
+            fi
           } >> "$GITHUB_STEP_SUMMARY"
