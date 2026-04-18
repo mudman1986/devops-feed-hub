@@ -31,7 +31,7 @@ test.describe("Desktop Layout Tests", () => {
 
     const headerTitle = page.locator(".header-title");
     await expect(headerTitle).toBeVisible();
-    await expect(headerTitle).toContainText("DevOps Feed Hub");
+    await expect(headerTitle).toContainText(await page.title());
 
     // Verify header controls are visible
     const themeToggle = page.locator("#theme-toggle");

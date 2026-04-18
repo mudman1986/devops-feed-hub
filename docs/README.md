@@ -14,6 +14,7 @@ The live site is now generated outside this directory:
 src/site/                         # authored site assets
 scripts/workflows/rss-processing/ # site/RSS generation scripts
 site/                             # generated site output for publishing/tests
+config/site-metadata.json         # site branding configuration
 config/rss-feeds.json             # feed configuration
 ```
 
