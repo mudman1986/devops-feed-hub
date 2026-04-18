@@ -23,6 +23,14 @@ config/rss-feeds.json             # feed configuration
 The RSS publishing workflow generates the deployable site into `site/` and
 publishes previews under `site/preview/<preview-slug>/`.
 
+## Starter Consumer Repositories
+
+Copy-ready consumer repository starters live outside `docs/` in:
+
+```text
+starter-sites/crypto-feed-hub/
+```
+
 ## Live Site
 
 ```text

@@ -17,10 +17,79 @@ The repository already has most of the pieces needed for a shared platform:
 - `scripts/workflows/rss-processing/generate_summary.py` generates the HTML pages.
 - `scripts/workflows/rss-processing/generate_rss.py` generates the RSS output.
 - `scripts/workflows/rss-processing/template.html` and `src/site/` contain the shared site shell.
-- `.github/workflows/rss-github-page.yml` already handles collection, build, preview deployment, and Pages publishing.
+- `.github/workflows/publish-pages.yml` now exposes the shared Pages pipeline as a reusable `workflow_call` workflow.
+- `.github/workflows/rss-github-page.yml` now acts as a thin caller for the shared publish workflow.
 - `config/rss-feeds.json` is already configuration driven for the feed sources.
+- `config/site-metadata.json` now drives site branding and RSS metadata.
+- `starter-sites/crypto-feed-hub/` now contains a copyable consumer repository starter for a crypto-focused site.
+- `.github/workflows/publish-starter-bundle.yml` can attach the crypto starter bundle to tagged GitHub Releases.
 
-The main remaining gap is that site branding is still hardcoded in several places instead of coming from config.
+## Actual Status
+
+### Phase 1: Parameterize branding in this repository
+
+✅ Complete
+
+Branding is now config driven via `config/site-metadata.json`, and the
+shared generators/templates read those values instead of hardcoding the
+DevOps Feed Hub identity.
+
+### Phase 2: Extract a reusable workflow
+
+✅ Complete
+
+The shared Pages workflow now lives in:
+
+```text
+.github/workflows/publish-pages.yml
+```
+
+The repository's own publish workflow consumes it internally, which keeps
+the upstream repository on the same execution path as future consumer
+repositories.
+
+### Phase 3: Release and document the template
+
+✅ Implemented in the repository
+
+- Release asset workflow:
+
+  ```text
+  .github/workflows/publish-starter-bundle.yml
+  ```
+
+- Copyable starter template:
+
+  ```text
+  starter-sites/crypto-feed-hub/
+  ```
+
+- Consumer upgrade guidance:
+  - documented in `starter-sites/crypto-feed-hub/README.md`
+  - documented below in this plan
+
+The only remaining operational step is to publish the first stable release
+tag (for example `v1`) after these changes merge so external consumer
+repositories can pin to a released version immediately.
+
+### Phase 4: Create the second site from the template
+
+✅ Complete inside this repository
+
+The crypto-focused starter site now exists as a full copyable folder that
+contains the exact repository structure expected for a new consumer repo:
+
+```text
+starter-sites/crypto-feed-hub/
+├── .github/workflows/publish.yml
+├── config/site-metadata.json
+├── config/rss-feeds.json
+└── README.md
+```
+
+Copying that folder into a new repository gives a minimal crypto-focused
+consumer site that only customizes config and pins the shared workflow by
+release tag.
 
 ## Recommended Scalable Model
 
@@ -60,6 +129,14 @@ Use a reusable workflow in this repository, published and consumed by tag:
 
 This should be the primary distribution mechanism because it avoids duplicating the current Pages workflow in every new repository.
 
+Current repository status:
+
+- The reusable workflow exists at `.github/workflows/publish-pages.yml`.
+- The starter consumer workflow already pins the upstream workflow by tag:
+  `mudman1986/devops-feed-hub/.github/workflows/publish-pages.yml@v1`
+- The release helper workflow can upload the starter bundle to a GitHub
+  Release once the tag exists.
+
 ### 4. Use GitHub Releases for bootstrap assets, not as the primary runtime
 
 Each release should attach a small starter bundle that contains:
@@ -70,6 +147,13 @@ Each release should attach a small starter bundle that contains:
 - setup instructions
 
 Releases are a good fit for versioned templates and examples. They are less useful than a reusable workflow for the ongoing build itself, because consumers would otherwise need to reimplement the workflow logic locally.
+
+Current repository status:
+
+- The starter bundle lives in `starter-sites/crypto-feed-hub/`.
+- The release workflow `.github/workflows/publish-starter-bundle.yml`
+  packages that folder as a `.tar.gz` archive and uploads it to an existing
+  GitHub Release.
 
 ### 5. Treat GitHub Packages as optional
 
@@ -86,6 +170,12 @@ A second site repository should stay very small:
 config/site-metadata.json            # title, description, branding
 config/rss-feeds.json                # audience-specific feeds
 README.md                            # repo-specific documentation
+```
+
+That exact structure is now available in:
+
+```text
+starter-sites/crypto-feed-hub/
 ```
 
 That repository should not copy:
@@ -126,6 +216,12 @@ For each tagged release:
 - attach the starter bundle to the GitHub Release
 - document the upgrade path for consumer repos
 
+Repository status:
+
+- ✅ release starter bundle workflow added
+- ✅ starter bundle documentation added
+- ⏳ first stable release tag still needs to be published operationally
+
 ### Phase 4: Create the second site from the template
 
 The second repository should prove the model by changing only:
@@ -135,6 +231,12 @@ The second repository should prove the model by changing only:
 - the repository name / Pages URL
 
 If more files are required, the shared layer is still too coupled.
+
+Repository status:
+
+- ✅ crypto starter repository created in `starter-sites/crypto-feed-hub/`
+- ✅ starter repo changes only config and workflow reference
+- ✅ no shared engine code is duplicated into the consumer template
 
 ## Why This Scales to 5+ Sites
 

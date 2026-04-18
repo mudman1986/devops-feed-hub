@@ -1,0 +1,22 @@
+---
+name: Publish Crypto Feed Hub
+
+on:
+  push:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 */12 * * *"
+
+permissions:
+  actions: read
+  contents: read
+  id-token: write
+  pages: write
+
+jobs:
+  publish-pages:
+    uses: mudman1986/devops-feed-hub/.github/workflows/publish-pages.yml@v1
+    with:
+      feeds-config-path: config/rss-feeds.json
+      site-metadata-path: config/site-metadata.json
+    secrets: inherit
