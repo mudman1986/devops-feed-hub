@@ -51,7 +51,7 @@ def format_rfc822_date(iso_date_str: str) -> str:
 
 
 def create_rss_feed(
-    # pylint: disable=too-many-locals
+    # pylint: disable=too-many-arguments,too-many-locals,too-many-positional-arguments
     title: str,
     link: str,
     description: str,

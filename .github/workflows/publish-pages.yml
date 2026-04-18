@@ -17,7 +17,7 @@ on:
         description: Python version used to run the site generation scripts
         required: false
         type: string
-        default: '3.11'
+        default: "3.11"
       artifact-retention-days:
         description: Retention period for the Pages state artifact
         required: false
@@ -75,7 +75,7 @@ jobs:
         id: collect
         uses: mudman1986/rss-feed-collector-action@main
         with:
-          hours: '8760'
+          hours: "8760"
           config-path: ${{ inputs.feeds-config-path }}
           output-path: rss-feeds-output.json
 

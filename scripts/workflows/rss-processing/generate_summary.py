@@ -297,19 +297,13 @@ def render_site_metadata_placeholders(
         Content with branding placeholders replaced.
     """
     replacements = {
-        "<!-- PAGE_TITLE_PLACEHOLDER -->": html_escape(
-            page_title or site_metadata["site_name"]
-        ),
+        "__PAGE_TITLE__": html_escape(page_title or site_metadata["site_name"]),
         "<!-- PAGE_DESCRIPTION_PLACEHOLDER -->": html_escape(
             page_description or site_metadata["site_description"]
         ),
         "<!-- SITE_RSS_TITLE_PLACEHOLDER -->": html_escape(site_metadata["rss_title"]),
-        "<!-- HEADER_TITLE_PLACEHOLDER -->": html_escape(
-            site_metadata["header_title"]
-        ),
-        "<!-- SETTINGS_TITLE_PLACEHOLDER -->": html_escape(
-            site_metadata["settings_title"]
-        ),
+        "<!-- HEADER_TITLE_PLACEHOLDER -->": html_escape(site_metadata["header_title"]),
+        "__SETTINGS_TITLE__": html_escape(site_metadata["settings_title"]),
         "<!-- SETTINGS_DESCRIPTION_PLACEHOLDER -->": html_escape(
             site_metadata["settings_description"]
         ),

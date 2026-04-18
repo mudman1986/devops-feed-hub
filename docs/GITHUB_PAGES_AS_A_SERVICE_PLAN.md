@@ -24,7 +24,7 @@ The main remaining gap is that site branding is still hardcoded in several place
 
 ## Recommended Scalable Model
 
-### 1. Keep this repo as the upstream "site engine"
+### 1. Keep this repository as the upstream "site engine"
 
 This repository should own:
 
@@ -88,7 +88,7 @@ config/rss-feeds.json                # audience-specific feeds
 README.md                            # repo-specific documentation
 ```
 
-That repo should not copy:
+That repository should not copy:
 
 - `src/site/`
 - `scripts/workflows/rss-processing/`
@@ -97,26 +97,26 @@ That repo should not copy:
 
 ## Rollout Plan
 
-### Phase 1: Parameterize branding in this repo
+### Phase 1: Parameterize branding in this repository
 
 Update the shared engine so these values come from config instead of being hardcoded:
 
 - page title and meta description in `template.html`
 - header title in `template.html`
-- markdown summary title in `generate_summary.py`
+- Markdown summary title in `generate_summary.py`
 - RSS feed titles and descriptions in `generate_rss.py`
 
 ### Phase 2: Extract a reusable workflow
 
 Create a `workflow_call` workflow that:
 
-- checks out the consumer repo
+- checks out the consumer repository
 - reads the consumer config files
 - runs the feed collector
 - builds HTML and RSS with the shared scripts
 - publishes to GitHub Pages
 
-The existing `.github/workflows/rss-github-page.yml` can then call the same reusable workflow internally so the upstream repo uses the same path as consumers.
+The existing `.github/workflows/rss-github-page.yml` can then call the same reusable workflow internally so the upstream repository uses the same path as consumers.
 
 ### Phase 3: Release and document the template
 
@@ -128,11 +128,11 @@ For each tagged release:
 
 ### Phase 4: Create the second site from the template
 
-The second repo should prove the model by changing only:
+The second repository should prove the model by changing only:
 
 - `config/site-metadata.json`
 - `config/rss-feeds.json`
-- the repo name / Pages URL
+- the repository name / Pages URL
 
 If more files are required, the shared layer is still too coupled.
 
@@ -141,8 +141,8 @@ If more files are required, the shared layer is still too coupled.
 This approach scales because:
 
 - UI, tests, and deployment logic stay centralized.
-- Each site repo is mostly configuration.
-- Fixes ship once in the upstream repo and are adopted by bumping a version tag.
+- Each site repository is mostly configuration.
+- Fixes ship once in the upstream repository and are adopted by bumping a version tag.
 - New sites avoid forks and large copy/paste drift.
 - Release tags provide stable, auditable upgrades.
 
