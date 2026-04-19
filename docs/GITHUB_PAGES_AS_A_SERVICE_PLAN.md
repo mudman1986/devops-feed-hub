@@ -54,10 +54,10 @@ repositories.
 
 ✅ Implemented in the repository
 
-- Release asset workflow:
+- Release creation and starter bundle publishing workflow:
 
   ```text
-  .github/workflows/publish-starter-bundle.yml
+  .github/workflows/create-release.yml
   ```
 
 - Automated release creation workflow:
