@@ -28,7 +28,8 @@ README.md
 
 The pinned workflow tag in this starter is updated in the repository before a
 new upstream release is published, so the committed starter contents match the
-tagged release.
+tagged release. The workflow `uses:` reference and `engine-ref` input stay
+aligned to that same release tag.
 
 ## What To Customize
 
@@ -63,8 +64,8 @@ This starter pins the shared workflow to the release reference shown in
 When a newer release is available:
 
 1. Review the upstream release notes.
-2. Update `.github/workflows/publish.yml` to the new stable tag
-   (for example `@v1.0.1`).
+2. Update `.github/workflows/publish.yml` so both the `uses:` reference and the
+   `engine-ref` input point to the new stable tag (for example `v1.0.1`).
 3. Commit and push the workflow change.
 
 ## Notes
