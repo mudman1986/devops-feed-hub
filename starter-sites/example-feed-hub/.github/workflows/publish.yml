@@ -1,5 +1,5 @@
 ---
-name: Publish Crypto Feed Hub
+name: Publish Example Feed Hub
 
 on:
   push:

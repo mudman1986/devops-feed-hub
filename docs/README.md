@@ -28,7 +28,7 @@ publishes previews under `site/preview/<preview-slug>/`.
 Copy-ready consumer repository starters live outside `docs/` in:
 
 ```text
-starter-sites/crypto-feed-hub/
+starter-sites/example-feed-hub/
 ```
 
 ## Live Site

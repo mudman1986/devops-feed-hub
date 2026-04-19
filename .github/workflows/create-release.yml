@@ -9,8 +9,8 @@ on:
       - .github/workflows/create-release.yml
       - config/release.json
       - scripts/workflows/resolve_release.py
-      - starter-sites/crypto-feed-hub/.github/workflows/publish.yml
-      - starter-sites/crypto-feed-hub/README.md
+      - starter-sites/example-feed-hub/.github/workflows/publish.yml
+      - starter-sites/example-feed-hub/README.md
   workflow_dispatch:
     inputs:
       tag:
@@ -45,8 +45,8 @@ jobs:
       - name: Resolve release metadata
         id: release
         env:
-          STARTER_README_PATH: starter-sites/crypto-feed-hub/README.md
-          STARTER_WORKFLOW_PATH: starter-sites/crypto-feed-hub/.github/workflows/publish.yml
+          STARTER_README_PATH: starter-sites/example-feed-hub/README.md
+          STARTER_WORKFLOW_PATH: starter-sites/example-feed-hub/.github/workflows/publish.yml
         run: |
           python3 scripts/workflows/resolve_release.py \
             --config config/release.json \
@@ -128,7 +128,6 @@ jobs:
         needs.create-release.outputs.release_exists != 'true'
       )
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository at release tag
         uses: actions/checkout@v6
@@ -167,8 +166,8 @@ jobs:
         env:
           RELEASE_TAG: ${{ steps.release-tag.outputs.tag }}
         run: |
-          BUNDLE_NAME="crypto-feed-hub-starter-${RELEASE_TAG}.tar.gz"
-          tar -czf "$BUNDLE_NAME" -C starter-sites crypto-feed-hub
+          BUNDLE_NAME="example-feed-hub-starter-${RELEASE_TAG}.tar.gz"
+          tar -czf "$BUNDLE_NAME" -C starter-sites example-feed-hub
           echo "bundle_name=$BUNDLE_NAME" >> "$GITHUB_OUTPUT"
 
       - name: Upload starter bundle to GitHub release
@@ -189,7 +188,7 @@ jobs:
             echo "## Starter bundle published"
             echo "- Release tag: \`$RELEASE_TAG\`"
             echo "- Asset: \`$BUNDLE_NAME\`"
-            echo "- Template folder: \`starter-sites/crypto-feed-hub\`"
+            echo "- Template folder: \`starter-sites/example-feed-hub\`"
             if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
               echo "- Trigger: manual recovery upload"
             else

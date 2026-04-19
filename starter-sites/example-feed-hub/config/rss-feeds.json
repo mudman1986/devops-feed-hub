@@ -1,0 +1,34 @@
+{
+  "feeds": [
+    {
+      "name": "GitHub Blog",
+      "url": "https://github.blog/feed/",
+      "website_url": "https://github.blog/"
+    },
+    {
+      "name": "GitHub Changelog",
+      "url": "https://github.blog/changelog/feed/",
+      "website_url": "https://github.blog/changelog/"
+    },
+    {
+      "name": "Docker Blog",
+      "url": "https://www.docker.com/blog/feed/",
+      "website_url": "https://www.docker.com/blog/"
+    },
+    {
+      "name": "Kubernetes Blog",
+      "url": "https://kubernetes.io/feed.xml",
+      "website_url": "https://kubernetes.io/blog/"
+    },
+    {
+      "name": "Microsoft Azure Blog",
+      "url": "https://azurecomcdn.azureedge.net/en-us/blog/feed/",
+      "website_url": "https://azure.microsoft.com/en-us/blog/"
+    },
+    {
+      "name": "HashiCorp Blog",
+      "url": "https://www.hashicorp.com/blog/feed.xml",
+      "website_url": "https://www.hashicorp.com/blog"
+    }
+  ]
+}

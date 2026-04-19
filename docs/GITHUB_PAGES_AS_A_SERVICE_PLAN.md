@@ -21,10 +21,10 @@ The repository already has most of the pieces needed for a shared platform:
 - `.github/workflows/rss-github-page.yml` now acts as a thin caller for the shared publish workflow.
 - `config/rss-feeds.json` is already configuration driven for the feed sources.
 - `config/site-metadata.json` now drives site branding and RSS metadata.
-- `starter-sites/crypto-feed-hub/` now contains a copyable consumer repository starter for a crypto-focused site.
+- `starter-sites/example-feed-hub/` now contains a copyable consumer repository starter for a generic example site.
 - `.github/workflows/create-release.yml` now creates releases from the
   committed tag metadata in `config/release.json`.
-- `.github/workflows/create-release.yml` now also packages and uploads the crypto starter bundle to tagged GitHub Releases.
+- `.github/workflows/create-release.yml` now also packages and uploads the starter bundle to tagged GitHub Releases.
 
 ## Actual Status
 
@@ -69,11 +69,11 @@ repositories.
 - Copyable starter template:
 
   ```text
-  starter-sites/crypto-feed-hub/
+  starter-sites/example-feed-hub/
   ```
 
 - Consumer upgrade guidance:
-  - documented in `starter-sites/crypto-feed-hub/README.md`
+  - documented in `starter-sites/example-feed-hub/README.md`
   - documented below in this plan
 
 The remaining operational step is to run the automated release workflow for the
@@ -85,18 +85,18 @@ uploads the starter bundle asset in the same workflow.
 
 ✅ Complete inside this repository
 
-The crypto-focused starter site now exists as a full copyable folder that
+The generic example starter site now exists as a full copyable folder that
 contains the exact repository structure expected for a new consumer repository:
 
 ```text
-starter-sites/crypto-feed-hub/
+starter-sites/example-feed-hub/
 ├── .github/workflows/publish.yml
 ├── config/site-metadata.json
 ├── config/rss-feeds.json
 └── README.md
 ```
 
-Copying that folder into a new repository gives a minimal crypto-focused
+Copying that folder into a new repository gives a minimal example
 consumer site that only customizes config and pins the shared workflow by
 release tag.
 
@@ -163,8 +163,8 @@ Releases are a good fit for versioned templates and examples. They are less usef
 
 Current repository status:
 
-- The starter bundle lives in `starter-sites/crypto-feed-hub/`.
-- The release workflow validates that `starter-sites/crypto-feed-hub/` already
+- The starter bundle lives in `starter-sites/example-feed-hub/`.
+- The release workflow validates that `starter-sites/example-feed-hub/` already
   matches the committed release tag before creating the release.
 - The release workflow `.github/workflows/create-release.yml` packages that
   tagged folder as a `.tar.gz` archive and uploads it to the GitHub Release.
@@ -189,7 +189,7 @@ README.md                            # repo-specific documentation
 That exact structure is now available in:
 
 ```text
-starter-sites/crypto-feed-hub/
+starter-sites/example-feed-hub/
 ```
 
 That repository should not copy:
@@ -250,7 +250,7 @@ If more files are required, the shared layer is still too coupled.
 
 Repository status:
 
-- ✅ crypto starter repository created in `starter-sites/crypto-feed-hub/`
+- ✅ generic starter repository created in `starter-sites/example-feed-hub/`
 - ✅ starter repository changes only config and workflow reference
 - ✅ no shared engine code is duplicated into the consumer template
 

@@ -1,7 +1,7 @@
-# Crypto Feed Hub Starter
+# Example Feed Hub Starter
 
 Copy the contents of this folder into a new repository to bootstrap a
-crypto-focused feed hub site that uses the shared Pages workflow from:
+generic feed hub site that uses the shared Pages workflow from:
 
 ```text
 mudman1986/devops-feed-hub/.github/workflows/publish-pages.yml@v1.0.0
@@ -18,7 +18,7 @@ README.md
 
 ## Setup
 
-1. Create a new GitHub repository for your crypto site.
+1. Create a new GitHub repository for your feed hub site.
 2. Copy the full contents of this folder into the new repository root.
 3. Review and update:
    - `config/site-metadata.json`
@@ -43,7 +43,7 @@ Update `config/site-metadata.json` to change:
 
 ### Feed sources
 
-Update `config/rss-feeds.json` to add, remove, or replace crypto feeds.
+Update `config/rss-feeds.json` to add, remove, or replace feeds for your topic.
 
 Each entry supports:
 

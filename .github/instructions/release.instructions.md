@@ -1,5 +1,5 @@
 ---
-applyTo: ".github/workflows/create-release.yml,config/release.json,scripts/workflows/resolve_release.py,starter-sites/crypto-feed-hub/.github/workflows/publish.yml,starter-sites/crypto-feed-hub/README.md"
+applyTo: ".github/workflows/create-release.yml,config/release.json,scripts/workflows/resolve_release.py,starter-sites/example-feed-hub/.github/workflows/publish.yml,starter-sites/example-feed-hub/README.md"
 ---
 
 # Release Automation Development
