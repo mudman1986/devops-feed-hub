@@ -1,0 +1,1260 @@
+<!doctype html>
+<html lang="en" data-theme="dracula">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="DevOps Feed Hub Settings - Configure your RSS feed preferences"
+    />
+    <title>Settings - DevOps Feed Hub</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="48x48" href="favicon-48x48.png" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="192x192"
+      href="favicon-192x192.png"
+    />
+    <link rel="apple-touch-icon" sizes="192x192" href="favicon-192x192.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#settings-content" class="skip-to-main">Skip to main content</a>
+
+    <div class="header">
+      <div class="header-title">
+        <svg
+          width="40"
+          height="40"
+          viewBox="0 0 100 100"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <linearGradient
+              id="header-grad"
+              x1="0%"
+              y1="0%"
+              x2="100%"
+              y2="100%"
+            >
+              <stop offset="0%" style="stop-color: #667eea; stop-opacity: 1" />
+              <stop
+                offset="100%"
+                style="stop-color: #764ba2; stop-opacity: 1"
+              />
+            </linearGradient>
+          </defs>
+          <g fill="url(#header-grad)">
+            <circle cx="50" cy="50" r="18" fill="url(#header-grad)" />
+            <path d="M 50,10 L 45,22 L 55,22 Z" />
+            <path d="M 78,28 L 71,34 L 77,40 Z" />
+            <path d="M 90,50 L 78,45 L 78,55 Z" />
+            <path d="M 78,72 L 77,60 L 71,66 Z" />
+            <path d="M 50,90 L 55,78 L 45,78 Z" />
+            <path d="M 22,72 L 29,66 L 23,60 Z" />
+            <path d="M 10,50 L 22,55 L 22,45 Z" />
+            <path d="M 22,28 L 23,40 L 29,34 Z" />
+          </g>
+          <circle cx="50" cy="50" r="8" fill="#ffffff" />
+        </svg>
+        DevOps Feed Hub
+      </div>
+      <div class="header-controls">
+        <button
+          class="settings-back-button"
+          id="settings-back-button"
+          aria-label="Back to feeds"
+          onclick="window.location.href = 'index.html'"
+        >
+          <svg
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <line x1="19" y1="12" x2="5" y2="12"></line>
+            <polyline points="12 19 5 12 12 5"></polyline>
+          </svg>
+          <span>Back to Feeds</span>
+        </button>
+        <button
+          class="theme-toggle"
+          id="theme-toggle"
+          aria-label="Toggle theme"
+        >
+          <svg
+            id="theme-icon"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+          >
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+    <div class="settings-container">
+      <nav class="settings-sidebar">
+        <div class="settings-menu">
+          <div
+            class="settings-menu-item active"
+            data-section="appearance"
+            role="button"
+            tabindex="0"
+            aria-label="Appearance and display settings"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="14.31" y1="8" x2="20.05" y2="17.94"></line>
+              <line x1="9.69" y1="8" x2="21.17" y2="8"></line>
+              <line x1="7.38" y1="12" x2="13.12" y2="2.06"></line>
+              <line x1="9.69" y1="16" x2="3.95" y2="6.06"></line>
+              <line x1="14.31" y1="16" x2="2.83" y2="16"></line>
+              <line x1="16.62" y1="12" x2="10.88" y2="21.94"></line>
+            </svg>
+            <span>Appearance & Display</span>
+          </div>
+          <div
+            class="settings-menu-item"
+            data-section="feeds"
+            role="button"
+            tabindex="0"
+            aria-label="Feed selection settings"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M4 11a9 9 0 0 1 9 9"></path>
+              <path d="M4 4a16 16 0 0 1 16 16"></path>
+              <circle cx="5" cy="19" r="1"></circle>
+            </svg>
+            <span>Feed Selection</span>
+          </div>
+          <div
+            class="settings-menu-item"
+            data-section="rss"
+            role="button"
+            tabindex="0"
+            aria-label="RSS feed settings"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M4 11a9 9 0 0 1 9 9"></path>
+              <path d="M4 4a16 16 0 0 1 16 16"></path>
+              <circle cx="5" cy="19" r="1"></circle>
+            </svg>
+            <span>RSS Feeds</span>
+          </div>
+          <div
+            class="settings-menu-item"
+            data-section="preview"
+            role="button"
+            tabindex="0"
+            aria-label="Preview site deployments"
+          >
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+              <circle cx="12" cy="12" r="3"></circle>
+            </svg>
+            <span>Preview Sites</span>
+          </div>
+        </div>
+      </nav>
+      <main class="settings-content" id="settings-content">
+        <section class="settings-section active" id="appearance-section">
+          <h2 class="settings-section-title">Appearance & Display</h2>
+          <div class="settings-group">
+            <div class="settings-item">
+              <div class="settings-item-label">
+                <label for="theme-setting">Theme</label>
+                <p class="settings-item-description">
+                  Select your preferred color theme (use sun/moon toggle for
+                  light/dark mode)
+                </p>
+              </div>
+              <div class="settings-item-control">
+                <select id="theme-setting" class="settings-select">
+                  <option value="default">Dracula (Default)</option>
+                  <option value="classic">Classic</option>
+                  <option value="purple-haze">Beta - Purple Haze</option>
+                  <option value="ocean-deep">Beta - Ocean Deep</option>
+                  <option value="arctic-blue">Beta - Arctic Blue</option>
+                  <option value="high-contrast">Beta - High Contrast</option>
+                  <option value="monochrome">Beta - Monochrome</option>
+                  <option value="minimalist">Beta - Minimalist</option>
+                  <option value="terminal">Beta - Terminal</option>
+                  <option value="retro">Beta - Retro</option>
+                  <option value="futuristic">Beta - Futuristic</option>
+                  <option value="compact">Beta - Compact</option>
+                </select>
+              </div>
+            </div>
+            <div class="settings-item">
+              <div class="settings-item-label">
+                <label for="view-setting">View Mode</label>
+                <p class="settings-item-description">
+                  Choose how articles are displayed
+                </p>
+              </div>
+              <div class="settings-item-control">
+                <select id="view-setting" class="settings-select">
+                  <option value="list">List View</option>
+                  <option value="card">Card View</option>
+                  <option value="horizontal-scroll">
+                    Beta - Horizontal Scroll
+                  </option>
+                  <option value="masonry-grid">Beta - Masonry Grid</option>
+                  <option value="floating-panels">
+                    Beta - Floating Panels
+                  </option>
+                  <option value="center-stage">Beta - Center Stage</option>
+                  <option value="top-strip">Beta - Top Strip</option>
+                  <option value="list-dense">Beta - List Dense</option>
+                  <option value="timeline-vertical">
+                    Beta - Timeline Vertical
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div class="settings-item">
+              <div class="settings-item-label">
+                <label for="timeframe-setting">Default Time Range</label>
+                <p class="settings-item-description">
+                  Set the default time range for article filtering
+                </p>
+              </div>
+              <div class="settings-item-control">
+                <select id="timeframe-setting" class="settings-select">
+                  <option value="1day">Last 24 hours</option>
+                  <option value="3days">Last 3 days</option>
+                  <option value="7days">Last 7 days</option>
+                  <option value="30days">Last 30 days</option>
+                  <option value="1year">Last year</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section class="settings-section" id="feeds-section">
+          <h2 class="settings-section-title">Feed Selection</h2>
+          <div class="settings-group">
+            <p class="settings-group-description">
+              Select which feeds you want to see. Disabled feeds will be hidden
+              from the navigation and main view.
+            </p>
+            <div class="settings-item">
+              <div class="settings-item-actions">
+                <button
+                  id="select-all-feeds"
+                  class="settings-action-button"
+                  aria-label="Select all feeds"
+                >
+                  Select All
+                </button>
+                <button
+                  id="deselect-all-feeds"
+                  class="settings-action-button"
+                  aria-label="Deselect all feeds in the list"
+                >
+                  Deselect All
+                </button>
+              </div>
+            </div>
+            <div id="feed-checkboxes" class="feed-checkboxes">
+              <!-- Feed checkboxes will be dynamically inserted here -->
+            </div>
+          </div>
+        </section>
+
+        <section class="settings-section" id="rss-section">
+          <h2 class="settings-section-title">RSS Feeds</h2>
+          <div class="settings-group">
+            <p class="settings-group-description">
+              Subscribe to RSS feeds to get updates in your favorite RSS reader.
+            </p>
+            <div class="settings-item">
+              <div class="settings-item-label">
+                <label>All Articles</label>
+                <p class="settings-item-description">
+                  Get all articles from all feeds in one RSS feed
+                </p>
+              </div>
+              <div class="settings-item-control">
+                <a
+                  href="feed.xml"
+                  class="settings-button"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <svg
+                    width="16"
+                    height="16"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  >
+                    <path d="M4 11a9 9 0 0 1 9 9"></path>
+                    <path d="M4 4a16 16 0 0 1 16 16"></path>
+                    <circle cx="5" cy="19" r="1"></circle>
+                  </svg>
+                  Subscribe to All
+                </a>
+              </div>
+            </div>
+            <div id="rss-feed-links" class="rss-feed-links">
+              <!-- Individual RSS feed links will be dynamically inserted here -->
+            </div>
+          </div>
+        </section>
+
+        <section class="settings-section" id="preview-section">
+          <h2 class="settings-section-title">Preview Sites</h2>
+          <div class="settings-group">
+            <p class="settings-group-description">
+              Preview deployments are built from feature branches so you can
+              review changes without touching the live site. Each branch gets
+              its own isolated URL under
+              <code>preview/&lt;preview-slug&gt;/</code>, where the preview slug
+              is the branch name converted to lowercase, with
+              <code>/</code> replaced by <code>--</code> and other
+              non-alphanumeric characters replaced by <code>-</code>.
+            </p>
+            <div id="preview-sites-list">
+              <!-- Preview sites dynamically loaded here -->
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+      // Settings page-specific functionality
+      (() => {
+        "use strict";
+
+        // Get all available feeds from navigation
+        function _getAllFeeds() {
+          // This will be populated when the main index.html is generated
+          // For now, we'll fetch it from the existing navigation if available
+          const feeds = [];
+          // We'll populate this dynamically from localStorage or a fetch
+          return feeds;
+        }
+
+        // Initialize settings page
+        function initSettings() {
+          // Menu navigation
+          const menuItems = document.querySelectorAll(".settings-menu-item");
+          const sections = document.querySelectorAll(".settings-section");
+
+          menuItems.forEach((item) => {
+            item.addEventListener("click", () => {
+              const sectionId = item.getAttribute("data-section");
+
+              // Update active menu item
+              menuItems.forEach((mi) => {
+                mi.classList.remove("active");
+              });
+              item.classList.add("active");
+
+              // Update active section
+              sections.forEach((section) => {
+                section.classList.remove("active");
+              });
+              const targetSection = document.getElementById(
+                `${sectionId}-section`,
+              );
+              if (targetSection) {
+                targetSection.classList.add("active");
+              }
+            });
+          });
+
+          // Load current settings
+          loadSettings();
+
+          // Setup event listeners for settings controls
+          setupSettingsListeners();
+
+          // Load and display feed checkboxes
+          loadFeedCheckboxes();
+
+          // Load and display RSS feed links
+          loadRSSFeedLinks();
+
+          // Load and display preview deployments
+          loadPreviewSites();
+        }
+
+        // List of base experimental themes (without -light/-dark suffixes)
+        const EXPERIMENTAL_BASE_THEMES = [
+          "purple-haze",
+          "ocean-deep",
+          "arctic-blue",
+          "high-contrast",
+          "monochrome",
+          "dracula",
+          "minimalist",
+          "terminal",
+          "retro",
+          "futuristic",
+          "compact",
+        ];
+
+        // List of experimental view modes (layout alternatives)
+        const EXPERIMENTAL_VIEW_MODES = [
+          "horizontal-scroll",
+          "masonry-grid",
+          "floating-panels",
+          "center-stage",
+          "top-strip",
+          "list-dense",
+          "timeline-vertical",
+        ];
+
+        // All valid experimental themes including variants
+        const VALID_EXPERIMENTAL_THEMES = [
+          ...EXPERIMENTAL_BASE_THEMES,
+          ...EXPERIMENTAL_BASE_THEMES.map((t) => `${t}-light`),
+          ...EXPERIMENTAL_BASE_THEMES.map((t) => `${t}-dark`),
+          ...EXPERIMENTAL_VIEW_MODES,
+        ];
+
+        /**
+         * Get the base theme name (without -light or -dark suffix)
+         */
+        function getBaseTheme(theme) {
+          if (!theme) return null;
+          return theme.replace(/-light$|-dark$/, "");
+        }
+
+        /**
+         * Determine if a theme is light mode
+         */
+        function isLightMode(theme) {
+          if (!theme) return false;
+          if (theme === "arctic-blue") return true;
+          return theme.endsWith("-light") || theme === "light";
+        }
+
+        /**
+         * Get current mode (light or dark)
+         */
+        function getCurrentMode(theme) {
+          return isLightMode(theme) ? "light" : "dark";
+        }
+
+        /**
+         * Apply mode to a theme
+         */
+        function applyModeToTheme(baseTheme, mode) {
+          if (!baseTheme) return mode;
+
+          // View modes don't have light/dark variants
+          if (EXPERIMENTAL_VIEW_MODES.includes(baseTheme)) {
+            return baseTheme;
+          }
+
+          // Standard themes (light/dark) - these are already full theme names
+          if (baseTheme === "light" || baseTheme === "dark") {
+            return mode;
+          }
+
+          // Arctic-blue is naturally light, so no suffix for light mode
+          if (baseTheme === "arctic-blue") {
+            return mode === "light" ? "arctic-blue" : "arctic-blue-dark";
+          }
+
+          // For other experimental themes, append mode suffix
+          if (EXPERIMENTAL_BASE_THEMES.includes(baseTheme)) {
+            return mode === "light" ? `${baseTheme}-light` : baseTheme;
+          }
+
+          return baseTheme;
+        }
+
+        /**
+         * Create an SVG element from path data
+         * @param {number} width - Rendered SVG width (e.g., 16, 24)
+         * @param {number} height - Rendered SVG height (e.g., 16, 24)
+         * @param {string} content - SVG inner content (paths, lines, etc.) - MUST be from trusted static strings only
+         * @param {number} [viewBoxWidth=24] - Internal SVG coordinate system width (defaults to 24 for icon paths)
+         * @param {number} [viewBoxHeight=24] - Internal SVG coordinate system height (defaults to 24 for icon paths)
+         * @returns {SVGElement} - SVG element
+         * @example
+         * // Render a 16x16 icon using 24x24 coordinate paths
+         * const icon = createSVG(16, 16, '<path d="...24x24 coordinates..."/>');
+         */
+        function createSVG(
+          width,
+          height,
+          content,
+          viewBoxWidth = 24,
+          viewBoxHeight = 24,
+        ) {
+          const svg = document.createElementNS(
+            "http://www.w3.org/2000/svg",
+            "svg",
+          );
+          svg.setAttribute("width", width.toString());
+          svg.setAttribute("height", height.toString());
+          svg.setAttribute("viewBox", `0 0 ${viewBoxWidth} ${viewBoxHeight}`);
+          svg.setAttribute("fill", "none");
+          svg.setAttribute("stroke", "currentColor");
+          svg.setAttribute("stroke-width", "2");
+          svg.setAttribute("stroke-linecap", "round");
+          svg.setAttribute("stroke-linejoin", "round");
+
+          // Parse and create SVG elements from content string
+          // WARNING: content MUST be from trusted static strings only to avoid XSS
+          const temp = document.createElementNS(
+            "http://www.w3.org/2000/svg",
+            "svg",
+          );
+          temp.innerHTML = content;
+          while (temp.firstChild) {
+            svg.appendChild(temp.firstChild);
+          }
+
+          return svg;
+        }
+
+        /**
+         * Get the natural/default mode for a theme
+         * @param {string} baseTheme - Base theme name (without mode suffix)
+         * @returns {string} - "light" or "dark" (the natural default mode)
+         */
+        function getNaturalThemeMode(baseTheme) {
+          // Arctic-blue is naturally light
+          if (baseTheme === "arctic-blue") {
+            return "light";
+          }
+          // All other themes are naturally dark
+          return "dark";
+        }
+
+        // Helper function to apply theme
+        function applyTheme(themeName) {
+          if (
+            themeName &&
+            !VALID_EXPERIMENTAL_THEMES.includes(themeName) &&
+            themeName !== "dark" &&
+            themeName !== "light"
+          ) {
+            console.warn(
+              `Invalid theme: ${themeName}. Falling back to dracula.`,
+            );
+            themeName = "dracula";
+          }
+          document.documentElement.setAttribute(
+            "data-theme",
+            themeName || "dracula",
+          );
+        }
+
+        function loadSettings() {
+          // Load theme setting (default or experimental base theme)
+          try {
+            const experimentalTheme =
+              localStorage.getItem("experimentalTheme") || "";
+            const theme = localStorage.getItem("theme") || "dracula";
+            const themeSelect = document.getElementById("theme-setting");
+
+            if (experimentalTheme) {
+              // It's a theme, get the base theme
+              const baseTheme = getBaseTheme(experimentalTheme);
+              if (themeSelect && baseTheme === "dracula") {
+                // Dracula is represented by the built-in default dropdown option
+                themeSelect.value = "default";
+              } else if (
+                themeSelect &&
+                EXPERIMENTAL_BASE_THEMES.includes(baseTheme)
+              ) {
+                themeSelect.value = baseTheme;
+              } else {
+                if (themeSelect) themeSelect.value = "default";
+              }
+            } else if (theme === "light" || theme === "dark") {
+              if (themeSelect) themeSelect.value = "classic";
+            } else {
+              // No experimental theme, use default
+              if (themeSelect) themeSelect.value = "default";
+            }
+          } catch (e) {
+            console.warn("Unable to load theme setting:", e);
+          }
+
+          // Load view mode setting (standard or experimental)
+          try {
+            const experimentalViewMode =
+              localStorage.getItem("experimentalViewMode") || "";
+            const view = localStorage.getItem("view") || "list";
+            const viewSelect = document.getElementById("view-setting");
+
+            if (
+              experimentalViewMode &&
+              EXPERIMENTAL_VIEW_MODES.includes(experimentalViewMode)
+            ) {
+              // Experimental view mode
+              if (viewSelect) viewSelect.value = experimentalViewMode;
+            } else {
+              // Standard view mode
+              if (viewSelect) viewSelect.value = view;
+            }
+          } catch (e) {
+            console.warn("Unable to load view setting:", e);
+          }
+
+          // Load timeframe
+          try {
+            const timeframe = localStorage.getItem("timeframe") || "1day";
+            const timeframeSelect =
+              document.getElementById("timeframe-setting");
+            if (timeframeSelect) timeframeSelect.value = timeframe;
+          } catch (e) {
+            console.warn("Unable to load timeframe setting:", e);
+          }
+        }
+
+        function setupSettingsListeners() {
+          // Theme setting (consolidated: default and experimental themes)
+          const themeSelect = document.getElementById("theme-setting");
+          if (themeSelect) {
+            themeSelect.addEventListener("change", async (e) => {
+              const selectedTheme = e.target.value;
+              LoadingState.show(themeSelect, "Applying theme");
+              try {
+                if (selectedTheme === "default") {
+                  // Apply Dracula as the default theme while preserving current mode
+                  localStorage.removeItem("experimentalTheme");
+                  const mode = localStorage.getItem("themeMode") || "dark";
+                  const defaultTheme = applyModeToTheme("dracula", mode);
+                  localStorage.setItem("theme", defaultTheme);
+                  applyTheme(defaultTheme);
+                  showToast("Theme changed to Dracula (Default)", "success");
+                } else if (selectedTheme === "classic") {
+                  // Apply the original plain light/dark theme while preserving current mode
+                  localStorage.removeItem("experimentalTheme");
+                  const mode = localStorage.getItem("themeMode") || "dark";
+                  localStorage.setItem("theme", mode);
+                  localStorage.setItem("themeMode", mode);
+                  applyTheme(mode);
+                  showToast("Theme changed to Classic", "success");
+                } else {
+                  // Apply theme in its natural mode (not forcing current themeMode)
+                  const naturalMode = getNaturalThemeMode(selectedTheme);
+                  const fullTheme = applyModeToTheme(
+                    selectedTheme,
+                    naturalMode,
+                  );
+
+                  // Save experimental theme in its natural mode
+                  if (
+                    VALID_EXPERIMENTAL_THEMES.includes(fullTheme) ||
+                    EXPERIMENTAL_BASE_THEMES.includes(selectedTheme)
+                  ) {
+                    localStorage.setItem("experimentalTheme", fullTheme);
+                    localStorage.setItem("themeMode", naturalMode);
+                    localStorage.removeItem("theme");
+                    applyTheme(fullTheme);
+                    showToast(
+                      `Theme changed to ${selectedTheme
+                        .split("-")
+                        .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+                        .join(" ")}`,
+                      "success",
+                    );
+                  } else {
+                    console.warn(`Invalid theme: ${selectedTheme}`);
+                    showToast("Invalid theme selected", "error");
+                  }
+                }
+
+                LoadingState.hide(themeSelect);
+              } catch (err) {
+                console.warn("Unable to save theme:", err);
+                LoadingState.hide(themeSelect);
+                showToast("Failed to save theme setting", "error");
+              }
+            });
+          }
+
+          // View setting (consolidated: standard and experimental view modes)
+          const viewSelect = document.getElementById("view-setting");
+          if (viewSelect) {
+            viewSelect.addEventListener("change", async (e) => {
+              const selectedView = e.target.value;
+              LoadingState.show(viewSelect, "Updating view mode");
+              try {
+                if (EXPERIMENTAL_VIEW_MODES.includes(selectedView)) {
+                  // Store experimental view mode separately
+                  localStorage.setItem("experimentalViewMode", selectedView);
+                  localStorage.removeItem("view");
+
+                  showToast(
+                    `Experimental view mode: ${selectedView
+                      .split("-")
+                      .map((w) => w.charAt(0).toUpperCase() + w.slice(1))
+                      .join(" ")}`,
+                    "success",
+                  );
+                } else {
+                  // Store standard view mode (list or card)
+                  localStorage.setItem("view", selectedView);
+                  localStorage.removeItem("experimentalViewMode");
+
+                  showToast(
+                    `View mode changed to ${selectedView === "card" ? "Card" : "List"} view`,
+                    "success",
+                  );
+                }
+
+                // Update the view attribute (applies to both standard and experimental)
+                document.documentElement.setAttribute(
+                  "data-view",
+                  selectedView,
+                );
+
+                LoadingState.hide(viewSelect);
+              } catch (err) {
+                console.warn("Unable to save view:", err);
+                LoadingState.hide(viewSelect);
+                showToast("Failed to save view mode", "error");
+              }
+            });
+          }
+
+          // Timeframe setting
+          const timeframeSelect = document.getElementById("timeframe-setting");
+          if (timeframeSelect) {
+            timeframeSelect.addEventListener("change", async (e) => {
+              const timeframe = e.target.value;
+              LoadingState.show(timeframeSelect, "Updating time range");
+              try {
+                localStorage.setItem("timeframe", timeframe);
+                LoadingState.hide(timeframeSelect);
+                const timeframeLabels = {
+                  "1day": "Last 24 hours",
+                  "3days": "Last 3 days",
+                  "7days": "Last 7 days",
+                  "30days": "Last 30 days",
+                  "1year": "Last year",
+                };
+                showToast(
+                  `Time range updated to ${timeframeLabels[timeframe] || timeframe}`,
+                  "success",
+                );
+              } catch (err) {
+                console.warn("Unable to save timeframe:", err);
+                LoadingState.hide(timeframeSelect);
+                showToast("Failed to save time range", "error");
+              }
+            });
+          }
+
+          // Select/Deselect all feeds
+          const selectAllBtn = document.getElementById("select-all-feeds");
+          const deselectAllBtn = document.getElementById("deselect-all-feeds");
+
+          if (selectAllBtn) {
+            selectAllBtn.addEventListener("click", () => {
+              const checkboxes = document.querySelectorAll(
+                '.feed-checkbox-item input[type="checkbox"]',
+              );
+              checkboxes.forEach((cb) => {
+                cb.checked = true;
+              });
+              saveFeedSettings();
+            });
+          }
+
+          if (deselectAllBtn) {
+            deselectAllBtn.addEventListener("click", () => {
+              const checkboxes = document.querySelectorAll(
+                '.feed-checkbox-item input[type="checkbox"]',
+              );
+              checkboxes.forEach((cb) => {
+                cb.checked = false;
+              });
+              saveFeedSettings();
+            });
+          }
+        }
+
+        function loadFeedCheckboxes() {
+          // Get enabled feeds from localStorage
+          let enabledFeeds = [];
+          try {
+            const stored = localStorage.getItem("enabledFeeds");
+            enabledFeeds = stored ? JSON.parse(stored) : [];
+          } catch (e) {
+            console.warn("Unable to load enabled feeds:", e);
+          }
+
+          const feedContainer = document.getElementById("feed-checkboxes");
+          if (!feedContainer) return;
+
+          // Try to fetch the feed list from index.html
+          fetch("index.html")
+            .then((response) => response.text())
+            .then((html) => {
+              let feeds = extractFeedListFromHtml(html);
+
+              // If fetch failed or no data, use default list
+              if (feeds.length === 0) {
+                feeds = getDefaultFeedList();
+              }
+
+              renderFeedCheckboxes(feeds, enabledFeeds, feedContainer);
+            })
+            .catch(() => {
+              // If fetch fails, use default list
+              const feeds = getDefaultFeedList();
+              renderFeedCheckboxes(feeds, enabledFeeds, feedContainer);
+            });
+        }
+
+        function getDefaultFeedList() {
+          return [
+            "Atlassian DevOps",
+            "AWS DevOps Blog",
+            "Azure Updates",
+            "CircleCI Blog",
+            "Docker Blog",
+            "GitHub Blog",
+            "GitHub Changelog",
+            "GitLab Blog",
+            "HashiCorp Blog",
+            "Jenkins Blog",
+            "Kubernetes Blog",
+            "Microsoft Azure Blog",
+            "Microsoft DevOps Blog",
+            "Microsoft Entra Blog",
+            "Microsoft Security",
+            "Opensource.com",
+            "Red Hat Developer",
+            "Terraform weekly",
+          ];
+        }
+
+        function renderFeedCheckboxes(feeds, enabledFeeds, container) {
+          // If no feeds are stored yet, enable all by default
+          if (enabledFeeds.length === 0) {
+            enabledFeeds = [...feeds];
+            try {
+              localStorage.setItem(
+                "enabledFeeds",
+                JSON.stringify(enabledFeeds),
+              );
+            } catch (e) {
+              console.warn("Unable to save enabled feeds:", e);
+            }
+          }
+
+          // Sort feeds alphabetically
+          feeds.sort();
+
+          // Create checkboxes
+          feeds.forEach((feedName) => {
+            const item = document.createElement("div");
+            item.className = "feed-checkbox-item";
+
+            const checkbox = document.createElement("input");
+            checkbox.type = "checkbox";
+            checkbox.id = `feed-${feedName.replace(/\s+/g, "-").toLowerCase()}`;
+            checkbox.value = feedName;
+            checkbox.checked = enabledFeeds.includes(feedName);
+
+            checkbox.addEventListener("change", saveFeedSettings);
+
+            const label = document.createElement("label");
+            label.setAttribute("for", checkbox.id);
+            label.textContent = feedName;
+
+            item.appendChild(checkbox);
+            item.appendChild(label);
+            container.appendChild(item);
+          });
+        }
+
+        function loadRSSFeedLinks() {
+          const rssContainer = document.getElementById("rss-feed-links");
+          if (!rssContainer) return;
+
+          // Try to fetch the feed list from index.html
+          fetch("index.html")
+            .then((response) => response.text())
+            .then((html) => {
+              let feeds = extractFeedListFromHtml(html);
+
+              // If fetch failed or no data, use default list
+              if (feeds.length === 0) {
+                feeds = getDefaultFeedList();
+              }
+
+              renderRSSFeedLinks(feeds, rssContainer);
+            })
+            .catch(() => {
+              // If fetch fails, use default list
+              const feeds = getDefaultFeedList();
+              renderRSSFeedLinks(feeds, rssContainer);
+            });
+        }
+
+        function renderRSSFeedLinks(feeds, container) {
+          // Sort feeds alphabetically
+          feeds.sort();
+
+          // Create RSS feed link for each feed
+          feeds.forEach((feedName) => {
+            // Generate slug from feed name (lowercase, replace spaces with hyphens)
+            const feedSlug = feedName.toLowerCase().replace(/\s+/g, "-");
+
+            const item = document.createElement("div");
+            item.className = "settings-item";
+
+            const labelDiv = document.createElement("div");
+            labelDiv.className = "settings-item-label";
+
+            const label = document.createElement("label");
+            label.textContent = feedName;
+            labelDiv.appendChild(label);
+
+            const controlDiv = document.createElement("div");
+            controlDiv.className = "settings-item-control";
+
+            const link = document.createElement("a");
+            link.href = `feed-${feedSlug}.xml`;
+            link.className = "settings-button";
+            link.target = "_blank";
+            link.rel = "noopener noreferrer";
+
+            // Create SVG icon safely
+            const svg = createSVG(
+              16,
+              16,
+              '<path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle>',
+            );
+            link.appendChild(svg);
+
+            // Add text
+            const text = document.createTextNode(" Subscribe");
+            link.appendChild(text);
+
+            controlDiv.appendChild(link);
+            item.appendChild(labelDiv);
+            item.appendChild(controlDiv);
+            container.appendChild(item);
+          });
+        }
+
+        function decodeHtmlEntities(value) {
+          return value
+            .replaceAll("&quot;", '"')
+            .replaceAll("&#x27;", "'")
+            .replaceAll("&#x2F;", "/")
+            .replaceAll("&lt;", "<")
+            .replaceAll("&gt;", ">")
+            .replaceAll("&amp;", "&");
+        }
+
+        function parseFeedList(feedListText) {
+          const trimmedFeedList = feedListText?.trim();
+          if (!trimmedFeedList) {
+            return [];
+          }
+
+          const decodedFeedList = decodeHtmlEntities(trimmedFeedList);
+          const candidates = [decodedFeedList];
+          if (decodedFeedList !== trimmedFeedList) {
+            candidates.push(trimmedFeedList);
+          }
+
+          let lastParseError = null;
+
+          for (const candidate of candidates) {
+            try {
+              const parsedFeedList = JSON.parse(candidate);
+              return Array.isArray(parsedFeedList) ? parsedFeedList : [];
+            } catch (e) {
+              lastParseError = e;
+            }
+          }
+
+          if (lastParseError) {
+            console.warn("Unable to parse feed list:", lastParseError);
+          }
+
+          return [];
+        }
+
+        function extractFeedListFromHtml(html) {
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(html, "text/html");
+          const feedListEl = doc.getElementById("feed-list-data");
+          return parseFeedList(feedListEl?.textContent);
+        }
+
+        function getPreviewManifestUrl() {
+          const previewContext = getPreviewSiteContext(window.location.href);
+
+          if (previewContext) {
+            return previewContext.manifestUrl;
+          }
+
+          return new URL(
+            "preview/manifest.json",
+            window.location.href,
+          ).toString();
+        }
+
+        function loadPreviewSites() {
+          const container = document.getElementById("preview-sites-list");
+          if (!container) return;
+
+          fetch(getPreviewManifestUrl())
+            .then((response) => {
+              if (!response.ok) throw new Error("No previews available");
+              return response.json();
+            })
+            .then((manifest) => {
+              const previews = manifest.previews || [];
+              if (previews.length === 0) {
+                renderNoPreviewsMessage(container);
+              } else {
+                renderPreviewList(previews, container);
+              }
+            })
+            .catch(() => {
+              renderNoPreviewsMessage(container);
+            });
+        }
+
+        function renderNoPreviewsMessage(container) {
+          const msg = document.createElement("p");
+          msg.className = "settings-group-description";
+          msg.textContent =
+            "No preview deployments available yet. Previews are published automatically when changes are pushed to any branch other than main.";
+          container.appendChild(msg);
+        }
+
+        function renderPreviewList(previews, container) {
+          previews.forEach((preview) => {
+            const item = document.createElement("div");
+            item.className = "settings-item";
+
+            const labelDiv = document.createElement("div");
+            labelDiv.className = "settings-item-label";
+
+            const label = document.createElement("label");
+            label.textContent = preview.branch;
+
+            const desc = document.createElement("p");
+            desc.className = "settings-item-description";
+            const updated = preview.updated_at
+              ? new Date(preview.updated_at).toLocaleString()
+              : "unknown";
+            desc.textContent = `Last updated: ${updated}`;
+
+            labelDiv.appendChild(label);
+            labelDiv.appendChild(desc);
+
+            const controlDiv = document.createElement("div");
+            controlDiv.className = "settings-item-control";
+
+            const link = document.createElement("a");
+            link.href = preview.url;
+            link.className = "settings-button";
+            link.target = "_blank";
+            link.rel = "noopener noreferrer";
+
+            const eyeSvg = createSVG(
+              16,
+              16,
+              '<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle>',
+            );
+            link.appendChild(eyeSvg);
+            link.appendChild(document.createTextNode(" Open Preview"));
+
+            controlDiv.appendChild(link);
+            item.appendChild(labelDiv);
+            item.appendChild(controlDiv);
+            container.appendChild(item);
+          });
+        }
+
+        function saveFeedSettings() {
+          const checkboxes = document.querySelectorAll(
+            '.feed-checkbox-item input[type="checkbox"]',
+          );
+          const enabledFeeds = [];
+
+          checkboxes.forEach((cb) => {
+            if (cb.checked) {
+              enabledFeeds.push(cb.value);
+            }
+          });
+
+          try {
+            localStorage.setItem("enabledFeeds", JSON.stringify(enabledFeeds));
+            showToast(
+              `Feed selection saved (${enabledFeeds.length} feeds enabled)`,
+              "success",
+            );
+          } catch (e) {
+            console.warn("Unable to save feed settings:", e);
+            showToast("Failed to save feed selection", "error");
+          }
+        }
+
+        // Initialize when DOM is ready
+        if (
+          document.readyState === "complete" ||
+          document.readyState === "interactive"
+        ) {
+          setTimeout(initSettings, 0);
+        } else {
+          document.addEventListener("DOMContentLoaded", initSettings);
+        }
+
+        // ===== THEME TOGGLE FUNCTIONALITY =====
+        // Initialize theme toggle on settings page
+        const themeToggle = document.getElementById("theme-toggle");
+        if (themeToggle) {
+          // Update theme button based on current mode
+          function updateSettingsThemeButton(mode) {
+            const iconSVG = document.getElementById("theme-icon");
+            if (!iconSVG) return;
+
+            // Clear existing content
+            while (iconSVG.firstChild) {
+              iconSVG.removeChild(iconSVG.firstChild);
+            }
+
+            if (mode === "dark") {
+              // Sun icon for light mode
+              const sunPath =
+                '<circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>';
+              const svg = createSVG(24, 24, sunPath);
+              // Only update viewBox to match the icon coordinates, preserve existing width/height
+              iconSVG.setAttribute("viewBox", "0 0 24 24");
+              while (svg.firstChild) {
+                iconSVG.appendChild(svg.firstChild);
+              }
+            } else {
+              // Moon icon for dark mode
+              const moonPath =
+                '<path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>';
+              const svg = createSVG(24, 24, moonPath);
+              // Only update viewBox to match the icon coordinates, preserve existing width/height
+              iconSVG.setAttribute("viewBox", "0 0 24 24");
+              while (svg.firstChild) {
+                iconSVG.appendChild(svg.firstChild);
+              }
+            }
+          }
+
+          // Initialize button state
+          const currentTheme =
+            document.documentElement.getAttribute("data-theme");
+          const currentMode = getCurrentMode(currentTheme);
+          updateSettingsThemeButton(currentMode);
+
+          // Handle theme toggle click
+          themeToggle.addEventListener("click", async () => {
+            const currentTheme =
+              document.documentElement.getAttribute("data-theme");
+            const currentBaseTheme = getBaseTheme(currentTheme);
+            const currentThemeMode = getCurrentMode(currentTheme);
+            const newMode = currentThemeMode === "light" ? "dark" : "light";
+
+            // Apply new mode to current theme
+            let newTheme;
+            if (
+              currentBaseTheme &&
+              EXPERIMENTAL_BASE_THEMES.includes(currentBaseTheme)
+            ) {
+              // Experimental theme: toggle between light and dark variants
+              newTheme = applyModeToTheme(currentBaseTheme, newMode);
+              localStorage.setItem("experimentalTheme", newTheme);
+            } else {
+              // Standard theme: just "light" or "dark"
+              newTheme = newMode;
+              localStorage.setItem("theme", newTheme);
+              try {
+                localStorage.removeItem("experimentalTheme");
+              } catch (e) {
+                console.warn("Unable to remove experimental theme:", e);
+              }
+            }
+
+            // Update mode storage
+            localStorage.setItem("themeMode", newMode);
+
+            document.documentElement.setAttribute("data-theme", newTheme);
+            updateSettingsThemeButton(newMode);
+          });
+        }
+      })();
+    </script>
+  </body>
+</html>
