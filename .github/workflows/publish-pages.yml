@@ -13,6 +13,15 @@ on:
         required: false
         type: string
         default: config/site-metadata.json
+      engine-repository:
+        description: Repository that contains the shared Pages engine scripts
+        required: false
+        type: string
+        default: mudman1986/devops-feed-hub
+      engine-ref:
+        description: Ref in the engine repository that contains the shared Pages engine scripts
+        required: true
+        type: string
       python-version:
         description: Python version used to run the site generation scripts
         required: false
@@ -42,25 +51,11 @@ jobs:
       - name: Checkout caller repository
         uses: actions/checkout@v6
 
-      - name: Resolve workflow source
-        id: workflow-source
-        env:
-          WORKFLOW_REF: ${{ github.workflow_ref }}
-        run: |
-          WORKFLOW_LOCATION="${WORKFLOW_REF%@*}"
-          WORKFLOW_REPOSITORY="${WORKFLOW_LOCATION%%/.github/workflows/*}"
-          WORKFLOW_SOURCE_REF="${WORKFLOW_REF#*@}"
-
-          {
-            echo "repository=$WORKFLOW_REPOSITORY"
-            echo "ref=$WORKFLOW_SOURCE_REF"
-          } >> "$GITHUB_OUTPUT"
-
       - name: Checkout feed hub engine repository
         uses: actions/checkout@v6
         with:
-          repository: ${{ steps.workflow-source.outputs.repository }}
-          ref: ${{ steps.workflow-source.outputs.ref }}
+          repository: ${{ inputs.engine-repository }}
+          ref: ${{ inputs.engine-ref }}
           path: .github-pages-engine
 
       - name: Set up Python
@@ -177,23 +172,6 @@ jobs:
 
           echo "existing_dir=$EXISTING_DIR" >> "$GITHUB_OUTPUT"
 
-      - name: Bootstrap Pages state from github-pages branch
-        id: bootstrap-state
-        if: steps.restore-state.outputs.existing_dir == ''
-        run: |
-          rm -rf pages-state
-          mkdir -p pages-state
-          git fetch origin github-pages:refs/remotes/origin/github-pages 2>/dev/null || true
-
-          if git cat-file -e "origin/github-pages:site" 2>/dev/null; then
-            git archive --format=tar origin/github-pages site | tar -xf - -C pages-state
-            echo "existing_dir=pages-state/site" >> "$GITHUB_OUTPUT"
-            echo "✓ Bootstrapped previous Pages state from github-pages branch"
-          else
-            echo "existing_dir=" >> "$GITHUB_OUTPUT"
-            echo "No previous Pages state found to bootstrap"
-          fi
-
       - name: Generate GitHub Pages content
         if: success()
         env:
@@ -228,7 +206,7 @@ jobs:
         if: success()
         env:
           DEPLOY_SUBDIR: ${{ steps.publish-target.outputs.deploy_subdir }}
-          EXISTING_DIR: ${{ steps.restore-state.outputs.existing_dir || steps.bootstrap-state.outputs.existing_dir }}
+          EXISTING_DIR: ${{ steps.restore-state.outputs.existing_dir }}
         run: |
           MERGE_ARGS=(
             --build-dir site-build
@@ -251,7 +229,7 @@ jobs:
           SOURCE_BRANCH: ${{ github.ref_name }}
           PREVIEW_SLUG: ${{ steps.publish-target.outputs.preview_slug }}
           BASE_URL: ${{ steps.publish-target.outputs.base_url }}
-          EXISTING_DIR: ${{ steps.restore-state.outputs.existing_dir || steps.bootstrap-state.outputs.existing_dir }}
+          EXISTING_DIR: ${{ steps.restore-state.outputs.existing_dir }}
         run: |
           MANIFEST='{"previews":[]}'
           ACTIVE_BRANCHES=$(git ls-remote --heads origin | awk '{sub("refs/heads/","",$2); print $2}')
