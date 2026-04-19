@@ -6,8 +6,8 @@ Tests for RSS feed generator
 import json
 import os
 import tempfile
-from xml.etree import ElementTree as ET
 from unittest.mock import patch
+from xml.etree import ElementTree as ET
 
 from generate_rss import (  # noqa: E402 # pylint: disable=wrong-import-position
     create_rss_feed,
