@@ -11,7 +11,12 @@ from datetime import datetime
 from typing import Any, Dict, List, Optional
 from xml.etree import ElementTree as ET
 
-from utils import generate_feed_slug, parse_iso_timestamp, sort_articles_by_date
+from utils import (
+    generate_feed_slug,
+    parse_iso_timestamp,
+    resolve_site_metadata,
+    sort_articles_by_date,
+)
 
 # Default base URL - can be overridden via environment variable or CLI argument
 DEFAULT_BASE_URL = os.getenv(
@@ -46,12 +51,13 @@ def format_rfc822_date(iso_date_str: str) -> str:
 
 
 def create_rss_feed(
-    # pylint: disable=too-many-locals
+    # pylint: disable=too-many-arguments,too-many-locals,too-many-positional-arguments
     title: str,
     link: str,
     description: str,
     articles: List[Dict[str, Any]],
     last_build_date: str,
+    generator_name: str,
 ) -> str:
     """
     Create an RSS 2.0 feed from articles.
@@ -96,7 +102,7 @@ def create_rss_feed(
 
     # Add generator
     generator = ET.SubElement(channel, "generator")
-    generator.text = "DevOps Feed Hub RSS Generator"
+    generator.text = generator_name
 
     # Add items (articles)
     for article in articles:
@@ -132,7 +138,11 @@ def create_rss_feed(
     return '<?xml version="1.0" encoding="UTF-8"?>\n' + xml_str
 
 
-def generate_master_feed(data: Dict[str, Any], base_url: Optional[str] = None) -> str:
+def generate_master_feed(
+    data: Dict[str, Any],
+    base_url: Optional[str] = None,
+    site_metadata: Optional[Dict[str, str]] = None,
+) -> str:
     """
     Generate master RSS feed with all articles from all feeds.
 
@@ -145,6 +155,7 @@ def generate_master_feed(data: Dict[str, Any], base_url: Optional[str] = None) -
     """
     if base_url is None:
         base_url = DEFAULT_BASE_URL
+    metadata = resolve_site_metadata(site_metadata)
 
     # Collect all articles from all feeds
     all_articles = []
@@ -160,11 +171,12 @@ def generate_master_feed(data: Dict[str, Any], base_url: Optional[str] = None) -
 
     # Generate RSS feed
     return create_rss_feed(
-        title="DevOps Feed Hub - All Articles",
+        title=metadata["rss_title"],
         link=f"{base_url}/feed.xml",
-        description="Aggregated DevOps, cloud, and technology news from multiple sources",
+        description=metadata["rss_description"],
         articles=all_articles,
         last_build_date=data["metadata"]["collected_at"],
+        generator_name=metadata["rss_generator"],
     )
 
 
@@ -173,6 +185,7 @@ def generate_individual_feed(
     feed_data: Dict[str, Any],
     collected_at: str,
     base_url: Optional[str] = None,
+    site_metadata: Optional[Dict[str, str]] = None,
 ) -> str:
     """
     Generate RSS feed for a single source feed.
@@ -188,6 +201,7 @@ def generate_individual_feed(
     """
     if base_url is None:
         base_url = DEFAULT_BASE_URL
+    metadata = resolve_site_metadata(site_metadata)
 
     feed_slug = generate_feed_slug(feed_name)
 
@@ -195,15 +209,21 @@ def generate_individual_feed(
     sorted_articles = sort_articles_by_date(feed_data["articles"])
 
     return create_rss_feed(
-        title=f"DevOps Feed Hub - {feed_name}",
+        title=f"{metadata['site_name']} - {feed_name}",
         link=f"{base_url}/feed-{feed_slug}.xml",
         description=f"Articles from {feed_name}",
         articles=sorted_articles,
         last_build_date=collected_at,
+        generator_name=metadata["rss_generator"],
     )
 
 
-def generate_all_feeds(data: Dict[str, Any], output_dir: str) -> None:
+def generate_all_feeds(
+    data: Dict[str, Any],
+    output_dir: str,
+    base_url: Optional[str] = None,
+    site_metadata: Optional[Dict[str, str]] = None,
+) -> None:
     """
     Generate all RSS feeds (master feed + individual feed files).
 
@@ -219,7 +239,8 @@ def generate_all_feeds(data: Dict[str, Any], output_dir: str) -> None:
 
     # Generate master feed (all articles)
     master_feed_path = os.path.join(output_dir, "feed.xml")
-    master_feed_xml = generate_master_feed(data)
+    metadata = resolve_site_metadata(site_metadata)
+    master_feed_xml = generate_master_feed(data, base_url, metadata)
     with open(master_feed_path, "w", encoding="utf-8") as f:
         f.write(master_feed_xml)
     print(f"✓ Master RSS feed written to {master_feed_path}")
@@ -230,7 +251,11 @@ def generate_all_feeds(data: Dict[str, Any], output_dir: str) -> None:
         feed_slug = generate_feed_slug(feed_name)
         feed_path = os.path.join(output_dir, f"feed-{feed_slug}.xml")
         feed_xml = generate_individual_feed(
-            feed_name, feed_data, data["metadata"]["collected_at"]
+            feed_name,
+            feed_data,
+            data["metadata"]["collected_at"],
+            base_url,
+            metadata,
         )
         with open(feed_path, "w", encoding="utf-8") as f:
             f.write(feed_xml)
@@ -263,6 +288,10 @@ def main():
         default=DEFAULT_BASE_URL,
         help=f"Base URL for the feed hub (default: {DEFAULT_BASE_URL})",
     )
+    parser.add_argument(
+        "--site-metadata",
+        help="Path to the site metadata JSON used for site branding",
+    )
 
     args = parser.parse_args()
 
@@ -277,8 +306,14 @@ def main():
         print(f"Error: Invalid JSON in {args.input}: {e}")
         return 1
 
+    try:
+        site_metadata = resolve_site_metadata(site_metadata_path=args.site_metadata)
+    except ValueError as exc:
+        print(f"Error: {exc}")
+        return 1
+
     # Generate RSS feeds
-    generate_all_feeds(data, args.output_dir)
+    generate_all_feeds(data, args.output_dir, args.base_url, site_metadata)
 
     return 0
 

@@ -135,6 +135,10 @@ This repository is maintained primarily by GitHub Copilot. Path-specific instruc
 
 **CRITICAL FOR site PROJECT**: UI tests are the primary validation mechanism. They MUST pass before any work is considered complete.
 
+- Before rerunning expensive baseline suites at task start, first check the latest relevant GitHub Actions test workflows on `main`.
+- If the relevant `main` workflows are green, treat that as the baseline and start working instead of rerunning the full time-consuming baseline locally.
+- You must still run the required local validation for the changes you make before finishing the task.
+
 #### Test Execution Order (MANDATORY)
 
 1. **UI Tests** (PRIMARY - MOST IMPORTANT)

@@ -1,0 +1,8 @@
+{
+  "site_name": "Example Feed Hub",
+  "site_description": "Example RSS aggregation site that you can customize for your team or topic",
+  "header_title": "Example Feed Hub",
+  "rss_title": "Example Feed Hub - All Articles",
+  "rss_description": "Example technology and platform news feeds that demonstrate the starter configuration",
+  "rss_generator": "Example Feed Hub RSS Generator"
+}

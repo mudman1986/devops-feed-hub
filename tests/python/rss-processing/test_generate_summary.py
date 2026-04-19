@@ -24,6 +24,7 @@ from generate_summary import (
     get_template_path,
     inject_website_urls,
 )
+from utils import DEFAULT_SITE_METADATA
 
 TEMPLATE_PATH = get_template_path()
 
@@ -109,6 +110,19 @@ class TestGenerateSummary(unittest.TestCase):
                 }
             },
             "failed_feeds": [],
+        }
+        self.site_metadata = {
+            "site_name": "Platform Feed Hub",
+            "site_description": "Curated platform engineering news",
+            "header_title": "Platform Feed Hub",
+            "rss_title": "Platform Feed Hub - All Articles",
+            "rss_description": "Aggregated platform engineering news",
+            "rss_generator": "Platform Feed Hub RSS Generator",
+            "summary_markdown_title": "# 📰 Platform Feed Hub Summary",
+            "settings_title": "Settings - Platform Feed Hub",
+            "settings_description": (
+                "Platform Feed Hub Settings - Configure your RSS feed preferences"
+            ),
         }
 
     def test_generate_markdown_summary_basic(self):
@@ -245,6 +259,49 @@ class TestGenerateSummary(unittest.TestCase):
 
         # Should not have failed feeds section on main page (no emojis)
         self.assertNotIn("<h2>Failed Feeds</h2>", result)
+
+    def test_generate_markdown_summary_uses_site_metadata(self):
+        """Test markdown summary branding can be driven by metadata."""
+        result = generate_markdown_summary(self.sample_data, self.site_metadata)
+
+        self.assertIn("# 📰 Platform Feed Hub Summary", result)
+
+    def test_generate_markdown_summary_merges_partial_site_metadata(self):
+        """Test markdown summary derives missing branding fields from overrides."""
+        result = generate_markdown_summary(
+            self.sample_data, {"site_name": "Platform Feed Hub"}
+        )
+
+        self.assertIn("# 📰 Platform Feed Hub Summary", result)
+
+    def test_generate_html_page_uses_site_metadata(self):
+        """Test HTML page branding can be driven by metadata."""
+        result = generate_html_page(self.sample_data, site_metadata=self.site_metadata)
+
+        self.assertIn("<title>Platform Feed Hub</title>", result)
+        self.assertIn("Curated platform engineering news", result)
+        self.assertIn("Platform Feed Hub", result)
+        self.assertIn(
+            'title="Platform Feed Hub - All Articles"',
+            result,
+        )
+
+    def test_generate_html_page_merges_partial_site_metadata(self):
+        """Test HTML page branding derives missing fields from partial overrides."""
+        result = generate_html_page(
+            self.sample_data,
+            site_metadata={"site_name": "Platform Feed Hub"},
+        )
+
+        self.assertIn("<title>Platform Feed Hub</title>", result)
+        self.assertIn(
+            DEFAULT_SITE_METADATA["site_description"],
+            result,
+        )
+        self.assertIn(
+            'title="DevOps Feed Hub - All Articles"',
+            result,
+        )
 
     def test_markdown_table_formatting(self):
         """Test that markdown tables are properly formatted"""
@@ -579,6 +636,19 @@ class TestMultiPageGeneration(unittest.TestCase):
             },
             "failed_feeds": [],
         }
+        self.site_metadata = {
+            "site_name": "Platform Feed Hub",
+            "site_description": "Curated platform engineering news",
+            "header_title": "Platform Feed Hub",
+            "rss_title": "Platform Feed Hub - All Articles",
+            "rss_description": "Aggregated platform engineering news",
+            "rss_generator": "Platform Feed Hub RSS Generator",
+            "summary_markdown_title": "# 📰 Platform Feed Hub Summary",
+            "settings_title": "Settings - Platform Feed Hub",
+            "settings_description": (
+                "Platform Feed Hub Settings - Configure your RSS feed preferences"
+            ),
+        }
 
     def test_generate_feed_slug(self):
         """Test feed slug generation"""
@@ -654,6 +724,13 @@ class TestMultiPageGeneration(unittest.TestCase):
 
         # Check page title is updated
         self.assertIn("<title>Test Feed 1 - DevOps Feed Hub</title>", result)
+
+        custom_result = generate_html_page(
+            self.sample_data,
+            current_feed="Test Feed 1",
+            site_metadata=self.site_metadata,
+        )
+        self.assertIn("<title>Test Feed 1 - Platform Feed Hub</title>", custom_result)
 
     def test_generate_html_page_main_index(self):
         """Test HTML page generation for main index (all feeds)"""
@@ -835,6 +912,13 @@ class TestMultiPageGeneration(unittest.TestCase):
             self.assertIn("https://example.com/failed", summary_content)
             # Check page title
             self.assertIn("<title>Summary - DevOps Feed Hub</title>", summary_content)
+
+            settings_path = os.path.join(tmpdir, "settings.html")
+            with open(settings_path, "r", encoding="utf-8") as file:
+                settings_content = file.read()
+
+            self.assertNotIn("SETTINGS_TITLE_PLACEHOLDER", settings_content)
+            self.assertIn("<title>Settings - DevOps Feed Hub</title>", settings_content)
 
     def test_generate_all_pages_without_failed_feeds(self):
         """Test generate_all_pages without failed feeds page"""

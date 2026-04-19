@@ -3,9 +3,11 @@
 Tests for RSS feed generator
 """
 
+import json
 import os
 import tempfile
 from xml.etree import ElementTree as ET
+from unittest.mock import patch
 
 from generate_rss import (  # noqa: E402 # pylint: disable=wrong-import-position
     create_rss_feed,
@@ -13,6 +15,7 @@ from generate_rss import (  # noqa: E402 # pylint: disable=wrong-import-position
     generate_all_feeds,
     generate_individual_feed,
     generate_master_feed,
+    main,
     parse_iso_timestamp,
 )
 from utils import (  # noqa: E402 # pylint: disable=wrong-import-position
@@ -66,6 +69,7 @@ def test_create_rss_feed():
         description="Test feed description",
         articles=articles,
         last_build_date="2026-01-10T12:00:00Z",
+        generator_name="DevOps Feed Hub RSS Generator",
     )
 
     # Parse the XML to verify structure
@@ -110,6 +114,7 @@ def test_create_rss_feed_with_source():
         description="Test feed description",
         articles=articles,
         last_build_date="2026-01-10T12:00:00Z",
+        generator_name="DevOps Feed Hub RSS Generator",
     )
 
     root = ET.fromstring(rss_xml)
@@ -169,6 +174,49 @@ def test_generate_master_feed():
     assert items[1].find("title").text == "Article A1"
 
 
+def test_generate_master_feed_uses_site_metadata():
+    """Test master feed generation uses configurable metadata."""
+    data = {
+        "metadata": {"collected_at": "2026-01-10T12:00:00Z"},
+        "feeds": {"Feed A": {"articles": []}},
+    }
+
+    rss_xml = generate_master_feed(
+        data,
+        base_url="https://example.com/custom",
+        site_metadata={
+            "site_name": "Platform Feed Hub",
+            "rss_title": "Platform Feed Hub - All Articles",
+            "rss_description": "Platform engineering articles",
+            "rss_generator": "Platform Feed Hub RSS Generator",
+        },
+    )
+
+    channel = ET.fromstring(rss_xml).find("channel")
+    assert channel.find("title").text == "Platform Feed Hub - All Articles"
+    assert channel.find("description").text == "Platform engineering articles"
+    assert channel.find("generator").text == "Platform Feed Hub RSS Generator"
+    assert channel.find("link").text == "https://example.com/custom/feed.xml"
+
+
+def test_generate_master_feed_merges_partial_site_metadata():
+    """Test master feed generation merges partial metadata overrides."""
+    data = {
+        "metadata": {"collected_at": "2026-01-10T12:00:00Z"},
+        "feeds": {"Feed A": {"articles": []}},
+    }
+
+    rss_xml = generate_master_feed(
+        data,
+        site_metadata={"rss_description": "Platform engineering articles"},
+    )
+
+    channel = ET.fromstring(rss_xml).find("channel")
+    assert channel.find("title").text == "DevOps Feed Hub - All Articles"
+    assert channel.find("description").text == "Platform engineering articles"
+    assert channel.find("generator").text == "DevOps Feed Hub RSS Generator"
+
+
 def test_generate_individual_feed():
     """Test individual feed generation"""
     feed_data = {
@@ -203,6 +251,44 @@ def test_generate_individual_feed():
     assert len(items) == 2
     assert items[0].find("title").text == "Article 2"  # 11:00 is newer
     assert items[1].find("title").text == "Article 1"  # 10:00 is older
+
+
+def test_generate_individual_feed_uses_site_metadata():
+    """Test individual feed titles use configurable site metadata."""
+    feed_data = {"articles": []}
+
+    rss_xml = generate_individual_feed(
+        feed_name="Test Feed",
+        feed_data=feed_data,
+        collected_at="2026-01-10T12:00:00Z",
+        base_url="https://example.com/custom",
+        site_metadata={
+            "site_name": "Platform Feed Hub",
+            "rss_generator": "Platform Feed Hub RSS Generator",
+        },
+    )
+
+    channel = ET.fromstring(rss_xml).find("channel")
+    assert channel.find("title").text == "Platform Feed Hub - Test Feed"
+    assert channel.find("generator").text == "Platform Feed Hub RSS Generator"
+    assert channel.find("link").text == "https://example.com/custom/feed-test-feed.xml"
+
+
+def test_generate_individual_feed_merges_partial_site_metadata():
+    """Test individual feed generation merges partial metadata overrides."""
+    feed_data = {"articles": []}
+
+    rss_xml = generate_individual_feed(
+        feed_name="Test Feed",
+        feed_data=feed_data,
+        collected_at="2026-01-10T12:00:00Z",
+        site_metadata={"site_name": "Platform Feed Hub"},
+    )
+
+    channel = ET.fromstring(rss_xml).find("channel")
+    assert channel.find("title").text == "Platform Feed Hub - Test Feed"
+    assert channel.find("description").text == "Articles from Test Feed"
+    assert channel.find("generator").text == "DevOps Feed Hub RSS Generator"
 
 
 def test_generate_all_feeds():
@@ -279,6 +365,7 @@ def test_rss_feed_handles_unknown_dates():
         description="Test feed",
         articles=articles,
         last_build_date="2026-01-10T12:00:00Z",
+        generator_name="DevOps Feed Hub RSS Generator",
     )
 
     root = ET.fromstring(rss_xml)
@@ -311,6 +398,7 @@ def test_rss_feed_xml_declaration():
         description="Test feed",
         articles=articles,
         last_build_date="2026-01-10T12:00:00Z",
+        generator_name="DevOps Feed Hub RSS Generator",
     )
 
     # Check XML declaration
@@ -327,6 +415,7 @@ def test_rss_feed_atom_namespace():
         description="Test feed",
         articles=articles,
         last_build_date="2026-01-10T12:00:00Z",
+        generator_name="DevOps Feed Hub RSS Generator",
     )
 
     # Check that xmlns:atom is in the XML string
@@ -340,3 +429,66 @@ def test_rss_feed_atom_namespace():
     assert atom_link is not None
     assert atom_link.get("rel") == "self"
     assert atom_link.get("type") == "application/rss+xml"
+
+
+def test_main_generates_feeds_with_site_metadata_file():
+    """Test CLI entry point supports the site metadata file option."""
+    data = {
+        "metadata": {"collected_at": "2026-01-10T12:00:00Z"},
+        "feeds": {
+            "Test Feed": {
+                "articles": [
+                    {
+                        "title": "Article 1",
+                        "link": "https://example.com/1",
+                        "published": "2026-01-10T10:00:00Z",
+                    }
+                ]
+            }
+        },
+    }
+
+    with tempfile.TemporaryDirectory() as tmpdir:
+        input_path = os.path.join(tmpdir, "input.json")
+        metadata_path = os.path.join(tmpdir, "site-metadata.json")
+        output_dir = os.path.join(tmpdir, "feeds")
+
+        with open(input_path, "w", encoding="utf-8") as file:
+            json.dump(data, file)
+        with open(metadata_path, "w", encoding="utf-8") as file:
+            json.dump(
+                {
+                    "site_name": "Platform Feed Hub",
+                    "rss_title": "Platform Feed Hub - All Articles",
+                },
+                file,
+            )
+
+        with patch(
+            "sys.argv",
+            [
+                "generate_rss.py",
+                "--input",
+                input_path,
+                "--output-dir",
+                output_dir,
+                "--base-url",
+                "https://example.com/custom",
+                "--site-metadata",
+                metadata_path,
+            ],
+        ):
+            assert main() == 0
+
+        master_feed_path = os.path.join(output_dir, "feed.xml")
+        individual_feed_path = os.path.join(output_dir, "feed-test-feed.xml")
+        assert os.path.exists(master_feed_path)
+        assert os.path.exists(individual_feed_path)
+
+        with open(master_feed_path, "r", encoding="utf-8") as file:
+            master_feed = file.read()
+        with open(individual_feed_path, "r", encoding="utf-8") as file:
+            individual_feed = file.read()
+
+        assert "Platform Feed Hub - All Articles" in master_feed
+        assert "Platform Feed Hub - Test Feed" in individual_feed
