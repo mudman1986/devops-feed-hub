@@ -10,11 +10,14 @@ import sys
 from pathlib import Path
 
 SEMVER_TAG_PATTERN = re.compile(r"^v(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)$")
+ENGINE_REPOSITORY = "mudman1986/devops-feed-hub"
 STARTER_WORKFLOW_REF_PATTERN = re.compile(
-    r"uses:\s+mudman1986/devops-feed-hub/\.github/workflows/publish-pages\.yml@([^\s]+)"
+    rf"uses:\s+{re.escape(ENGINE_REPOSITORY)}/\.github/workflows/publish-pages\.yml@([^\s]+)"
 )
+STARTER_ENGINE_REPOSITORY_PATTERN = re.compile(r"engine-repository:\s*([^\s]+)")
+STARTER_ENGINE_REF_PATTERN = re.compile(r"engine-ref:\s*([^\s]+)")
 STARTER_README_REF_PATTERN = re.compile(
-    r"mudman1986/devops-feed-hub/\.github/workflows/publish-pages\.yml@([^\s`]+)"
+    rf"{re.escape(ENGINE_REPOSITORY)}/\.github/workflows/publish-pages\.yml@([^\s`]+)"
 )
 
 
@@ -60,6 +63,28 @@ def load_starter_workflow_ref(workflow_path: Path) -> str:
     return match.group(1)
 
 
+def load_starter_engine_repository(workflow_path: Path) -> str:
+    """Return the configured engine repository from the starter workflow."""
+    workflow_text = workflow_path.read_text(encoding="utf-8")
+    match = STARTER_ENGINE_REPOSITORY_PATTERN.search(workflow_text)
+
+    if match is None:
+        raise ValueError(f"{workflow_path}: must set engine-repository")
+
+    return match.group(1)
+
+
+def load_starter_engine_ref(workflow_path: Path) -> str:
+    """Return the configured engine ref from the starter workflow."""
+    workflow_text = workflow_path.read_text(encoding="utf-8")
+    match = STARTER_ENGINE_REF_PATTERN.search(workflow_text)
+
+    if match is None:
+        raise ValueError(f"{workflow_path}: must set engine-ref")
+
+    return match.group(1)
+
+
 def load_starter_readme_refs(readme_path: Path) -> set[str]:
     """Return all reusable-workflow refs mentioned in the starter README."""
     readme_text = readme_path.read_text(encoding="utf-8")
@@ -88,6 +113,19 @@ def validate_release_metadata(
         raise ValueError(
             f"{starter_workflow_path}: reusable workflow ref {starter_workflow_ref} "
             f"must match {tag}"
+        )
+
+    starter_engine_repository = load_starter_engine_repository(starter_workflow_path)
+    if starter_engine_repository != ENGINE_REPOSITORY:
+        raise ValueError(
+            f"{starter_workflow_path}: engine repository "
+            f"{starter_engine_repository} must match {ENGINE_REPOSITORY}"
+        )
+
+    starter_engine_ref = load_starter_engine_ref(starter_workflow_path)
+    if starter_engine_ref != tag:
+        raise ValueError(
+            f"{starter_workflow_path}: engine ref {starter_engine_ref} must match {tag}"
         )
 
     starter_readme_refs = load_starter_readme_refs(starter_readme_path)
