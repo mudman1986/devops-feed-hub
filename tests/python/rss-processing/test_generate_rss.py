@@ -46,6 +46,7 @@ def test_generate_feed_slug():
     assert generate_feed_slug("GitHub Blog") == "github-blog"
     assert generate_feed_slug("Test/Feed Name") == "test-feed-name"
     assert generate_feed_slug("Test--Multi---Dash") == "test-multi-dash"
+    assert generate_feed_slug("  Team // Updates   Daily  ") == "team-updates-daily"
 
 
 def test_create_rss_feed():
