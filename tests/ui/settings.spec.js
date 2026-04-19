@@ -12,6 +12,55 @@ test.beforeEach(async ({ page }) => {
   await page.evaluate(() => localStorage.clear());
 });
 
+async function getPageFixtures(page) {
+  const [settingsResponse, indexResponse, scriptResponse] = await Promise.all([
+    page.request.get("/settings.html"),
+    page.request.get("/index.html"),
+    page.request.get("/script.js"),
+  ]);
+
+  const [settingsHtml, indexHtml, scriptJs] = await Promise.all([
+    settingsResponse.text(),
+    indexResponse.text(),
+    scriptResponse.text(),
+  ]);
+
+  return { settingsHtml, indexHtml, scriptJs };
+}
+
+function withFeedList(indexHtml, feedNames) {
+  return indexHtml.replace(
+    /(<script[^>]*id="feed-list-data"[^>]*>)([\s\S]*?)(<\/script>)/,
+    `$1${JSON.stringify(feedNames)}$3`,
+  );
+}
+
+async function mockSiteAtPath(page, basePath, feedNames) {
+  const { settingsHtml, indexHtml, scriptJs } = await getPageFixtures(page);
+  const mockedIndexHtml = withFeedList(indexHtml, feedNames);
+
+  await Promise.all([
+    page.route(`**${basePath}/settings.html`, async (route) => {
+      await route.fulfill({
+        contentType: "text/html",
+        body: settingsHtml,
+      });
+    }),
+    page.route(`**${basePath}/index.html`, async (route) => {
+      await route.fulfill({
+        contentType: "text/html",
+        body: mockedIndexHtml,
+      });
+    }),
+    page.route(`**${basePath}/script.js`, async (route) => {
+      await route.fulfill({
+        contentType: "application/javascript",
+        body: scriptJs,
+      });
+    }),
+  ]);
+}
+
 /**
  * Settings Page Tests
  * Tests settings page functionality including feed selection, theme, and view mode
@@ -314,6 +363,39 @@ test.describe("Settings Page Tests", () => {
       const firstCheckbox = checkboxes.first();
       await expect(firstCheckbox).toBeChecked();
     });
+
+    test("should isolate feed selection storage by site path", async ({
+      page,
+    }) => {
+      await mockSiteAtPath(page, "/consumer", [
+        "Consumer Alpha",
+        "Consumer Beta",
+      ]);
+
+      await page.goto("/consumer/settings.html");
+      await page
+        .locator('.settings-menu-item:has-text("Feed Selection")')
+        .click();
+      await page.waitForSelector("#feed-checkboxes", { timeout: 15000 });
+      await expect(
+        page.locator('#feed-checkboxes label:has-text("Consumer Alpha")'),
+      ).toBeVisible();
+
+      await page.goto("/settings.html");
+      await page
+        .locator('.settings-menu-item:has-text("Feed Selection")')
+        .click();
+      await page.waitForSelector("#feed-checkboxes", { timeout: 15000 });
+
+      const checkboxes = page.locator(
+        '#feed-checkboxes input[type="checkbox"]',
+      );
+      const total = await checkboxes.count();
+      expect(total).toBeGreaterThan(0);
+      await expect(
+        page.locator('#feed-checkboxes input[type="checkbox"]:checked'),
+      ).toHaveCount(total);
+    });
   });
 
   test.describe("Responsive Design", () => {
@@ -411,6 +493,38 @@ test.describe("Feed Filtering Integration Tests", () => {
     if ((await summaryLink.count()) > 0) {
       await expect(summaryLink).toBeVisible();
     }
+  });
+
+  test("should ignore feed filters saved for another site path", async ({
+    page,
+  }) => {
+    await mockSiteAtPath(page, "/consumer", [
+      "Consumer Alpha",
+      "Consumer Beta",
+    ]);
+
+    await page.goto("/consumer/settings.html");
+    await page
+      .locator('.settings-menu-item:has-text("Feed Selection")')
+      .click();
+    await page.waitForSelector("#feed-checkboxes", { timeout: 15000 });
+
+    await page.goto("/");
+    await page.waitForSelector(".feed-section", { timeout: 10000 });
+
+    const visibleFeedNames = await page.evaluate(() => {
+      return Array.from(document.querySelectorAll(".feed-section"))
+        .filter(
+          (section) => section.getAttribute("data-hidden-by-filter") !== "true",
+        )
+        .map((section) => {
+          const heading = section.querySelector("h2");
+          const firstChild = heading?.childNodes[0];
+          return firstChild ? firstChild.textContent.trim() : "";
+        });
+    });
+
+    expect(visibleFeedNames).toContain("AWS DevOps Blog");
   });
 });
 
