@@ -122,9 +122,9 @@ jobs:
     needs:
       - create-release
     if: |
-      always() &&
+      github.event_name == 'workflow_dispatch' ||
       (
-        github.event_name == 'workflow_dispatch' ||
+        needs.create-release.result == 'success' &&
         needs.create-release.outputs.release_exists != 'true'
       )
     runs-on: ubuntu-latest
