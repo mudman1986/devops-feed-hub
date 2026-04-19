@@ -307,7 +307,7 @@ def main():
         return 1
 
     try:
-        site_metadata = load_site_metadata(args.site_metadata)
+        site_metadata = resolve_site_metadata(site_metadata_path=args.site_metadata)
     except ValueError as exc:
         print(f"Error: {exc}")
         return 1

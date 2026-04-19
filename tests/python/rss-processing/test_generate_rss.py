@@ -3,9 +3,11 @@
 Tests for RSS feed generator
 """
 
+import json
 import os
 import tempfile
 from xml.etree import ElementTree as ET
+from unittest.mock import patch
 
 from generate_rss import (  # noqa: E402 # pylint: disable=wrong-import-position
     create_rss_feed,
@@ -13,6 +15,7 @@ from generate_rss import (  # noqa: E402 # pylint: disable=wrong-import-position
     generate_all_feeds,
     generate_individual_feed,
     generate_master_feed,
+    main,
     parse_iso_timestamp,
 )
 from utils import (  # noqa: E402 # pylint: disable=wrong-import-position
@@ -426,3 +429,60 @@ def test_rss_feed_atom_namespace():
     assert atom_link is not None
     assert atom_link.get("rel") == "self"
     assert atom_link.get("type") == "application/rss+xml"
+
+
+def test_main_generates_feeds_with_site_metadata_file():
+    """Test CLI entry point supports the site metadata file option."""
+    data = {
+        "metadata": {"collected_at": "2026-01-10T12:00:00Z"},
+        "feeds": {
+            "Test Feed": {
+                "articles": [
+                    {
+                        "title": "Article 1",
+                        "link": "https://example.com/1",
+                        "published": "2026-01-10T10:00:00Z",
+                    }
+                ]
+            }
+        },
+    }
+
+    with tempfile.TemporaryDirectory() as tmpdir:
+        input_path = os.path.join(tmpdir, "input.json")
+        metadata_path = os.path.join(tmpdir, "site-metadata.json")
+        output_dir = os.path.join(tmpdir, "feeds")
+
+        with open(input_path, "w", encoding="utf-8") as file:
+            json.dump(data, file)
+        with open(metadata_path, "w", encoding="utf-8") as file:
+            json.dump({"site_name": "Platform Feed Hub"}, file)
+
+        with patch(
+            "sys.argv",
+            [
+                "generate_rss.py",
+                "--input",
+                input_path,
+                "--output-dir",
+                output_dir,
+                "--base-url",
+                "https://example.com/custom",
+                "--site-metadata",
+                metadata_path,
+            ],
+        ):
+            assert main() == 0
+
+        master_feed_path = os.path.join(output_dir, "feed.xml")
+        individual_feed_path = os.path.join(output_dir, "feed-test-feed.xml")
+        assert os.path.exists(master_feed_path)
+        assert os.path.exists(individual_feed_path)
+
+        with open(master_feed_path, "r", encoding="utf-8") as file:
+            master_feed = file.read()
+        with open(individual_feed_path, "r", encoding="utf-8") as file:
+            individual_feed = file.read()
+
+        assert "DevOps Feed Hub - All Articles" in master_feed
+        assert "Platform Feed Hub - Test Feed" in individual_feed
