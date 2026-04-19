@@ -615,8 +615,8 @@
           // Load theme setting (default or experimental base theme)
           try {
             const experimentalTheme =
-              localStorage.getItem("experimentalTheme") || "";
-            const theme = localStorage.getItem("theme") || "dracula";
+              getLocalStorage("experimentalTheme", "") || "";
+            const theme = getLocalStorage("theme", "dracula") || "dracula";
             const themeSelect = document.getElementById("theme-setting");
 
             if (experimentalTheme) {
@@ -646,8 +646,8 @@
           // Load view mode setting (standard or experimental)
           try {
             const experimentalViewMode =
-              localStorage.getItem("experimentalViewMode") || "";
-            const view = localStorage.getItem("view") || "list";
+              getLocalStorage("experimentalViewMode", "") || "";
+            const view = getLocalStorage("view", "list") || "list";
             const viewSelect = document.getElementById("view-setting");
 
             if (
@@ -666,7 +666,7 @@
 
           // Load timeframe
           try {
-            const timeframe = localStorage.getItem("timeframe") || "1day";
+            const timeframe = getLocalStorage("timeframe", "1day") || "1day";
             const timeframeSelect =
               document.getElementById("timeframe-setting");
             if (timeframeSelect) timeframeSelect.value = timeframe;
@@ -685,18 +685,18 @@
               try {
                 if (selectedTheme === "default") {
                   // Apply Dracula as the default theme while preserving current mode
-                  localStorage.removeItem("experimentalTheme");
-                  const mode = localStorage.getItem("themeMode") || "dark";
+                  removeLocalStorage("experimentalTheme");
+                  const mode = getLocalStorage("themeMode", "dark") || "dark";
                   const defaultTheme = applyModeToTheme("dracula", mode);
-                  localStorage.setItem("theme", defaultTheme);
+                  setLocalStorage("theme", defaultTheme);
                   applyTheme(defaultTheme);
                   showToast("Theme changed to Dracula (Default)", "success");
                 } else if (selectedTheme === "classic") {
                   // Apply the original plain light/dark theme while preserving current mode
-                  localStorage.removeItem("experimentalTheme");
-                  const mode = localStorage.getItem("themeMode") || "dark";
-                  localStorage.setItem("theme", mode);
-                  localStorage.setItem("themeMode", mode);
+                  removeLocalStorage("experimentalTheme");
+                  const mode = getLocalStorage("themeMode", "dark") || "dark";
+                  setLocalStorage("theme", mode);
+                  setLocalStorage("themeMode", mode);
                   applyTheme(mode);
                   showToast("Theme changed to Classic", "success");
                 } else {
@@ -712,9 +712,9 @@
                     VALID_EXPERIMENTAL_THEMES.includes(fullTheme) ||
                     EXPERIMENTAL_BASE_THEMES.includes(selectedTheme)
                   ) {
-                    localStorage.setItem("experimentalTheme", fullTheme);
-                    localStorage.setItem("themeMode", naturalMode);
-                    localStorage.removeItem("theme");
+                    setLocalStorage("experimentalTheme", fullTheme);
+                    setLocalStorage("themeMode", naturalMode);
+                    removeLocalStorage("theme");
                     applyTheme(fullTheme);
                     showToast(
                       `Theme changed to ${selectedTheme
@@ -747,8 +747,8 @@
               try {
                 if (EXPERIMENTAL_VIEW_MODES.includes(selectedView)) {
                   // Store experimental view mode separately
-                  localStorage.setItem("experimentalViewMode", selectedView);
-                  localStorage.removeItem("view");
+                  setLocalStorage("experimentalViewMode", selectedView);
+                  removeLocalStorage("view");
 
                   showToast(
                     `Experimental view mode: ${selectedView
@@ -759,8 +759,8 @@
                   );
                 } else {
                   // Store standard view mode (list or card)
-                  localStorage.setItem("view", selectedView);
-                  localStorage.removeItem("experimentalViewMode");
+                  setLocalStorage("view", selectedView);
+                  removeLocalStorage("experimentalViewMode");
 
                   showToast(
                     `View mode changed to ${selectedView === "card" ? "Card" : "List"} view`,
@@ -790,7 +790,7 @@
               const timeframe = e.target.value;
               LoadingState.show(timeframeSelect, "Updating time range");
               try {
-                localStorage.setItem("timeframe", timeframe);
+                setLocalStorage("timeframe", timeframe);
                 LoadingState.hide(timeframeSelect);
                 const timeframeLabels = {
                   "1day": "Last 24 hours",
@@ -844,8 +844,7 @@
           // Get enabled feeds from localStorage
           let enabledFeeds = [];
           try {
-            const stored = localStorage.getItem("enabledFeeds");
-            enabledFeeds = stored ? JSON.parse(stored) : [];
+            enabledFeeds = getLocalStorageJSON("enabledFeeds", []);
           } catch (e) {
             console.warn("Unable to load enabled feeds:", e);
           }
@@ -901,10 +900,7 @@
           if (enabledFeeds.length === 0) {
             enabledFeeds = [...feeds];
             try {
-              localStorage.setItem(
-                "enabledFeeds",
-                JSON.stringify(enabledFeeds),
-              );
+              setLocalStorageJSON("enabledFeeds", enabledFeeds);
             } catch (e) {
               console.warn("Unable to save enabled feeds:", e);
             }
@@ -1155,7 +1151,7 @@
           });
 
           try {
-            localStorage.setItem("enabledFeeds", JSON.stringify(enabledFeeds));
+            setLocalStorageJSON("enabledFeeds", enabledFeeds);
             showToast(
               `Feed selection saved (${enabledFeeds.length} feeds enabled)`,
               "success",
@@ -1235,20 +1231,20 @@
             ) {
               // Experimental theme: toggle between light and dark variants
               newTheme = applyModeToTheme(currentBaseTheme, newMode);
-              localStorage.setItem("experimentalTheme", newTheme);
+              setLocalStorage("experimentalTheme", newTheme);
             } else {
               // Standard theme: just "light" or "dark"
               newTheme = newMode;
-              localStorage.setItem("theme", newTheme);
+              setLocalStorage("theme", newTheme);
               try {
-                localStorage.removeItem("experimentalTheme");
+                removeLocalStorage("experimentalTheme");
               } catch (e) {
                 console.warn("Unable to remove experimental theme:", e);
               }
             }
 
             // Update mode storage
-            localStorage.setItem("themeMode", newMode);
+            setLocalStorage("themeMode", newMode);
 
             document.documentElement.setAttribute("data-theme", newTheme);
             updateSettingsThemeButton(newMode);
