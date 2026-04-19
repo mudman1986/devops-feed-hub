@@ -1,4 +1,12 @@
+import { readFileSync } from "node:fs";
+import { join } from "node:path";
+
 import { expect, test } from "@playwright/test";
+
+const siteMetadata = JSON.parse(
+  readFileSync(join(process.cwd(), "config", "site-metadata.json"), "utf8"),
+);
+const expectedHeaderTitle = siteMetadata.header_title || siteMetadata.site_name;
 
 // Mock system date to match test data
 test.beforeEach(async ({ page }) => {
@@ -31,7 +39,7 @@ test.describe("Desktop Layout Tests", () => {
 
     const headerTitle = page.locator(".header-title");
     await expect(headerTitle).toBeVisible();
-    await expect(headerTitle).toContainText(/\S+/);
+    await expect(headerTitle).toContainText(expectedHeaderTitle);
 
     // Verify header controls are visible
     const themeToggle = page.locator("#theme-toggle");

@@ -20,6 +20,30 @@ DEFAULT_SITE_METADATA = {
 }
 
 
+def populate_derived_site_metadata(metadata: Dict[str, str]) -> Dict[str, str]:
+    """
+    Populate derived metadata fields from the base site metadata values.
+
+    Args:
+        metadata: Metadata dictionary containing the base site fields.
+
+    Returns:
+        Metadata dictionary with derived fields populated.
+    """
+    resolved_metadata = metadata.copy()
+    site_name = resolved_metadata["site_name"]
+    header_title = resolved_metadata.get("header_title") or site_name
+
+    resolved_metadata["header_title"] = header_title
+    resolved_metadata["summary_markdown_title"] = f"# 📰 {site_name} Summary"
+    resolved_metadata["settings_title"] = f"Settings - {site_name}"
+    resolved_metadata["settings_description"] = (
+        f"{site_name} Settings - Configure your RSS feed preferences"
+    )
+
+    return resolved_metadata
+
+
 def load_site_metadata(site_metadata_path: Optional[str] = None) -> Dict[str, str]:
     """
     Load site metadata configuration with defaults and derived values.
@@ -59,17 +83,32 @@ def load_site_metadata(site_metadata_path: Optional[str] = None) -> Dict[str, st
             if isinstance(value, str) and value.strip():
                 metadata[key] = value.strip()
 
-    site_name = metadata["site_name"]
-    header_title = metadata.get("header_title") or site_name
+    return populate_derived_site_metadata(metadata)
 
-    metadata["header_title"] = header_title
-    metadata["summary_markdown_title"] = f"# 📰 {site_name} Summary"
-    metadata["settings_title"] = f"Settings - {site_name}"
-    metadata["settings_description"] = (
-        f"{site_name} Settings - Configure your RSS feed preferences"
-    )
 
-    return metadata
+def resolve_site_metadata(
+    site_metadata: Optional[Dict[str, str]] = None,
+    site_metadata_path: Optional[str] = None,
+) -> Dict[str, str]:
+    """
+    Resolve site metadata by merging optional overrides into loaded defaults.
+
+    Args:
+        site_metadata: Optional metadata overrides.
+        site_metadata_path: Optional path to a JSON metadata file.
+
+    Returns:
+        Metadata dictionary with defaults, overrides, and derived values populated.
+    """
+    metadata = load_site_metadata(site_metadata_path)
+
+    if isinstance(site_metadata, dict):
+        for key in DEFAULT_SITE_METADATA:
+            value = site_metadata.get(key)
+            if isinstance(value, str) and value.strip():
+                metadata[key] = value.strip()
+
+    return populate_derived_site_metadata(metadata)
 
 
 def generate_feed_slug(feed_name: str) -> str:

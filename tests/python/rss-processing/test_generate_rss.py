@@ -196,6 +196,24 @@ def test_generate_master_feed_uses_site_metadata():
     assert channel.find("link").text == "https://example.com/custom/feed.xml"
 
 
+def test_generate_master_feed_merges_partial_site_metadata():
+    """Test master feed generation merges partial metadata overrides."""
+    data = {
+        "metadata": {"collected_at": "2026-01-10T12:00:00Z"},
+        "feeds": {"Feed A": {"articles": []}},
+    }
+
+    rss_xml = generate_master_feed(
+        data,
+        site_metadata={"rss_description": "Platform engineering articles"},
+    )
+
+    channel = ET.fromstring(rss_xml).find("channel")
+    assert channel.find("title").text == "DevOps Feed Hub - All Articles"
+    assert channel.find("description").text == "Platform engineering articles"
+    assert channel.find("generator").text == "DevOps Feed Hub RSS Generator"
+
+
 def test_generate_individual_feed():
     """Test individual feed generation"""
     feed_data = {
@@ -251,6 +269,22 @@ def test_generate_individual_feed_uses_site_metadata():
     assert channel.find("title").text == "Platform Feed Hub - Test Feed"
     assert channel.find("generator").text == "Platform Feed Hub RSS Generator"
     assert channel.find("link").text == "https://example.com/custom/feed-test-feed.xml"
+
+
+def test_generate_individual_feed_merges_partial_site_metadata():
+    """Test individual feed generation merges partial metadata overrides."""
+    feed_data = {"articles": []}
+
+    rss_xml = generate_individual_feed(
+        feed_name="Test Feed",
+        feed_data=feed_data,
+        collected_at="2026-01-10T12:00:00Z",
+        site_metadata={"site_name": "Platform Feed Hub"},
+    )
+
+    channel = ET.fromstring(rss_xml).find("channel")
+    assert channel.find("title").text == "Platform Feed Hub - Test Feed"
+    assert channel.find("generator").text == "DevOps Feed Hub RSS Generator"
 
 
 def test_generate_all_feeds():

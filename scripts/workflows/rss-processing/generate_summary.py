@@ -12,7 +12,12 @@ from html import escape as html_escape
 from pathlib import Path
 from typing import Any, Dict, Optional
 
-from utils import generate_feed_slug, load_site_metadata, parse_iso_timestamp
+from utils import (
+    generate_feed_slug,
+    load_site_metadata,
+    parse_iso_timestamp,
+    resolve_site_metadata,
+)
 
 STATIC_SITE_FILES = (
     "favicon-16x16.png",
@@ -80,7 +85,7 @@ def generate_markdown_summary(
     Returns:
         Markdown formatted string
     """
-    metadata = site_metadata or load_site_metadata()
+    metadata = resolve_site_metadata(site_metadata)
     summary = []
     summary.append(f"{metadata['summary_markdown_title']}\n")
     summary.append(f"**Collected at:** {data['metadata']['collected_at']}\n")
@@ -339,7 +344,7 @@ def copy_static_site_assets(
             f"Static site assets not found in '{STATIC_SITE_DIR}': {missing_list}"
         )
 
-    metadata = site_metadata or load_site_metadata()
+    metadata = resolve_site_metadata(site_metadata)
 
     for asset_name in STATIC_SITE_FILES:
         source_path = STATIC_SITE_DIR / asset_name
@@ -658,7 +663,7 @@ def generate_html_page(
             f"Error reading HTML template file at '{template_path}': {exc}"
         ) from exc
 
-    metadata = site_metadata or load_site_metadata()
+    metadata = resolve_site_metadata(site_metadata)
 
     # Generate content
     content = generate_html_content(data, current_feed)
@@ -715,7 +720,7 @@ def generate_all_pages(
         None
     """
     # Ensure output directory exists
-    metadata = site_metadata or load_site_metadata()
+    metadata = resolve_site_metadata(site_metadata)
     os.makedirs(output_dir, exist_ok=True)
     copy_static_site_assets(output_dir, metadata)
 

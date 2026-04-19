@@ -13,8 +13,8 @@ from xml.etree import ElementTree as ET
 
 from utils import (
     generate_feed_slug,
-    load_site_metadata,
     parse_iso_timestamp,
+    resolve_site_metadata,
     sort_articles_by_date,
 )
 
@@ -155,7 +155,7 @@ def generate_master_feed(
     """
     if base_url is None:
         base_url = DEFAULT_BASE_URL
-    metadata = site_metadata or load_site_metadata()
+    metadata = resolve_site_metadata(site_metadata)
 
     # Collect all articles from all feeds
     all_articles = []
@@ -201,7 +201,7 @@ def generate_individual_feed(
     """
     if base_url is None:
         base_url = DEFAULT_BASE_URL
-    metadata = site_metadata or load_site_metadata()
+    metadata = resolve_site_metadata(site_metadata)
 
     feed_slug = generate_feed_slug(feed_name)
 
@@ -239,7 +239,7 @@ def generate_all_feeds(
 
     # Generate master feed (all articles)
     master_feed_path = os.path.join(output_dir, "feed.xml")
-    metadata = site_metadata or load_site_metadata()
+    metadata = resolve_site_metadata(site_metadata)
     master_feed_xml = generate_master_feed(data, base_url, metadata)
     with open(master_feed_path, "w", encoding="utf-8") as f:
         f.write(master_feed_xml)

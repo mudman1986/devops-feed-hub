@@ -73,7 +73,7 @@ jobs:
 
       - name: Collect RSS Feeds
         id: collect
-        uses: mudman1986/rss-feed-collector-action@main
+        uses: mudman1986/rss-feed-collector-action@aba781ffdc8619f27a20e99ef34f2ab06d57f1c7
         with:
           hours: "8760"
           config-path: ${{ inputs.feeds-config-path }}

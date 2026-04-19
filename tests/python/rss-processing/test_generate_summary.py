@@ -265,6 +265,14 @@ class TestGenerateSummary(unittest.TestCase):
 
         self.assertIn("# 📰 Platform Feed Hub Summary", result)
 
+    def test_generate_markdown_summary_merges_partial_site_metadata(self):
+        """Test markdown summary derives missing branding fields from overrides."""
+        result = generate_markdown_summary(
+            self.sample_data, {"site_name": "Platform Feed Hub"}
+        )
+
+        self.assertIn("# 📰 Platform Feed Hub Summary", result)
+
     def test_generate_html_page_uses_site_metadata(self):
         """Test HTML page branding can be driven by metadata."""
         result = generate_html_page(self.sample_data, site_metadata=self.site_metadata)
@@ -274,6 +282,23 @@ class TestGenerateSummary(unittest.TestCase):
         self.assertIn("Platform Feed Hub", result)
         self.assertIn(
             'title="Platform Feed Hub - All Articles"',
+            result,
+        )
+
+    def test_generate_html_page_merges_partial_site_metadata(self):
+        """Test HTML page branding derives missing fields from partial overrides."""
+        result = generate_html_page(
+            self.sample_data,
+            site_metadata={"site_name": "Platform Feed Hub"},
+        )
+
+        self.assertIn("<title>Platform Feed Hub</title>", result)
+        self.assertIn(
+            "Centralized RSS feed aggregator for DevOps and tech news",
+            result,
+        )
+        self.assertIn(
+            'title="DevOps Feed Hub - All Articles"',
             result,
         )
 
