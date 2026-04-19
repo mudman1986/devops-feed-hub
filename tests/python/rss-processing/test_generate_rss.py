@@ -456,7 +456,13 @@ def test_main_generates_feeds_with_site_metadata_file():
         with open(input_path, "w", encoding="utf-8") as file:
             json.dump(data, file)
         with open(metadata_path, "w", encoding="utf-8") as file:
-            json.dump({"site_name": "Platform Feed Hub"}, file)
+            json.dump(
+                {
+                    "site_name": "Platform Feed Hub",
+                    "rss_title": "Platform Feed Hub - All Articles",
+                },
+                file,
+            )
 
         with patch(
             "sys.argv",
@@ -484,5 +490,5 @@ def test_main_generates_feeds_with_site_metadata_file():
         with open(individual_feed_path, "r", encoding="utf-8") as file:
             individual_feed = file.read()
 
-        assert "DevOps Feed Hub - All Articles" in master_feed
+        assert "Platform Feed Hub - All Articles" in master_feed
         assert "Platform Feed Hub - Test Feed" in individual_feed
