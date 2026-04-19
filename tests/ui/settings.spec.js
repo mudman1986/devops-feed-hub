@@ -38,27 +38,59 @@ function withFeedList(indexHtml, feedNames) {
 async function mockSiteAtPath(page, basePath, feedNames) {
   const { settingsHtml, indexHtml, scriptJs } = await getPageFixtures(page);
   const mockedIndexHtml = withFeedList(indexHtml, feedNames);
+  const escapedBasePath = basePath.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const mockedSitePattern = new RegExp(
+    `${escapedBasePath}/(settings\\.html|index\\.html|script\\.js)$`,
+  );
 
-  await Promise.all([
-    page.route(`**${basePath}/settings.html`, async (route) => {
+  await page.route(mockedSitePattern, async (route) => {
+    const pathname = new URL(route.request().url()).pathname;
+
+    if (pathname.endsWith("/settings.html")) {
       await route.fulfill({
         contentType: "text/html",
         body: settingsHtml,
       });
-    }),
-    page.route(`**${basePath}/index.html`, async (route) => {
+      return;
+    }
+
+    if (pathname.endsWith("/index.html")) {
       await route.fulfill({
         contentType: "text/html",
         body: mockedIndexHtml,
       });
-    }),
-    page.route(`**${basePath}/script.js`, async (route) => {
-      await route.fulfill({
-        contentType: "application/javascript",
-        body: scriptJs,
+      return;
+    }
+
+    await route.fulfill({
+      contentType: "application/javascript",
+      body: scriptJs,
+    });
+  });
+}
+
+async function saveMockedSiteFeedSelection(page, basePath, selectedFeedNames) {
+  await page.goto(`${basePath}/settings.html`);
+  await page
+    .locator('.settings-menu-item:has-text("Feed Selection")')
+    .click();
+  await page.waitForSelector("#feed-checkboxes", { timeout: 5000 });
+
+  await page.locator("#deselect-all-feeds").click();
+
+  for (const feedName of selectedFeedNames) {
+    await page
+      .locator(`#feed-checkboxes label:has-text("${feedName}")`)
+      .click();
+  }
+
+  await expect
+    .poll(async () => {
+      return await page.evaluate(() => {
+        return JSON.parse(localStorage.getItem("enabledFeeds") || "[]");
       });
-    }),
-  ]);
+    })
+    .toEqual(selectedFeedNames);
 }
 
 /**
@@ -371,15 +403,11 @@ test.describe("Settings Page Tests", () => {
         "Consumer Alpha",
         "Consumer Beta",
       ]);
+      await saveMockedSiteFeedSelection(page, "/consumer", ["Consumer Alpha"]);
 
-      await page.goto("/consumer/settings.html");
-      await page
-        .locator('.settings-menu-item:has-text("Feed Selection")')
-        .click();
-      await page.waitForSelector("#feed-checkboxes", { timeout: 15000 });
       await expect(
-        page.locator('#feed-checkboxes label:has-text("Consumer Alpha")'),
-      ).toBeVisible();
+        page.locator('#feed-checkboxes input[type="checkbox"]:checked'),
+      ).toHaveCount(1);
 
       await page.goto("/settings.html");
       await page
@@ -502,12 +530,7 @@ test.describe("Feed Filtering Integration Tests", () => {
       "Consumer Alpha",
       "Consumer Beta",
     ]);
-
-    await page.goto("/consumer/settings.html");
-    await page
-      .locator('.settings-menu-item:has-text("Feed Selection")')
-      .click();
-    await page.waitForSelector("#feed-checkboxes", { timeout: 15000 });
+    await saveMockedSiteFeedSelection(page, "/consumer", ["Consumer Alpha"]);
 
     await page.goto("/");
     await page.waitForSelector(".feed-section", { timeout: 10000 });
@@ -525,6 +548,8 @@ test.describe("Feed Filtering Integration Tests", () => {
     });
 
     expect(visibleFeedNames).toContain("AWS DevOps Blog");
+    expect(visibleFeedNames).toContain("Docker Blog");
+    expect(visibleFeedNames.length).toBeGreaterThan(1);
   });
 });
 
