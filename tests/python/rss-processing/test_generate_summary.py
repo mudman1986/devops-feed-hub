@@ -24,6 +24,7 @@ from generate_summary import (
     get_template_path,
     inject_website_urls,
 )
+from utils import DEFAULT_SITE_METADATA
 
 TEMPLATE_PATH = get_template_path()
 
@@ -294,7 +295,7 @@ class TestGenerateSummary(unittest.TestCase):
 
         self.assertIn("<title>Platform Feed Hub</title>", result)
         self.assertIn(
-            "Centralized RSS feed aggregator for DevOps and tech news",
+            DEFAULT_SITE_METADATA["site_description"],
             result,
         )
         self.assertIn(

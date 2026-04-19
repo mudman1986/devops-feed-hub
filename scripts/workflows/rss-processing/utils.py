@@ -20,6 +20,30 @@ DEFAULT_SITE_METADATA = {
 }
 
 
+def apply_site_metadata_overrides(
+    metadata: Dict[str, str], overrides: Optional[Dict[str, str]] = None
+) -> Dict[str, str]:
+    """
+    Apply supported string overrides to a metadata dictionary.
+
+    Args:
+        metadata: Base metadata dictionary.
+        overrides: Optional metadata overrides to apply.
+
+    Returns:
+        Metadata dictionary with applicable overrides applied.
+    """
+    resolved_metadata = metadata.copy()
+
+    if isinstance(overrides, dict):
+        for key in DEFAULT_SITE_METADATA:
+            value = overrides.get(key)
+            if isinstance(value, str) and value.strip():
+                resolved_metadata[key] = value.strip()
+
+    return resolved_metadata
+
+
 def populate_derived_site_metadata(metadata: Dict[str, str]) -> Dict[str, str]:
     """
     Populate derived metadata fields from the base site metadata values.
@@ -78,10 +102,7 @@ def load_site_metadata(site_metadata_path: Optional[str] = None) -> Dict[str, st
                 f"Site metadata file '{metadata_path}' must contain a JSON object"
             )
 
-        for key in DEFAULT_SITE_METADATA:
-            value = loaded_metadata.get(key)
-            if isinstance(value, str) and value.strip():
-                metadata[key] = value.strip()
+        metadata = apply_site_metadata_overrides(metadata, loaded_metadata)
 
     return populate_derived_site_metadata(metadata)
 
@@ -101,13 +122,7 @@ def resolve_site_metadata(
         Metadata dictionary with defaults, overrides, and derived values populated.
     """
     metadata = load_site_metadata(site_metadata_path)
-
-    if isinstance(site_metadata, dict):
-        for key in DEFAULT_SITE_METADATA:
-            value = site_metadata.get(key)
-            if isinstance(value, str) and value.strip():
-                metadata[key] = value.strip()
-
+    metadata = apply_site_metadata_overrides(metadata, site_metadata)
     return populate_derived_site_metadata(metadata)
 
 

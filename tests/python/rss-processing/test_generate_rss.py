@@ -284,6 +284,7 @@ def test_generate_individual_feed_merges_partial_site_metadata():
 
     channel = ET.fromstring(rss_xml).find("channel")
     assert channel.find("title").text == "Platform Feed Hub - Test Feed"
+    assert channel.find("description").text == "Articles from Test Feed"
     assert channel.find("generator").text == "DevOps Feed Hub RSS Generator"
 
 
