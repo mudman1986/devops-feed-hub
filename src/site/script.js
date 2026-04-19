@@ -103,6 +103,38 @@ const originalLocalStorageRemoveItem = window.localStorage.removeItem.bind(
   window.localStorage,
 );
 
+if (!window.__dfhScopedStorageProxyInstalled) {
+  const nativeLocalStorage = window.localStorage;
+  const scopedLocalStorage = new Proxy(nativeLocalStorage, {
+    get(target, prop, receiver) {
+      if (prop === "getItem") {
+        return (key) => originalLocalStorageGetItem(getSiteStorageAccessKey(key));
+      }
+
+      if (prop === "setItem") {
+        return (key, value) =>
+          originalLocalStorageSetItem(getSiteStorageAccessKey(key), value);
+      }
+
+      if (prop === "removeItem") {
+        return (key) =>
+          originalLocalStorageRemoveItem(getSiteStorageAccessKey(key));
+      }
+
+      const value = Reflect.get(target, prop, receiver);
+      return typeof value === "function" ? value.bind(target) : value;
+    },
+  });
+
+  Object.defineProperty(window, "localStorage", {
+    configurable: true,
+    enumerable: true,
+    value: scopedLocalStorage,
+  });
+
+  window.__dfhScopedStorageProxyInstalled = true;
+}
+
 (function migrateLegacySiteStorage() {
   try {
     SITE_SCOPED_STORAGE_KEYS.forEach((key) => {
@@ -223,7 +255,7 @@ function applyModeToTheme(baseTheme, mode) {
  */
 function getLocalStorage(key, defaultValue = null) {
   try {
-    const stored = localStorage.getItem(getSiteStorageAccessKey(key));
+    const stored = localStorage.getItem(key);
     return stored !== null ? stored : defaultValue;
   } catch (e) {
     console.warn(`localStorage unavailable for key "${key}":`, e);
@@ -239,7 +271,7 @@ function getLocalStorage(key, defaultValue = null) {
  */
 function getLocalStorageJSON(key, defaultValue = null) {
   try {
-    const stored = localStorage.getItem(getSiteStorageAccessKey(key));
+    const stored = localStorage.getItem(key);
     return stored ? JSON.parse(stored) : defaultValue;
   } catch (e) {
     console.warn(
@@ -257,7 +289,7 @@ function getLocalStorageJSON(key, defaultValue = null) {
  */
 function setLocalStorage(key, value) {
   try {
-    localStorage.setItem(getSiteStorageAccessKey(key), value);
+    localStorage.setItem(key, value);
   } catch (e) {
     console.warn(`Unable to save to localStorage for key "${key}":`, e);
   }
@@ -270,7 +302,7 @@ function setLocalStorage(key, value) {
  */
 function setLocalStorageJSON(key, value) {
   try {
-    localStorage.setItem(getSiteStorageAccessKey(key), JSON.stringify(value));
+    localStorage.setItem(key, JSON.stringify(value));
   } catch (e) {
     console.warn(`Unable to save to localStorage for key "${key}":`, e);
   }
@@ -282,7 +314,7 @@ function setLocalStorageJSON(key, value) {
  */
 function removeLocalStorage(key) {
   try {
-    localStorage.removeItem(getSiteStorageAccessKey(key));
+    localStorage.removeItem(key);
   } catch (e) {
     console.warn(`Unable to remove from localStorage for key "${key}":`, e);
   }
