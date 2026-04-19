@@ -108,7 +108,8 @@ if (!window.__dfhScopedStorageProxyInstalled) {
   const scopedLocalStorage = new Proxy(nativeLocalStorage, {
     get(target, prop, receiver) {
       if (prop === "getItem") {
-        return (key) => originalLocalStorageGetItem(getSiteStorageAccessKey(key));
+        return (key) =>
+          originalLocalStorageGetItem(getSiteStorageAccessKey(key));
       }
 
       if (prop === "setItem") {

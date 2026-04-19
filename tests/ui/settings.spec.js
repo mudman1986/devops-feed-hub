@@ -367,7 +367,10 @@ test.describe("Settings Page Tests", () => {
     test("should isolate feed selection storage by site path", async ({
       page,
     }) => {
-      await mockSiteAtPath(page, "/consumer", ["Consumer Alpha", "Consumer Beta"]);
+      await mockSiteAtPath(page, "/consumer", [
+        "Consumer Alpha",
+        "Consumer Beta",
+      ]);
 
       await page.goto("/consumer/settings.html");
       await page
@@ -384,7 +387,9 @@ test.describe("Settings Page Tests", () => {
         .click();
       await page.waitForSelector("#feed-checkboxes", { timeout: 15000 });
 
-      const checkboxes = page.locator('#feed-checkboxes input[type="checkbox"]');
+      const checkboxes = page.locator(
+        '#feed-checkboxes input[type="checkbox"]',
+      );
       const total = await checkboxes.count();
       expect(total).toBeGreaterThan(0);
       await expect(
@@ -493,7 +498,10 @@ test.describe("Feed Filtering Integration Tests", () => {
   test("should ignore feed filters saved for another site path", async ({
     page,
   }) => {
-    await mockSiteAtPath(page, "/consumer", ["Consumer Alpha", "Consumer Beta"]);
+    await mockSiteAtPath(page, "/consumer", [
+      "Consumer Alpha",
+      "Consumer Beta",
+    ]);
 
     await page.goto("/consumer/settings.html");
     await page
@@ -506,7 +514,9 @@ test.describe("Feed Filtering Integration Tests", () => {
 
     const visibleFeedNames = await page.evaluate(() => {
       return Array.from(document.querySelectorAll(".feed-section"))
-        .filter((section) => section.getAttribute("data-hidden-by-filter") !== "true")
+        .filter(
+          (section) => section.getAttribute("data-hidden-by-filter") !== "true",
+        )
         .map((section) => {
           const heading = section.querySelector("h2");
           const firstChild = heading?.childNodes[0];
