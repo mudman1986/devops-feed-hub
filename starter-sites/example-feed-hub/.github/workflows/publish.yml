@@ -1,4 +1,5 @@
-name: DevOps Feed Hub
+---
+name: Publish Example Feed Hub
 
 on:
   push:
@@ -12,13 +13,9 @@ permissions:
   id-token: write
   pages: write
 
-concurrency:
-  group: rss-github-pages-publish
-  cancel-in-progress: false
-
 jobs:
   publish-pages:
-    uses: ./.github/workflows/publish-pages.yml
+    uses: mudman1986/devops-feed-hub/.github/workflows/publish-pages.yml@v1.0.0
     with:
       feeds-config-path: config/rss-feeds.json
       site-metadata-path: config/site-metadata.json
