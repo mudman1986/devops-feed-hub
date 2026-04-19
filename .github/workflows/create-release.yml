@@ -11,13 +11,24 @@ on:
       - scripts/workflows/resolve_release.py
       - starter-sites/crypto-feed-hub/.github/workflows/publish.yml
       - starter-sites/crypto-feed-hub/README.md
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Existing release tag that should receive the starter bundle
+        required: true
+        type: string
 
 permissions:
   contents: write
 
 jobs:
   create-release:
+    if: github.event_name == 'push'
     runs-on: ubuntu-latest
+
+    outputs:
+      tag: ${{ steps.release-tag.outputs.tag }}
+      release_exists: ${{ steps.tag-check.outputs.exists }}
 
     steps:
       - name: Checkout repository
@@ -43,10 +54,27 @@ jobs:
             --starter-readme "$STARTER_README_PATH" \
             --github-output "$GITHUB_OUTPUT"
 
+      - name: Resolve release tag
+        id: release-tag
+        env:
+          RELEASE_TAG: ${{ steps.release.outputs.tag }}
+        run: |
+          if [ -z "$RELEASE_TAG" ]; then
+            echo "Release tag is required" >&2
+            exit 1
+          fi
+
+          if ! printf '%s\n' "$RELEASE_TAG" | grep -Eq '^v[0-9]+\.[0-9]+\.[0-9]+$'; then
+            echo "Release tag must use vX.Y.Z format: $RELEASE_TAG" >&2
+            exit 1
+          fi
+
+          echo "tag=$RELEASE_TAG" >> "$GITHUB_OUTPUT"
+
       - name: Check whether tag already exists
         id: tag-check
         env:
-          RELEASE_TAG: ${{ steps.release.outputs.tag }}
+          RELEASE_TAG: ${{ steps.release-tag.outputs.tag }}
         run: |
           if git show-ref --verify --quiet "refs/tags/$RELEASE_TAG"; then
             echo "exists=true" >> "$GITHUB_OUTPUT"
@@ -58,7 +86,7 @@ jobs:
       - name: Create release tag
         if: steps.tag-check.outputs.exists != 'true'
         env:
-          RELEASE_TAG: ${{ steps.release.outputs.tag }}
+          RELEASE_TAG: ${{ steps.release-tag.outputs.tag }}
         run: |
           git tag -a "$RELEASE_TAG" "$GITHUB_SHA" -m "Release $RELEASE_TAG"
           git push origin "refs/tags/$RELEASE_TAG"
@@ -67,7 +95,7 @@ jobs:
         if: steps.tag-check.outputs.exists != 'true'
         env:
           GH_TOKEN: ${{ github.token }}
-          RELEASE_TAG: ${{ steps.release.outputs.tag }}
+          RELEASE_TAG: ${{ steps.release-tag.outputs.tag }}
         run: |
           gh release create "$RELEASE_TAG" \
             --generate-notes \
@@ -75,7 +103,7 @@ jobs:
 
       - name: Summarize release
         env:
-          RELEASE_TAG: ${{ steps.release.outputs.tag }}
+          RELEASE_TAG: ${{ steps.release-tag.outputs.tag }}
           RELEASE_EXISTS: ${{ steps.tag-check.outputs.exists }}
         run: |
           {
@@ -86,6 +114,85 @@ jobs:
             else
               echo "- Result: created tag from the pushed \`main\` commit"
               echo "- GitHub Release: published for \`$RELEASE_TAG\`"
-              echo "- Starter bundle upload will run from the release event"
+              echo "- Starter bundle upload: ready in the follow-up job"
+            fi
+          } >> "$GITHUB_STEP_SUMMARY"
+
+  upload-starter-bundle:
+    needs:
+      - create-release
+    if: |
+      always() &&
+      (
+        github.event_name == 'workflow_dispatch' ||
+        needs.create-release.outputs.release_exists != 'true'
+      )
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository at release tag
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          ref: ${{ github.event_name == 'workflow_dispatch' && inputs.tag || needs.create-release.outputs.tag }}
+          token: ${{ github.token }}
+
+      - name: Resolve release tag
+        id: release-tag
+        env:
+          INPUT_TAG: ${{ inputs.tag }}
+          RELEASE_TAG: ${{ needs.create-release.outputs.tag }}
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+            TAG="$INPUT_TAG"
+          else
+            TAG="$RELEASE_TAG"
+          fi
+
+          if [ -z "$TAG" ]; then
+            echo "Release tag is required" >&2
+            exit 1
+          fi
+
+          if ! printf '%s\n' "$TAG" | grep -Eq '^v[0-9]+\.[0-9]+\.[0-9]+$'; then
+            echo "Release tag must use vX.Y.Z format: $TAG" >&2
+            exit 1
+          fi
+
+          echo "tag=$TAG" >> "$GITHUB_OUTPUT"
+
+      - name: Create starter bundle archive
+        id: bundle
+        env:
+          RELEASE_TAG: ${{ steps.release-tag.outputs.tag }}
+        run: |
+          BUNDLE_NAME="crypto-feed-hub-starter-${RELEASE_TAG}.tar.gz"
+          tar -czf "$BUNDLE_NAME" -C starter-sites crypto-feed-hub
+          echo "bundle_name=$BUNDLE_NAME" >> "$GITHUB_OUTPUT"
+
+      - name: Upload starter bundle to GitHub release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ steps.release-tag.outputs.tag }}
+          BUNDLE_NAME: ${{ steps.bundle.outputs.bundle_name }}
+        run: |
+          gh release upload "$RELEASE_TAG" "$BUNDLE_NAME" --clobber
+
+      - name: Summarize starter bundle upload
+        env:
+          RELEASE_TAG: ${{ steps.release-tag.outputs.tag }}
+          BUNDLE_NAME: ${{ steps.bundle.outputs.bundle_name }}
+          EVENT_NAME: ${{ github.event_name }}
+        run: |
+          {
+            echo "## Starter bundle published"
+            echo "- Release tag: \`$RELEASE_TAG\`"
+            echo "- Asset: \`$BUNDLE_NAME\`"
+            echo "- Template folder: \`starter-sites/crypto-feed-hub\`"
+            if [ "$EVENT_NAME" = "workflow_dispatch" ]; then
+              echo "- Trigger: manual recovery upload"
+            else
+              echo "- Trigger: release creation workflow"
             fi
           } >> "$GITHUB_STEP_SUMMARY"

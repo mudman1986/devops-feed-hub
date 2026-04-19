@@ -24,7 +24,7 @@ The repository already has most of the pieces needed for a shared platform:
 - `starter-sites/crypto-feed-hub/` now contains a copyable consumer repository starter for a crypto-focused site.
 - `.github/workflows/create-release.yml` now creates releases from the
   committed tag metadata in `config/release.json`.
-- `.github/workflows/publish-starter-bundle.yml` can attach the crypto starter bundle to tagged GitHub Releases.
+- `.github/workflows/create-release.yml` now also packages and uploads the crypto starter bundle to tagged GitHub Releases.
 
 ## Actual Status
 
@@ -79,7 +79,7 @@ repositories.
 The remaining operational step is to run the automated release workflow for the
 first stable release tag (for example `v1.0.0`). That workflow updates the
 starter template pin, creates the Git tag, publishes the GitHub Release, and
-then lets the starter bundle workflow attach the release asset.
+uploads the starter bundle asset in the same workflow.
 
 ### Phase 4 status: Create the second site from the template
 
@@ -147,8 +147,8 @@ Current repository status:
 - `.github/workflows/create-release.yml` validates the committed release
   metadata, creates a Git tag from the pushed `main` commit, and publishes the
   GitHub Release without making commits on `main`.
-- The release helper workflow uploads the starter bundle from the tagged
-  release contents.
+- The release workflow also uploads the starter bundle from the tagged release
+  contents.
 
 ### 4. Use GitHub Releases for bootstrap assets, not as the primary runtime
 
@@ -166,9 +166,8 @@ Current repository status:
 - The starter bundle lives in `starter-sites/crypto-feed-hub/`.
 - The release workflow validates that `starter-sites/crypto-feed-hub/` already
   matches the committed release tag before creating the release.
-- The release workflow `.github/workflows/publish-starter-bundle.yml`
-  packages that tagged folder as a `.tar.gz` archive and uploads it to the
-  GitHub Release.
+- The release workflow `.github/workflows/create-release.yml` packages that
+  tagged folder as a `.tar.gz` archive and uploads it to the GitHub Release.
 
 ### 5. Treat GitHub Packages as optional
 
@@ -235,7 +234,7 @@ Repository status:
 
 - ✅ automated release creation workflow added
 - ✅ starter template tag sync is automated during release creation
-- ✅ release starter bundle workflow added
+- ✅ starter bundle upload merged into the release workflow
 - ✅ starter bundle documentation added
 - ⏳ first automated stable release still needs to be run operationally
 
