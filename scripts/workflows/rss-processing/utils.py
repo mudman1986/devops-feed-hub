@@ -55,7 +55,11 @@ def populate_derived_site_metadata(metadata: Dict[str, str]) -> Dict[str, str]:
         Metadata dictionary with derived fields populated.
     """
     resolved_metadata = metadata.copy()
-    site_name = resolved_metadata["site_name"]
+    site_name = resolved_metadata.get("site_name", "").strip()
+    if not site_name:
+        raise ValueError("Site metadata must define a non-empty 'site_name' value")
+
+    resolved_metadata["site_name"] = site_name
     header_title = resolved_metadata.get("header_title") or site_name
 
     resolved_metadata["header_title"] = header_title
