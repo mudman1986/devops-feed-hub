@@ -20,6 +20,8 @@ jobs:
   publish-pages:
     uses: ./.github/workflows/publish-pages.yml
     with:
+      engine-repository: ${{ github.repository }}
+      engine-ref: ${{ github.sha }}
       feeds-config-path: config/rss-feeds.json
       site-metadata-path: config/site-metadata.json
     secrets: inherit
