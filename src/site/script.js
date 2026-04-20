@@ -21,6 +21,17 @@ const ACCESSIBILITY = {
 
 // Mark as Read constants
 const READ_ARTICLES_KEY = "readArticles";
+const SITE_STORAGE_PREFIX = "dfh";
+const SITE_SCOPED_STORAGE_KEYS = [
+  READ_ARTICLES_KEY,
+  "enabledFeeds",
+  "experimentalTheme",
+  "experimentalViewMode",
+  "theme",
+  "themeMode",
+  "timeframe",
+  "view",
+];
 
 // List of base experimental themes (without -light/-dark suffixes)
 const EXPERIMENTAL_BASE_THEMES = [
@@ -55,6 +66,111 @@ const VALID_EXPERIMENTAL_THEMES = [
   ...EXPERIMENTAL_BASE_THEMES.map((t) => `${t}-dark`),
   ...EXPERIMENTAL_VIEW_MODES,
 ];
+
+function shouldScopeSiteStorageKey(key) {
+  return typeof key === "string" && SITE_SCOPED_STORAGE_KEYS.includes(key);
+}
+
+function isScopedSiteStorageKey(key) {
+  return typeof key === "string" && key.startsWith(`${SITE_STORAGE_PREFIX}:`);
+}
+
+function getCurrentSiteStorageScope(currentHref = window.location.href) {
+  return new URL("./", currentHref).pathname;
+}
+
+function getScopedStorageKey(key, currentHref = window.location.href) {
+  if (!shouldScopeSiteStorageKey(key) || isScopedSiteStorageKey(key)) {
+    return key;
+  }
+
+  return `${SITE_STORAGE_PREFIX}:${getCurrentSiteStorageScope(currentHref)}:${key}`;
+}
+
+function getSiteStorageAccessKey(key, currentHref = window.location.href) {
+  return shouldScopeSiteStorageKey(key)
+    ? getScopedStorageKey(key, currentHref)
+    : key;
+}
+
+const originalLocalStorageGetItem = window.localStorage.getItem.bind(
+  window.localStorage,
+);
+const originalLocalStorageSetItem = window.localStorage.setItem.bind(
+  window.localStorage,
+);
+const originalLocalStorageRemoveItem = window.localStorage.removeItem.bind(
+  window.localStorage,
+);
+
+if (!window.__dfhScopedStorageProxyInstalled) {
+  const nativeLocalStorage = window.localStorage;
+  const scopedLocalStorage = new Proxy(nativeLocalStorage, {
+    get(target, prop, receiver) {
+      if (prop === "getItem") {
+        return (key) =>
+          originalLocalStorageGetItem(getSiteStorageAccessKey(key));
+      }
+
+      if (prop === "setItem") {
+        return (key, value) =>
+          originalLocalStorageSetItem(getSiteStorageAccessKey(key), value);
+      }
+
+      if (prop === "removeItem") {
+        return (key) =>
+          originalLocalStorageRemoveItem(getSiteStorageAccessKey(key));
+      }
+
+      const value = Reflect.get(target, prop, receiver);
+      return typeof value === "function" ? value.bind(target) : value;
+    },
+  });
+
+  Object.defineProperty(window, "localStorage", {
+    configurable: true,
+    enumerable: true,
+    value: scopedLocalStorage,
+  });
+
+  window.__dfhScopedStorageProxyInstalled = true;
+}
+
+(function migrateLegacySiteStorage() {
+  try {
+    SITE_SCOPED_STORAGE_KEYS.forEach((key) => {
+      const scopedKey = getScopedStorageKey(key);
+      const scopedValue = originalLocalStorageGetItem(scopedKey);
+
+      if (scopedValue !== null) {
+        return;
+      }
+
+      const legacyValue = originalLocalStorageGetItem(key);
+      if (legacyValue !== null) {
+        originalLocalStorageSetItem(scopedKey, legacyValue);
+      }
+    });
+
+    const scopedExperimentalThemeKey = getScopedStorageKey("experimentalTheme");
+    const scopedExperimentalTheme = originalLocalStorageGetItem(
+      scopedExperimentalThemeKey,
+    );
+
+    if (
+      scopedExperimentalTheme &&
+      EXPERIMENTAL_VIEW_MODES.includes(scopedExperimentalTheme)
+    ) {
+      originalLocalStorageSetItem(
+        getScopedStorageKey("experimentalViewMode"),
+        scopedExperimentalTheme,
+      );
+      originalLocalStorageRemoveItem(scopedExperimentalThemeKey);
+    }
+  } catch (e) {
+    console.warn("Unable to migrate site-scoped localStorage:", e);
+  }
+})();
 
 // ===== THEME UTILITY FUNCTIONS =====
 
@@ -268,26 +384,6 @@ function getPreviewSiteContext(currentHref = window.location.href) {
     manifestUrl: manifestUrl.toString(),
   };
 }
-
-// ===== MIGRATION: Separate Theme and View Mode Storage =====
-// Migrate old data structure where view modes were stored in experimentalTheme
-(function migrateThemeViewModeStorage() {
-  try {
-    const experimentalTheme = localStorage.getItem("experimentalTheme");
-
-    if (
-      experimentalTheme &&
-      EXPERIMENTAL_VIEW_MODES.includes(experimentalTheme)
-    ) {
-      // Old data: experimentalTheme contains a view mode
-      // Move it to experimentalViewMode
-      localStorage.setItem("experimentalViewMode", experimentalTheme);
-      localStorage.removeItem("experimentalTheme");
-    }
-  } catch (e) {
-    console.warn("Unable to migrate theme/view mode storage:", e);
-  }
-})();
 
 /**
  * Create an SVG element from path data
@@ -1013,7 +1109,7 @@ function markArticleAsRead(articleUrl) {
 
 function resetAllReadArticles() {
   try {
-    localStorage.removeItem(READ_ARTICLES_KEY);
+    removeLocalStorage(READ_ARTICLES_KEY);
     initializeReadStatus();
     updateFeedCountsAfterReadFilter();
     // Show success toast
@@ -1314,7 +1410,7 @@ if (
 }
 
 window.addEventListener("storage", (e) => {
-  if (e.key === "enabledFeeds") {
+  if (e.key === getScopedStorageKey("enabledFeeds")) {
     applyFeedFilter();
   }
 });
