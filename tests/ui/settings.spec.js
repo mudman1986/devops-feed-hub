@@ -71,9 +71,7 @@ async function mockSiteAtPath(page, basePath, feedNames) {
 
 async function saveMockedSiteFeedSelection(page, basePath, selectedFeedNames) {
   await page.goto(`${basePath}/settings.html`);
-  await page
-    .locator('.settings-menu-item:has-text("Feed Selection")')
-    .click();
+  await page.locator('.settings-menu-item:has-text("Feed Selection")').click();
   await page.waitForSelector("#feed-checkboxes", { timeout: 5000 });
 
   await page.locator("#deselect-all-feeds").click();
