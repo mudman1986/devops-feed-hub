@@ -4,6 +4,7 @@ Shared utilities for RSS feed collection and summary generation
 """
 
 import json
+import re
 from datetime import datetime
 from pathlib import Path
 from typing import Any, Dict, List, Optional
@@ -143,12 +144,8 @@ def generate_feed_slug(feed_name: str) -> str:
     feed_slug = feed_name.lower().replace(" ", "-").replace("/", "-")
     # Remove any other non-alphanumeric characters except hyphens
     feed_slug = "".join(c if c.isalnum() or c == "-" else "" for c in feed_slug)
-    # Remove consecutive hyphens
-    while "--" in feed_slug:
-        feed_slug = feed_slug.replace("--", "-")
-    # Remove leading/trailing hyphens
-    feed_slug = feed_slug.strip("-")
-    return feed_slug
+    # Collapse consecutive hyphens and remove leading/trailing ones
+    return re.sub(r"-{2,}", "-", feed_slug).strip("-")
 
 
 def parse_iso_timestamp(iso_string: str) -> datetime:
