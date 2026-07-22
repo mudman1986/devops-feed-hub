@@ -15,7 +15,7 @@ permissions:
 
 jobs:
   publish-pages:
-    uses: mudman1986/feed-hub-engine/.github/workflows/publish-pages.yml@v2.0.0
+    uses: mudman1986/feed-hub-engine/.github/workflows/publish-pages.yml@v2.0.2
     with:
       engine-repository: mudman1986/feed-hub-engine
       engine-ref: v2.0.0
